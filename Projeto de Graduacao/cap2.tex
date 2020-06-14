@@ -1,0 +1,144 @@
+\chapter{Fundamentação Teórica}
+\label{cap2}
+
+\paragraph{} O presente capítulo propõe-se a introduzir o leitor ao entendimento acadêmico existente sobre o conceito de privacidade, especificamente no que contempla a área de Tecnologia da Informação com foco nos pontos de interesse ao presente trabalho,
+principalmente com relação a anonimização e desanonimização de informações pessoais. 
+Visando uma maior familiarização do leitor ao domínio deste trabalho, também serão introduzidos conceitos de armazenamento de dados.
+
+\section{Privacidade}
+
+\subsection{A Sensibilização sobre privacidade}
+
+\paragraph{} De acordo com \cite{lgpd-evandro}, a Web 2.0 e o consequente crescimento da cultura participativa
+aonde os próprios usuários consumidores são também geradores de conteúdo implicou numa
+percepção de risco relacionado a privacidade cada vez maior.
+
+\paragraph{} A ampla disponibilidade de dados privados na Internet trouxe o tema às pautas dos debates políticos 
+mundiais, culminando na implementação de regulamentações para definir qual é o tratamento adequado
+a estas informações, de modo a impedir o abuso no seu uso e garantir o direito a privacidade
+de cada indivíduo.
+
+
+\subsection{O entendimento multifacetado de privacidade}
+
+\paragraph{} Warren e Brandeis - "Direito à reserva de informações pessoais e da própria vida pessoal"
+
+\subsection{A General Data Protection Regulation europeia}
+
+\paragraph{}
+
+\subsection{A Lei Geral de Protecao de Dados brasileira}
+
+\paragraph{}
+
+\section{Bases de Dados}
+
+\subsection{Tipos, Atributos e Registros}
+
+\paragraph{} De maneira geral, um registro é a unidade de armazenamento de dados. Por exemplo, num consultório médico, existem
+diversas fichas cadastrais dos pacientes, contendo nome, números de documentos, informações de contato 
+e histórico de consultas. Essas fichas, quando implementadas em um meio digital, seja através de um software que acessa um banco de dados ou mesmo de uma planilha, podem ser armazenadas sob a forma de linhas em uma tabela. Cada linha desta tal tabela hipotética é um registro e cada uma das colunas nesta linha é um atributo do registro.
+
+\begin{table}[ht]
+    \caption{Exemplos de registros para ficha cadastral de pacientes em uma clínica}
+    \label{table:registros}
+    \begin{center}
+        \begin{tabular}{| l | l | l | l | l |}
+        \hline
+        Nome & Idade & Logradouro & Telefone & Data da Última Consulta \\ \hline
+        João Silva & 32 & Rua do Trigo, 1 & 9999-9999 & 02/01/2020 \\ \hline
+        Maria Souza & 30 & Rua das Neves, 2 & 9999-5555 & 02/01/2020 \\ \hline
+        \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+
+\paragraph{} Os atributos, ou campos, dos registros armazenam a menor unidade de informação dentro de um conjunto de dados.
+Alguns destes campos permitem a associação entre diferentes registros ao possuírem valores únicos.
+Suponha que uma loja armazena o número de telefone 
+de seus clientes, assim como seu histórico de compras. 
+
+\paragraph{} Se o número de telefone é o mesmo que os clientes utilizaram para a ficha cadastral do consultório 
+médico mostrada anteriormente, considerando também um agente que possui acesso a ambos os dados, da loja e do 
+consultório médico, é possível realizar a junção dos dados dos dois registros. Assim, correlacionando as informações clínicas e de consumo dos clientes.
+
+\paragraph{} Além disso, cada atributo pertence a um tipo de dado. No exemplo da loja, o campo de idade é armazenado 
+como um tipo número inteiro não negativo, assim como o nome é armazenado como uma cadeia de caracteres.
+A nível de registro, é possível definir um tipo a partir do conjuntos de valores que este pode assumir \cite{cardelli1985types}. 
+Tipos impõem restrições nas operações que podem ser realizadas nos atributos, podem dar sentido semântico \cite{donahue1979semantics},
+e definem o formato de armazenamento da informação, garantindo sua consistência.
+
+\paragraph{} A quantidade de atributos em um registro determina a sua dimensionalidade. Conjuntos de dados. Diz-se que o conjunto de dados é esparso quando dois registros aleatórios estão sempre distantes no espaço multidimensional formado por seus atributos.
+
+\subsection{ETL}
+
+\section{Anonimização e Reidentificação}
+
+\subsection{Anonimização}
+
+\paragraph{} Por muitas vezes atributos em registros contém dados pessoais como CPF, nome, endereço e telefone. É fácil perceber que estes permitem atribuir um registro a um individuo especifico diretamente.
+
+\paragraph{} Essa atribuição, entretanto, é por muitas vezes indesejada. Tomando como exemplo a divulgação do resultado de testes para medicamentos, é importante para a sociedade saber caracteristicas que possam determinar o comportamento da 
+substância pesquisada em certos grupos de indivíduos. Por outro lado, é fundamental para os próprios indivíduos que seus dados pessoais não estejam presentes nos resultados públicos destes testes. 
+
+\paragraph{} Para garantir que estas duas condições sejam satisfeitas, é possível implementar um processo de anonimização sobre o conjunto de dados trabalhados. Este consiste em um processamento irreversível\cite{dias2016multilingual} sobre o conjunto de dados através de substuições, agregações e supressões de registros e seus atributos com o intuito final de gerar um novo conjunto de dados cuja possibilidade de divulgação não implica em um risco para os individuos e instituições envolvidos. 
+
+\subsection{Reidentificação}
+
+\paragraph{} É trivial perceber que os atributos que levam a associação direta de um individuo com seus registros devem ser suprimidos do conjunto de dados. Esta intuição entretanto não leva em consideração a possibilidade de reidentificação de pessoas no conjunto anonimizado através do processamento de múltiplos registros.
+
+\paragraph{} Em 2008 Arvind Narayanan e Vitaly Shmatikov demonstraram uma metologia robusta\cite{netflixDeanon}  que permitiu quebrar o anonimato de um conjunto de dados da Netflix. Os pesquisadores utilizaram as preferencias individuais, recomendações e registro de transações do conjunto anonimizado e dados públicos disponíveis no IMDB, revelando a identidade dos usuários, seu alinhamento político aparente, dentre outras informações pessoais.
+
+\paragraph{} Outro exemplo deste tipo de ataque foi demonstrado por Malin e Sweeney\cite{malin2004} em 2004 ao recuperar informações genéticas de pacientes a partir dos padrões de visitação e dados disponíveis no ambiente informacional da saúde.
+
+\section{Modelos de Privacidade}
+
+\paragraph{} A avaliação de riscos sobre dados sensíveis pode ser feita a partir da definição dos seguinte perfis: A instituição, responsável pela governança dos dados; O adversário, que deseja abusar do conjunto de dados divulgado para obter informações implicitas, possivelmente violando a privacidade dos individuos representados nos registros; O terceiro, interessados em informações analíticas e estruturais no conjunto de dados divulgado. A anonimização transforma um conjunto de dados inicial em um conjunto anonimizado.
+
+\paragraph{} Paul Ohm\cite{ohm2009} diz que "Dados podem ser úteis ou perfeitamente anônimos mas nunca ambos." Neste sentido, uma aplicação de anonimização bem sucedida deve impedir o adversário de recuperar informações a partir da associação deste com informações auxiliares de sua posse e ao mesmo tempo deve manter a utilidade dos dados para utilização de terceiros. 
+
+\paragraph{} Neste escopo, algumas técnicas podem ser utilizadas para implementar a anonimização de registros, de acordo com as metas de compromisso entre utilidade e segurança das informações.
+
+
+% \section{Figuras}
+
+% \paragraph{}Figuras (organogramas, fluxogramas, esquemas, desenhos, fotografias, gr�ficos, mapas, plantas e outros) constituem unidade aut�noma e explicam, ou complementam visualmente o texto, portanto, devem ser inseridas o mais pr�ximo poss�vel do texto a que se referem. Sua identifica��o dever� aparecer na parte inferior precedida da palavra designativa (figura), seguida de seu n�mero de ordem de ocorr�ncia, do respectivo t�tulo e/ou legenda e da fonte, se necess�rio, tal como na Figura \ref{FigDel}.
+
+% \begin{figure}
+% \begin{center}
+% \parbox[htb]{13.0cm}
+%   {
+%   \begin{center}
+%   \includegraphics[scale=1.0]{logo_del.eps}
+%   \caption[\small{Logotipo do DEL. Fonte: DEL/Poli/UFRJ \cite{Meyer97}.}]{\label{FigDel} \small{Logotipo do DEL. Fonte: DEL/Poli/UFRJ \cite{Meyer97}.}}
+%   \end{center}
+%   }
+% \end{center}
+% \end{figure}
+
+% \section{Tabelas}
+% \paragraph{}As tabelas s�o elementos demonstrativos de s�ntese que apresentam informa��es tratadas estatisticamente constituindo uma unidade aut�noma. Em sua apresenta��o deve ser observado: (1) o t�tulo dever� ser colocado na parte inferior, precedido da palavra Tabela e de seu n�mero de ordem; (2) as fontes e eventuais notas aparecem em seu rodap�, ap�s o fechamento, utilizando-se o tamanho 10; (3) Devem ser inseridas o mais pr�ximo poss�vel do trecho a que se referem, tal como a Tabela \ref{TabIntranet}.
+
+% \begin{table}[h]
+% 	\begin{center}
+% 	  \caption{Casos de ataques aos computadores da Intranet. Fonte: DEL/Poli/UFRJ \cite{Meyer97}.}
+% 		\begin{tabular}{|c|c|c|}\hline
+% 		  \textbf{N�mero I}P & \textbf{Ataques} & \textbf{Ataques bem sucedidos} \\ \hline \vspace{-1.0mm}
+% 		  192.168.0.120 & 54 & 1 \\ \hline \vspace{-1.0mm}
+% 		  192.168.0.123 & 36 & 2 \\ \hline \vspace{-1.0mm}
+% 		  192.168.0.129 & 25 & 4 \\ \hline \vspace{-1.0mm}
+% 		  192.168.0.130 & 16 & 0 \\ \hline \vspace{-1.0mm}
+% 		  192.168.0.141 & 29 & 3 \\ \hline \vspace{-1.0mm}
+% 		  \textbf{Total} & \textbf{160} & \textbf{10} \\ \hline
+% 		\end{tabular}
+% 	\end{center}
+% 	\label{TabIntranet}
+% \end{table}
+
+
+% \section{Numera��o de p�ginas}
+
+% \paragraph{}O aluno deve observar atentamente a numera��o de p�ginas de seu projeto. A primeira parte deste modelo de projeto final, composta pela dedicat�ria, agradecimento, resumo, abstract, siglas, sum�rio, lista de figuras e lista de tabelas, � numerada seq�encialmente utilizando algarismos romanos min�sculos. As demais folhas, descritas na segunda parte deste modelo, s�o numeradas seq�encialmente utilizando algarismos ar�bicos.
+
+% \paragraph{}Contudo, exclusivamente para a segunda parte do modelo de projeto, � permitida uma numera��o alternativa na qual o aluno poder� numerar as p�ginas por cap�tulo. Por exemplo, a primeira p�gina deste Cap�tulo 2 - Informa��es Adicionais, poderia ser escrita como 2.1. Al�m disto, a p�gina seguinte seria 2.2 e a presente p�gina poderia ser escrita como 2.3. A p�gina do Ap�ndice A - O que � um ap�ndice, poderia ser escrita como A.1, enquanto que a primeira p�gina do ap�ndice B seria B.1. Neste caso alternativo espec�fico, a Bibliografia na dever� conter numera��o.
+

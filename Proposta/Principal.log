@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  14 JUN 2020 11:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  14 JUN 2020 22:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,6 +23,9 @@ File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 ) (/Users/atcha/Github/Monografia/Proposta de Projeto de Graduacao/FormatoPack.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/layout.sty
 Package: layout 2014/10/28 v1.2c Show layout parameters
 \oneinch=\count176
@@ -324,7 +327,7 @@ LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \macc@depth=\count323
 \c@MaxMatrixCols=\count324
-\dotsspace@=\muskip16
+\dotsspace@=\muskip17
 \c@parentequation=\count325
 \dspbrk@lvl=\count326
 \tag@help=\toks37
@@ -383,20 +386,20 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 ) (/Users/atcha/Github/Monografia/Proposta de Projeto de Graduacao/Principal.aux)
 \openout1 = `Principal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 ) (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -420,11 +423,11 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/data/uni-0.def
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 19.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 19.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
@@ -447,43 +450,58 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@refangle 0.  def grestore  e...
 Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<Figuras/gantt.pdf, id=13, 845.04686pt x 597.50786pt>
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation `sqlalch' on page 2 undefined on input line 69.
+
+[2]
+<Figuras/gantt.pdf, id=11, 845.04686pt x 597.50786pt>
 File: Figuras/gantt.pdf Graphic file (type pdf)
 <use Figuras/gantt.pdf>
-Package pdftex.def Info: Figuras/gantt.pdf  used on input line 110.
+Package pdftex.def Info: Figuras/gantt.pdf  used on input line 106.
 (pdftex.def)             Requested size: 380.26758pt x 268.87605pt.
  [3] [4 </Users/atcha/Github/Monografia/Proposta de Projeto de Graduacao/Figuras/gantt.pdf>]
-Underfull \hbox (badness 1466) in paragraph at lines 116--117
-[]\OT1/cmr/m/n/12 MEYER, Ju-lie, "Per-so-nal data: time to ar-gue about mo-ney, not pri-
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+[]\OT1/cmr/m/n/12 Hist^^Sorico de Pes-soas F^^S^^Psicas, $\OT1/cmtt/m/n/12 http : / / www . b3 . com . br / pt \ _br /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
-[]\OT1/cmr/m/n/12 "SQL Al-chemy Fe-a-tu-res- SQ-LAl-chemy authors and con-tri-bu-tors.
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+\OT1/cmtt/m/n/12 market-[]data-[]e-[]indices / servicos-[]de-[]dados / market-[]data / consultas /
  []
 
 
-Underfull \hbox (badness 5302) in paragraph at lines 120--121
-\OT1/cmr/m/n/12 https://www.sqlalchemy.org/features.html, 2019 (Acesso em 22 se-tem-bro
+Underfull \hbox (badness 3701) in paragraph at lines 113--115
+\OT1/cmtt/m/n/12 mercado-[]a-[]vista / historico-[]pessoas-[]fisicas/$\OT1/cmr/m/n/12 , 2020 (Aces-sado em Ju-
+ []
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Overfull \hbox (354.57555pt too wide) in paragraph at lines 116--119
+\OT1/cmtt/m/n/12 https://oglobo.globo.com/economia/bolsa-ganha-mais-de-300-mil-investidores-na-pandemia-ultrapassa-2-milhoes-de-cpfs-24434447\OT1/cmr/m/n/12 ,
  []
 
 [5
 
-] (/Users/atcha/Github/Monografia/Proposta de Projeto de Graduacao/Principal.aux) ) 
+] (/Users/atcha/Github/Monografia/Proposta de Projeto de Graduacao/Principal.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 12086 strings out of 480608
- 200577 string characters out of 5903630
- 466349 words of memory out of 5000000
- 27785 multiletter control sequences out of 15000+600000
- 538926 words of font info for 48 fonts, out of 8000000 for 9000
+ 12397 strings out of 480608
+ 204187 string characters out of 5903630
+ 466460 words of memory out of 5000000
+ 28090 multiletter control sequences out of 15000+600000
+ 538411 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,9n,53p,736b,583s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "/Users/atcha/Github/Monografia/Proposta de Projeto de Graduacao/Principal.pdf" (5 pages, 69764 bytes).
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on "/Users/atcha/Github/Monografia/Proposta de Projeto de Graduacao/Principal.pdf" (5 pages, 65423 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,5 @@
 \documentclass[a4paper,12pt,oneside,openany]{report}	
+\usepackage{url}
 
 \input{FormatoPack}
 
@@ -17,17 +18,17 @@
 
 \underline{\textbf{PROPOSTA DE PROJETO DE GRADUAÇÃO}}
 
-Aluno: Varlen Pavani Neto
+Aluno: Pedro Henrique Barbosa Nori
 \vspace{-0.2cm}
 
-varlenneto@poli.ufrj.br
+pedrobnori@poli.ufrj.br
 
-Orientador: Heraldo Luis Silveira de Almeida
+Orientador:
 \end{center}
 
 \textbf{1. TÍTULO}
 
-	Ferramenta para Tratamento de Informações Sensíveis em Bancos de Dados
+	Técnicas de Aprendizado de Máquina Aplicadas ao Mercado de Ações
 
 \vspace{0.4cm}
 \textbf{2. ÊNFASE}
@@ -37,24 +38,19 @@ Computação
 \vspace{0.4cm}
 \textbf{3. TEMA}
 
-O tema do trabalho é o desenvolvimento de uma ferramenta que permita exportar informações dessensibilizadas e anonimizadas de um banco de dados.
+O tema deste trabalho visa a aplicação de inteligência artificial às negociações do mercado financeiro. Nesse sentido, o problema a ser analisado é a identificação de tendências de alta na variação dos preços das ações, bem como a análise de risco para entrada e saída em operações de um determinado ativo.
 
 \vspace{0.4cm}
 \textbf{4. DELIMITAÇÃO}
 
-O objeto de estudo do trabalho são processos de anonimização e garantia de privacidade em conjuntos de dados,
-culminando na implementação de um software para realizar tais processos. No presente trabalho, as implementações destes processos serão estudados a partir de software livre.
+O objeto de estudo do trabalho se restringe aos dados reais negociados na Bolsa de Valores de São Paulo (BM\&FBovespa), disponibilizados gratuitamente pela instituição. A janela temporal é diária devido as dificuldades de armazenamento de dados para janeras menores. Portanto, toda a análise será voltada para tomada de decisões de Swing Trade, isto é, operações de compra e venda de ações numa janela de tempo maior que um dia.
 
 \vspace{0.4cm}
 \textbf{5. JUSTIFICATIVA}
 
-A ubiquidade de dados pessoais produzidos pelo consumo de serviços digitais e o seu posterior entendimento como \textit{commodity} \cite{jmeyer} tem gerado uma crescente preocupação com a privacidade por parte das pessoas. 
-
-Por muitas vezes a privacidade é vista como um direito fundamental\cite{solove}. Assim, a nível governamental esta preocupação foi transformada em legislação ao redor do mundo, como por exemplo o Regulamento Geral sobre a Proteção de Dados 2016/679 da União Europeia e a brasileira Lei Geral de Proteção de Dados Pessoais, Lei nº 13.709/2018.
-
-Surge então nas instituições a necessidade de adequar processos e a maneira com que tratam seus dados à legislação vigente.
-
-O presente projeto busca então complementar os modelos e técnicas, e revisar ferramentas existentes com o intuito de verificar seus pontos de melhoria e implementar um software de código aberto que auxilie as instituições a atingirem seus objetivos de conformidade com a lei, permitindo processar massas de dados sem perda de utilidade prática.
+O número de investidores na Bolsa de Valores brasileira tem apresentado um crescimento cada vez 
+maior \cite{historicopf}. 
+Mesmo após a crise decorrida pela pandemia COVID-19, os números continuam crescentes
 
 \vspace{0.4cm}
 \textbf{6. OBJETIVO}
@@ -113,17 +109,19 @@ Fase 7: Elaboração da monografia
 
 \begin{thebibliography}{}
 
-\bibitem{jmeyer} MEYER, Julie, "Personal data: time to argue about money, not privacy". Financial Times. https://www.ft.com/content/ba39f1a6-ea66-11e4-96ec-00144feab7de\#ixzz3YcJONvSE, 2013 (Acesso em 22 setembro 2019)
+\bibitem{historicopf}
+Histórico de Pessoas Físicas, 
+\url{http://www.b3.com.br/pt\_br/market-data-e-indices/servicos-de-dados/market-data/consultas/mercado-a-vista/historico-pessoas-fisicas/}, 2020 (Acessado em Junho/2020)
 
-\bibitem{solove} SOLOVE, Daniel J. "Understanding privacy." Cambridge, MA: Harvard university press, 2008
-
-\bibitem{sqlalch} "SQL Alchemy Features" - SQLAlchemy authors and contributors. https://www.sqlalchemy.org/features.html, 2019 (Acesso em 22 setembro 2019)
+\bibitem{investidores-covid} BATISTA, Henrique G. 
+"Bolsa ganha mais de 300 mil investidores na pandemia e ultrapassa 2 milhões de ‘CPFs’", 
+\\\texttt{https://oglobo.globo.com/economia/bolsa-ganha-mais-de-300-mil-investidores-na-pandemia-ultrapassa-2-milhoes-de-cpfs-24434447}, 2020 (Acessado em junho/2020)
 
 \end{thebibliography}
 
       \vspace{2cm}
       \noindent
-Rio de Janeiro, 23 de setembro de 2019
+Rio de Janeiro, 14 de junho de 2020
 
       \vspace{0.5cm}
       \begin{flushright}
@@ -131,13 +129,13 @@ Rio de Janeiro, 23 de setembro de 2019
             \hrulefill
 
             \vspace{-.375cm}
-            \centering{Varlen Pavani Neto - Aluno}
+            \centering{Pedro Henrique Barbosa Nori - Aluno}
 
             \vspace{0.9cm}
             \hrulefill
 
             \vspace{-.375cm}
-            \centering{Heraldo Luis Silveira de Almeida - Orientador}
+            \centering{ - Orientador}
  
             \vspace{0.9cm}
          }

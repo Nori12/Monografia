@@ -1,0 +1,57 @@
+\begin{thebibliography}{10}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{lgpd-evandro}
+RUIZ, E. E.~S., \enquote{Coment{\'a}rios {\`a} Lei Geral de Prote{\c{c}}{\~a}o
+  de Dados: Lei n. 13.709/2018, com altera{\c{c}}{\~a}o da Lei n. 13.853/2019},
+  2020.
+
+\bibitem{cardelli1985types}
+CARDELLI, L., WEGNER, P., \enquote{On understanding types, data abstraction,
+  and polymorphism}, \emph{ACM Computing Surveys (CSUR)}, v.~17, n.~4,
+  pp.~471--523, 1985.
+
+\bibitem{donahue1979semantics}
+DONAHUE, J., \enquote{On the semantics of “data type”}, \emph{SIAM Journal
+  on Computing}, v.~8, n.~4, pp.~546--560, 1979.
+
+\bibitem{dias2016multilingual}
+DIAS, F. M.~C., \enquote{Multilingual automated text anonymization},
+  \emph{Instituto Superior T{\'e}cnico of Lisboa}, , 2016.
+
+\bibitem{netflixDeanon}
+NARAYANAN, A., SHMATIKOV, V., \enquote{Robust de-anonymization of large sparse
+  datasets}. In: \emph{2008 IEEE Symposium on Security and Privacy (sp 2008)},
+  pp. 111--125, IEEE, 2008.
+
+\bibitem{malin2004}
+MALIN, B., SWEENEY, L., \enquote{How (not) to protect genomic data privacy in a
+  distributed network: using trail re-identification to evaluate and design
+  anonymity protection systems}, \emph{Journal of biomedical informatics},
+  v.~37, n.~3, pp.~179--192, 2004.
+
+\bibitem{ohm2009}
+OHM, P., \enquote{Broken promises of privacy: Responding to the surprising
+  failure of anonymization}, \emph{UCLA l. Rev.}, v.~57, pp.~1701, 2009.
+
+\bibitem{Anonymizer}
+DIVANTELTD, \enquote{Repositório Anonymizer},
+  https://github.com/DivanteLtd/anonymizer, (Acesso em 16 de Maio de 2020).
+
+\bibitem{data-anon-repository}
+THOUGHTWORKS, \enquote{Repositório Data::Anonymization},
+  github.com/sunitparekh/data-anonymization/, (Acesso em 16 de Maio de 2020).
+
+\bibitem{active-record}
+RUBY ON RAILS, \emph{Active Record Basics}. (Acesso em 17 de Maio de 2020).
+
+\bibitem{prasser2020flexible}
+PRASSER, F., EICHER, J., SPENGLER, H., \emph{et~al.}, \enquote{Flexible data
+  anonymization using ARX—Current status and challenges ahead},
+  \emph{Software: Practice and Experience}, , 2020.
+
+\bibitem{presidio}
+MICROSOFT, \enquote{Repositório Microsoft Presidio},
+  https://github.com/microsoft/presidio, (Acesso em 16 de Maio de 2020).
+
+\end{thebibliography}

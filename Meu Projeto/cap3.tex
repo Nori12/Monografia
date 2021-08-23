@@ -1,4 +1,63 @@
-\paragraph{}Tratam-se das considera��es finais do trabalho, mostrando que os objetivos foram cumpridos e enfatizando as descobertas feitas durante o projeto. Em geral reserva-se um ou dois par�grafos para sugerir trabalhos futuros.
+\chapter{Metodologia}
+\label{cap3}
 
-\paragraph{}Observe que neste modelo a conclus�o � numerada pelo numeral 3, mas o projeto n�o tem a obrigatoriedade de possuir apenas 3 cap�tulos. Alias, espera-se que tenha mais que isso.
+\paragraph{} Este capítulo apresenta o resultado da prospecção das ferramentas de código aberto existentes com o intuito de entender as capacidades fornecidas e determinar os requisitos necessários a uma nova solução.
 
+\section{Descoberta de Ferramentas}
+
+\paragraph{}
+Para descoberta de ferramentas de anonimização neste trabalho, foram utilizados projetos de código-aberto disponíveis em repositórios públicos no GitHub. 
+
+\paragraph{}
+Especificamente, foram consideradas as métricas de stars e forks dos repositórios como medida de popularidade para seleção de 4 projetos relativos a anonimização de dados. Todos os projetos apresentavam novas modificações no código-fonte em Março de 2020, indicando que são mantidos pelas comunidade. Buscou-se inferir os casos de uso, funcionalidades, usabilidade e tecnologias utilizadas a partir da documentação dos projetos. Considerou-se a primeira linha dos arquivos README dos repositórios como nome do projeto.
+
+\subsection{Anonymizer}
+
+\paragraph{} Anonymizer\cite{Anonymizer} foi desenvolvida na linguagem de programação Ruby pela compania européia Divante e opera exclusivamente em bancos de dados MySQL. Segundo a documentação, sua funcionalidade mais importante é a formatação de dados. A ferramenta substitui os dados originais por dados gerados de acordo com o tipo. Sua instalação é feita a partir de uma cópia do repositório de código-fonte para a máquina na qual se deseja executar.
+
+\paragraph{} O processo de anonimização é feito a partir de um arquivo de dump do banco de dados. Este arquivo pode estar na mesma máquina que executa o processo ou em uma máquina remota. O usuário deve criar um arquivo no formato JSON com os parâmetros do processo.
+
+\paragraph{} A ferramenta permite substituir os valores nas tabelas por valores fixos, valores em branco ou gerados, de acordo com a categoria. São suportadas as categorias firstname, lastname, login, email, telephone, company, street, postcode, city, full{\_}address, vat{\_}id, ip, quote, website, iban, json, uniq{\_}email, uniq{\_}login, regon (equivalente polonês ao CNPJ) e pesel (equivalente polonês ao CPF). 
+
+\paragraph{} Também é possível truncar todos os dados de uma tabela e executar comandos SQL arbitrários antes ou depois do processo.
+
+\subsection{Data::Anonymization}
+
+
+\paragraph{} Data::Anonymization\cite{data-anon-repository} é uma solução criada pela ToughtWorks Inc usando a linguagem de programação Ruby. Sua instalação é feita através do gerenciador de pacotes do Ruby.
+
+\paragraph{} É possível utilizar a ferramenta em bancos de dados para os quais existam uma implementação de driver compatível com o Active Record\cite{active-record}, que é a implementação de mapeamento objeto relacional do framework Ruby on Rails. O repositório fornece exemplos de uso para SQLite, Postgres e MongoDB.
+
+\paragraph{} Seu funcionamento é similar ao de uma biblioteca. O usuário deve utilizar Linguagem Específica de Domínio fornecida pela ferramenta definindo as tabelas, suas relações e qual estratégia de anonimização deve ser aplicada a cada coluna.
+
+\paragraph{} O usuário pode definir se deseja que todos os campos sejam anonimizados e explicitar os campos que não devem ser anonimizados ou se deseja modificar apenas os campos listados. Como exemplos de estratégias de anonimização é possível listar: geração de valores aleatórios, tanto para campos numéricos quanto textuais; sorteio de um valor a partir de uma lista; modelos formatados; resultados de uma consulta 
+no banco de dados; deslocamento de valores de instantes de tempo e intervalos de tempo; geração de números de telefone, código postal e endereço. 
+
+\paragraph{} Caso seja usado o modo em que todos os campos são anonimizados, a ferramenta aplicará estratégias de anonimização padrão dependendo do tipo de dado da coluna. Alguns registros podem ser ignorados a partir de verificações condicionais.
+
+\paragraph{} Também é possível extender a funcionalidade embutida e implementar um estratégia customizada utilizando a linguagem Ruby. Essa estratégia é então disponibilizada para uso na Linguagem Específica de Domínio.
+
+\paragraph{} Um detalhe de implementação importante é que a ferramenta altera os valores diretamente no banco de dados em que está conectada.
+
+
+\subsection{ARX - Open Source Data Anonymization Software}
+
+\paragraph{} Os criadores do ARX\cite{prasser2020flexible} explicam que o seu objetivo é produzir um software livre com alto grau de automação que fornece uma gama variada de tecnicas de anonimização. Várias destas técnicas estão descritas em publicações especificas e incluem algoritmos criados a partir de modelos estatísticos, teoria dos jogos, privacidade diferencial, dentre outras. O programa fornece uma interface gráfica para operação e sua entrada de dados é feita a partir de arquivos CSV.
+
+\paragraph{} O ARX utiliza um algoritmo de busca global para transformação de dados com "full-domain generalization" e supressão de registros. Full-domain generalization implica que todos os  valores de um atributo são transformados ao mesmo nível de generalização em todos os registros.
+
+\paragraph{} Ou seja, um atributo (ou coluna) categórico de Gênero em um registro típicamente possui os valores Masculino, Feminino e Outros. Esse atributo é generalizado a um nível hierarquico acima através da supressão. Ou seja, o valor armazenado no registro é transformado em "*". No caso de um atributo numérico de idade, a generalização transforma um valor específico em uma faixa etária. A extensão da faixa depende do nível de generalização aplicado. O resultado de todas as operações de transformação deve considerar a relação de custo-benefício entre anonimização e utilidade.
+
+\paragraph{} São implementadas também funções para agregação dos dados: Para valores númericos é possível aplicar a média aritmética, média geométrica, mediana, moda, além de agregação em conjunto ou intervalo. Para valores categóricos, as operações de mediana, moda e agregação por conjunto estão disponíveis. O usuário também pode definir funções personalizadas indicando quais conjuntos de atributos deverão ser transformados em um valor comum.
+
+\paragraph{} O programa busca a solução ótima para a anonimização do conjunto de dados utilizando configurações definidas pelo usuário como o número máximo de registros que podem ser suprimidos, particionamentos do conjunto de dados a serem transformados utilizando técnicas diferentes, amostragem do conjunto de dados de entrada avaliadas contra diversos modelos de riscos de privacidade.
+
+\paragraph{} O ARX fornece uma solução robusta para anonimização, sendo a ferramenta mais flexível dentre as ferramentas avaliadas, ao custo de maior complexidade de operação. Entretanto, não necessariamente conserva os tipos de dados entre o conjunto original e o conjunto de saída (Uma idade é um tipo numérico, enquanto uma faixa etária é uma estrutura de dois valores numéricos).
+
+\subsection{Presidio}
+
+\cite{presidio}
+
+TODO
+
+\section{Visão Geral}

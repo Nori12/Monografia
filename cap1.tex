@@ -1,0 +1,49 @@
+\chapter{Introdução}
+\label{cap1}
+
+\section{Tema}
+
+\paragraph{} O tema deste trabalho se resume no aperfeiçoamento de uma estratégia de swing trade na bolsa de valores através de métodos de aprendizado de máquina.
+
+\paragraph{} Nesse contexto, o problema a ser abordado é a identificação do momento apropriado para compra de um determinado ativo, bem como os preços alvos determinantes para venda, tendo em vista uma variação positiva de seu preço.
+
+
+\section{Delimitação}
+
+\paragraph{} Este trabalho se limita aos ativos negociados na Bolsa de Valores de São Paulo, a B3, cujos dados diários são de domínio público e foram adquiridos através da plataforma Yahoo Finance pela API open-source (yfinance), disponível em Python. Não são levadas em consideração informações sobre proventos (dividendos e juros sobre capital próprio) devido à inconsistência dos mesmos na API supracitada e à dificuldade técnica para automatização da busca de tais dados.
+
+\paragraph{} A duração das operações tem em vista um horizonte mínimo de dias, sendo portanto operações de swing trade. Não são realizas vendas a descoberto, portanto só há lucro em variações positivas dos ativos. Apenas uma operação por ativo pode existir em um determinado instante de tempo para uma estratégia. Em outras palavras, só é possível comprar mais ações de uma empresa após a venda completa das ações da mesma, caso exista.
+
+\section{Justificativa}
+
+\paragraph{} O crescimento do número de investidores na bolsa de valores brasileira\cite{aumento_investidores} demonstra um maior interesse da população na busca por um complemento da renda familiar ou até uma substituição da fonte de renda principal.
+
+\paragraph{} No cenário global, o aumento do uso de robôs de trading (ou algoritmos) já vem se mostrando uma tendência\cite{robos_investidores}, sejam por pessoas físicas ou fundos de investimento, de forma total ou parcial. Por outro lado, tal crescimento não vem sendo igualmente representado no Brasil devido às pecualiaridades do mercado de capitais nacional, como a alta volatilidade e alta sensibilidade a notícias\cite{robos_e_fundos}.
+
+\paragraph{} Paralelamente, estudos relacionados a aprendizado de máquina já vem trazendo resultados práticos no dia-a-dia das pessoas, desde o clássico exemplo do reconhecimento de mensagens de spam em um caixa de email à identificação do perfil de consumo de clientes em uma loja. Da mesma forma, instituições financeiras e bancos centrais também vem, com cautela, incorporando cada vez mais aplicações de aprendizado de máquina em tarefas internas\cite{ml_finantial_usage}.
+
+\paragraph{} Apesar das dificuldades inerentes ao cenário atual do mercado de capitais brasileiro, não se pode ignorar o potencial que os algortimos podem trazer. Desta forma, o presente trabalho visa a união de técnicas de aprendizado de máquina a estratégias de trading de forma a trazer uma melhor performance, colaborando assim para uma maior variedade de opções de investimentos à população brasileira.
+
+\section{Objetivos}
+
+\paragraph{} O objetivo geral deste trabalho é implementar um software que simule uma estratégia de swing trade utilizada no mercado financeiro e gerar uma nova estratégia que utilize machine learning a fim de melhorar sua performance. Especificamente, o software deve: (1) Criar um ambiente automatizado que permita buscar, atualizar e armazenar dados diários da bolsa brasileira de forma simples e conforme necessidade do usuário da aplicação; (2) Simular a estratégia de swing trade do trader André Moraes da forma mais fidedigna que a janela de dados diária permita; (3) Criar e simular um novo algoritmo baseado na estratégia anterior utilizando aprendizado de máquina; (4) Criar e simular uma estratégia de baseline, referente à estratégia de machine learning; (5) Analisar os modelos gerados.
+
+\section{Metodologia}
+
+\paragraph{} O trabalho teve início na criação de um ambiente propício à simulação de estratégias, bem como sua configuração e manutenção. A fim de: otimizar o tráfego de dados pela internet; minimizar o processamento necessário para a geração de dados derivados (pré-processamento) e armazenar os resultados das estratégias de forma organizada, foi utilizado um banco de dados PostgreSQL. Dentre as atividades realizadas durante o pré-processamento dos dados, anteriores à simulação de estratégias, é possível citar a geração de candles semanais a partir de candles diários, a identificação de picos e os momentos de tendência de alta do mercado, assim como a execução de médias móveis exponenciais.
+
+\paragraph{} Em seguida, a etapa de simulação tem início a partir da leitura de um arquivo JSON contendo todos parâmetros necessários para a execução das estratégias. Nesta etapa, o programa itera dia após dia para cada estratégia configurada verificando os momentos e os valores de compra e de venda para cada ativo que compõe as carteiras. Ao final, registram-se no banco todas as operações executadas, independente da obtenção de lucro, junto com informações estatísticas que permitem a avaliação da performance. Aqui foram criadas e executadas a estratégia base, que é uma adaptação do André Moraes, a estratégia aprimorada que utiliza aprendizado de máquina, e a estratégia de baseline, respectivamente.
+
+\paragraph{} Por fim, com o objetivo de facilitar a análise dos resultados gerados, criou-se um dashboard resposável por centralizar todas as informações pertinentes a uma execução de estratégia em uma única página web.
+
+\paragraph{} Observa-se que além do uso de estruturas do banco de banco de dados PostgreSQL, como triggers e functions, o código foi construído em Python devido à ampla variedade de bibliotecas, especialmente de Data Sciente e suporte da comunidade, apesar da desvantagem de desempenho por ser uma linguagem interpretada. Bastante foco foi dado à escalabilidade e à manutenção do código, que contou com as bibliotecas e as APIs yfinance, pandas, numpy, scikit-learn, multiprocessing, matplotlib e dash. Também utilizou-se containers Docker para simplificar a execução.
+
+\section{Descrição}
+
+\paragraph{}No capítulo 2 será feita a apresentação introdutória sobre
+privacidade, conceitos associados e suas relevâncias no contexto socioeconômico
+contemporâneo.
+
+\paragraph{}O capítulo 3 apresenta um panorama de ferramentas de anonimização
+cuja licença garanta a abertura do código-fonte com o intuito de prospectar as
+funcionalidades fornecidas por esses programas.

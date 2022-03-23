@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  21 AUG 2021 06:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  23 MAR 2022 01:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -87,17 +87,6 @@ Package: indentfirst 1994/05/23 v1.02 Indent first paragraph (DPC)
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
- (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/utf8x.def
-File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
-)) (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/ucs.sty
-Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
- (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/data/uni-global.def
-File: uni-global.def 2013/05/13 UCS: Unicode global data
-)
-\uc@secondtry=\count275
-\uc@combtoks=\toks17
-\uc@combtoksb=\toks18
-\uc@temptokena=\toks19
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
@@ -114,7 +103,7 @@ Package: epsfig 2017/06/25 v1.7b (e)psfig emulation (SPQR)
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks20
+\KV@toks@=\toks17
 )
 \Gin@req@height=\dimen136
 \Gin@req@width=\dimen137
@@ -148,30 +137,30 @@ File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
  (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
-\XKV@toks=\toks21
-\XKV@tempa@toks=\toks22
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
 )
-\XKV@depth=\count276
+\XKV@depth=\count275
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pstricks/pstricks.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pstricks/pst-fp.tex `pst-fp' v0.05, 2010/01/17 (hv)
-\pstFP@xs=\count277
-\pstFP@xia=\count278
-\pstFP@xib=\count279
-\pstFP@xfa=\count280
-\pstFP@xfb=\count281
-\pstFP@rega=\count282
-\pstFP@regb=\count283
-\pstFP@regs=\count284
-\pstFP@times=\count285
+\pstFP@xs=\count276
+\pstFP@xia=\count277
+\pstFP@xib=\count278
+\pstFP@xfa=\count279
+\pstFP@xfb=\count280
+\pstFP@rega=\count281
+\pstFP@regb=\count282
+\pstFP@regs=\count283
+\pstFP@times=\count284
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks23
+\pgfutil@everybye=\toks20
 \pgfutil@tempdima=\dimen140
 \pgfutil@tempdimb=\dimen141
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
+\pgfkeys@pathtoks=\toks21
+\pgfkeys@temptoks=\toks22
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks23
 )) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Loading pgffor.code.tex
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
@@ -183,28 +172,28 @@ Loading pgffor.code.tex
 \pgf@ya=\dimen147
 \pgf@yb=\dimen148
 \pgf@yc=\dimen149
-\c@pgf@counta=\count286
-\c@pgf@countb=\count287
-\c@pgf@countc=\count288
-\c@pgf@countd=\count289
-\pgfutil@tempcnta=\count290
-\pgfutil@tempcntb=\count291
+\c@pgf@counta=\count285
+\c@pgf@countb=\count286
+\c@pgf@countc=\count287
+\c@pgf@countd=\count288
+\pgfutil@tempcnta=\count289
+\pgfutil@tempcntb=\count290
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen150
-\pgfmath@count=\count292
+\pgfmath@count=\count291
 \pgfmath@box=\box45
-\pgfmath@toks=\toks27
-\pgfmath@stack@operand=\toks28
-\pgfmath@stack@operation=\toks29
+\pgfmath@toks=\toks24
+\pgfmath@stack@operand=\toks25
+\pgfmath@stack@operation=\toks26
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count293
+\c@pgfmathroundto@lastzeros=\count292
 ))
 \pgffor@iter=\dimen151
 \pgffor@skip=\dimen152
-\pgffor@stack=\toks30
-\pgffor@toks=\toks31
+\pgffor@stack=\toks27
+\pgffor@toks=\toks28
 )
-\psLoopIndex=\count294
+\psLoopIndex=\count293
 
 `PSTricks' v2.97  <2019/05/11> (tvz,hv)
 \pst@dima=\dimen153
@@ -220,32 +209,32 @@ Loading pgffor.code.tex
 \pst@hbox=\box46
 \pst@ibox=\box47
 \pst@boxg=\box48
-\pst@cnta=\count295
-\pst@cntb=\count296
-\pst@cntc=\count297
-\pst@cntd=\count298
-\pst@cntg=\count299
-\pst@cnth=\count300
-\pst@cntm=\count301
-\pst@cntn=\count302
-\pst@cnto=\count303
-\pst@cntp=\count304
-\@zero=\count305
-\pst@toks=\toks32
+\pst@cnta=\count294
+\pst@cntb=\count295
+\pst@cntc=\count296
+\pst@cntd=\count297
+\pst@cntg=\count298
+\pst@cnth=\count299
+\pst@cntm=\count300
+\pst@cntn=\count301
+\pst@cnto=\count302
+\pst@cntp=\count303
+\@zero=\count304
+\pst@toks=\toks29
 (/usr/local/texlive/2020/texmf-dist/tex/generic/pstricks/pstricks.con)
 \psunit=\dimen163
 \psxunit=\dimen164
 \psyunit=\dimen165
-\pst@C@@rType=\count306
+\pst@C@@rType=\count305
 \pslinewidth=\dimen166
 \psk@startLW=\dimen167
 \psk@endLW=\dimen168
-\pst@customdefs=\toks33
+\pst@customdefs=\toks30
 \pslinearc=\dimen169
 \pst@symbolStep=\dimen170
 \pst@symbolWidth=\dimen171
 \pst@symbolLinewidth=\dimen172
-\everypsbox=\toks34
+\everypsbox=\toks31
 \psframesep=\dimen173
 \pslabelsep=\dimen174
 \sh@wgridXunit=\dimen175
@@ -259,14 +248,14 @@ File: pst-fp.tex 2019/05/11 v2.97 `PST-fp' (hv)
 Package: pst-node 2012/09/18 v1.01 LaTeX wrapper for `pst-node' (HV)
 Package: pst-node 2010/04/22 package wrapper for pst-node.tex
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pst-node/pst-node.tex  v1.42, 2019/03/03
-\psrow=\count307
-\pscol=\count308
-\psmatrixcnt=\count309
+\psrow=\count306
+\pscol=\count307
+\psmatrixcnt=\count308
 \psrowsep=\skip49
 \pscolsep=\skip50
-\pst@args=\count310
-\num@pts=\count311
-\pst@argcnt=\count312
+\pst@args=\count309
+\num@pts=\count310
+\pst@argcnt=\count311
 )
 File: pst-node.tex 2019/03/03 1.42 `pst-node' (tvz,hv)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/pst-tree/pst-tree.sty
@@ -274,11 +263,11 @@ Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
  (/usr/local/texlive/2020/texmf-dist/tex/generic/pst-tree/pst-tree.tex  v1.13, 2017/02/18(tvz,dg,hv)
 \pstree@rootbox=\box49
 \pstree@box=\box50
-\psnodecnt=\count313
-\pstreelevel=\count314
-\pstreecnt=\count315
-\pstree@cnt=\count316
-\pstree@stop=\count317
+\psnodecnt=\count312
+\pstreelevel=\count313
+\pstreecnt=\count314
+\pstree@cnt=\count315
+\pstree@stop=\count316
 )
 File: pst-tree.tex 2017/02/18 1.13 `pst-tree' (tvz,hv)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/alltt.sty
@@ -289,7 +278,7 @@ Package: rotating 94/04/15 2 SPQR
 Style option: rotating 2 <94/04/15> (SPQR / LMB)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks35
+\@enLab=\toks32
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
 \@mathmargin=\skip51
@@ -299,7 +288,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks36
+\@emptytoks=\toks33
 \ex@=\dimen178
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -307,13 +296,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count318
+\inf@bad=\count317
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count319
-\leftroot@=\count320
+\uproot@=\count318
+\leftroot@=\count319
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count321
-\DOTSCASE@=\count322
+\classnum@=\count320
+\DOTSCASE@=\count321
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
@@ -322,26 +311,26 @@ LaTeX Info: Redefining \cdots on input line 610.
 \big@size=\dimen180
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count323
-\c@MaxMatrixCols=\count324
+\macc@depth=\count322
+\c@MaxMatrixCols=\count323
 \dotsspace@=\muskip16
-\c@parentequation=\count325
-\dspbrk@lvl=\count326
-\tag@help=\toks37
-\row@=\count327
-\column@=\count328
-\maxfields@=\count329
-\andhelp@=\toks38
+\c@parentequation=\count324
+\dspbrk@lvl=\count325
+\tag@help=\toks34
+\row@=\count326
+\column@=\count327
+\maxfields@=\count328
+\andhelp@=\toks35
 \eqnshift@=\dimen181
 \alignsep@=\dimen182
 \tagshift@=\dimen183
 \tagwidth@=\dimen184
 \totwidth@=\dimen185
 \lineht@=\dimen186
-\@envbody=\toks39
+\@envbody=\toks36
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks40
+\mathdisplay@stack=\toks37
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -372,7 +361,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 \multirow@colwidth=\skip54
-\multirow@cntb=\count330
+\multirow@cntb=\count329
 \multirow@dima=\skip55
 \bigstrutjot=\dimen258
 )) (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
@@ -381,22 +370,22 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip57
 \LTpre=\skip58
 \LTpost=\skip59
-\LTchunksize=\count331
+\LTchunksize=\count330
 \LTcapwidth=\dimen259
 \LT@head=\box53
 \LT@firsthead=\box54
 \LT@foot=\box55
 \LT@lastfoot=\box56
-\LT@cols=\count332
-\LT@rows=\count333
-\c@LT@tables=\count334
-\c@LT@chunks=\count335
-\LT@p@ftn=\toks41
+\LT@cols=\count331
+\LT@rows=\count332
+\c@LT@tables=\count333
+\c@LT@chunks=\count334
+\LT@p@ftn=\toks38
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count336
+\l__kernel_color_stack_int=\count335
 \l__pdf_internal_box=\box57
-) (/Users/atcha/Github/Monografia/Meu Projeto/Principal.aux (/Users/atcha/Github/Monografia/Meu Projeto/Capa.aux) (/Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap1.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap2.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap3.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap4.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap5.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap6.aux))
+) (/Users/atcha/Github/Monografia/Meu Projeto/Principal.aux (/Users/atcha/Github/Monografia/Meu Projeto/Capa.aux) (/Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap1.aux))
 \openout1 = `Principal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -413,21 +402,19 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
 LaTeX Font Info:    ... okay on input line 7.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/ucsencs.def
-File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
-) (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
+\scratchcounter=\count336
 \scratchdimen=\dimen260
 \scratchbox=\box58
-\nofMPsegments=\count338
-\nofMParguments=\count339
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count340
+\nofMPsegments=\count337
+\nofMParguments=\count338
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count339
 \MPscratchDim=\dimen261
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
-\everyMPtoPDFconversion=\toks43
+\MPnumerator=\count340
+\makeMPintoPDFobject=\count341
+\everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -451,9 +438,7 @@ File: ./figuras/Poli-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figuras/Poli-eps-converted-to.pdf>
 Package pdftex.def Info: ./figuras/Poli-eps-converted-to.pdf  used on input line 1.
 (pdftex.def)             Requested size: 91.3406pt x 97.6642pt.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
+
 Underfull \hbox (badness 10000) in paragraph at lines 10--10
 
  []
@@ -509,28 +494,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--16
 
 
 ] [4] [5] [6]
-Overfull \hbox (8.82323pt too wide) in paragraph at lines 88--89
+Overfull \hbox (8.82323pt too wide) in paragraph at lines 82--83
 []\OT1/cmr/m/n/12 De forma a vi-a-bi-li-zar a execu^^Xc~ao deste pro-jeto, s~ao uti-li-za-dos os da-dos hist^^Soricos
  []
 
-[7] [8]) [9] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.toc [10
-
-
-])
+[7] [8]) [9] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.toc)
 \tf@toc=\write3
 \openout3 = `Principal.toc'.
 
- [11] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.lof)
+ [10
+
+
+] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.lof)
 \tf@lof=\write4
 \openout4 = `Principal.lof'.
 
- [12
+ [11
 
 ] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.lot)
 \tf@lot=\write5
 \openout5 = `Principal.lot'.
 
- [13
+ [12
 
 ]
 \openout2 = `cap1.aux'.
@@ -542,96 +527,49 @@ Cap\'{\i }tulo 1.
 
 
 
-]) [2]
-\openout2 = `cap2.aux'.
-
- (/Users/atcha/Github/Monografia/Meu Projeto/cap2.tex
-Cap\'{\i }tulo 2.
-[3
-
-
-
-] [4] [5] [6]) [7]
-\openout2 = `cap3.aux'.
-
- (/Users/atcha/Github/Monografia/Meu Projeto/cap3.tex
-Cap\'{\i }tulo 3.
-[8
-
-
-
-] [9] [10]) [11]
-\openout2 = `cap4.aux'.
-
- (/Users/atcha/Github/Monografia/Meu Projeto/cap4.tex
-Cap\'{\i }tulo 4.
-) [12
-
-
-
-]
-\openout2 = `cap5.aux'.
-
- (/Users/atcha/Github/Monografia/Meu Projeto/cap5.tex
-Cap\'{\i }tulo 5.
-) [13
-
-
-
-]
-\openout2 = `cap6.aux'.
-
- (/Users/atcha/Github/Monografia/Meu Projeto/cap6.tex
-Cap\'{\i }tulo 6.
-) [14
-
-
-
-] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.bbl
-Underfull \hbox (badness 1852) in paragraph at lines 5--9
-\OT1/cmr/m/n/12 in-forma B3'', https://valor.globo.com/financas/noticia/2021/06/11/volume-
+] [2]) [3] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.bbl
+Underfull \hbox (badness 1400) in paragraph at lines 5--9
+[]\OT1/cmr/m/n/12 B3, ``B3 atinge 5 milh~oes de con-tas de in-ves-ti-do-res em renda vari^^Savel
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--9
-\OT1/cmr/m/n/12 no-segmento-de-acoes-tem-alta-anual-de-276percent-em-maio-informa-
- []
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
-Overfull \hbox (53.18846pt too wide) in paragraph at lines 44--46
-[]\OT1/cmr/m/n/12 DIVANTELTD, ``Re-po-sit^^Sorio Anony-mi-zer'', https://github.com/DivanteLtd/anonymizer,
- []
-
-[15
-
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
-[]\OT1/cmr/m/n/12 THOUGHTWORKS, ``Re-po-sit^^Sorio Data::Anonymization'',
+Underfull \hbox (badness 5667) in paragraph at lines 5--9
+\OT1/cmr/m/n/12 em ja-neiro'', https://www.b3.com.br/pt[]br/noticias/5-milhoes-de-contas-de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
-[]\OT1/cmr/m/n/12 MICROSOFT, ``Re-po-sit^^Sorio Mi-cro-soft Pre-si-dio'',
+Underfull \hbox (badness 1033) in paragraph at lines 17--21
+\OT1/cmr/m/n/12 res fun-dos'', https://www.infomoney.com.br/onde-investir/no-brasil-robos-de-
  []
 
-) [16] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.aux (/Users/atcha/Github/Monografia/Meu Projeto/Capa.aux) (/Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap1.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap2.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap3.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap4.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap5.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap6.aux)) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+[]\OT1/cmr/m/n/12 FERNANDEZ, A., ``Ar-ti-fi-cial in-tel-li-gence in fi-nan-cial ser-vi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--26
+\OT1/cmr/m/n/12 ces'', Avai-la-ble at SSRN: https://ssrn.com/abstract=3366846 or
+ []
+
+) [4
+
+
+
+] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.aux (/Users/atcha/Github/Monografia/Meu Projeto/Capa.aux) (/Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap1.aux)) ) 
 Here is how much of TeX's memory you used:
- 12499 strings out of 480608
- 207200 string characters out of 5903630
- 469254 words of memory out of 5000000
- 28125 multiletter control sequences out of 15000+600000
- 539454 words of font info for 50 fonts, out of 8000000 for 9000
+ 11449 strings out of 480608
+ 192643 string characters out of 5903630
+ 454837 words of memory out of 5000000
+ 27128 multiletter control sequences out of 15000+600000
+ 539484 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,9n,53p,821b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "/Users/atcha/Github/Monografia/Meu Projeto/Principal.pdf" (29 pages, 134422 bytes).
+ 41i,5n,53p,906b,169s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on "/Users/atcha/Github/Monografia/Meu Projeto/Principal.pdf" (16 pages, 115028 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 79 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -15,88 +15,22 @@
 \contentsline {paragraph}{}{ix}%
 \contentsline {paragraph}{}{ix}%
 \contentsline {paragraph}{}{ix}%
-\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{1}%
+\contentsline {chapter}{\numberline {1}Introdução}{1}%
 \contentsline {section}{\numberline {1.1}Tema}{1}%
 \contentsline {paragraph}{}{1}%
 \contentsline {paragraph}{}{1}%
-\contentsline {section}{\numberline {1.2}Delimita\IeC {\c c}\IeC {\~a}o}{1}%
+\contentsline {section}{\numberline {1.2}Delimitação}{1}%
 \contentsline {paragraph}{}{1}%
 \contentsline {section}{\numberline {1.3}Justificativa}{1}%
 \contentsline {paragraph}{}{1}%
-\contentsline {paragraph}{}{1}%
+\contentsline {paragraph}{}{2}%
+\contentsline {paragraph}{}{2}%
+\contentsline {paragraph}{}{2}%
 \contentsline {section}{\numberline {1.4}Objetivos}{2}%
 \contentsline {paragraph}{}{2}%
-\contentsline {section}{\numberline {1.5}Metodologia}{2}%
-\contentsline {paragraph}{}{2}%
-\contentsline {section}{\numberline {1.6}Descri\IeC {\c c}\IeC {\~a}o}{2}%
-\contentsline {paragraph}{}{2}%
-\contentsline {paragraph}{}{2}%
-\contentsline {chapter}{\numberline {2}Fundamenta\IeC {\c c}\IeC {\~a}o Te\IeC {\'o}rica}{3}%
+\contentsline {section}{\numberline {1.5}Metodologia}{3}%
 \contentsline {paragraph}{}{3}%
-\contentsline {section}{\numberline {2.1}Privacidade}{3}%
-\contentsline {subsection}{\numberline {2.1.1}A Sensibiliza\IeC {\c c}\IeC {\~a}o sobre privacidade}{3}%
+\contentsline {section}{\numberline {1.6}Descrição}{3}%
 \contentsline {paragraph}{}{3}%
 \contentsline {paragraph}{}{3}%
-\contentsline {subsection}{\numberline {2.1.2}O entendimento multifacetado de privacidade}{3}%
-\contentsline {paragraph}{}{3}%
-\contentsline {subsection}{\numberline {2.1.3}A General Data Protection Regulation europeia}{4}%
-\contentsline {paragraph}{}{4}%
-\contentsline {subsection}{\numberline {2.1.4}A Lei Geral de Protecao de Dados brasileira}{4}%
-\contentsline {paragraph}{}{4}%
-\contentsline {section}{\numberline {2.2}Bases de Dados}{4}%
-\contentsline {subsection}{\numberline {2.2.1}Tipos, Atributos e Registros}{4}%
-\contentsline {paragraph}{}{4}%
-\contentsline {paragraph}{}{4}%
-\contentsline {paragraph}{}{4}%
-\contentsline {paragraph}{}{5}%
-\contentsline {paragraph}{}{5}%
-\contentsline {subsection}{\numberline {2.2.2}ETL}{5}%
-\contentsline {section}{\numberline {2.3}Anonimiza\IeC {\c c}\IeC {\~a}o e Reidentifica\IeC {\c c}\IeC {\~a}o}{5}%
-\contentsline {subsection}{\numberline {2.3.1}Anonimiza\IeC {\c c}\IeC {\~a}o}{5}%
-\contentsline {paragraph}{}{5}%
-\contentsline {paragraph}{}{5}%
-\contentsline {paragraph}{}{6}%
-\contentsline {subsection}{\numberline {2.3.2}Reidentifica\IeC {\c c}\IeC {\~a}o}{6}%
-\contentsline {paragraph}{}{6}%
-\contentsline {paragraph}{}{6}%
-\contentsline {paragraph}{}{6}%
-\contentsline {section}{\numberline {2.4}Modelos de Privacidade}{6}%
-\contentsline {paragraph}{}{6}%
-\contentsline {paragraph}{}{7}%
-\contentsline {paragraph}{}{7}%
-\contentsline {chapter}{\numberline {3}Metodologia}{8}%
-\contentsline {paragraph}{}{8}%
-\contentsline {section}{\numberline {3.1}Descoberta de Ferramentas}{8}%
-\contentsline {paragraph}{}{8}%
-\contentsline {paragraph}{}{8}%
-\contentsline {subsection}{\numberline {3.1.1}Anonymizer}{8}%
-\contentsline {paragraph}{}{8}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {subsection}{\numberline {3.1.2}Data::Anonymization}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {subsection}{\numberline {3.1.3}ARX - Open Source Data Anonymization Software}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{11}%
-\contentsline {paragraph}{}{11}%
-\contentsline {paragraph}{}{11}%
-\contentsline {subsection}{\numberline {3.1.4}Presidio}{11}%
-\contentsline {section}{\numberline {3.2}Vis\IeC {\~a}o Geral}{11}%
-\contentsline {chapter}{\numberline {4}Implementa\IeC {\c c}\IeC {\~a}o}{12}%
-\contentsline {section}{\numberline {4.1}Requisitos}{12}%
-\contentsline {section}{\numberline {4.2}Arquitetura Proposta}{12}%
-\contentsline {section}{\numberline {4.3}Desenvolvimento}{12}%
-\contentsline {chapter}{\numberline {5}Valida\IeC {\c c}\IeC {\~a}o}{13}%
-\contentsline {section}{\numberline {5.1}Dados de Teste}{13}%
-\contentsline {section}{\numberline {5.2}Resultados}{13}%
-\contentsline {chapter}{\numberline {6}Conclus\IeC {\~a}o}{14}%
-\contentsline {chapter}{Bibliografia}{15}%
+\contentsline {chapter}{Bibliografia}{4}%

@@ -1,17 +1,17 @@
-PWD /Users/atcha/Github/Monografia/Meu Projeto
+PWD /Users/atcha/Github/Monografia
 INPUT /usr/local/texlive/2020/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.tex
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.log
+INPUT /Users/atcha/Github/Monografia/Principal.tex
+OUTPUT /Users/atcha/Github/Monografia/Principal.log
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/bk12.clo
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/bk12.clo
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/TesePack.tex
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/TesePack.tex
+INPUT /Users/atcha/Github/Monografia/TesePack.tex
+INPUT /Users/atcha/Github/Monografia/TesePack.tex
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/layout.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/layout.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.sty
@@ -23,10 +23,10 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/babel/babel.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/babel/txtbabel.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/babel-portuges/portuges.ldf
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/babel-portuges/portuges.ldf
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/pagina.sty
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/pagina.sty
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/indentfirst.sty
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/indentfirst.sty
+INPUT /Users/atcha/Github/Monografia/pagina.sty
+INPUT /Users/atcha/Github/Monografia/pagina.sty
+INPUT /Users/atcha/Github/Monografia/indentfirst.sty
+INPUT /Users/atcha/Github/Monografia/indentfirst.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
@@ -94,8 +94,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/pst-tree/pst-tree.tex
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/pst-tree/pst-tree.tex
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/alltt.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/alltt.sty
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/rotating.sty
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/rotating.sty
+INPUT /Users/atcha/Github/Monografia/rotating.sty
+INPUT /Users/atcha/Github/Monografia/rotating.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/enumerate.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
@@ -112,42 +112,44 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/portland.sty
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/portland.sty
+INPUT /Users/atcha/Github/Monografia/portland.sty
+INPUT /Users/atcha/Github/Monografia/portland.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/multirow/multirow.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/longtable.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Capa.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Capa.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/cap1.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/cap1.aux
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.aux
+INPUT /Users/atcha/Github/Monografia/Principal.aux
+INPUT /Users/atcha/Github/Monografia/Principal.aux
+INPUT /Users/atcha/Github/Monografia/Capa.aux
+INPUT /Users/atcha/Github/Monografia/Capa.aux
+INPUT /Users/atcha/Github/Monografia/Preambulo.aux
+INPUT /Users/atcha/Github/Monografia/Preambulo.aux
+INPUT /Users/atcha/Github/Monografia/cap1.aux
+INPUT /Users/atcha/Github/Monografia/cap1.aux
+INPUT /Users/atcha/Github/Monografia/cap2.aux
+INPUT /Users/atcha/Github/Monografia/cap2.aux
+OUTPUT /Users/atcha/Github/Monografia/Principal.aux
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Capa.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Capa.tex
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Capa.tex
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli.eps
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli.eps
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli.eps
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli-eps-converted-to.pdf
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli-eps-converted-to.pdf
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli.eps
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli-eps-converted-to.pdf
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli-eps-converted-to.pdf
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.pdf
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli-eps-converted-to.pdf
+OUTPUT /Users/atcha/Github/Monografia/Capa.aux
+INPUT /Users/atcha/Github/Monografia/Capa.tex
+INPUT /Users/atcha/Github/Monografia/Capa.tex
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli.eps
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli.eps
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli.eps
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli-eps-converted-to.pdf
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli-eps-converted-to.pdf
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli.eps
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli-eps-converted-to.pdf
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli-eps-converted-to.pdf
+OUTPUT /Users/atcha/Github/Monografia/Principal.pdf
+INPUT /Users/atcha/Github/Monografia/./figuras/Poli-eps-converted-to.pdf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -171,37 +173,43 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Preambulo.tex
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Preambulo.tex
+OUTPUT /Users/atcha/Github/Monografia/Preambulo.aux
+INPUT /Users/atcha/Github/Monografia/Preambulo.tex
+INPUT /Users/atcha/Github/Monografia/Preambulo.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.toc
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.toc
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.toc
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.lof
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.lof
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.lof
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.lot
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.lot
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.lot
-OUTPUT /Users/atcha/Github/Monografia/Meu Projeto/cap1.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/cap1.tex
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/cap1.tex
+INPUT /Users/atcha/Github/Monografia/Principal.toc
+INPUT /Users/atcha/Github/Monografia/Principal.toc
+OUTPUT /Users/atcha/Github/Monografia/Principal.toc
+INPUT /Users/atcha/Github/Monografia/Principal.lof
+INPUT /Users/atcha/Github/Monografia/Principal.lof
+OUTPUT /Users/atcha/Github/Monografia/Principal.lof
+INPUT /Users/atcha/Github/Monografia/Principal.lot
+INPUT /Users/atcha/Github/Monografia/Principal.lot
+OUTPUT /Users/atcha/Github/Monografia/Principal.lot
+OUTPUT /Users/atcha/Github/Monografia/cap1.aux
+INPUT /Users/atcha/Github/Monografia/cap1.tex
+INPUT /Users/atcha/Github/Monografia/cap1.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.bbl
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.bbl
+OUTPUT /Users/atcha/Github/Monografia/cap2.aux
+INPUT /Users/atcha/Github/Monografia/cap2.tex
+INPUT /Users/atcha/Github/Monografia/cap2.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Principal.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Capa.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Capa.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/cap1.aux
-INPUT /Users/atcha/Github/Monografia/Meu Projeto/cap1.aux
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /Users/atcha/Github/Monografia/Principal.bbl
+INPUT /Users/atcha/Github/Monografia/Principal.bbl
+INPUT /Users/atcha/Github/Monografia/Principal.aux
+INPUT /Users/atcha/Github/Monografia/Capa.aux
+INPUT /Users/atcha/Github/Monografia/Capa.aux
+INPUT /Users/atcha/Github/Monografia/Preambulo.aux
+INPUT /Users/atcha/Github/Monografia/Preambulo.aux
+INPUT /Users/atcha/Github/Monografia/cap1.aux
+INPUT /Users/atcha/Github/Monografia/cap1.aux
+INPUT /Users/atcha/Github/Monografia/cap2.aux
+INPUT /Users/atcha/Github/Monografia/cap2.aux
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  23 MAR 2022 20:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  24 MAR 2022 01:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/atcha/Github/Monografia/Meu Projeto/Principal.tex"
-(/Users/atcha/Github/Monografia/Meu Projeto/Principal.tex
+**/Users/atcha/Github/Monografia/Principal.tex
+(/Users/atcha/Github/Monografia/Principal.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
@@ -23,7 +23,7 @@ File: bk12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
-) (/Users/atcha/Github/Monografia/Meu Projeto/TesePack.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/layout.sty
+) (/Users/atcha/Github/Monografia/TesePack.tex (/usr/local/texlive/2020/texmf-dist/tex/latex/tools/layout.sty
 Package: layout 2014/10/28 v1.2c Show layout parameters
 \oneinch=\count176
 \cnt@paperwidth=\count177
@@ -81,7 +81,7 @@ Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
 Package babel Info: \l@brazil = using hyphenrules for portuguese
 (babel)             (\language69) on input line 113.
 Package babel Info: Making " an active character on input line 145.
-)) (/Users/atcha/Github/Monografia/Meu Projeto/pagina.sty) (/Users/atcha/Github/Monografia/Meu Projeto/indentfirst.sty
+)) (/Users/atcha/Github/Monografia/pagina.sty) (/Users/atcha/Github/Monografia/indentfirst.sty
 Package: indentfirst 1994/05/23 v1.02 Indent first paragraph (DPC)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
@@ -272,7 +272,7 @@ Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
 File: pst-tree.tex 2017/02/18 1.13 `pst-tree' (tvz,hv)
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
-) (/Users/atcha/Github/Monografia/Meu Projeto/rotating.sty
+) (/Users/atcha/Github/Monografia/rotating.sty
 Package: rotating 94/04/15 2 SPQR
 
 Style option: rotating 2 <94/04/15> (SPQR / LMB)
@@ -342,7 +342,7 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/atcha/Github/Monografia/Meu Projeto/portland.sty
+)) (/Users/atcha/Github/Monografia/portland.sty
 \paperheight=\dimen187
 \phoffset=\dimen188
 \pvoffset=\dimen189
@@ -385,7 +385,7 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count335
 \l__pdf_internal_box=\box57
-) (/Users/atcha/Github/Monografia/Meu Projeto/Principal.aux (/Users/atcha/Github/Monografia/Meu Projeto/Capa.aux) (/Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap1.aux))
+) (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux))
 \openout1 = `Principal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
@@ -423,7 +423,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \openout2 = `Capa.aux'.
 
- (/Users/atcha/Github/Monografia/Meu Projeto/Capa.tex
+ (/Users/atcha/Github/Monografia/Capa.tex
 Package epstopdf Info: Source file: <./figuras/Poli.eps>
 (epstopdf)                    date: 2020-05-28 17:48:22
 (epstopdf)                    size: 546883 bytes
@@ -477,7 +477,7 @@ Non-PDF special ignored!
 <special> ps:tx@Dict begin  gsave STV CP T /ps@rot 0 def grestore  end
 
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/atcha/Github/Monografia/Meu Projeto/./figuras/Poli-eps-converted-to.pdf>]
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/atcha/Github/Monografia/./figuras/Poli-eps-converted-to.pdf>]
 Overfull \hbox (1.744pt too wide) in paragraph at lines 30--31
 \OT1/cmr/m/n/12 PROJETO DE GRADUA[][]AO SUB-ME-TIDO AO CORPO DO-CENTE DO CURSO
  []
@@ -485,7 +485,7 @@ Overfull \hbox (1.744pt too wide) in paragraph at lines 30--31
 ) [2]
 \openout2 = `Preambulo.aux'.
 
- (/Users/atcha/Github/Monografia/Meu Projeto/Preambulo.tex
+ (/Users/atcha/Github/Monografia/Preambulo.tex
 Underfull \hbox (badness 10000) in paragraph at lines 8--16
 
  []
@@ -498,20 +498,20 @@ Overfull \hbox (2.07504pt too wide) in paragraph at lines 81--82
  [] \OT1/cmr/m/n/12 Nesse sen-tido, este tra-ba-lho visa a aplica^^Xc~ao de t^^Secnicas de apren-di-zado de m^^Saquina
  []
 
-[7] [8]) [9] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.toc)
+[7] [8]) [9] (/Users/atcha/Github/Monografia/Principal.toc)
 \tf@toc=\write3
 \openout3 = `Principal.toc'.
 
  [10
 
 
-] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.lof)
+] (/Users/atcha/Github/Monografia/Principal.lof)
 \tf@lof=\write4
 \openout4 = `Principal.lof'.
 
  [11
 
-] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.lot)
+] (/Users/atcha/Github/Monografia/Principal.lot)
 \tf@lot=\write5
 \openout5 = `Principal.lot'.
 
@@ -520,14 +520,28 @@ Overfull \hbox (2.07504pt too wide) in paragraph at lines 81--82
 ]
 \openout2 = `cap1.aux'.
 
- (/Users/atcha/Github/Monografia/Meu Projeto/cap1.tex
+ (/Users/atcha/Github/Monografia/cap1.tex
 Cap\'{\i }tulo 1.
 [1
 
 
 
 
-] [2] [3]) [4] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.bbl
+] [2] [3]) [4]
+\openout2 = `cap2.aux'.
+
+ (/Users/atcha/Github/Monografia/cap2.tex
+Cap\'{\i }tulo 2.
+
+Overfull \hbox (3.14258pt too wide) in paragraph at lines 6--6
+[]\OT1/cmr/bx/n/17.28 Mercado de Ca-pi-tais, Bolsa de Va-lo-res e A^^Xc~oes 
+ []
+
+[5
+
+
+
+]) [6] (/Users/atcha/Github/Monografia/Principal.bbl
 Underfull \hbox (badness 1400) in paragraph at lines 5--9
 []\OT1/cmr/m/n/12 B3, ``B3 atinge 5 milh~oes de con-tas de in-ves-ti-do-res em renda vari^^Savel
  []
@@ -552,24 +566,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--26
 \OT1/cmr/m/n/12 ces'', Avai-la-ble at SSRN: https://ssrn.com/abstract=3366846 or
  []
 
-) [5
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--31
+[]\OT1/cmr/m/n/12 CVM, ``En-ten-dendo o Mer-cado de Va-lo-res Mo-bili^^Sarios'',
+ []
+
+
+Overfull \hbox (51.78117pt too wide) in paragraph at lines 28--31
+\OT1/cmr/m/n/12 https://www.investidor.gov.br/menu/primeiros[]passos/entendendo[]mercado[]valores.html,
+ []
+
+
+Underfull \hbox (badness 1571) in paragraph at lines 33--36
+\OT1/cmr/m/n/12 cado de va-lo-res mo-bili^^Sarios e cria a Co-miss~ao de Va-lo-res Mo-bili^^Sarios'',
+ []
+
+) [7
 
 
 
-] (/Users/atcha/Github/Monografia/Meu Projeto/Principal.aux (/Users/atcha/Github/Monografia/Meu Projeto/Capa.aux) (/Users/atcha/Github/Monografia/Meu Projeto/Preambulo.aux) (/Users/atcha/Github/Monografia/Meu Projeto/cap1.aux)) ) 
+] (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux)) ) 
 Here is how much of TeX's memory you used:
- 11449 strings out of 480608
- 192643 string characters out of 5903630
- 454838 words of memory out of 5000000
- 27128 multiletter control sequences out of 15000+600000
- 539484 words of font info for 50 fonts, out of 8000000 for 9000
+ 11466 strings out of 480608
+ 192445 string characters out of 5903630
+ 455159 words of memory out of 5000000
+ 27138 multiletter control sequences out of 15000+600000
+ 539791 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,5n,53p,906b,169s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,5n,53p,885b,169s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "/Users/atcha/Github/Monografia/Meu Projeto/Principal.pdf" (17 pages, 116639 bytes).
+Output written on /Users/atcha/Github/Monografia/Principal.pdf (19 pages, 120825 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 89 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

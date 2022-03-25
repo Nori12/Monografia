@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 
 \bibitem{aumento_investidores}
@@ -32,12 +32,57 @@ CVM, \enquote{Entendendo o Mercado de Valores Mobiliários},
 \bibitem{lei_6385}
 BRASIL, \enquote{Lei nº 6.385, de 7 de dezembro de 1976. Disp\~oe sobre o
   mercado de valores mobili\'arios e cria a Comiss\~ao de Valores
-  Mobili\'arios}, http://www.planalto.gov.br/ccivil\_03/leis/l6385.htm.
+  Mobili\'arios.}, http://www.planalto.gov.br/ccivil\_03/leis/l6385.htm.
 
 \bibitem{b3}
 B3, \enquote{Uma das principais empresas de infraestrutura de mercado
   financeiro do mundo},
   https://www.b3.com.br/pt\_br/b3/institucional/quem-somos/, (Acesso em 24 de
+  Mar\c{c}o de 2022).
+
+\bibitem{vantagens_sa}
+B3, \enquote{A\c{c}\~oes},
+  https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/acoes.htm,
+  (Acesso em 24 de Mar\c{c}o de 2022).
+
+\bibitem{oferta_publica}
+BRASIL, \enquote{Lei nº 6.404, de 15 de dezembro de 1976. Disp\~oe sobre as
+  Sociedades por A\c{c}\~oes.}, Cap\'itulo XC, Se\c{c}\~ao VII,
+  http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm, (Acesso em 24 de
+  Mar\c{c}o de 2022).
+
+\bibitem{capital_social}
+CVM, \enquote{Lei 6.404/76: Exposi\c{c}\~ao de Motivos}, Cap\'itulo II,
+  Se\c{c}ao I,
+  https://www.gov.br/cvm/pt-br/acesso-a-informacao-cvm/institucional/sobre-a-cvm/,
+  (Acesso em 24 de Mar\c{c}o de 2022).
+
+\bibitem{mercado_secundario}
+INVESTIMENTOS, X., \enquote{Mercado secund\'ario: entenda as diferen\c{c}as com
+  o mercado prim\'ario},
+  https://conteudos.xpi.com.br/aprenda-a-investir/relatorios/mercado-secundario/,
+  (Acesso em 24 de Mar\c{c}o de 2022).
+
+\bibitem{dem_finan}
+BRASIL, \enquote{Lei nº 6.404, de 15 de dezembro de 1976. Disp\~oe sobre as
+  Sociedades por A\c{c}\~oes.}, Cap\'itulo XV, Se\c{c}\~ao II, Art. 176,
+  http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm, (Acesso em 24 de
+  Mar\c{c}o de 2022).
+
+\bibitem{audi_dem_finan}
+BRASIL, \enquote{Lei nº 6.404, de 15 de dezembro de 1976. Disp\~oe sobre as
+  Sociedades por A\c{c}\~oes.}, Cap\'itulo XXI, Se\c{c}\~ao IV, Art. 275, §
+  4º, http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm, (Acesso em
+  24 de Mar\c{c}o de 2022).
+
+\bibitem{proventos}
+INFOMONEY, \enquote{Proventos: O que são, como funcionam e como ganhar
+  dinheiro com eles?}, https://www.infomoney.com.br/guias/proventos/, (Acesso
+  em 24 de Mar\c{c}o de 2022).
+
+\bibitem{short_selling}
+B3, \enquote{Posi\c{c}\~oes vendidas no mercado de a\c{c}\~oes},
+  https://www.b3.com.br/pt\_br/noticias/short-selling.htm, (Acesso em 24 de
   Mar\c{c}o de 2022).
 
 \end{thebibliography}

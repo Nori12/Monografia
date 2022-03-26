@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  24 MAR 2022 22:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  26 MAR 2022 05:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -541,7 +541,7 @@ Overfull \hbox (3.14258pt too wide) in paragraph at lines 6--6
 
 
 
-] [6]) [7] (/Users/atcha/Github/Monografia/Principal.bbl
+] [6] [7]) [8] (/Users/atcha/Github/Monografia/Principal.bbl
 Underfull \hbox (badness 1577) in paragraph at lines 5--9
 \OT1/cmr/m/n/12 em ja-neiro'', https://www.b3.com.br/pt[]br/noticias/5-milhoes-de-contas-de-
  []
@@ -591,7 +591,7 @@ Underfull \hbox (badness 3872) in paragraph at lines 44--47
 \OT1/cmr/m/n/12 servicos/negociacao/renda-variavel/acoes.htm, (Acesso em 24 de Mar^^Xco
  []
 
-[8
+[9
 
 
 
@@ -660,20 +660,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--87
 \OT1/cmr/m/n/12 https://www.b3.com.br/pt[]br/noticias/short-selling.htm, (Acesso em 24
  []
 
-) [9] (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux)) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
+[]\OT1/cmr/m/n/12 INVESTOPEDIA, ``Four Scan-da-lous In-si-der Tra-ding In-ci-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
+\OT1/cmr/m/n/12 dents'', https://www.investopedia.com/articles/stocks/09/insider-
+ []
+
+[10]) [11] (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux)) ) 
 Here is how much of TeX's memory you used:
- 11475 strings out of 480608
- 192579 string characters out of 5903630
- 455198 words of memory out of 5000000
- 27147 multiletter control sequences out of 15000+600000
+ 11483 strings out of 480608
+ 192688 string characters out of 5903630
+ 455212 words of memory out of 5000000
+ 27155 multiletter control sequences out of 15000+600000
  539791 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,5n,53p,1163b,225s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,5n,53p,1129b,230s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/atcha/Github/Monografia/Principal.pdf (21 pages, 125467 bytes).
+Output written on /Users/atcha/Github/Monografia/Principal.pdf (23 pages, 134234 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 101 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -17,37 +17,64 @@
 
 \subsection{Hipótese do Mercado Eficiente}
 
-\paragraph{} A Hipótese do Mercado Eficiente, definida por FAMA \cite{hme}, afirma que idealmente o preço de um ativo reflete toda a informação disponível sobre seu valor intrínseco. Em outras palavras, quanto menor o efeito de fatores que contribuam para uma inércia no fluxo de capital de investidores e na transmissão de informações, mais o mercado tende a ser eficiente. São estudados os três níveis de hipóteses:
+\paragraph{} A Hipótese do Mercado Eficiente, definida por FAMA \cite{fama1970efficient}, afirma que idealmente o preço de um ativo reflete toda a informação disponível sobre seu valor intrínseco. Em outras palavras, quanto menor o efeito de fatores que contribuam para uma inércia no fluxo de capital de investidores e na transmissão de informações, mais o mercado tende a ser eficiente. São estudados os três níveis de hipóteses:
 
 \begin{itemize}
     \item HME fraca: O preços atuais refletem o todo o histórico de informações disponibilizados publicamente.
     \item HME semi-forte: Engloba a HME fraca, acrescentando a existência de uma mudança instantânea que os preços sofrem ao surgirem novas informações.
-    \item HME forte: Engloba a HME semi-forte, porém entende que a mudança instantânea dos preços acompanha toda e qualquer informação existente sobre o ativo. Assim, absolutamente nenhum investidor conseguiria obter lucro superior a outro, pois não há como acessar nenhuma informação privilegiada, uma vez que ela já estaria refletido no preço corrente do ativo.
+    \item HME forte: Engloba a HME semi-forte, porém entende que a mudança instantânea dos preços acompanha toda e qualquer informação existente sobre o ativo. Assim, absolutamente nenhum investidor conseguiria obter lucro superior à média do mercado, pois não há como acessar nenhuma informação privilegiada, uma vez que ela já estaria refletido no preço corrente do ativo.
 \end{itemize}
 
 \paragraph{} O autor menciona que o HME forte não é estritamente válida na realidade, o que é uma afirmação coerente quando se verifica a existência de casos em que o vazamento de informações confidenciais trouxe aos acusados uma lucratividade significativa \cite{insider_trading}.
 
 \paragraph{} A HME fraca foi verificada devido à consistência da correlação dos preços dia após dia de determinadas ações, mesmo que esta fosse baixa.
 
-\paragraph{} A hipótese semi-forte também foi sustentada por alguns fatores, dentre eles a verificação de que os futuros pagamentos de dividendos das companhias se refletem, em média, no preços das ações \cite{new_info_in_stock}.
+\paragraph{} A hipótese semi-forte também foi sustentada por alguns fatores, dentre eles a verificação de que os futuros pagamentos de dividendos das companhias se refletem, em média, no preços das ações \cite{fama1969adjustment}.
 
-\paragraph{} Em resumo, o estudo das Hipóteses de Mercado Eficiente traz informações relevantes quanto se avalia a possibilidade da aplicação de estratégias de trading no mercado financeiro. No entanto, é importante ressaltar que outros autores questionam algumas das premissas levantadas por FAMA (citar), deixando assim um consenso mínimo de ...
+\paragraph{} Em resumo, o estudo das Hipóteses de Mercado Eficiente traz informações relevantes quanto se avalia a teoria por trás da possibilidade de aplicação de estratégias de trading no mercado financeiro. No entanto, é importante ressaltar que outros autores questionam ao menos parcialmente os estudos realizados por FAMA, sejam por resultados inconclusivos ou por anomalias detectadas no comportamento do mercado. Por exemplo, SHOSTAK \cite{shostak1997defense} critica abertamente a premissa de que todos os investidores teriam a mesma expectativa sobre os retornos da empresa. O ganhador do prêmio Nobel em ciências econômicas Paul Samuelson, que afirma que o a HME funciona muito melhor para ações individuais do que para o mercado como um todo \cite{jung2005samuelson}. Já o investidor Jack Schwager afirma que a HME está correta pelos motivos errados \cite{schwager2012market}, pois é muito difícil bater a média do mercado de forma consistente ao mesmo tempo que investidores possuem habilidades diferentes, portanto a informação não é interpretada e aplicada por todos da mesma forma.
 
 \subsection{Índice de Bolsa de Valores}
 
-\paragraph{}
+Índices de Bolsas de Valores \cite{stock_index} são métricas criadas para avaliar a saúde de um determinado grupo de ações negociadas na bolsa. Cada índice possui uma regra própria de criação que define quais ações são englobadas e com quais pesos, como por exemplo:
 
-\subsection{Análise Técnica e Análise Fundamentalista}
+\begin{itemize}
+    \item S\&P 500: Um dos mais conhecidos no mercado. É a média ponderada pelo capital social das 500 maiores companhias do mercado estadunindense.
+    \item Dow Jones Industrial Average: É a média ponderada pelo preço da ação das 30 maiores blue-chips industriais e financeiras do mercado estadunidense (i.e., companhias bem conhecidas, bem estabelecidas e com grande capital social).
+    \item Ibovespa: Principal indicador de desempenho do mercado brasileiro. Possui alguns critérios específicos, mas basicamente é composto pelas ações com maior volume de negociação na B3 \cite{ibovespa}.
+\end{itemize}
 
-\paragraph{} A variação do preço das ações listadas na Bolsas de Valores mundiais é decorrente de diversos fatores
+\paragraph{} Índices não são negociáveis pois não passam de métricas de mercado. Para isso existem fundos de investimentos chamados ETFs (Exchange-Traded Funds) \cite{etf}, especializados em seguir um determinado índice.
 
-\paragraph{}
+\paragraph{} No Brasil, um investidor que deseja que uma parte de seu capital acompanhe um rendimento equivalente ao iBovespa deverá investir no ETF, cujo código de negociação é BOVA11.
+
+\subsection{Mercado Fracionário}
+
+Ações são negociadas em múltiplos de um lote, que representa uma quantidade mínima de papéis a transacionar. Nesse contexto, o Mercado Fracionário \cite{mercado_fracionario} surge com o objetivo de facilitar negiociações de volumes menores que o lote mínimo permitido. Na prática, ações fracionárias são agrupadas até formarem um lote para então serem negociadas. Normalmente o Mercado Fracionário possui menor liquidez e maior volatilidade, mas sempre acompanha o preço do ativo negociado no mercado aberto.
+
+\paragraph{} Ações fracionárias podem ser criadas devido: a um desdobramento de ações que não gera resultado par (e.g., 3 para 2); ou a fusões e aquisições de empresas que combinam suas ações em uma razão predeterminada.
+
+\paragraph{} Grandes investidores e fundos de investimentos não possuem problemas quanto ao capital mínimo necessário para a compra de um lote de ações, visto que negociam em quantidades muito maiores. O problema surge quando um investidor com pouco aporte financeiro deseja entrar no mercado e não consegue encontrar ativos cujo lote mínimo esteja dentro de seu orçamento.
+
+\paragraph{} No Brasil, o lote mínimo é de 100 ações e o Mercado Fracionário permite a compra de no mínimo 1 ação.
+
+\section{Tipos de Análises}
+
+\subsection{Análise Fundamentalista}
+
+\paragraph{} A Análise Fundamentalista (AF) é um muito utilizada para identificar tendências de flutuação no preço de ações tendo em vista um horizonte de longo prazo \cite{nti2020systematic}. Ela se baseia em fatores econômicos relacionados à companhia, como: o quadro de diretores e dirigentes maiores; o fluxo de caixa; a saúde e a situação financeira; o contexto político do país; os concorrentes de mercado; as circunstâncias climáticas; os desastres climáticos, naturais ou não, dentre outros fatores.
+
+\paragraph{} Devido à natureza desorganizada e desestruturada dos dados que representam os fatores mencionados, torna-se muito difícil implementar uma automação.
+
+\subsection{Análise Técnica}
+
+\paragraph{} A Análise Técnica (AT) busca identificar tendências de curto prazo no preço de ações através da identificação de padrões nos dados históricos de preço e informações derivadas \cite{nti2020systematic}. Em teoria, o preço das ações é consequência de todos os acontecimentos relacionados direta ou indiretamente a uma companhia, assim como as análises feitas por investidores grandes.
+
+\paragraph{} Diferentemente da AF, a automação desta análise é muito mais fácil pois os dados normalmente são organizados e estruturados. No entanto, como são obtidos a posteriori, a dificuldade desta análise se dá na separação entre o que é ruído e o que é de fato tendência de mercado, além da criação de informações derivadas que se mostram relativamente úteis.
 
 \section{Aprendizado de Máquina}
 
-\subsection{Teste 4}
-
 \paragraph{}
 
-
 \section{Trabalhos Relacionados}
+
+\paragraph{}

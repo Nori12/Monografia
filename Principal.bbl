@@ -19,10 +19,9 @@ INFOMONEY, \enquote{No Brasil, rob\^os de investimento n\~ao conseguem bater
   https://www.infomoney.com.br/onde-investir/no-brasil-robos-de-investimento-nao-conseguem-bater-melhores-fundos,
   (Acesso em 22 de Mar\c{c}o de 2022).
 
-\bibitem{ml_finantial_usage}
-FERNANDEZ, A., \enquote{Artificial intelligence in financial services},
-  Available at SSRN: https://ssrn.com/abstract=3366846 or
-  http://dx.doi.org/10.2139/ssrn.3366846, Apr. 5, 2019 [Online].
+\bibitem{fernandez2019artificial}
+FERN{\'A}NDEZ, A., \enquote{Artificial intelligence in financial services},
+  \emph{Banco de Espana Article}, v.~3, pp.~19, 2019.
 
 \bibitem{mercado_de_capitais}
 CVM, \enquote{Entendendo o Mercado de Valores Mobiliários},
@@ -85,18 +84,57 @@ B3, \enquote{Posi\c{c}\~oes vendidas no mercado de a\c{c}\~oes},
   https://www.b3.com.br/pt\_br/noticias/short-selling.htm, (Acesso em 24 de
   Mar\c{c}o de 2022).
 
-\bibitem{hme}
-FAMA, E.~F., \enquote{Efficient Capital Markets: A Review of Theory and
-  Empirical Work}, \emph{The journal of Finance}, , 1970.
+\bibitem{fama1970efficient}
+FAMA, E.~F., \enquote{Efficient capital markets: A review of theory and
+  empirical work}, \emph{The journal of Finance}, v.~25, n.~2, pp.~383--417,
+  1970.
 
 \bibitem{insider_trading}
 INVESTOPEDIA, \enquote{Four Scandalous Insider Trading Incidents},
   https://www.investopedia.com/articles/stocks/09/insider-trading.asp\#:~:text=Four%20cases%20that%20captured%20a,Foster%20Winans%2C%20and%20Martha%20Stewart.,
   (Acesso em 25 de Mar\c{c}o de 2022).
 
-\bibitem{new_info_in_stock}
-EUGENE F.~FAMA, LAWRENCE~FISHER, M. C.~J., ROLL, R., \enquote{The Adjustment of
-  Stock Prices to New Information}, \emph{International Economic Review}, ,
-  February 1969.
+\bibitem{fama1969adjustment}
+FAMA, E.~F., FISHER, L., JENSEN, M., \emph{et~al.}, \enquote{The adjustment of
+  stock prices to new information}, \emph{International economic review},
+  v.~10, n.~1, 1969.
+
+\bibitem{shostak1997defense}
+SHOSTAK, F., \enquote{In defense of fundamental analysis: A critique of the
+  efficient market hypothesis}, \emph{The Review of Austrian Economics}, v.~10,
+  n.~2, pp.~27--45, 1997.
+
+\bibitem{jung2005samuelson}
+JUNG, J., SHILLER, R.~J., \enquote{Samuelson's dictum and the stock market},
+  \emph{Economic Inquiry}, v.~43, n.~2, pp.~221--228, 2005.
+
+\bibitem{schwager2012market}
+SCHWAGER, J.~D., \emph{Market Sense and Nonsense: How the Markets Really Work
+  (and how They Don't)}. John Wiley \& Sons, 2012.
+
+\bibitem{stock_index}
+FORBES, \enquote{Investing Basics: What Is A Market Index?},
+  https://www.forbes.com/advisor/investing/stock-market-index/, (Acesso em 28
+  de Mar\c{c}o de 2022).
+
+\bibitem{ibovespa}
+B3, \enquote{Ibovespa B3},
+  https://www.b3.com.br/pt\_br/market-data-e-indices/indices/indices-amplos/ibovespa.htm,
+  (Acesso em 28 de Mar\c{c}o de 2022).
+
+\bibitem{etf}
+B3, \enquote{ETF de Renda Variável},
+  https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/etf-de-renda-variavel.htm,
+  (Acesso em 28 de Mar\c{c}o de 2022).
+
+\bibitem{mercado_fracionario}
+INVESTOPEDIA, \enquote{Fractional Share},
+  https://www.investopedia.com/terms/f/fractionalshare.asp, (Acesso em 28 de
+  Mar\c{c}o de 2022).
+
+\bibitem{nti2020systematic}
+NTI, I.~K., ADEKOYA, A.~F., WEYORI, B.~A., \enquote{A systematic review of
+  fundamental and technical analysis of stock market predictions},
+  \emph{Artificial Intelligence Review}, v.~53, n.~4, pp.~3007--3057, 2020.
 
 \end{thebibliography}

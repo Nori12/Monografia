@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  26 MAR 2022 05:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  28 MAR 2022 16:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -541,7 +541,7 @@ Overfull \hbox (3.14258pt too wide) in paragraph at lines 6--6
 
 
 
-] [6] [7]) [8] (/Users/atcha/Github/Monografia/Principal.bbl
+] [6] [7] [8] [9]) [10] (/Users/atcha/Github/Monografia/Principal.bbl
 Underfull \hbox (badness 1577) in paragraph at lines 5--9
 \OT1/cmr/m/n/12 em ja-neiro'', https://www.b3.com.br/pt[]br/noticias/5-milhoes-de-contas-de-
  []
@@ -557,106 +557,96 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--15
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 23--26
-[]\OT1/cmr/m/n/12 FERNANDEZ, A., ``Ar-ti-fi-cial in-tel-li-gence in fi-nan-cial ser-vi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--26
-\OT1/cmr/m/n/12 ces'', Avai-la-ble at SSRN: https://ssrn.com/abstract=3366846 or
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--31
+Underfull \hbox (badness 10000) in paragraph at lines 27--30
 []\OT1/cmr/m/n/12 CVM, ``En-ten-dendo o Mer-cado de Va-lo-res Mo-bili^^Sarios'',
  []
 
 
-Overfull \hbox (57.65611pt too wide) in paragraph at lines 28--31
+Overfull \hbox (57.65611pt too wide) in paragraph at lines 27--30
 \OT1/cmr/m/n/12 https://www.investidor.gov.br/menu/primeiros[]passos/entendendo[]mercado[]valores.html,
  []
 
 
-Underfull \hbox (badness 3354) in paragraph at lines 38--42
+Underfull \hbox (badness 3354) in paragraph at lines 37--41
 []\OT1/cmr/m/n/12 B3, ``Uma das prin-ci-pais em-pre-sas de in-fra-es-tru-tura de mer-cado fi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--47
+Underfull \hbox (badness 10000) in paragraph at lines 43--46
 []\OT1/cmr/m/n/12 B3, ``A^^Xc~oes'', https://www.b3.com.br/pt[]br/produtos-e-
  []
 
 
-Underfull \hbox (badness 3872) in paragraph at lines 44--47
+Underfull \hbox (badness 3872) in paragraph at lines 43--46
 \OT1/cmr/m/n/12 servicos/negociacao/renda-variavel/acoes.htm, (Acesso em 24 de Mar^^Xco
  []
 
-[9
+[11
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 49--53
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--53
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
 \OT1/cmr/m/n/12 so-bre as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XC, Se^^Xc~ao VII,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--53
+Underfull \hbox (badness 10000) in paragraph at lines 48--52
 \OT1/cmr/m/n/12 http://www.planalto.gov.br/ccivil[]03/leis/l6404consol.htm, (Acesso em
  []
 
 
-Underfull \hbox (badness 2556) in paragraph at lines 55--59
+Underfull \hbox (badness 2556) in paragraph at lines 54--58
 []\OT1/cmr/m/n/12 CVM, ``Lei 6.404/76: Ex-posi^^Xc~ao de Mo-ti-vos'', Cap^^S^^Ptulo II, Se^^Xcao I,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 55--59
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
 \OT1/cmr/m/n/12 https://www.gov.br/cvm/pt-br/acesso-a-informacao-cvm/institucional/sobre-
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 61--65
+Underfull \hbox (badness 4266) in paragraph at lines 60--64
 []\OT1/cmr/m/n/12 INVESTIMENTOS, X., ``Mer-cado se-cund^^Sario: en-tenda as di-fe-ren^^Xcas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--65
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
 \OT1/cmr/m/n/12 com o mer-cado prim^^Sario'', https://conteudos.xpi.com.br/aprenda-a-
  []
 
 
-Underfull \hbox (badness 4366) in paragraph at lines 67--71
+Underfull \hbox (badness 4366) in paragraph at lines 66--70
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe so-
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 67--71
+Underfull \hbox (badness 4954) in paragraph at lines 66--70
 \OT1/cmr/m/n/12 bre as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XV, Se^^Xc~ao II, Art. 176,
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 73--77
+Underfull \hbox (badness 2591) in paragraph at lines 72--76
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe so-bre
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 73--77
+Underfull \hbox (badness 1715) in paragraph at lines 72--76
 \OT1/cmr/m/n/12 as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XXI, Se^^Xc~ao IV, Art. 275, \TS1/cmr/m/n/12 § \OT1/cmr/m/n/12 4\TS1/cmr/m/n/12 º\OT1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 83--86
 []\OT1/cmr/m/n/12 B3, ``Posi^^Xc~oes ven-di-das no mer-cado de a^^Xc~oes'',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 83--86
 \OT1/cmr/m/n/12 https://www.b3.com.br/pt[]br/noticias/short-selling.htm, (Acesso em 24
  []
 
@@ -670,20 +660,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--96
 \OT1/cmr/m/n/12 dents'', https://www.investopedia.com/articles/stocks/09/insider-
  []
 
-[10]) [11] (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux)) ) 
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 116--119
+[]\OT1/cmr/m/n/12 FORBES, ``In-ves-ting Ba-sics: What Is A Mar-ket In-dex?'',
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--119
+\OT1/cmr/m/n/12 https://www.forbes.com/advisor/investing/stock-market-index/, (Acesso
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--124
+[]\OT1/cmr/m/n/12 B3, ``Ibo-vespa B3'', https://www.b3.com.br/pt[]br/market-data-e-
+ []
+
+
+Overfull \hbox (102.99904pt too wide) in paragraph at lines 131--134
+[]\OT1/cmr/m/n/12 INVESTOPEDIA, ``Frac-ti-o-nal Share'', https://www.investopedia.com/terms/f/fractionalshare.asp,
+ []
+
+) [13] (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux)) ) 
 Here is how much of TeX's memory you used:
- 11483 strings out of 480608
- 192688 string characters out of 5903630
- 455212 words of memory out of 5000000
- 27155 multiletter control sequences out of 15000+600000
+ 11491 strings out of 480608
+ 192835 string characters out of 5903630
+ 455254 words of memory out of 5000000
+ 27163 multiletter control sequences out of 15000+600000
  539791 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,5n,53p,1129b,230s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,5n,53p,1202b,233s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/atcha/Github/Monografia/Principal.pdf (23 pages, 134234 bytes).
+Output written on /Users/atcha/Github/Monografia/Principal.pdf (25 pages, 141628 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 68 compressed objects within 1 object stream
+ 108 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

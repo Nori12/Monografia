@@ -52,13 +52,22 @@
 \contentsline {paragraph}{}{7}%
 \contentsline {paragraph}{}{7}%
 \contentsline {paragraph}{}{7}%
-\contentsline {subsection}{\numberline {2.1.2}Índice de Bolsa de Valores}{7}%
-\contentsline {paragraph}{}{7}%
-\contentsline {subsection}{\numberline {2.1.3}Análise Técnica e Análise Fundamentalista}{7}%
-\contentsline {paragraph}{}{7}%
+\contentsline {subsection}{\numberline {2.1.2}Índice de Bolsa de Valores}{8}%
 \contentsline {paragraph}{}{8}%
-\contentsline {section}{\numberline {2.2}Aprendizado de Máquina}{8}%
-\contentsline {subsection}{\numberline {2.2.1}Teste 4}{8}%
 \contentsline {paragraph}{}{8}%
-\contentsline {section}{\numberline {2.3}Trabalhos Relacionados}{8}%
-\contentsline {chapter}{Bibliografia}{9}%
+\contentsline {subsection}{\numberline {2.1.3}Mercado Fracionário}{8}%
+\contentsline {paragraph}{}{9}%
+\contentsline {paragraph}{}{9}%
+\contentsline {paragraph}{}{9}%
+\contentsline {section}{\numberline {2.2}Tipos de Análises}{9}%
+\contentsline {subsection}{\numberline {2.2.1}Análise Fundamentalista}{9}%
+\contentsline {paragraph}{}{9}%
+\contentsline {paragraph}{}{9}%
+\contentsline {subsection}{\numberline {2.2.2}Análise Técnica}{9}%
+\contentsline {paragraph}{}{9}%
+\contentsline {paragraph}{}{10}%
+\contentsline {section}{\numberline {2.3}Aprendizado de Máquina}{10}%
+\contentsline {paragraph}{}{10}%
+\contentsline {section}{\numberline {2.4}Trabalhos Relacionados}{10}%
+\contentsline {paragraph}{}{10}%
+\contentsline {chapter}{Bibliografia}{11}%

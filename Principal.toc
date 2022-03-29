@@ -67,7 +67,6 @@
 \contentsline {paragraph}{}{9}%
 \contentsline {paragraph}{}{10}%
 \contentsline {section}{\numberline {2.3}Aprendizado de Máquina}{10}%
-\contentsline {paragraph}{}{10}%
 \contentsline {section}{\numberline {2.4}Trabalhos Relacionados}{10}%
 \contentsline {paragraph}{}{10}%
 \contentsline {chapter}{Bibliografia}{11}%

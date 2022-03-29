@@ -132,9 +132,26 @@ INVESTOPEDIA, \enquote{Fractional Share},
   https://www.investopedia.com/terms/f/fractionalshare.asp, (Acesso em 28 de
   Mar\c{c}o de 2022).
 
-\bibitem{nti2020systematic}
-NTI, I.~K., ADEKOYA, A.~F., WEYORI, B.~A., \enquote{A systematic review of
-  fundamental and technical analysis of stock market predictions},
-  \emph{Artificial Intelligence Review}, v.~53, n.~4, pp.~3007--3057, 2020.
+\bibitem{bulkowski2012fundamental}
+BULKOWSKI, T.~N., \emph{Fundamental Analysis and Position Trading: Evolution of
+  a Trader}, v. 605. John Wiley \& Sons, 2012.
+
+\bibitem{murphy1999technical}
+MURPHY, J.~J., \emph{Technical analysis of the financial markets: A
+  comprehensive guide to trading methods and applications}. Penguin, 1999.
+
+\bibitem{edwards2018technical}
+EDWARDS, R.~D., MAGEE, J., BASSETTI, W.~C., \emph{Technical analysis of stock
+  trends}. CRC press, 2018.
+
+\bibitem{felsen1975artificial}
+FELSEN, J., \enquote{Artificial intelligence techniques applied to reduction of
+  uncertainty in decision analysis through learning}, \emph{Journal of the
+  Operational Research Society}, v.~26, n.~3, pp.~581--598, 1975.
+
+\bibitem{atsalakis2009surveying}
+ATSALAKIS, G.~S., VALAVANIS, K.~P., \enquote{Surveying stock market forecasting
+  techniques--Part II: Soft computing methods}, \emph{Expert systems with
+  applications}, v.~36, n.~3, pp.~5932--5941, 2009.
 
 \end{thebibliography}

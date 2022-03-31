@@ -49,7 +49,7 @@
 
 \subsection{Mercado Fracionário}
 
-Ações são negociadas em múltiplos de um lote, que representa uma quantidade mínima de papéis a transacionar. Nesse contexto, o Mercado Fracionário \cite{mercado_fracionario} surge com o objetivo de facilitar negiociações de volumes menores que o lote mínimo permitido. Na prática, ações fracionárias são agrupadas até formarem um lote para então serem negociadas. Normalmente o Mercado Fracionário possui menor liquidez e maior volatilidade, mas sempre acompanha o preço do ativo negociado no mercado aberto.
+\paragraph{} Ações são negociadas em múltiplos de um lote, que representa uma quantidade mínima de papéis a transacionar. Nesse contexto, o Mercado Fracionário \cite{mercado_fracionario} surge com o objetivo de facilitar negiociações de volumes menores que o lote mínimo permitido. Na prática, ações fracionárias são agrupadas até formarem um lote para então serem negociadas. Normalmente o Mercado Fracionário possui menor liquidez e maior volatilidade, mas sempre acompanha o preço do ativo negociado no mercado aberto.
 
 \paragraph{} Ações fracionárias podem ser criadas devido: a um desdobramento de ações que não gera resultado par (e.g., 3 para 2); ou a fusões e aquisições de empresas que combinam suas ações em uma razão predeterminada.
 
@@ -60,6 +60,7 @@ Ações são negociadas em múltiplos de um lote, que representa uma quantidade 
 \section{Tipos de Análises}
 
 \subsection{Análise Fundamentalista}
+\label{subsection:af}
 
 \paragraph{} A Análise Fundamentalista (AF) é um muito utilizada para identificar tendências de flutuação no preço de ações tendo em vista um horizonte de longo prazo \cite{bulkowski2012fundamental}. Ela se baseia em fatores econômicos relacionados à companhia, como: o quadro de diretores e dirigentes maiores; o fluxo de caixa; a saúde e a situação financeira; o contexto político do país; os concorrentes de mercado; as circunstâncias climáticas; os desastres climáticos, naturais ou não, dentre outros fatores.
 
@@ -78,10 +79,25 @@ Ações são negociadas em múltiplos de um lote, que representa uma quantidade 
 
 \section{Trabalhos Relacionados}
 
-\paragraph{} Para efeito de simplificação, as estratégias aplicadas ao mercado financeiro serão agrupadas em três metodologias centrais: estratégias baseadas em indicadores; estratégias baseadas em modelos estatísticos; e estratégias baseadas em inteligência artificial. Todas podem ser aplicadas sob a ótica da AF, da AT ou até de uma análise mista, mas por motivos citados na Seção \ref{subsection:at}, a maioria utiliza AT, o que é comprovado para estratégias baseadas em machine learning publicadas na última década \cite{nti2020systematic}.
+\paragraph{} Segundo KIM \cite{kim2010electronic}, somente a partir dos anos 80 que as corretoras começaram a utilizar protocolos de comunicação eletrônica para substituir a corretagem por voz. Essa inovação permitiu o desenvolvimento do Algorithmic Trading, que é a automatização da tomada de decisões de estratégias por um computador capaz de enviar ordens de compra e venda diretamente ao mercado.
+
+\paragraph{} Tendo em vista o conflito de interesses existente por trás de trabalhos de cujo tema está relacionado à previsibilidade do mercado financeiro, pode-se questionar se as estratégias mais promissoras de fato são encontradas em domínio público. Isso ocorre pois a democratização de uma estratégia lucrativa implicaria na redução das lucratividades individuais. Nesse sentido, há uma semelhança com o raciocínio apontado por FAMA.
+
+\paragraph{} Para efeito de simplificação, as estratégias de AT aplicadas ao mercado financeiro serão agrupadas em três metodologias centrais: estratégias baseadas em indicadores técnicos; estratégias baseadas em modelos estatísticos; e estratégias baseadas em inteligência artificial.
+
+\subsection{Estratégias Baseadas em Indicadores Técnicos}
+
+\paragraph{} Este tipo de abordagem utiliza informações derivadas da série temporal de preços para criar uma combinação de indicadores que possuam algum poder de previsibilidade da tendência de mercado. Quando comparada aos outros tipos, é a metodologia mais simples e democrática, uma vez que pessoas com pouco ou nenhum conhecimento sobre estatística e inteligência artificial podem operar em estratégias próprias.
+
+\paragraph{} Dentre os indicadores mais famosos e portanto utilizados, podemos citar: o volume financeiro; a identificação de tendências de alta, de baixa e de consolidação de acordo com a Teoria de Dow \cite{kirkpatrick2022dow}; as linhas de suporte e resistência do mercado; as médias móveis; as bandas de Bollinger \cite{bollinger2002bollinger}; e o MACD (Moving Average Convergence-Divergence) \cite{appel2007understanding}.
+
+\subsection{Estratégias Baseadas em Modelos Estatísticos}
+
+\paragraph{} De acordo com GODFREY \cite{godfrey1964random}, a hipótese de que a flutuação de preços no mercado de ações poderia ser explicada por uma Random Walk\footnote{Processo aleatório definido pela equação \begin{math}y_t = y_{t-1} + X\end{math}, onde X é a variável aleatória e \(y\) é a variável resultante.} foi feita por BACHELIER \cite{bachelier1900theorie}. A partir da década de 60, muitos trabalhos acadêmicos foram realizados nessa linha na tentativa de entender o comportamento e a previsibilidade do mercado \cite{fama1970efficient, solnik1973note, cooper1982world}, assim como estratégias \cite{malkiel2019random}. Nota-se que até hoje utiliza-se Random Walks para testar a hipótese de eficiência de mercados \cite{said2015efficiency}.
+
+\paragraph{} Outra abordagem utilizada são os modelos ocultos de Markov (Hidden Markov Model).
+
+\subsection{Estratégias Baseadas em Inteligência Artificial}
 
 \paragraph{} Existem registros de estudos sobre inteligência artificial aplicados ao mercado financeiro por volta da década de 70 \cite{felsen1975artificial}, porém ainda em um estágio embrionário devido às dificuldades de acesso à informação e de processamento computacional na época. Conforme ambos os fatores foram evoluindo, a dificuldade de se testar algoritmos cada vez mais complexos diminuiu. Aliado a esse cenário, interesses acadêmicos e privados referentes ao potencial que o tema envolve fomentaram um aumento cresence de estudos nas décadas seguintes \cite{atsalakis2009surveying}.
 
-\paragraph{} Por outro lado, quando se analisa o conflito de interesses existente por trás de trabalhos cujo tema está relacionado à previsibilidade do mercado financeiro, pode-se questionar se as estratégias mais promissoras de fato se encontram em domínio público. Isso ocorre pois a democratização de uma estratégia lucrativa implicaria na redução das lucratividades individuais. Nesse sentido, há uma semelhança com o raciocínio apontado por FAMA.
-
-\paragraph{} Muitos traders e investidores

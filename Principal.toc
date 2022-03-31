@@ -29,12 +29,12 @@
 \contentsline {paragraph}{}{2}%
 \contentsline {paragraph}{}{2}%
 \contentsline {paragraph}{}{2}%
-\contentsline {section}{\numberline {1.4}Objetivos}{2}%
-\contentsline {paragraph}{}{2}%
+\contentsline {section}{\numberline {1.4}Objetivos}{3}%
+\contentsline {paragraph}{}{3}%
 \contentsline {section}{\numberline {1.5}Metodologia}{3}%
 \contentsline {paragraph}{}{3}%
 \contentsline {paragraph}{}{3}%
-\contentsline {paragraph}{}{3}%
+\contentsline {paragraph}{}{4}%
 \contentsline {paragraph}{}{4}%
 \contentsline {section}{\numberline {1.6}Descrição}{4}%
 \contentsline {paragraph}{}{4}%
@@ -56,6 +56,7 @@
 \contentsline {paragraph}{}{8}%
 \contentsline {paragraph}{}{8}%
 \contentsline {subsection}{\numberline {2.1.3}Mercado Fracionário}{8}%
+\contentsline {paragraph}{}{8}%
 \contentsline {paragraph}{}{9}%
 \contentsline {paragraph}{}{9}%
 \contentsline {paragraph}{}{9}%
@@ -71,5 +72,12 @@
 \contentsline {paragraph}{}{10}%
 \contentsline {paragraph}{}{10}%
 \contentsline {paragraph}{}{10}%
+\contentsline {subsection}{\numberline {2.4.1}Estratégias Baseadas em Indicadores Técnicos}{10}%
+\contentsline {paragraph}{}{10}%
+\contentsline {paragraph}{}{11}%
+\contentsline {subsection}{\numberline {2.4.2}Estratégias Baseadas em Modelos Estatísticos}{11}%
+\contentsline {paragraph}{}{11}%
+\contentsline {paragraph}{}{11}%
+\contentsline {subsection}{\numberline {2.4.3}Estratégias Baseadas em Inteligência Artificial}{11}%
 \contentsline {paragraph}{}{11}%
 \contentsline {chapter}{Bibliografia}{12}%

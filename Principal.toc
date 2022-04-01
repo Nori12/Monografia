@@ -72,12 +72,15 @@
 \contentsline {paragraph}{}{10}%
 \contentsline {paragraph}{}{10}%
 \contentsline {paragraph}{}{10}%
-\contentsline {subsection}{\numberline {2.4.1}Estratégias Baseadas em Indicadores Técnicos}{10}%
+\contentsline {subsection}{\numberline {2.4.1}Modelos Baseadas em Indicadores Técnicos}{10}%
 \contentsline {paragraph}{}{10}%
 \contentsline {paragraph}{}{11}%
-\contentsline {subsection}{\numberline {2.4.2}Estratégias Baseadas em Modelos Estatísticos}{11}%
+\contentsline {subsection}{\numberline {2.4.2}Modelos Baseados em Processos Estocásticos}{11}%
 \contentsline {paragraph}{}{11}%
 \contentsline {paragraph}{}{11}%
-\contentsline {subsection}{\numberline {2.4.3}Estratégias Baseadas em Inteligência Artificial}{11}%
 \contentsline {paragraph}{}{11}%
-\contentsline {chapter}{Bibliografia}{12}%
+\contentsline {paragraph}{}{12}%
+\contentsline {paragraph}{}{12}%
+\contentsline {subsection}{\numberline {2.4.3}Modelos Baseados em Inteligência Artificial}{12}%
+\contentsline {paragraph}{}{12}%
+\contentsline {chapter}{Bibliografia}{13}%

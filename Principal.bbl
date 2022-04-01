@@ -187,6 +187,21 @@ SAID, A., HARPER, A., \enquote{The efficiency of the Russian stock market: A
   revisit of the random walk hypothesis}, \emph{Academy of Accounting and
   Financial Studies Journal}, v.~19, n.~1, pp.~42--48, 2015.
 
+\bibitem{rabiner1989tutorial}
+RABINER, L.~R., \enquote{A tutorial on hidden Markov models and selected
+  applications in speech recognition}, \emph{Proceedings of the IEEE}, v.~77,
+  n.~2, pp.~257--286, 1989.
+
+\bibitem{jadhav2021forecasting}
+JADHAV, A., KALE, J., RANE, C., \emph{et~al.}, \enquote{Forecasting FAANG
+  Stocks using Hidden Markov Model}. In: \emph{2021 6th International
+  Conference for Convergence in Technology (I2CT)}, pp. 1--4, IEEE, 2021.
+
+\bibitem{de2013dynamic}
+DE~ANGELIS, L., PAAS, L.~J., \enquote{A dynamic analysis of stock markets using
+  a hidden Markov model}, \emph{Journal of Applied Statistics}, v.~40, n.~8,
+  pp.~1682--1700, 2013.
+
 \bibitem{felsen1975artificial}
 FELSEN, J., \enquote{Artificial intelligence techniques applied to reduction of
   uncertainty in decision analysis through learning}, \emph{Journal of the

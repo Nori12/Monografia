@@ -38,8 +38,8 @@
 Índices de Bolsas de Valores \cite{stock_index} são métricas criadas para avaliar a saúde de um determinado grupo de ações negociadas na bolsa. Cada índice possui uma regra própria de criação que define quais ações são englobadas e com quais pesos, como por exemplo:
 
 \begin{itemize}
-    \item S\&P 500: Um dos mais conhecidos no mercado. É a média ponderada pelo capital social das 500 maiores companhias do mercado estadunindense.
-    \item Dow Jones Industrial Average: É a média ponderada pelo preço da ação das 30 maiores blue-chips industriais e financeiras do mercado estadunidense (i.e., companhias bem conhecidas, bem estabelecidas e com grande capital social).
+    \item S\&P 500: Um dos mais conhecidos no mercado. É a média ponderada pelo capital social das 500 maiores companhias do mercado americano.
+    \item Dow Jones Industrial Average: É a média ponderada pelo preço da ação das 30 maiores blue-chips industriais e financeiras do mercado americano (i.e., companhias bem conhecidas, bem estabelecidas e com grande capital social).
     \item Ibovespa: Principal indicador de desempenho do mercado brasileiro. Possui alguns critérios específicos, mas basicamente é composto pelas ações com maior volume de negociação na B3 \cite{ibovespa}.
 \end{itemize}
 
@@ -83,21 +83,27 @@
 
 \paragraph{} Tendo em vista o conflito de interesses existente por trás de trabalhos de cujo tema está relacionado à previsibilidade do mercado financeiro, pode-se questionar se as estratégias mais promissoras de fato são encontradas em domínio público. Isso ocorre pois a democratização de uma estratégia lucrativa implicaria na redução das lucratividades individuais. Nesse sentido, há uma semelhança com o raciocínio apontado por FAMA.
 
-\paragraph{} Para efeito de simplificação, as estratégias de AT aplicadas ao mercado financeiro serão agrupadas em três metodologias centrais: estratégias baseadas em indicadores técnicos; estratégias baseadas em modelos estatísticos; e estratégias baseadas em inteligência artificial.
+\paragraph{} Para efeito de simplificação, as estratégias de AT aplicadas ao mercado financeiro serão agrupadas em três metodologias centrais: modelos baseados em indicadores técnicos; modelos baseados em processos estocásticos; e modelos baseados em inteligência artificial.
 
-\subsection{Estratégias Baseadas em Indicadores Técnicos}
+\subsection{Modelos Baseadas em Indicadores Técnicos}
 
 \paragraph{} Este tipo de abordagem utiliza informações derivadas da série temporal de preços para criar uma combinação de indicadores que possuam algum poder de previsibilidade da tendência de mercado. Quando comparada aos outros tipos, é a metodologia mais simples e democrática, uma vez que pessoas com pouco ou nenhum conhecimento sobre estatística e inteligência artificial podem operar em estratégias próprias.
 
 \paragraph{} Dentre os indicadores mais famosos e portanto utilizados, podemos citar: o volume financeiro; a identificação de tendências de alta, de baixa e de consolidação de acordo com a Teoria de Dow \cite{kirkpatrick2022dow}; as linhas de suporte e resistência do mercado; as médias móveis; as bandas de Bollinger \cite{bollinger2002bollinger}; e o MACD (Moving Average Convergence-Divergence) \cite{appel2007understanding}.
 
-\subsection{Estratégias Baseadas em Modelos Estatísticos}
+\subsection{Modelos Baseados em Processos Estocásticos}
 
-\paragraph{} De acordo com GODFREY \cite{godfrey1964random}, a hipótese de que a flutuação de preços no mercado de ações poderia ser explicada por uma Random Walk\footnote{Processo aleatório definido pela equação \begin{math}y_t = y_{t-1} + X\end{math}, onde X é a variável aleatória e \(y\) é a variável resultante.} foi feita por BACHELIER \cite{bachelier1900theorie}. A partir da década de 60, muitos trabalhos acadêmicos foram realizados nessa linha na tentativa de entender o comportamento e a previsibilidade do mercado \cite{fama1970efficient, solnik1973note, cooper1982world}, assim como estratégias \cite{malkiel2019random}. Nota-se que até hoje utiliza-se Random Walks para testar a hipótese de eficiência de mercados \cite{said2015efficiency}.
+\paragraph{} De acordo com GODFREY \cite{godfrey1964random}, a hipótese de que a flutuação de preços no mercado de ações poderia ser explicada por uma Random Walk\footnote{Processo aleatório definido pela equação \begin{math}y_t = y_{t-1} + X\end{math}, onde X é uma variável aleatória e \(y\) é a variável resultante.} foi feita por BACHELIER \cite{bachelier1900theorie}. A partir da década de 60, muitos trabalhos acadêmicos foram realizados nessa linha na tentativa de entender o comportamento e a previsibilidade do mercado \cite{fama1970efficient, solnik1973note, cooper1982world}, assim como estratégias \cite{malkiel2019random}. Nota-se que até hoje utiliza-se Random Walks para testar a hipótese de eficiência de mercados \cite{said2015efficiency}.
 
-\paragraph{} Outra abordagem utilizada são os modelos ocultos de Markov (Hidden Markov Model).
+\paragraph{} Outra abordagem utilizada são os Modelos Ocultos de Markov (do inglês Hidden Markov Model, ou HMM) \cite{rabiner1989tutorial}. Uma Cadeia de Markov é um processo estocástico que modela um sistema por meio de uma sequência finita de estados. A mudança e a permanência de cada estado é determinada por probabilidades que dependem somente do estado atual. Em uma Cadeia de Markov, pressupõe-se que seus estados sejam estados observáveis, o que para algumas aplicações, pode não ser verdade. Nesse sentido surge o modelo HMM, que busca aprender sobre um processo não observável (oculto) a partir de um processo observável.
 
-\subsection{Estratégias Baseadas em Inteligência Artificial}
+\paragraph{} Em sua pesquisa, JADHAV et al \cite{jadhav2021forecasting} utiliza um modelo HMM para previsão do preço de fechamento do dia seguinte para ações FAANG\footnote{Facebook, Amazon, Apple, Netflix, Google}. A partir da série histórica de preços OHLC\footnote{Open, High, Low, Close. Em português: Abertura, Máximo, Mínimo, Fechamento}, seu modelo atinge uma eficiência de 97\%-99\%, calculado a partir do erro percentual absoluto médio\footnote{Mean Absolute Percentage Error (MAPE): \begin{math} \frac{1}{N}\sum_{i=1}^{N} \frac{|Predicted(i)-Actual(i)|}{Actual(i)} \end{math}}.
+
+\paragraph{} Uma outra aplicação de modelos HMM é dada por DE ANGELIS et al \cite{de2013dynamic}, que criou uma metodologia a partir de índices da bolsa americana capaz de identificar períodos estáveis e instáveis (i.e. crises econômicas), assim como as probabilidades de transição entre um estado e o outro.
+
+\paragraph{} Por fim, pode-ser mencionar o uso de modelos ARCH\footnote{Em português: Heteroscedasticidade Condicional Auto-regressiva} (Autoregressive Conditional Heteroskedasticity)
+
+\subsection{Modelos Baseados em Inteligência Artificial}
 
 \paragraph{} Existem registros de estudos sobre inteligência artificial aplicados ao mercado financeiro por volta da década de 70 \cite{felsen1975artificial}, porém ainda em um estágio embrionário devido às dificuldades de acesso à informação e de processamento computacional na época. Conforme ambos os fatores foram evoluindo, a dificuldade de se testar algoritmos cada vez mais complexos diminuiu. Aliado a esse cenário, interesses acadêmicos e privados referentes ao potencial que o tema envolve fomentaram um aumento cresence de estudos nas décadas seguintes \cite{atsalakis2009surveying}.
 

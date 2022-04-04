@@ -1,86 +1,105 @@
 \babel@toc {brazil}{}
-\contentsline {paragraph}{}{iv}%
-\contentsline {paragraph}{}{iv}%
-\contentsline {paragraph}{}{iv}%
-\contentsline {paragraph}{}{v}%
-\contentsline {paragraph}{}{vii}%
-\contentsline {paragraph}{}{vii}%
-\contentsline {paragraph}{}{vii}%
-\contentsline {paragraph}{}{viii}%
-\contentsline {paragraph}{}{viii}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {paragraph}{}{ix}%
-\contentsline {chapter}{\numberline {1}Introdução}{1}%
-\contentsline {section}{\numberline {1.1}Tema}{1}%
-\contentsline {paragraph}{}{1}%
-\contentsline {paragraph}{}{1}%
-\contentsline {section}{\numberline {1.2}Delimitação}{1}%
-\contentsline {paragraph}{}{1}%
-\contentsline {paragraph}{}{1}%
-\contentsline {paragraph}{}{2}%
-\contentsline {section}{\numberline {1.3}Justificativa}{2}%
-\contentsline {paragraph}{}{2}%
-\contentsline {paragraph}{}{2}%
-\contentsline {paragraph}{}{2}%
-\contentsline {paragraph}{}{2}%
-\contentsline {section}{\numberline {1.4}Objetivos}{3}%
-\contentsline {paragraph}{}{3}%
-\contentsline {section}{\numberline {1.5}Metodologia}{3}%
-\contentsline {paragraph}{}{3}%
-\contentsline {paragraph}{}{3}%
-\contentsline {paragraph}{}{4}%
-\contentsline {paragraph}{}{4}%
-\contentsline {section}{\numberline {1.6}Descrição}{4}%
-\contentsline {paragraph}{}{4}%
-\contentsline {chapter}{\numberline {2}Fundamentação Teórica}{5}%
-\contentsline {paragraph}{}{5}%
-\contentsline {section}{\numberline {2.1}Mercado de Capitais, Bolsa de Valores e Ações}{5}%
-\contentsline {paragraph}{}{5}%
-\contentsline {paragraph}{}{5}%
-\contentsline {paragraph}{}{5}%
-\contentsline {paragraph}{}{6}%
-\contentsline {paragraph}{}{6}%
-\contentsline {subsection}{\numberline {2.1.1}Hipótese do Mercado Eficiente}{6}%
-\contentsline {paragraph}{}{6}%
-\contentsline {paragraph}{}{7}%
-\contentsline {paragraph}{}{7}%
-\contentsline {paragraph}{}{7}%
-\contentsline {paragraph}{}{7}%
-\contentsline {subsection}{\numberline {2.1.2}Índice de Bolsa de Valores}{8}%
-\contentsline {paragraph}{}{8}%
-\contentsline {paragraph}{}{8}%
-\contentsline {subsection}{\numberline {2.1.3}Mercado Fracionário}{8}%
-\contentsline {paragraph}{}{8}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {section}{\numberline {2.2}Tipos de Análises}{9}%
-\contentsline {subsection}{\numberline {2.2.1}Análise Fundamentalista}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {subsection}{\numberline {2.2.2}Análise Técnica}{9}%
-\contentsline {paragraph}{}{9}%
-\contentsline {paragraph}{}{10}%
-\contentsline {section}{\numberline {2.3}Aprendizado de Máquina}{10}%
-\contentsline {section}{\numberline {2.4}Trabalhos Relacionados}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {subsection}{\numberline {2.4.1}Modelos Baseadas em Indicadores Técnicos}{10}%
-\contentsline {paragraph}{}{10}%
-\contentsline {paragraph}{}{11}%
-\contentsline {subsection}{\numberline {2.4.2}Modelos Baseados em Processos Estocásticos}{11}%
-\contentsline {paragraph}{}{11}%
-\contentsline {paragraph}{}{11}%
-\contentsline {paragraph}{}{11}%
-\contentsline {paragraph}{}{12}%
-\contentsline {paragraph}{}{12}%
-\contentsline {subsection}{\numberline {2.4.3}Modelos Baseados em Inteligência Artificial}{12}%
-\contentsline {paragraph}{}{12}%
-\contentsline {chapter}{Bibliografia}{13}%
+\contentsline {paragraph}{}{iv}{section*.1}%
+\contentsline {paragraph}{}{iv}{section*.2}%
+\contentsline {paragraph}{}{iv}{section*.3}%
+\contentsline {paragraph}{}{v}{section*.4}%
+\contentsline {paragraph}{}{vii}{section*.5}%
+\contentsline {paragraph}{}{vii}{section*.6}%
+\contentsline {paragraph}{}{vii}{section*.7}%
+\contentsline {paragraph}{}{viii}{section*.8}%
+\contentsline {paragraph}{}{viii}{section*.9}%
+\contentsline {paragraph}{}{ix}{section*.10}%
+\contentsline {paragraph}{}{ix}{section*.11}%
+\contentsline {paragraph}{}{ix}{section*.12}%
+\contentsline {paragraph}{}{ix}{section*.13}%
+\contentsline {paragraph}{}{ix}{section*.14}%
+\contentsline {paragraph}{}{ix}{section*.15}%
+\contentsline {paragraph}{}{ix}{section*.16}%
+\contentsline {paragraph}{}{ix}{section*.17}%
+\contentsline {paragraph}{}{ix}{section*.18}%
+\contentsline {paragraph}{}{ix}{section*.19}%
+\contentsline {paragraph}{}{ix}{section*.20}%
+\contentsline {paragraph}{}{ix}{section*.21}%
+\contentsline {paragraph}{}{ix}{section*.22}%
+\contentsline {paragraph}{}{ix}{section*.23}%
+\contentsline {paragraph}{}{ix}{section*.24}%
+\contentsline {paragraph}{}{ix}{section*.25}%
+\contentsline {paragraph}{}{ix}{section*.26}%
+\contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Tema}{1}{section.1.1}%
+\contentsline {paragraph}{}{1}{section*.30}%
+\contentsline {paragraph}{}{1}{section*.31}%
+\contentsline {section}{\numberline {1.2}Delimitação}{1}{section.1.2}%
+\contentsline {paragraph}{}{1}{section*.32}%
+\contentsline {paragraph}{}{1}{section*.33}%
+\contentsline {paragraph}{}{2}{section*.34}%
+\contentsline {section}{\numberline {1.3}Justificativa}{2}{section.1.3}%
+\contentsline {paragraph}{}{2}{section*.35}%
+\contentsline {paragraph}{}{2}{section*.36}%
+\contentsline {paragraph}{}{2}{section*.37}%
+\contentsline {paragraph}{}{2}{section*.38}%
+\contentsline {section}{\numberline {1.4}Objetivos}{3}{section.1.4}%
+\contentsline {paragraph}{}{3}{section*.39}%
+\contentsline {section}{\numberline {1.5}Metodologia}{3}{section.1.5}%
+\contentsline {paragraph}{}{3}{section*.40}%
+\contentsline {paragraph}{}{3}{section*.41}%
+\contentsline {paragraph}{}{4}{section*.42}%
+\contentsline {paragraph}{}{4}{section*.43}%
+\contentsline {section}{\numberline {1.6}Descrição}{4}{section.1.6}%
+\contentsline {paragraph}{}{4}{section*.44}%
+\contentsline {chapter}{\numberline {2}Fundamentação Teórica}{5}{chapter.2}%
+\contentsline {paragraph}{}{5}{section*.45}%
+\contentsline {section}{\numberline {2.1}Mercado de Capitais, Bolsa de Valores e Ações}{5}{section.2.1}%
+\contentsline {paragraph}{}{5}{section*.46}%
+\contentsline {paragraph}{}{5}{section*.47}%
+\contentsline {paragraph}{}{5}{section*.48}%
+\contentsline {paragraph}{}{6}{section*.49}%
+\contentsline {paragraph}{}{6}{section*.50}%
+\contentsline {subsection}{\numberline {2.1.1}Hipótese do Mercado Eficiente}{6}{subsection.2.1.1}%
+\contentsline {paragraph}{}{6}{section*.51}%
+\contentsline {paragraph}{}{7}{section*.52}%
+\contentsline {paragraph}{}{7}{section*.53}%
+\contentsline {paragraph}{}{7}{section*.54}%
+\contentsline {paragraph}{}{7}{section*.55}%
+\contentsline {subsection}{\numberline {2.1.2}Índice de Bolsa de Valores}{8}{subsection.2.1.2}%
+\contentsline {paragraph}{}{8}{section*.56}%
+\contentsline {paragraph}{}{8}{section*.57}%
+\contentsline {subsection}{\numberline {2.1.3}Mercado Fracionário}{8}{subsection.2.1.3}%
+\contentsline {paragraph}{}{8}{section*.58}%
+\contentsline {paragraph}{}{9}{section*.59}%
+\contentsline {paragraph}{}{9}{section*.60}%
+\contentsline {paragraph}{}{9}{section*.61}%
+\contentsline {section}{\numberline {2.2}Tipos de Análises}{9}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Análise Fundamentalista}{9}{subsection.2.2.1}%
+\contentsline {paragraph}{}{9}{section*.62}%
+\contentsline {paragraph}{}{9}{section*.63}%
+\contentsline {subsection}{\numberline {2.2.2}Análise Técnica}{9}{subsection.2.2.2}%
+\contentsline {paragraph}{}{9}{section*.64}%
+\contentsline {paragraph}{}{10}{section*.65}%
+\contentsline {section}{\numberline {2.3}Aprendizado de Máquina}{10}{section.2.3}%
+\contentsline {paragraph}{}{10}{section*.66}%
+\contentsline {paragraph}{}{10}{section*.67}%
+\contentsline {paragraph}{}{10}{section*.68}%
+\contentsline {subsection}{\numberline {2.3.1}Aprendizado Supervisionado}{10}{subsection.2.3.1}%
+\contentsline {paragraph}{}{10}{section*.69}%
+\contentsline {subsection}{\numberline {2.3.2}Problema de Regressão}{11}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Problema de Classificação}{11}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Trabalhos Relacionados}{11}{section.2.4}%
+\contentsline {paragraph}{}{11}{section*.70}%
+\contentsline {paragraph}{}{11}{section*.71}%
+\contentsline {paragraph}{}{11}{section*.72}%
+\contentsline {subsection}{\numberline {2.4.1}Modelos Baseadas em Indicadores Técnicos}{11}{subsection.2.4.1}%
+\contentsline {paragraph}{}{11}{section*.73}%
+\contentsline {paragraph}{}{11}{section*.74}%
+\contentsline {paragraph}{}{12}{section*.75}%
+\contentsline {subsection}{\numberline {2.4.2}Modelos Baseados em Processos Estocásticos}{12}{subsection.2.4.2}%
+\contentsline {paragraph}{}{12}{section*.76}%
+\contentsline {paragraph}{}{12}{section*.77}%
+\contentsline {paragraph}{}{12}{section*.78}%
+\contentsline {paragraph}{}{13}{section*.79}%
+\contentsline {paragraph}{}{13}{section*.80}%
+\contentsline {paragraph}{}{13}{section*.81}%
+\contentsline {subsection}{\numberline {2.4.3}Modelos Baseados em Inteligência Artificial}{13}{subsection.2.4.3}%
+\contentsline {paragraph}{}{13}{section*.82}%
+\contentsline {paragraph}{}{14}{section*.83}%
+\contentsline {chapter}{Bibliografia}{15}{section*.83}%

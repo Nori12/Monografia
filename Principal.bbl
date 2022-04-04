@@ -144,6 +144,25 @@ MURPHY, J.~J., \emph{Technical analysis of the financial markets: A
 EDWARDS, R.~D., MAGEE, J., BASSETTI, W.~C., \emph{Technical analysis of stock
   trends}. CRC press, 2018.
 
+\bibitem{ibm_ai}
+IBM, \enquote{Artificial Intelligence (AI)},
+  https://www.ibm.com/cloud/learn/what-is-artificial-intelligence, (Acesso em 4
+  de Abril de 2022).
+
+\bibitem{muller2016introduction}
+M{\"U}LLER, A.~C., GUIDO, S., \emph{Introduction to machine learning with
+  Python: a guide for data scientists}. " O'Reilly Media, Inc.", 2016.
+
+\bibitem{ibm_ml}
+IBM, \enquote{Machine Learning},
+  https://www.ibm.com/cloud/learn/machine-learning\#:~:text=IBM%20has%20a%20rich%20history,around%20the%20game%20of%20checkers.,
+  (Acesso em 4 de Abril de 2022).
+
+\bibitem{arthur1959some}
+ARTHUR, S., OTHERS, \enquote{Some studies in machine learning using the game of
+  checkers}, \emph{IBM Journal of research and development}, v.~3, n.~3,
+  pp.~210--229, 1959.
+
 \bibitem{kim2010electronic}
 KIM, K., \emph{Electronic and algorithmic trading technology: the complete
   guide}. Academic Press, 2010.
@@ -158,6 +177,10 @@ BOLLINGER, J., \emph{Bollinger on Bollinger bands}. McGraw Hill Professional,
 
 \bibitem{appel2007understanding}
 APPEL, G., DOBSON, E., \emph{Understanding MACD}. Traders Press, 2007.
+
+\bibitem{moraes2007se}
+MORAES, A., \emph{Se Afastando da Manada: Estratégias para vencer no Mercado
+  de Ações}. Infomoney, 2016.
 
 \bibitem{godfrey1964random}
 GODFREY, M.~D., GRANGER, C.~W., MORGENSTERN, O., \enquote{THE RANDOM-WALK
@@ -202,14 +225,52 @@ DE~ANGELIS, L., PAAS, L.~J., \enquote{A dynamic analysis of stock markets using
   a hidden Markov model}, \emph{Journal of Applied Statistics}, v.~40, n.~8,
   pp.~1682--1700, 2013.
 
+\bibitem{enders2008applied}
+ENDERS, W., \emph{Applied econometric time series}. John Wiley \& Sons, 2008.
+
+\bibitem{engle1982autoregressive}
+ENGLE, R.~F., \enquote{Autoregressive conditional heteroscedasticity with
+  estimates of the variance of United Kingdom inflation}, \emph{Econometrica:
+  Journal of the econometric society}, pp. 987--1007, 1982.
+
+\bibitem{bollerslev1986generalized}
+BOLLERSLEV, T., \enquote{Generalized autoregressive conditional
+  heteroskedasticity}, \emph{Journal of econometrics}, v.~31, n.~3,
+  pp.~307--327, 1986.
+
+\bibitem{higgins1992class}
+HIGGINS, M.~L., BERA, A.~K., \enquote{A class of nonlinear ARCH models},
+  \emph{International Economic Review}, pp. 137--158, 1992.
+
+\bibitem{rabemananjara1993threshold}
+RABEMANANJARA, R., ZAKOIAN, J.-M., \enquote{Threshold ARCH models and
+  asymmetries in volatility}, \emph{Journal of applied econometrics}, v.~8,
+  n.~1, pp.~31--49, 1993.
+
+\bibitem{franses1996forecasting}
+FRANSES, P.~H., VAN~DIJK, D., \enquote{Forecasting stock market volatility
+  using (non-linear) Garch models}, \emph{Journal of forecasting}, v.~15, n.~3,
+  pp.~229--235, 1996.
+
+\bibitem{marcucci2005forecasting}
+MARCUCCI, J., \enquote{Forecasting stock market volatility with
+  regime-switching GARCH models}, \emph{Studies in Nonlinear Dynamics \&
+  Econometrics}, v.~9, n.~4, 2005.
+
+\bibitem{alberg2008estimating}
+ALBERG, D., SHALIT, H., YOSEF, R., \enquote{Estimating stock market volatility
+  using asymmetric GARCH models}, \emph{Applied Financial Economics}, v.~18,
+  n.~15, pp.~1201--1208, 2008.
+
 \bibitem{felsen1975artificial}
 FELSEN, J., \enquote{Artificial intelligence techniques applied to reduction of
   uncertainty in decision analysis through learning}, \emph{Journal of the
   Operational Research Society}, v.~26, n.~3, pp.~581--598, 1975.
 
-\bibitem{atsalakis2009surveying}
-ATSALAKIS, G.~S., VALAVANIS, K.~P., \enquote{Surveying stock market forecasting
-  techniques--Part II: Soft computing methods}, \emph{Expert systems with
-  applications}, v.~36, n.~3, pp.~5932--5941, 2009.
+\bibitem{bildirici2009improving}
+BILDIRICI, M., ERSIN, {\"O}.~{\"O}., \enquote{Improving forecasts of GARCH
+  family models with the artificial neural networks: An application to the
+  daily returns in Istanbul Stock Exchange}, \emph{Expert Systems with
+  Applications}, v.~36, n.~4, pp.~7355--7362, 2009.
 
 \end{thebibliography}

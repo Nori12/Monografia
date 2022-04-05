@@ -1,3 +1,7 @@
 \babel@toc {brazil}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Relação entre complexidade e acur\'acia de um modelo \cite {muller2016introduction}}}{12}{figure.2.1}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces \textit {Oversampling} e \textit {Undersampling} de classes desbalanceadas \cite {over_under_sampling}}}{14}{figure.2.2}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Funcionamento de um algoritmo k-NN para o problema de classificação \cite {knn_classification}. Para K=3 a classe é B e para K=7 a classe é A.}}{15}{figure.2.3}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Visualização de uma Árvose de Decisão para um \textit {dataset} de câncer de mama \cite {muller2016introduction}.}}{16}{figure.2.4}%

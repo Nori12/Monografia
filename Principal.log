@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  4 APR 2022 01:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  5 APR 2022 02:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -481,50 +481,67 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
 \Hy@SectionHShift=\skip60
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/footmisc/footmisc.sty
+Package: footmisc 2011/06/06 v5.5b a miscellany of footnote facilities
+\FN@temptoken=\toks39
+\footnotemargin=\dimen264
+\c@pp@next@reset=\count345
+Package footmisc Info: Declaring symbol style bringhurst on input line 855.
+Package footmisc Info: Declaring symbol style chicago on input line 863.
+Package footmisc Info: Declaring symbol style wiley on input line 872.
+Package footmisc Info: Declaring symbol style lamport-robust on input line 883.
+Package footmisc Info: Declaring symbol style lamport* on input line 903.
+Package footmisc Info: Declaring symbol style lamport*-robust on input line 924.
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count345
+\l__kernel_color_stack_int=\count346
 \l__pdf_internal_box=\box57
 ) (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux))
 \openout1 = `Principal.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
  (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count346
-\scratchdimen=\dimen264
+\scratchcounter=\count347
+\scratchdimen=\dimen265
 \scratchbox=\box58
-\nofMPsegments=\count347
-\nofMParguments=\count348
-\everyMPshowfont=\toks39
-\MPscratchCnt=\count349
-\MPscratchDim=\dimen265
-\MPnumerator=\count350
-\makeMPintoPDFobject=\count351
-\everyMPtoPDFconversion=\toks40
+\nofMPsegments=\count348
+\nofMParguments=\count349
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count350
+\MPscratchDim=\dimen266
+\MPnumerator=\count351
+\makeMPintoPDFobject=\count352
+\everyMPtoPDFconversion=\toks41
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 8.
+Package hyperref Info: Link coloring OFF on input line 9.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -532,11 +549,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count352
+\c@section@level=\count353
 )
-LaTeX Info: Redefining \ref on input line 8.
-LaTeX Info: Redefining \pageref on input line 8.
-LaTeX Info: Redefining \nameref on input line 8.
+LaTeX Info: Redefining \ref on input line 9.
+LaTeX Info: Redefining \pageref on input line 9.
+LaTeX Info: Redefining \nameref on input line 9.
  (/Users/atcha/Github/Monografia/Principal.out) (/Users/atcha/Github/Monografia/Principal.out)
 \@outlinefile=\write3
 \openout3 = `Principal.out'.
@@ -553,7 +570,7 @@ Package epstopdf Info: Source file: <./figuras/Poli.eps>
 (epstopdf)             Command: <repstopdf --outfile=./figuras/Poli-eps-converted-to.pdf ./figuras/Poli.eps>
 (epstopdf)             \includegraphics on input line 1.
 Package epstopdf Info: Output file is already uptodate.
-<./figuras/Poli-eps-converted-to.pdf, id=100, 130.4875pt x 139.52126pt>
+<./figuras/Poli-eps-converted-to.pdf, id=108, 130.4875pt x 139.52126pt>
 File: ./figuras/Poli-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figuras/Poli-eps-converted-to.pdf>
 Package pdftex.def Info: ./figuras/Poli-eps-converted-to.pdf  used on input line 1.
@@ -618,24 +635,24 @@ Overfull \hbox (2.07504pt too wide) in paragraph at lines 81--82
  [][] \OT1/cmr/m/n/12 Nesse sen-tido, este tra-ba-lho visa a aplica^^Xc~ao de t^^Secnicas de apren-di-zado de m^^Saquina
  []
 
-[7] [8]) [9] (/Users/atcha/Github/Monografia/Principal.toc [10
+[7] [8] [9]) [10] (/Users/atcha/Github/Monografia/Principal.toc [11
 
 
 ])
 \tf@toc=\write4
 \openout4 = `Principal.toc'.
 
- [11] (/Users/atcha/Github/Monografia/Principal.lof)
+ [12] (/Users/atcha/Github/Monografia/Principal.lof)
 \tf@lof=\write5
 \openout5 = `Principal.lof'.
 
- [12
+ [13
 
 ] (/Users/atcha/Github/Monografia/Principal.lot)
 \tf@lot=\write6
 \openout6 = `Principal.lot'.
 
- [13
+ [14
 
 ]
 \openout2 = `cap1.aux'.
@@ -653,7 +670,7 @@ Cap\'{\i }tulo 1.
  (/Users/atcha/Github/Monografia/cap2.tex
 Cap\'{\i }tulo 2.
 
-Overfull \hbox (3.14258pt too wide) in paragraph at lines 6--6
+Overfull \hbox (3.14258pt too wide) in paragraph at lines 7--7
 []\OT1/cmr/bx/n/17.28 Mercado de Ca-pi-tais, Bolsa de Va-lo-res e A^^Xc~oes 
  []
 
@@ -661,178 +678,251 @@ Overfull \hbox (3.14258pt too wide) in paragraph at lines 6--6
 
 
 
-] [6] [7] [8] [9] [10] [11] [12] [13]) [14] (/Users/atcha/Github/Monografia/Principal.bbl
-Underfull \hbox (badness 1577) in paragraph at lines 5--9
+] [6] [7] [8] [9] [10] [11]
+<./figuras/generalisation.png, id=425, 1024.82875pt x 664.4825pt>
+File: ./figuras/generalisation.png Graphic file (type png)
+<use ./figuras/generalisation.png>
+Package pdftex.def Info: ./figuras/generalisation.png  used on input line 109.
+(pdftex.def)             Requested size: 358.69543pt x 232.57236pt.
+ [12 </Users/atcha/Github/Monografia/./figuras/generalisation.png>]
+<./figuras/over_under_sampling.png, id=442, 682.55pt x 240.9pt>
+File: ./figuras/over_under_sampling.png Graphic file (type png)
+<use ./figuras/over_under_sampling.png>
+Package pdftex.def Info: ./figuras/over_under_sampling.png  used on input line 135.
+(pdftex.def)             Requested size: 375.40366pt x 132.49539pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[13]
+<./figuras/knn_example.png, id=452, 405.515pt x 350.30875pt>
+File: ./figuras/knn_example.png Graphic file (type png)
+<use ./figuras/knn_example.png>
+Package pdftex.def Info: ./figuras/knn_example.png  used on input line 151.
+(pdftex.def)             Requested size: 243.31087pt x 210.18686pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14 </Users/atcha/Github/Monografia/./figuras/over_under_sampling.png>]
+<./figuras/decision_tree.png, id=473, 1159.33125pt x 681.54625pt>
+File: ./figuras/decision_tree.png Graphic file (type png)
+<use ./figuras/decision_tree.png>
+Package pdftex.def Info: ./figuras/decision_tree.png  used on input line 164.
+(pdftex.def)             Requested size: 405.77202pt x 238.54475pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[15 </Users/atcha/Github/Monografia/./figuras/knn_example.png>] [16 </Users/atcha/Github/Monografia/./figuras/decision_tree.png>] [17] [18] [19]) [20] (/Users/atcha/Github/Monografia/Principal.bbl
+Underfull \hbox (badness 6412) in paragraph at lines 9--12
+[]\OT1/cmr/m/n/12 STRANDS, ``Un-ba-lan-ced Da-ta-sets & What To Do About Them'',
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+[]\OT1/cmr/m/n/12 DATACAMP, ``KNN Clas-si-fi-ca-tion Tu-to-rial using Scikit-learn'',
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--17
+\OT1/cmr/m/n/12 https://www.datacamp.com/community/tutorials/k-nearest-neighbor-
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 19--23
 \OT1/cmr/m/n/12 em ja-neiro'', https://www.b3.com.br/pt[]br/noticias/5-milhoes-de-contas-de-
  []
 
 
-Underfull \hbox (badness 1895) in paragraph at lines 11--15
-\OT1/cmr/m/n/12 ao re-dor do mundo'', https://www.infomoney.com.br/onde-investir/robos-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--15
-\OT1/cmr/m/n/12 de-investimentos-ja-controlam-mais-de-us-200-bilhoes-ao-redor-do-mundo,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--30
+Underfull \hbox (badness 10000) in paragraph at lines 41--44
 []\OT1/cmr/m/n/12 CVM, ``En-ten-dendo o Mer-cado de Va-lo-res Mo-bili^^Sarios'',
  []
 
 
-Overfull \hbox (57.65611pt too wide) in paragraph at lines 27--30
+Overfull \hbox (57.65611pt too wide) in paragraph at lines 41--44
 \OT1/cmr/m/n/12 https://www.investidor.gov.br/menu/primeiros[]passos/entendendo[]mercado[]valores.html,
  []
 
-
-Underfull \hbox (badness 3354) in paragraph at lines 37--41
-[]\OT1/cmr/m/n/12 B3, ``Uma das prin-ci-pais em-pre-sas de in-fra-es-tru-tura de mer-cado fi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--46
-[]\OT1/cmr/m/n/12 B3, ``A^^Xc~oes'', https://www.b3.com.br/pt[]br/produtos-e-
- []
-
-
-Underfull \hbox (badness 3872) in paragraph at lines 43--46
-\OT1/cmr/m/n/12 servicos/negociacao/renda-variavel/acoes.htm, (Acesso em 24 de Mar^^Xco
- []
-
-[15
+[21
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
+[]\OT1/cmr/m/n/12 B3, ``A^^Xc~oes'', https://www.b3.com.br/pt[]br/produtos-e-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
 \OT1/cmr/m/n/12 so-bre as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XC, Se^^Xc~ao VII,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--52
-\OT1/cmr/m/n/12 http://www.planalto.gov.br/ccivil[]03/leis/l6404consol.htm, (Acesso em
+Underfull \hbox (badness 10000) in paragraph at lines 62--66
+\OT1/cmr/m/n/12 http://www.planalto.gov.br/ccivil[]03/leis/l6404consol.htm, (Aces-sado em
  []
 
 
-Underfull \hbox (badness 2556) in paragraph at lines 54--58
+Underfull \hbox (badness 2556) in paragraph at lines 68--72
 []\OT1/cmr/m/n/12 CVM, ``Lei 6.404/76: Ex-posi^^Xc~ao de Mo-ti-vos'', Cap^^S^^Ptulo II, Se^^Xcao I,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--58
+Underfull \hbox (badness 10000) in paragraph at lines 68--72
 \OT1/cmr/m/n/12 https://www.gov.br/cvm/pt-br/acesso-a-informacao-cvm/institucional/sobre-
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 60--64
+Underfull \hbox (badness 4266) in paragraph at lines 74--78
 []\OT1/cmr/m/n/12 INVESTIMENTOS, X., ``Mer-cado se-cund^^Sario: en-tenda as di-fe-ren^^Xcas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+Underfull \hbox (badness 10000) in paragraph at lines 74--78
 \OT1/cmr/m/n/12 com o mer-cado prim^^Sario'', https://conteudos.xpi.com.br/aprenda-a-
  []
 
 
-Underfull \hbox (badness 4366) in paragraph at lines 66--70
+Underfull \hbox (badness 2922) in paragraph at lines 74--78
+\OT1/cmr/m/n/12 investir/relatorios/mercado-secundario/, (Aces-sado em 24 de Mar^^Xco de
+ []
+
+
+Underfull \hbox (badness 4366) in paragraph at lines 80--84
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe so-
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 66--70
+Underfull \hbox (badness 4954) in paragraph at lines 80--84
 \OT1/cmr/m/n/12 bre as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XV, Se^^Xc~ao II, Art. 176,
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 72--76
+Underfull \hbox (badness 2591) in paragraph at lines 86--90
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe so-bre
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 72--76
+Underfull \hbox (badness 1715) in paragraph at lines 86--90
 \OT1/cmr/m/n/12 as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XXI, Se^^Xc~ao IV, Art. 275, \TS1/cmr/m/n/12 § \OT1/cmr/m/n/12 4\TS1/cmr/m/n/12 º\OT1/cmr/m/n/12 ,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 97--100
 []\OT1/cmr/m/n/12 B3, ``Posi^^Xc~oes ven-di-das no mer-cado de a^^Xc~oes'',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
-\OT1/cmr/m/n/12 https://www.b3.com.br/pt[]br/noticias/short-selling.htm, (Acesso em 24
+Underfull \hbox (badness 10000) in paragraph at lines 97--100
+\OT1/cmr/m/n/12 https://www.b3.com.br/pt[]br/noticias/short-selling.htm, (Aces-sado em
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--96
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
 []\OT1/cmr/m/n/12 INVESTOPEDIA, ``Four Scan-da-lous In-si-der Tra-ding In-ci-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--96
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
 \OT1/cmr/m/n/12 dents'', https://www.investopedia.com/articles/stocks/09/insider-
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 116--119
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--133
 []\OT1/cmr/m/n/12 FORBES, ``In-ves-ting Ba-sics: What Is A Mar-ket In-dex?'',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--119
-\OT1/cmr/m/n/12 https://www.forbes.com/advisor/investing/stock-market-index/, (Acesso
+Underfull \hbox (badness 10000) in paragraph at lines 130--133
+\OT1/cmr/m/n/12 https://www.forbes.com/advisor/investing/stock-market-index/, (Aces-sado
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--124
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
 []\OT1/cmr/m/n/12 B3, ``Ibo-vespa B3'', https://www.b3.com.br/pt[]br/market-data-e-
  []
 
 
-Overfull \hbox (102.99904pt too wide) in paragraph at lines 131--134
+Underfull \hbox (badness 2119) in paragraph at lines 135--138
+\OT1/cmr/m/n/12 indices/indices/indices-amplos/ibovespa.htm, (Aces-sado em 28 de Mar^^Xco
+ []
+
+[23]
+Overfull \hbox (102.99904pt too wide) in paragraph at lines 145--148
 []\OT1/cmr/m/n/12 INVESTOPEDIA, ``Frac-ti-o-nal Share'', https://www.investopedia.com/terms/f/fractionalshare.asp,
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 157--160
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--174
 []\OT1/cmr/m/n/12 IBM, ``Ma-chine Le-ar-ning'', https://www.ibm.com/cloud/learn/machine-
  []
 
-
-Underfull \hbox (badness 1112) in paragraph at lines 186--189
+[24]
+Underfull \hbox (badness 1112) in paragraph at lines 205--208
 []\OT1/cmr/m/n/12 GODFREY, M. D., GRAN-GER, C. W., MOR-GENS-TERN, O., ``THE
  []
 
-[18] [19]) [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
+[25]) [26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 79.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 79.
  (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 79.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 79.
 Package rerunfilecheck Info: File `Principal.out' has not changed.
-(rerunfilecheck)             Checksum: 99FE0D6959E1442CA1F68905704C8CA6;1755.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
+(rerunfilecheck)             Checksum: F085ED50F9EBE7185B12C16B789A47A3;1923.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 79.
  ) 
 Here is how much of TeX's memory you used:
- 15660 strings out of 480608
- 259059 string characters out of 5903630
- 546393 words of memory out of 5000000
- 31022 multiletter control sequences out of 15000+600000
- 541490 words of font info for 59 fonts, out of 8000000 for 9000
+ 15881 strings out of 480608
+ 262843 string characters out of 5903630
+ 549506 words of memory out of 5000000
+ 31180 multiletter control sequences out of 15000+600000
+ 542195 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,53p,1202b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/atcha/Github/Monografia/Principal.pdf (33 pages, 262321 bytes).
+ 41i,8n,53p,1202b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
+
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on /Users/atcha/Github/Monografia/Principal.pdf (40 pages, 657356 bytes).
 PDF statistics:
- 594 PDF objects out of 1000 (max. 8388607)
- 536 compressed objects within 6 object streams
- 207 named destinations out of 1000 (max. 500000)
- 198 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 744 PDF objects out of 1000 (max. 8388607)
+ 665 compressed objects within 7 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

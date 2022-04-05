@@ -3,6 +3,7 @@
 
 \paragraph{} Neste capítulo, são introduzidos alguns conceitos chave para o entendimento do projeto. Nas próximas seções, são feitas contextualizações sobre o Mercado de Capitais, Bolsa de Valores, Ações e Aprendizado de Máquina.
 
+
 \section{Mercado de Capitais, Bolsa de Valores e Ações}
 
 \paragraph{} O Mercado de Capitais, também conhecido como Mercado de Valores Mobiliários, é um dos segmentos do sistema financeiro responsável por fazer o intermédio entre agentes superávitarios, que tem capital de investimento, e agentes deficitários, que buscam capital para rentabilizá-lo, através da compra e venda valores mobiliários (i.e., ativos financeiros) \cite{mercado_de_capitais}. Consequentemente, gera-se uma maior liquidez destes ativos e também uma melhora no fluxo de capitais entre os agentes econômicos, sejam eles os governos por meio dos bancos centrais, os bancos privados, as insituições financeiras ou até mesmo as pessoas físicas.
@@ -20,7 +21,7 @@
 \paragraph{} A Hipótese do Mercado Eficiente, definida por FAMA \cite{fama1970efficient}, afirma que idealmente o preço de um ativo reflete toda a informação disponível sobre seu valor intrínseco. Em outras palavras, quanto menor o efeito de fatores que contribuam para uma inércia no fluxo de capital de investidores e na transmissão de informações, mais o mercado tende a ser eficiente. São estudados os três níveis de hipóteses:
 
 \begin{itemize}
-    \item HME fraca: O preços atuais refletem o todo o histórico de informações disponibilizados publicamente.
+    \item HME fraca: Os preços atuais refletem o todo o histórico de informações disponibilizados publicamente.
     \item HME semi-forte: Engloba a HME fraca, acrescentando a existência de uma mudança instantânea que os preços sofrem ao surgirem novas informações.
     \item HME forte: Engloba a HME semi-forte, porém entende que a mudança instantânea dos preços acompanha toda e qualquer informação existente sobre o ativo. Assim, absolutamente nenhum investidor conseguiria obter lucro superior à média do mercado, pois não há como acessar nenhuma informação privilegiada, uma vez que ela já estaria refletido no preço corrente do ativo.
 \end{itemize}
@@ -32,6 +33,7 @@
 \paragraph{} A hipótese semi-forte também foi sustentada por alguns fatores, dentre eles a verificação de que os futuros pagamentos de dividendos das companhias se refletem, em média, no preços das ações \cite{fama1969adjustment}.
 
 \paragraph{} Em resumo, o estudo das Hipóteses de Mercado Eficiente traz informações relevantes quanto se avalia a teoria por trás da possibilidade de aplicação de estratégias de trading no mercado financeiro. No entanto, é importante ressaltar que outros autores questionam ao menos parcialmente os estudos realizados por FAMA, sejam por resultados inconclusivos ou por anomalias detectadas no comportamento do mercado. Por exemplo, SHOSTAK \cite{shostak1997defense} critica abertamente a premissa de que todos os investidores teriam a mesma expectativa sobre os retornos da empresa. O ganhador do prêmio Nobel em ciências econômicas Paul Samuelson, que afirma que o a HME funciona muito melhor para ações individuais do que para o mercado como um todo \cite{jung2005samuelson}. Já o investidor Jack Schwager afirma que a HME está correta pelos motivos errados \cite{schwager2012market}, pois é muito difícil bater a média do mercado de forma consistente ao mesmo tempo que investidores possuem habilidades diferentes, portanto a informação não é interpretada e aplicada por todos da mesma forma.
+
 
 \subsection{Índice de Bolsa de Valores}
 
@@ -47,6 +49,7 @@
 
 \paragraph{} No Brasil, um investidor que deseja que uma parte de seu capital acompanhe um rendimento equivalente ao iBovespa deverá investir no ETF, cujo código de negociação é BOVA11.
 
+
 \subsection{Mercado Fracionário}
 
 \paragraph{} Ações são negociadas em múltiplos de um lote, que representa uma quantidade mínima de papéis a transacionar. Nesse contexto, o Mercado Fracionário \cite{mercado_fracionario} surge com o objetivo de facilitar negiociações de volumes menores que o lote mínimo permitido. Na prática, ações fracionárias são agrupadas até formarem um lote para então serem negociadas. Normalmente o Mercado Fracionário possui menor liquidez e maior volatilidade, mas sempre acompanha o preço do ativo negociado no mercado aberto.
@@ -56,6 +59,15 @@
 \paragraph{} Grandes investidores e fundos de investimentos não possuem problemas quanto ao capital mínimo necessário para a compra de um lote de ações, visto que negociam em quantidades muito maiores. O problema surge quando um investidor com pouco aporte financeiro deseja entrar no mercado e não consegue encontrar ativos cujo lote mínimo esteja dentro de seu orçamento.
 
 \paragraph{} No Brasil, o lote mínimo é de 100 ações e o Mercado Fracionário permite a compra de no mínimo 1 ação.
+
+\subsection{Índice de Sharpe}
+
+\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (e.g. título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco, \begin{math}\sigma_a\end{math} e \begin{math}\sigma_b\end{math} seus respectivos desvios padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
+
+\begin{equation} \label{eq:1}
+    S_a = \frac{E[R_a - R_b]}{\sigma_a - \sigma_b}
+\end{equation}
+
 
 \section{Tipos de Análises}
 
@@ -73,21 +85,96 @@
 
 \paragraph{} Diferentemente da AF, a automação desta análise é muito mais fácil pois os dados normalmente são organizados e estruturados. No entanto, como são obtidos a posteriori, a dificuldade desta análise se dá na separação entre o que é ruído e o que é de fato tendência de mercado, além da criação de informações derivadas que se mostram relativamente úteis.
 
+
 \section{Aprendizado de Máquina}
 
 \paragraph{} Aprendizado de Máquina (Machine Learning) é um campo de estudo dentro de Ingeligência Artificial \cite{ibm_ai} que engloba estatística e ciência da computação. O objetivo é extrair conhecimento a partir de uma conjunto de dados \cite{muller2016introduction}. A terminologia foi criada por um pesquisador da IBM chamado SAMUEL em 1959 \cite{ibm_ml} para um estudo de caso do jogo de damas \cite{arthur1959some}.
 
-\paragraph{} Em geral, algoritmos de ML buscam realizar tarefas extremamente complexas computacionalmente sem serem explitamente programadas caso a caso. Alguns exemplos de aplicações que deixam evidente os benefícios deste método são: visão computacional, recomendação de produtos, identificação de rosto em imagens, identificação transações financeiras fraudulentas, suporte a diagnósticos médicos, dentre diversos outros.
+\paragraph{} Em geral, algoritmos de ML buscam realizar tarefas extremamente complexas computacionalmente sem serem explitamente programadas caso a caso. Alguns exemplos de aplicações que deixam evidente os benefícios deste método são: visão computacional, identificação de rosto, recomendação de produtos em plataformas de \textit{e-commerce}, identificação de transações financeiras fraudulentas, suporte a diagnósticos médicos, dentre diversos outros.
 
 \paragraph{} Algoritmos de ML podem ser baseados em Aprendizado Supervisionado, Aprendizado Não Supervisionado ou até mesmo um modelo híbrido. Este trabalho utiliza apenas AS para a criação de modelos.
 
+
 \subsection{Aprendizado Supervisionado}
 
-\paragraph{} Uma das metodologias mais comuns de ML, seu objetivo é a predição de um resultado a partir de um conjunto de dados de entrada, com a condição de que o modelo tem acesso a vários exemplos de entrada e saída de dados para uma melhor performance \cite{muller2016introduction}. Existem dois tipos de problemas associados ao AS, os problemas de Regressão e os problemas de Classificação.
+\paragraph{} Uma das metodologias mais comuns de ML, seu objetivo é a predição de um resultado a partir de um conjunto de dados de entrada, com a condição de que o modelo tem acesso a vários exemplos de entrada e saída de dados para uma melhor performance \cite{muller2016introduction}.
+
+\paragraph{} O conjunto de dados (\textit{dataset}) com exemplos de entrada e saída utilizado para criação do modelo é chamado de dados de treinamento (\textit{training set}). Existe um outro conjunto de dados utilzado para testar a performance do modelo. Este segundo conjunto, chamado de dados de teste (\textit{test set}), precisa ser necessariamente diferente dos dados de treinamento para evitar que o efeito memória se sobreponho à qualidade de generalização do modelo (explicado a seguir). Como regra geral de uso, é aconselhável separar 75\% dos dados para os dados de treinamento e 25\% para os dados de teste, ou algo próximo desta proporção \cite{muller2016introduction}.
+
+\paragraph{} Todo modelo pode ser avaliado sob o ponto de vista da generalização. Essa característica indica a capacidade de realizar predições acuradas em conjuntos de dados semelhantes ao de treinamento, porém jamais vistos (dados de teste). Quanto maior a taxa de acerto nos dados de teste, melhor tende a ser a capacidade de generalização.
+
+\paragraph{} Outras características importantes são conhecidas como \textit{overfitting} e \textit{underfitting}. Quando um modelos está muito complexo a ponto de ser sensível demais aos ruídos dos dados de treinamento, trazendo dificuldades de generalização, diz-se que ocorreu um \textit{overfitting}. De forma análoga, quando a complexidade do modelo é baixa de forma a não aproveitar devidamente as característica importantes dos dados de treinamento, implicado também em perda de generalização, diz-se que ocorreu um \textit{underfitting}. O objetivo do projetista de um modelo por AS é encontrar um ponto de equilíbrio entre essas características, chamada de ``\textit{Sweet spot}'' na Figura \ref{fig:1}, que mostra a relação entre generalização, \textit{overfitting} e \textit{underfitting}.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.35]{generalisation.png}
+    \centering
+    \caption{Relação entre complexidade e acur\'acia de um modelo \cite{muller2016introduction}}
+    \label{fig:1}
+\end{figure}
+
+\paragraph{} Existem dois tipos de problemas associados ao AS, os problemas de Regressão e os problemas de Classificação.
+
 
 \subsection{Problema de Regressão}
 
+\paragraph{} Este problema envolve a predição de um número contínuo a partir dos dados de entrada \cite{muller2016introduction}. Para exemplificar, pode-se citar a probabilidade de uma pessoa desenvolver uma doença auto-imune a partir de indicadores médicos específicos. Ou também um índice que traz uma espectativa de quantos kilogramas de milho serão colhidos em uma safra a partir de dados geológicos e meteorológicos.
+
 \subsection{Problema de Classificação}
+
+\paragraph{} Os problemas de classificação buscam escolher um rótulo (ou classe) mais provável dentre uma lista de possibilidades finitas e pré-estabelecidas \cite{muller2016introduction}. Como aplicações, pode-se citar: a previsão de escolha eleitoral de pessoas a partir de indicadores socioeconômicos; o diagnóstico de câncer em pacientes a partir de informações médicas; ou mesmo a presença e ausência de animais catalogados em um conjunto de imagens.
+
+\paragraph{} É importante mencionar que problemas de classificação precisam de atenção ao balanceamento das classes (i.e. mesma relevância para cada classe durante o treinamento). Em outras palavras, um conjunto de dados não balanceado pode gerar um modelo pouco complexo para uma aplicação não trivial, o que implica em um ilusório indíce de acurácia nos dados de teste. Isso acontece porque o modelo tende a quase sempre escolher a classe com maior frequencia em seu treinamento, independentemente da composição dos dados. Para corrigir este efeito, deve-se deixar todas as classes com a mesma relevância durante o treinamento do modelo, o que pode ser feito através dos seguintes métodos:
+
+\begin{itemize}
+    \item \textit{Undersampling}: Diminuição de amostras pertencentes à classe mais presente. É aconselhável quando o \textit{dataset} é grande o suficiente para suportar a perda de dados sem perda significativa de generalização. Como vantagem, diminui o tempo de treinamento de um modelo. Ver Figura \ref{fig:2}.
+    \item \textit{Oversampling}: Replica ou gera sinteticamente amostras pertencentes à classe menos presente. Como consequência, não há perda de informação potencialmente relevante, porém pode gerar \textit{overfitting}. Pode ser uma boa opção em \textit{datasets} pequenos \cite{weiss2007cost}. Ver Figura \ref{fig:2}.
+    \item \textit{Cost Sensitive Learning} (CSL): Ao invés de alterar o tamanho do \textit{dataset}, criam-se pesos diferentes para um erro de classificação durante o treinamento. Portanto um erro numa classe menos frequente deve ser mais penalizado do que o contrário. É aconselhável em \textit{datasets} grandes ($>$ 10000) \cite{weiss2007cost}.
+\end{itemize}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.55]{over_under_sampling.png}
+    \centering
+    \caption{\textit{Oversampling} e \textit{Undersampling} de classes desbalanceadas \cite{over_under_sampling}}
+    \label{fig:2}
+\end{figure}
+
+
+\subsection{Algoritmos de Aprendizado Supervisionado}
+
+\paragraph{} Esta seção trará uma visão simplificado sobre os algoritmos de AS mais pertinentes ao presente trabalho, em ordem crescente de complexidade. O exemplos citados serão focados em problemas de classificação apenas para entendimento do raciocínio por detrás dos modelos, porém todos possuem variantes para problemas de regressão.
+
+\subsubsection{\textit{k-Nearest Neighbors}}
+
+\paragraph{} k-NN é talvez o algoritmo mais simples de todos. Consiste na memorização dos dados de treinamento para predizer a classe ou o valor a partir da média dos K registros mais próximos encontrados. A Figura \ref{fig:3} mostra como funciona o critério de seleção da classe de uma amostra de teste a partir dos dados de treinamento e do parâmetro K de vizinhos selecionados.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.60]{knn_example.png}
+    \centering
+    \caption{Funcionamento de um algoritmo k-NN para o problema de classificação \cite{knn_classification}. Para K=3 a classe é B e para K=7 a classe é A.}
+    \label{fig:3}
+\end{figure}
+
+\subsubsection{\textit{Decision Tree}}
+
+\paragraph{} Em essência, uma Árvore de Decisão\footnote{Em inglês: \textit{Decision Tree}} é uma sequência hierárquica de estruturas de decisão \textit{if/else}\footnote{Em português: se/senão} acerca das características do conjunto de dados. Tecnicamente, pode-se construir uma Árvore de Decisão até que todas as suas folhas\footnote{Em inglês: leafs} estejam totalmente puras, ou seja, as sequências de decisão que levam a um resultado só englobam amostras de um tipo de classe. Ao contrário de folhas impuras, que contém a presença de mais de uma classe, onde normalmente se escolhe a de maior número de amostras como resultado. O problema é que a presença excessiva de folhas totalmente puras é acompanhado de um \textit{overfitting} do modelo, portanto precisa ser controlado. Para isso, é possível ajustar alguns parâmetros, como por exemplo: a profundidade, que define a quantidade máxima de camadas que a árvore atingirá qualquer que seja o ramo; o número mínimo de amostras para se criar uma nova ramificação; dentre outros.
+
+\paragraph{} Algumas vantagens deste modelo estão no relativamente fácil entendimento e visualização dos critérios de decisão para o projetista em árvores pequenas. O tempo de processamento computacional envolvido na criação deste modelo é razoavelmente curto. Não é necessário um pré-processamento dos dados, uma vez que cada característica é processada separadamente. A Figura \ref{fig:4} mostra a estrutura por trás de uma Árvode de Decisão.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.35]{decision_tree.png}
+    \centering
+    \caption{Visualização de uma Árvose de Decisão para um \textit{dataset} de câncer de mama \cite{muller2016introduction}.}
+    \label{fig:4}
+\end{figure}
+
+\paragraph{} Por outro lado, uma desvantagem eminente é a tendência \textit{overfitting} e a baixa capacidade de generalização, que podem ser mitigados através de um algoritmo derivado chamado \textit{Random Forest}.
+
+
+\subsubsection{\textit{Random Forest}}
+
+\paragraph{} Um dos modelos mais utilizado atualmente, o algoritmo \textit{Random Forest}\footnote{Em português: Floresta Aleatória} é a combinação de diversas Árvores de Decisão ligeiramente diferentes entre si \cite{muller2016introduction}. A ideia é que apesar da tendência de \textit{overfitting} existente, a média dos resultados de cada árvore tende a diminuir esse fator. Além dos parâmetros responsáveis por configurar as árvores individualmente, este modelo também precisa no número de árvores que serão utilizadas.
+
+\paragraph{} Normalmente é preferível utilizar \textit{Random Forests} ao invés de Árvores de Decisão, salvo casos em que o entendimento e a visualização clara do modelo se torna um fator importante, o que difícil de ser analisado quando existem muitras árvores. É possível compensar o aumento do tempo de processamente envolvido na criação deste modelo com paralelização em núcleos de processamento da CPU\footnote{Do inglês: Central Process Unit}.
 
 \section{Trabalhos Relacionados}
 
@@ -97,13 +184,15 @@
 
 \paragraph{} Para efeito de simplificação, as estratégias de AT aplicadas ao mercado financeiro serão agrupadas em três metodologias centrais: modelos baseados em indicadores técnicos; modelos baseados em processos estocásticos; e modelos baseados em inteligência artificial.
 
-\subsection{Modelos Baseadas em Indicadores Técnicos}
+
+\subsection{Modelos Baseados em Indicadores Técnicos}
 
 \paragraph{} Este tipo de abordagem utiliza informações derivadas da série temporal de preços para criar uma combinação de indicadores que possuam algum poder de previsibilidade da tendência de mercado. Quando comparada aos outros tipos, é a metodologia mais simples e democrática, uma vez que pessoas com pouco ou nenhum conhecimento sobre estatística e inteligência artificial podem operar em estratégias próprias.
 
 \paragraph{} Dentre os indicadores mais famosos e portanto utilizados, podemos citar: o volume financeiro; a identificação de tendências de alta, de baixa e de consolidação de acordo com a Teoria de Dow \cite{kirkpatrick2022dow}; as linhas de suporte e resistência do mercado; as médias móveis; as bandas de Bollinger \cite{bollinger2002bollinger}; e o MACD (Moving Average Convergence-Divergence) \cite{appel2007understanding}.
 
-\paragraph{} Citar MORAES \cite{moraes2007se}.
+\paragraph{} Diversos \textit{traders}\footnote{Em português: negociantes. Pessoas que compram e vendem bens, moedas ou ações com o objetivo de lucrar, mas não necessariamente com foco em investimento, podendo até assumir um viés especulativo.} e investidores utilizam este tipo de abordagem. Dentre eles podemos citar MORAES \cite{moraes2007se}, de cujas contribuições servirão como base neste trabalho para um aperfeiçoamento via aprendizado de máquina.
+
 
 \subsection{Modelos Baseados em Processos Estocásticos}
 
@@ -115,13 +204,14 @@
 
 \paragraph{} Uma outra aplicação de modelos HMM é dada por DE ANGELIS et al \cite{de2013dynamic}, que criou uma metodologia a partir de índices da bolsa americana capaz de identificar períodos estáveis e instáveis (i.e. crises econômicas), assim como as probabilidades de transição entre um estado e o outro.
 
-\paragraph{} Por fim, pode-ser mencionar o uso de modelos ARCH\footnote{Em português: Heteroscedasticidade Condicional Auto-regressiva} (Autoregressive Conditional Heteroskedasticity). A ideia central está na modelagem de uma variância (volatilidade) condicional, ou seja, que muda de acordo o instante da série \cite{enders2008applied}. Essa característica se faz muito útil em séries que possuem períodos de alta volatilidade se alternando com períodos de baixa volatilidade. Para um modelo genérico ARCH(q), seja \begin{math}\epsilon_t\end{math} o erro (resíduo) no instante t e \begin{math}\alpha_0\end{math} um ruído branco, pode-se descrever a variância condicional de acordo com a Equação \ref{eq:1}.
+\paragraph{} Por fim, pode-ser mencionar o uso de modelos ARCH\footnote{Em português: Heteroscedasticidade Condicional Auto-regressiva} (Autoregressive Conditional Heteroskedasticity). A ideia central está na modelagem de uma variância (volatilidade) condicional, ou seja, que muda de acordo o instante da série \cite{enders2008applied}. Essa característica se faz muito útil em séries que possuem períodos de alta volatilidade se alternando com períodos de baixa volatilidade. Para um modelo genérico ARCH(q), seja \begin{math}\epsilon_t\end{math} o erro (resíduo) no instante t e \begin{math}\alpha_0\end{math} um ruído branco, pode-se descrever a variância condicional de acordo com a Equação \ref{eq:2}.
 
-\begin{equation} \label{eq:1}
+\begin{equation} \label{eq:2}
 \sigma_t^2 = \alpha_0 + \sum_{i=1}^{q} \alpha_i\epsilon_{t-1}^{2}
 \end{equation}
 
 \paragraph{} O modelo ARCH foi proposto por ENGLE em 1982 para estimar a variância da inflação do Reino Unido \cite{engle1982autoregressive}. A partir daí, várias derivações surgiram, como por exemplo: GARCH \footnote{Generalised ARCH} por BOLLERSLEV \cite{bollerslev1986generalized} em 1986, EGARCH \footnote{Exponential Generalised ARCH} por NELSON em 1991, NGARCH \footnote{Non-linear Generalised ARCH} por HIGGINS e BERA\cite{higgins1992class} em 1992, TGARCH \footnote{Threshold Generalised ARCH} por ZAKOIAN e RABEMANANJARA \cite{rabemananjara1993threshold} em 1993, dentre outros. Alguns dos modelos da família ARCH podem ser encontrados nos trabalhos de FRANSES e DIJK \cite{franses1996forecasting}, de MARCUCCI \cite{marcucci2005forecasting} e de ALBERG et al \cite{alberg2008estimating}.
+
 
 \subsection{Modelos Baseados em Inteligência Artificial}
 

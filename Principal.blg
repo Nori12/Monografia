@@ -7,36 +7,36 @@ A level-1 auxiliary file: cap1.aux
 A level-1 auxiliary file: cap2.aux
 The style file: coppe.bst
 Database file #1: biblio.bib
-You've used 60 entries,
+You've used 61 entries,
             2465 wiz_defined-function locations,
-            872 strings with 13421 characters,
-and the built_in function-call counts, 13238 in all, are:
-= -- 1469
-> -- 340
+            875 strings with 13571 characters,
+and the built_in function-call counts, 13367 in all, are:
+= -- 1478
+> -- 344
 < -- 26
-+ -- 145
-- -- 85
-* -- 838
-:= -- 2046
-add.period$ -- 73
-call.type$ -- 60
-change.case$ -- 64
++ -- 147
+- -- 86
+* -- 841
+:= -- 2058
+add.period$ -- 75
+call.type$ -- 61
+change.case$ -- 65
 chr.to.int$ -- 0
-cite$ -- 60
-duplicate$ -- 679
-empty$ -- 1525
-format.name$ -- 85
-if$ -- 3270
+cite$ -- 61
+duplicate$ -- 685
+empty$ -- 1548
+format.name$ -- 86
+if$ -- 3305
 int.to.chr$ -- 0
-int.to.str$ -- 60
-missing$ -- 48
-newline$ -- 184
-num.names$ -- 60
-pop$ -- 273
+int.to.str$ -- 61
+missing$ -- 49
+newline$ -- 187
+num.names$ -- 61
+pop$ -- 283
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 279
+skip$ -- 282
 stack$ -- 0
 substring$ -- 548
 swap$ -- 205
@@ -45,6 +45,6 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 109
-width$ -- 62
-write$ -- 618
+while$ -- 110
+width$ -- 63
+write$ -- 625

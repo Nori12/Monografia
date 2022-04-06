@@ -1,6 +1,19 @@
 \begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 
+\bibitem{candlestick}
+INVESTIDOR, B.~D., \enquote{Como Interpretar o Gráfico de Candlestick},
+  https://www.bussoladoinvestidor.com.br/grafico-de-candlestick/, (Acessado em
+  5 de Abril de 2022).
+
+\bibitem{kirkpatrick2010technical}
+KIRKPATRICK~II, C.~D., DAHLQUIST, J.~A., \emph{Technical analysis: the complete
+  resource for financial market technicians}. FT press, 2010.
+
+\bibitem{moraes2007se}
+MORAES, A., \emph{Se Afastando da Manada: Estratégias para vencer no Mercado
+  de Ações}. Infomoney, 2016.
+
 \bibitem{muller2016introduction}
 M{\"U}LLER, A.~C., GUIDO, S., \emph{Introduction to machine learning with
   Python: a guide for data scientists}. " O'Reilly Media, Inc.", 2016.
@@ -162,6 +175,13 @@ MURPHY, J.~J., \emph{Technical analysis of the financial markets: A
 EDWARDS, R.~D., MAGEE, J., BASSETTI, W.~C., \emph{Technical analysis of stock
   trends}. CRC press, 2018.
 
+\bibitem{bollinger2002bollinger}
+BOLLINGER, J., \emph{Bollinger on Bollinger bands}. McGraw Hill Professional,
+  2002.
+
+\bibitem{appel2007understanding}
+APPEL, G., DOBSON, E., \emph{Understanding MACD}. Traders Press, 2007.
+
 \bibitem{ibm_ai}
 IBM, \enquote{Artificial Intelligence (AI)},
   https://www.ibm.com/cloud/learn/what-is-artificial-intelligence, (Acessado em
@@ -185,21 +205,6 @@ WEISS, G.~M., MCCARTHY, K., ZABAR, B., \enquote{Cost-sensitive learning vs.
 \bibitem{kim2010electronic}
 KIM, K., \emph{Electronic and algorithmic trading technology: the complete
   guide}. Academic Press, 2010.
-
-\bibitem{kirkpatrick2022dow}
-KIRKPATRICK~II, F. C.~D., JULIE, R., \enquote{Dow theory}, \emph{CMT Curriculum
-  Level I 2022: An Introduction to Technical Analysis}, , 2022.
-
-\bibitem{bollinger2002bollinger}
-BOLLINGER, J., \emph{Bollinger on Bollinger bands}. McGraw Hill Professional,
-  2002.
-
-\bibitem{appel2007understanding}
-APPEL, G., DOBSON, E., \emph{Understanding MACD}. Traders Press, 2007.
-
-\bibitem{moraes2007se}
-MORAES, A., \emph{Se Afastando da Manada: Estratégias para vencer no Mercado
-  de Ações}. Infomoney, 2016.
 
 \bibitem{godfrey1964random}
 GODFREY, M.~D., GRANGER, C.~W., MORGENSTERN, O., \enquote{THE RANDOM-WALK

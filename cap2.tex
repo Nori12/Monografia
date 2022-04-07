@@ -62,7 +62,7 @@
 
 \subsection{Índice de Sharpe}
 
-\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (e.g. título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco, \begin{math}\sigma_a\end{math} e \begin{math}\sigma_b\end{math} seus respectivos desvios padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
+\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}.} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (e.g. título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco, \begin{math}\sigma_a\end{math} e \begin{math}\sigma_b\end{math} seus respectivos desvios padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
 
 \begin{equation} \label{eq:1}
     S_a = \frac{E[R_a - R_b]}{\sigma_a - \sigma_b}
@@ -89,7 +89,7 @@
 
 \subsubsection*{Leitura de Gráficos de Candlesticks}
 
-\paragraph{} Gráficos de Candlesticks\footnote{Em português: Gráfico de Velas} são bastante utilizados na AT. A leitura é padronizada de acordo com a Figura \ref{fig:1}. Neste tipo de gráfico as cores importam, pois indicam se o balanço do período foi positivo ou negativo.
+\paragraph{} Gráficos de Candlesticks\footnote{Em português: Gráfico de Velas.} são bastante utilizados na AT. A leitura é padronizada de acordo com a Figura \ref{fig:1}. Neste tipo de gráfico as cores importam, pois indicam se o balanço do período foi positivo ou negativo.
 
 \begin{figure}[h]
     \includegraphics[scale=0.50]{candlestick.png}
@@ -100,7 +100,7 @@
 
 \subsubsection*{Teoria de Dow}
 
-\paragraph{} A Teoria de Dow, criada pelo americano Charles Henry Dow em 1884 é considerada a base da AT moderna \cite{kirkpatrick2010technical}. Embora não tivesse sido formalizada explicitamente pelo autor enquanto estava vivo, amigos e profissionais da época tiveram o trabalho de divulgar e fazer alguns ajustes. Baseada na HME, a ideia central por trás da Teoria de Dow é que a lógica econômica deve ser usada para explicar os movimentos do mercado, que em condições ideais segue o padrão de: tendência de alta\footnote{Topos e fundos ascendentes}; topo; tendência de baixa\footnote{Topos e fundos descendentes}; e fundo, intercalados com períodos de consolidação\footnote{Topos e fundos lateralizados}. A Figura \ref{fig:2} ilustra esse comportamento.
+\paragraph{} A Teoria de Dow, criada pelo americano Charles Henry Dow em 1884 é considerada a base da AT moderna \cite{kirkpatrick2010technical}. Embora não tivesse sido formalizada explicitamente pelo autor enquanto estava vivo, amigos e profissionais da época tiveram o trabalho de divulgar e fazer alguns ajustes. Baseada na HME, a ideia central por trás da Teoria de Dow é que a lógica econômica deve ser usada para explicar os movimentos do mercado, que em condições ideais segue o padrão de: tendência de alta\footnote{Topos e fundos ascendentes.}; topo; tendência de baixa\footnote{Topos e fundos descendentes.}; e fundo, intercalados com períodos de consolidação\footnote{Topos e fundos lateralizados.}. A Figura \ref{fig:2} ilustra esse comportamento.
 
 \begin{figure}[h]
     \includegraphics[scale=0.50]{dow_theory.png}
@@ -218,7 +218,7 @@
 
 \subsubsection*{\textit{Decision Tree}}
 
-\paragraph{} Em essência, uma Árvore de Decisão\footnote{Em inglês: \textit{Decision Tree}} é uma sequência hierárquica de estruturas de decisão \textit{if/else}\footnote{Em português: se/senão} acerca das características do conjunto de dados. Tecnicamente, pode-se construir uma Árvore de Decisão até que todas as suas folhas\footnote{Em inglês: leafs} estejam totalmente puras, ou seja, as sequências de decisão que levam a um resultado só englobam amostras de um tipo de classe. Ao contrário de folhas impuras, que contém a presença de mais de uma classe, onde normalmente se escolhe a de maior número de amostras como resultado. O problema é que a presença excessiva de folhas totalmente puras é acompanhado de um \textit{overfitting} do modelo, portanto precisa ser controlado. Para isso, é possível ajustar alguns parâmetros, como por exemplo: a profundidade, que define a quantidade máxima de camadas que a árvore atingirá qualquer que seja o ramo; o número mínimo de amostras para se criar uma nova ramificação; dentre outros.
+\paragraph{} Em essência, uma Árvore de Decisão\footnote{Em inglês: \textit{Decision Tree}.} é uma sequência hierárquica de estruturas de decisão \textit{if/else}\footnote{Em português: se/senão.} acerca das características do conjunto de dados. Tecnicamente, pode-se construir uma Árvore de Decisão até que todas as suas folhas\footnote{Em inglês: leafs.} estejam totalmente puras, ou seja, as sequências de decisão que levam a um resultado só englobam amostras de um tipo de classe. Ao contrário de folhas impuras, que contém a presença de mais de uma classe, onde normalmente se escolhe a de maior número de amostras como resultado. O problema é que a presença excessiva de folhas totalmente puras é acompanhado de um \textit{overfitting} do modelo, portanto precisa ser controlado. Para isso, é possível ajustar alguns parâmetros, como por exemplo: a profundidade, que define a quantidade máxima de camadas que a árvore atingirá qualquer que seja o ramo; o número mínimo de amostras para se criar uma nova ramificação; dentre outros.
 
 \paragraph{} Algumas vantagens deste modelo estão no relativamente fácil entendimento e visualização dos critérios de decisão para o projetista em árvores pequenas. O tempo de processamento computacional envolvido na criação deste modelo é razoavelmente curto. Não é necessário um pré-processamento dos dados, uma vez que cada característica é processada separadamente. A Figura \ref{fig:9} mostra a estrutura por trás de uma Árvode de Decisão.
 
@@ -234,9 +234,9 @@
 
 \subsubsection*{\textit{Random Forest}}
 
-\paragraph{} Um dos modelos mais utilizado atualmente, o algoritmo \textit{Random Forest}\footnote{Em português: Floresta Aleatória} é a combinação de diversas Árvores de Decisão ligeiramente diferentes entre si \cite{muller2016introduction}. A ideia é que apesar da tendência de \textit{overfitting} existente, a média dos resultados de cada árvore tende a diminuir esse fator. Além dos parâmetros responsáveis por configurar as árvores individualmente, este modelo também precisa no número de árvores que serão utilizadas.
+\paragraph{} Um dos modelos mais utilizado atualmente, o algoritmo \textit{Random Forest}\footnote{Em português: Floresta Aleatória.} é a combinação de diversas Árvores de Decisão ligeiramente diferentes entre si \cite{muller2016introduction}. A ideia é que apesar da tendência de \textit{overfitting} existente, a média dos resultados de cada árvore tende a diminuir esse fator. Além dos parâmetros responsáveis por configurar as árvores individualmente, este modelo também precisa no número de árvores que serão utilizadas.
 
-\paragraph{} Normalmente é preferível utilizar \textit{Random Forests} ao invés de Árvores de Decisão, salvo casos em que o entendimento e a visualização clara do modelo se torna um fator importante, o que difícil de ser analisado quando existem muitras árvores. É possível compensar o aumento do tempo de processamente envolvido na criação deste modelo com paralelização em núcleos de processamento da CPU\footnote{Do inglês: Central Process Unit}.
+\paragraph{} Normalmente é preferível utilizar \textit{Random Forests} ao invés de Árvores de Decisão, salvo casos em que o entendimento e a visualização clara do modelo se torna um fator importante, o que difícil de ser analisado quando existem muitras árvores. É possível compensar o aumento do tempo de processamente envolvido na criação deste modelo com paralelização em núcleos de processamento da CPU\footnote{Do inglês: \textit{Central Process Unit}.}.
 
 \section{Trabalhos Relacionados}
 
@@ -244,7 +244,7 @@
 
 \paragraph{} Segundo KIM \cite{kim2010electronic}, somente a partir dos anos 80 que as corretoras começaram a utilizar protocolos de comunicação eletrônica para substituir a corretagem por voz. Essa inovação permitiu o desenvolvimento do Algorithmic Trading, que é a automatização da tomada de decisões de estratégias por um computador capaz de enviar ordens de compra e venda diretamente ao mercado.
 
-\paragraph{} Para efeito de simplificação, as estratégias de AT aplicadas ao mercado financeiro serão agrupadas em três metodologias centrais: modelos baseados em indicadores técnicos; modelos baseados em processos estocásticos; e modelos baseados em aprendizado de máquina.
+\paragraph{} Para efeito de simplificação, os modelos de AT aplicados ao mercado financeiro serão agrupados em três metodologias centrais: modelos baseados em indicadores técnicos; modelos baseados em processos estocásticos; e modelos baseados em aprendizado de máquina.
 
 
 \subsection{Modelos Baseados em Indicadores Técnicos}
@@ -264,17 +264,21 @@
 
 \paragraph{} Uma outra aplicação de modelos HMM é dada por DE ANGELIS et al \cite{de2013dynamic}, que criou uma metodologia a partir de índices da bolsa americana capaz de identificar períodos estáveis e instáveis (i.e. crises econômicas), assim como as probabilidades de transição entre um estado e o outro.
 
-\paragraph{} Por fim, pode-ser mencionar o uso de modelos ARCH\footnote{Em português: Heteroscedasticidade Condicional Auto-regressiva} (Autoregressive Conditional Heteroskedasticity). A ideia central está na modelagem de uma variância (volatilidade) condicional, ou seja, que muda de acordo o instante da série \cite{enders2008applied}. Essa característica se faz muito útil em séries que possuem períodos de alta volatilidade se alternando com períodos de baixa volatilidade. Para um modelo genérico ARCH(q), seja \begin{math}\epsilon_t\end{math} o erro (resíduo) no instante t e \begin{math}\alpha_0\end{math} um ruído branco, pode-se descrever a variância condicional de acordo com a Equação \ref{eq:4}.
+\paragraph{} Por fim, pode-ser mencionar o uso de modelos ARCH\footnote{Em português: Heteroscedasticidade Condicional Auto-regressiva.} (Autoregressive Conditional Heteroskedasticity). A ideia central está na modelagem de uma variância (volatilidade) condicional, ou seja, que muda de acordo o instante da série \cite{enders2008applied}. Essa característica se faz muito útil em séries que possuem períodos de alta volatilidade se alternando com períodos de baixa volatilidade. Para um modelo genérico ARCH(q), seja \begin{math}\epsilon_t\end{math} o erro (resíduo) no instante t e \begin{math}\alpha_0\end{math} um ruído branco, pode-se descrever a variância condicional de acordo com a Equação \ref{eq:4}.
 
 \begin{equation} \label{eq:4}
 \sigma_t^2 = \alpha_0 + \sum_{i=1}^{q} \alpha_i\epsilon_{t-1}^{2}
 \end{equation}
 
-\paragraph{} O modelo ARCH foi proposto por ENGLE em 1982 para estimar a variância da inflação do Reino Unido \cite{engle1982autoregressive}. A partir daí, várias derivações surgiram, como por exemplo: GARCH \footnote{Generalised ARCH} por BOLLERSLEV \cite{bollerslev1986generalized} em 1986, EGARCH \footnote{Exponential Generalised ARCH} por NELSON em 1991, NGARCH \footnote{Non-linear Generalised ARCH} por HIGGINS e BERA\cite{higgins1992class} em 1992, TGARCH \footnote{Threshold Generalised ARCH} por ZAKOIAN e RABEMANANJARA \cite{rabemananjara1993threshold} em 1993, dentre outros. Alguns dos modelos da família ARCH podem ser encontrados nos trabalhos de FRANSES e DIJK \cite{franses1996forecasting}, de MARCUCCI \cite{marcucci2005forecasting} e de ALBERG et al \cite{alberg2008estimating}.
+\paragraph{} O modelo ARCH foi proposto por ENGLE em 1982 para estimar a variância da inflação do Reino Unido \cite{engle1982autoregressive}. A partir daí, várias derivações surgiram, como por exemplo: GARCH \footnote{Generalised ARCH.} por BOLLERSLEV \cite{bollerslev1986generalized} em 1986, EGARCH \footnote{Exponential Generalised ARCH.} por NELSON em 1991, NGARCH \footnote{Non-linear Generalised ARCH.} por HIGGINS e BERA\cite{higgins1992class} em 1992, TGARCH \footnote{Threshold Generalised ARCH.} por ZAKOIAN e RABEMANANJARA \cite{rabemananjara1993threshold} em 1993, dentre outros. Alguns dos modelos da família ARCH podem ser encontrados nos trabalhos de FRANSES e DIJK \cite{franses1996forecasting}, de MARCUCCI \cite{marcucci2005forecasting} e de ALBERG et al \cite{alberg2008estimating}.
 
 
 \subsection{Modelos Baseados em Aprendizado de Máquina}
 
-\paragraph{} Existem registros de estudos sobre inteligência artificial aplicados ao mercado financeiro por volta da década de 70 \cite{felsen1975artificial}, porém ainda em um estágio embrionário devido às dificuldades de acesso à informação e de processamento computacional na época. Conforme ambos os fatores foram evoluindo, a dificuldade de se testar algoritmos cada vez mais complexos diminuiu.
+\paragraph{} Existem registros de estudos sobre inteligência artificial aplicados ao mercado financeiro por volta da década de 70 \cite{felsen1975artificial}, porém ainda em um estágio embrionário devido às dificuldades de processamento computacional e de acesso a dados na época. Por ser uma área de estudo extremamente dependente de ambas as questões, conforme elas foram evoluindo, mais trabalhos puderam ser realizados sobre o tema.
 
-\paragraph{} Combinações de GARCH com ANN \cite{bildirici2009improving}
+\paragraph{} NTI et al \cite{nti2020systematic} relata que dos 122 trabalhos mais relevantes publicados entre 2007 e 2018 com o tema de predição do mercado financeiro usando ML, 66\% são baseados em AT, 23\% são baseados em AF e 11\% usam análises mistas. Além disso, os algoritmos mais utilizados são ANN\footnote{Em português: Redes Neurais Artificiais.} (\textit{Artificial Neural Networks}) e SVM\footnote{Em português: Máquina de Vetor de Suporte.} (\textit{Support Vector Machine}).
+
+\paragraph{} De forma semelhante, GANDHMAL e KUMAR \cite{gandhmal2019systematic} verificaram que a partir de uma análise detalhada de 50 trabalhos com o tema de predição do mercado financeiro, os algoritmos que mais costumam trazer resultados efetivos são ANN e técnicas baseadas em lógica \textit{Fuzzy}\footnote{Em português: Difuso.}
+
+\paragraph{} É possível encontrar também modelos híbridos, com uma combinação de GARCH com ANN feita por BILDIRCI e ERSIN \cite{bildirici2009improving}.

@@ -31,103 +31,106 @@
 \contentsline {paragraph}{}{x}{section*.30}%
 \contentsline {paragraph}{}{x}{section*.31}%
 \contentsline {paragraph}{}{x}{section*.32}%
+\contentsline {paragraph}{}{x}{section*.33}%
 \contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Tema}{1}{section.1.1}%
-\contentsline {paragraph}{}{1}{section*.36}%
 \contentsline {paragraph}{}{1}{section*.37}%
-\contentsline {section}{\numberline {1.2}Delimitação}{1}{section.1.2}%
 \contentsline {paragraph}{}{1}{section*.38}%
+\contentsline {section}{\numberline {1.2}Delimitação}{1}{section.1.2}%
 \contentsline {paragraph}{}{1}{section*.39}%
-\contentsline {paragraph}{}{2}{section*.40}%
-\contentsline {section}{\numberline {1.3}Justificativa}{2}{section.1.3}%
+\contentsline {paragraph}{}{1}{section*.40}%
 \contentsline {paragraph}{}{2}{section*.41}%
+\contentsline {section}{\numberline {1.3}Justificativa}{2}{section.1.3}%
 \contentsline {paragraph}{}{2}{section*.42}%
 \contentsline {paragraph}{}{2}{section*.43}%
 \contentsline {paragraph}{}{2}{section*.44}%
+\contentsline {paragraph}{}{2}{section*.45}%
 \contentsline {section}{\numberline {1.4}Objetivos}{3}{section.1.4}%
-\contentsline {paragraph}{}{3}{section*.45}%
-\contentsline {section}{\numberline {1.5}Metodologia}{3}{section.1.5}%
 \contentsline {paragraph}{}{3}{section*.46}%
+\contentsline {section}{\numberline {1.5}Metodologia}{3}{section.1.5}%
 \contentsline {paragraph}{}{3}{section*.47}%
-\contentsline {paragraph}{}{4}{section*.48}%
+\contentsline {paragraph}{}{3}{section*.48}%
 \contentsline {paragraph}{}{4}{section*.49}%
-\contentsline {section}{\numberline {1.6}Descrição}{4}{section.1.6}%
 \contentsline {paragraph}{}{4}{section*.50}%
+\contentsline {section}{\numberline {1.6}Descrição}{4}{section.1.6}%
+\contentsline {paragraph}{}{4}{section*.51}%
 \contentsline {chapter}{\numberline {2}Fundamentação Teórica}{5}{chapter.2}%
-\contentsline {paragraph}{}{5}{section*.51}%
-\contentsline {section}{\numberline {2.1}Mercado de Capitais, Bolsa de Valores e Ações}{5}{section.2.1}%
 \contentsline {paragraph}{}{5}{section*.52}%
+\contentsline {section}{\numberline {2.1}Mercado de Capitais, Bolsa de Valores e Ações}{5}{section.2.1}%
 \contentsline {paragraph}{}{5}{section*.53}%
 \contentsline {paragraph}{}{5}{section*.54}%
-\contentsline {paragraph}{}{6}{section*.55}%
+\contentsline {paragraph}{}{5}{section*.55}%
 \contentsline {paragraph}{}{6}{section*.56}%
-\contentsline {subsection}{\numberline {2.1.1}Hipótese do Mercado Eficiente}{6}{subsection.2.1.1}%
 \contentsline {paragraph}{}{6}{section*.57}%
-\contentsline {paragraph}{}{7}{section*.58}%
+\contentsline {subsection}{\numberline {2.1.1}Hipótese do Mercado Eficiente}{6}{subsection.2.1.1}%
+\contentsline {paragraph}{}{6}{section*.58}%
 \contentsline {paragraph}{}{7}{section*.59}%
 \contentsline {paragraph}{}{7}{section*.60}%
 \contentsline {paragraph}{}{7}{section*.61}%
+\contentsline {paragraph}{}{7}{section*.62}%
 \contentsline {subsection}{\numberline {2.1.2}Índice de Bolsa de Valores}{8}{subsection.2.1.2}%
-\contentsline {paragraph}{}{8}{section*.62}%
 \contentsline {paragraph}{}{8}{section*.63}%
-\contentsline {subsection}{\numberline {2.1.3}Mercado Fracionário}{8}{subsection.2.1.3}%
 \contentsline {paragraph}{}{8}{section*.64}%
-\contentsline {paragraph}{}{9}{section*.65}%
+\contentsline {subsection}{\numberline {2.1.3}Mercado Fracionário}{8}{subsection.2.1.3}%
+\contentsline {paragraph}{}{8}{section*.65}%
 \contentsline {paragraph}{}{9}{section*.66}%
 \contentsline {paragraph}{}{9}{section*.67}%
-\contentsline {subsection}{\numberline {2.1.4}Índice de Sharpe}{9}{subsection.2.1.4}%
 \contentsline {paragraph}{}{9}{section*.68}%
+\contentsline {subsection}{\numberline {2.1.4}Índice de Sharpe}{9}{subsection.2.1.4}%
+\contentsline {paragraph}{}{9}{section*.69}%
 \contentsline {section}{\numberline {2.2}Tipos de Análises}{10}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Análise Fundamentalista}{10}{subsection.2.2.1}%
-\contentsline {paragraph}{}{10}{section*.69}%
 \contentsline {paragraph}{}{10}{section*.70}%
-\contentsline {subsection}{\numberline {2.2.2}Análise Técnica}{10}{subsection.2.2.2}%
 \contentsline {paragraph}{}{10}{section*.71}%
+\contentsline {subsection}{\numberline {2.2.2}Análise Técnica}{10}{subsection.2.2.2}%
 \contentsline {paragraph}{}{10}{section*.72}%
 \contentsline {paragraph}{}{10}{section*.73}%
-\contentsline {paragraph}{}{11}{section*.75}%
-\contentsline {paragraph}{}{11}{section*.77}%
-\contentsline {paragraph}{}{12}{section*.79}%
-\contentsline {paragraph}{}{12}{section*.81}%
+\contentsline {paragraph}{}{10}{section*.74}%
+\contentsline {paragraph}{}{11}{section*.76}%
+\contentsline {paragraph}{}{11}{section*.78}%
+\contentsline {paragraph}{}{12}{section*.80}%
 \contentsline {paragraph}{}{12}{section*.82}%
+\contentsline {paragraph}{}{12}{section*.83}%
 \contentsline {section}{\numberline {2.3}Aprendizado de Máquina}{13}{section.2.3}%
-\contentsline {paragraph}{}{13}{section*.83}%
 \contentsline {paragraph}{}{13}{section*.84}%
-\contentsline {paragraph}{}{14}{section*.85}%
-\contentsline {subsection}{\numberline {2.3.1}Aprendizado Supervisionado}{14}{subsection.2.3.1}%
+\contentsline {paragraph}{}{13}{section*.85}%
 \contentsline {paragraph}{}{14}{section*.86}%
+\contentsline {subsection}{\numberline {2.3.1}Aprendizado Supervisionado}{14}{subsection.2.3.1}%
 \contentsline {paragraph}{}{14}{section*.87}%
 \contentsline {paragraph}{}{14}{section*.88}%
-\contentsline {paragraph}{}{15}{section*.89}%
+\contentsline {paragraph}{}{14}{section*.89}%
 \contentsline {paragraph}{}{15}{section*.90}%
-\contentsline {subsection}{\numberline {2.3.2}Problema de Regressão}{15}{subsection.2.3.2}%
 \contentsline {paragraph}{}{15}{section*.91}%
+\contentsline {subsection}{\numberline {2.3.2}Problema de Regressão}{15}{subsection.2.3.2}%
+\contentsline {paragraph}{}{15}{section*.92}%
 \contentsline {subsection}{\numberline {2.3.3}Problema de Classificação}{16}{subsection.2.3.3}%
-\contentsline {paragraph}{}{16}{section*.92}%
 \contentsline {paragraph}{}{16}{section*.93}%
+\contentsline {paragraph}{}{16}{section*.94}%
 \contentsline {subsection}{\numberline {2.3.4}Algoritmos de Aprendizado Supervisionado}{17}{subsection.2.3.4}%
-\contentsline {paragraph}{}{17}{section*.94}%
-\contentsline {paragraph}{}{17}{section*.96}%
-\contentsline {paragraph}{}{17}{section*.98}%
-\contentsline {paragraph}{}{18}{section*.99}%
+\contentsline {paragraph}{}{17}{section*.95}%
+\contentsline {paragraph}{}{17}{section*.97}%
+\contentsline {paragraph}{}{17}{section*.99}%
 \contentsline {paragraph}{}{18}{section*.100}%
-\contentsline {paragraph}{}{19}{section*.102}%
+\contentsline {paragraph}{}{18}{section*.101}%
 \contentsline {paragraph}{}{19}{section*.103}%
+\contentsline {paragraph}{}{19}{section*.104}%
 \contentsline {section}{\numberline {2.4}Trabalhos Relacionados}{20}{section.2.4}%
-\contentsline {paragraph}{}{20}{section*.104}%
 \contentsline {paragraph}{}{20}{section*.105}%
 \contentsline {paragraph}{}{20}{section*.106}%
-\contentsline {subsection}{\numberline {2.4.1}Modelos Baseados em Indicadores Técnicos}{20}{subsection.2.4.1}%
 \contentsline {paragraph}{}{20}{section*.107}%
+\contentsline {subsection}{\numberline {2.4.1}Modelos Baseados em Indicadores Técnicos}{20}{subsection.2.4.1}%
 \contentsline {paragraph}{}{20}{section*.108}%
+\contentsline {paragraph}{}{20}{section*.109}%
 \contentsline {subsection}{\numberline {2.4.2}Modelos Baseados em Processos Estocásticos}{21}{subsection.2.4.2}%
-\contentsline {paragraph}{}{21}{section*.109}%
 \contentsline {paragraph}{}{21}{section*.110}%
 \contentsline {paragraph}{}{21}{section*.111}%
 \contentsline {paragraph}{}{21}{section*.112}%
-\contentsline {paragraph}{}{22}{section*.113}%
+\contentsline {paragraph}{}{21}{section*.113}%
 \contentsline {paragraph}{}{22}{section*.114}%
-\contentsline {subsection}{\numberline {2.4.3}Modelos Baseados em Aprendizado de Máquina}{22}{subsection.2.4.3}%
 \contentsline {paragraph}{}{22}{section*.115}%
+\contentsline {subsection}{\numberline {2.4.3}Modelos Baseados em Aprendizado de Máquina}{22}{subsection.2.4.3}%
 \contentsline {paragraph}{}{22}{section*.116}%
-\contentsline {chapter}{Bibliografia}{23}{section*.116}%
+\contentsline {paragraph}{}{22}{section*.117}%
+\contentsline {paragraph}{}{23}{section*.118}%
+\contentsline {paragraph}{}{23}{section*.119}%
+\contentsline {chapter}{Bibliografia}{24}{section*.119}%

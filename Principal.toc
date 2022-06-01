@@ -151,50 +151,54 @@
 \contentsline {paragraph}{}{25}{section*.128}%
 \contentsline {paragraph}{}{25}{section*.129}%
 \contentsline {paragraph}{}{25}{section*.130}%
-\contentsline {subsection}{\numberline {3.2.2}Coleta de Dados}{26}{subsection.3.2.2}%
-\contentsline {paragraph}{}{26}{section*.132}%
-\contentsline {subsection}{\numberline {3.2.3}Armazenamento de Dados}{26}{subsection.3.2.3}%
-\contentsline {paragraph}{}{26}{section*.133}%
-\contentsline {subsection}{\numberline {3.2.4}Geração de Features de Uso Geral}{26}{subsection.3.2.4}%
-\contentsline {paragraph}{}{26}{section*.134}%
-\contentsline {section}{\numberline {3.3}Simulação de Estratégia}{27}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Estrutura}{27}{subsection.3.3.1}%
-\contentsline {paragraph}{}{27}{section*.135}%
-\contentsline {subsection}{\numberline {3.3.2}Premissas}{27}{subsection.3.3.2}%
-\contentsline {paragraph}{}{27}{section*.136}%
-\contentsline {subsection}{\numberline {3.3.3}Período Máximo de Dias por Operação}{27}{subsection.3.3.3}%
-\contentsline {paragraph}{}{27}{section*.137}%
-\contentsline {subsection}{\numberline {3.3.4}Gerenciamento de Risco}{27}{subsection.3.3.4}%
-\contentsline {paragraph}{}{27}{section*.138}%
-\contentsline {subsection}{\numberline {3.3.5}Risco de Entrada por Operação}{27}{subsection.3.3.5}%
-\contentsline {paragraph}{}{27}{section*.139}%
-\contentsline {subsection}{\numberline {3.3.6}Descanso por Tendência de Baixa}{27}{subsection.3.3.6}%
-\contentsline {paragraph}{}{27}{section*.140}%
-\contentsline {subsection}{\numberline {3.3.7}Descanso por Identificação de Crises}{27}{subsection.3.3.7}%
-\contentsline {paragraph}{}{27}{section*.141}%
-\contentsline {subsection}{\numberline {3.3.8}Lista de Parâmetros de Configuração}{27}{subsection.3.3.8}%
-\contentsline {paragraph}{}{27}{section*.142}%
-\contentsline {subsection}{\numberline {3.3.9}Ensaios Paralelos}{27}{subsection.3.3.9}%
-\contentsline {paragraph}{}{27}{section*.143}%
-\contentsline {section}{\numberline {3.4}Otimizações de Gerenciamento de Carteira}{28}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Normalização por Frequência de Operações}{28}{subsection.3.4.1}%
-\contentsline {paragraph}{}{28}{section*.144}%
-\contentsline {subsection}{\numberline {3.4.2}Controle Proporcional para Uso de Capital}{28}{subsection.3.4.2}%
-\contentsline {paragraph}{}{28}{section*.145}%
-\contentsline {subsection}{\numberline {3.4.3}Compensação por Lucratividade}{28}{subsection.3.4.3}%
-\contentsline {paragraph}{}{28}{section*.146}%
-\contentsline {section}{\numberline {3.5}Criação de Modelos}{28}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Resumo}{28}{subsection.3.5.1}%
-\contentsline {paragraph}{}{28}{section*.147}%
-\contentsline {subsection}{\numberline {3.5.2}\textit {Feature Selection}}{28}{subsection.3.5.2}%
-\contentsline {paragraph}{}{28}{section*.148}%
-\contentsline {subsection}{\numberline {3.5.3}Geração de \textit {Datasets}}{28}{subsection.3.5.3}%
-\contentsline {paragraph}{}{28}{section*.149}%
-\contentsline {subsection}{\numberline {3.5.4}\textit {Walk Forward Optimization}}{28}{subsection.3.5.4}%
-\contentsline {paragraph}{}{28}{section*.150}%
-\contentsline {subsection}{\numberline {3.5.5}Critérios de Escolha}{28}{subsection.3.5.5}%
-\contentsline {paragraph}{}{28}{section*.151}%
-\contentsline {section}{\numberline {3.6}Análise de Resultados}{29}{section.3.6}%
-\contentsline {paragraph}{}{29}{section*.152}%
-\contentsline {chapter}{\numberline {4}Conclusão}{30}{chapter.4}%
-\contentsline {chapter}{Bibliografia}{31}{chapter.4}%
+\contentsline {paragraph}{}{26}{section*.131}%
+\contentsline {subsection}{\numberline {3.2.2}Coleta de Dados}{28}{subsection.3.2.2}%
+\contentsline {paragraph}{}{28}{section*.132}%
+\contentsline {paragraph}{}{28}{section*.133}%
+\contentsline {paragraph}{}{28}{section*.134}%
+\contentsline {paragraph}{}{28}{section*.135}%
+\contentsline {subsection}{\numberline {3.2.3}Armazenamento de Dados}{28}{subsection.3.2.3}%
+\contentsline {paragraph}{}{28}{section*.136}%
+\contentsline {subsection}{\numberline {3.2.4}Geração de Features de Uso Geral}{29}{subsection.3.2.4}%
+\contentsline {paragraph}{}{29}{section*.137}%
+\contentsline {section}{\numberline {3.3}Simulação de Estratégia}{29}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Estrutura}{29}{subsection.3.3.1}%
+\contentsline {paragraph}{}{29}{section*.138}%
+\contentsline {subsection}{\numberline {3.3.2}Premissas}{29}{subsection.3.3.2}%
+\contentsline {paragraph}{}{29}{section*.139}%
+\contentsline {subsection}{\numberline {3.3.3}Período Máximo de Dias por Operação}{29}{subsection.3.3.3}%
+\contentsline {paragraph}{}{29}{section*.140}%
+\contentsline {subsection}{\numberline {3.3.4}Gerenciamento de Risco}{29}{subsection.3.3.4}%
+\contentsline {paragraph}{}{29}{section*.141}%
+\contentsline {subsection}{\numberline {3.3.5}Risco de Entrada por Operação}{29}{subsection.3.3.5}%
+\contentsline {paragraph}{}{29}{section*.142}%
+\contentsline {subsection}{\numberline {3.3.6}Descanso por Tendência de Baixa}{29}{subsection.3.3.6}%
+\contentsline {paragraph}{}{29}{section*.143}%
+\contentsline {subsection}{\numberline {3.3.7}Descanso por Identificação de Crises}{29}{subsection.3.3.7}%
+\contentsline {paragraph}{}{29}{section*.144}%
+\contentsline {subsection}{\numberline {3.3.8}Lista de Parâmetros de Configuração}{30}{subsection.3.3.8}%
+\contentsline {paragraph}{}{30}{section*.145}%
+\contentsline {subsection}{\numberline {3.3.9}Ensaios Paralelos}{30}{subsection.3.3.9}%
+\contentsline {paragraph}{}{30}{section*.146}%
+\contentsline {section}{\numberline {3.4}Otimizações de Gerenciamento de Carteira}{30}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Normalização por Frequência de Operações}{30}{subsection.3.4.1}%
+\contentsline {paragraph}{}{30}{section*.147}%
+\contentsline {subsection}{\numberline {3.4.2}Controle Proporcional para Uso de Capital}{30}{subsection.3.4.2}%
+\contentsline {paragraph}{}{30}{section*.148}%
+\contentsline {subsection}{\numberline {3.4.3}Compensação por Lucratividade}{30}{subsection.3.4.3}%
+\contentsline {paragraph}{}{30}{section*.149}%
+\contentsline {section}{\numberline {3.5}Criação de Modelos}{30}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Resumo}{30}{subsection.3.5.1}%
+\contentsline {paragraph}{}{30}{section*.150}%
+\contentsline {subsection}{\numberline {3.5.2}\textit {Feature Selection}}{30}{subsection.3.5.2}%
+\contentsline {paragraph}{}{30}{section*.151}%
+\contentsline {subsection}{\numberline {3.5.3}Geração de \textit {Datasets}}{30}{subsection.3.5.3}%
+\contentsline {paragraph}{}{30}{section*.152}%
+\contentsline {subsection}{\numberline {3.5.4}\textit {Walk Forward Optimization}}{31}{subsection.3.5.4}%
+\contentsline {paragraph}{}{31}{section*.153}%
+\contentsline {subsection}{\numberline {3.5.5}Critérios de Escolha}{31}{subsection.3.5.5}%
+\contentsline {paragraph}{}{31}{section*.154}%
+\contentsline {section}{\numberline {3.6}Análise de Resultados}{31}{section.3.6}%
+\contentsline {paragraph}{}{31}{section*.155}%
+\contentsline {chapter}{\numberline {4}Conclusão}{32}{chapter.4}%
+\contentsline {chapter}{Bibliografia}{33}{chapter.4}%

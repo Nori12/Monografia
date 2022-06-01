@@ -307,4 +307,12 @@ BILDIRICI, M., ERSIN, {\"O}.~{\"O}., \enquote{Improving forecasts of GARCH
   daily returns in Istanbul Stock Exchange}, \emph{Expert Systems with
   Applications}, v.~36, n.~4, pp.~7355--7362, 2009.
 
+\bibitem{yfinance}
+YFINANCE, \enquote{yfinance}, https://pypi.org/project/yfinance/, (Acessado em
+  1 de Junho de 2022).
+
+\bibitem{yahoo_finance}
+YAHOO!, \enquote{Yahoo! Finance}, https://finance.yahoo.com, (Acessado em 1 de
+  Junho de 2022).
+
 \end{thebibliography}

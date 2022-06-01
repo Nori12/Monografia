@@ -164,6 +164,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter
 INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/footmisc/footmisc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/footmisc/footmisc.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 INPUT /Users/atcha/Github/Monografia/Principal.aux
@@ -185,8 +187,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
-INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/grfext/grfext.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -308,6 +308,8 @@ INPUT /Users/atcha/Github/Monografia/./figuras/decision_tree.png
 OUTPUT /Users/atcha/Github/Monografia/cap3.aux
 INPUT /Users/atcha/Github/Monografia/cap3.tex
 INPUT /Users/atcha/Github/Monografia/cap3.tex
+INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
+INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
 INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
 INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
 INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg

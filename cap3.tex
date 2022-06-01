@@ -34,27 +34,73 @@
     \label{fig:101}
 \end{figure}
 
-\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, cujos valores precedem quaisquer outros listados na estratégias subsequentes, caso possam ser reescritos. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe criada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia, que podem ter natureza obrigatória ou opcional.
+\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, cujos valores precedem quaisquer outros listados na estratégias subsequentes, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde cada campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia, que podem ser de natureza obrigatória ou opcional. A Tabela \ref{tab:1} descreve todos os parâmetros disponíveis.
 
-\subsubsection*{Lista de Parâmetros}
+\paragraph{} Para se criar mais de um perfil de simulação, é necessário modificar o parâmetro divergente para uma lista de valores, conforme a Figura cite{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais.
 
+\begin{figure}[h]
+    \includegraphics[scale=0.90]{no_image.jpeg}
+    \centering
+    \caption{Arquivo de Configuração para execução múltipla (Imagem em construção)}
+    \label{fig:102}
+\end{figure}
 
+\begin{center}
+\resizebox{\textwidth}{!}{%
+    \begin{tabular}{ | m{10em} | m{3em}| m{5em}| m{16em} | }
+        \hline
+        \multicolumn{4}{|c|}{Lista de Parâmetros} \\
+        \hline
+        Nome do Parâmetro & Escopo & Obrigatório & Descrição \\
+        \hline
+        show\_results & Geral & Não & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: Boolean. Valor \textit{default}: True. \\
+        \hline
+        min\_risk\_features & Geral & Não & Mínimo risco para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.01. \\
+        \hline
+        max\_risk\_features & Geral & Não & Máximo risco para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.10. \\
+        \hline
+        name & Local & Sim & Nome da estratégia a ser executada. Valores válidos: "ML Derivation". Tipo: \textit{String}. \\
+        \hline
+        comment & Local & Não & Comentário. Tipo: \textit{String}. \\
+        \hline
+        capital & Local & Sim & Capital total da carteira em reais. Tipo: \textit{Float}. \\
+        \hline
+        risk\_capital\_coefficient & Local & Sim & Coeficiente de risco-capital geral. Tipo: \textit{Float}. \\
+        \hline
+        tickers\_bag & Local & Não & Grupo de ativos a escolher dentro do parâmetro stock\_targets. "listed\_first": ordem de listagem; "random": ordem aleatória. Valor \textit{default}: "listed\_first". \\
+        \hline
+    \end{tabular}
+    \label{tab:1}
+}
+\end{center}
 
-
-
-
-
-
-
-
-
-
+Terminar.
 
 
 
 
 \subsection{Coleta de Dados}
-\paragraph{} yfinance; Problema com proventos; Normalização de proventos do preço das ações.
+
+\paragraph{} EXCLUIR - yfinance; Problema com proventos; Normalização de proventos do preço das ações.
+
+\paragraph{} A Coleta de Dados ocorre através da biblioteca \textit{open-source} \textit{yfinance} \cite{yfinance}, uma ferramenta de terceiros que transmite dados públicos da plataforma \textit{Yahoo! Finance} \cite{yahoo_finance}, um subsistema da rede \textit{Yahoo!}.
+
+\paragraph{} A escolha desta biblioteca como fonte de dados se deve à sua gratuidade e facilidade de uso, porém após alguns tester e verificações com outras fontes, deve-se ressaltar algumas questões.
+
+\begin{itemize}
+    \item Os valores de proventos que a biblioteca disponibiliza não são consistentes, portanto não são utilizados por este projeto. Testes internos confirmaram a presença de diversos valores de dividendos e juros sobre capital próprio corretamente apresentados e ajustados pelos desdobramentos acumulados, porém somados a alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar seu uso em escala (i.e., para vários ativos sem verificação individual).
+    \item DIA DE MEIO EXPEDIENTE NO CARNAVAL
+    \item PROVENTOS EMBUTIDOS NO PREÇO DAS AÇOES?
+    \item VERIFICACAO COM TRADING VIEW
+\end{itemize}
+
+\paragraph{} Os dados obtidos são \textit{candlesticks} diários (OHLCV). Com a mesma facilidade, é possível adquirir janelas de tempo semanais, no entanto para evitar potenciais problemas de consistência de dados, as mesmas são calculadas internamente a partir da janela diária via comandos SQL\footnote{\textit{Structured Query Language}: Linguagem usada para administrar bancos de dados relacionais.}.
+
+
+
+
+
+
 
 \subsection{Armazenamento de Dados}
 \paragraph{} Banco de dados; Criação de Candles semanais.

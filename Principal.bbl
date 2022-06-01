@@ -159,10 +159,6 @@ INVESTOPEDIA, \enquote{Fractional Share},
   https://www.investopedia.com/terms/f/fractionalshare.asp, (Acessado em 28 de
   Mar\c{c}o de 2022).
 
-\bibitem{sharpe1998sharpe}
-SHARPE, W.~F., \enquote{The sharpe ratio}, \emph{Streetwise--the Best of the
-  Journal of Portfolio Management}, pp. 169--185, 1998.
-
 \bibitem{bulkowski2012fundamental}
 BULKOWSKI, T.~N., \emph{Fundamental Analysis and Position Trading: Evolution of
   a Trader}, v. 605. John Wiley \& Sons, 2012.
@@ -201,6 +197,10 @@ ARTHUR, S., OTHERS, \enquote{Some studies in machine learning using the game of
 WEISS, G.~M., MCCARTHY, K., ZABAR, B., \enquote{Cost-sensitive learning vs.
   sampling: Which is best for handling unbalanced classes with unequal error
   costs?}, \emph{Dmin}, v.~7, n. 35-41, pp.~24, 2007.
+
+\bibitem{sharpe1998sharpe}
+SHARPE, W.~F., \enquote{The sharpe ratio}, \emph{Streetwise--the Best of the
+  Journal of Portfolio Management}, pp. 169--185, 1998.
 
 \bibitem{kim2010electronic}
 KIM, K., \emph{Electronic and algorithmic trading technology: the complete

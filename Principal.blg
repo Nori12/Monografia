@@ -5,11 +5,13 @@ A level-1 auxiliary file: Capa.aux
 A level-1 auxiliary file: Preambulo.aux
 A level-1 auxiliary file: cap1.aux
 A level-1 auxiliary file: cap2.aux
+A level-1 auxiliary file: cap3.aux
+A level-1 auxiliary file: cap4.aux
 The style file: coppe.bst
 Database file #1: biblio.bib
 You've used 63 entries,
             2465 wiz_defined-function locations,
-            888 strings with 13944 characters,
+            890 strings with 13960 characters,
 and the built_in function-call counts, 14009 in all, are:
 = -- 1554
 > -- 364

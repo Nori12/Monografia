@@ -60,15 +60,6 @@
 
 \paragraph{} No Brasil, o lote mínimo é de 100 ações e o Mercado Fracionário permite a compra de no mínimo 1 ação.
 
-\subsection{Índice de Sharpe}
-
-\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}.} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (e.g. título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco, \begin{math}\sigma_a\end{math} e \begin{math}\sigma_b\end{math} seus respectivos desvios padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
-
-\begin{equation} \label{eq:1}
-    S_a = \frac{E[R_a - R_b]}{\sigma_a - \sigma_b}
-\end{equation}
-
-
 \section{Tipos de Análises}
 
 \subsection{Análise Fundamentalista}
@@ -238,6 +229,21 @@
 
 \paragraph{} Normalmente é preferível utilizar \textit{Random Forests} ao invés de Árvores de Decisão, salvo casos em que o entendimento e a visualização clara do modelo se torna um fator importante, o que difícil de ser analisado quando existem muitras árvores. É possível compensar o aumento do tempo de processamente envolvido na criação deste modelo com paralelização em núcleos de processamento da CPU\footnote{Do inglês: \textit{Central Process Unit}.}.
 
+\section{Considerações para Análise de Resultados}
+
+\subsection{Índice de Sharpe}
+
+\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}.} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (e.g. título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco e \begin{math}\sigma_a\end{math} seu respectivo desvio padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
+
+\begin{equation} \label{eq:1}
+    S_a = \frac{E[R_a - R_b]}{\sigma_a}
+\end{equation}
+
+\subsection{Índice de Sortino}
+
+\subsection{Correlação de Spearman}
+
+
 \section{Trabalhos Relacionados}
 
 \paragraph{} Tendo em vista o conflito de interesses existente por trás de trabalhos de cujo tema está relacionado à previsibilidade do mercado financeiro, pode-se questionar se as estratégias mais promissoras de fato são encontradas em domínio público. Isso ocorre pois a democratização de uma estratégia lucrativa poderia implicar na redução das lucratividades individuais, especialmente se for utilizada em escala.
@@ -260,11 +266,11 @@
 
 \paragraph{} Outra abordagem utilizada são os Modelos Ocultos de Markov (do inglês Hidden Markov Model, ou HMM) \cite{rabiner1989tutorial}. Uma Cadeia de Markov é um processo estocástico que modela um sistema por meio de uma sequência finita de estados. A mudança ou a permanência em cada estado é determinada por probabilidades que dependem somente do estado atual. Em uma Cadeia de Markov, pressupõe-se que seus estados sejam observáveis, o que para algumas aplicações, pode não ser verdade. Nesse sentido surge o modelo HMM, que busca aprender sobre um processo não observável (oculto) a partir de um processo observável.
 
-\paragraph{} Em sua pesquisa, JADHAV et al \cite{jadhav2021forecasting} utiliza um modelo HMM para previsão do preço de fechamento do dia seguinte para ações FAANG\footnote{Facebook, Amazon, Apple, Netflix, Google}. A partir da série histórica de preços OHLC\footnote{Open, High, Low, Close. Em português: Abertura, Máximo, Mínimo, Fechamento}, seu modelo atinge uma eficiência de 97\%-99\%, calculado a partir do erro percentual absoluto médio\footnote{Mean Absolute Percentage Error (MAPE): \begin{math} \frac{1}{N}\sum_{i=1}^{N} \frac{|Predicted(i)-Actual(i)|}{Actual(i)} \end{math}}.
+\paragraph{} Em sua pesquisa, JADHAV et al \cite{jadhav2021forecasting} utiliza um modelo HMM para previsão do preço de fechamento do dia seguinte para ações FAANG\footnote{Facebook, Amazon, Apple, Netflix, Google.}. A partir da série histórica de preços OHLC\footnote{Open, High, Low, Close. Em português: Abertura, Máximo, Mínimo, Fechamento.}, seu modelo atinge uma eficiência de 97\%-99\%, calculado a partir do erro percentual absoluto médio\footnote{Mean Absolute Percentage Error (MAPE): \begin{math} \frac{1}{N}\sum_{i=1}^{N} \frac{|Predicted(i)-Actual(i)|}{Actual(i)} \end{math}}.
 
 \paragraph{} Uma outra aplicação de modelos HMM é dada por DE ANGELIS et al \cite{de2013dynamic}, que criou uma metodologia a partir de índices da bolsa americana capaz de identificar períodos estáveis e instáveis (i.e. crises econômicas), assim como as probabilidades de transição entre um estado e o outro.
 
-\paragraph{} Por fim, pode-ser mencionar o uso de modelos ARCH\footnote{Em português: Heteroscedasticidade Condicional Auto-regressiva.} (Autoregressive Conditional Heteroskedasticity). A ideia central está na modelagem de uma variância (volatilidade) condicional, ou seja, que muda de acordo o instante da série \cite{enders2008applied}. Essa característica se faz muito útil em séries que possuem períodos de alta volatilidade se alternando com períodos de baixa volatilidade. Para um modelo genérico ARCH(q), seja \begin{math}\epsilon_t\end{math} o erro (resíduo) no instante t e \begin{math}\alpha_0\end{math} um ruído branco, pode-se descrever a variância condicional de acordo com a Equação \ref{eq:4}.
+\paragraph{} Por fim, pode-ser mencionar o uso de modelos ARCH\footnote{Em português: Heteroscedasticidade Condicional Auto-regressiva.} (Autoregressive Conditional Heteroskedasticity). A ideia central está na modelagem de uma variância condicional, ou seja, que muda de acordo o instante da série \cite{enders2008applied}. Essa característica se faz muito útil em séries que possuem períodos de alta volatilidade se alternando com períodos de baixa volatilidade. Para um modelo genérico ARCH(q), seja \begin{math}\epsilon_t\end{math} o erro (resíduo) no instante t e \begin{math}\alpha_0\end{math} um ruído branco, pode-se descrever a variância condicional de acordo com a Equação \ref{eq:4}.
 
 \begin{equation} \label{eq:4}
 \sigma_t^2 = \alpha_0 + \sum_{i=1}^{q} \alpha_i\epsilon_{t-1}^{2}

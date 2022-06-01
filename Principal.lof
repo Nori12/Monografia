@@ -11,5 +11,6 @@
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Funcionamento de um algoritmo k-NN para o problema de classificação \cite {knn_classification}. Para K=3 a classe é B e para K=7 a classe é A.}}{17}{figure.2.8}%
 \contentsline {figure}{\numberline {2.9}{\ignorespaces Visualização de uma Árvose de Decisão para um \textit {dataset} de câncer de mama \cite {muller2016introduction}.}}{18}{figure.2.9}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Leitura de um gráfico de \textit {candlestick} \cite {candlestick}}}{24}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Estrutura do técnica do projeto (Imagem em construção)}}{24}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Arquivo de Configuração para execução singular (Imagem em construção)}}{26}{figure.3.2}%
 \addvspace {10\p@ }

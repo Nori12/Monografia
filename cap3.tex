@@ -6,18 +6,52 @@
 \paragraph{} As seções a seguir trazem detalhes quanto a estrutura técnica do projeto. Portanto, a Figura \ref{fig:100} mostra uma noção geral de como as estrutras se conectam.
 
 \begin{figure}[h]
-    \includegraphics[scale=0.50]{candlestick.png}
+    \includegraphics[scale=0.90]{no_image.jpeg}
     \centering
-    \caption{Leitura de um gráfico de \textit{candlestick} \cite{candlestick}}
+    \caption{Estrutura do técnica do projeto (Imagem em construção)}
     \label{fig:100}
 \end{figure}
 
-\paragraph{} Primeiro, tem-se início a etapa de pré-processamento de dados,  ...
+\paragraph{} Primeiro, tem-se início a etapa de pré-processamento de dados, onde ocorre a leitura e interpretação do arquivo de configuração para se saber quantas estratégias executar, quais os ativos envolvidos e seus recpectivos intervalos de tempo. Uma vez verificado no banco de dados os dados já existentes, faz-se um \textit{download} apenas dos dados necessários. Se houver alguma atualização de dados, as \textit{features} de uso geral são calculadas e armazenadas no banco a fim de servir de insumo para as estratégias que estarão por vir.
+
+\paragraph{} Completada a etapa de pré-processamento, inicia-se a simulação das estratégias. O arquivo de configuração foi projetado para ser capaz de designar diversas estratégias de parâmetros distintos a uma mesma ordem de execução de programa. Dessa forma, faz-se uso da biblioteca \textit{multiprocessing} para paralelizar as simulações, cujos resultados e estatísticas pertinentes são salvas no banco para posterior análise.
+
+\paragraph{} É possível visualizar os resultados de forma clara através de uma aplicação secundária responsável por criar um \textit{dashboard} interativo.
+
+\paragraph{} A aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{dash} e \textit{multiprocessing}. Foi estruturado um banco de dados \textit{PostgreSQL} para armazenamento dos \textit{candlesticks} baixados, das \textit{features} geradas e arquivamento das estratégias executadas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem necessidade de configuração de ambiente.
 
 \section{Pré-Processamento}
 
 \subsection{Arquivo de Configuração}
-\paragraph{} Falar motivação do arquivo; Print de exemplo; Apontar para subsection de lista de parâmetros; Possibilidade de rodar várias simulações.
+\paragraph{} EXCLUIR - Falar motivação do arquivo; Print de exemplo; Apontar para subsection de lista de parâmetros; Possibilidade de rodar várias simulações.
+
+\paragraph{} O Arquivo de Configuração é um arquivo no formato JSON responsável por configurar detalhadamente cada parâmetro da sequência de estratégias que se deseja executar. Uma ordem de execução do programa pode conter diversas simulações de estratégias, que são configuradas neste Arquivo. A Figura \ref{fig:101} mostra sua estrutura.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.90]{no_image.jpeg}
+    \centering
+    \caption{Arquivo de Configuração para execução singular (Imagem em construção)}
+    \label{fig:101}
+\end{figure}
+
+\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, cujos valores precedem quaisquer outros listados na estratégias subsequentes, caso possam ser reescritos. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe criada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia, que podem ter natureza obrigatória ou opcional.
+
+\subsubsection*{Lista de Parâmetros}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{Coleta de Dados}
 \paragraph{} yfinance; Problema com proventos; Normalização de proventos do preço das ações.

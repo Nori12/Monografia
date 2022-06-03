@@ -3,22 +3,24 @@
 
 \section{Resumo}
 
-\paragraph{} As seções a seguir trazem detalhes quanto a estrutura técnica do projeto. Portanto, a Figura \ref{fig:100} mostra uma noção geral de como as estrutras se conectam.
+\paragraph{} As seções a seguir trazem detalhes quanto a estrutura técnica do projeto. Portanto, a Figura \ref{fig:100} apresenta uma noção geral de como as estrutras se conectam.
 
 \begin{figure}[h]
-    \includegraphics[scale=0.90]{no_image.jpeg}
+    \includegraphics[scale=0.52]{resumo_projeto.png}
     \centering
-    \caption{Estrutura do técnica do projeto (Imagem em construção)}
+    \caption{Estrutura do técnica do projeto}
     \label{fig:100}
 \end{figure}
 
-\paragraph{} Primeiro, tem-se início a etapa de pré-processamento de dados, onde ocorre a leitura e interpretação do arquivo de configuração para se saber quantas estratégias executar, quais os ativos envolvidos e seus recpectivos intervalos de tempo. Uma vez verificado no banco de dados os dados já existentes, faz-se um \textit{download} apenas dos dados necessários. Se houver alguma atualização de dados, as \textit{features} de uso geral são calculadas e armazenadas no banco a fim de servir de insumo para as estratégias que estarão por vir.
+\paragraph{} Primeiro, antes da execução do código principal, é necessário garantir que os modelos estão devidamente localizados em pasta apropriada. Para isso, faz-se imprescindível a criação dos \textit{datasets} para cada ação a ser simulada, pois servem de entrada de dados para a criação e seleção dos modelos, etapa esta que deve ser executada logo em sequência. A biblioteca \textit{multiprocessing} foi utilizada para minimizar o tempo total gasto nestas etapas.
 
-\paragraph{} Completada a etapa de pré-processamento, inicia-se a simulação das estratégias. O arquivo de configuração foi projetado para ser capaz de designar diversas estratégias de parâmetros distintos a uma mesma ordem de execução de programa. Dessa forma, faz-se uso da biblioteca \textit{multiprocessing} para paralelizar as simulações, cujos resultados e estatísticas pertinentes são salvas no banco para posterior análise.
+\paragraph{} Após a criação dos modelos, tem-se início a etapa de pré-processamento de dados, onde ocorre a leitura e interpretação do arquivo de configuração para se obter o número de estratégias a executar, quais os ativos envolvidos e seus recpectivos intervalos de tempo. Uma vez verificado no banco os dados já existentes, faz-se um \textit{download} apenas dos dados necessários. Se houver alguma atualização de dados, as \textit{features} de uso geral são (re)calculadas e armazenadas no banco a fim de servir de insumo para as estratégias que estarão por vir.
 
-\paragraph{} É possível visualizar os resultados de forma clara através de uma aplicação secundária responsável por criar um \textit{dashboard} interativo.
+\paragraph{} Completada a etapa de pré-processamento, inicia-se a simulação das estratégias. O arquivo de configuração foi projetado para ser capaz de designar diversas estratégias de parâmetros distintos a uma mesma ordem de execução de programa. Também fez-se uso da biblioteca \textit{multiprocessing} para paralelizar as simulações, cujos resultados e estatísticas são salvas no banco para posterior análise.
 
-\paragraph{} A aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{dash} e \textit{multiprocessing}. Foi estruturado um banco de dados \textit{PostgreSQL} para armazenamento dos \textit{candlesticks} baixados, das \textit{features} geradas e arquivamento das estratégias executadas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem necessidade de configuração de ambiente.
+\paragraph{} Por fim, é possível visualizar os resultados de forma clara através de uma aplicação secundária responsável por criar um \textit{dashboard} interativo.
+
+\paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{dash} e \textit{multiprocessing}. Foi estruturado um banco de dados \textit{PostgreSQL} para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
 
 \section{Pré-Processamento}
 
@@ -28,9 +30,9 @@
 \paragraph{} O Arquivo de Configuração é um arquivo no formato JSON responsável por configurar detalhadamente cada parâmetro da sequência de estratégias que se deseja executar. Uma ordem de execução do programa pode conter diversas simulações de estratégias, que são configuradas neste Arquivo. A Figura \ref{fig:101} mostra sua estrutura.
 
 \begin{figure}[h]
-    \includegraphics[scale=0.90]{no_image.jpeg}
+    \includegraphics[scale=0.50]{config_file_estrutura.png}
     \centering
-    \caption{Arquivo de Configuração para execução singular (Imagem em construção)}
+    \caption{Estrutura do Arquivo de Configuração}
     \label{fig:101}
 \end{figure}
 
@@ -45,33 +47,125 @@
     \label{fig:102}
 \end{figure}
 
+% \begin{center}
+% \resizebox{\textwidth}{!}{%
+%     \begin{tabular}{ | m{10em} | m{3em}| m{5em}| m{16em} | }
+%         \hline
+%         \multicolumn{4}{|c|}{Lista de Parâmetros} \\
+%         \hline
+%         Nome do Parâmetro & Escopo & Obrigatório & Descrição \\
+%         \hline
+%         show\_results & Geral & Não & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: Boolean. Valor \textit{default}: True. \\
+%         \hline
+%         min\_risk\_features & Geral & Não & Risco mínimo para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.01. \\
+%         \hline
+%         max\_risk\_features & Geral & Não & Risco máximo para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.10. \\
+%         \hline
+%         name & Local & Sim & Nome da estratégia a ser executada. Valores válidos: "ML Derivation". Tipo: \textit{String}. \\
+%         \hline
+%         comment & Local & Não & Comentário. Tipo: \textit{String}. \\
+%         \hline
+%         capital & Local & Sim & Capital total da carteira em reais. Tipo: \textit{Float}. \\
+%         \hline
+%         risk\_capital\_coefficient & Local & Sim & Coeficiente de risco-capital geral. Tipo: \textit{Float}. \\
+%         \hline
+%         tickers\_bag & Local & Não & Grupo de ativos a escolher dentro do parâmetro stock\_targets. "listed\_first": ordem de listagem; "random": ordem aleatória. Valor \textit{default}: "listed\_first". \\
+%         \hline
+%     \end{tabular}
+%     \label{tab:1}
+% }
+% \end{center}
+
 \begin{center}
-\resizebox{\textwidth}{!}{%
-    \begin{tabular}{ | m{10em} | m{3em}| m{5em}| m{16em} | }
+    {\small
+    \begin{longtable}[m]{| m{11em} | m{3em}| m{21em} |}
+
         \hline
-        \multicolumn{4}{|c|}{Lista de Parâmetros} \\
+        \multicolumn{3}{|c|}{Lista de Parâmetros} \\
         \hline
-        Nome do Parâmetro & Escopo & Obrigatório & Descrição \\
+        Nome do Parâmetro & Escopo & Descrição \\
         \hline
-        show\_results & Geral & Não & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: Boolean. Valor \textit{default}: True. \\
+        \endfirsthead
+
         \hline
-        min\_risk\_features & Geral & Não & Mínimo risco para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.01. \\
+        \multicolumn{3}{|c|}{Continuação da Tabela \ref{tab:1}} \\
         \hline
-        max\_risk\_features & Geral & Não & Máximo risco para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.10. \\
+        Nome do Parâmetro & Escopo & Descrição \\
         \hline
-        name & Local & Sim & Nome da estratégia a ser executada. Valores válidos: "ML Derivation". Tipo: \textit{String}. \\
+        \endhead
+
         \hline
-        comment & Local & Não & Comentário. Tipo: \textit{String}. \\
+        \endfoot
+
         \hline
-        capital & Local & Sim & Capital total da carteira em reais. Tipo: \textit{Float}. \\
+        \multicolumn{3}{|c|}{Fim da Tabela \ref{tab:1}} \\
         \hline
-        risk\_capital\_coefficient & Local & Sim & Coeficiente de risco-capital geral. Tipo: \textit{Float}. \\
+        \caption{Lista de parâmetros detalhados.\label{tab:1}}
+        \endlastfoot
+
         \hline
-        tickers\_bag & Local & Não & Grupo de ativos a escolher dentro do parâmetro stock\_targets. "listed\_first": ordem de listagem; "random": ordem aleatória. Valor \textit{default}: "listed\_first". \\
+        show\_results & Geral & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: \textit{Boolean}. \textit{Default}: \textit{True}. Listável: Não. \\
         \hline
-    \end{tabular}
-    \label{tab:1}
-}
+        min\_risk\_features & Geral & Risco mínimo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,01. Listável: Não. \\
+        \hline
+        max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
+        \hline
+        \textbf{name} & Local & (OBRIGATÓRIO) Nome da estratégia a ser executada. Valores válidos: ``ML Derivation". Tipo: \textit{String}. Listável: Não. \\
+        \hline
+        comment & Local & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
+        \hline
+        capital & Local & Capital total da carteira em reais (R\$). Tipo: \textit{Float}. Listável: Sim. \\
+        \hline
+        risk\_capital\_coefficient & Local & Coeficiente de risco-capital (RCC) geral. Tipo: \textit{Float}. \textit{Default}: 0,001. Listável: Sim. \\
+        \hline
+        tickers\_bag & Local & Grupo de ativos a escolher dentro de ``stock\_targets". Valores aceitos: ``listed\_first" (ordem de listagem); ``random" (ordem aleatória). \textit{Default}: ``listed\_first". Listável: Sim. \\
+        \hline
+        tickers\_number & Local & Número de ativos a escolher dentro de ``stock\_targets", de acordo com ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
+        \hline
+        min\_order\_volume & Local & Volume mínimo por operação. Tipo: \textit{Int}. \textit{Default}: 1. Listável: Sim. \\
+        \hline
+        gain\_loss\_ratio & Local & Razão entre ganho e perda. Para uma unidade de risco (delta pencentual entre preço de compra e \textit{stop loss}) são utilizadas N unidades de risco acima no preço preço de compra para definir o preço alvo. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+        \hline
+        max\_days\_per\_operation & Local & Número máximo de dias por operação. Inclui o dia de compra. Caso excedido, ocorre venda compulsória pelo preço de fechamento no último dia da contagem. Tipo: \textit{Int}. \textit{Default}: 45. Listável: Não. \\
+        \hline
+        min\_risk & Local & Risco mínimo por operação. Tipo: \textit{Float}. \textit{Default}: 0,003. Listável: Sim. \\
+        \hline
+        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
+        \hline
+        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
+        \hline
+        enable\_frequency\hspace{2em} \_normalization & Local & Uso de normalização por frequência de operações. Ativos com N vezes mais operações que a média receberão N vezes menos capital. Ver Seção \ref{freq_norm}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_profit\hspace{4em} \_compensation & Local & Uso de compensação por lucratividade acumulada. Ver Seção \ref{profit_comp}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_crisis\_halt & Local & Bloqueio de novas aquisições em caso de identificação de potenciais crises financeiras (para ativo). Ver Seção \ref{crisis_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_downtrend\_halt & Local & Bloqueio de novas aquisições em caso de identificação de tendências de baixo nos preços (para ativo). Ver Seção \ref{downtrend_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_dynamic\_rcc & Local & Uso de Coeficiente de Risco-Capital dinâmico (para carteira). Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        dynamic\_rcc\_reference & Local & Valor de referência de uso de capital médio no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 0,80. Listável: Sim. \\
+        \hline
+        dynamic\_rcc\_k & Local & Valor do ganho proporcional K no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+        \hline
+
+        purchase\_margin & Local & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+        stop\_margin & Local & Margem percentual aplicada ao valor do \textit{stop loss}. Ex: Se o \textit{stop} estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$101. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+        partial\_sale & Local & Uso de saídas parciais. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        stop\_type & Local & Tipo de \textit{stop loss} utilizado. Valores aceitos: ``normal"; ``staircase" (para cada patamar de unidade de risco que o preço atinge acima do valor de compra, o \textit{stop} sobe igualmente, até uma unidade de risco abaixo do preço alvo). Ver ``gain\_loss\_ratio". \textit{Default}: ``normal". Listável: Sim. \\
+        \hline
+        min\_days\_after\_successful \_operation & Local & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+        max\_days\_after\_failure \_operation & Local & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+
+        \textbf{stock\_targets} & Local & (OBRIGATÓRIO) \textit{Array} de ações a incluir na carteira. Formato indicado pela figura XXX. Atenção ao parâmetro ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+
+    \end{longtable}}
 \end{center}
 
 Terminar.
@@ -89,8 +183,8 @@ Terminar.
 
 \begin{itemize}
     \item Os valores de proventos que a biblioteca disponibiliza não são consistentes, portanto não são utilizados por este projeto. Testes internos confirmaram a presença de diversos valores de dividendos e juros sobre capital próprio corretamente apresentados e ajustados pelos desdobramentos acumulados, porém somados a alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar seu uso em escala (i.e., para vários ativos sem verificação individual).
-    \item DIA DE MEIO EXPEDIENTE NO CARNAVAL
     \item PROVENTOS EMBUTIDOS NO PREÇO DAS AÇOES?
+    \item DIA DE MEIO EXPEDIENTE NO CARNAVAL
     \item VERIFICACAO COM TRADING VIEW
 \end{itemize}
 
@@ -103,53 +197,59 @@ Terminar.
 
 
 \subsection{Armazenamento de Dados}
-\paragraph{} Banco de dados; Criação de Candles semanais.
+\paragraph{} EXCLUIR - Banco de dados; Criação de Candles semanais.
 
-\subsection{Geração de Features de Uso Geral}
-\paragraph{} Quais features; Cuidados com não-causalidade.
+\subsection{Geração de \textit{Features} de Uso Geral}
+\paragraph{} EXCLUIR - Quais features; Cuidados com não-causalidade.
 
 
 \section{Simulação de Estratégia}
 
 \subsection{Estrutura}
-\paragraph{} Carteira com N ativos de datas distintas; Regra de 3 para 1 entre stop e alvo; 1 operação por ativo.
+\paragraph{} EXCLUIR - Carteira com N ativos de datas distintas; Regra de 3 para 1 entre stop e alvo; 1 operação por ativo.
 
 \subsection{Premissas}
-\paragraph{} Compra na abertura do merdado; Sem venda no dia da compra; Prioridades durante venda (stop primeiro).
+\paragraph{} EXCLUIR - Compra na abertura do merdado; Sem venda no dia da compra; Prioridades durante venda (stop primeiro).
 
 \subsection{Período Máximo de Dias por Operação}
-\paragraph{} Motivação da escolha dos 45 dias; Gráfico entre ABEV e MGLU.
+\paragraph{} EXCLUIR - Motivação da escolha dos 45 dias; Gráfico entre ABEV e MGLU.
 
 \subsection{Gerenciamento de Risco}
-\paragraph{} Coeficiente de Risco-Capital
+\paragraph{} EXCLUIR - Coeficiente de Risco-Capital
 
 \subsection{Risco de Entrada por Operação}
-\paragraph{} Cálculo do risco mínimo; Cálculo do risco Máximo.
+\paragraph{} EXCLUIR - Cálculo do risco mínimo; Cálculo do risco Máximo.
 
 \subsection{Descanso por Tendência de Baixa}
+\label{downtrend_halt}
 \paragraph{}
 
 \subsection{Descanso por Identificação de Crises}
+\label{crisis_halt}
 \paragraph{}
 
 \subsection{Lista de Parâmetros de Configuração}
-\paragraph{} Lista todos e explicar o que fazem.
+\paragraph{} EXCLUIR - Lista todos e explicar o que fazem.
 
 \subsection{Ensaios Paralelos}
-\paragraph{} Parâmetros que estão implementados e não trouxeram resultados expressivos.
+\paragraph{} EXCLUIR - Parâmetros que estão implementados e não trouxeram resultados expressivos.
 
 
 
 \section{Otimizações de Gerenciamento de Carteira}
 
 \subsection{Normalização por Frequência de Operações}
-\paragraph{}
-
-\subsection{Controle Proporcional para Uso de Capital}
+\label{freq_norm}
 \paragraph{}
 
 \subsection{Compensação por Lucratividade}
+\label{profit_comp}
 \paragraph{}
+
+\subsection{Controle Proporcional para Uso de Capital}
+\label{dynamic_rcc}
+\paragraph{}
+
 
 
 
@@ -172,4 +272,4 @@ Terminar.
 
 
 \section{Análise de Resultados}
-\paragraph{} Dashboard; Baseline
+\paragraph{} EXCLUIR - Dashboard; Baseline

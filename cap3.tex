@@ -25,7 +25,6 @@
 \section{Pré-Processamento}
 
 \subsection{Arquivo de Configuração}
-\paragraph{} EXCLUIR - Falar motivação do arquivo; Print de exemplo; Apontar para subsection de lista de parâmetros; Possibilidade de rodar várias simulações.
 
 \paragraph{} O Arquivo de Configuração é um arquivo no formato JSON responsável por configurar detalhadamente cada parâmetro da sequência de estratégias que se deseja executar. Uma ordem de execução do programa pode conter diversas simulações de estratégias, que são configuradas neste Arquivo. A Figura \ref{fig:101} mostra sua estrutura.
 
@@ -36,45 +35,16 @@
     \label{fig:101}
 \end{figure}
 
-\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, cujos valores precedem quaisquer outros listados na estratégias subsequentes, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde cada campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia, que podem ser de natureza obrigatória ou opcional. A Tabela \ref{tab:1} descreve todos os parâmetros disponíveis.
+\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, ou variáveis de escopo global, de cujos valores precedem quaisquer outros listados a seguir, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia. A Tabela \ref{tab:1} descreve todos os parâmetros disponíveis.
 
-\paragraph{} Para se criar mais de um perfil de simulação, é necessário modificar o parâmetro divergente para uma lista de valores, conforme a Figura cite{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais.
+\paragraph{} Para se criar mais de um perfil de simulação, é necessário modificar o Arquivo conforme a Figura \ref{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais. No caso da Figura \ref{fig:102}, a primeira simulação utilizará os valores (100, 0.01) para o par (variável\_local\_1, variável\_local\_2), a segunda utilizará (200, 0.02) e assim sucessivamente.
 
 \begin{figure}[h]
-    \includegraphics[scale=0.90]{no_image.jpeg}
+    \includegraphics[scale=0.50]{config_file_mult_exec.png}
     \centering
-    \caption{Arquivo de Configuração para execução múltipla (Imagem em construção)}
+    \caption{Arquivo de Configuração para Execuções Múltiplas}
     \label{fig:102}
 \end{figure}
-
-% \begin{center}
-% \resizebox{\textwidth}{!}{%
-%     \begin{tabular}{ | m{10em} | m{3em}| m{5em}| m{16em} | }
-%         \hline
-%         \multicolumn{4}{|c|}{Lista de Parâmetros} \\
-%         \hline
-%         Nome do Parâmetro & Escopo & Obrigatório & Descrição \\
-%         \hline
-%         show\_results & Geral & Não & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: Boolean. Valor \textit{default}: True. \\
-%         \hline
-%         min\_risk\_features & Geral & Não & Risco mínimo para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.01. \\
-%         \hline
-%         max\_risk\_features & Geral & Não & Risco máximo para o cálculo de \textit{features}. Tipo: Float. Valor \textit{default}: 0.10. \\
-%         \hline
-%         name & Local & Sim & Nome da estratégia a ser executada. Valores válidos: "ML Derivation". Tipo: \textit{String}. \\
-%         \hline
-%         comment & Local & Não & Comentário. Tipo: \textit{String}. \\
-%         \hline
-%         capital & Local & Sim & Capital total da carteira em reais. Tipo: \textit{Float}. \\
-%         \hline
-%         risk\_capital\_coefficient & Local & Sim & Coeficiente de risco-capital geral. Tipo: \textit{Float}. \\
-%         \hline
-%         tickers\_bag & Local & Não & Grupo de ativos a escolher dentro do parâmetro stock\_targets. "listed\_first": ordem de listagem; "random": ordem aleatória. Valor \textit{default}: "listed\_first". \\
-%         \hline
-%     \end{tabular}
-%     \label{tab:1}
-% }
-% \end{center}
 
 \begin{center}
     {\small
@@ -110,7 +80,7 @@
         \hline
         max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
         \hline
-        \textbf{name} & Local & (OBRIGATÓRIO) Nome da estratégia a ser executada. Valores válidos: ``ML Derivation". Tipo: \textit{String}. Listável: Não. \\
+        \textbf{name} & Local & \textbf{(OBRIGATÓRIO)} Nome da estratégia a ser executada. Valores válidos: ``ML Derivation". Tipo: \textit{String}. Listável: Não. \\
         \hline
         comment & Local & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
         \hline
@@ -162,14 +132,11 @@
         max\_days\_after\_failure \_operation & Local & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
         \hline
 
-        \textbf{stock\_targets} & Local & (OBRIGATÓRIO) \textit{Array} de ações a incluir na carteira. Formato indicado pela figura XXX. Atenção ao parâmetro ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        \textbf{stock\_targets} & Local & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. Atenção ao parâmetro ``tickers\_bag". \\
         \hline
 
     \end{longtable}}
 \end{center}
-
-Terminar.
-
 
 
 

@@ -7,6 +7,13 @@
 \usepackage{longtable}
 \usepackage{listings}
 
+\usepackage{fifo-stack}
+\FSCreate{colors}{black}
+\makeatletter
+\let\old@color\color
+\renewcommand\color[1]{\FSPush{colors}{#1}\old@color{#1}}
+\newcommand\colorend{\FSPop{colors}\old@color{\FSTop{colors}}}
+
 % \newcommand{\titulo}{AN\'ALISE DE ESTRAT\'EGIA DE SWING TRADE DO MERCADO FINANCEIRO E OTIMIZAC\~AO ATRAV\'ES DE APRENDIZADO DE M\'AQUINA}
 \newcommand{\titulo}{TÉCNICAS DE APRENDIZADO DE MÁQUINA APLICADAS À ESTRATÉGIA DE SWING TRADE DO MERCADO FINANCEIRO}
 

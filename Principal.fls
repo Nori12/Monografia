@@ -331,6 +331,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
+INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
+INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
+INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 OUTPUT /Users/atcha/Github/Monografia/cap4.aux
 INPUT /Users/atcha/Github/Monografia/cap4.tex

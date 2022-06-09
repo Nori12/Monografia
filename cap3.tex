@@ -141,6 +141,7 @@
 
 
 \subsection{Coleta de Dados}
+\label{coleta_de_dados}
 
 \paragraph{} A Coleta de Dados ocorre através da biblioteca \textit{open-source} \textit{yfinance} \cite{yfinance}, uma ferramenta não oficial que transmite dados públicos da plataforma \textit{Yahoo! Finance} \cite{yahoo_finance}, um subsistema da rede \textit{Yahoo!}.
 
@@ -150,6 +151,8 @@
     \item Os valores de proventos (i.e., dividendos e juros sobre capital próprio) que a biblioteca disponibiliza não são consistentes para a B3, portanto não são utilizados por este projeto. Testes internos confirmaram a presença de diversos proventos corretamente apresentados e ajustados pelos respectivos desdobramentos acumulados, porém somados a alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar seu uso em escala (i.e., para vários ativos sem verificação individual). \color{red} HERALDO: Devo mostrar evidências do teste que corrobora esta afirmação? \colorend
 
     \item Os volumes de negociação disponibilizados não necessariamente coincidem com a plataforma TradingView em valores absolutos, porém coincidem em valores relativos (i.e., variação de volume dia após dia para um mesmo ativo), o que é suficiente para este trabalho. \color{red} HERALDO: (1) Na verdade, encontrei algumas evidências de que os valores relativos conferem, mas nenhum evidência de que não conferem. (2) Será que posso citar a plataforma TradingView? Ou melhor, devo tomar algum cuidado? \colorend
+
+    \item \textit{Candlesticks} de janelas temporais inferiores à diária (\textit{intraday}) são disponibilizados, porém as limitações envolvidas inviabilizam seu uso, como: o limite de 730 dias para a busca dos dados; a inconsistência com os dados diários quanto ao volume; e a alguns \textit{bugs} como a ausência de \textit{candlesticks} em todo dia de parcial do pregão da B3 (Quarta-feira de Cinzas).
 \end{itemize}
 
 \paragraph{} Os dados obtidos são \textit{candlesticks} diários (OHLCV). Com a mesma facilidade, é possível adquirir janelas de tempo semanais, no entanto para evitar potenciais problemas de consistência de dados, as mesmas são calculadas internamente a partir da janela diária via comandos SQL\footnote{\textit{Structured Query Language}: Linguagem usada para administrar bancos de dados relacionais.}.
@@ -157,7 +160,26 @@
 
 
 \subsection{Armazenamento de Dados}
-\paragraph{} EXCLUIR - Banco de dados; Criação de Candles semanais.
+
+\paragraph{} O Armazenamento de Dados é feito por um banco de dados \textit{PostgreSQL}, criado com o objetivo de salvar: os resultados das simulações; as \textit{features} de uso geral; e os \textit{candlesticks} obtidos. As vantagens de um banco de dados em relação a um arquivo CSV ou a uma planilha de Excel dispensam comentários. Contudo, quanto ao escopo deste trabalho, pode-se mencionar os seguintes pontos:
+
+\begin{itemize}
+    \item Fácil acesso aos resultados das simulações de forma estruturada e consistente, recurso este utilizado pela aplicação que gera o \textit{dashboard} de resultados.
+    \item Economia de processamento devido ao armazenamento das \textit{features} de uso geral, uma vez que estratégias simuladas não necessitam recalculá-las a cada execução.
+    \item Independência da plataforma \textit{Yahoo! Finance} para o caso de não continuidade dos dados ou qualquer alteração repentida.
+    \item Diminuição do tráfego na rede por causa da persistência dos \textit{candlesticks} já obtidos.
+\end{itemize}
+
+\paragraph{} Os \textit{candlesticks} semanais são calculados via \textit{query} SQL para garantir a consistência dos dados, já que a possibilidade de inconsistência se fez presente entre dados \textit{intraday} e diários, conforme mencionado na Seção \ref{coleta_de_dados}.
+
+\paragraph{} A figura \ref{fig:103} mostra o ERD\footnote{\textit{Entity-Relationship Diagram}. Em português: Diagrama de Entidade Relacionamento.} do banco. O \textit{script} de criação e população inicial do banco de dados pode ser encontrado em \cite{github_projeto}.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.70]{no_image.jpeg}
+    \centering
+    \caption{}
+    \label{fig:103}
+\end{figure}
 
 
 

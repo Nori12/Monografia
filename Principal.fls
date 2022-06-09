@@ -172,6 +172,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/generic/ulem/ulem.sty
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fifo-stack/fifo-stack.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fifo-stack/fifo-stack.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty

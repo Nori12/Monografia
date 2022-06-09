@@ -233,13 +233,23 @@
 
 \subsection{Índice de Sharpe}
 
-\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}.} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (e.g. título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco e \begin{math}\sigma_a\end{math} seu respectivo desvio padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
+\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}.} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (e.g., título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco e \begin{math}\sigma_a\end{math} seu respectivo desvio padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
 
 \begin{equation} \label{eq:1}
     S_a = \frac{E[R_a - R_b]}{\sigma_a}
 \end{equation}
 
 \subsection{Índice de Sortino}
+
+\paragraph{} O Índice de Sortino, criado pelo americano Frank Sortino \cite{rollinger2013sortino} é uma variante do Índice de Sharpe que considera o desvio padrão apenas dos rendimentos abaixo da média. As Equações \ref{eq:5} e \ref{eq:6} mostram seu cálculo, onde assim como no Índice de Sharpe, \begin{math}R_a\end{math} é o retorno do investimento alvo, \begin{math}R_b\end{math} é o retorno do investimento livre de risco e \begin{math}\sigma_a\end{math} seu respectivo desvio padrão. Considere também \begin{math}X_i\end{math} o i-ésimo retorno e \begin{math}T\end{math} o retorno do investimento.
+
+\begin{equation} \label{eq:5}
+    S_a = \frac{E[R_a - R_b]}{\sigma_a}
+\end{equation}
+
+\begin{equation} \label{eq:6}
+    \sigma_a = \sqrt{ \frac{1}{N} \sum_{i=1}^{N} (Min(0, X_i-T))^2}
+\end{equation}
 
 \subsection{Correlação de Spearman}
 

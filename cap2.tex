@@ -253,6 +253,56 @@
 
 \subsection{Correlação de Spearman}
 
+\paragraph{} A Correlação de Postos de Spearman ou simplesmente Correlação de Spearman for criada pelo psicólogo inglês Charles Edward Spearman e revelada em 1904 \cite{spearman1961proof}. Em resumo, a Correlação avalia o grau de proximidade que duas variáveis aleatórias possuem em relação a uma função monotônica. Matematicamente, é o mesmo que a correlação de Pearson aplicada aos postos\footnote{Classificação ordenada das amostras em escala ordinal. Do inglês: \textit{ranks}.} das duas variáveis envolvidas.
+
+\paragraph{} Para duas variáveis aleatórias \begin{math}X_i\end{math} e \begin{math}Y_i\end{math}, são criados os postos \begin{math}rgX_i\end{math} e \begin{math}rgY_i\end{math} para as N amostras presentes. Existem duas formas de se calcular o coeficiente: a primeira, mostrada pela Equação \ref{eq:7}, é para o caso em que há apenas postos inteiros distintos, sem presença de nós (i.e., valores iguais em cada uma das variáveis); já a segunda, ilustrada pela Equação \ref{eq:8}, é para o caso em que há presença de nós.
+
+\begin{equation} \label{eq:7}
+    \rho_s = 1 - \frac{6\sum_{i=1}^{N}d_i^2}{N(N^2-1)}
+\end{equation}
+
+\begin{equation} \label{eq:8}
+    \rho_s = \rho_{rgX, rgY} = \frac{cov(rgX, rgY)}{\sigma_{rgX}, \sigma_{rgY}}
+\end{equation}
+
+\paragraph{} Na Equação \ref{eq:7}, \begin{math}d_i\end{math} é diferença entre os dois postos de cada variáveis aleatória, mostrado através da Equação \ref{eq:9}.
+
+\begin{equation} \label{eq:9}
+    d_i = rgX_i - rgY_i
+\end{equation}
+
+\paragraph{} Um exemplo prático do cálculo da correlação pode ser mostrado a partir da Tabela \ref{tab:1}, onde são ilustradas amostras para duas variáveis aleatórias \begin{math}X\end{math} e \begin{math}Y\end{math}. A Tabela \ref{tab:2} acrescenta a informação dos postos \begin{math}rgX\end{math} e \begin{math}rgY\end{math}, que ordenam as amostram em ordem decrescente. Observa-se em \begin{math}rgX\end{math} a presença de dois postos com valores de \begin{math}6.5\end{math}, causados pelo nó em \begin{math}X\end{math} de dois valores repetidos (\begin{math}61\end{math}). Neste caso, a regra é a escolha valor médio dos postos que seriam ocupados, no caso 6 e 7.
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|cccccccccc }
+            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+            \hline
+            X & 56 & 75 & 45 & 71 & 61 & 64 & 58 & 80 & 76 & 61 \\
+            Y & 66 & 70 & 40 & 60 & 65 & 56 & 59 & 77 & 67 & 63 \\
+        \end{tabular}
+        \caption{Amostras das variáveis aleatórias X e Y.}
+        \label{tab:1}
+    \end{center}
+\end{table}
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|cccccccccc }
+            & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+            \hline
+            X & 56 & 75 & 45 & 71 & 61 & 64 & 58 & 80 & 76 & 61 \\
+            Y & 66 & 70 & 40 & 60 & 65 & 56 & 59 & 77 & 67 & 63 \\
+            \hline
+            rgX & 9 & 3 & 10 & 4 & \textbf{6.5} & 5 & 8 & 1 & 2 & \textbf{6.5} \\
+            rgY & 4 & 2 & 10 & 7 & 5 & 9 & 8 & 1 & 3 & 6 \\
+        \end{tabular}
+        \caption{Postos rgX e rgY.}
+        \label{tab:2}
+    \end{center}
+\end{table}
+
+\paragraph{} Após o cálculo dos postos, deve-se utilizar a Equação \ref{eq:8}, encontrado o valor 0.6687.
 
 \section{Trabalhos Relacionados}
 

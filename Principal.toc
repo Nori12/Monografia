@@ -175,44 +175,44 @@
 \contentsline {paragraph}{}{35}{section*.149}%
 \contentsline {paragraph}{}{36}{section*.150}%
 \contentsline {paragraph}{}{36}{section*.151}%
-\contentsline {section}{\numberline {3.3}Simulação de Estratégia}{42}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Estrutura}{42}{subsection.3.3.1}%
-\contentsline {paragraph}{}{42}{section*.152}%
-\contentsline {subsection}{\numberline {3.3.2}Premissas}{42}{subsection.3.3.2}%
-\contentsline {paragraph}{}{42}{section*.153}%
-\contentsline {subsection}{\numberline {3.3.3}Período Máximo de Dias por Operação}{43}{subsection.3.3.3}%
-\contentsline {paragraph}{}{43}{section*.154}%
-\contentsline {subsection}{\numberline {3.3.4}Gerenciamento de Risco}{43}{subsection.3.3.4}%
-\contentsline {paragraph}{}{43}{section*.155}%
-\contentsline {subsection}{\numberline {3.3.5}Risco de Entrada por Operação}{43}{subsection.3.3.5}%
-\contentsline {paragraph}{}{43}{section*.156}%
-\contentsline {subsection}{\numberline {3.3.6}Descanso por Tendência de Baixa}{43}{subsection.3.3.6}%
-\contentsline {paragraph}{}{43}{section*.157}%
-\contentsline {subsection}{\numberline {3.3.7}Descanso por Identificação de Crises}{43}{subsection.3.3.7}%
-\contentsline {paragraph}{}{43}{section*.158}%
-\contentsline {subsection}{\numberline {3.3.8}Lista de Parâmetros de Configuração}{43}{subsection.3.3.8}%
-\contentsline {paragraph}{}{43}{section*.159}%
-\contentsline {subsection}{\numberline {3.3.9}Ensaios Paralelos}{43}{subsection.3.3.9}%
-\contentsline {paragraph}{}{43}{section*.160}%
-\contentsline {section}{\numberline {3.4}Otimizações de Gerenciamento de Carteira}{43}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Normalização por Frequência de Operações}{43}{subsection.3.4.1}%
-\contentsline {paragraph}{}{43}{section*.161}%
-\contentsline {subsection}{\numberline {3.4.2}Compensação por Lucratividade}{43}{subsection.3.4.2}%
-\contentsline {paragraph}{}{43}{section*.162}%
-\contentsline {subsection}{\numberline {3.4.3}Controle Proporcional para Uso de Capital}{44}{subsection.3.4.3}%
-\contentsline {paragraph}{}{44}{section*.163}%
-\contentsline {section}{\numberline {3.5}Criação de Modelos}{44}{section.3.5}%
-\contentsline {subsection}{\numberline {3.5.1}Resumo}{44}{subsection.3.5.1}%
-\contentsline {paragraph}{}{44}{section*.164}%
-\contentsline {subsection}{\numberline {3.5.2}\textit {Feature Selection}}{44}{subsection.3.5.2}%
-\contentsline {paragraph}{}{44}{section*.165}%
-\contentsline {subsection}{\numberline {3.5.3}Geração de \textit {Datasets}}{44}{subsection.3.5.3}%
-\contentsline {paragraph}{}{44}{section*.166}%
-\contentsline {subsection}{\numberline {3.5.4}\textit {Walk Forward Optimization}}{44}{subsection.3.5.4}%
-\contentsline {paragraph}{}{44}{section*.167}%
-\contentsline {subsection}{\numberline {3.5.5}Critérios de Escolha}{44}{subsection.3.5.5}%
-\contentsline {paragraph}{}{44}{section*.168}%
-\contentsline {section}{\numberline {3.6}Análise de Resultados}{44}{section.3.6}%
-\contentsline {paragraph}{}{44}{section*.169}%
-\contentsline {chapter}{\numberline {4}Conclusão}{45}{chapter.4}%
-\contentsline {chapter}{Bibliografia}{46}{chapter.4}%
+\contentsline {section}{\numberline {3.3}Simulação de Estratégia}{43}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Estrutura}{43}{subsection.3.3.1}%
+\contentsline {paragraph}{}{43}{section*.152}%
+\contentsline {subsection}{\numberline {3.3.2}Premissas}{43}{subsection.3.3.2}%
+\contentsline {paragraph}{}{43}{section*.153}%
+\contentsline {subsection}{\numberline {3.3.3}Período Máximo de Dias por Operação}{44}{subsection.3.3.3}%
+\contentsline {paragraph}{}{44}{section*.154}%
+\contentsline {subsection}{\numberline {3.3.4}Gerenciamento de Risco}{44}{subsection.3.3.4}%
+\contentsline {paragraph}{}{44}{section*.155}%
+\contentsline {subsection}{\numberline {3.3.5}Risco de Entrada por Operação}{44}{subsection.3.3.5}%
+\contentsline {paragraph}{}{44}{section*.156}%
+\contentsline {subsection}{\numberline {3.3.6}Descanso por Tendência de Baixa}{44}{subsection.3.3.6}%
+\contentsline {paragraph}{}{44}{section*.157}%
+\contentsline {subsection}{\numberline {3.3.7}Descanso por Identificação de Crises}{44}{subsection.3.3.7}%
+\contentsline {paragraph}{}{44}{section*.158}%
+\contentsline {subsection}{\numberline {3.3.8}Lista de Parâmetros de Configuração}{44}{subsection.3.3.8}%
+\contentsline {paragraph}{}{44}{section*.159}%
+\contentsline {subsection}{\numberline {3.3.9}Ensaios Paralelos}{44}{subsection.3.3.9}%
+\contentsline {paragraph}{}{44}{section*.160}%
+\contentsline {section}{\numberline {3.4}Otimizações de Gerenciamento de Carteira}{44}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Normalização por Frequência de Operações}{44}{subsection.3.4.1}%
+\contentsline {paragraph}{}{44}{section*.161}%
+\contentsline {subsection}{\numberline {3.4.2}Compensação por Lucratividade}{44}{subsection.3.4.2}%
+\contentsline {paragraph}{}{44}{section*.162}%
+\contentsline {subsection}{\numberline {3.4.3}Controle Proporcional para Uso de Capital}{45}{subsection.3.4.3}%
+\contentsline {paragraph}{}{45}{section*.163}%
+\contentsline {section}{\numberline {3.5}Criação de Modelos}{45}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Resumo}{45}{subsection.3.5.1}%
+\contentsline {paragraph}{}{45}{section*.164}%
+\contentsline {subsection}{\numberline {3.5.2}\textit {Feature Selection}}{45}{subsection.3.5.2}%
+\contentsline {paragraph}{}{45}{section*.165}%
+\contentsline {subsection}{\numberline {3.5.3}Geração de \textit {Datasets}}{45}{subsection.3.5.3}%
+\contentsline {paragraph}{}{45}{section*.166}%
+\contentsline {subsection}{\numberline {3.5.4}\textit {Walk Forward Optimization}}{45}{subsection.3.5.4}%
+\contentsline {paragraph}{}{45}{section*.167}%
+\contentsline {subsection}{\numberline {3.5.5}Critérios de Escolha}{45}{subsection.3.5.5}%
+\contentsline {paragraph}{}{45}{section*.168}%
+\contentsline {section}{\numberline {3.6}Análise de Resultados}{45}{section.3.6}%
+\contentsline {paragraph}{}{45}{section*.169}%
+\contentsline {chapter}{\numberline {4}Conclusão}{46}{chapter.4}%
+\contentsline {chapter}{Bibliografia}{47}{chapter.4}%

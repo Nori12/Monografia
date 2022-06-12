@@ -213,7 +213,7 @@
         \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença. Para isso, utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativar uma anomalia de volume e outra inércia de 8 dias úteis para persistência do \textit{flag}. As Equações \ref{eq:20} e \ref{eq:20} mostram o cálculo e a Figura \ref{fig:104} representa um estudo de caso para mostrar a eficácia o \textit{flag}.
 
         \begin{equation} \label{eq:20}
-            V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} \geq \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} \geq \overline{V} + \sigma_V \\ 0, & \mbox{caso contr\'ario} \end{cases}
+            V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} \ge \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} \ge \overline{V} + \sigma_V \\ 0, & \mbox{caso contr\'ario} \end{cases}
         \end{equation}
 
         \begin{equation} \label{eq:21}
@@ -243,7 +243,7 @@
     \end{equation}
 
     \begin{equation} \label{eq:25}
-        F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\ 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \geq 0 \quad e \quad F_{downtrend(i-1)} = 1 \quad \textrm{(At\'e 3 vezes consecutivas)} \\ 0, & \mbox{caso contr\'ario} \end{cases}
+        F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\ 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \quad e \quad F_{downtrend(i-1)} = 1 \quad \textrm{(At\'e 3 vezes consecutivas)} \\ 0, & \mbox{caso contr\'ario} \end{cases}
     \end{equation}
 
     Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de \textit{flag} que pode impedir diretamente o fluxo de negociações, faz-se mais necessário um baixo ruído à inércia da medida. \\
@@ -278,11 +278,47 @@
     \item \textbf{Risco Máximo} \\ \\
     O Risco Máximo serve de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença percentual que o \textit{stop loss} é colocado abaixo do preço de compra. A escolha risco também implica diretamente no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra.
 
-    A ideia central está na análise estatística das oscilações de vale para crista entre os últimos picos no gráfico diário.
+    A ideia central está na análise estatística das subidas de preços entre os últimos picos identificados dentro do intervalo de 80 dias úteis. Portanto, primeiro se faz necessário a criação de um um algoritmo de identificação de picos, conforme mostrado pela Figura \ref{fig:105}. O método usa uma janela móvel de \begin{math} W = 17 \end{math} \textit{candles} que corre dia após dia até a data corrente e atribui votos de máximo e votos de mínimo ao maior e menor valor encontrado na janela, respectivamente. São elegíveis à picos apenas os \textit{candles} que obtiveram um mínimo de \begin{math}  floor(W / 2) = 8 \end{math} votos. Por fim, garante-se a alternância entre máximos e mínimos locais através da remoção de picos consecutivos de um mesmo tipo.
+
+    \begin{figure}[h]
+        \includegraphics[scale=0.70]{no_image.jpeg}
+        \centering
+        \caption{Algoritmo de Identificação de Picos}
+        \label{fig:105}
+    \end{figure}
+
+    O algoritmo implementado cumpre seu propósito pois se assemelha ao método grafista de identificação de picos \cite{moraes2007se}. O valor da janela de 17 \textit{candles} foi escolhido devido a teoria do Phi Cube \cite{moraes2007se}. \color{red} HERALDO: O estômago até embrulha quando cito essa teoria do Phi Cube, que parece mais uma tentativa desesperada de trazer algum critério a um processo caótico. Faz lembrar filme de superherói que peca por tentar justificar demais a origem de um poder com uma base científica. Talvez a teoria do ``É 17 porque funciona'' seja mais autêntica. \colorend
+
+    Depois da identificação de picos, extraem-se as \begin{math} n \end{math} subidas de preços de mínimo para máximo consecutivas, normalizados pelo pico de mínimo (Figura \ref{fig:106} e Equação \ref{eq:40}). Em seguida, calcula-se a média e o desvio padrão com um filtro digital IIR passa-baixas (Equações \ref{eq:41}, \ref{eq:42} e \ref{eq:43}).
+
+    \begin{figure}[h]
+        \includegraphics[scale=0.70]{no_image.jpeg}
+        \centering
+        \caption{Algoritmo de Identificação de Picos}
+        \label{fig:106}
+    \end{figure}
+
+    \begin{equation} \label{eq:40}
+        c_k = (P_{max(k)} - P_{min(k)}) / P_{min(k)}, \quad \textrm{onde } 0 < k \le n
+    \end{equation}
+
+    \begin{equation} \label{eq:41}
+        \overline{C_{(i)}} = \dfrac{1}{n} \sum_{k=0}^{n} c_k
+    \end{equation}
+
+    \begin{equation} \label{eq:42}
+        \overline{C_{LPF(i)}} = \alpha \overline{C_{(i)}} + (1 - \alpha) \overline{C_{LPF(i-1)}}
+    \end{equation}
+
+    \begin{equation} \label{eq:43}
+        \sigma_{C\_LPF(i)} = \alpha \sigma_C + (1 - \alpha) \sigma_{C\_LPF(i-1)}
+    \end{equation}
+
+    Foi utilizado \begin{math} \alpha = 0.50 \end{math}.
 
 \end{itemize}
 
-% \begin{math}R_b\end{math}
+% \begin{math} R_b \end{math}
 % \color{red} HERALDO: \colorend
 
 \section{Simulação de Estratégia}

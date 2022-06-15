@@ -296,7 +296,7 @@
         \label{fig:106}
     \end{figure}
 
-    O algoritmo implementado cumpre seu propósito pois se assemelha ao método grafista de identificação de picos \cite{moraes2007se}. O valor da janela de 17 \textit{candles} foi escolhido devido a teoria do Phi Cube \cite{moraes2007se}. \color{red} HERALDO: O estômago até embrulha quando cito essa teoria do Phi Cube, que parece mais uma tentativa desesperada de trazer algum critério a um processo caótico. Faz lembrar filme de superherói que peca por tentar justificar demais a origem de um poder com uma base científica. Talvez a teoria do ``É 17 porque funciona'' seja mais autêntica. \colorend
+    O algoritmo implementado cumpre seu propósito pois se assemelha ao método grafista de identificação de picos \cite{moraes2007se}. O valor da janela de 17 \textit{candles} foi escolhido devido a teoria do Phi Cube \cite{moraes2007se}. \color{red} HERALDO: O estômago até embrulha quando cito essa teoria do Phi Cube, que parece mais uma tentativa desesperada de trazer algum critério a um processo caótico. Faz lembrar filme de superherói que peca por tentar justificar demais a origem de um poder com uma base científica. Talvez a teoria do ``É 17 porque dá certo'' seja tão científica quanto o Phi Cube. \colorend
 
     Depois da identificação de picos, extraem-se as \begin{math} n \end{math} subidas de preços de cada mínimo para o máximo consecutivo, normalizados pelo pico de mínimo (Figura \ref{fig:107} e Equação \ref{eq:40}). Em seguida, calcula-se a média \begin{math} \overline{C_{LPF(i)}} \end{math} e o desvio padrão \begin{math} \sigma_{C\_LPF(i)} \end{math} com um filtro digital IIR passa-baixas (Equações \ref{eq:41}, \ref{eq:42} e \ref{eq:43}). Finalmente, o Risco Máximo \begin{math} Risk_{max} \end{math} pode ser encontrado segundo a Equação \ref{eq:44}, onde \begin{math} G \end{math} é a constante de razão entre ganho e perda.
 
@@ -463,15 +463,63 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} Com base nos valores encontrados, arbitrou-se o período máximo fixo de \textbf{45 dias} para qualquer operação. \color{red} HERALDO: É muita ousadia afirmar que escolhi arbitrariamente o valor de 45 dias com base na tabela apresentada? \colorend
 
+
+\subsection{Gerenciamento de Risco}
+
+\paragraph{} Segundo MORAES \cite{moraes2007se}, o Gerenciamento de Risco é imprescindível para um bom rendimento de uma estratégia. Afinal, não adianta obter uma alta taxa de acerto nas operações quando a lucro médio retornado não compensa as perdas trazidas pelas operações falhadas. Igualmente, estar com o capital muito alocado em ativos de um único segmento é perigoso devido à alta exposição à fatores prejudicias como falta de insumos industriais, novas legislações, crises internas, instabilidade política, dentre outros.
+
+\paragraph{} Para mitigar as questões levantadas, algumas medidas foram tomas inspiradas no trabalho de MORAES \cite{moraes2007se}. São elas:
+
+\begin{itemize}
+    \item Diversificação de ativos em segmentos de mercado diversos através da escolha de um alto número de \textit{tickers}. Mais especificamente 71.
+    \item Criação do Coeficiente de Risco-Capital\footnote{ou \textit{Risk-Capital Coefficient} (RCC)}
+\end{itemize}
+
+\paragraph{} O Coeficiente de Risco-Capital, definido pela Equação \ref{eq:60}, é uma constante que equilibra a relação entre o capital de entrada em uma operação e o risco escolhido. Seu valor é configurado previamente no Arquivo de Configuração (ver Tabela \ref{tab:3}) e vale para todos os ativos da carteira.
+
+\begin{equation} \label{eq:60}
+    RCC = Capital \times Risk
+\end{equation}
+
+\paragraph{} Durante uma simulação, a estratégia encontra primeiro o valor do risco desejado para entrar na operação, depois escolhe o capital a ser alocado. Dessa forma, a Equação \ref{eq:61} mostra de fato a aplicação do RCC. É evidente que quanto maior o risco envolvido, menor o capital a ser alocado e vice-versa.
+
+\begin{equation} \label{eq:61}
+    Capital = \dfrac{RCC}{Risk}
+\end{equation}
+
+\paragraph{} A necessidade de um melhor uso médio de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{dynamic_rcc} por se tratar de uma otimização.
+
+\paragraph{} Por fim, a Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Será que não tem outro lugar melhor para colocar essa tabela? Coloquei aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. \colorend
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ cccccccc }
+            \multicolumn{8}{c}{Ações Escolhidas (71)} \\
+            \hline
+            ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
+            BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
+            CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
+            DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
+            ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
+            ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
+            MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
+            RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
+            UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
+        \end{tabular}
+        \caption{Ações Escolhidas}
+        \label{tab:5}
+    \end{center}
+\end{table}
+
+
+
+\subsection{Risco de Entrada por Operação}
+\paragraph{} EXCLUIR - Cálculo do risco mínimo; Cálculo do risco Máximo.
+
 % \begin{math} R_b \end{math}
 % \color{red} HERALDO: \colorend
 
 
-\subsection{Gerenciamento de Risco}
-\paragraph{} EXCLUIR - Coeficiente de Risco-Capital
-
-\subsection{Risco de Entrada por Operação}
-\paragraph{} EXCLUIR - Cálculo do risco mínimo; Cálculo do risco Máximo.
 
 \subsection{Descanso por Tendência de Baixa}
 \label{downtrend_halt}
@@ -499,7 +547,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \label{profit_comp}
 \paragraph{}
 
-\subsection{Controle Proporcional para Uso de Capital}
+\subsection{Controle Proporcional para Uso de Capital (Risco Dinâmico)}
 \label{dynamic_rcc}
 \paragraph{}
 

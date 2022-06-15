@@ -70,7 +70,7 @@
         \hline
         \multicolumn{3}{|c|}{Fim da Tabela \ref{tab:3}} \\
         \hline
-        \caption{Lista de parâmetros detalhados.\label{tab:3}}
+        \caption{Lista de parâmetros detalhados\label{tab:3}}
         \endlastfoot
 
         \hline
@@ -352,9 +352,11 @@
 \begin{itemize}
     \item Toda estratégia possui um \textbf{capital inicial}, que representa uma quantidade de capital pré-alocado para compra dos ativos financeiros. Essa quantia deve ser sempre respeitada ao longo da simulação de forma a não representar nunca um valor negativo.
 
-    \item Toda estratégia deve possuir uma \textbf{lista de ativos} com datas iniciais e finais de validade, sendo estes intervalos de tempo onde as operações podem ser realizadas. Embora se permitam intervalos diferentes, é convencionado a mesma data de início e de fim para todos os papéis.
+    \item Toda estratégia deve possuir uma \textbf{carteira de ativos} (ou lista de ativos) com datas iniciais e finais de validade, sendo estes intervalos de tempo onde as operações podem ser realizadas. Embora se permitam intervalos diferentes, é convencionado a mesma data de início e de fim para todos os papéis.
 
-    \item Define-se uma  \textbf{operação} como o processo de compra única de volume de ações de um ativo seguido pela venda de todo o volume comprado, independentemente do tempo, mesmo que esta ocorra em estágios. Nota-se que apenas a venda é cabível de ocorrer em estágios (i.e., venda parcial).
+    \item Define-se uma  \textbf{operação} como o processo de compra única de um volume de ações de um ativo seguido pela venda de todo o volume comprado, independentemente do tempo, mesmo que esta ocorra em estágios. Nota-se que apenas a venda é cabível de ocorrer em estágios (i.e., venda parcial).
+
+    \item Toda operação possui um \textbf{preço alvo} e um \textbf{\textit{stop loss}}. O preço alvo é um valor acima do preço de compra e o \textit{stop loss} é um valor abaixo do preço de compra. Quando o mercado atinge qualquer um dos dois valores, uma venda é disparada, encerrando a operação em vigor. No entanto, considera-se uma operação de sucesso aquela que encerrou por atingir o preço alvo e uma operação de falha aquele que encerrou por atingir o \textit{stop loss}.
 
     \item Uma estratégia pode possuir no máximo  \textbf{uma operação em vigência} para cada \textit{ticker} em sua bolsa de ativos, portanto para que uma segunda compra ocorra no momento em que já existem papéis adquiridos, é necessários vendê-los primeiro.
 
@@ -378,15 +380,92 @@
 
 
 \subsection{Premissas}
-\paragraph{} EXCLUIR - Compra na abertura do merdado; Sem venda no dia da compra; Prioridades durante venda (stop primeiro).
 
-% \begin{math} R_b \end{math}
-% \color{red} HERALDO: \colorend
+\paragraph{} As Premissas são um conjunto de afirmações que visam complementar a Estrutura das simulações ao mesmo tempo que garantindo a integridade dos resultados, muitas vezes optando pelo pior cenário em situações inconclusivas. São elas:
+
+\begin{itemize}
+    \item O momento de decisão de \textbf{entrada em uma operação} por uma estratégia deve ocorrer está na abertura de mercado do dia corrente, mais precisamente no instante em que o preço de abertura é definido.
+
+    \item No dia que ocorrer a compra de um ativo, não pode haver a venda do mesmo. Em outras palavras, o \textbf{período mínimo de duração de uma operação é de 2 dias úteis}.
+
+    \item A \textbf{venda por \textit{timeout}} ocorre quando o número máximo de dias de uma operações extrapola um valor definido (ver Seção \ref{subsection:max_op_days})
+
+    \item Devido a ausência de informações mais detalhadas que a janela de tempo diária, a seguinte ordem é priorizada durante a \textbf{venda de um ativo}:
+
+    \begin{itemize}
+        \item Venda por \textit{stop loss}
+        \item Venda parcial (caso habilitada)
+        \item Venda por preço alvo
+        \item Venda por \textit{timeout}
+    \end{itemize}
+
+    \item Caso um \textbf{preço de venda seja pulado}, ou seja, a descontinuidade entre o preço de fechamento do dia anterior e o preço de abertura do dia corrente não englobe o valor de venda, utiliza-se o preço de abertura de mercado. A única exceção acontece para a venda por \textit{timeout}, já que se trata de uma venda compulsória que sempre ocorre no preço de fechamento do dia designado.
+
+\end{itemize}
 
 
 
 \subsection{Período Máximo de Dias por Operação}
-\paragraph{} EXCLUIR - Motivação da escolha dos 45 dias; Gráfico entre ABEV e MGLU.
+\label{subsection:max_op_days}
+
+\paragraph{} Em teoria, poderia-se permitir que operações não tivessem um período máximo de dias para serem encerradas. Contudo, isso facilmente se prova uma péssima decisão de alocação de capital em ativos que passam por uma fase de consolidação, ou seja, sem qualquer tendência. Além do ativo em questão não encerrar a operação e trazer seu lucro ou prejuízo para a carteira, o capital alocado nele não pode ser utilizado por outros ativos que eventualmente vem a lucrar. Quanto mais lucrativa tende a ser uma estratégia, maior a inércia que esta decisão pode oferecer. Portanto, optou-se por um limite finito de dias por operação.
+
+\paragraph{} A escolha de um número adequado para o limite de dias possui alguns caminhos, resumidos entre os extremos de: um valor fixo geral; ou um valor dinâmico para cada ação. Nota-se que criar um algoritmo que escolha o valor dinâmico a partir da análise dos dados dos últimos meses para cada ação não é trivial. Assim, optou-se por um valor fixo geral, onde a base do estudo se deu na análise ações de perfis opostos.
+
+\paragraph{} Nesta linha, um algoritmo auxiliar foi criado para varrer um período de dias passados e criar operações com diversos valores de risco, observando quais riscos levaram a operações de sucesso e quais levaram a operações de falha. Também analisou-se a distribuição de operações de sucesso de acordo com os valores de risco e o intervalo de dias corridos.
+
+\paragraph{} De início, foi fixado um intervalo máximo de 90 dias para cada operação hipotética que o algoritmo gerou. O valor é propositalmente grande, pois sua função é apenas não forçar \textit{timeout} na maioria das operações. As Figuras \ref{fig:120} e \ref{fig:121} mostram dois histogramas dos dias das operações de sucesso que consideram o menor risco possível, isto é, o menor valor de risco que se pode utilizar a cada dia da série temporal de forma a tornar a operação de sucesso, caso exista este valor. Se não houver, é considerado operação de falha, portanto está fora dos histogramas. A legenda indica faixas onde, no caso la linha tracejada verde na Figura \ref{fig:120}, 50\% das contagens se encontram dentro dos 12 primeiros dias, e assim por diante.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.40]{MGLU3_stop_hist_min_risk.png}
+    \centering
+    \caption{MGLU3 - Histograma de Dias com Risco Mínimo em Operações}
+    \label{fig:120}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.40]{ABEV3_stop_hist_min_risk.png}
+    \centering
+    \caption{ABEV3 - Histograma de Dias com Risco Mínimo em Operações}
+    \label{fig:121}
+\end{figure}
+
+\paragraph{} Também foi analisado os histogramas para o caso de risco ótimo por operação, ou seja, o valor de risco que traz o maior rendimento por operação considerando os dias corridos (Figuras \ref{fig:122} e \ref{fig:123}).
+
+\begin{figure}[h]
+    \includegraphics[scale=0.40]{MGLU3_stop_hist_opt_risk.png}
+    \centering
+    \caption{MGLU3 - Histograma de Dias com Risco Ótimo em Operações}
+    \label{fig:122}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.40]{ABEV3_stop_hist_opt_risk.png}
+    \centering
+    \caption{ABEV3 - Histograma de Dias com Risco Ótimo em Operações}
+    \label{fig:123}
+\end{figure}
+
+A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens dos histogramas.
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|cc }
+            & Menor Risco & Risco Ótimo \\
+            \hline
+            MGLU3 & 45 dias & 59 dias \\
+            ABEV3 & 40 dias & 51 dias \\
+        \end{tabular}
+        \caption{Período de dias que engloba 90\% das contagens dos histogramas}
+        \label{tab:4}
+    \end{center}
+\end{table}
+
+\paragraph{} Com base nos valores encontrados, arbitrou-se o período máximo fixo de \textbf{45 dias} para qualquer operação. \color{red} HERALDO: É muita ousadia afirmar que escolhi arbitrariamente o valor de 45 dias com base na tabela apresentada? \colorend
+
+% \begin{math} R_b \end{math}
+% \color{red} HERALDO: \colorend
+
 
 \subsection{Gerenciamento de Risco}
 \paragraph{} EXCLUIR - Coeficiente de Risco-Capital

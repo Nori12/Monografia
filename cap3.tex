@@ -25,6 +25,7 @@
 \section{Pré-Processamento}
 
 \subsection{Arquivo de Configuração}
+\label{sub:conf_file}
 
 \paragraph{} O Arquivo de Configuração é um arquivo no formato JSON responsável por configurar detalhadamente cada parâmetro da sequência de estratégias que se deseja executar. Uma ordem de execução do programa pode conter diversas simulações de estratégias, que são configuradas neste Arquivo. A Figura \ref{fig:101} mostra sua estrutura.
 
@@ -35,7 +36,7 @@
     \label{fig:101}
 \end{figure}
 
-\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, ou variáveis de escopo global, de cujos valores precedem quaisquer outros listados a seguir, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia. A Tabela \ref{tab:3} descreve todos os parâmetros disponíveis.
+\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, ou variáveis de escopo global, de cujos valores precedem quaisquer outros listados a seguir, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia. A Tabela \ref{tab:3} da Seção \ref{sub:params_list} descreve todos os parâmetros disponíveis.
 
 \paragraph{} Para se criar mais de um perfil de simulação, é necessário modificar o Arquivo conforme a Figura \ref{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais. No caso da Figura \ref{fig:102}, a primeira simulação utilizará os valores (100, 0.01) para o par (variável\_local\_1, variável\_local\_2), a segunda utilizará (200, 0.02) e assim sucessivamente.
 
@@ -45,98 +46,6 @@
     \caption{Arquivo de Configuração para Execuções Múltiplas}
     \label{fig:102}
 \end{figure}
-
-\begin{center}
-    {\small
-    \begin{longtable}[m]{| m{11em} | m{3em}| m{21em} |}
-
-        \hline
-        \multicolumn{3}{|c|}{Lista de Parâmetros} \\
-        \hline
-        Nome do Parâmetro & Escopo & Descrição \\
-        \hline
-        \endfirsthead
-
-        \hline
-        \multicolumn{3}{|c|}{Continuação da Tabela \ref{tab:3}} \\
-        \hline
-        Nome do Parâmetro & Escopo & Descrição \\
-        \hline
-        \endhead
-
-        \hline
-        \endfoot
-
-        \hline
-        \multicolumn{3}{|c|}{Fim da Tabela \ref{tab:3}} \\
-        \hline
-        \caption{Lista de parâmetros detalhados\label{tab:3}}
-        \endlastfoot
-
-        \hline
-        show\_results & Geral & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: \textit{Boolean}. \textit{Default}: \textit{True}. Listável: Não. \\
-        \hline
-        min\_risk\_features & Geral & Risco mínimo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,01. Listável: Não. \\
-        \hline
-        max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
-        \hline
-        \textbf{name} & Local & \textbf{(OBRIGATÓRIO)} Nome da estratégia a ser executada. Valores válidos: ``ML Derivation". Tipo: \textit{String}. Listável: Não. \\
-        \hline
-        comment & Local & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
-        \hline
-        capital & Local & Capital total da carteira em reais (R\$). Tipo: \textit{Float}. Listável: Sim. \\
-        \hline
-        risk\_capital\_coefficient & Local & Coeficiente de risco-capital (RCC) geral. Tipo: \textit{Float}. \textit{Default}: 0,001. Listável: Sim. \\
-        \hline
-        tickers\_bag & Local & Grupo de ativos a escolher dentro de ``stock\_targets". Valores aceitos: ``listed\_first" (ordem de listagem); ``random" (ordem aleatória). \textit{Default}: ``listed\_first". Listável: Sim. \\
-        \hline
-        tickers\_number & Local & Número de ativos a escolher dentro de ``stock\_targets", de acordo com ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
-        \hline
-        min\_order\_volume & Local & Volume mínimo por operação. Tipo: \textit{Int}. \textit{Default}: 1. Listável: Sim. \\
-        \hline
-        gain\_loss\_ratio & Local & Razão entre ganho e perda. Para uma unidade de risco (delta pencentual entre preço de compra e \textit{stop loss}) são utilizadas N unidades de risco acima no preço preço de compra para definir o preço alvo. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
-        \hline
-        max\_days\_per\_operation & Local & Número máximo de dias por operação. Inclui o dia de compra. Caso excedido, ocorre venda compulsória pelo preço de fechamento no último dia da contagem. Tipo: \textit{Int}. \textit{Default}: 45. Listável: Não. \\
-        \hline
-        min\_risk & Local & Risco mínimo por operação. Tipo: \textit{Float}. \textit{Default}: 0,003. Listável: Sim. \\
-        \hline
-        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
-        \hline
-        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
-        \hline
-        enable\_frequency\hspace{2em} \_normalization & Local & Uso de normalização por frequência de operações. Ativos com N vezes mais operações que a média receberão N vezes menos capital. Ver Seção \ref{freq_norm}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        enable\_profit\hspace{4em} \_compensation & Local & Uso de compensação por lucratividade acumulada. Ver Seção \ref{profit_comp}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        enable\_crisis\_halt & Local & Bloqueio de novas aquisições em caso de identificação de potenciais crises financeiras (para ativo). Ver Seção \ref{crisis_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        enable\_downtrend\_halt & Local & Bloqueio de novas aquisições em caso de identificação de tendências de baixo nos preços (para ativo). Ver Seção \ref{downtrend_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        enable\_dynamic\_rcc & Local & Uso de Coeficiente de Risco-Capital dinâmico (para carteira). Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        dynamic\_rcc\_reference & Local & Valor de referência de uso de capital médio no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 0,80. Listável: Sim. \\
-        \hline
-        dynamic\_rcc\_k & Local & Valor do ganho proporcional K no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
-        \hline
-
-        purchase\_margin & Local & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
-        \hline
-        stop\_margin & Local & Margem percentual aplicada ao valor do \textit{stop loss}. Ex: Se o \textit{stop} estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$101. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
-        \hline
-        partial\_sale & Local & Uso de saídas parciais. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        stop\_type & Local & Tipo de \textit{stop loss} utilizado. Valores aceitos: ``normal"; ``staircase" (para cada patamar de unidade de risco que o preço atinge acima do valor de compra, o \textit{stop} sobe igualmente, até uma unidade de risco abaixo do preço alvo). Ver ``gain\_loss\_ratio". \textit{Default}: ``normal". Listável: Sim. \\
-        \hline
-        min\_days\_after\_successful \_operation & Local & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
-        \hline
-        max\_days\_after\_failure \_operation & Local & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
-        \hline
-
-        \textbf{stock\_targets} & Local & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. Atenção ao parâmetro ``tickers\_bag". \\
-        \hline
-
-    \end{longtable}}
-\end{center}
 
 
 
@@ -186,7 +95,7 @@
 
 
 \subsection{Geração de \textit{Features} de Uso Geral}
-\label{subsection:features}
+\label{sub:features}
 
 \paragraph{} As \textit{Features} de Uso Geral são características derivadas dos \textit{candlesticks} que podem auxiliar qualquer decisão interna de uma estratégia, porém seu objetivo principal está no suporte à escolha do momento de entrada apropriado nas operações, o que é fundalmentalmente a responsabilidade do modelo de \textit{Machine Learning}. Como podem ser utilizadas por qualquer estratégia, são calculadas antes do início das simulações e somente quando há necessidade, ou seja, quando os \textit{candlesticks} são inseridos pela primeira vez no banco ou quando são atualizados. Ao final dos cálculos, são armazenadas nas tabelas de \textit{features} para posteriores consultas durante as simulações.
 
@@ -211,7 +120,7 @@
     \color{red} HERALDO: Não utilizado mais pois era feature do André Moraes. Não utilizado nos modelos. Em particular, essa não é trivial de se calcular e foi uma das quais distanciou a simulação feita da estratégia real do André. Os picos relevantes que retratam a memória do mercado muitas vezes estão relacionados a acontecimentos notáveis, como crises financeiras, acidentes industriais, relatórios jurícos, escândalos, aquisições novas, etc. O André pode não avaliar os acontecimentos menores na escolha do stop por ser grafista e não estar inteiramente ligado nas notícias, mas leva em consideração os mais marcantes. Como análise de notícias está completamente fora do escopo, obter "grau de importância" de um pico com alguma precisão requer no mínimo olhar os dados intraday (seção de coleta de dados explica porque não usei) e avaliar o volume de negociações na regiões. Contudo, idealmente deve-se olhar o livro de ofertas para tirar métricas das forças de compra e de venda, talvez aliadas ao volume de negociação e assim obter um valor razoável. Quando implementei na tentativa de simular o André, usei simplemente o pico mais próximo abaixo do preço de compra, dado uma distância mínima de 1\%. \colorend
 
     \item \textbf{\textit{Flag} de Identificação de Crises} \\ \\
-        \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença. Para isso, utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativar uma anomalia de volume e outra inércia de 8 dias úteis para persistência do \textit{flag}. As Equações \ref{eq:20} e \ref{eq:20} mostram o cálculo e a Figura \ref{fig:104} representa um estudo de caso para mostrar a eficácia o \textit{flag}.
+        \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença. Para isso, utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativar uma anomalia de volume e outra inércia de 8 dias úteis para persistência do \textit{flag}. As Equações \ref{eq:20} e \ref{eq:20} mostram o cálculo e a Figura \ref{fig:104} ilustra a eficácia do \textit{flag}.
 
         \begin{equation} \label{eq:20}
             V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} \ge \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} \ge \overline{V} + \sigma_V \\ 0, & \mbox{caso contr\'ario} \end{cases}
@@ -247,7 +156,14 @@
         F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\ 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \quad e \quad F_{downtrend(i-1)} = 1 \quad \textrm{(At\'e 3 vezes consecutivas)} \\ 0, & \mbox{caso contr\'ario} \end{cases}
     \end{equation}
 
-    Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de \textit{flag} que pode impedir diretamente o fluxo de negociações, faz-se mais necessário um baixo ruído à inércia da medida. \\
+    Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de \textit{flag} que pode impedir diretamente o fluxo de negociações, faz-se mais necessário um baixo ruído à inércia da medida. A Figura \ref{fig:109} ilustra a eficácia do \textit{flag}. \\
+
+    \begin{figure}[h]
+        \includegraphics[scale=0.70]{no_image.jpeg}
+        \centering
+        \caption{\textit{Flag} de Identificação de Crises para a ação XYZ no período de XX/YY/ZZZZ a XX/YY/ZZZZ}
+        \label{fig:109}
+    \end{figure}
 
     \item \textbf{Risco Mínimo} \\ \\
     O Risco Mínimo serve de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). Sua fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
@@ -415,7 +331,7 @@
 
 \paragraph{} Nesta linha, um algoritmo auxiliar foi criado para varrer um período de dias passados e criar operações com diversos valores de risco, observando quais riscos levaram a operações de sucesso e quais levaram a operações de falha. Também analisou-se a distribuição de operações de sucesso de acordo com os valores de risco e o intervalo de dias corridos.
 
-\paragraph{} De início, foi fixado um intervalo máximo de 90 dias para cada operação hipotética que o algoritmo gerou. O valor é propositalmente grande, pois sua função é apenas não forçar \textit{timeout} na maioria das operações. As Figuras \ref{fig:120} e \ref{fig:121} mostram dois histogramas dos dias das operações de sucesso que consideram o menor risco possível, isto é, o menor valor de risco que se pode utilizar a cada dia da série temporal de forma a tornar a operação de sucesso, caso exista este valor. Se não houver, é considerado operação de falha, portanto está fora dos histogramas. A legenda indica faixas onde, no caso la linha tracejada verde na Figura \ref{fig:120}, 50\% das contagens se encontram dentro dos 12 primeiros dias, e assim por diante.
+\paragraph{} De início, foi fixado um intervalo máximo de 90 dias para cada operação hipotética que o algoritmo gerou. O valor é propositalmente grande, pois sua função é apenas não forçar \textit{timeout} na maioria das operações. As Figuras \ref{fig:120} e \ref{fig:121} mostram dois histogramas dos dias das operações de sucesso que consideram o menor risco possível, isto é, o menor valor de risco que se pode utilizar a cada dia da série temporal de forma a tornar a operação de sucesso, caso exista este valor. Se não houver, é considerado operação de falha, portanto está fora dos histogramas. A legenda indica faixas onde, no caso la linha tracejada verde na Figura \ref{fig:120}, 50\% das contagens se encontram dentro dos 12 primeiros dias, e assim por diante. Foi considerado o período de 01/01/2016 a 31/12/2018.
 
 \begin{figure}[h]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_min_risk.png}
@@ -516,34 +432,134 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \subsection{Risco de Entrada por Operação}
 
-\paragraph{} O Risco de Entrada por Operação é encontrado a partir da média aritmética entre as \textit{features} Risco Mínimo e Risco Máximo (ver Seção \ref{subsection:features}). A Equação \ref{eq:70} mostra essa relação:
+\paragraph{} O Risco de Entrada por Operação é encontrado a partir da média aritmética entre as \textit{features} Risco Mínimo e Risco Máximo (ver Seção \ref{sub:features}). A Equação \ref{eq:70} mostra essa relação:
 
 \begin{equation} \label{eq:70}
     Risk_{operation} = \dfrac{1}{2}(Risk_{max} + Risk_{min}), \quad \textrm{se } Risk_{max} \ge Risk_{min}
 \end{equation}
 
-\paragraph{} Como a metodologia de cálculo do Risco Máximo e do Risco Mínimo seguem raciocínios diferentes, podem ocorrer momentos nos quais a condição expressa na Equação \ref{eq:70} não seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensam o risco inerente ao ruído diário dos \textit{candlesticks}. Quando esse evento ocorre, não haverá entrada em operação para o ativo envolvido.
+\paragraph{} Pelo fato da metodologia de cálculo do Risco Máximo e do Risco Mínimo seguirem raciocínios diferentes, podem ocorrer momentos nos quais a condição expressa na Equação \ref{eq:70} não seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensam o risco inerente ao ruído diário dos \textit{candlesticks}. Enquanto este evento ocorrer, não haverá entrada em operações para o ativo envolvido. Por outro lado, é comum uma interseção entre os períodos de Descanso por Tendência de Baixa ou até mesmo de Descanso por Identificação de Crises (Seções \ref{sub:downtrend_halt} e \ref{sub:crisis_halt}, respectivamente). \color{red} HERALDO: Algo me diz que um gráfico aqui confirmando essa interseção não seria uma má ideia, certo? \colorend
 
 
 
 \subsection{Descanso por Tendência de Baixa}
-\label{downtrend_halt}
-\paragraph{}
+\label{sub:downtrend_halt}
 
-% \begin{math} R_b \end{math}
-% \color{red} HERALDO: \colorend
+\paragraph{} O Descanso por Tendência de Baixa é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Tendência de Baixa (ver Seção \ref{sub:features}). O objetivo é esperar o mercado entrar em uma nova tendência de alta ou pelo menos se estabilizar para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \colorend
 
 
 
 \subsection{Descanso por Identificação de Crises}
-\label{crisis_halt}
-\paragraph{}
+\label{sub:crisis_halt}
+
+\paragraph{} O Descanso por Identificação de Crises é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Identificação de Crises (ver Seção \ref{sub:features}). O objetivo é esperar o mercado se estabilizar de uma crise em potencial para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \colorend
+
+
 
 \subsection{Lista de Parâmetros de Configuração}
-\paragraph{} EXCLUIR - Lista todos e explicar o que fazem.
+\label{sub:params_list}
+
+\paragraph{} A Tabela \ref{tab:3} mostra uma lista de todos os parâmetros configuráveis em uma simulação. Nota-se que as variáveis de escopo geral são aplicáveis a toda e qualquer estratégia presente no Arquivo de Configuração enquanto as variáveis de escopo local dizem respeito apenas a um grupo de estratégias em parciluar (ver Seção \ref{sub:conf_file} para mais esclarecimentos).
+
+\begin{center}
+    {\small
+    \begin{longtable}[m]{| m{11em} | m{3em}| m{21em} |}
+
+        \hline
+        \multicolumn{3}{|c|}{Lista de Parâmetros} \\
+        \hline
+        Nome do Parâmetro & Escopo & Descrição \\
+        \hline
+        \endfirsthead
+
+        \hline
+        \multicolumn{3}{|c|}{Continuação da Tabela \ref{tab:3}} \\
+        \hline
+        Nome do Parâmetro & Escopo & Descrição \\
+        \hline
+        \endhead
+
+        \hline
+        \endfoot
+
+        \hline
+        \multicolumn{3}{|c|}{Fim da Tabela \ref{tab:3}} \\
+        \hline
+        \caption{Lista de parâmetros detalhados\label{tab:3}}
+        \endlastfoot
+
+        \hline
+        show\_results & Geral & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: \textit{Boolean}. \textit{Default}: \textit{True}. Listável: Não. \\
+        \hline
+        min\_risk\_features & Geral & Risco mínimo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,01. Listável: Não. \\
+        \hline
+        max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
+        \hline
+        \textbf{name} & Local & \textbf{(OBRIGATÓRIO)} Nome da estratégia a ser executada. Valores válidos: ``ML Derivation". Tipo: \textit{String}. Listável: Não. \\
+        \hline
+        comment & Local & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
+        \hline
+        capital & Local & Capital total da carteira em reais (R\$). Tipo: \textit{Float}. Listável: Sim. \\
+        \hline
+        risk\_capital\_coefficient & Local & Coeficiente de risco-capital (RCC) geral. Tipo: \textit{Float}. \textit{Default}: 0,001. Listável: Sim. \\
+        \hline
+        tickers\_bag & Local & Grupo de ativos a escolher dentro de ``stock\_targets". Valores aceitos: ``listed\_first" (ordem de listagem); ``random" (ordem aleatória). \textit{Default}: ``listed\_first". Listável: Sim. \\
+        \hline
+        tickers\_number & Local & Número de ativos a escolher dentro de ``stock\_targets", de acordo com ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
+        \hline
+        min\_order\_volume & Local & Volume mínimo por operação. Tipo: \textit{Int}. \textit{Default}: 1. Listável: Sim. \\
+        \hline
+        gain\_loss\_ratio & Local & Razão entre ganho e perda. Para uma unidade de risco (delta pencentual entre preço de compra e \textit{stop loss}) são utilizadas N unidades de risco acima no preço preço de compra para definir o preço alvo. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+        \hline
+        max\_days\_per\_operation & Local & Número máximo de dias por operação. Inclui o dia de compra. Caso excedido, ocorre venda compulsória pelo preço de fechamento no último dia da contagem. Tipo: \textit{Int}. \textit{Default}: 45. Listável: Não. \\
+        \hline
+        min\_risk & Local & Risco mínimo por operação. Tipo: \textit{Float}. \textit{Default}: 0,003. Listável: Sim. \\
+        \hline
+        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
+        \hline
+        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
+        \hline
+        enable\_frequency\hspace{2em} \_normalization & Local & Uso de normalização por frequência de operações. Ativos com N vezes mais operações que a média receberão N vezes menos capital. Ver Seção \ref{freq_norm}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_profit\hspace{4em} \_compensation & Local & Uso de compensação por lucratividade acumulada. Ver Seção \ref{profit_comp}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_crisis\_halt & Local & Bloqueio de novas aquisições em caso de identificação de potenciais crises financeiras (para ativo). Ver Seção \ref{sub:crisis_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_downtrend\_halt & Local & Bloqueio de novas aquisições em caso de identificação de tendências de baixo nos preços (para ativo). Ver Seção \ref{sub:downtrend_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        enable\_dynamic\_rcc & Local & Uso de Coeficiente de Risco-Capital dinâmico (para carteira). Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        dynamic\_rcc\_reference & Local & Valor de referência de uso de capital médio no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 0,80. Listável: Sim. \\
+        \hline
+        dynamic\_rcc\_k & Local & Valor do ganho proporcional K no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+        \hline
+
+        purchase\_margin & Local & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+        stop\_margin & Local & Margem percentual aplicada ao valor do \textit{stop loss}. Ex: Se o \textit{stop} estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$101. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+        partial\_sale & Local & Uso de saídas parciais. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        \hline
+        stop\_type & Local & Tipo de \textit{stop loss} utilizado. Valores aceitos: ``normal"; ``staircase" (para cada patamar de unidade de risco que o preço atinge acima do valor de compra, o \textit{stop} sobe igualmente, até uma unidade de risco abaixo do preço alvo). Ver ``gain\_loss\_ratio". \textit{Default}: ``normal". Listável: Sim. \\
+        \hline
+        min\_days\_after\_successful \_operation & Local & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+        max\_days\_after\_failure \_operation & Local & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        \hline
+
+        \textbf{stock\_targets} & Local & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. Atenção ao parâmetro ``tickers\_bag". \\
+        \hline
+
+    \end{longtable}}
+\end{center}
+
+
 
 \subsection{Ensaios Paralelos}
 \paragraph{} EXCLUIR - Parâmetros que estão implementados e não trouxeram resultados expressivos.
+
+% \begin{math} R_b \end{math}
+% \color{red} HERALDO: \colorend
 
 
 

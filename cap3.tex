@@ -544,7 +544,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
         \hline
         min\_days\_after\_successful \_operation & Local & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
         \hline
-        max\_days\_after\_failure \_operation & Local & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        min\_days\_after\_failure \_operation & Local & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
         \hline
 
         \textbf{stock\_targets} & Local & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. Atenção ao parâmetro ``tickers\_bag". \\
@@ -556,7 +556,24 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \subsection{Ensaios Paralelos}
-\paragraph{} EXCLUIR - Parâmetros que estão implementados e não trouxeram resultados expressivos.
+
+\color{red} HERALDO: Vou fazer apenas uma introdução para te mostrar o caminho que seguirei caso você julgue que valha a pena mencionar essa seção. Se não for necessário, removo as referências dos parâmentros mencionados ao longo desta monografia.\colorend
+
+\paragraph{} Alguns parâmetros não se mostraram eficazes em melhorar a performance das simulações, muito embora tenham se apresentado como alternativas plausíveis na resolução de problemas ao longo deste trabalho. São eles os parâmetros:
+
+\begin{itemize}
+    \item Venda Parcial (partial\_sale)
+    \color{red} HERALDO: A motivação da criação desse parâmetro vem de uma prática do André como uma forma de auxiliar o fator psicológico do trader para os casos frustantes em que o mercado quase chega no preço de venda, mas depois cai e bate no stop. Ele não usa isso constantemente, mas deixa como uma opção. Venda parcial em uma operação é vender 50\% do volume de compra adquirido quando o preço bater uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra. Dessa forma, ao invés da operação ter um ganho de 3X para cada X de possível perda, ela teria um ganho de 2X para os mesmos X, mais os casos de saída sem prejuízo. A grande questão é que essa conta não compensa, seja quando eu estava tentando replicar a estratégia do André, seja com os modelos de ML agora, nunca trouxe um rendimento maior. \colorend
+
+    \item Saídas Parcias (stop\_type = ``staircase")
+    \color{red} HERALDO: É uma extensão que criei derivada da Venda Parcial para tentar granularizar um pouco mais o critério anterior e verificar se o problema da ineficácia estava na escolha do limiar de venda. Igualmente não traz melhora alguma. A ideia é: cada vez que o preço de marcado toca o limiar de uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra, o stop loss sobre igualmente 1 un de risco. Exemplo: se o preço de compra é Pcom e o Stop Loss é Pcom - X, quando o preço de mercado atingir Pcom + X, o Stop Loss sobe para Pcom. Quando subir de novo para Pcom + 2X, o Stop sobe para Pcom + X. O alvo continua sendo Pcom + 3X como sempre. \colorend
+
+    \item Dias Mínimos de Espera após Operação de Falha (min\_days\_after\_failure\_operation)
+    \item Dias Mínimos de Espera após Operação de Sucesso (min\_days\_after\_successful\_operation)
+    \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, ele tá sempre aqui como uma opção, mas não é garantida. \colorend
+
+
+\end{itemize}
 
 % \begin{math} R_b \end{math}
 % \color{red} HERALDO: \colorend

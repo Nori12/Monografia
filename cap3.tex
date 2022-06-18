@@ -570,21 +570,78 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
     \item Dias Mínimos de Espera após Operação de Falha (min\_days\_after\_failure\_operation)
     \item Dias Mínimos de Espera após Operação de Sucesso (min\_days\_after\_successful\_operation)
-    \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, ele tá sempre aqui como uma opção, mas não é garantida. \colorend
+    \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, eles estão sempre aqui como opções, mas são são consistentes. \colorend
 
 
 \end{itemize}
-
-% \begin{math} R_b \end{math}
-% \color{red} HERALDO: \colorend
 
 
 
 \section{Otimizações de Gerenciamento de Carteira}
 
+\subsection{Resumo}
+
+\paragraph{} As otimizações apresentadas nesta Seção independem de um modelo de ML específico, sendo portanto algoritmos gerais que, motivados ou não por problemas oriundos dos modelos, buscam uma abordagem geral para aumento da performance da carteira.
+
 \subsection{Normalização por Frequência de Operações}
 \label{freq_norm}
-\paragraph{}
+\paragraph{} Cada ativo de uma carteira possui um critério próprio de análise das condições de mercado que o auxilia na decisão de entrada nas operações. Muitas vezes, ativos diferentes acumulam um número bastante variado de operações concluídas ao longo da simulação. Por outro lado, esse número não posui ligação direta com a performance individual dos mesmos. Em outras palavras, facilmente ocorre a situação de um \textit{ticker} monopolizar boa parte do capital total da carteira ao longo do tempo, simplesmente por ter uma frequência de operações maior que os outros, sem qualquer fator meritocrático que embase uma justificativa.
+
+\paragraph{} A fim de se endereçar essa questão, foi criado o critério de Normalização por Frequência de Operações, onde cada ativo receberá de capital para uma determinada operação um valor inversamente proporcional a frequência de operações acumulada até o momento.
+
+\begin{equation} \label{eq:80}
+    Capital_{norm} = Capital \times \dfrac{ \overline{f_{total}} }{ f_{stock}}
+\end{equation}
+
+\begin{equation} \label{eq:81}
+    \overline{f_{total}} = \dfrac{ N_{total\_operations} }{ N_{total\_stocks} }
+\end{equation}
+
+\paragraph{} As Equações \ref{eq:80} e \ref{eq:81} mostram a obtenção do novo Capital Normalizado \begin{math} Capital_{norm} \end{math} a partir do capital que em princípio seria alocado (ver Equação \ref{eq:61}), a frequência média de operações totais acumulada \begin{math} \overline{f_{total}} \end{math} e a frequência média de operações do ativo envolvido \begin{math} f_{stock} \end{math}, igualmente acumulada.
+
+\paragraph{} Para a Normalização começar a ser aplicada a um ativo, é necessário que haja pelo menos uma operação concluída do mesmo, assim como um mínimo de duas vezes o número total de ativos na carteira em operações concluídas. A Equação \ref{eq:82} mostra as condições citadas.
+
+\begin{equation} \label{eq:82}
+    f_{stock} > 0, \quad N_{total\_operations} \ge 2 \times N_{total\_stocks}
+\end{equation}
+
+\paragraph{} As Figuras \ref{fig:130} e \ref{fig:131} mostram eficácia do critério criado para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5}, durante o período de 01/01/2019 a 31/12/2021, onde a Figura \ref{fig:130} desabilita a Normalização e a Figura \ref{fig:131} habilita.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.70]{no_image.jpeg}
+    \centering
+    \caption{Simulação sem uso da Normalização por Frequência de Operações}
+    \label{fig:130}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.70]{no_image.jpeg}
+    \centering
+    \caption{Simulação com uso da Normalização por Frequência de Operações}
+    \label{fig:131}
+\end{figure}
+
+\paragraph{} A Tabela \ref{tab:6} traz um comparativo dos resultados das simulações. Observa-se que o critério de Normalização criado se auto-compensa, ou seja, realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira. A vantagem de um critério auto-compensado é que ele não traz uma potencial ilusão de melhora de performance, já que a comparação de resultados entre estratégias precisa ter em vista Usos Médios de Capital razoavelmente próximos entre si para que a escolha dos RCCs individuais não contamine a análise.
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|cc }
+            & hue & hue \\
+            \hline
+            hue & hue & hue \\
+            hue & hue & hue \\
+        \end{tabular}
+        \caption{Comparação de Resultados}
+        \label{tab:6}
+    \end{center}
+\end{table}
+
+\paragraph{} (Mencionar mais comentários sobre os outros parâmetros quando tiver as imagens e a tabela).
+
+% \begin{math} R_b \end{math}
+% \color{red} HERALDO: \colorend
+
+
 
 \subsection{Compensação por Lucratividade}
 \label{profit_comp}
@@ -602,13 +659,13 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \subsection{Resumo}
 \paragraph{}
 
+\subsection{\textit{Walk Forward Optimization}}
+\paragraph{}
+
 \subsection{\textit{Feature Selection}}
 \paragraph{}
 
 \subsection{Geração de \textit{Datasets}}
-\paragraph{}
-
-\subsection{\textit{Walk Forward Optimization}}
 \paragraph{}
 
 \subsection{Critérios de Escolha}

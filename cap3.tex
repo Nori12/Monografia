@@ -186,6 +186,7 @@
 
 
 \subsection{Geração de \textit{Features} de Uso Geral}
+\label{subsection:features}
 
 \paragraph{} As \textit{Features} de Uso Geral são características derivadas dos \textit{candlesticks} que podem auxiliar qualquer decisão interna de uma estratégia, porém seu objetivo principal está no suporte à escolha do momento de entrada apropriado nas operações, o que é fundalmentalmente a responsabilidade do modelo de \textit{Machine Learning}. Como podem ser utilizadas por qualquer estratégia, são calculadas antes do início das simulações e somente quando há necessidade, ou seja, quando os \textit{candlesticks} são inseridos pela primeira vez no banco ou quando são atualizados. Ao final dos cálculos, são armazenadas nas tabelas de \textit{features} para posteriores consultas durante as simulações.
 
@@ -369,7 +370,7 @@
     Utiliza-se o termo ``risco de uma operação" como sendo a diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}).
 
     \begin{equation} \label{eq:51}
-        Risco = \dfrac{P_{buy} - P_{stop}}{P_{buy}}
+        Risk = \dfrac{P_{buy} - P_{stop}}{P_{buy}}
     \end{equation}
 
     \item Não há \textbf{operações a descoberto}.
@@ -419,14 +420,14 @@
 \begin{figure}[h]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_min_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de Dias com Risco Mínimo em Operações}
+    \caption{MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}
     \label{fig:120}
 \end{figure}
 
 \begin{figure}[h]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_min_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de Dias com Risco Mínimo em Operações}
+    \caption{ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}
     \label{fig:121}
 \end{figure}
 
@@ -435,14 +436,14 @@
 \begin{figure}[h]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_opt_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de Dias com Risco Ótimo em Operações}
+    \caption{MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}
     \label{fig:122}
 \end{figure}
 
 \begin{figure}[h]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_opt_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de Dias com Risco Ótimo em Operações}
+    \caption{ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}
     \label{fig:123}
 \end{figure}
 
@@ -471,7 +472,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \paragraph{} Para mitigar as questões levantadas, algumas medidas foram tomas inspiradas no trabalho de MORAES \cite{moraes2007se}. São elas:
 
 \begin{itemize}
-    \item Diversificação de ativos em segmentos de mercado diversos através da escolha de um alto número de \textit{tickers}. Mais especificamente 71.
+    \item Diversificação de ativos em segmentos de mercado variados através da escolha de um alto número de \textit{tickers}. Mais especificamente 71.
     \item Criação do Coeficiente de Risco-Capital\footnote{ou \textit{Risk-Capital Coefficient} (RCC)}
 \end{itemize}
 
@@ -514,16 +515,25 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \subsection{Risco de Entrada por Operação}
-\paragraph{} EXCLUIR - Cálculo do risco mínimo; Cálculo do risco Máximo.
 
-% \begin{math} R_b \end{math}
-% \color{red} HERALDO: \colorend
+\paragraph{} O Risco de Entrada por Operação é encontrado a partir da média aritmética entre as \textit{features} Risco Mínimo e Risco Máximo (ver Seção \ref{subsection:features}). A Equação \ref{eq:70} mostra essa relação:
+
+\begin{equation} \label{eq:70}
+    Risk_{operation} = \dfrac{1}{2}(Risk_{max} + Risk_{min}), \quad \textrm{se } Risk_{max} \ge Risk_{min}
+\end{equation}
+
+\paragraph{} Como a metodologia de cálculo do Risco Máximo e do Risco Mínimo seguem raciocínios diferentes, podem ocorrer momentos nos quais a condição expressa na Equação \ref{eq:70} não seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensam o risco inerente ao ruído diário dos \textit{candlesticks}. Quando esse evento ocorre, não haverá entrada em operação para o ativo envolvido.
 
 
 
 \subsection{Descanso por Tendência de Baixa}
 \label{downtrend_halt}
 \paragraph{}
+
+% \begin{math} R_b \end{math}
+% \color{red} HERALDO: \colorend
+
+
 
 \subsection{Descanso por Identificação de Crises}
 \label{crisis_halt}

@@ -382,13 +382,14 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \subsection{Gerenciamento de Risco}
+\label{sub:risk_man}
 
-\paragraph{} Segundo MORAES \cite{moraes2007se}, o Gerenciamento de Risco é imprescindível para um bom rendimento de uma estratégia. Afinal, não adianta obter uma alta taxa de acerto nas operações quando a lucro médio retornado não compensa as perdas trazidas pelas operações falhadas. Igualmente, estar com o capital muito alocado em ativos de um único segmento é perigoso devido à alta exposição à fatores prejudicias como falta de insumos industriais, novas legislações, crises internas, instabilidade política, dentre outros.
+\paragraph{} Segundo MORAES \cite{moraes2007se}, o Gerenciamento de Risco é imprescindível para um bom rendimento de uma estratégia. Afinal, não adianta obter uma alta taxa de acerto em operações de cujo lucro médio não compense as perdas acumuladas pelas operações falhadas. Além disso, estar com o capital muito alocado em ativos de um único segmento é perigoso devido à alta exposição à fatores prejudicias como falta de insumos industriais, mudanças na legislação, crises internas, instabilidade política, dentre outros.
 
 \paragraph{} Para mitigar as questões levantadas, algumas medidas foram tomas inspiradas no trabalho de MORAES \cite{moraes2007se}. São elas:
 
 \begin{itemize}
-    \item Diversificação de ativos em segmentos de mercado variados através da escolha de um alto número de \textit{tickers}. Mais especificamente 71.
+    \item Diversificação de ativos em segmentos de mercado variados através da escolha de um alto número de \textit{tickers}, mais especificamente 71.
     \item Criação do Coeficiente de Risco-Capital\footnote{ou \textit{Risk-Capital Coefficient} (RCC)}
 \end{itemize}
 
@@ -398,13 +399,13 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     RCC = Capital \times Risk
 \end{equation}
 
-\paragraph{} Durante uma simulação, a estratégia encontra primeiro o valor do risco desejado para entrar na operação, depois escolhe o capital a ser alocado. Dessa forma, a Equação \ref{eq:61} mostra de fato a aplicação do RCC. É evidente que quanto maior o risco envolvido, menor o capital a ser alocado e vice-versa.
+\paragraph{} Durante uma simulação, a estratégia primeiro encontra o valor do risco desejado para entrar na operação, depois escolhe o capital a ser alocado. Dessa forma, a Equação \ref{eq:61} mostra de fato a aplicação do RCC. É evidente que quanto maior o risco envolvido, menor o capital a ser alocado e vice-versa.
 
 \begin{equation} \label{eq:61}
     Capital = \dfrac{RCC}{Risk}
 \end{equation}
 
-\paragraph{} A necessidade de um melhor uso médio de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{dynamic_rcc} por se tratar de uma otimização.
+\paragraph{} A necessidade de um melhor uso médio de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
 
 \paragraph{} Por fim, a Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Será que não tem outro lugar melhor para colocar essa tabela? Coloquei aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. \colorend
 
@@ -527,11 +528,11 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
         \hline
         enable\_downtrend\_halt & Local & Bloqueio de novas aquisições em caso de identificação de tendências de baixo nos preços (para ativo). Ver Seção \ref{sub:downtrend_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
-        enable\_dynamic\_rcc & Local & Uso de Coeficiente de Risco-Capital dinâmico (para carteira). Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        enable\_dynamic\_rcc & Local & Uso de Coeficiente de Risco-Capital dinâmico (para carteira). Ver Seção \ref{sub:dynamic_rcc}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
-        dynamic\_rcc\_reference & Local & Valor de referência de uso de capital médio no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 0,80. Listável: Sim. \\
+        dynamic\_rcc\_reference & Local & Valor de referência de uso de capital médio no controle do RCC dinâmico. Ver Seção \ref{sub:dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 0,80. Listável: Sim. \\
         \hline
-        dynamic\_rcc\_k & Local & Valor do ganho proporcional K no controle do RCC dinâmico. Ver Seção \ref{dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+        dynamic\_rcc\_k & Local & Valor do ganho proporcional K no controle do RCC dinâmico. Ver Seção \ref{sub:dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
         \hline
 
         purchase\_margin & Local & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
@@ -723,9 +724,46 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \subsection{Controle Proporcional para Uso de Capital (Risco Dinâmico)}
-\label{dynamic_rcc}
+\label{sub:dynamic_rcc}
 
-\paragraph{}
+% \paragraph{} A criação de um RCC como ferramenta de gerenciamento de risco (ver Seção \ref{sub:risk_man}) não resolve o problema de subaproveitamento do Uso de Capital da carteira ao longo do período de simulação. Entende-se por subaproveitamento a parcela de capital ocioso que, por não estar empregado em nenhum ativo, resulta em uma perda de performance geral.
+
+\paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco (ver Seção \ref{sub:risk_man}), mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode ser obtido através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser suficientemente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, um RCC fixo leva a problemas de subaproveitamento do Uso de Capital da carteira.
+
+\paragraph{} A solução desse problema se dá pela criação de um RCC Dinâmico, configurado através de um Controle Proporcional. A vantagem dessa abordagem está na diminuição da sensibilidade do RCC em relação à performance geral, permitindo um ajuste menos preciso sem grande impacto de performance. Tudo isso aliado a um rebalanceamento dinâmico de capital em função do uso médio de capital vigente, ou seja, períodos com menores oportunidades de operações terão mais disponibilidade de capital e vice-versa.
+
+% \paragraph{} \color{red} HERALDO: Pensei em colocar um diagrama desse controle proporcional aqui, porém o bloco que representaria a planta (i.e., estratégia) é extremamente não-linear. \colorend
+
+\paragraph{} As Equações \ref{eq:100} e \ref{eq:101} mostram o cálculo do RCC dinâmico (\begin{math} RCC_{din} \end{math}) a partir do RCC fixo (\begin{math} RCC_{fix} \end{math}, definido pela Equação \ref{eq:60}), do valor de referência para o uso médio de capital (\begin{math} C_{ref} \end{math}), da constante de ganho proporcional (\begin{math} K \end{math}) e do uso médio de capital dos últimos 10 dias de simulação (\begin{math} \overline{C_{10d}} \end{math}).
+
+\begin{equation} \label{eq:100}
+    e = C_{ref} - \overline{C_{10d}}, \quad \mbox{para } 0 \le C_{ref}, \overline{C_{10d}} \le 1
+\end{equation}
+
+\begin{equation} \label{eq:101}
+    RCC_{din} = RCC_{fix} (1 + K e)
+\end{equation}
+
+\paragraph{} Foi utilizado \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 5 \end{math} e \begin{math} RCC_{fix} = 0.003 \end{math}
+
+\paragraph{} A Figura \ref{fig:150} mostra o ganho de performance obtido pela implementação do RCC Dinâmico com os valores mencionados.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.70]{no_image.jpeg}
+    \centering
+    \caption{Ganho de performance pelo uso do RCC Dinâmico}
+    \label{fig:150}
+\end{figure}
+
+\paragraph{} (Falar que essa medida aumenta o uso de capital mal alocado, mas aumenta ainda mais o bem alocado, por isso tem um limite)
+
+\paragraph{} (Mostrar que RCC dinâmico não tem problema com otimizações anteriores)
+
+% \paragraph{} A dificuldade em se distinguir um capital bem alocado de um capital subaproveitado é inerente à imperfeição do modelo escolhido. Contudo, medidas podem ser tomadas para
+
+% Em outras palavras, idealmente se deseja que todo capital esteja alocado em algum ativo em tendência de alta para se maximizar a performance geral, no entanto isso raramente ocorre.
+
+% \paragraph{} O primeiro e mais simples motivo é porque nem sempre todos os ativos estão em uma tendência de alta aos olhos do que qualquer estratégia possa identificar, pois nenhum algoritmo é perfeito. Assim, independentemente da realidade, existirão momentos nos quais nenhum ativo da carteira se mostra vantajoso o suficiente para existir alguma operação.
 
 
 % \begin{math} R_b \end{math}
@@ -736,6 +774,10 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \section{Criação de Modelos}
 
 \subsection{Resumo}
+\paragraph{}
+
+\subsection{\textit{Baseline}}
+\label{sub:baseline}
 \paragraph{}
 
 \subsection{\textit{Walk Forward Optimization}}

@@ -585,7 +585,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \subsection{Normalização por Frequência de Operações}
 \label{freq_norm}
-\paragraph{} Cada ativo de uma carteira possui um critério próprio de análise das condições de mercado que o auxilia na decisão de entrada nas operações. Muitas vezes, ativos diferentes acumulam um número bastante variado de operações concluídas ao longo da simulação. Por outro lado, esse número não posui ligação direta com a performance individual dos mesmos. Em outras palavras, facilmente ocorre a situação de um \textit{ticker} monopolizar boa parte do capital total da carteira ao longo do tempo, simplesmente por ter uma frequência de operações maior que os outros, sem qualquer fator meritocrático que embase uma justificativa.
+\paragraph{} Cada ativo de uma carteira possui um critério próprio de análise das condições de mercado que o auxilia na decisão de entrada nas operações. Muitas vezes, ativos diferentes acumulam um número bastante variado de operações concluídas ao longo da simulação. Por outro lado, esse número não posui ligação direta com a performance individual dos mesmos. Em outras palavras, facilmente ocorre a situação de um \textit{ticker} monopolizar grande parte do capital total da carteira ao longo do tempo, simplesmente por ter uma frequência de operações maior que os outros, sem qualquer fator meritocrático que embase uma justificativa.
 
 \paragraph{} A fim de se endereçar essa questão, foi criado o critério de Normalização por Frequência de Operações, onde cada ativo receberá de capital para uma determinada operação um valor inversamente proporcional a frequência de operações acumulada até o momento.
 
@@ -621,7 +621,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:131}
 \end{figure}
 
-\paragraph{} A Tabela \ref{tab:6} traz um comparativo dos resultados das simulações. Observa-se que o critério de Normalização criado se auto-compensa, ou seja, realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira. A vantagem de um critério auto-compensado é que ele não traz uma potencial ilusão de melhora de performance, já que a comparação de resultados entre estratégias precisa ter em vista Usos Médios de Capital razoavelmente próximos entre si para que a escolha dos RCCs individuais não contamine a análise.
+\paragraph{} A Tabela \ref{tab:6} traz um comparativo dos resultados das simulações. Observa-se que o critério de Normalização criado se auto-compensa, ou seja, realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira. A vantagem de um critério auto-compensado é que ele não traz uma potencial ilusão de melhora de performance, já que a comparação de resultados entre estratégias precisa ter em vista Usos Médios de Capital razoavelmente próximos entre si para que a escolha dos RCCs individuais não influencie a análise.
 
 \begin{table}[h!]
     \begin{center}
@@ -638,19 +638,98 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} (Mencionar mais comentários sobre os outros parâmetros quando tiver as imagens e a tabela).
 
-% \begin{math} R_b \end{math}
-% \color{red} HERALDO: \colorend
-
 
 
 \subsection{Compensação por Lucratividade}
 \label{profit_comp}
-\paragraph{}
+
+\paragraph{} A Compensacão por Lucratividade é um ajuste auto-compensado\footnote{Realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira} que aumenta o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira. Da mesma forma, também diminui o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
+
+\paragraph{} A Equação \ref{eq:90} mostra a primeira etapa do cálculo da Compensação, onde \begin{math} \sigma_{eq} \end{math} é o valor em unidades de desvio padrão do quanto o lucro acumulado \begin{math} p_t \end{math} do ativo está em relação à média \begin{math} \overline{P_w} \end{math} e desvio padrão \begin{math} \sigma_w \end{math} da carteira.
+
+\begin{equation} \label{eq:90}
+    \sigma_{eq} = \dfrac{p_t - \overline{P_w}}{\sigma_w}
+\end{equation}
+
+\paragraph{} Em seguida, a Equações \ref{eq:91} e \ref{eq:92} dão sequência ao cálculo criando as constantes que serão utilizadas diretamente na Compensação. Nota-se que \begin{math} C_{max} \end{math} é a variação máxima positiva que a Compensação pode alcançar. \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math} são limiares de \begin{math} \sigma_{eq} \end{math} que definem lugares geométricos diferentes.
+
+\begin{equation} \label{eq:91}
+    m_1 = \dfrac{ C_{max} }{ \sigma_e - \sigma_s }, \quad n_1 = 1 - \sigma_s m_1
+\end{equation}
+
+\begin{equation} \label{eq:92}
+    m_2 = \dfrac{ C_{max} }{ \sigma_e - \sigma_s }, \quad n_2 = 1 + \sigma_s m_2
+\end{equation}
+
+\paragraph{} Finalmente, a Equação \ref{eq:93} mostra o cálculo final, que pode ser facilmente visualizado pela Figura \ref{fig:140}.
+
+\begin{equation} \label{eq:93}
+    C = \begin{cases} m_1 \sigma_{eq} + n_1, & \mbox{se } \sigma_{eq} \ge \sigma_s \quad \textrm{e} \quad \sigma_{eq} \le \sigma_e \\ m_2 \sigma_{eq} + n_2, & \mbox{se } \sigma_{eq} \le - \sigma_s \quad \textrm{e} \quad \sigma_{eq} \ge - \sigma_e \\ 1 + C_{max}, & \mbox{se } \sigma_{eq} > \sigma_e \\ 1 - C_{max}, & \mbox{se } \sigma_{eq} < - \sigma_e \\ 0, & \mbox{se } |\sigma{eq}| < \sigma_s \end{cases}
+\end{equation}
+
+\pgfmathsetmacro{\cmax}{0.6}
+\pgfmathsetmacro{\sigs}{0.2}
+\pgfmathsetmacro{\sige}{2.0}
+
+\begin{figure}[h]
+    \centering
+    \begin{center}
+        \begin{tikzpicture}
+            \begin{axis}
+            [
+                ylabel={Compensa\c{c}\~ao [-]},
+                xlabel={$Lucro [\sigma_{eq}]$},
+                xmin=-3, xmax=3,
+                ymin=0, ymax=2,
+                xtick={-3, -2, -1, 0, 1, 2, 3},
+                ytick={0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0},
+                ymajorgrids=true,
+                xmajorgrids=true,
+                grid style=dashed,
+            ]
+            \addplot[line width=0.50mm, domain=-\sigs:\sigs,blue]{1};
+            \addplot[line width=0.50mm, domain=\sigs:\sige,blue]{x * \cmax / (\sige - \sigs) + (1 - \cmax * \sigs / (\sige - \sigs))};
+            \addplot[line width=0.50mm, domain=-\sige:-\sigs,blue]{x * \cmax / (\sige - \sigs) + (1 + \cmax * \sigs / (\sige - \sigs))};
+            \addplot[line width=0.50mm, domain=\sige:10,blue]{1 + \cmax};
+            \addplot[line width=0.50mm, domain=-10:-\sige,blue]{1 - \cmax};
+            \end{axis}
+
+        \end{tikzpicture}
+    \end{center}
+    \caption{Gráfico da Função de Compensação por Lucratividade}
+    \label{fig:140}
+\end{figure}
+
+\paragraph{} Utilizou-se \begin{math} C_{max} = 0.60\end{math}, \begin{math} \sigma_s = 0.2 \end{math} e \begin{math} \sigma_e = 2.0 \end{math}.
+
+\paragraph{} A Figura \ref{fig:141} mostra o ganho de performance obtido para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5}, durante o período de 01/01/2019 a 31/12/2021. Ressalta-se que nenhuma outra Otimização de Gerenciamento de Carteira foi utilizada a fim de se isolar o efeito desta Compensação.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.70]{no_image.jpeg}
+    \centering
+    \caption{Ganho de performance pelo uso da Compensação por Lucratividade}
+    \label{fig:141}
+\end{figure}
+
+\paragraph{} A Figura \ref{fig:142} também mostra o ganho de performance nas mesmas condições da Figura \ref{fig:141}, com a exceção do uso comum da Normalização por Frequência de Operações, o que mostra que ambas as otimizações de carteira não se exluem, muito pelo contrário.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.70]{no_image.jpeg}
+    \centering
+    \caption{Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}
+    \label{fig:142}
+\end{figure}
+
+
 
 \subsection{Controle Proporcional para Uso de Capital (Risco Dinâmico)}
 \label{dynamic_rcc}
+
 \paragraph{}
 
+
+% \begin{math} R_b \end{math}
+% \color{red} HERALDO: \colorend
 
 
 

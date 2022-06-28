@@ -36,6 +36,7 @@
 
 
 \subsection{Índice de Bolsa de Valores}
+\label{sub:ibov}
 
 Índices de Bolsas de Valores \cite{stock_index} são métricas criadas para avaliar a saúde de um determinado grupo de ações negociadas na bolsa. Cada índice possui uma regra própria de criação que define quais ações são englobadas e com quais pesos, como por exemplo:
 
@@ -193,6 +194,7 @@
 
 
 \subsection{Algoritmos de Aprendizado Supervisionado}
+\label{sub:alg_apren_sup}
 
 \paragraph{} Esta seção trará uma visão simplificado sobre os algoritmos de AS mais pertinentes ao presente trabalho, em ordem crescente de complexidade. O exemplos citados serão focados em problemas de classificação apenas para entendimento do raciocínio por detrás dos modelos, porém todos possuem variantes para problemas de regressão.
 
@@ -228,6 +230,23 @@
 \paragraph{} Um dos modelos mais utilizado atualmente, o algoritmo \textit{Random Forest}\footnote{Em português: Floresta Aleatória.} é a combinação de diversas Árvores de Decisão ligeiramente diferentes entre si \cite{muller2016introduction}. A ideia é que apesar da tendência de \textit{overfitting} existente, a média dos resultados de cada árvore tende a diminuir esse fator. Além dos parâmetros responsáveis por configurar as árvores individualmente, este modelo também precisa no número de árvores que serão utilizadas.
 
 \paragraph{} Normalmente é preferível utilizar \textit{Random Forests} ao invés de Árvores de Decisão, salvo casos em que o entendimento e a visualização clara do modelo se torna um fator importante, o que difícil de ser analisado quando existem muitras árvores. É possível compensar o aumento do tempo de processamente envolvido na criação deste modelo com paralelização em núcleos de processamento da CPU\footnote{Do inglês: \textit{Central Process Unit}.}.
+
+
+
+\section{\textit{Walk-Forward Analysis}}
+
+\paragraph{} \textit{Walk-Forward Analysis} \cite{pardo2011evaluation} é um processo de otimização mais voltado para séries temporais no contexto de finanças. O conjunto de dados diponível (\textit{dataset}) é dividido em múltiplos segmentos consecutivos, que são iterados progressivamente a fim de se obter os parâmetros ou modelos desejados. A Figura \ref{fig:10} mostra o processo para uma série temporal. Observa-se que são utilizados os termos \textit{in-sample data} (IS) como sinônimo de \textit{training set} e \textit{out-of-sample data} (OOS) como sinônimo de \textit{test set}. A imagem à esquerda representa um processo não-ancorado, onde o início do IS caminha com o decorrer do processo, já a imagem à direita mantém o início fixo por ser um processo ancorado.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.45]{wfa.png}
+    \centering
+    \caption{\textit{Walk-Forward Analysis} (Não-Ancorado e Ancorado) \cite{wfo}.}
+    \label{fig:10}
+\end{figure}
+
+\paragraph{} A natureza do WFA ancorado permite uma maior adaptação dos modelos de ML de acordo com as tendências de mercado, que mudam significativamente com o tempo. Durante o treinamento de um modelo, considerar informações temporalmente muito distantes do período de aplicação do mesmo pode comprometer significavamente sua acurácia, pois os padrões que guiavam os preços anteriormente não necessariamente são iguais aos padrões atuais.
+
+
 
 \section{Considerações para Análise de Resultados}
 
@@ -303,6 +322,8 @@
 \end{table}
 
 \paragraph{} Após o cálculo dos postos, deve-se utilizar a Equação \ref{eq:8}, encontrado o valor 0.6687.
+
+
 
 \section{Trabalhos Relacionados}
 

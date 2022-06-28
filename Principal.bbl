@@ -28,6 +28,11 @@ DATACAMP, \enquote{KNN Classification Tutorial using Scikit-learn},
   https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn,
   (Acessado em 5 de Abril de 2022).
 
+\bibitem{wfo}
+MULTICHARTS, \enquote{Walk Forward Optimization},
+  https://www.multicharts.com/trading-software/index.php/Walk\_Forward\_Optimization,
+  (Acessado em 28 de Junho de 2022).
+
 \bibitem{aumento_investidores}
 B3, \enquote{B3 atinge 5 milh\~oes de contas de investidores em renda
   vari\'avel em janeiro},
@@ -197,6 +202,10 @@ ARTHUR, S., OTHERS, \enquote{Some studies in machine learning using the game of
 WEISS, G.~M., MCCARTHY, K., ZABAR, B., \enquote{Cost-sensitive learning vs.
   sampling: Which is best for handling unbalanced classes with unequal error
   costs?}, \emph{Dmin}, v.~7, n. 35-41, pp.~24, 2007.
+
+\bibitem{pardo2011evaluation}
+PARDO, R., \emph{The evaluation and optimization of trading strategies}. John
+  Wiley \& Sons, 2011.
 
 \bibitem{sharpe1998sharpe}
 SHARPE, W.~F., \enquote{The sharpe ratio}, \emph{Streetwise--the Best of the

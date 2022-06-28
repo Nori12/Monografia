@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  22 JUN 2022 01:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  28 JUN 2022 03:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -826,7 +826,7 @@ Package epstopdf Info: Source file: <./figuras/Poli.eps>
 (epstopdf)             Command: <repstopdf --outfile=./figuras/Poli-eps-converted-to.pdf ./figuras/Poli.eps>
 (epstopdf)             \includegraphics on input line 1.
 Package epstopdf Info: Output file is already uptodate.
-<./figuras/Poli-eps-converted-to.pdf, id=247, 130.4875pt x 139.52126pt>
+<./figuras/Poli-eps-converted-to.pdf, id=252, 130.4875pt x 139.52126pt>
 File: ./figuras/Poli-eps-converted-to.pdf Graphic file (type pdf)
 <use ./figuras/Poli-eps-converted-to.pdf>
 Package pdftex.def Info: ./figuras/Poli-eps-converted-to.pdf  used on input line 1.
@@ -899,12 +899,12 @@ Overfull \hbox (2.07504pt too wide) in paragraph at lines 79--80
 \openout5 = `Principal.toc'.
 
  [13] (/Users/atcha/Github/Monografia/Principal.lof
-Overfull \hbox (35.93361pt too wide) in paragraph at lines 18--18
+Overfull \hbox (35.93361pt too wide) in paragraph at lines 19--19
  [][] [][]\OT1/cmr/m/it/12 Flag \OT1/cmr/m/n/12 de Iden-ti-fica^^Xc~ao de Cri-ses para a a^^Xc~ao XYZ no per^^S^^Podo de XX/YY/ZZZZ 
  []
 
 
-Overfull \hbox (35.93361pt too wide) in paragraph at lines 19--19
+Overfull \hbox (35.93361pt too wide) in paragraph at lines 20--20
  [][] [][]\OT1/cmr/m/it/12 Flag \OT1/cmr/m/n/12 de Iden-ti-fica^^Xc~ao de Cri-ses para a a^^Xc~ao XYZ no per^^S^^Podo de XX/YY/ZZZZ 
  []
 
@@ -945,93 +945,103 @@ Overfull \hbox (3.14258pt too wide) in paragraph at lines 7--7
 
 
 ] [6] [7] [8] [9]
-<./figuras/candlestick.png, id=659, 651.43375pt x 381.425pt>
+<./figuras/candlestick.png, id=678, 651.43375pt x 381.425pt>
 File: ./figuras/candlestick.png Graphic file (type png)
 <use ./figuras/candlestick.png>
-Package pdftex.def Info: ./figuras/candlestick.png  used on input line 86.
+Package pdftex.def Info: ./figuras/candlestick.png  used on input line 87.
 (pdftex.def)             Requested size: 325.71606pt x 190.71202pt.
  [10 </Users/atcha/Github/Monografia/./figuras/candlestick.png>]
-<./figuras/dow_theory.png, id=680, 484.81125pt x 249.93375pt>
+<./figuras/dow_theory.png, id=699, 484.81125pt x 249.93375pt>
 File: ./figuras/dow_theory.png Graphic file (type png)
 <use ./figuras/dow_theory.png>
-Package pdftex.def Info: ./figuras/dow_theory.png  used on input line 97.
+Package pdftex.def Info: ./figuras/dow_theory.png  used on input line 98.
 (pdftex.def)             Requested size: 242.40503pt x 124.96657pt.
  [11 </Users/atcha/Github/Monografia/./figuras/dow_theory.png>]
-<./figuras/suporte_resistencia.png, id=706, 668.4975pt x 289.08pt>
+<./figuras/suporte_resistencia.png, id=725, 668.4975pt x 289.08pt>
 File: ./figuras/suporte_resistencia.png Graphic file (type png)
 <use ./figuras/suporte_resistencia.png>
-Package pdftex.def Info: ./figuras/suporte_resistencia.png  used on input line 119.
+Package pdftex.def Info: ./figuras/suporte_resistencia.png  used on input line 120.
 (pdftex.def)             Requested size: 334.24792pt x 144.53964pt.
-<./figuras/lta.png, id=710, 678.535pt x 296.10625pt>
+<./figuras/lta.png, id=729, 678.535pt x 296.10625pt>
 File: ./figuras/lta.png Graphic file (type png)
 <use ./figuras/lta.png>
-Package pdftex.def Info: ./figuras/lta.png  used on input line 128.
+Package pdftex.def Info: ./figuras/lta.png  used on input line 129.
 (pdftex.def)             Requested size: 339.26666pt x 148.05275pt.
-<./figuras/ltb.png, id=712, 670.505pt x 290.08376pt>
+<./figuras/ltb.png, id=731, 670.505pt x 290.08376pt>
 File: ./figuras/ltb.png Graphic file (type png)
 <use ./figuras/ltb.png>
-Package pdftex.def Info: ./figuras/ltb.png  used on input line 135.
+Package pdftex.def Info: ./figuras/ltb.png  used on input line 136.
 (pdftex.def)             Requested size: 335.25168pt x 145.04152pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [12 </Users/atcha/Github/Monografia/./figuras/suporte_resistencia.png> </Users/atcha/Github/Monografia/./figuras/lta.png>] [13 </Users/atcha/Github/Monografia/./figuras/ltb.png>]
-<./figuras/generalisation.png, id=742, 1024.82875pt x 664.4825pt>
+<./figuras/generalisation.png, id=762, 1024.82875pt x 664.4825pt>
 File: ./figuras/generalisation.png Graphic file (type png)
 <use ./figuras/generalisation.png>
-Package pdftex.def Info: ./figuras/generalisation.png  used on input line 162.
+Package pdftex.def Info: ./figuras/generalisation.png  used on input line 163.
 (pdftex.def)             Requested size: 358.69543pt x 232.57236pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [14] [15 </Users/atcha/Github/Monografia/./figuras/generalisation.png>]
-<./figuras/over_under_sampling.png, id=768, 682.55pt x 240.9pt>
+<./figuras/over_under_sampling.png, id=787, 682.55pt x 240.9pt>
 File: ./figuras/over_under_sampling.png Graphic file (type png)
 <use ./figuras/over_under_sampling.png>
-Package pdftex.def Info: ./figuras/over_under_sampling.png  used on input line 188.
+Package pdftex.def Info: ./figuras/over_under_sampling.png  used on input line 189.
 (pdftex.def)             Requested size: 375.40366pt x 132.49539pt.
  [16 </Users/atcha/Github/Monografia/./figuras/over_under_sampling.png>]
-<./figuras/knn_example.png, id=781, 405.515pt x 350.30875pt>
+<./figuras/knn_example.png, id=800, 405.515pt x 350.30875pt>
 File: ./figuras/knn_example.png Graphic file (type png)
 <use ./figuras/knn_example.png>
-Package pdftex.def Info: ./figuras/knn_example.png  used on input line 204.
+Package pdftex.def Info: ./figuras/knn_example.png  used on input line 206.
 (pdftex.def)             Requested size: 243.31087pt x 210.18686pt.
  [17 </Users/atcha/Github/Monografia/./figuras/knn_example.png>]
-<./figuras/decision_tree.png, id=799, 1159.33125pt x 681.54625pt>
+<./figuras/decision_tree.png, id=818, 1159.33125pt x 681.54625pt>
 File: ./figuras/decision_tree.png Graphic file (type png)
 <use ./figuras/decision_tree.png>
-Package pdftex.def Info: ./figuras/decision_tree.png  used on input line 217.
+Package pdftex.def Info: ./figuras/decision_tree.png  used on input line 219.
 (pdftex.def)             Requested size: 405.77202pt x 238.54475pt.
- [18 </Users/atcha/Github/Monografia/./figuras/decision_tree.png>] [19] [20] [21] [22] [23] [24]) [25]
+ [18 </Users/atcha/Github/Monografia/./figuras/decision_tree.png>]
+<./figuras/wfa.png, id=836, 819.06pt x 448.67625pt>
+File: ./figuras/wfa.png Graphic file (type png)
+<use ./figuras/wfa.png>
+Package pdftex.def Info: ./figuras/wfa.png  used on input line 241.
+(pdftex.def)             Requested size: 368.5736pt x 201.90245pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19] [20 </Users/atcha/Github/Monografia/./figuras/wfa.png>] [21] [22] [23] [24] [25]) [26]
 \openout2 = `cap3.aux'.
 
  (/Users/atcha/Github/Monografia/cap3.tex
 Cap\'{\i }tulo 3.
-<./figuras/resumo_projeto.png, id=974, 733.74126pt x 653.44125pt>
+<./figuras/resumo_projeto.png, id=1005, 733.74126pt x 653.44125pt>
 File: ./figuras/resumo_projeto.png Graphic file (type png)
 <use ./figuras/resumo_projeto.png>
 Package pdftex.def Info: ./figuras/resumo_projeto.png  used on input line 9.
 (pdftex.def)             Requested size: 381.54765pt x 339.7914pt.
-[26
+[27
 
 
 
- </Users/atcha/Github/Monografia/./figuras/resumo_projeto.png>] [27]
-<./figuras/config_file_estrutura.png, id=992, 582.175pt x 436.63126pt>
+ </Users/atcha/Github/Monografia/./figuras/resumo_projeto.png>] [28]
+<./figuras/config_file_estrutura.png, id=1024, 582.175pt x 436.63126pt>
 File: ./figuras/config_file_estrutura.png Graphic file (type png)
 <use ./figuras/config_file_estrutura.png>
 Package pdftex.def Info: ./figuras/config_file_estrutura.png  used on input line 33.
 (pdftex.def)             Requested size: 291.08679pt x 218.3151pt.
- [28 </Users/atcha/Github/Monografia/./figuras/config_file_estrutura.png>]
-<./figuras/config_file_mult_exec.png, id=1005, 581.17125pt x 436.63126pt>
+ [29 </Users/atcha/Github/Monografia/./figuras/config_file_estrutura.png>]
+<./figuras/config_file_mult_exec.png, id=1037, 581.17125pt x 436.63126pt>
 File: ./figuras/config_file_mult_exec.png Graphic file (type png)
 <use ./figuras/config_file_mult_exec.png>
 Package pdftex.def Info: ./figuras/config_file_mult_exec.png  used on input line 44.
 (pdftex.def)             Requested size: 290.58492pt x 218.3151pt.
- [29 </Users/atcha/Github/Monografia/./figuras/config_file_mult_exec.png>] [30]
-<./figuras/no_image.jpeg, id=1032, 240.9pt x 238.7319pt>
+ [30 </Users/atcha/Github/Monografia/./figuras/config_file_mult_exec.png>] [31]
+<./figuras/no_image.jpeg, id=1063, 240.9pt x 238.7319pt>
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
 Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 89.
@@ -1040,7 +1050,7 @@ Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 89.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31] [32 </Users/atcha/Github/Monografia/./figuras/no_image.jpeg>] [33]
+[32] [33 </Users/atcha/Github/Monografia/./figuras/no_image.jpeg>] [34]
 Underfull \hbox (badness 10000) in paragraph at lines 122--124
 
  []
@@ -1062,7 +1072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--142
 
  []
 
-[34]
+[35]
 Overfull \hbox (65.0631pt too wide) detected at line 157
 []\OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 = []
  []
@@ -1072,7 +1082,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-[35]
+[36]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
 Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 162.
@@ -1087,7 +1097,7 @@ Overfull \hbox (5.98752pt too wide) in paragraph at lines 168--170
 \OT1/cmr/m/n/12 opera^^Xc~ao, n~ao sendo as-sim con-su-mido di-re-ta-mente pelo mo-delo de ML. Ressalta-
  []
 
-[36]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
@@ -1106,23 +1116,23 @@ Overfull \hbox (5.98752pt too wide) in paragraph at lines 204--206
 \OT1/cmr/m/n/12 opera^^Xc~ao, n~ao sendo as-sim con-su-mido di-re-ta-mente pelo mo-delo de ML. Ressalta-
  []
 
-[37]
+[38]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
 Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 210.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
- [38]
+ [39]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
 Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 221.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
- [39]
+ [40]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
 Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 252.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
- [40] [41] [42]
-<./figuras/MGLU3_stop_hist_min_risk.png, id=1146, 785.93625pt x 521.95pt>
+ [41] [42] [43]
+<./figuras/MGLU3_stop_hist_min_risk.png, id=1177, 785.93625pt x 521.95pt>
 File: ./figuras/MGLU3_stop_hist_min_risk.png Graphic file (type png)
 <use ./figuras/MGLU3_stop_hist_min_risk.png>
 Package pdftex.def Info: ./figuras/MGLU3_stop_hist_min_risk.png  used on input line 337.
@@ -1131,7 +1141,7 @@ Package pdftex.def Info: ./figuras/MGLU3_stop_hist_min_risk.png  used on input l
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/ABEV3_stop_hist_min_risk.png, id=1147, 772.8875pt x 520.94624pt>
+<./figuras/ABEV3_stop_hist_min_risk.png, id=1178, 772.8875pt x 520.94624pt>
 File: ./figuras/ABEV3_stop_hist_min_risk.png Graphic file (type png)
 <use ./figuras/ABEV3_stop_hist_min_risk.png>
 Package pdftex.def Info: ./figuras/ABEV3_stop_hist_min_risk.png  used on input line 344.
@@ -1139,7 +1149,7 @@ Package pdftex.def Info: ./figuras/ABEV3_stop_hist_min_risk.png  used on input l
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/MGLU3_stop_hist_opt_risk.png, id=1150, 763.85374pt x 528.97626pt>
+<./figuras/MGLU3_stop_hist_opt_risk.png, id=1181, 763.85374pt x 528.97626pt>
 File: ./figuras/MGLU3_stop_hist_opt_risk.png Graphic file (type png)
 <use ./figuras/MGLU3_stop_hist_opt_risk.png>
 Package pdftex.def Info: ./figuras/MGLU3_stop_hist_opt_risk.png  used on input line 353.
@@ -1147,7 +1157,7 @@ Package pdftex.def Info: ./figuras/MGLU3_stop_hist_opt_risk.png  used on input l
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/ABEV3_stop_hist_opt_risk.png, id=1151, 776.9025pt x 524.96124pt>
+<./figuras/ABEV3_stop_hist_opt_risk.png, id=1182, 776.9025pt x 524.96124pt>
 File: ./figuras/ABEV3_stop_hist_opt_risk.png Graphic file (type png)
 <use ./figuras/ABEV3_stop_hist_opt_risk.png>
 Package pdftex.def Info: ./figuras/ABEV3_stop_hist_opt_risk.png  used on input line 360.
@@ -1155,7 +1165,7 @@ Package pdftex.def Info: ./figuras/ABEV3_stop_hist_opt_risk.png  used on input l
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[43] [44 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_min_risk.png>] [45 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_min_risk.png>]
+[44] [45 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_min_risk.png>] [46 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_min_risk.png>]
 Overfull \hbox (6.86235pt too wide) in paragraph at lines 414--427
  [] 
  []
@@ -1163,7 +1173,7 @@ Overfull \hbox (6.86235pt too wide) in paragraph at lines 414--427
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[46 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_opt_risk.png>] [47 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_opt_risk.png>]
+[47 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_opt_risk.png>] [48 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_opt_risk.png>]
 Overfull \hbox (1.12537pt too wide) in paragraph at lines 472--472
 []|\OT1/cmr/m/n/10.95 Escopo| 
  []
@@ -1207,7 +1217,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 525--525
 Underfull \vbox (badness 10000) detected at line 532
  []
 
-[48]
+[49]
 Underfull \hbox (badness 10000) in paragraph at lines 546--546
 []|\OT1/cmr/m/n/10.95 min[]days[]after[]successful
  []
@@ -1227,12 +1237,12 @@ Underfull \hbox (badness 1708) in paragraph at lines 548--549
 []|\OT1/cmr/m/n/10.95 M^^S^^Pnimo de dias sem no-vas aquisi^^Xc~oes ap^^Sos
  []
 
-[49] [50] [51]
+[50] [51] [52]
 Overfull \hbox (11.20924pt too wide) in paragraph at lines 566--568
 []\OT1/cmr/m/n/12 Venda Par-cial (par-tial[]sale) []HE-RALDO: A mo-tiva^^Xc~ao da cria^^Xc~ao desse par^ametro
  []
 
-[52]
+[53]
 Overfull \hbox (22.08928pt too wide) in paragraph at lines 572--573
 []\OT1/cmr/m/n/12 Dias M^^S^^Pnimos de Es-pera ap^^Sos Opera^^Xc~ao de Fa-lha (min[]days[]after[]failure[]operation) 
  []
@@ -1242,7 +1252,7 @@ Overfull \hbox (49.67093pt too wide) in paragraph at lines 573--575
 []\OT1/cmr/m/n/12 Dias M^^S^^Pnimos de Es-pera ap^^Sos Opera^^Xc~ao de Su-cesso (min[]days[]after[]successful[]operation)
  []
 
-[53] [54]
+[54] [55]
 Overfull \hbox (20.60677pt too wide) in paragraph at lines 601--602
  [][] \OT1/cmr/m/n/12 As Equa^^Xc~oes []3.21[] e []3.22[] mos-tram a ob-ten^^Xc~ao do novo Ca-pi-tal Nor-ma-li-zado $\OML/cmm/m/it/12 Capital[]$
  []
@@ -1258,7 +1268,7 @@ Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 619.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[55] [56]
+[56] [57]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1281,7 +1291,7 @@ Overfull \hbox (44.70483pt too wide) in paragraph at lines 726--726
 []\OT1/cmr/bx/n/14.4 Controle Pro-por-ci-o-nal para Uso de Ca-pi-tal (Risco Din^amico) 
  []
 
-[57] [58]
+[58] [59]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
 Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 752.
@@ -1290,16 +1300,43 @@ Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 752.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[59] [60]) [61]
+[60] [61]
+<./figuras/baseline_raw.png, id=1383, 803.0pt x 388.45125pt>
+File: ./figuras/baseline_raw.png Graphic file (type png)
+<use ./figuras/baseline_raw.png>
+Package pdftex.def Info: ./figuras/baseline_raw.png  used on input line 788.
+(pdftex.def)             Requested size: 401.49902pt x 194.22514pt.
+ [62 </Users/atcha/Github/Monografia/./figuras/baseline_raw.png>]) [63]
 \openout2 = `cap4.aux'.
 
  (/Users/atcha/Github/Monografia/cap4.tex
 Cap\'{\i }tulo 4.
-) [62
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./figuras/resultado_final.png, id=1406, 796.9775pt x 374.39874pt>
+File: ./figuras/resultado_final.png Graphic file (type png)
+<use ./figuras/resultado_final.png>
+Package pdftex.def Info: ./figuras/resultado_final.png  used on input line 39.
+(pdftex.def)             Requested size: 414.43068pt x 194.68846pt.
+<./figuras/resultado_valores.png, id=1407, 633.36626pt x 908.39375pt>
+File: ./figuras/resultado_valores.png Graphic file (type png)
+<use ./figuras/resultado_valores.png>
+Package pdftex.def Info: ./figuras/resultado_valores.png  used on input line 46.
+(pdftex.def)             Requested size: 380.02269pt x 545.04047pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (4.71683pt too wide) in paragraph at lines 52--53
+ [][] \OT1/cmr/m/n/12 Ana-li-sando a Fi-gura []4.1[], pode-se per-ce-ber que (FA-ZER CO-MENT[]ARIOS). Quanto
+ []
+
+) [64
 
 
 
-] (/Users/atcha/Github/Monografia/Principal.bbl
+ </Users/atcha/Github/Monografia/./figuras/resultado_final.png>] [65] [66 </Users/atcha/Github/Monografia/./figuras/resultado_valores.png>] (/Users/atcha/Github/Monografia/Principal.bbl
 Underfull \hbox (badness 2875) in paragraph at lines 5--8
 []\OT1/cmr/m/n/12 INVESTIDOR, B. D., ``Como In-ter-pre-tar o Gr^^Safico de Can-dles-tick'',
  []
@@ -1325,162 +1362,174 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--30
  []
 
 
-Underfull \hbox (badness 1577) in paragraph at lines 32--36
+Underfull \hbox (badness 10000) in paragraph at lines 32--35
+[]\OT1/cmr/m/n/12 MULTICHARTS, ``Walk Forward Op-ti-mi-za-tion'',
+ []
+
+
+Overfull \hbox (49.73177pt too wide) in paragraph at lines 32--35
+\OT1/cmr/m/n/12 https://www.multicharts.com/trading-software/index.php/Walk[]Forward[]Optimization,
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 37--41
 \OT1/cmr/m/n/12 em ja-neiro'', https://www.b3.com.br/pt[]br/noticias/5-milhoes-de-contas-de-
  []
 
-[63
+[67
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 54--57
+Underfull \hbox (badness 10000) in paragraph at lines 59--62
 []\OT1/cmr/m/n/12 CVM, ``En-ten-dendo o Mer-cado de Va-lo-res Mo-bili^^Sarios'',
  []
 
 
-Overfull \hbox (57.65611pt too wide) in paragraph at lines 54--57
+Overfull \hbox (57.65611pt too wide) in paragraph at lines 59--62
 \OT1/cmr/m/n/12 https://www.investidor.gov.br/menu/primeiros[]passos/entendendo[]mercado[]valores.html,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--73
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
 []\OT1/cmr/m/n/12 B3, ``A^^Xc~oes'', https://www.b3.com.br/pt[]br/produtos-e-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--79
+Underfull \hbox (badness 10000) in paragraph at lines 80--84
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--79
+Underfull \hbox (badness 10000) in paragraph at lines 80--84
 \OT1/cmr/m/n/12 so-bre as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XC, Se^^Xc~ao VII,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--79
+Underfull \hbox (badness 10000) in paragraph at lines 80--84
 \OT1/cmr/m/n/12 http://www.planalto.gov.br/ccivil[]03/leis/l6404consol.htm, (Aces-sado em
  []
 
 
-Underfull \hbox (badness 2556) in paragraph at lines 81--85
+Underfull \hbox (badness 2556) in paragraph at lines 86--90
 []\OT1/cmr/m/n/12 CVM, ``Lei 6.404/76: Ex-posi^^Xc~ao de Mo-ti-vos'', Cap^^S^^Ptulo II, Se^^Xcao I,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 81--85
+Underfull \hbox (badness 10000) in paragraph at lines 86--90
 \OT1/cmr/m/n/12 https://www.gov.br/cvm/pt-br/acesso-a-informacao-cvm/institucional/sobre-
  []
 
 
-Underfull \hbox (badness 4266) in paragraph at lines 87--91
+Underfull \hbox (badness 4266) in paragraph at lines 92--96
 []\OT1/cmr/m/n/12 INVESTIMENTOS, X., ``Mer-cado se-cund^^Sario: en-tenda as di-fe-ren^^Xcas
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--91
+Underfull \hbox (badness 10000) in paragraph at lines 92--96
 \OT1/cmr/m/n/12 com o mer-cado prim^^Sario'', https://conteudos.xpi.com.br/aprenda-a-
  []
 
 
-Underfull \hbox (badness 2922) in paragraph at lines 87--91
+Underfull \hbox (badness 2922) in paragraph at lines 92--96
 \OT1/cmr/m/n/12 investir/relatorios/mercado-secundario/, (Aces-sado em 24 de Mar^^Xco de
  []
 
-
-Underfull \hbox (badness 4366) in paragraph at lines 93--97
+[68]
+Underfull \hbox (badness 4366) in paragraph at lines 98--102
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe so-
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 93--97
+Underfull \hbox (badness 4954) in paragraph at lines 98--102
 \OT1/cmr/m/n/12 bre as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XV, Se^^Xc~ao II, Art. 176,
  []
 
-[64]
-Underfull \hbox (badness 2591) in paragraph at lines 99--103
+
+Underfull \hbox (badness 2591) in paragraph at lines 104--108
 []\OT1/cmr/m/n/12 BRASIL, ``Lei n\TS1/cmr/m/n/12 º \OT1/cmr/m/n/12 6.404, de 15 de de-zem-bro de 1976. Disp~oe so-bre
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 99--103
+Underfull \hbox (badness 1715) in paragraph at lines 104--108
 \OT1/cmr/m/n/12 as So-ci-e-da-des por A^^Xc~oes.'', Cap^^S^^Ptulo XXI, Se^^Xc~ao IV, Art. 275, \TS1/cmr/m/n/12 § \OT1/cmr/m/n/12 4\TS1/cmr/m/n/12 º\OT1/cmr/m/n/12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--113
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
 []\OT1/cmr/m/n/12 B3, ``Posi^^Xc~oes ven-di-das no mer-cado de a^^Xc~oes'',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--113
+Underfull \hbox (badness 10000) in paragraph at lines 115--118
 \OT1/cmr/m/n/12 https://www.b3.com.br/pt[]br/noticias/short-selling.htm, (Aces-sado em
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
 []\OT1/cmr/m/n/12 INVESTOPEDIA, ``Four Scan-da-lous In-si-der Tra-ding In-ci-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--123
+Underfull \hbox (badness 10000) in paragraph at lines 125--128
 \OT1/cmr/m/n/12 dents'', https://www.investopedia.com/articles/stocks/09/insider-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 148--151
 []\OT1/cmr/m/n/12 FORBES, ``In-ves-ting Ba-sics: What Is A Mar-ket In-dex?'',
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
+Underfull \hbox (badness 10000) in paragraph at lines 148--151
 \OT1/cmr/m/n/12 https://www.forbes.com/advisor/investing/stock-market-index/, (Aces-sado
  []
 
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 148--151
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--156
 []\OT1/cmr/m/n/12 B3, ``Ibo-vespa B3'', https://www.b3.com.br/pt[]br/market-data-e-
  []
 
 
-Underfull \hbox (badness 2119) in paragraph at lines 148--151
+Underfull \hbox (badness 2119) in paragraph at lines 153--156
 \OT1/cmr/m/n/12 indices/indices/indices-amplos/ibovespa.htm, (Aces-sado em 28 de Mar^^Xco
  []
 
 
-Overfull \hbox (102.99904pt too wide) in paragraph at lines 158--161
+Overfull \hbox (102.99904pt too wide) in paragraph at lines 163--166
 []\OT1/cmr/m/n/12 INVESTOPEDIA, ``Frac-ti-o-nal Share'', https://www.investopedia.com/terms/f/fractionalshare.asp,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 187--190
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
 []\OT1/cmr/m/n/12 IBM, ``Ma-chine Le-ar-ning'', https://www.ibm.com/cloud/learn/machine-
  []
 
-[66]
-Underfull \hbox (badness 1112) in paragraph at lines 218--221
+[70]
+Underfull \hbox (badness 1112) in paragraph at lines 227--230
 []\OT1/cmr/m/n/12 GODFREY, M. D., GRAN-GER, C. W., MOR-GENS-TERN, O., ``THE
  []
 
-[67] [68]) [69]
+[71] [72]) [73]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 93.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
  (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux) (/Users/atcha/Github/Monografia/cap3.aux) (/Users/atcha/Github/Monografia/cap4.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
 Package rerunfilecheck Info: File `Principal.out' has not changed.
-(rerunfilecheck)             Checksum: D4E5971875977B72909BDD45A84C3301;4568.
+(rerunfilecheck)             Checksum: 3C160F5A24E7C6AA07F7857896338BF6;4635.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 33044 strings out of 480608
- 750719 string characters out of 5903630
+ 33102 strings out of 480608
+ 751720 string characters out of 5903630
  1198492 words of memory out of 5000000
- 47733 multiletter control sequences out of 15000+600000
- 545354 words of font info for 71 fonts, out of 8000000 for 9000
+ 47765 multiletter control sequences out of 15000+600000
+ 545713 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,13n,104p,1598b,1985s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.30} has been referenced but does not exist, replaced by a fixed one
+
 pdfTeX warning (dest): name{Hfootnote.29} has been referenced but does not exist, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.28} has been referenced but does not exist, replaced by a fixed one
@@ -1540,10 +1589,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/atcha/Github/Monografia/Principal.pdf (85 pages, 1227696 bytes).
+Output written on /Users/atcha/Github/Monografia/Principal.pdf (89 pages, 1390480 bytes).
 PDF statistics:
- 1573 PDF objects out of 1728 (max. 8388607)
- 1413 compressed objects within 15 object streams
- 517 named destinations out of 1000 (max. 500000)
- 583 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1642 PDF objects out of 1728 (max. 8388607)
+ 1470 compressed objects within 15 object streams
+ 539 named destinations out of 1000 (max. 500000)
+ 611 words of extra memory for PDF output out of 10000 (max. 10000000)
 

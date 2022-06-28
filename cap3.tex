@@ -755,7 +755,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:150}
 \end{figure}
 
-\paragraph{} (Falar que essa medida aumenta o uso de capital mal alocado, mas aumenta ainda mais o bem alocado, por isso tem um limite)
+\paragraph{} (Falar que essa medida aumenta o uso de capital bem alocado, mas também o mal alocado, por isso tem um limite)
 
 \paragraph{} (Mostrar que RCC dinâmico não tem problema com otimizações anteriores)
 
@@ -774,13 +774,25 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \section{Criação de Modelos}
 
 \subsection{Resumo}
-\paragraph{}
+
+\paragraph{} Os modelos gerados são \textit{Random Forests}, uma derivação das \textit{Decision Trees}, conforme explicado na Seção \ref{sub:alg_apren_sup}. Para cada ação, um modelo é gerado para cada intervalo de 3 meses de simulação a partir dos \textit{datasets} previamente criados. Um critério particular de performance dos modelos foi criado para auxiliar na escolha do melhor, que é filtrado tanto por uma varredura de parâmetros variados quanto por uma análise estatística das sementes aleatórias utilizadas.
 
 \subsection{\textit{Baseline}}
 \label{sub:baseline}
-\paragraph{}
 
-\subsection{\textit{Walk Forward Optimization}}
+\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média da performance das ações da carteira, ou seja, supondo-se que o capital inicial fosse igualmente distribuido em cada ação disponível, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
+
+\paragraph{} A Figura \ref{fig:160} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (ver Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se que a performance do \textit{baseline} é significativamente maior que o iBovespa, o que é razoável já que o iBovespa é uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.50]{baseline_raw.png}
+    \centering
+    \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}
+    \label{fig:160}
+\end{figure}
+
+\subsection{\textit{Walk-Forward Analysis}}
+
 \paragraph{}
 
 \subsection{\textit{Feature Selection}}
@@ -795,3 +807,5 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \section{Análise de Resultados}
 \paragraph{} EXCLUIR - Dashboard; Baseline
+
+\paragraph{}

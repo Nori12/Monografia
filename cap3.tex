@@ -809,14 +809,50 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média da performance das ações da carteira, ou seja, supondo-se que o capital inicial fosse igualmente distribuido em cada ação disponível, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
 
-\paragraph{} A Figura \ref{fig:160} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (ver Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se que a performance do \textit{baseline} é significativamente maior que o iBovespa, o que é razoável já que o iBovespa é uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência.
+\paragraph{} A Figura \ref{fig:170} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (ver Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se que a performance do \textit{baseline} é significativamente maior que o iBovespa, o que é razoável já que o iBovespa é uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência.
 
 \begin{figure}[h]
     \includegraphics[scale=0.50]{baseline_raw.png}
     \centering
     \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}
-    \label{fig:160}
+    \label{fig:170}
 \end{figure}
 
 \subsection{\textit{Dashboard}}
-\paragraph{}
+
+\paragraph{} Um \textit{Dashboard} interativo é gerado por aplicação secundária a fim de auxiliar a análise dos resultados obtidos em cada simulação. O \textit{framework} \textit{Dash} \cite{dash} foi utilizado para criar uma interface web resumindo todas as informações pertinentes a uma simulação executada. As Figuras \ref{fig:171}, \ref{fig:172}, \ref{fig:173}, \ref{fig:174} e \ref{fig:175} mostram em partes suas seções para uma simulação genérica.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.33]{dash_1.png}
+    \centering
+    \caption{Dashboard - Performance}
+    \label{fig:171}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.33]{dash_2.png}
+    \centering
+    \caption{Dashboard - Parâmetros de entrada}
+    \label{fig:172}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.33]{dash_3.png}
+    \centering
+    \caption{Dashboard - Resultados e Estatísticas}
+    \label{fig:173}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.33]{dash_4.png}
+    \centering
+    \caption{Dashboard - Gráfico de uso de capital}
+    \label{fig:174}
+\end{figure}
+
+\begin{figure}[h]
+    \includegraphics[scale=0.33]{dash_5.png}
+    \centering
+    \caption{Dashboard - Gráficos de análise individual de ações }
+    \label{fig:175}
+\end{figure}

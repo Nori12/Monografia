@@ -10,45 +10,45 @@ A level-1 auxiliary file: cap4.aux
 The style file: coppe.bst
 Database file #1: biblio.bib
 Warning--empty journal in spearman1961proof
-You've used 70 entries,
+You've used 71 entries,
             2465 wiz_defined-function locations,
-            919 strings with 14662 characters,
-and the built_in function-call counts, 15097 in all, are:
-= -- 1660
-> -- 396
+            923 strings with 14700 characters,
+and the built_in function-call counts, 15227 in all, are:
+= -- 1671
+> -- 400
 < -- 27
-+ -- 169
-- -- 99
-* -- 941
-:= -- 2337
-add.period$ -- 85
-call.type$ -- 70
-change.case$ -- 74
++ -- 171
+- -- 100
+* -- 946
+:= -- 2357
+add.period$ -- 86
+call.type$ -- 71
+change.case$ -- 75
 chr.to.int$ -- 0
-cite$ -- 71
-duplicate$ -- 774
-empty$ -- 1754
-format.name$ -- 99
-if$ -- 3728
+cite$ -- 72
+duplicate$ -- 781
+empty$ -- 1772
+format.name$ -- 100
+if$ -- 3759
 int.to.chr$ -- 0
-int.to.str$ -- 70
+int.to.str$ -- 71
 missing$ -- 55
-newline$ -- 214
-num.names$ -- 70
-pop$ -- 326
+newline$ -- 217
+num.names$ -- 71
+pop$ -- 332
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 320
+skip$ -- 323
 stack$ -- 0
 substring$ -- 597
-swap$ -- 225
+swap$ -- 226
 text.length$ -- 27
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 122
-width$ -- 72
-write$ -- 713
+while$ -- 123
+width$ -- 73
+write$ -- 722
 (There was 1 warning)

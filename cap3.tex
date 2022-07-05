@@ -570,10 +570,9 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \color{red} HERALDO: É uma extensão que criei derivada da Venda Parcial para tentar granularizar um pouco mais o critério anterior e verificar se o problema da ineficácia estava na escolha do limiar de venda. Igualmente não traz melhora alguma. A ideia é: cada vez que o preço de marcado toca o limiar de uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra, o stop loss sobre igualmente 1 un de risco. Exemplo: se o preço de compra é Pcom e o Stop Loss é Pcom - X, quando o preço de mercado atingir Pcom + X, o Stop Loss sobe para Pcom. Quando subir de novo para Pcom + 2X, o Stop sobe para Pcom + X. O alvo continua sendo Pcom + 3X como sempre. \colorend
 
     \item Dias Mínimos de Espera após Operação de Falha (min\_days\_after\_failure\_operation)
+
     \item Dias Mínimos de Espera após Operação de Sucesso (min\_days\_after\_successful\_operation)
     \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, eles estão sempre aqui como opções, mas são são consistentes. \colorend
-
-
 \end{itemize}
 
 
@@ -766,25 +765,50 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 % \paragraph{} O primeiro e mais simples motivo é porque nem sempre todos os ativos estão em uma tendência de alta aos olhos do que qualquer estratégia possa identificar, pois nenhum algoritmo é perfeito. Assim, independentemente da realidade, existirão momentos nos quais nenhum ativo da carteira se mostra vantajoso o suficiente para existir alguma operação.
 
 
-% \begin{math} R_b \end{math}
-% \color{red} HERALDO: \colorend
-
-
 
 \section{Criação de Modelos}
 
 \subsection{Resumo}
 
-\paragraph{} A partir de \textit{datasets} previamente populados, modelos do tipo \textit{Random Forests} são gerados para cada ação e para cada intervalo de 3 meses de simulação. Um critério particular de performance foi criado para auxiliar na escolha do melhor modelo, que é filtrado tanto por uma varredura de parâmetros variados quanto por uma análise estatística das sementes aleatórias utilizadas.
+\paragraph{} A partir de \textit{datasets} previamente populados, modelos do tipo \textit{Random Forest} são gerados para cada ação e para cada intervalo de 3 meses de simulação. Um critério particular de performance foi criado para auxiliar na escolha do melhor modelo, que é filtrado tanto por uma varredura de parâmetros variados quanto por uma análise estatística das sementes aleatórias utilizadas.
 
 
-\subsection{Geração de \textit{Datasets}}
-\paragraph{}
+\subsection{Geração de \textit{Datasets} e \textit{Feature Selection}}
 
+\paragraph{} Os \textit{datasets} são arquivos CSV criados para cada \textit{ticker} através de uma varredura da série histórica. Analisa-se dia após dia as \textit{features} acumuladas e o resultado de uma operação hipotética iniciada no dia corrente. A Tabela \ref{tab:7} mostra a lista de colunas presentes no arquivo, onde as linhas marcadas em negrito indicam o uso efetivo da coluna durante a criação dos modelos. A coluna Resultado da Operação não é utilizada na entrada dos dados, mas sim indica a saída observada para o treinamento supervisionado.
 
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|c|c }
+            Nome & Coluna & Tipo \\
+            \hline
+            \textit{Ticker} & ticker & \textit{string} \\
+            Início da Operação & day & \textit{datetime} \\
+            \textbf{Risco da Operação} & risk & \textit{float} \\
+            \textbf{Resultado da Operação} & success\_oper\_flag & \textit{boolean} \\
+            \textit{Flag} de Fim de Intervalo & end\_of\_interval\_flag & \textit{boolean} \\
+            \textbf{Derivada Preço Médio} & mid\_prices\_dot & \textit{float} \\
+            \textbf{\textit{Spearman} (5 dias)} & spearman\_corr\_5\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (10 dias)} & spearman\_corr\_10\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (15 dias)} & spearman\_corr\_15\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (20 dias)} & spearman\_corr\_20\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (25 dias)} & spearman\_corr\_25\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (30 dias)} & spearman\_corr\_30\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (35 dias)} & spearman\_corr\_35\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (40 dias)} & spearman\_corr\_40\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (50 dias)} & spearman\_corr\_50\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (60 dias)} & spearman\_corr\_60\_day & \textit{float}: Preço Médio, f(x)=x \\
+        \end{tabular}
+        \caption{Comparação de Resultados}
+        \label{tab:7}
+    \end{center}
+\end{table}
 
-\subsection{\textit{Feature Selection}}
-\paragraph{}
+\paragraph{} O termo preço médio se refere ao definido pela Equação \ref{eq:22}. Da mesma forma, a derivada do preço médio é indicada pela Equação \ref{eq:23}. As colunas de cujos nomes se iniciam com \textit{Spearman} são na verdade a correlação entre o vetor de preços médios dos últimos N dias acumulados e uma função puramente monotônica crescente \begin{math} f(x) = x \end{math}. Isso permite a extração de uma medida para intensidade de subida dos preços que independe da normalização pelo preço da ação. Como o que importa na correlação de Spearman são os postos, o valor númerico do vetor utilizado para representar a função \begin{math} f(x) = x \end{math} não tem relevância, desde que seja monotônico crescente.
+
+\paragraph{} O \textit{flag} de fim de intervalo indica que, pelo fato do \textit{dataset} ter chegado ao final, não é possível dizer se a operação foi de sucesso ou de falha, portanto a mesma é desconsiderada do treinamento.
+
+\paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Por isso foram utilizadas 56 opções de risco: de 1\% a 12\% em passos de 0,2\%.
 
 
 
@@ -794,10 +818,38 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \subsection{Critérios de Escolha}
-\paragraph{}
+
+\paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit} com a configuração indicada pela Tabela \ref{tab:8}.
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|c }
+            Parâmetro & Valor \\
+            \hline
+            n\_estimators & 200 \\
+            criterion & gini \\
+            min\_samples\_split & 12 \\
+            min\_samples\_leaf & 6 \\
+            min\_weight\_fraction\_leaf & 0.0 \\
+            max\_leaf\_nodes & None \\
+            min\_impurity\_decrease & 0.0 \\
+            bootstrap & True \\
+            oob\_score & False \\
+            warm\_start & False \\
+            class\_weight & balanced\_subsample \\
+            ccp\_alpha & 0.0 \\
+            max\_samples & None \\
+        \end{tabular}
+        \caption{Comparação de Resultados}
+        \label{tab:8}
+    \end{center}
+\end{table}
+
+% \paragraph{} \color{red} PEDRO: Verificar classweight. \colorend
 
 
-
+% \begin{math} R_b \end{math}
+% \color{red} HERALDO: \colorend
 
 
 
@@ -820,7 +872,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \subsection{\textit{Dashboard}}
 
-\paragraph{} Um \textit{Dashboard} interativo é gerado por aplicação secundária a fim de auxiliar a análise dos resultados obtidos em cada simulação. O \textit{framework} \textit{Dash} \cite{dash} foi utilizado para criar uma interface web resumindo todas as informações pertinentes a uma simulação executada. As Figuras \ref{fig:171}, \ref{fig:172}, \ref{fig:173}, \ref{fig:174} e \ref{fig:175} mostram em partes suas seções para uma simulação genérica.
+\paragraph{} Um \textit{Dashboard} interativo é gerado por aplicação secundária a fim de auxiliar a análise dos resultados obtidos em cada simulação. O \textit{framework} \textit{Dash} \cite{dash} foi utilizado para criar uma interface web resumindo todas as informações pertinentes a uma simulação executada. As Figuras \ref{fig:171}, \ref{fig:172}, \ref{fig:173}, \ref{fig:174} e \ref{fig:175} mostram em partes as seções de uma simulação genérica.
 
 \begin{figure}[h]
     \includegraphics[scale=0.33]{dash_1.png}

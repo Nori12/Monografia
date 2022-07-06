@@ -410,6 +410,7 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 OUTPUT /Users/atcha/Github/Monografia/cap2.aux
 INPUT /Users/atcha/Github/Monografia/cap2.tex
 INPUT /Users/atcha/Github/Monografia/cap2.tex
@@ -442,7 +443,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /Users/atcha/Github/Monografia/./figuras/knn_example.png
 INPUT /Users/atcha/Github/Monografia/./figuras/knn_example.png
 INPUT /Users/atcha/Github/Monografia/./figuras/knn_example.png
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT /Users/atcha/Github/Monografia/./figuras/decision_tree.png

@@ -1,4 +1,4 @@
-Overview
+To Do List
 
 Preâmbulo
     Dedicatória                                             Após revisão do Heraldo
@@ -16,9 +16,9 @@ Introdução
     Descrição                                               OK
 
 Fundamentação Teórica
-    Mercado de Capital, Bolsa de Valores e Ações
-        Hipótese do Mercado Eficiente
-        Índice de Bolsa de Valores
+    Mercado de Capital, Bolsa de Valores e Ações            OK
+        Hipótese do Mercado Eficiente                       OK
+        Índice de Bolsa de Valores                          OK
         Mercado Fracionário
     Tipos de Análises
         Análise Fundamentalista
@@ -76,6 +76,7 @@ Bibliografia
 
 Observações:
 (1) Mencionei o uso de Docker em Resumo->Metodologia;
+(2) Não revisei as referências bibliográficas ao longo do texto;
 
 Dúvidas:
 (1) "i.e." e "e.g." devem ficar em itálico?

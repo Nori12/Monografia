@@ -42,14 +42,21 @@
 
 \section{Metodologia}
 
-\paragraph{} O trabalho teve início na criação de um ambiente propício à simulação de estratégias, bem como sua configuração e manutenção. Consequentemente, a fim de: otimizar o tráfego de dados pela internet; minimizar o processamento necessário para a geração de dados derivados (pré-processamento); e armazenar os resultados das estratégias de forma organizada, foi utilizado um banco de dados PostgreSQL. Dentre as atividades realizadas durante o pré-processamento dos dados, anteriores à simulação, é possível citar a geração de candles semanais a partir de candles diários, a identificação de picos, os momentos de tendência de alta do mercado e as médias móveis exponenciais dos preços de fechamento.
+\paragraph{} O trabalho tem início na criação de um ambiente propício à simulação de estratégias, bem como sua configuração e manutenção. Para isso, a fim de: otimizar o tráfego de dados pela internet; minimizar o processamento necessário para a geração de dados derivados (pré-processamento); e armazenar os resultados das estratégias de forma organizada, foi utilizado um banco de dados PostgreSQL. Dentre as atividades realizadas durante o pré-processamento dos dados, anteriores à simulação, é possível citar a identificação de momentos de tendência de baixa e crises do mercado, a identificação de picos na série histórica e os valores de risco mínimo e máximo a serem utilizados nas operações.
 
-\paragraph{} Em seguida, a etapa de simulação começa na leitura de um arquivo JSON contendo todos parâmetros necessários para a execução das estratégias. Nesta etapa, o programa itera dia após dia para cada estratégia configurada verificando os momentos e os valores de compra e de venda para cada ativo que compõe as carteiras. Ao final, registram-se no banco todas as operações executadas, independente da obtenção de lucro, junto com as informações estatísticas necessárias para a avaliação da performance. Aqui são criadas e executadas: a estratégia base, que é uma adaptação do André Moraes; a estratégia aprimorada, que utiliza aprendizado de máquina; e a estratégia de baseline, respectivamente.
+\paragraph{} Em seguida, a etapa de simulação começa na leitura de um arquivo JSON contendo todos parâmetros necessários para a execução das estratégias. Nesta etapa, o programa itera dia após dia para cada estratégia configurada verificando os momentos e os valores de compra e de venda para cada ativo que compõe as carteiras. Ao final, registram-se no banco todas as operações executadas, independente da obtenção de lucro, junto com as informações estatísticas necessárias para a avaliação da performance.
 
-\paragraph{} Por fim, com o objetivo de facilitar a análise dos resultados gerados, criou-se um dashboard resposável por centralizar todas as informações pertinentes a uma execução de estratégia em uma única página web.
+\paragraph{} Por fim, com o objetivo de facilitar a análise dos resultados gerados, criou-se um \textit{dashboard} resposável por centralizar todas as informações pertinentes a uma execução de estratégia em uma única página web.
 
-\paragraph{} Observa-se que além do uso de estruturas do banco de dados PostgreSQL, como triggers e functions, o código foi construído em Python devido à ampla variedade de bibliotecas, especialmente de Data Sciente, e ao suporte da comunidade, apesar da desvantagem de desempenho por ser uma linguagem interpretada. Bastante foco foi dado à escalabilidade e à manutenção do código, que contou com as bibliotecas e as APIs yfinance, pandas, numpy, scikit-learn, multiprocessing, matplotlib e dash. Também utilizou-se containers Docker para simplificar a execução.
+\paragraph{} Observa-se que além do uso de estruturas do banco de dados PostgreSQL, como \textit{triggers} e \textit{functions}, o código foi construído em Python devido à ampla variedade de bibliotecas e ao suporte da comunidade, apesar da desvantagem de desempenho por ser uma linguagem interpretada. Bastante foco foi dado à escalabilidade e à manutenção do código, que contou com as bibliotecas e as APIs \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Também utilizou-se \textit{containers} Docker para simplificar a execução.
+
+
+
 
 \section{Descrição}
 
-\paragraph{} No capítulo 2 é desenvolvida a fundamentação teórica acerca de temas relevantes ao entendimento básico do Mercado Financeiro e de Aprendizado de Máquina. Bem como uma revisão dos Trabalhos Relacionados ao tema.
+\paragraph{} No capítulo 2 é desenvolvida a fundamentação teórica acerca de temas relevantes ao entendimento geral de mercado financeiro e de aprendizado de máquina. Também é realizada uma revisão dos trabalhos relacionados ao tema, em outras palavras, a revisão bibliográfica.
+
+\paragraph{} No capítulo 3, toda a metodologia é descrita, o que envolve o pré-processamento dos dados as simulações e a criação dos modelos de ML.
+
+\paragraph{} Por fim, o capítulo 4 encerra com a conclusão e uma recomendação de trabalhos futuros.

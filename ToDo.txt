@@ -12,8 +12,8 @@ Introdução
     Delimitação                                             OK
     Justificativa                                           OK
     Objetivos                                               OK
-    Metodologia
-    Descrição
+    Metodologia                                             OK
+    Descrição                                               OK
 
 Fundamentação Teórica
     Mercado de Capital, Bolsa de Valores e Ações
@@ -73,6 +73,9 @@ Conclusão
 
 Bibliografia
 
+
+Observações:
+(1) Mencionei o uso de Docker em Resumo->Metodologia;
 
 Dúvidas:
 (1) "i.e." e "e.g." devem ficar em itálico?

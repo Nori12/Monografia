@@ -7,7 +7,7 @@ Preâmbulo
     Abstract                                                Após revisão do Heraldo
     Siglas                                                  Diminuir espaçamento
 
-Introdução
+Introdução                                                  --
     Tema                                                    OK
     Delimitação                                             OK
     Justificativa                                           OK
@@ -39,10 +39,10 @@ Fundamentação Teórica                                       --
         Modelos Baseados em Aprendizado de Máquina          OK
 
 Metodologia
-    Resumo
-    Pré-Processamento
-        Arquivo de Configuração
-        Coleta de Dados
+    Resumo                                                  OK
+    Pré-Processamento                                       --
+        Arquivo de Configuração                             OK
+        Coleta de Dados                                     OK
         Armazenamento de Dados
         Geração de Features de Uso Geral
     Simulação de Estratégia
@@ -76,9 +76,11 @@ Bibliografia
 
 Observações:
 (1) Mencionei o uso de Docker em Resumo->Metodologia;
-(2) Removi referências sobre média móvel exponencial;
+(2) Removi referências sobre média móvel exponencial, candles semanais;
 (3) O valor de 0.6687 em Fundamentação Teórica->
     Considerações para Análise de Resultados->Correlação de Spearman está correto?
+(4) A forma como citei yfinance em Metodologia->Pré-Processamento->Coleta de Dados
+    está de acordo?
 (4) Não revisei as referências bibliográficas ao longo do texto;
 
 Dúvidas:

@@ -1,7 +1,7 @@
 \babel@toc {brazil}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Leitura de um gráfico de \textit {candlestick} \cite {candlestick}}}{11}{figure.2.1}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Leitura de um gráfico de \textit {candlestick} \cite {candlestick}}}{10}{figure.2.1}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Comportamento do mercado ideal segundo a Teoria de Dow \cite {kirkpatrick2010technical}}}{11}{figure.2.2}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Formação de linhas de Suporte e de Resistência \cite {moraes2007se}}}{12}{figure.2.3}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Formação de uma Linha de Tendência de Alta \cite {moraes2007se}}}{12}{figure.2.4}%
@@ -27,10 +27,10 @@
 \contentsline {figure}{\numberline {3.13}{\ignorespaces MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{46}{figure.3.13}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{47}{figure.3.14}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Simulação sem uso da Normalização por Frequência de Operações}}{55}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{56}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{58}{figure.3.17}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{55}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{57}{figure.3.17}%
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade}}{58}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}}{59}{figure.3.19}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}}{58}{figure.3.19}%
 \contentsline {figure}{\numberline {3.20}{\ignorespaces Ganho de performance pelo uso do RCC Dinâmico}}{60}{figure.3.20}%
 \contentsline {figure}{\numberline {3.21}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}}{63}{figure.3.21}%
 \contentsline {figure}{\numberline {3.22}{\ignorespaces Dashboard - Performance}}{64}{figure.3.22}%

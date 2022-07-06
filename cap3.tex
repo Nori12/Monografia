@@ -1,9 +1,11 @@
 \chapter{Metodologia}
 \label{cap3}
 
+
+
 \section{Resumo}
 
-\paragraph{} As seções a seguir trazem detalhes quanto a estrutura técnica do projeto. Portanto, a Figura \ref{fig:100} apresenta uma noção geral de como as estrutras se conectam.
+\paragraph{} As seções a seguir trazem detalhes quanto a estrutura técnica do projeto. A Figura \ref{fig:100} apresenta um diagrama geral de como essas estrutras se conectam.
 
 \begin{figure}[h]
     \includegraphics[scale=0.52]{resumo_projeto.png}
@@ -12,15 +14,17 @@
     \label{fig:100}
 \end{figure}
 
-\paragraph{} Primeiro, antes da execução do código principal, é necessário garantir que os modelos estão devidamente localizados em pasta apropriada. Para isso, faz-se imprescindível a criação dos \textit{datasets} para cada ação a ser simulada, pois servem de entrada de dados para a criação e seleção dos modelos, etapa esta que deve ser executada logo em sequência. A biblioteca \textit{multiprocessing} foi utilizada para minimizar o tempo total gasto nestas etapas.
+\paragraph{} Antes da execução do código principal, é necessário garantir que os modelos estão devidamente criados e acessíveis. Para isso, é importante a elaboração dos \textit{datasets} de cada ação a ser simulada, pois servem de entrada de dados para a criação e seleção dos modelos. A biblioteca \textit{multiprocessing} foi utilizada para minimizar o tempo total gasto nestas etapas.
 
-\paragraph{} Após a criação dos modelos, tem-se início a etapa de pré-processamento de dados, onde ocorre a leitura e interpretação do arquivo de configuração para se obter o número de estratégias a executar, quais os ativos envolvidos e seus recpectivos intervalos de tempo. Uma vez verificado no banco os dados já existentes, faz-se um \textit{download} apenas dos dados necessários. Se houver alguma atualização de dados, as \textit{features} de uso geral são recalculadas e armazenadas no banco a fim de servir de insumo para as estratégias que estarão por vir.
+\paragraph{} Após a criação dos modelos, tem-se início a etapa de pré-processamento de dados, onde ocorre a leitura e interpretação do arquivo de configuração para se obter o número de estratégias a executar, além dos ativos envolvidos e seus respectivos intervalos de tempo. Uma vez verificado no banco os dados já existentes, faz-se um \textit{download} apenas dos dados necessários. Se houver alguma atualização, as \textit{features} de uso geral são recalculadas e armazenadas no banco a fim de servir de insumo para as estratégias que estarão por vir.
 
 \paragraph{} Completada a etapa de pré-processamento, inicia-se a simulação das estratégias. O arquivo de configuração foi projetado para ser capaz de designar diversas estratégias de parâmetros distintos a uma mesma ordem de execução de programa. Também fez-se uso da biblioteca \textit{multiprocessing} para paralelizar as simulações, cujos resultados e estatísticas são salvas no banco para posterior análise.
 
 \paragraph{} Por fim, é possível visualizar os resultados de forma clara através de uma aplicação secundária responsável por criar um \textit{dashboard} interativo.
 
-\paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{dash} e \textit{multiprocessing}. Foi estruturado um banco de dados \textit{PostgreSQL} para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
+\paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Foi estruturado um banco de dados PostgreSQL para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
+
+
 
 \section{Pré-Processamento}
 
@@ -36,7 +40,7 @@
     \label{fig:101}
 \end{figure}
 
-\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, ou variáveis de escopo global, de cujos valores precedem quaisquer outros listados a seguir, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Após a seleção do nome, são configurados os parâmetros internos da estratégia. A Tabela \ref{tab:3} da Seção \ref{sub:params_list} descreve todos os parâmetros disponíveis.
+\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, ou variáveis de escopo global, de cujos valores precedem quaisquer outros listados a seguir, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Ressalta-se que este trabalho compreende apenas uma estratégia. Após a seleção do nome, são configurados os parâmetros internos da estratégia. A Tabela \ref{tab:3} da Seção \ref{sub:params_list} descreve todos os parâmetros disponíveis.
 
 \paragraph{} Para se criar mais de um perfil de simulação, é necessário modificar o Arquivo conforme a Figura \ref{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais. No caso da Figura \ref{fig:102}, a primeira simulação utilizará os valores (100, 0.01) para o par (variável\_local\_1, variável\_local\_2), a segunda utilizará (200, 0.02) e assim sucessivamente.
 
@@ -54,19 +58,20 @@
 
 \paragraph{} A Coleta de Dados ocorre através da biblioteca \textit{open-source} \textit{yfinance} \cite{yfinance}, uma ferramenta não oficial que transmite dados públicos da plataforma \textit{Yahoo! Finance} \cite{yahoo_finance}, um subsistema da rede \textit{Yahoo!}.
 
-\paragraph{} A escolha desta biblioteca como fonte primária de dados se deve principalmente pela ausência de custos associada à facilidade de uso. Contudo, alguns testes e verificações com outras fontes de dados evidenciaram destantagens significativas, porém não impeditivas para seu uso. São elas:
+\paragraph{} A escolha desta biblioteca como fonte primária de dados se deve principalmente pela facilidade de uso associada à ausência de custos. Contudo, alguns testes e verificações com outras fontes de dados evidenciaram destantagens relevantes, porém não impeditivas para uso. São elas:
 
 \begin{itemize}
-    \item Os valores de proventos (i.e., dividendos e juros sobre capital próprio) que a biblioteca disponibiliza não são consistentes para a B3, portanto não são utilizados por este projeto. Testes internos confirmaram a presença de diversos proventos corretamente apresentados e ajustados pelos respectivos desdobramentos acumulados, porém somados a alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar seu uso em escala (i.e., para vários ativos sem verificação individual). \color{red} HERALDO: Devo mostrar evidências do teste que corrobora esta afirmação? \colorend
+    \item Os valores de proventos que a biblioteca disponibiliza não são consistentes com as declarações dos sites das próprias companhias, portanto não podem ser utilizados por este projeto. Testes internos confirmaram a presença de diversos proventos corretamente apresentados e ajustados pelos respectivos desdobramentos acumulados. O problema é que os mesmos estavam misturados com alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar o uso em escala (i.e., para vários ativos sem verificação individual). \color{red} HERALDO: Devo mostrar evidências do teste que corrobora esta afirmação? \colorend
 
     \item Os volumes de negociação disponibilizados não necessariamente coincidem com a plataforma TradingView em valores absolutos, porém coincidem em valores relativos (i.e., variação de volume dia após dia para um mesmo ativo), o que é suficiente para este trabalho. \color{red} HERALDO: (1) Na verdade, encontrei algumas evidências de que os valores relativos conferem, mas nenhum evidência de que não conferem. (2) Será que posso citar a plataforma TradingView? Ou melhor, devo tomar algum cuidado? \colorend
 
     \item \textit{Candlesticks} de janelas temporais inferiores à diária (\textit{intraday}) são disponibilizados, porém as limitações envolvidas inviabilizam seu uso, como: o limite de 730 dias para a busca dos dados; a inconsistência com os dados diários quanto ao volume; e a alguns \textit{bugs} como a ausência de \textit{candlesticks} em todo dia de parcial do pregão da B3 (Quarta-feira de Cinzas).
 \end{itemize}
 
-\paragraph{} Os dados obtidos são \textit{candlesticks} diários (OHLCV). Com a mesma facilidade, é possível adquirir janelas de tempo semanais, no entanto para evitar potenciais problemas de consistência de dados, as mesmas são calculadas internamente a partir da janela diária via comandos SQL\footnote{\textit{Structured Query Language}: Linguagem usada para administrar bancos de dados relacionais.}.
+% Aqui fala da criação de candles semanais
+% \paragraph{} Os dados obtidos são \textit{candlesticks} diários (OHLCV). Com a mesma facilidade, é possível adquirir janelas de tempo semanais, no entanto para evitar potenciais problemas de consistência de dados, as mesmas são calculadas internamente a partir da janela diária via comandos SQL\footnote{\textit{Structured Query Language}: Linguagem usada para administrar bancos de dados relacionais.}.
 
-\paragraph{} Apenas os dados não existentes no banco são baixados via \textit{yfinance}. Para isso, um \textit{trigger}\footnote{Procedimento armazenado em um banco de dados que é chamado automaticamente sempre que ocorre um evento.} é acoplado às tabelas de \textit{candlesticks} e acionado sempre que operações de \textit{insert}, \textit{update}, \textit{delete} e \textit{truncate} são realizadas. Quando ativado, chama uma função responsável por atualizar a tabela de \textit{status}, que registra o intervalo de tempo representado nas tabelas de \textit{candlesticks} para cada \textit{ticker} envolvidos. Deve-se ressaltar que os devidos cuidados foram tomados para evitar buracos entre intervalos de tempo não adjacentes. Portanto, apenas uma consulta à tabela de \textit{status} é executada para se verificar a necessidade de \textit{download} de novos dados.
+\paragraph{} Apenas os dados não existentes no banco são baixados via \textit{yfinance}. Para isso, um \textit{trigger}\footnote{Procedimento armazenado em um banco de dados que é chamado automaticamente sempre que ocorre um evento.} é acoplado às tabelas de \textit{candlesticks} e acionado sempre que operações de \textit{insert}, \textit{update}, \textit{delete} e \textit{truncate} são realizadas. Quando ativado, ele chama uma função responsável por atualizar a tabela de \textit{status}, que registra o intervalo de tempo representado nas tabelas de \textit{candlesticks} para cada \textit{ticker} envolvido. Deve-se ressaltar que os devidos cuidados foram tomados para evitar buracos entre intervalos de tempo não adjacentes. Portanto, apenas uma consulta à tabela de \textit{status} é executada para se verificar a necessidade de \textit{download} de novos dados.
 
 
 

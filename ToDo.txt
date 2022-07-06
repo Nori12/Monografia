@@ -15,28 +15,28 @@ Introdução
     Metodologia                                             OK
     Descrição                                               OK
 
-Fundamentação Teórica
+Fundamentação Teórica                                       --
     Mercado de Capital, Bolsa de Valores e Ações            OK
         Hipótese do Mercado Eficiente                       OK
         Índice de Bolsa de Valores                          OK
-        Mercado Fracionário
-    Tipos de Análises
-        Análise Fundamentalista
-        Análise Técnica
-    Aprendizado de Máquina
-        Aprendizado Supervisionado
-        Problema de Regressão
-        Problema de Classificação
-        Algoritmos de Aprendizado de Máquina
-    Walk-Forward Analysis
-    Considerações para Análise de Resultados
-        Índice de Sharpe
-        Índice de Sortino
-        Correlação de Spearman
-    Trabalhos Relacionados
-        Modelos Baseados em Indicadores Técnicos
-        Modelos Baseados em Processos Estocásticos
-        Modelos Baseados em Aprendizado de Máquina
+        Mercado Fracionário                                 OK
+    Tipos de Análises                                       --
+        Análise Fundamentalista                             OK
+        Análise Técnica                                     OK
+    Aprendizado de Máquina                                  OK
+        Aprendizado Supervisionado                          OK
+        Problema de Regressão                               OK
+        Problema de Classificação                           OK
+        Algoritmos de Aprendizado de Máquina                OK
+    Walk-Forward Analysis                                   OK
+    Considerações para Análise de Resultados                --
+        Índice de Sharpe                                    OK
+        Índice de Sortino                                   OK
+        Correlação de Spearman                              OK
+    Trabalhos Relacionados                                  OK
+        Modelos Baseados em Indicadores Técnicos            OK
+        Modelos Baseados em Processos Estocásticos          OK
+        Modelos Baseados em Aprendizado de Máquina          OK
 
 Metodologia
     Resumo
@@ -76,7 +76,16 @@ Bibliografia
 
 Observações:
 (1) Mencionei o uso de Docker em Resumo->Metodologia;
-(2) Não revisei as referências bibliográficas ao longo do texto;
+(2) Removi referências sobre média móvel exponencial;
+(3) O valor de 0.6687 em Fundamentação Teórica->
+    Considerações para Análise de Resultados->Correlação de Spearman está correto?
+(4) Não revisei as referências bibliográficas ao longo do texto;
 
 Dúvidas:
 (1) "i.e." e "e.g." devem ficar em itálico?
+
+Possíveis perguntas/respostas:
+
+(1) P: Se na fundamentação afirmo que os algoritmos que costumam trazer mais
+    resultados são ANN e lógica Fuzzy, porque utilizo uma Random Forest?
+    R: Pela simplicidade.

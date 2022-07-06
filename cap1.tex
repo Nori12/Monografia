@@ -1,34 +1,44 @@
 \chapter{Introdução}
 \label{cap1}
 
+
+
 \section{Tema}
 
-\paragraph{} O tema deste trabalho se resume no aperfeiçoamento de uma estratégia de swing trade na bolsa de valores através de métodos de aprendizado de máquina.
+\paragraph{} O tema deste trabalho se resume na elaboração de uma estratégia de \textit{swing trade} na bolsa de valores brasileira através de métodos de aprendizado de máquina.
 
 \paragraph{} Nesse contexto, o problema a ser abordado é a identificação do momento apropriado para compra de um determinado ativo, como também os preços alvos determinantes para venda, tendo em vista uma variação positiva de seu preço.
 
 
+
 \section{Delimitação}
 
-\paragraph{} Este trabalho se limita aos ativos negociados na Bolsa de Valores de São Paulo, a B3, cujos dados diários são de domínio público e foram adquiridos através da plataforma Yahoo Finance pela API open-source yfinance, disponível em Python. Não são levadas em consideração informações sobre proventos (dividendos e juros sobre capital próprio) devido à inconsistência dos mesmos na API supracitada e à dificuldade técnica para automatização da busca de tais dados.
+\paragraph{} Este trabalho se limita aos ativos negociados na Bolsa de Valores de São Paulo, a B3, de cujos dados diários de domínio público foram adquiridos através da plataforma \textit{Yahoo Finance} pela API \textit{open-source yfinance}, disponível em Python. Não são levadas em consideração informações sobre proventos (dividendos e juros sobre capital próprio) devido à inconsistência dos mesmos na API supracitada, aliada à dificuldade técnica para automatização da busca de tais dados.
 
-\paragraph{} A duração das operações tem em vista um horizonte mínimo de um dia, sendo portanto operações de swing trade. Não são realizas vendas a descoberto, portanto só há lucro em variações positivas dos ativos. Apenas uma operação por ativo pode existir em um determinado instante de tempo para uma estratégia. Em outras palavras, só é possível comprar mais ações de uma empresa após a venda completa das ações da mesma, caso existam.
+\paragraph{} A duração das operações tem em vista um horizonte mínimo de um dia, sendo portanto operações de \textit{swing trade}. Não são realizas vendas a descoberto\footnote{Venda a descoberto: aluguél de ações para primeiro efetuar uma operação de venda seguida de uma operação de compra, apostando na queda de preço do mercado.}, portanto só há lucro em variações positivas de preço dos ativos. Apenas uma operação por ativo pode existir em um determinado instante de tempo para uma estratégia. Em outras palavras, só é possível comprar mais ações de uma empresa após a venda completa das ações da mesma, caso existam.
 
-\paragraph{} A incidência de impostos devidos (e.g., imposto de renda) está fora do escopo, assim como a utilização de critérios baseados em análise fundamentalista, por causa da dificuldade de obtenção dessas informações de maneira automatizada e estruturada.
+\paragraph{} A incidência de impostos devidos (e.g., imposto de renda) está fora do escopo. Assim como a utilização de critérios baseados em análise fundamentalista, por causa da dificuldade de obtenção dessas informações de maneira automatizada e estruturada.
+
+
 
 \section{Justificativa}
 
 \paragraph{} O crescimento do número de investidores na bolsa de valores brasileira \cite{aumento_investidores} demonstra um maior interesse da população na busca por um complemento da renda familiar ou até na substituição da fonte de renda principal.
 
-\paragraph{} No cenário global, o aumento do uso de robôs de trading (ou algoritmos) tem se mostrando expressivo \cite{robos_investidores}, sejam por pessoas físicas ou fundos de investimento, de forma total ou parcial em suas estratégias. Por outro lado, tal crescimento não vem sendo igualmente representado no Brasil devido às pecualiaridades do mercado de capitais nacional, como a alta volatilidade e a alta sensibilidade a notícias \cite{robos_e_fundos}.
+\paragraph{} No cenário global, o aumento do uso de robôs de \textit{trading} (ou algoritmos) tem se mostrando expressivo \cite{robos_investidores}, seja por pessoas físicas ou fundos de investimento, de forma total ou parcial em suas estratégias. Por outro lado, tal crescimento não vem sendo igualmente representado no Brasil devido às pecualiaridades do mercado de capitais nacional, como a alta volatilidade e a alta sensibilidade a notícias \cite{robos_e_fundos}.
 
-\paragraph{} Paralelamente, estudos relacionados a aprendizado de máquina vem trazendo resultados práticos no dia-a-dia das pessoas, desde o clássico exemplo de reconhecimento de mensagens de spam em um caixa de email à identificação do perfil de consumo de clientes em uma loja. Da mesma forma, instituições financeiras e bancos centrais também estão, com cautela, incorporando aplicações de aprendizado de máquina em tarefas internas \cite{fernandez2019artificial}.
+\paragraph{} Paralelamente, estudos relacionados a aprendizado de máquina vem trazendo resultados práticos no dia-a-dia das pessoas, desde o clássico exemplo de reconhecimento de mensagens de \textit{spam} em um caixa de email à identificação do perfil de consumo de clientes em uma loja. Da mesma forma, instituições financeiras e bancos centrais também estão, com cautela, incorporando aplicações de aprendizado de máquina em tarefas internas \cite{fernandez2019artificial}.
 
-\paragraph{} Apesar das dificuldades inerentes ao cenário atual do mercado de capitais brasileiro, não se pode ignorar o potencial que os algortimos podem trazer. Desta forma, o presente trabalho visa a união de técnicas de aprendizado de máquina a estratégias de trading de forma a trazer uma melhor performance, colaborando assim para uma maior variedade de opções de investimentos à população brasileira.
+\paragraph{} Apesar das dificuldades inerentes ao cenário atual do mercado de capitais brasileiro, não se pode ignorar o potencial que os algortimos podem trazer. Desta forma, o presente trabalho visa a união de técnicas de aprendizado de máquina a práticas de \textit{trading}, consolidando uma estratégia que sirva de suporte a uma maior variedade de opções de investimento à população brasileira.
+
+
 
 \section{Objetivos}
 
-\paragraph{} O objetivo geral deste trabalho é implementar um software capaz de simular uma estratégia de swing trade e gerar uma nova estratégia baseada na anterior utilizando aprendizado de máquina a fim de melhorar sua performance. Especificamente, o software deve: (1) Criar um ambiente automatizado que permita buscar, atualizar e armazenar dados diários da bolsa brasileira de forma simples e conforme necessidade do usuário da aplicação; (2) Simular a estratégia de swing trade do trader André Moraes da forma mais fidedigna que a janela de dados diária permita; (3) Criar e simular um novo algoritmo baseado na estratégia anterior utilizando aprendizado de máquina; (4) Criar e simular uma estratégia de baseline, referente à estratégia de aprendizado de máquina; (5) Analisar os modelos gerados.
+\paragraph{} O objetivo geral deste trabalho é implementar um \textit{software} capaz de simular uma estratégia de \textit{swing trade} utilizando aprendizado de máquina. Especificamente, o software deve: (1) Criar um ambiente automatizado que permita buscar, atualizar e armazenar dados diários da bolsa brasileira de forma simples e conforme necessidade do usuário da aplicação; (2) Criar a estrutura de uma estratégia por meio de um conjunto de regras e premissas baseadas em práticas de \textit{trading}; (3) Gerar os modelos de aprendizado de máquina e acoplá-los à estrutura criada; (4) Simular a estratégia obtida; (5) Criar um mecanismo de fácil visualização dos resultados das simulações; (6) Analisar os resultados gerados.
+
+
+
 
 \section{Metodologia}
 

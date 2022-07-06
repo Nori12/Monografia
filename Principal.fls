@@ -402,11 +402,6 @@ INPUT /Users/atcha/Github/Monografia/cap1.tex
 INPUT /Users/atcha/Github/Monografia/cap1.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-OUTPUT /Users/atcha/Github/Monografia/cap2.aux
-INPUT /Users/atcha/Github/Monografia/cap2.tex
-INPUT /Users/atcha/Github/Monografia/cap2.tex
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
@@ -415,6 +410,11 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+OUTPUT /Users/atcha/Github/Monografia/cap2.aux
+INPUT /Users/atcha/Github/Monografia/cap2.tex
+INPUT /Users/atcha/Github/Monografia/cap2.tex
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /Users/atcha/Github/Monografia/./figuras/candlestick.png
 INPUT /Users/atcha/Github/Monografia/./figuras/candlestick.png
 INPUT /Users/atcha/Github/Monografia/./figuras/candlestick.png

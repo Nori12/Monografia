@@ -1,0 +1,78 @@
+Overview
+
+Preâmbulo
+    Dedicatória                                             Após revisão do Heraldo
+    Agradecimento                                           Após revisão do Heraldo
+    Resumo                                                  OK
+    Abstract                                                Após revisão do Heraldo
+    Siglas                                                  Diminuir espaçamento
+
+Introdução
+    Tema                                                    OK
+    Delimitação                                             OK
+    Justificativa                                           OK
+    Objetivos                                               OK
+    Metodologia
+    Descrição
+
+Fundamentação Teórica
+    Mercado de Capital, Bolsa de Valores e Ações
+        Hipótese do Mercado Eficiente
+        Índice de Bolsa de Valores
+        Mercado Fracionário
+    Tipos de Análises
+        Análise Fundamentalista
+        Análise Técnica
+    Aprendizado de Máquina
+        Aprendizado Supervisionado
+        Problema de Regressão
+        Problema de Classificação
+        Algoritmos de Aprendizado de Máquina
+    Walk-Forward Analysis
+    Considerações para Análise de Resultados
+        Índice de Sharpe
+        Índice de Sortino
+        Correlação de Spearman
+    Trabalhos Relacionados
+        Modelos Baseados em Indicadores Técnicos
+        Modelos Baseados em Processos Estocásticos
+        Modelos Baseados em Aprendizado de Máquina
+
+Metodologia
+    Resumo
+    Pré-Processamento
+        Arquivo de Configuração
+        Coleta de Dados
+        Armazenamento de Dados
+        Geração de Features de Uso Geral
+    Simulação de Estratégia
+        Estrutura
+        Premissas
+        Período Máximo de Dias por Operação
+        Gerenciamento de Risco
+        Risco de Entrada por Operação
+        Descanso por Tendência de Baixa
+        Descanso por Identificação de Crises
+        Lista de Parâmetros de Configuração
+        Ensaios Paralelos
+    Otimizações de Gerenciamento de Carteira
+        Resumo
+        Normalização por Frequência de Operações
+        Compensação por Lucratividade
+        Controle Proporcional para Uso de Capital (Risco Dinâmico)
+    Criação de Modelos
+        Resumo
+        Geração de Datasets e Feature Selection
+        Índice de Lucratividade
+        Critérios de Escolha
+    Análise de Resultados
+        Modelo Baseline
+        Dashboard
+
+Conclusão
+
+Bibliografia
+
+
+Dúvidas:
+(1) "i.e." e "e.g." devem ficar em itálico?

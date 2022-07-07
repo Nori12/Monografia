@@ -43,7 +43,7 @@ Metodologia
     Pré-Processamento                                       --
         Arquivo de Configuração                             OK
         Coleta de Dados                                     OK
-        Armazenamento de Dados
+    Armazenamento de Dados                                  OK
         Geração de Features de Uso Geral
     Simulação de Estratégia
         Estrutura
@@ -79,8 +79,8 @@ Observações:
 (2) Removi referências sobre média móvel exponencial, candles semanais;
 (3) O valor de 0.6687 em Fundamentação Teórica->
     Considerações para Análise de Resultados->Correlação de Spearman está correto?
-(4) A forma como citei yfinance em Metodologia->Pré-Processamento->Coleta de Dados
-    está de acordo?
+(4) A forma como citei yfinance em Coleta de Dados está de acordo?
+    Também citei yfinance em Armazenamento de Dados.
 (4) Não revisei as referências bibliográficas ao longo do texto;
 
 Dúvidas:

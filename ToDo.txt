@@ -43,8 +43,8 @@ Metodologia
     Pré-Processamento                                       --
         Arquivo de Configuração                             OK
         Coleta de Dados                                     OK
-    Armazenamento de Dados                                  OK
-        Geração de Features de Uso Geral
+        Armazenamento de Dados                              OK
+        Geração de Features de Uso Geral                    Analisando (Flag de Ident. de Tendência de Baixa)
     Simulação de Estratégia
         Estrutura
         Premissas

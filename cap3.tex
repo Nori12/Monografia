@@ -126,29 +126,46 @@
     \color{red} HERALDO: Não utilizado mais pois era feature do André Moraes. Em particular, essa não é trivial de se calcular e foi uma das quais distanciou a simulação feita da estratégia real do André. Os picos relevantes que retratam a memória do mercado muitas vezes estão relacionados a acontecimentos notáveis, como crises financeiras, acidentes industriais, relatórios jurícos, escândalos, aquisições novas, etc. O André pode não avaliar os acontecimentos menores na escolha do stop por ser grafista e não estar inteiramente ligado nas notícias, mas leva em consideração os mais marcantes. Como análise de notícias está completamente fora do escopo, obter o grau de importância de um pico com alguma precisão requer no mínimo olhar os dados intraday (seção de coleta de dados explica porque não usei) e avaliar o volume de negociações na regiões. Contudo, idealmente deve-se olhar o livro de ofertas para tirar métricas das forças de compra e de venda, talvez aliadas ao volume de negociação e assim obter um valor razoável. Quando implementei na tentativa de simular o André, usei simplemente o pico mais próximo abaixo do preço de compra, dado uma distância mínima de 1\%. Em resumo, acho que foi mais uma métrica que contribui para uma estratégia ruim, por isso o abandono. \colorend
 
     \item \textbf{\textit{Flag} de Identificação de Crises} \\ \\
-        \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença. Para isso, utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativar uma anomalia de volume e outra inércia de 8 dias úteis para persistência do \textit{flag}. As Equações \ref{eq:20} e \ref{eq:20} mostram o cálculo e a Figura \ref{fig:104} ilustra a eficácia do \textit{flag}.
+        \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença.
+
+        Para o cálcula das anomalias de volume (Equação \ref{eq:20}), utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativação do \textit{flag}.
+
+        Já o cálculo das anomalias de queda de preços (Equação \ref{eq:150}), utiliza-se a média dos preços médios \begin{math} \overline{P_{mid}} \end{math} e seu desvio padrão \begin{math} \sigma_{P_{mid}} \end{math}, ambos relativos aos últimos 20 dias úteis e combinados com o preço médio \begin{math} P_{mid} \end{math} do dia corrente.
 
         \begin{equation} \label{eq:20}
-            V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} \ge \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} \ge \overline{V} + \sigma_V \\ 0, & \mbox{caso contr\'ario} \end{cases}
+            V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} > \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} > \overline{V} + \sigma_V \\
+                0, & \mbox{caso contr\'ario} \end{cases}
         \end{equation}
+
+        \begin{equation} \label{eq:22}
+            P_{mid} = \dfrac{P_{open} + P_{close}}{2}
+        \end{equation}
+
+        \begin{equation} \label{eq:150}
+            P_{anomaly(i)} = \begin{cases} 1, & \mbox{se } P_{mid(i)} < \overline{P_{mid}} + \sigma_{P_{mid}} \quad \\
+                0, & \mbox{caso contr\'ario} \end{cases}
+        \end{equation}
+
+        O \textit{Flag} de Identificação de Crises (Equação \ref{eq:21}) é ativado quando ambas as anomalias de volume e de queda de preço estão ativadas. Caso essa condição não se mantenha mais a partir de um determinado instante, há uma inércia de 8 dias úteis para persistência do \textit{flag} de Crises.
 
         \begin{equation} \label{eq:21}
-            F_{crisis(i)} = \begin{cases} 1, & \mbox{se } V_{anomaly(i)} = 1 \\ 1, & \mbox{se } V_{anomaly(i)} = 0 \quad e \quad F_{crisis(i-1)} = 1 \quad \textrm{(At\'e 8 vezes consecutivas)} \\ 0, & \mbox{caso contr\'ario} \end{cases}
+            F_{crisis(i)} = \begin{cases} 1, & \mbox{se } V_{anomaly(i)} = 1 \quad \textrm{e} \quad P_{anomaly(i)} = 1 \\
+                1, & \mbox{se } (V_{anomaly(i)} = 0 \; \textrm{ou} \; P_{anomaly(i)} = 0) \; \textrm{e} \; F_{crisis(i-1)} = 1 \; (8 max) \\
+                0, & \mbox{caso contr\'ario} \end{cases}
         \end{equation}
 
+        A Figura \ref{fig:104} ilustra a eficácia do \textit{flag}. Observa-se que os três gráficos presentes na imagem se referem respectivamente ao cálculo das anomalias de queda de preços, ao cálculo das anomalias de volumes e por fim, ao cálculo do \textit{flag} de Identificação de Crises. Pode-se perceber que o mesmo foi corretamente ativado durante o início da crise do Coronavírus, pouco antes de 01/03/2020. Também houve ativação perto de 01/09/2020, embora sem um motivo claro aparente, os preços das ações durante o intervalo e logo após enfrentam uma pequena zona de consolidação, ou de desaceleração da tendência de alta que antes se apresentava. Nesta região, não se deseja entrar em operações até que uma nova tendência se forme.
+
         \begin{figure}[h]
-            \includegraphics[scale=0.70]{no_image.jpeg}
+            \includegraphics[scale=0.47]{crisis_flag.png}
             \centering
-            \caption{\textit{Flag} de Identificação de Crises para a ação XYZ no período de XX/YY/ZZZZ a XX/YY/ZZZZ}
+            \caption{\textit{Flag} de Identificação de Crises para o \textit{ticker} MGLU3 no período de 01/01/2020 a 31/12/2020}
             \label{fig:104}
         \end{figure}
 
+
     \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
     Semelhante ao \textit{Flag} de Identificação de Crises, este \textit{Flag} também tem o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. No entanto, o critério é diferente. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
-
-    \begin{equation} \label{eq:22}
-        P_{mid} = \dfrac{P_{open} + P_{close}}{2}
-    \end{equation}
 
     \begin{equation} \label{eq:23}
         \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
@@ -170,6 +187,7 @@
         \caption{\textit{Flag} de Identificação de Crises para a ação XYZ no período de XX/YY/ZZZZ a XX/YY/ZZZZ}
         \label{fig:109}
     \end{figure}
+
 
     \item \textbf{Risco Mínimo} \\ \\
     O Risco Mínimo serve de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). Sua fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.

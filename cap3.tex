@@ -150,14 +150,14 @@
 
         \begin{equation} \label{eq:21}
             F_{crisis(i)} = \begin{cases} 1, & \mbox{se } V_{anomaly(i)} = 1 \quad \textrm{e} \quad P_{anomaly(i)} = 1 \\
-                1, & \mbox{se } (V_{anomaly(i)} = 0 \; \textrm{ou} \; P_{anomaly(i)} = 0) \; \textrm{e} \; F_{crisis(i-1)} = 1 \; (8 max) \\
+                1, & \mbox{se } (V_{anomaly(i)} = 0 \; \textrm{ou} \; P_{anomaly(i)} = 0) \; \textrm{e} \; F_{crisis(i-1)} = 1 \; (8 \textrm{m\'ax}) \\
                 0, & \mbox{caso contr\'ario} \end{cases}
         \end{equation}
 
         A Figura \ref{fig:104} ilustra a eficácia do \textit{flag}. Observa-se que os três gráficos presentes na imagem se referem respectivamente ao cálculo das anomalias de queda de preços, ao cálculo das anomalias de volumes e por fim, ao cálculo do \textit{flag} de Identificação de Crises. Pode-se perceber que o mesmo foi corretamente ativado durante o início da crise do Coronavírus, pouco antes de 01/03/2020. Também houve ativação perto de 01/09/2020, embora sem um motivo claro aparente, os preços das ações durante o intervalo e logo após enfrentam uma pequena zona de consolidação, ou de desaceleração da tendência de alta que antes se apresentava. Nesta região, não se deseja entrar em operações até que uma nova tendência se forme.
 
         \begin{figure}[h]
-            \includegraphics[scale=0.47]{crisis_flag.png}
+            \includegraphics[scale=0.47]{crisis_flag_mglu3.png}
             \centering
             \caption{\textit{Flag} de Identificação de Crises para o \textit{ticker} MGLU3 no período de 01/01/2020 a 31/12/2020}
             \label{fig:104}
@@ -165,7 +165,7 @@
 
 
     \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
-    Semelhante ao \textit{Flag} de Identificação de Crises, este \textit{Flag} também tem o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. No entanto, o critério é diferente. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
+    Semelhante ao \textit{Flag} de Identificação de Crises, este \textit{Flag} também tem o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. No entanto, o critério é diferente. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
 
     \begin{equation} \label{eq:23}
         \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
@@ -176,18 +176,21 @@
     \end{equation}
 
     \begin{equation} \label{eq:25}
-        F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\ 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \quad e \quad F_{downtrend(i-1)} = 1 \quad \textrm{(At\'e 3 vezes consecutivas)} \\ 0, & \mbox{caso contr\'ario} \end{cases}
+        F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\
+            1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \  e \  F_{downtrend(i-1)} = 1 \  \textrm{(3 m\'ax)} \\
+            0, & \mbox{caso contr\'ario} \end{cases}
     \end{equation}
 
-    Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de \textit{flag} que pode impedir diretamente o fluxo de negociações, faz-se mais necessário um baixo ruído à inércia da medida. A Figura \ref{fig:109} ilustra a eficácia do \textit{flag}. \\
+    Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de \textit{flag} que pode impedir diretamente o fluxo de negociações, prioriza-se um baixo ruído ao tempo de resposta.
+
+    A Figura \ref{fig:109} ilustra a eficácia do \textit{Flag} de Identificação de Tendência de Baixa. Durante os maiores intervalos nos quais o \textit{Flag} esteve ativo, o preço se encontrou em queda. Por outro lado, quando verificado os intervalos menores, é mais comum a presença de falsos positivos.
 
     \begin{figure}[h]
-        \includegraphics[scale=0.70]{no_image.jpeg}
+        \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
         \centering
-        \caption{\textit{Flag} de Identificação de Crises para a ação XYZ no período de XX/YY/ZZZZ a XX/YY/ZZZZ}
+        \caption{\textit{Flag} de Identificação de Crises para o \textit{ticker} COGN3 no período de 01/01/2019 a 31/12/2019}
         \label{fig:109}
     \end{figure}
-
 
     \item \textbf{Risco Mínimo} \\ \\
     O Risco Mínimo serve de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). Sua fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.

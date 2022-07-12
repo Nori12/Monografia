@@ -17,8 +17,8 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Arquivo de Configuração para Execuções Múltiplas}}{29}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces ERD do Banco de Dados}}{31}{figure.3.4}%
 \contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Flag} de Identificação de Crises para o \textit {ticker} MGLU3 no período de 01/01/2020 a 31/12/2020}}{36}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Flag} de Identificação de Crises para a ação XYZ no período de XX/YY/ZZZZ a XX/YY/ZZZZ}}{37}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Risco Mínimo para ABEV3 e MGLU3}}{38}{figure.3.7}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Flag} de Identificação de Crises para o \textit {ticker} COGN3 no período de 01/01/2019 a 31/12/2019}}{37}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Risco Mínimo para ABEV3 e MGLU3}}{39}{figure.3.7}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Algoritmo de Identificação de Picos}}{39}{figure.3.8}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Algoritmo de Identificação de Picos}}{40}{figure.3.9}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Risco Máximo para ABEV3 e MGLU3}}{41}{figure.3.10}%
@@ -27,10 +27,10 @@
 \contentsline {figure}{\numberline {3.13}{\ignorespaces MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{47}{figure.3.13}%
 \contentsline {figure}{\numberline {3.14}{\ignorespaces ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{48}{figure.3.14}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Simulação sem uso da Normalização por Frequência de Operações}}{56}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{56}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{58}{figure.3.17}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{57}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{59}{figure.3.17}%
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade}}{59}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}}{59}{figure.3.19}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}}{60}{figure.3.19}%
 \contentsline {figure}{\numberline {3.20}{\ignorespaces Ganho de performance pelo uso do RCC Dinâmico}}{61}{figure.3.20}%
 \contentsline {figure}{\numberline {3.21}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}}{64}{figure.3.21}%
 \contentsline {figure}{\numberline {3.22}{\ignorespaces Dashboard - Performance}}{65}{figure.3.22}%

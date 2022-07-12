@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  12 JUL 2022 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  12 JUL 2022 14:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -903,12 +903,7 @@ Overfull \hbox (3.55875pt too wide) in paragraph at lines 82--83
 \tf@toc=\write5
 \openout5 = `Principal.toc'.
 
- [13] (/Users/atcha/Github/Monografia/Principal.lof
-Overfull \hbox (35.93361pt too wide) in paragraph at lines 20--20
- [][] [][]\OT1/cmr/m/it/12 Flag \OT1/cmr/m/n/12 de Iden-ti-fica^^Xc~ao de Cri-ses para a a^^Xc~ao XYZ no per^^S^^Podo de XX/YY/ZZZZ 
- []
-
-[14
+ [13] (/Users/atcha/Github/Monografia/Principal.lof [14
 
 ])
 \tf@lof=\write6
@@ -1069,16 +1064,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
  []
 
-
-Overfull \hbox (0.71695pt too wide) detected at line 155
-[]\OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 = []
- []
-
 [34]
-<./figuras/crisis_flag.png, id=1099, 905.5431pt x 721.9773pt>
-File: ./figuras/crisis_flag.png Graphic file (type png)
-<use ./figuras/crisis_flag.png>
-Package pdftex.def Info: ./figuras/crisis_flag.png  used on input line 160.
+<./figuras/crisis_flag_mglu3.png, id=1099, 905.5431pt x 721.9773pt>
+File: ./figuras/crisis_flag_mglu3.png Graphic file (type png)
+<use ./figuras/crisis_flag_mglu3.png>
+Package pdftex.def Info: ./figuras/crisis_flag_mglu3.png  used on input line 160.
 (pdftex.def)             Requested size: 425.60532pt x 339.32938pt.
 
 
@@ -1090,272 +1080,272 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--169
  []
 
 [35]
-Overfull \hbox (65.0631pt too wide) detected at line 180
-[]\OML/cmm/m/it/12 F[] \OT1/cmr/m/n/12 = []
+<./figuras/downtrend_flag_cogn3.png, id=1112, 905.5431pt x 721.9773pt>
+File: ./figuras/downtrend_flag_cogn3.png Graphic file (type png)
+<use ./figuras/downtrend_flag_cogn3.png>
+Package pdftex.def Info: ./figuras/downtrend_flag_cogn3.png  used on input line 189.
+(pdftex.def)             Requested size: 425.60532pt x 339.32938pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--197
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--183
+Overfull \hbox (5.98752pt too wide) in paragraph at lines 195--197
+\OT1/cmr/m/n/12 opera^^Xc~ao, n~ao sendo as-sim con-su-mido di-re-ta-mente pelo mo-delo de ML. Ressalta-
+ []
+
+[36 </Users/atcha/Github/Monografia/./figuras/crisis_flag_mglu3.png>] [37 </Users/atcha/Github/Monografia/./figuras/downtrend_flag_cogn3.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 185.
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 225.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--194
+Underfull \hbox (badness 10000) in paragraph at lines 231--233
 
  []
 
 
-Overfull \hbox (5.98752pt too wide) in paragraph at lines 192--194
-\OT1/cmr/m/n/12 opera^^Xc~ao, n~ao sendo as-sim con-su-mido di-re-ta-mente pelo mo-delo de ML. Ressalta-
- []
-
-[36 </Users/atcha/Github/Monografia/./figuras/crisis_flag.png>] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
-
-File: ./figuras/no_image.jpeg Graphic file (type jpg)
-<use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 222.
-(pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 228--230
-
- []
-
-
-Overfull \hbox (5.98752pt too wide) in paragraph at lines 228--230
+Overfull \hbox (5.98752pt too wide) in paragraph at lines 231--233
 \OT1/cmr/m/n/12 opera^^Xc~ao, n~ao sendo as-sim con-su-mido di-re-ta-mente pelo mo-delo de ML. Ressalta-
  []
 
 [38]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 234.
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 237.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
  [39]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 245.
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 248.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
+ [40]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 276.
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 279.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[40] [41] [42] [43]
-<./figuras/MGLU3_stop_hist_min_risk.png, id=1186, 785.93625pt x 521.95pt>
+ [41] [42] [43]
+<./figuras/MGLU3_stop_hist_min_risk.png, id=1187, 785.93625pt x 521.95pt>
 File: ./figuras/MGLU3_stop_hist_min_risk.png Graphic file (type png)
 <use ./figuras/MGLU3_stop_hist_min_risk.png>
-Package pdftex.def Info: ./figuras/MGLU3_stop_hist_min_risk.png  used on input line 361.
+Package pdftex.def Info: ./figuras/MGLU3_stop_hist_min_risk.png  used on input line 364.
 (pdftex.def)             Requested size: 314.36893pt x 208.77629pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/ABEV3_stop_hist_min_risk.png, id=1187, 772.8875pt x 520.94624pt>
+<./figuras/ABEV3_stop_hist_min_risk.png, id=1188, 772.8875pt x 520.94624pt>
 File: ./figuras/ABEV3_stop_hist_min_risk.png Graphic file (type png)
 <use ./figuras/ABEV3_stop_hist_min_risk.png>
-Package pdftex.def Info: ./figuras/ABEV3_stop_hist_min_risk.png  used on input line 368.
+Package pdftex.def Info: ./figuras/ABEV3_stop_hist_min_risk.png  used on input line 371.
 (pdftex.def)             Requested size: 309.14952pt x 208.3748pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/MGLU3_stop_hist_opt_risk.png, id=1190, 763.85374pt x 528.97626pt>
+[44]
+<./figuras/MGLU3_stop_hist_opt_risk.png, id=1199, 763.85374pt x 528.97626pt>
 File: ./figuras/MGLU3_stop_hist_opt_risk.png Graphic file (type png)
 <use ./figuras/MGLU3_stop_hist_opt_risk.png>
-Package pdftex.def Info: ./figuras/MGLU3_stop_hist_opt_risk.png  used on input line 377.
+Package pdftex.def Info: ./figuras/MGLU3_stop_hist_opt_risk.png  used on input line 380.
 (pdftex.def)             Requested size: 305.53607pt x 211.58675pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/ABEV3_stop_hist_opt_risk.png, id=1191, 776.9025pt x 524.96124pt>
+<./figuras/ABEV3_stop_hist_opt_risk.png, id=1200, 776.9025pt x 524.96124pt>
 File: ./figuras/ABEV3_stop_hist_opt_risk.png Graphic file (type png)
 <use ./figuras/ABEV3_stop_hist_opt_risk.png>
-Package pdftex.def Info: ./figuras/ABEV3_stop_hist_opt_risk.png  used on input line 384.
+Package pdftex.def Info: ./figuras/ABEV3_stop_hist_opt_risk.png  used on input line 387.
 (pdftex.def)             Requested size: 310.7555pt x 209.98077pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[44] [45 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_min_risk.png>] [46 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_min_risk.png>]
-Overfull \hbox (6.86235pt too wide) in paragraph at lines 438--451
+[45 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_min_risk.png>] [46 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_min_risk.png>]
+Overfull \hbox (6.86235pt too wide) in paragraph at lines 441--454
  [] 
  []
 
-[47 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_opt_risk.png>] [48 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_opt_risk.png>]
-Overfull \hbox (1.12537pt too wide) in paragraph at lines 496--496
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[47 </Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_opt_risk.png>] [48 </Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_opt_risk.png>] [49]
+Overfull \hbox (1.12537pt too wide) in paragraph at lines 499--499
 []|\OT1/cmr/m/n/10.95 Escopo| 
  []
 
 
-Overfull \hbox (1.12537pt too wide) in paragraph at lines 503--503
+Overfull \hbox (1.12537pt too wide) in paragraph at lines 506--506
 []|\OT1/cmr/m/n/10.95 Escopo| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 []|\OT1/cmr/m/n/10.95 Grupo de ati-vos a es-co-lher den-tro de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 531--532
+Underfull \hbox (badness 10000) in paragraph at lines 534--535
 \OT1/cmr/m/n/10.95 ``stock[]targets". Va-lo-res acei-tos: ``lis-
  []
 
 
-Underfull \hbox (badness 7415) in paragraph at lines 533--534
+Underfull \hbox (badness 7415) in paragraph at lines 536--537
 []|\OT1/cmr/m/n/10.95 N^^Sumero de ati-vos a es-co-lher den-tro de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--547
+Underfull \hbox (badness 10000) in paragraph at lines 550--550
 []|\OT1/cmr/m/n/10.95 enable[]frequency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 547--548
+Underfull \hbox (badness 10000) in paragraph at lines 550--551
 []|\OT1/cmr/m/n/10.95 Uso de nor-ma-liza^^Xc~ao por frequ^encia de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--549
+Underfull \hbox (badness 10000) in paragraph at lines 552--552
 []|\OT1/cmr/m/n/10.95 enable[]profit
  []
 
 
-Underfull \vbox (badness 10000) detected at line 556
+Underfull \vbox (badness 10000) detected at line 559
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 570--570
+Underfull \hbox (badness 10000) in paragraph at lines 573--573
 []|\OT1/cmr/m/n/10.95 min[]days[]after[]successful
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 570--571
+Underfull \hbox (badness 1708) in paragraph at lines 573--574
 []|\OT1/cmr/m/n/10.95 M^^S^^Pnimo de dias sem no-vas aquisi^^Xc~oes ap^^Sos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--572
+Underfull \hbox (badness 10000) in paragraph at lines 575--575
 []|\OT1/cmr/m/n/10.95 min[]days[]after[]failure
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 572--573
+Underfull \hbox (badness 1708) in paragraph at lines 575--576
 []|\OT1/cmr/m/n/10.95 M^^S^^Pnimo de dias sem no-vas aquisi^^Xc~oes ap^^Sos
  []
 
-[49] [50] [51] [52]
-Overfull \hbox (11.20924pt too wide) in paragraph at lines 590--592
+[50] [51] [52]
+Overfull \hbox (11.20924pt too wide) in paragraph at lines 593--595
 []\OT1/cmr/m/n/12 Venda Par-cial (par-tial[]sale) []HE-RALDO: A mo-tiva^^Xc~ao da cria^^Xc~ao desse par^ametro
  []
 
 [53]
-Overfull \hbox (22.08928pt too wide) in paragraph at lines 596--597
+Overfull \hbox (22.08928pt too wide) in paragraph at lines 599--600
 []\OT1/cmr/m/n/12 Dias M^^S^^Pnimos de Es-pera ap^^Sos Opera^^Xc~ao de Fa-lha (min[]days[]after[]failure[]operation) 
  []
 
 
-Overfull \hbox (49.67093pt too wide) in paragraph at lines 598--600
+Overfull \hbox (49.67093pt too wide) in paragraph at lines 601--603
 []\OT1/cmr/m/n/12 Dias M^^S^^Pnimos de Es-pera ap^^Sos Opera^^Xc~ao de Su-cesso (min[]days[]after[]successful[]operation)
  []
 
-[54]
-Overfull \hbox (20.60677pt too wide) in paragraph at lines 624--625
+[54] [55]
+Overfull \hbox (20.60677pt too wide) in paragraph at lines 627--628
  [][] \OT1/cmr/m/n/12 As Equa^^Xc~oes []3.22[] e []3.23[] mos-tram a ob-ten^^Xc~ao do novo Ca-pi-tal Nor-ma-li-zado $\OML/cmm/m/it/12 Capital[]$
  []
 
-[55]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 635.
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 638.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 642.
-(pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
- [56] [57] [58]
-File: ./figuras/no_image.jpeg Graphic file (type jpg)
-<use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 732.
-(pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
-File: ./figuras/no_image.jpeg Graphic file (type jpg)
-<use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 741.
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 645.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
 
-Overfull \hbox (44.70483pt too wide) in paragraph at lines 749--749
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[56] [57]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: ./figuras/no_image.jpeg Graphic file (type jpg)
+<use ./figuras/no_image.jpeg>
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 735.
+(pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[58]
+File: ./figuras/no_image.jpeg Graphic file (type jpg)
+<use ./figuras/no_image.jpeg>
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 744.
+(pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (44.70483pt too wide) in paragraph at lines 752--752
 []\OT1/cmr/bx/n/14.4 Controle Pro-por-ci-o-nal para Uso de Ca-pi-tal (Risco Din^amico) 
  []
 
 [59]
 File: ./figuras/no_image.jpeg Graphic file (type jpg)
 <use ./figuras/no_image.jpeg>
-Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 775.
+Package pdftex.def Info: ./figuras/no_image.jpeg  used on input line 778.
 (pdftex.def)             Requested size: 168.62883pt x 167.11118pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[60]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[61] [62] [63]
+ [60] [61] [62] [63]
 <./figuras/baseline_raw.png, id=1413, 803.0pt x 388.45125pt>
 File: ./figuras/baseline_raw.png Graphic file (type png)
 <use ./figuras/baseline_raw.png>
-Package pdftex.def Info: ./figuras/baseline_raw.png  used on input line 891.
+Package pdftex.def Info: ./figuras/baseline_raw.png  used on input line 894.
 (pdftex.def)             Requested size: 401.49902pt x 194.22514pt.
-<./figuras/dash_1.png, id=1420, 1240.635pt x 707.64375pt>
+ [64 </Users/atcha/Github/Monografia/./figuras/baseline_raw.png>]
+<./figuras/dash_1.png, id=1428, 1240.635pt x 707.64375pt>
 File: ./figuras/dash_1.png Graphic file (type png)
 <use ./figuras/dash_1.png>
-Package pdftex.def Info: ./figuras/dash_1.png  used on input line 902.
+Package pdftex.def Info: ./figuras/dash_1.png  used on input line 905.
 (pdftex.def)             Requested size: 409.41081pt x 233.52316pt.
- [64 </Users/atcha/Github/Monografia/./figuras/baseline_raw.png>]
-<./figuras/dash_2.png, id=1430, 1241.63875pt x 735.74875pt>
+<./figuras/dash_2.png, id=1429, 1241.63875pt x 735.74875pt>
 File: ./figuras/dash_2.png Graphic file (type png)
 <use ./figuras/dash_2.png>
-Package pdftex.def Info: ./figuras/dash_2.png  used on input line 909.
+Package pdftex.def Info: ./figuras/dash_2.png  used on input line 912.
 (pdftex.def)             Requested size: 409.74205pt x 242.79784pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/dash_3.png, id=1431, 1241.63875pt x 975.645pt>
+<./figuras/dash_3.png, id=1430, 1241.63875pt x 975.645pt>
 File: ./figuras/dash_3.png Graphic file (type png)
 <use ./figuras/dash_3.png>
-Package pdftex.def Info: ./figuras/dash_3.png  used on input line 916.
+Package pdftex.def Info: ./figuras/dash_3.png  used on input line 919.
 (pdftex.def)             Requested size: 409.74205pt x 321.96385pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/dash_4.png, id=1432, 1241.63875pt x 377.41pt>
+<./figuras/dash_4.png, id=1431, 1241.63875pt x 377.41pt>
 File: ./figuras/dash_4.png Graphic file (type png)
 <use ./figuras/dash_4.png>
-Package pdftex.def Info: ./figuras/dash_4.png  used on input line 923.
+Package pdftex.def Info: ./figuras/dash_4.png  used on input line 926.
 (pdftex.def)             Requested size: 409.74205pt x 124.54568pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./figuras/dash_5.png, id=1433, 1241.63875pt x 951.555pt>
+<./figuras/dash_5.png, id=1432, 1241.63875pt x 951.555pt>
 File: ./figuras/dash_5.png Graphic file (type png)
 <use ./figuras/dash_5.png>
-Package pdftex.def Info: ./figuras/dash_5.png  used on input line 930.
+Package pdftex.def Info: ./figuras/dash_5.png  used on input line 933.
 (pdftex.def)             Requested size: 409.74205pt x 314.01411pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1368,12 +1358,12 @@ Cap\'{\i }tulo 4.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./figuras/resultado_final.png, id=1455, 796.9775pt x 374.39874pt>
+<./figuras/resultado_final.png, id=1456, 796.9775pt x 374.39874pt>
 File: ./figuras/resultado_final.png Graphic file (type png)
 <use ./figuras/resultado_final.png>
 Package pdftex.def Info: ./figuras/resultado_final.png  used on input line 39.
 (pdftex.def)             Requested size: 414.43068pt x 194.68846pt.
-<./figuras/resultado_valores.png, id=1456, 633.36626pt x 908.39375pt>
+<./figuras/resultado_valores.png, id=1457, 633.36626pt x 908.39375pt>
 File: ./figuras/resultado_valores.png Graphic file (type png)
 <use ./figuras/resultado_valores.png>
 Package pdftex.def Info: ./figuras/resultado_valores.png  used on input line 46.
@@ -1605,10 +1595,10 @@ Package rerunfilecheck Info: File `Principal.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 93.
  ) 
 Here is how much of TeX's memory you used:
- 33149 strings out of 480608
- 752552 string characters out of 5903630
- 1197493 words of memory out of 5000000
- 47798 multiletter control sequences out of 15000+600000
+ 33155 strings out of 480608
+ 752791 string characters out of 5903630
+ 1194493 words of memory out of 5000000
+ 47803 multiletter control sequences out of 15000+600000
  544314 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,13n,104p,1643b,1985s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1673,10 +1663,10 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/atcha/Github/Monografia/Principal.pdf (94 pages, 1813202 bytes).
+Output written on /Users/atcha/Github/Monografia/Principal.pdf (94 pages, 1872860 bytes).
 PDF statistics:
- 1697 PDF objects out of 1728 (max. 8388607)
- 1508 compressed objects within 16 object streams
+ 1698 PDF objects out of 1728 (max. 8388607)
+ 1507 compressed objects within 16 object streams
  549 named destinations out of 1000 (max. 500000)
- 641 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 646 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -470,8 +470,12 @@ INPUT /Users/atcha/Github/Monografia/./figuras/crisis_flag_mglu3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/downtrend_flag_cogn3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/downtrend_flag_cogn3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/downtrend_flag_cogn3.png
-INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
-INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
+INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_mglu3.png
+INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_mglu3.png
+INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_mglu3.png
+INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_abev3.png
+INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_abev3.png
+INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_abev3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
 INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
 INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
@@ -560,6 +564,7 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb

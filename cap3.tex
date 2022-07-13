@@ -193,7 +193,7 @@
     \end{figure}
 
     \item \textbf{Risco Mínimo} \\ \\
-    O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). Sua fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
+    O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
 
     \begin{equation} \label{eq:30}
         Risk_{min} = Risk_{min_f} + Risk_{min_v}
@@ -237,7 +237,7 @@
 
 
     \item \textbf{Risco Máximo} \\ \\
-    O Risco Máximo serve de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica diretamente no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra.
+    O Risco Máximo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula ... XXXXXXXXXXXXXXXX
 
     A ideia central está na análise estatística das subidas de preços entre os últimos picos identificados dentro do intervalo de 80 dias úteis. Portanto, primeiro se faz necessário a criação de um um algoritmo de identificação de picos, conforme mostrado pela Figura \ref{fig:106}. O método usa uma janela móvel de \begin{math} W = 17 \end{math} \textit{candles} que corre dia após dia até a data corrente e atribui votos de máximo e votos de mínimo ao maior e menor valor encontrado na janela, respectivamente. São elegíveis à picos apenas os \textit{candles} que obtiveram um mínimo de \begin{math}  floor(W / 2) = 8 \end{math} votos. Ao final, garante-se a alternância entre máximos e mínimos locais através da remoção de picos consecutivos de um mesmo tipo.
 
@@ -297,6 +297,7 @@
 \section{Simulação de Estratégia}
 
 \subsection{Estrutura}
+\label{sub:estrutura}
 
 \paragraph{} O tema escolhido pelo presente trabalho abrange uma quantidade gigantesca de trajetos possíveis de implementação. Facilmente a imaginação mostra uma possibilidade diferente onde a intuição por detrás da pesquisa vê campo fértil para exploração. No entanto, dar vida a um projeto de engenharia envolve a delimitação de um escopo, que necessariamente restringe as possibilidades. Dessa forma, a Estrutura na qual as estratégias serão simuladas se baseia nas seguintes declarações:
 

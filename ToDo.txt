@@ -44,34 +44,36 @@ Metodologia
         Arquivo de Configuração                             OK
         Coleta de Dados                                     OK
         Armazenamento de Dados                              OK
-        Geração de Features de Uso Geral                    Analisando (Risco Máximo)
+        Geração de Features de Uso Geral                    Risco Máximo - Imagens, Verificação
     Simulação de Estratégia
-        Estrutura
-        Premissas
-        Período Máximo de Dias por Operação
-        Gerenciamento de Risco
-        Risco de Entrada por Operação
-        Descanso por Tendência de Baixa
-        Descanso por Identificação de Crises
-        Lista de Parâmetros de Configuração
-        Ensaios Paralelos
+        Estrutura                                           Verificação
+        Premissas                                           Verificação
+        Período Máximo de Dias por Operação                 Verificação, Imagem 3D?
+        Gerenciamento de Risco                              Verificação
+        Risco de Entrada por Operação                       Verificação, Imagem
+        Descanso por Tendência de Baixa                     Verificação
+        Descanso por Identificação de Crises                Verificação
+        Lista de Parâmetros de Configuração                 Verificação
+        Ensaios Paralelos                                   Verificação
     Otimizações de Gerenciamento de Carteira
-        Resumo
-        Normalização por Frequência de Operações
-        Compensação por Lucratividade
-        Controle Proporcional para Uso de Capital (Risco Dinâmico)
+        Resumo                                              Verificação
+        Normalização por Frequência de Operações            Verificação, Imagens
+        Compensação por Lucratividade                       Verificação, Imagens
+        Controle Proporcional para Uso de Capital (Risco Dinâmico)      Verificação, Imagens
     Criação de Modelos
-        Resumo
+        Resumo                                              Verificação
         Geração de Datasets e Feature Selection
-        Índice de Lucratividade
-        Critérios de Escolha
+        Índice de Lucratividade                             Fazer ou não?
+        Critérios de Escolha                                Continuar
     Análise de Resultados
-        Modelo Baseline
-        Dashboard
+        Modelo Baseline                                     Verificação
+        Dashboard                                           Verificação
 
-Conclusão
+Conclusão                                                   Código primeiro, depois: Verificação, Imagens
 
-Bibliografia
+Código:
+    (1) Verificar porque BAG_6 não melhorou os resultados anteriores.
+    (2) Fazer o melhor modelo e terminar conclusão.
 
 
 Observações:

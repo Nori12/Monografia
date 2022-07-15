@@ -72,9 +72,7 @@ Metodologia
 Conclusão                                                   Código primeiro, depois: Verificação, Imagens
 
 Código:
-    (1) Verificar strategy_backup.py e entender mudanças para versão atual
-    (2) Verificar porque BAG_6 não melhorou os resultados anteriores.
-    (3) Fazer o melhor modelo e terminar conclusão.
+    (1) Resolver BUG de encurtamento de dias de simulação por paralelização.
 
 
 Observações:

@@ -16,30 +16,30 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Estrutura do Arquivo de Configuração}}{28}{figure.3.2}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Arquivo de Configuração para Execuções Múltiplas}}{29}{figure.3.3}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces ERD do Banco de Dados}}{31}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Flag} de Identificação de Crises para o \textit {ticker} MGLU3 no período de 01/01/2020 a 31/12/2020}}{36}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \textit {Flag} de Identificação de Crises para o \textit {ticker} COGN3 no período de 01/01/2019 a 31/12/2019}}{37}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Risco Mínimo para o \textit {ticker} MGLU3 no período de 01/01/2019 a 31/12/2019}}{39}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Risco Mínimo para o \textit {ticker} ABEV3 no período de 01/01/2019 a 31/12/2019}}{40}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Algoritmo de identificação de picos para o \textit {ticker} CPLE6 no período de 01/01/2019 a 31/12/2019}}{41}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Subidas de preços entre picos para o \textit {ticker} CPLE6 no período de 01/01/2019 a 31/12/2019}}{41}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Riscos Máximo e Mínimo para o \textit {ticker} MGLU3 no período de 01/01/2019 a 31/12/2019}}{42}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Riscos Máximo e Mínimo para o \textit {ticker} ABEV3 no período de 01/01/2019 a 31/12/2019}}{43}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}}{47}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}}{48}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{49}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{50}{figure.3.16}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces MGLU3 - \textit {Flag} de Identificação de Crises (01/01/2020 a 31/12/2020)}}{36}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces COGN3 - \textit {Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}}{37}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces MGLU3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{39}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces ABEV3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{40}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces CPLE6 - Algoritmo de identificação de picos (01/01/2019 a 31/12/2019)}}{41}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces CPLE6 - Subidas de preços entre picos (01/01/2019 a 31/12/2019)}}{41}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces MGLU3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{42}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces ABEV3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{43}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}}{46}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}}{47}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}}{48}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}}{49}{figure.3.16}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Simulação sem uso da Normalização por Frequência de Operações}}{58}{figure.3.17}%
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{58}{figure.3.18}%
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{60}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade}}{61}{figure.3.20}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade}}{60}{figure.3.20}%
 \contentsline {figure}{\numberline {3.21}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}}{61}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ganho de performance pelo uso do RCC Dinâmico}}{63}{figure.3.22}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Ganho de performance pelo uso do RCC Dinâmico}}{62}{figure.3.22}%
 \contentsline {figure}{\numberline {3.23}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}}{66}{figure.3.23}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Dashboard - Performance}}{67}{figure.3.24}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Dashboard - Parâmetros de entrada}}{68}{figure.3.25}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Dashboard - Resultados e Estatísticas}}{68}{figure.3.26}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Dashboard - Gráfico de uso de capital}}{69}{figure.3.27}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Dashboard - Gráficos de análise individual de ações }}{69}{figure.3.28}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Dashboard - Performance}}{66}{figure.3.24}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Dashboard - Parâmetros de entrada}}{67}{figure.3.25}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Dashboard - Resultados e Estatísticas}}{67}{figure.3.26}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Dashboard - Gráfico de uso de capital}}{68}{figure.3.27}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Dashboard - Gráficos de análise individual de ações }}{68}{figure.3.28}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Performance da Carteira}}{70}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultados}}{72}{figure.4.2}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultados}}{71}{figure.4.2}%

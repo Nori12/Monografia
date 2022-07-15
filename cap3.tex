@@ -159,7 +159,7 @@
         \begin{figure}[h]
             \includegraphics[scale=0.47]{crisis_flag_mglu3.png}
             \centering
-            \caption{\textit{Flag} de Identificação de Crises para o \textit{ticker} MGLU3 no período de 01/01/2020 a 31/12/2020}
+            \caption{MGLU3 - \textit{Flag} de Identificação de Crises (01/01/2020 a 31/12/2020)}
             \label{fig:104}
         \end{figure}
 
@@ -188,7 +188,7 @@
     \begin{figure}[h]
         \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
         \centering
-        \caption{\textit{Flag} de Identificação de Crises para o \textit{ticker} COGN3 no período de 01/01/2019 a 31/12/2019}
+        \caption{COGN3 - \textit{Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}
         \label{fig:109}
     \end{figure}
 
@@ -224,14 +224,14 @@
     \begin{figure}[h]
         \includegraphics[scale=0.47]{min_risk_mglu3.png}
         \centering
-        \caption{Risco Mínimo para o \textit{ticker} MGLU3 no período de 01/01/2019 a 31/12/2019}
+        \caption{MGLU3 - Risco Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:400}
     \end{figure}
 
     \begin{figure}[h]
         \includegraphics[scale=0.47]{min_risk_abev3.png}
         \centering
-        \caption{Risco Mínimo para o \textit{ticker} ABEV3 no período de 01/01/2019 a 31/12/2019}
+        \caption{ABEV3 - Risco Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:105}
     \end{figure}
 
@@ -244,7 +244,7 @@
     \begin{figure}[h]
         \includegraphics[scale=0.47]{peaks_cple6_w_5.png}
         \centering
-        \caption{Algoritmo de identificação de picos para o \textit{ticker} CPLE6 no período de 01/01/2019 a 31/12/2019}
+        \caption{CPLE6 - Algoritmo de identificação de picos (01/01/2019 a 31/12/2019)}
         \label{fig:106}
     \end{figure}
 
@@ -257,7 +257,7 @@
     \begin{figure}[h]
         \includegraphics[scale=0.47]{peaks_with_marks_cple6_w_5.png}
         \centering
-        \caption{Subidas de preços entre picos para o \textit{ticker} CPLE6 no período de 01/01/2019 a 31/12/2019}
+        \caption{CPLE6 - Subidas de preços entre picos (01/01/2019 a 31/12/2019)}
         \label{fig:107}
     \end{figure}
 
@@ -292,14 +292,14 @@
     \begin{figure}[h]
         \includegraphics[scale=0.47]{max_risk_mglu3.png}
         \centering
-        \caption{Riscos Máximo e Mínimo para o \textit{ticker} MGLU3 no período de 01/01/2019 a 31/12/2019}
+        \caption{MGLU3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:108}
     \end{figure}
 
     \begin{figure}[h]
         \includegraphics[scale=0.47]{max_risk_abev3.png}
         \centering
-        \caption{Riscos Máximo e Mínimo para o \textit{ticker} ABEV3 no período de 01/01/2019 a 31/12/2019}
+        \caption{ABEV3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:270}
     \end{figure}
 
@@ -374,41 +374,43 @@
 \subsection{Período Máximo de Dias por Operação}
 \label{subsection:max_op_days}
 
-\paragraph{} Em teoria, poderia-se permitir que operações não tivessem um período máximo de dias para serem encerradas. Contudo, isso facilmente se prova uma péssima decisão de alocação de capital em ativos que passam por uma fase de consolidação, ou seja, sem qualquer tendência. Além do ativo em questão não encerrar a operação e trazer seu lucro ou prejuízo para a carteira, o capital alocado nele não pode ser utilizado por outros ativos que eventualmente vem a lucrar. Quanto mais lucrativa tende a ser uma estratégia, maior a inércia que esta decisão pode oferecer. Portanto, optou-se por um limite finito de dias por operação.
+\paragraph{} Em teoria, poderia-se permitir que operações não tivessem um período máximo de dias para serem encerradas. Contudo, isso facilmente se prova uma péssima decisão de alocação de capital em ativos que passam por uma fase de consolidação, ou seja, sem qualquer tendência. Além do ativo em questão não encerrar a operação e finalizar seu lucro ou seu prejuízo na carteira, o capital alocado nele não pode ser utilizado por outros ativos que eventualmente venham a lucrar, ou seja, gera-se um efeito de inércia ao aumento da performance geral. Portanto, foi imposto um limite do período de tempo de todas as operação em um valor máximo.
 
-\paragraph{} A escolha de um número adequado para o limite de dias possui alguns caminhos, resumidos entre os extremos de: um valor fixo geral; ou um valor dinâmico para cada ação. Nota-se que criar um algoritmo que escolha o valor dinâmico a partir da análise dos dados dos últimos meses para cada ação não é trivial. Assim, optou-se por um valor fixo geral, onde a base do estudo se deu na análise ações de perfis opostos.
+% \paragraph{} A escolha de um número adequado para o limite de dias possui alguns caminhos, resumidos entre os extremos de: um valor fixo geral; ou um valor dinâmico para cada ação. Nota-se que criar um algoritmo que escolha o valor dinâmico a partir da análise dos dados dos últimos meses para cada ação não é trivial. Assim, optou-se por um valor fixo geral, onde a base do estudo se deu na análise ações de perfis opostos.
 
-\paragraph{} Nesta linha, um algoritmo auxiliar foi criado para varrer um período de dias passados e criar operações com diversos valores de risco, observando quais riscos levaram a operações de sucesso e quais levaram a operações de falha. Também analisou-se a distribuição de operações de sucesso de acordo com os valores de risco e o intervalo de dias corridos.
+\paragraph{} Embora ações de companhias apresentem comportamentos distintos, optou-se por um valor fixo geral, onde o ponto de partida do estudo de um valor adequado se deu através da análise ações de perfis opostos.
 
-\paragraph{} De início, foi fixado um intervalo máximo de 90 dias para cada operação hipotética que o algoritmo gerou. O valor é propositalmente grande, pois sua função é apenas não forçar \textit{timeout} na maioria das operações. As Figuras \ref{fig:120} e \ref{fig:121} mostram dois histogramas dos dias das operações de sucesso que consideram o menor risco possível, isto é, o menor valor de risco que se pode utilizar a cada dia da série temporal de forma a tornar a operação de sucesso, caso exista este valor. Se não houver, é considerado operação de falha, portanto está fora dos histogramas. A legenda indica faixas onde, no caso la linha tracejada verde na Figura \ref{fig:120}, 50\% das contagens se encontram dentro dos 12 primeiros dias, e assim por diante. Foi considerado o período de 01/01/2016 a 31/12/2018.
+\paragraph{} Nesta linha, um algoritmo auxiliar foi criado para varrer um período de dias passados e criar operações com diversos valores de risco, observando quais riscos levariam a operações de sucesso e quais levariam a operações de falha. Também analisou-se a distribuição de operações de sucesso de acordo com os valores de risco e o intervalo de dias corridos.
+
+\paragraph{} De início, foi fixado um intervalo máximo de 90 dias para cada operação hipotética que o algoritmo gerou. O valor é propositalmente excessivo, pois sua função é apenas não forçar \textit{timeout} na maioria das operações. As Figuras \ref{fig:120} e \ref{fig:121} mostram dois histogramas dos dias das operações de sucesso que consideram o menor risco possível, isto é, o menor valor de risco que se pode utilizar a cada dia da série temporal de forma a tornar a operação de sucesso, caso ele exista. Se não houver, é considerado operação de falha, portanto está fora dos histogramas. A legenda indica faixas onde, no caso da linha tracejada verde na Figura \ref{fig:120}, 50\% das contagens se encontram dentro dos 12 primeiros dias, e assim por diante.
 
 \begin{figure}[h]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_min_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}
+    \caption{MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:120}
 \end{figure}
 
 \begin{figure}[h]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_min_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}
+    \caption{ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:121}
 \end{figure}
 
-\paragraph{} Também foi analisado os histogramas para o caso de risco ótimo por operação, ou seja, o valor de risco que traz o maior rendimento por operação considerando os dias corridos (Figuras \ref{fig:122} e \ref{fig:123}).
+\paragraph{} Também foram analisados os histogramas para o caso de risco ótimo por operação, ou seja, o valor de risco que traz o maior rendimento por operação considerando os dias corridos (Figuras \ref{fig:122} e \ref{fig:123}).
 
 \begin{figure}[h]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_opt_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}
+    \caption{MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:122}
 \end{figure}
 
 \begin{figure}[h]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_opt_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}
+    \caption{ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:123}
 \end{figure}
 
@@ -771,7 +773,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\subsection{Controle Proporcional para Uso de Capital (Risco Dinâmico)}
+\subsection{Controle Proporcional para Uso de Capital}
 \label{sub:dynamic_rcc}
 
 % \paragraph{} A criação de um RCC como ferramenta de gerenciamento de risco (ver Seção \ref{sub:risk_man}) não resolve o problema de subaproveitamento do Uso de Capital da carteira ao longo do período de simulação. Entende-se por subaproveitamento a parcela de capital ocioso que, por não estar empregado em nenhum ativo, resulta em uma perda de performance geral.

@@ -48,7 +48,7 @@
 \BOOKMARK [2][-]{subsection.3.4.1}{Resumo}{section.3.4}% 48
 \BOOKMARK [2][-]{subsection.3.4.2}{Normaliza\347\343o por Frequ\352ncia de Opera\347\365es}{section.3.4}% 49
 \BOOKMARK [2][-]{subsection.3.4.3}{Compensa\347\343o por Lucratividade}{section.3.4}% 50
-\BOOKMARK [2][-]{subsection.3.4.4}{Controle Proporcional para Uso de Capital \(Risco Din\342mico\)}{section.3.4}% 51
+\BOOKMARK [2][-]{subsection.3.4.4}{Controle Proporcional para Uso de Capital}{section.3.4}% 51
 \BOOKMARK [1][-]{section.3.5}{Cria\347\343o de Modelos}{chapter.3}% 52
 \BOOKMARK [2][-]{subsection.3.5.1}{Resumo}{section.3.5}% 53
 \BOOKMARK [2][-]{subsection.3.5.2}{Gera\347\343o de Datasets e Feature Selection}{section.3.5}% 54
@@ -58,4 +58,6 @@
 \BOOKMARK [2][-]{subsection.3.6.1}{Modelo Baseline}{section.3.6}% 58
 \BOOKMARK [2][-]{subsection.3.6.2}{Dashboard}{section.3.6}% 59
 \BOOKMARK [0][-]{chapter.4}{Conclus\343o}{}% 60
-\BOOKMARK [0][-]{section*.206}{Bibliografia}{}% 61
+\BOOKMARK [1][-]{section.4.1}{Escolha de Par\342metros}{chapter.4}% 61
+\BOOKMARK [1][-]{section.4.2}{Resultados}{chapter.4}% 62
+\BOOKMARK [0][-]{section*.206}{Bibliografia}{}% 63

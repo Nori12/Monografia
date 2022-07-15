@@ -183,17 +183,17 @@
 \contentsline {paragraph}{}{44}{section*.152}%
 \contentsline {subsection}{\numberline {3.3.3}Período Máximo de Dias por Operação}{45}{subsection.3.3.3}%
 \contentsline {paragraph}{}{45}{section*.153}%
-\contentsline {paragraph}{}{45}{section*.154}%
+\contentsline {paragraph}{}{46}{section*.154}%
 \contentsline {paragraph}{}{46}{section*.155}%
 \contentsline {paragraph}{}{46}{section*.156}%
-\contentsline {paragraph}{}{47}{section*.157}%
-\contentsline {paragraph}{}{48}{section*.158}%
-\contentsline {subsection}{\numberline {3.3.4}Gerenciamento de Risco}{48}{subsection.3.3.4}%
-\contentsline {paragraph}{}{48}{section*.159}%
-\contentsline {paragraph}{}{49}{section*.160}%
-\contentsline {paragraph}{}{49}{section*.161}%
-\contentsline {paragraph}{}{49}{section*.162}%
-\contentsline {paragraph}{}{49}{section*.163}%
+\contentsline {paragraph}{}{46}{section*.157}%
+\contentsline {paragraph}{}{46}{section*.158}%
+\contentsline {subsection}{\numberline {3.3.4}Gerenciamento de Risco}{47}{subsection.3.3.4}%
+\contentsline {paragraph}{}{47}{section*.159}%
+\contentsline {paragraph}{}{47}{section*.160}%
+\contentsline {paragraph}{}{48}{section*.161}%
+\contentsline {paragraph}{}{48}{section*.162}%
+\contentsline {paragraph}{}{48}{section*.163}%
 \contentsline {paragraph}{}{49}{section*.164}%
 \contentsline {subsection}{\numberline {3.3.5}Risco de Entrada por Operação}{50}{subsection.3.3.5}%
 \contentsline {paragraph}{}{50}{section*.165}%

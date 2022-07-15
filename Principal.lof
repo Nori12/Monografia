@@ -24,10 +24,10 @@
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Subidas de preços entre picos para o \textit {ticker} CPLE6 no período de 01/01/2019 a 31/12/2019}}{41}{figure.3.10}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Riscos Máximo e Mínimo para o \textit {ticker} MGLU3 no período de 01/01/2019 a 31/12/2019}}{42}{figure.3.11}%
 \contentsline {figure}{\numberline {3.12}{\ignorespaces Riscos Máximo e Mínimo para o \textit {ticker} ABEV3 no período de 01/01/2019 a 31/12/2019}}{43}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}}{46}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}}{47}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{47}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{48}{figure.3.16}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}}{47}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso}}{48}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{49}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso}}{50}{figure.3.16}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces Simulação sem uso da Normalização por Frequência de Operações}}{58}{figure.3.17}%
 \contentsline {figure}{\numberline {3.18}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{58}{figure.3.18}%
 \contentsline {figure}{\numberline {3.19}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{60}{figure.3.19}%

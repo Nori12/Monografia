@@ -312,27 +312,27 @@
 \subsection{Estrutura}
 \label{sub:estrutura}
 
-\paragraph{} O tema escolhido pelo presente trabalho abrange uma quantidade gigantesca de trajetos possíveis de implementação. Facilmente a imaginação mostra uma possibilidade diferente onde a intuição por detrás da pesquisa vê campo fértil para exploração. No entanto, dar vida a um projeto de engenharia envolve a delimitação de um escopo, que necessariamente restringe as possibilidades. Dessa forma, a Estrutura na qual as estratégias serão simuladas se baseia nas seguintes declarações:
+\paragraph{} O tema escolhido pelo presente trabalho permite uma enorme quantidade possíveis implementações, onde muitas se mostram como promissoras e interessantes de se explorar. No entanto, dar vida a um projeto de engenharia envolve a delimitação de um escopo, que necessariamente restringe as possibilidades. Dessa forma, a Estrutura na qual as estratégias são simuladas se baseia nas seguintes declarações:
 
 
 \begin{itemize}
     \item Toda estratégia possui um \textbf{capital inicial}, que representa uma quantidade de capital pré-alocado para compra dos ativos financeiros. Essa quantia deve ser sempre respeitada ao longo da simulação de forma a não representar nunca um valor negativo.
 
-    \item Toda estratégia deve possuir uma \textbf{carteira de ativos} (ou lista de ativos) com datas iniciais e finais de validade, sendo estes intervalos de tempo onde as operações podem ser realizadas. Embora se permitam intervalos diferentes, é convencionado a mesma data de início e de fim para todos os papéis.
+    \item Toda estratégia deve possuir uma \textbf{carteira de ativos} (ou lista de ativos) com as respectivas datas iniciais e finais de validade, isto é, intervalos de tempo onde as operações podem ser realizadas. Embora sejam permitidos intervalos diferentes, é convencionado a mesma data de início e de fim para todos os papéis.
 
     \item Define-se uma  \textbf{operação} como o processo de compra única de um volume de ações de um ativo seguido pela venda de todo o volume comprado, independentemente do tempo, mesmo que esta ocorra em estágios. Nota-se que apenas a venda é cabível de ocorrer em estágios (i.e., venda parcial).
 
-    \item Toda operação possui um \textbf{preço alvo} e um \textbf{\textit{stop loss}}. O preço alvo é um valor acima do preço de compra e o \textit{stop loss} é um valor abaixo do preço de compra. Quando o mercado atinge qualquer um dos dois valores, uma venda é disparada, encerrando a operação em vigor. No entanto, considera-se uma operação de sucesso aquela que encerrou por atingir o preço alvo e uma operação de falha aquele que encerrou por atingir o \textit{stop loss}.
+    \item Toda operação possui um \textbf{preço alvo} e um \textbf{\textit{stop loss}}. O preço alvo é um valor acima do preço de compra e o \textit{stop loss} é um valor abaixo do preço de compra. Quando o mercado atinge qualquer um dos dois valores, uma venda é disparada, encerrando a operação em vigor. No entanto, considera-se uma operação de sucesso aquela que encerrou por atingir o preço alvo e uma operação de falha aquela que encerrou por atingir o \textit{stop loss}.
 
     \item Uma estratégia pode possuir no máximo  \textbf{uma operação em vigência} para cada \textit{ticker} em sua bolsa de ativos, portanto para que uma segunda compra ocorra no momento em que já existem papéis adquiridos, é necessários vendê-los primeiro.
 
-    \item A \textbf{razão entre ganho e perda} predetermina a relação entre o preço alvo de venda e o \textit{stop loss} em qualquer operação. Ela indica a razão entre a diferença do preço alvo \begin{math} P_{target} \end{math} para o preço de compra \begin{math} P_{buy} \end{math} sobre a a diferença do preço de compra para o \textit{stop loss} \begin{math} P_{stop} \end{math} (Equação \ref{eq:50}). Seu valor é constante e igual a 3. \color{red} HERALDO: Devo citar o André aqui? Não achei uma referência disso no livro dele, porém tem nos vídeos. \colorend
+    \item A \textbf{razão entre ganho e perda} predetermina a relação entre o preço alvo e o \textit{stop loss} em qualquer operação. Ela indica a razão entre a diferença do preço alvo \begin{math} P_{target} \end{math} para o preço de compra \begin{math} P_{buy} \end{math} sobre a a diferença do preço de compra para o \textit{stop loss} \begin{math} P_{stop} \end{math} (Equação \ref{eq:50}). Seu valor é constante e igual a 3 em todo o escopo deste trabalho. \color{red} HERALDO: O valor de 3 veio do André. Devo citar ele aqui? Não achei uma referência direta disso em seu livro, porém tem nos vídeos. \colorend
 
     \begin{equation} \label{eq:50}
         G = \dfrac{P_{target} - P_{buy}}{P_{buy} - P_{stop}} = 3
     \end{equation}
 
-    Utiliza-se o termo ``risco de uma operação" como sendo a diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}).
+    Utiliza-se o termo ``risco de uma operação" ou simplesmente ``risco" como sendo a diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). Por exemplo, se o preço de compra de uma operação é de R\$10,00 e o seu risco é de 5\%, então o \textit{stop loss} se encontra em R\$9,50 e o preço alvo em R\$11,50 necessariamente.
 
     \begin{equation} \label{eq:51}
         Risk = \dfrac{P_{buy} - P_{stop}}{P_{buy}}

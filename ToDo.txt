@@ -46,7 +46,7 @@ Metodologia
         Armazenamento de Dados                              OK
         Geração de Features de Uso Geral                    OK
     Simulação de Estratégia
-        Estrutura                                           Verificação
+        Estrutura                                           OK
         Premissas                                           Verificação
         Período Máximo de Dias por Operação                 Verificação, Imagem 3D?
         Gerenciamento de Risco                              Verificação

@@ -44,7 +44,7 @@ Metodologia
         Arquivo de Configuração                             OK
         Coleta de Dados                                     OK
         Armazenamento de Dados                              OK
-        Geração de Features de Uso Geral                    Risco Máximo - Imagens, Verificação
+        Geração de Features de Uso Geral                    OK
     Simulação de Estratégia
         Estrutura                                           Verificação
         Premissas                                           Verificação
@@ -72,8 +72,9 @@ Metodologia
 Conclusão                                                   Código primeiro, depois: Verificação, Imagens
 
 Código:
-    (1) Verificar porque BAG_6 não melhorou os resultados anteriores.
-    (2) Fazer o melhor modelo e terminar conclusão.
+    (1) Verificar strategy_backup.py e entender mudanças para versão atual
+    (2) Verificar porque BAG_6 não melhorou os resultados anteriores.
+    (3) Fazer o melhor modelo e terminar conclusão.
 
 
 Observações:

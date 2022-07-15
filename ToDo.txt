@@ -47,7 +47,7 @@ Metodologia
         Geração de Features de Uso Geral                    OK
     Simulação de Estratégia
         Estrutura                                           OK
-        Premissas                                           Verificação
+        Premissas                                           OK
         Período Máximo de Dias por Operação                 Verificação, Imagem 3D?
         Gerenciamento de Risco                              Verificação
         Risco de Entrada por Operação                       Verificação, Imagem

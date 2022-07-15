@@ -347,25 +347,25 @@
 
 \subsection{Premissas}
 
-\paragraph{} As Premissas são um conjunto de afirmações que visam complementar a Estrutura das simulações ao mesmo tempo que garantindo a integridade dos resultados, muitas vezes optando pelo pior cenário em situações inconclusivas. São elas:
+\paragraph{} As Premissas são um conjunto de afirmações que visam complementar a Estrutura das simulações ao mesmo tempo que garantir a integridade dos resultados, muitas vezes optando pelo pior cenário em situações inconclusivas. São elas:
 
 \begin{itemize}
-    \item O momento de decisão de \textbf{entrada em uma operação} por uma estratégia deve ocorrer está na abertura de mercado do dia corrente, mais precisamente no instante em que o preço de abertura é definido.
+    \item O momento de decisão de \textbf{entrada em uma operação} por uma estratégia ocorre durante a abertura de mercado do dia corrente, mais precisamente no instante em que o preço de abertura é definido.
 
-    \item No dia que ocorrer a compra de um ativo, não pode haver a venda do mesmo. Em outras palavras, o \textbf{período mínimo de duração de uma operação é de 2 dias úteis}.
+    \item No dia que houver a compra de um ativo, não pode haver a venda do mesmo. Em outras palavras, o \textbf{período mínimo de duração de uma operação é de 1 dia útil}.
 
     \item A \textbf{venda por \textit{timeout}} ocorre quando o número máximo de dias de uma operações extrapola um valor definido (ver Seção \ref{subsection:max_op_days})
 
     \item Devido a ausência de informações mais detalhadas que a janela de tempo diária, a seguinte ordem é priorizada durante a \textbf{venda de um ativo}:
 
-    \begin{itemize}
+    \begin{enumerate}
         \item Venda por \textit{stop loss}
         \item Venda parcial (caso habilitada)
         \item Venda por preço alvo
         \item Venda por \textit{timeout}
-    \end{itemize}
+    \end{enumerate}
 
-    \item Caso um \textbf{preço de venda seja pulado}, ou seja, a descontinuidade entre o preço de fechamento do dia anterior e o preço de abertura do dia corrente não englobe o valor de venda, utiliza-se o preço de abertura de mercado. A única exceção acontece para a venda por \textit{timeout}, já que se trata de uma venda compulsória que sempre ocorre no preço de fechamento do dia designado.
+    \item Caso algum \textbf{preço de venda seja pulado}, ou seja, a descontinuidade entre o preço de abertura do dia corrente e o preço de fechamento do dia anterior não englobe o valor de venda, utiliza-se o preço de abertura do dia corrente. A única exceção acontece para a venda por \textit{timeout}, já que se trata de uma venda compulsória que sempre ocorre no preço de fechamento do dia designado.
 
 \end{itemize}
 

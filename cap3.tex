@@ -7,7 +7,7 @@
 
 \paragraph{} As seções a seguir trazem detalhes quanto a estrutura técnica do projeto. A Figura \ref{fig:100} apresenta um diagrama geral de como essas estrutras se conectam.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.52]{resumo_projeto.png}
     \centering
     \caption{Estrutura do técnica do projeto}
@@ -33,7 +33,7 @@
 
 \paragraph{} O Arquivo de Configuração é um arquivo no formato JSON responsável por configurar detalhadamente cada parâmetro da sequência de estratégias que se deseja executar. Uma ordem de execução do programa pode conter diversas simulações de estratégias, que são configuradas neste Arquivo. A Figura \ref{fig:101} mostra sua estrutura.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{config_file_estrutura.png}
     \centering
     \caption{Estrutura do Arquivo de Configuração}
@@ -44,7 +44,7 @@
 
 \paragraph{} Para se criar mais de um perfil de simulação, é necessário modificar o Arquivo conforme a Figura \ref{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais. No caso da Figura \ref{fig:102}, a primeira simulação utilizará os valores (100, 0.01) para o par (variável\_local\_1, variável\_local\_2), a segunda utilizará (200, 0.02) e assim sucessivamente.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{config_file_mult_exec.png}
     \centering
     \caption{Arquivo de Configuração para Execuções Múltiplas}
@@ -91,7 +91,7 @@
 
 \paragraph{} A figura \ref{fig:103} mostra o ERD\footnote{\textit{Entity-Relationship Diagram}. Em português: Diagrama de Entidade Relacionamento.} do banco. Os \textit{scripts} de criação e população inicial do banco de dados podem ser encontrado em \cite{github_projeto}. \color{red} HERALDO: (1) Vale a pena mostrar o ERD do banco? (2) Devo mencionar as constraints de banco que garantem consistência, como por exemplo a comparação do preço máximo de um candle com seus outros valores a fim de garantir que este de fato é máximo? Preços não negativos, valores não nulos, etc. \colorend
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.90]{no_image.jpeg}
     \centering
     \caption{ERD do Banco de Dados}
@@ -156,7 +156,7 @@
 
         A Figura \ref{fig:104} ilustra a eficácia do \textit{flag}. Observa-se que os três gráficos presentes na imagem se referem respectivamente ao cálculo das anomalias de queda de preços, ao cálculo das anomalias de volumes e por fim, ao cálculo do \textit{flag} de Identificação de Crises. Pode-se perceber que o mesmo foi corretamente ativado durante o início da crise do Coronavírus, pouco antes de 01/03/2020. Também houve ativação perto de 01/09/2020, embora sem um motivo claro aparente, os preços das ações durante o intervalo e logo após enfrentam uma pequena zona de consolidação, ou de desaceleração da tendência de alta que antes se apresentava. Nesta região, não se deseja entrar em operações até que uma nova tendência se forme.
 
-        \begin{figure}[h]
+        \begin{figure}[!htb]
             \includegraphics[scale=0.47]{crisis_flag_mglu3.png}
             \centering
             \caption{MGLU3 - \textit{Flag} de Identificação de Crises (01/01/2020 a 31/12/2020)}
@@ -185,7 +185,7 @@
 
     A Figura \ref{fig:109} ilustra a eficácia do \textit{Flag} de Identificação de Tendência de Baixa. Durante os maiores intervalos nos quais o \textit{Flag} esteve ativo, o preço se encontrou em queda. Por outro lado, quando verificado os intervalos menores, é mais comum a presença de falsos positivos.
 
-    \begin{figure}[h]
+    \begin{figure}[!htb]
         \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
         \centering
         \caption{COGN3 - \textit{Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}
@@ -221,15 +221,15 @@
 
     As Figuras \ref{fig:400} e \ref{fig:105} e mostram os resultados do algoritmo para dois papéis de comportamentos distintos: MGLU3 representando um companhia com foco em alto crescimento, portanto mais volátil; e ABEV3 representando uma companhia já bem consolidada no mercado, portanto menos volátil. \color{red} HERALDO: Precisa de alguma citação aqui para suportar as afirmações feitas? \colorend \\
 
-    \begin{figure}[h]
-        \includegraphics[scale=0.47]{min_risk_mglu3.png}
+    \begin{figure}[!htb]
+        \includegraphics[scale=0.41]{min_risk_mglu3.png}
         \centering
         \caption{MGLU3 - Risco Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:400}
     \end{figure}
 
-    \begin{figure}[h]
-        \includegraphics[scale=0.47]{min_risk_abev3.png}
+    \begin{figure}[!htb]
+        \includegraphics[scale=0.41]{min_risk_abev3.png}
         \centering
         \caption{ABEV3 - Risco Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:105}
@@ -241,7 +241,7 @@
 
     Para se iniciar o cálculo, primeiro é necessário a criação de um um algoritmo de identificação de picos, conforme mostrado pela Figura \ref{fig:106}. O método usa uma janela móvel de \begin{math} W = 5 \end{math} \textit{candles} que corre dia após dia até a data corrente e atribui 1 voto de máximo e 1 voto de mínimo aos preços de máximo e preços de mínimo encontrado na janela, respectivamente. Em todos os passos, o primeiro e o último \textit{candle} da janela nunca recebem votos devido à falta de um \textit{candle} adjacente. São elegíveis à picos apenas os \textit{candles} que obtiveram um mínimo de \begin{math}  floor(W / 2) = 2 \end{math} votos. Ao final, garante-se a alternância entre máximos e mínimos locais através da remoção de picos consecutivos de um mesmo tipo.
 
-    \begin{figure}[h]
+    \begin{figure}[!htb]
         \includegraphics[scale=0.47]{peaks_cple6_w_5.png}
         \centering
         \caption{CPLE6 - Algoritmo de identificação de picos (01/01/2019 a 31/12/2019)}
@@ -254,7 +254,7 @@
 
     Depois da identificação de picos, extraem-se as \begin{math} n \end{math} subidas de preços de cada mínimo para o máximo consecutivo no período designado, normalizados pelo pico de mínimo (Figura \ref{fig:107} e Equação \ref{eq:40}). Por fim, o Risco máximo é obtido pelo cálculo da média \begin{math} \overline{C_{(i)}} \end{math} com um filtro digital IIR passa-baixas (Equações \ref{eq:41} e \ref{eq:42}).
 
-    \begin{figure}[h]
+    \begin{figure}[!htb]
         \includegraphics[scale=0.47]{peaks_with_marks_cple6_w_5.png}
         \centering
         \caption{CPLE6 - Subidas de preços entre picos (01/01/2019 a 31/12/2019)}
@@ -289,15 +289,15 @@
 
     As Figuras \ref{fig:108} e \ref{fig:270} mostram o Risco Máximo para os ativos MGLU3 e ABEV3, respectivamente.
 
-    \begin{figure}[h]
-        \includegraphics[scale=0.47]{max_risk_mglu3.png}
+    \begin{figure}[!htb]
+        \includegraphics[scale=0.41]{max_risk_mglu3.png}
         \centering
         \caption{MGLU3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:108}
     \end{figure}
 
-    \begin{figure}[h]
-        \includegraphics[scale=0.47]{max_risk_abev3.png}
+    \begin{figure}[!htb]
+        \includegraphics[scale=0.41]{max_risk_abev3.png}
         \centering
         \caption{ABEV3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}
         \label{fig:270}
@@ -374,47 +374,56 @@
 \subsection{Período Máximo de Dias por Operação}
 \label{subsection:max_op_days}
 
-\paragraph{} Em teoria, poderia-se permitir que operações não tivessem um período máximo de dias para serem encerradas. Contudo, isso facilmente se prova uma péssima decisão de alocação de capital em ativos que passam por uma fase de consolidação, ou seja, sem qualquer tendência. Além do ativo em questão não encerrar a operação e finalizar seu lucro ou seu prejuízo na carteira, o capital alocado nele não pode ser utilizado por outros ativos que eventualmente venham a lucrar, ou seja, gera-se um efeito de inércia ao aumento da performance geral. Portanto, foi imposto um limite do período de tempo de todas as operação em um valor máximo.
+\paragraph{} Em teoria, poderia-se permitir que operações não tivessem um período máximo de dias para serem encerradas. Contudo, isso facilmente se prova uma decisão ruim de alocação de capital em ativos que passam por uma fase de consolidação, ou seja, sem qualquer tendência. Além do ativo em questão não encerrar a operação e finalizar seu lucro ou seu prejuízo na carteira, o capital alocado nele não pode ser utilizado por outros ativos que eventualmente venham a lucrar, ou seja, gera-se um efeito de inércia ao aumento da performance geral. Portanto, foi imposto um limite do período de tempo de todas as operação em um valor máximo.
 
 % \paragraph{} A escolha de um número adequado para o limite de dias possui alguns caminhos, resumidos entre os extremos de: um valor fixo geral; ou um valor dinâmico para cada ação. Nota-se que criar um algoritmo que escolha o valor dinâmico a partir da análise dos dados dos últimos meses para cada ação não é trivial. Assim, optou-se por um valor fixo geral, onde a base do estudo se deu na análise ações de perfis opostos.
 
-\paragraph{} Embora ações de companhias apresentem comportamentos distintos, optou-se por um valor fixo geral, onde o ponto de partida do estudo de um valor adequado se deu através da análise ações de perfis opostos.
+% \paragraph{} Embora ações de companhias apresentem comportamentos distintos, optou-se por um valor fixo geral, onde o ponto de partida do estudo de um valor adequado se deu através da análise ações de perfis opostos.
 
 \paragraph{} Nesta linha, um algoritmo auxiliar foi criado para varrer um período de dias passados e criar operações com diversos valores de risco, observando quais riscos levariam a operações de sucesso e quais levariam a operações de falha. Também analisou-se a distribuição de operações de sucesso de acordo com os valores de risco e o intervalo de dias corridos.
 
-\paragraph{} De início, foi fixado um intervalo máximo de 90 dias para cada operação hipotética que o algoritmo gerou. O valor é propositalmente excessivo, pois sua função é apenas não forçar \textit{timeout} na maioria das operações. As Figuras \ref{fig:120} e \ref{fig:121} mostram dois histogramas dos dias das operações de sucesso que consideram o menor risco possível, isto é, o menor valor de risco que se pode utilizar a cada dia da série temporal de forma a tornar a operação de sucesso, caso ele exista. Se não houver, é considerado operação de falha, portanto está fora dos histogramas. A legenda indica faixas onde, no caso da linha tracejada verde na Figura \ref{fig:120}, 50\% das contagens se encontram dentro dos 12 primeiros dias, e assim por diante.
+\paragraph{} De início, foi fixado um intervalo máximo de 90 dias para cada operação hipotética que o algoritmo gerou. O valor é propositalmente excessivo, pois sua função é apenas não forçar \textit{timeout} na maioria das operações. As Figuras \ref{fig:120} e \ref{fig:121} mostram dois histogramas dos dias das operações de sucesso que consideram o menor risco possível, isto é, o menor valor de risco que se pode utilizar a cada dia da série temporal de forma a tornar a operação um sucesso, caso ele exista. Se não existir, é considerado operação de falha, portanto está fora dos histogramas. A legenda indica faixas onde, no caso da linha tracejada em verde na Figura \ref{fig:120}, 50\% das contagens se encontram dentro dos 12 primeiros dias, e assim por diante.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_min_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
+    \caption{MGLU3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:120}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_min_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de Dias com Risco Mínimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
+    \caption{ABEV3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:121}
 \end{figure}
 
-\paragraph{} Também foram analisados os histogramas para o caso de risco ótimo por operação, ou seja, o valor de risco que traz o maior rendimento por operação considerando os dias corridos (Figuras \ref{fig:122} e \ref{fig:123}).
+\paragraph{} Também foram analisados os histogramas de risco ótimo por operação, ou seja, o valor de risco que traz o melhor rendimento por operação considerando os dias corridos (Figuras \ref{fig:122} e \ref{fig:123}).
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_opt_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
+    \caption{MGLU3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:122}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_opt_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de Dias com Risco Ótimo em Operações de Sucesso (01/01/2016 a 31/12/2018)}
+    \caption{ABEV3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}
     \label{fig:123}
 \end{figure}
 
-A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens dos histogramas.
+A Figura \ref{fig:540} mostra a distribuição de todas as operações de sucesso possíveis no intervalo selecionado. Obseva-se que valores baixos de risco não costumam estar associados a longos períodos de operação e que a maior densidade de operações de sucesso se encontra em um baixo risco e em uma baixa duração da operação.
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.40]{riskmap_mglu3.png}
+    \centering
+    \caption{MGLU3 - Histograma de todas as operações de sucesso (01/01/2016 a 31/12/2018)}
+    \label{fig:540}
+\end{figure}
+
+A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens dos histogramas conforme indicado nas Figuras \ref{fig:120}, \ref{fig:121}, \ref{fig:122} e \ref{fig:123}.
 
 \begin{table}[h!]
     \begin{center}
@@ -429,7 +438,8 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \end{center}
 \end{table}
 
-\paragraph{} Com base nos valores encontrados, arbitrou-se o período máximo fixo de \textbf{45 dias} para qualquer operação. \color{red} HERALDO: É muita ousadia afirmar que escolhi arbitrariamente o valor de 45 dias com base na tabela apresentada? \colorend
+\paragraph{} Com base nos valores encontrados, escolheu-se como ponto de partida o período máximo de \textbf{45 dias} para qualquer operação. Esse valor será melhor depurado na Seção \ref{sub:escolha_param} e se necessário, substituído por outro mais adequado.
+
 
 
 \subsection{Gerenciamento de Risco}
@@ -658,14 +668,14 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} As Figuras \ref{fig:130} e \ref{fig:131} mostram eficácia do critério criado para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5}, durante o período de 01/01/2019 a 31/12/2021, onde a Figura \ref{fig:130} desabilita a Normalização e a Figura \ref{fig:131} habilita.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.70]{no_image.jpeg}
     \centering
     \caption{Simulação sem uso da Normalização por Frequência de Operações}
     \label{fig:130}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.70]{no_image.jpeg}
     \centering
     \caption{Simulação com uso da Normalização por Frequência de Operações}
@@ -722,7 +732,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \pgfmathsetmacro{\sigs}{0.2}
 \pgfmathsetmacro{\sige}{2.0}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \centering
     \begin{center}
         \begin{tikzpicture}
@@ -755,7 +765,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} A Figura \ref{fig:141} mostra o ganho de performance obtido para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5}, durante o período de 01/01/2019 a 31/12/2021. Ressalta-se que nenhuma outra Otimização de Gerenciamento de Carteira foi utilizada a fim de se isolar o efeito desta Compensação.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.70]{no_image.jpeg}
     \centering
     \caption{Ganho de performance pelo uso da Compensação por Lucratividade}
@@ -764,7 +774,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} A Figura \ref{fig:142} também mostra o ganho de performance nas mesmas condições da Figura \ref{fig:141}, com a exceção do uso comum da Normalização por Frequência de Operações, o que mostra que ambas as otimizações de carteira não se exluem, muito pelo contrário.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.70]{no_image.jpeg}
     \centering
     \caption{Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}
@@ -798,7 +808,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} A Figura \ref{fig:150} mostra o ganho de performance obtido pela implementação do RCC Dinâmico com os valores mencionados.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.70]{no_image.jpeg}
     \centering
     \caption{Ganho de performance pelo uso do RCC Dinâmico}
@@ -914,7 +924,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} A Figura \ref{fig:170} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (ver Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se que a performance do \textit{baseline} é significativamente maior que o iBovespa, o que é razoável já que o iBovespa é uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{baseline_raw.png}
     \centering
     \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}
@@ -925,35 +935,35 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} Um \textit{Dashboard} interativo é gerado por aplicação secundária a fim de auxiliar a análise dos resultados obtidos em cada simulação. O \textit{framework} \textit{Dash} \cite{dash} foi utilizado para criar uma interface web resumindo todas as informações pertinentes a uma simulação executada. As Figuras \ref{fig:171}, \ref{fig:172}, \ref{fig:173}, \ref{fig:174} e \ref{fig:175} mostram em partes as seções de uma simulação genérica.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_1.png}
     \centering
     \caption{Dashboard - Performance}
     \label{fig:171}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_2.png}
     \centering
     \caption{Dashboard - Parâmetros de entrada}
     \label{fig:172}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_3.png}
     \centering
     \caption{Dashboard - Resultados e Estatísticas}
     \label{fig:173}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_4.png}
     \centering
     \caption{Dashboard - Gráfico de uso de capital}
     \label{fig:174}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_5.png}
     \centering
     \caption{Dashboard - Gráficos de análise individual de ações }

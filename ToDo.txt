@@ -48,7 +48,7 @@ Metodologia
     Simulação de Estratégia
         Estrutura                                           OK
         Premissas                                           OK
-        Período Máximo de Dias por Operação                 Verificação, Imagem 3D?
+        Período Máximo de Dias por Operação                 OK
         Gerenciamento de Risco                              Verificação
         Risco de Entrada por Operação                       Verificação, Imagem
         Descanso por Tendência de Baixa                     Verificação

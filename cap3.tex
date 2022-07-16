@@ -466,9 +466,11 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     Capital = \dfrac{RCC}{Risk}
 \end{equation}
 
-\paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo. A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os primeiros 20 \textit{tickers} da Tabela \ref{tab:5}.
+\paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-% CONTINUAR AQUIIIIIII!!!!
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os primeiros 20 \textit{tickers} da Tabela \ref{tab:5}. \color{red} FAZER COMENTÁRIOS QUANDO SIMULAÇÕES TERMINAREM. \colorend
+
+\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.8\% e RCC=2,0\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 379 para 302 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação recebem mais capital, o que faz com que a performance geral seja maior.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.80]{performance_per_rcc.png}
@@ -478,15 +480,22 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \end{figure}
 
 \begin{figure}[!htb]
-    \includegraphics[scale=0.45]{rcc_capital_usage.png}
+    \includegraphics[scale=0.50]{rcc_capital_usage_08.png}
     \centering
     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}
     \label{fig:551}
 \end{figure}
 
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{rcc_capital_usage_20.png}
+    \centering
+    \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 2,0\%)}
+    \label{fig:552}
+\end{figure}
+
 \paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
 
-\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Será que não tem outro lugar melhor para colocar essa tabela? Coloquei aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. \colorend
+\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Coloquei a tabela aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. Mas se houver outro lugar mais adequado, posso trocar. \colorend
 
 \begin{table}[h!]
     \begin{center}

@@ -29,18 +29,20 @@
 \contentsline {figure}{\numberline {3.15}{\ignorespaces MGLU3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{47}{figure.3.15}%
 \contentsline {figure}{\numberline {3.16}{\ignorespaces ABEV3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{47}{figure.3.16}%
 \contentsline {figure}{\numberline {3.17}{\ignorespaces MGLU3 - Histograma de todas as operações de sucesso (01/01/2016 a 31/12/2018)}}{48}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Simulação sem uso da Normalização por Frequência de Operações}}{58}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{59}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{61}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade}}{61}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}}{62}{figure.3.22}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Ganho de performance pelo uso do RCC Dinâmico}}{63}{figure.3.23}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}}{66}{figure.3.24}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Dashboard - Performance}}{67}{figure.3.25}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Dashboard - Parâmetros de entrada}}{68}{figure.3.26}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Dashboard - Resultados e Estatísticas}}{68}{figure.3.27}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Dashboard - Gráfico de uso de capital}}{69}{figure.3.28}%
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Dashboard - Gráficos de análise individual de ações }}{69}{figure.3.29}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Indicadores de performance em função do RCC (20 tickers: 01/01/2019 a 31/12/2021)}}{50}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}}{50}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Simulação sem uso da Normalização por Frequência de Operações}}{59}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Simulação com uso da Normalização por Frequência de Operações}}{60}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Gráfico da Função de Compensação por Lucratividade}}{62}{figure.3.22}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade}}{62}{figure.3.23}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}}{63}{figure.3.24}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Ganho de performance pelo uso do RCC Dinâmico}}{64}{figure.3.25}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}}{67}{figure.3.26}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Dashboard - Performance}}{68}{figure.3.27}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Dashboard - Parâmetros de entrada}}{69}{figure.3.28}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Dashboard - Resultados e Estatísticas}}{69}{figure.3.29}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Dashboard - Gráfico de uso de capital}}{70}{figure.3.30}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Dashboard - Gráficos de análise individual de ações }}{70}{figure.3.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Performance da Carteira}}{71}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultados}}{72}{figure.4.2}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Performance da Carteira}}{72}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultados}}{73}{figure.4.2}%

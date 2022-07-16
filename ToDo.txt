@@ -49,7 +49,7 @@ Metodologia
         Estrutura                                           OK
         Premissas                                           OK
         Período Máximo de Dias por Operação                 OK
-        Gerenciamento de Risco                              Verificação
+        Gerenciamento de Risco                              Verificação, Imagem
         Risco de Entrada por Operação                       Verificação, Imagem
         Descanso por Tendência de Baixa                     Verificação
         Descanso por Identificação de Crises                Verificação

@@ -523,13 +523,19 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \subsection{Risco de Entrada por Operação}
 
-\paragraph{} O Risco de Entrada por Operação é encontrado a partir da média aritmética entre as \textit{features} Risco Mínimo e Risco Máximo (ver Seção \ref{sub:features}). A Equação \ref{eq:70} mostra essa relação:
+\paragraph{} O Risco de Entrada por Operação é encontrado a partir de um valor intermediário entre o Risco Mínimo e o Risco Máximo.
+
+\paragraph{} Pelo fato da metodologia de cálculo do Risco Máximo e do Risco Mínimo seguirem raciocínios diferentes (Seção \ref{sub:features}), podem ocorrer momentos nos quais a equação \begin{math} Risk_{max} < Risk_{min} \end{math} seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensem as oscilações inerentes ao ruído diário dos \textit{candlesticks}. Enquanto este evento ocorrer, não haverá entrada em operações para o ativo envolvido.
+
+\paragraph{} Para a maioria dos casos, tem-se \begin{math} Risk_{max} > Risk_{min} \end{math}. O valor do Risco de Entrada por Operação (\begin{math} Risk_{operation} \end{math}) é definido pelo parâmetro \begin{math} Risk_{coef} \end{math} de acordo com a Equação \ref{eq:70}, onde \begin{math} 0 \le Risk_{coef} \le 1 \end{math}.
 
 \begin{equation} \label{eq:70}
-    Risk_{operation} = \dfrac{1}{2}(Risk_{max} + Risk_{min}), \quad \textrm{se } Risk_{max} \ge Risk_{min}
+    Risk_{operation} = Risk_{min} + Risk_{coef}(Risk_{max} - Risk_{min})
 \end{equation}
 
-\paragraph{} Pelo fato da metodologia de cálculo do Risco Máximo e do Risco Mínimo seguirem raciocínios diferentes, podem ocorrer momentos nos quais a condição expressa na Equação \ref{eq:70} não seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensam o risco inerente ao ruído diário dos \textit{candlesticks}. Enquanto este evento ocorrer, não haverá entrada em operações para o ativo envolvido. Por outro lado, é comum uma interseção entre os períodos de Descanso por Tendência de Baixa ou até mesmo de Descanso por Identificação de Crises (Seções \ref{sub:downtrend_halt} e \ref{sub:crisis_halt}, respectivamente). \color{red} HERALDO: Algo me diz que um gráfico aqui confirmando essa interseção não seria uma má ideia, certo? \colorend
+\paragraph{} Como ponto de partida para a escolha de um valor adequado, o Risco de Entrada é configurado para \textbf{50\%}. No entanto, este valor será reconsiderado na Seção \ref{sub:escolha_param} a fim de se ter um ajuste mais adequado.
+
+% \paragraph{} Conforme mencionado nesta Seção, podem haver momentos nos quais o Risco Máximo se encontra abaixo do Risco Mínimo, impendindo assim a entrada em novas operações. Contudo, deve-se considerar a interseção com os períodos de Descanso por Tendência de Baixa e Descando por Identificação de Crises, abordados nas Seções \ref{sub:downtrend_halt} e \ref{sub:crisis_halt}, respectivamente. ...
 
 
 
@@ -664,6 +670,47 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \item Dias Mínimos de Espera após Operação de Sucesso (min\_days\_after\_successful\_operation)
     \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, eles estão sempre aqui como opções, mas são são consistentes. \colorend
 \end{itemize}
+
+
+
+\subsection{\textit{Dashboard}}
+
+\paragraph{} Um \textit{Dashboard} interativo é gerado por aplicação secundária a fim de auxiliar a análise dos resultados obtidos em cada simulação. O \textit{framework} \textit{Dash} \cite{dash} foi utilizado para criar uma interface web resumindo todas as informações pertinentes a uma simulação executada. As Figuras \ref{fig:171}, \ref{fig:172}, \ref{fig:173}, \ref{fig:174} e \ref{fig:175} mostram em partes as seções de uma simulação genérica.
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.33]{dash_1.png}
+    \centering
+    \caption{Dashboard - Performance}
+    \label{fig:171}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.33]{dash_2.png}
+    \centering
+    \caption{Dashboard - Parâmetros de entrada}
+    \label{fig:172}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.33]{dash_3.png}
+    \centering
+    \caption{Dashboard - Resultados e Estatísticas}
+    \label{fig:173}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.33]{dash_4.png}
+    \centering
+    \caption{Dashboard - Gráfico de uso de capital}
+    \label{fig:174}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.33]{dash_5.png}
+    \centering
+    \caption{Dashboard - Gráficos de análise individual de ações }
+    \label{fig:175}
+\end{figure}
 
 
 
@@ -941,11 +988,6 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 % \begin{math} R_b \end{math}
 % \color{red} HERALDO: \colorend
 
-
-
-\section{Análise de Resultados}
-
-
 \subsection{Modelo \textit{Baseline}}
 \label{sub:baseline}
 
@@ -958,43 +1000,4 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \centering
     \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}
     \label{fig:170}
-\end{figure}
-
-\subsection{\textit{Dashboard}}
-
-\paragraph{} Um \textit{Dashboard} interativo é gerado por aplicação secundária a fim de auxiliar a análise dos resultados obtidos em cada simulação. O \textit{framework} \textit{Dash} \cite{dash} foi utilizado para criar uma interface web resumindo todas as informações pertinentes a uma simulação executada. As Figuras \ref{fig:171}, \ref{fig:172}, \ref{fig:173}, \ref{fig:174} e \ref{fig:175} mostram em partes as seções de uma simulação genérica.
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.33]{dash_1.png}
-    \centering
-    \caption{Dashboard - Performance}
-    \label{fig:171}
-\end{figure}
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.33]{dash_2.png}
-    \centering
-    \caption{Dashboard - Parâmetros de entrada}
-    \label{fig:172}
-\end{figure}
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.33]{dash_3.png}
-    \centering
-    \caption{Dashboard - Resultados e Estatísticas}
-    \label{fig:173}
-\end{figure}
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.33]{dash_4.png}
-    \centering
-    \caption{Dashboard - Gráfico de uso de capital}
-    \label{fig:174}
-\end{figure}
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.33]{dash_5.png}
-    \centering
-    \caption{Dashboard - Gráficos de análise individual de ações }
-    \label{fig:175}
 \end{figure}

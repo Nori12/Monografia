@@ -344,13 +344,13 @@ YAHOO!, \enquote{Yahoo! Finance}, https://finance.yahoo.com, (Acessado em 1 de
 NORI, P., \enquote{Project Github Page},
   https://github.com/Nori12/Projeto-Final.
 
+\bibitem{dash}
+PLOTLY, \enquote{Dash}, https://dash.plotly.com/, (Acessado em 28 de Junho de
+  2022).
+
 \bibitem{scikit}
 SCIKIT-LEARN, \enquote{Random Forest},
   https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html,
   (Acessado em 5 de Julho de 2022).
-
-\bibitem{dash}
-PLOTLY, \enquote{Dash}, https://dash.plotly.com/, (Acessado em 28 de Junho de
-  2022).
 
 \end{thebibliography}

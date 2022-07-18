@@ -50,11 +50,12 @@ Metodologia
         Premissas                                           OK
         Período Máximo de Dias por Operação                 OK
         Gerenciamento de Risco                              OK
-        Risco de Entrada por Operação                       Verificação, Imagem
+        Risco de Entrada por Operação                       OK
         Descanso por Tendência de Baixa                     Verificação
         Descanso por Identificação de Crises                Verificação
         Lista de Parâmetros de Configuração                 Verificação
         Ensaios Paralelos                                   Verificação
+        Dashboard                                           Verificação
     Otimizações de Gerenciamento de Carteira
         Resumo                                              Verificação
         Normalização por Frequência de Operações            Verificação, Imagens
@@ -63,13 +64,13 @@ Metodologia
     Criação de Modelos
         Resumo                                              Verificação
         Geração de Datasets e Feature Selection
-        Índice de Lucratividade                             Fazer ou não?
+        Índice de Lucratividade                             Fazer
         Critérios de Escolha                                Continuar
-    Análise de Resultados
         Modelo Baseline                                     Verificação
-        Dashboard                                           Verificação
 
-Conclusão                                                   Código primeiro, depois: Verificação, Imagens
+Conclusão
+    Escolha de Parâmetros                                   Fazer
+    Resultados                                              Fazer
 
 Código:
     (1) Resolver BUG de encurtamento de dias de simulação por paralelização.

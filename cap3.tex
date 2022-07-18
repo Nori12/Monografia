@@ -468,9 +468,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os primeiros 20 \textit{tickers} da Tabela \ref{tab:5}. \color{red} FAZER COMENTÁRIOS QUANDO SIMULAÇÕES TERMINAREM. \colorend
-
-\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.8\% e RCC=2,0\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 379 para 302 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação recebem mais capital, o que faz com que a performance geral seja maior.
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os primeiros 20 \textit{tickers} da Tabela \ref{tab:5}. Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe estão crescentes. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.80]{performance_per_rcc.png}
@@ -479,23 +477,27 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:550}
 \end{figure}
 
-\begin{figure}[!htb]
+\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.8\% e RCC=2,0\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 379 para 302 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação receberam mais capital e como estas são mais expressivas, a performance geral foi maior.
+
+\begin{figure}[!htb] % ID 315
     \includegraphics[scale=0.50]{rcc_capital_usage_08.png}
     \centering
     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}
     \label{fig:551}
 \end{figure}
 
-\begin{figure}[!htb]
+\begin{figure}[!htb] % ID 345
     \includegraphics[scale=0.50]{rcc_capital_usage_20.png}
     \centering
     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 2,0\%)}
     \label{fig:552}
 \end{figure}
 
-\paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
+\paragraph{} Um problema geral e inerente à abordagem do RCC é a necessidade do conhecimento \textit{a priori} de um valor razoável. Ou seja, sem algumas simulações prévias, não há como se saber um valor ótimo ou pelo menos próximo dele. Uma forma de se atenuar esse problema é através da criação de um controle proporcional que aumente o RCC geral em função do baixo aproveitamento de uso de capital dos dias corridos e vice-versa. Essa alternativa também é chamada de RCC Dinâmico e abordada em mais detalhes na Seção \ref{sub:dynamic_rcc}.
 
-\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Coloquei a tabela aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. Mas se houver outro lugar mais adequado, posso trocar. \colorend
+% \paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
+
+\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Coloquei a tabela aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. Mas se houver outro lugar mais adequado, posso trocar. \colorend
 
 \begin{table}[h!]
     \begin{center}
@@ -896,7 +898,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O \textit{flag} de fim de intervalo indica que, pelo fato do \textit{dataset} ter chegado ao final, não é possível dizer se a operação foi de sucesso ou de falha, portanto a mesma é desconsiderada do treinamento.
 
-\paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Por isso foram utilizadas 56 opções de risco: de 1\% a 12\% em passos de 0,2\%.
+\paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Foram utilizadas 119 opções de risco: de 0,2\% a 12\% em passos de 0,1\%.
 
 
 

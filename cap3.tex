@@ -354,7 +354,7 @@
 
     \item No dia que houver a compra de um ativo, não pode haver a venda do mesmo. Em outras palavras, o \textbf{período mínimo de duração de uma operação é de 1 dia útil}.
 
-    \item A \textbf{venda por \textit{timeout}} ocorre quando o número máximo de dias de uma operações extrapola um valor definido (ver Seção \ref{subsection:max_op_days})
+    \item A \textbf{venda por \textit{timeout}} ocorre quando o número máximo de dias de uma operações extrapola um valor definido (ver Seção \ref{sub:max_op_days})
 
     \item Devido a ausência de informações mais detalhadas que a janela de tempo diária, a seguinte ordem é priorizada durante a \textbf{venda de um ativo}:
 
@@ -372,7 +372,7 @@
 
 
 \subsection{Período Máximo de Dias por Operação}
-\label{subsection:max_op_days}
+\label{sub:max_op_days}
 
 \paragraph{} Em teoria, poderia-se permitir que operações não tivessem um período máximo de dias para serem encerradas. Contudo, isso facilmente se prova uma decisão ruim de alocação de capital em ativos que passam por uma fase de consolidação, ou seja, sem qualquer tendência. Além do ativo em questão não encerrar a operação e finalizar seu lucro ou seu prejuízo na carteira, o capital alocado nele não pode ser utilizado por outros ativos que eventualmente venham a lucrar, ou seja, gera-se um efeito de inércia ao aumento da performance geral. Portanto, foi imposto um limite do período de tempo de todas as operação em um valor máximo.
 
@@ -522,6 +522,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \subsection{Risco de Entrada por Operação}
+\label{sub:operation_risk}
 
 \paragraph{} O Risco de Entrada por Operação é encontrado a partir de um valor intermediário entre o Risco Mínimo e o Risco Máximo.
 
@@ -556,23 +557,23 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \subsection{Lista de Parâmetros de Configuração}
 \label{sub:params_list}
 
-\paragraph{} A Tabela \ref{tab:3} mostra uma lista de todos os parâmetros configuráveis em uma simulação. Nota-se que as variáveis de escopo geral são aplicáveis a toda e qualquer estratégia presente no Arquivo de Configuração enquanto as variáveis de escopo local dizem respeito apenas a um grupo de estratégias em parciluar (ver Seção \ref{sub:conf_file} para mais esclarecimentos).
+\paragraph{} A Tabela \ref{tab:3} mostra uma lista de todos os parâmetros configuráveis em uma simulação. Nota-se que as variáveis de escopo geral são aplicáveis a toda e qualquer estratégia presente no Arquivo de Configuração enquanto as variáveis de escopo local dizem respeito apenas a um grupo de estratégias em parciluar (ver Seção \ref{sub:conf_file}).
 
 \begin{center}
     {\small
-    \begin{longtable}[m]{| m{11em} | m{3em}| m{21em} |}
+    \begin{longtable}[m]{| m{11em} | m{21em} |}
 
         \hline
-        \multicolumn{3}{|c|}{Lista de Parâmetros} \\
+        \multicolumn{2}{|c|}{Lista de Parâmetros} \\
         \hline
-        Nome do Parâmetro & Escopo & Descrição \\
+        Nome do Parâmetro & Descrição \\
         \hline
         \endfirsthead
 
         \hline
-        \multicolumn{3}{|c|}{Continuação da Tabela \ref{tab:3}} \\
+        \multicolumn{2}{|c|}{Continuação da Tabela \ref{tab:3}} \\
         \hline
-        Nome do Parâmetro & Escopo & Descrição \\
+        Nome do Parâmetro & Descrição \\
         \hline
         \endhead
 
@@ -580,72 +581,75 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
         \endfoot
 
         \hline
-        \multicolumn{3}{|c|}{Fim da Tabela \ref{tab:3}} \\
+        \multicolumn{2}{|c|}{Fim da Tabela \ref{tab:3}} \\
         \hline
         \caption{Lista de parâmetros detalhados\label{tab:3}}
         \endlastfoot
 
         \hline
-        show\_results & Geral & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: \textit{Boolean}. \textit{Default}: \textit{True}. Listável: Não. \\
+        % show\_results & Geral & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: \textit{Boolean}. \textit{Default}: \textit{True}. Listável: Não. \\
+        % \hline
+        % min\_risk\_features & Geral & Risco mínimo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,01. Listável: Não. \\
+        % \hline
+        % max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
+        % \hline
+        \textbf{name} & \textbf{(OBRIGATÓRIO)} Nome da estratégia a ser executada. Único valor válido: ``ML". Tipo: \textit{String}. Listável: Não. \\
         \hline
-        min\_risk\_features & Geral & Risco mínimo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,01. Listável: Não. \\
+        \textbf{alias} & \textbf{(OBRIGATÓRIO)} Rótulo de Identificação. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
         \hline
-        max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
+        \textbf{stock\_targets} & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. \\
         \hline
-        \textbf{name} & Local & \textbf{(OBRIGATÓRIO)} Nome da estratégia a ser executada. Valores válidos: ``ML Derivation". Tipo: \textit{String}. Listável: Não. \\
+        comment & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
         \hline
-        comment & Local & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
+        capital & Capital total da carteira em reais (R\$). Tipo: \textit{Float}. \textit{Default}: 100000. Listável: Sim. \\
         \hline
-        capital & Local & Capital total da carteira em reais (R\$). Tipo: \textit{Float}. Listável: Sim. \\
+        risk\_capital\_coefficient & Coeficiente de risco-capital (RCC) geral (Seção \ref{sub:risk_man}). Tipo: \textit{Float}. \textit{Default}: 0,001. Listável: Sim. \\
         \hline
-        risk\_capital\_coefficient & Local & Coeficiente de risco-capital (RCC) geral. Tipo: \textit{Float}. \textit{Default}: 0,001. Listável: Sim. \\
+        % tickers\_bag & Critério de escolha do grupo de ativos a escolher dentro de ``stock\_targets". Valores aceitos: ``listed\_first" (ordem de listagem); ``random" (ordem aleatória). \textit{Default}: ``listed\_first". Listável: Sim. \\
+        % \hline
+        % tickers\_number & Número de ativos a escolher dentro de ``stock\_targets", de acordo com ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
+        % \hline
+        tickers\_number & Número de ativos a escolher dentro de ``stock\_targets" em ordem de listagem. Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
         \hline
-        tickers\_bag & Local & Grupo de ativos a escolher dentro de ``stock\_targets". Valores aceitos: ``listed\_first" (ordem de listagem); ``random" (ordem aleatória). \textit{Default}: ``listed\_first". Listável: Sim. \\
+        min\_order\_volume & Volume mínimo por operação. Tipo: \textit{Int}. \textit{Default}: 1. Listável: Sim. \\
         \hline
-        tickers\_number & Local & Número de ativos a escolher dentro de ``stock\_targets", de acordo com ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
+        % gain\_loss\_ratio & Razão entre ganho e perda. Para uma unidade de risco (delta pencentual entre preço de compra e \textit{stop loss}) são utilizadas N unidades de risco acima no preço preço de compra para definir o preço alvo. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+        % \hline
+        max\_days\_per\_operation & Número máximo de dias por operação (Seção \ref{sub:max_op_days}). Inclui o dia de compra. Caso excedido, ocorre venda compulsória pelo preço de fechamento no último dia da contagem. Tipo: \textit{Int}. \textit{Default}: 45. Listável: Não. \\
         \hline
-        min\_order\_volume & Local & Volume mínimo por operação. Tipo: \textit{Int}. \textit{Default}: 1. Listável: Sim. \\
+        min\_risk & Risco mínimo por operação. Tipo: \textit{Float}. \textit{Default}: 0,003. Listável: Sim. \\
         \hline
-        gain\_loss\_ratio & Local & Razão entre ganho e perda. Para uma unidade de risco (delta pencentual entre preço de compra e \textit{stop loss}) são utilizadas N unidades de risco acima no preço preço de compra para definir o preço alvo. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+        max\_risk & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,15. Listável: Sim. \\
         \hline
-        max\_days\_per\_operation & Local & Número máximo de dias por operação. Inclui o dia de compra. Caso excedido, ocorre venda compulsória pelo preço de fechamento no último dia da contagem. Tipo: \textit{Int}. \textit{Default}: 45. Listável: Não. \\
+        operation\_risk & Valor percentual de escolha do risco de entrada em operação (Seção \ref{sub:operation_risk}). Tipo: \textit{Float}. \textit{Default}: 0,5. Listável: Sim. \\
         \hline
-        min\_risk & Local & Risco mínimo por operação. Tipo: \textit{Float}. \textit{Default}: 0,003. Listável: Sim. \\
+        enable\_frequency\hspace{2em} \_normalization & Uso de normalização por frequência de operações (Seção \ref{sub:freq_norm}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
-        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
+        enable\_profit\hspace{4em} \_compensation & Uso de compensação por lucratividade acumulada (Seção \ref{profit_comp}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
-        max\_risk & Local & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Sim. \\
+        enable\_downtrend\_halt & Uso de descanso por identificação de tendência de baixa (Seção \ref{sub:downtrend_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
-        enable\_frequency\hspace{2em} \_normalization & Local & Uso de normalização por frequência de operações. Ativos com N vezes mais operações que a média receberão N vezes menos capital. Ver Seção \ref{freq_norm}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        enable\_crisis\_halt & Uso de descanso por identificação de crises (Seção \ref{sub:crisis_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
-        enable\_profit\hspace{4em} \_compensation & Local & Uso de compensação por lucratividade acumulada. Ver Seção \ref{profit_comp}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        enable\_dynamic\_rcc & Uso de Coeficiente de Risco-Capital dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
-        enable\_crisis\_halt & Local & Bloqueio de novas aquisições em caso de identificação de potenciais crises financeiras (para ativo). Ver Seção \ref{sub:crisis_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        dynamic\_rcc\_reference & Valor de referência de uso de capital médio no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 1,0. Listável: Sim. \\
         \hline
-        enable\_downtrend\_halt & Local & Bloqueio de novas aquisições em caso de identificação de tendências de baixo nos preços (para ativo). Ver Seção \ref{sub:downtrend_halt}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        enable\_dynamic\_rcc & Local & Uso de Coeficiente de Risco-Capital dinâmico (para carteira). Ver Seção \ref{sub:dynamic_rcc}. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        dynamic\_rcc\_reference & Local & Valor de referência de uso de capital médio no controle do RCC dinâmico. Ver Seção \ref{sub:dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 0,80. Listável: Sim. \\
-        \hline
-        dynamic\_rcc\_k & Local & Valor do ganho proporcional K no controle do RCC dinâmico. Ver Seção \ref{sub:dynamic_rcc}. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
-        \hline
-
-        purchase\_margin & Local & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
-        \hline
-        stop\_margin & Local & Margem percentual aplicada ao valor do \textit{stop loss}. Ex: Se o \textit{stop} estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$101. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
-        \hline
-        partial\_sale & Local & Uso de saídas parciais. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        stop\_type & Local & Tipo de \textit{stop loss} utilizado. Valores aceitos: ``normal"; ``staircase" (para cada patamar de unidade de risco que o preço atinge acima do valor de compra, o \textit{stop} sobe igualmente, até uma unidade de risco abaixo do preço alvo). Ver ``gain\_loss\_ratio". \textit{Default}: ``normal". Listável: Sim. \\
-        \hline
-        min\_days\_after\_successful \_operation & Local & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
-        \hline
-        min\_days\_after\_failure \_operation & Local & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        dynamic\_rcc\_k & Valor do ganho proporcional K no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 5. Listável: Sim. \\
         \hline
 
-        \textbf{stock\_targets} & Local & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. Atenção ao parâmetro ``tickers\_bag". \\
-        \hline
+        % purchase\_margin & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+        % \hline
+        % stop\_margin & Margem percentual aplicada ao valor do \textit{stop loss}. Ex: Se o \textit{stop} estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$101. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+        % \hline
+        % partial\_sale & Uso de saídas parciais. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        % \hline
+        % stop\_type & Tipo de \textit{stop loss} utilizado. Valores aceitos: ``normal"; ``staircase" (para cada patamar de unidade de risco que o preço atinge acima do valor de compra, o \textit{stop} sobe igualmente, até uma unidade de risco abaixo do preço alvo). Ver ``gain\_loss\_ratio". \textit{Default}: ``normal". Listável: Sim. \\
+        % \hline
+        % min\_days\_after\_successful \_operation & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        % \hline
+        % min\_days\_after\_failure \_operation & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+        % \hline
 
     \end{longtable}}
 \end{center}
@@ -654,7 +658,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \subsection{Ensaios Paralelos}
 
-\color{red} HERALDO: Vou fazer apenas uma introdução para te mostrar o caminho que seguirei caso você julgue que valha a pena mencionar essa seção. Se não for necessário, removo as referências dos parâmentros mencionados ao longo desta monografia.\colorend
+\color{red} HERALDO: Vou fazer apenas fazer comentários para te mostrar o caminho que seguirei caso você julgue que valha a pena trabalhar essa seção. \colorend
 
 \paragraph{} Alguns parâmetros não se mostraram eficazes em melhorar a performance das simulações, muito embora tenham se apresentado como alternativas plausíveis na resolução de problemas ao longo deste trabalho. São eles os parâmetros:
 
@@ -721,7 +725,8 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \paragraph{} As otimizações apresentadas nesta Seção independem de um modelo de ML específico, sendo portanto algoritmos gerais que, motivados ou não por problemas oriundos dos modelos, buscam uma abordagem geral para aumento da performance da carteira.
 
 \subsection{Normalização por Frequência de Operações}
-\label{freq_norm}
+\label{sub:freq_norm}
+
 \paragraph{} Cada ativo de uma carteira possui um critério próprio de análise das condições de mercado que o auxilia na decisão de entrada nas operações. Muitas vezes, ativos diferentes acumulam um número bastante variado de operações concluídas ao longo da simulação. Por outro lado, esse número não posui ligação direta com a performance individual dos mesmos. Em outras palavras, facilmente ocorre a situação de um \textit{ticker} monopolizar grande parte do capital total da carteira ao longo do tempo, simplesmente por ter uma frequência de operações maior que os outros, sem qualquer fator meritocrático que embase uma justificativa.
 
 \paragraph{} A fim de se endereçar essa questão, foi criado o critério de Normalização por Frequência de Operações, onde cada ativo receberá de capital para uma determinada operação um valor inversamente proporcional a frequência de operações acumulada até o momento.

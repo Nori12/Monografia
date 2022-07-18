@@ -51,11 +51,11 @@ Metodologia
         Período Máximo de Dias por Operação                 OK
         Gerenciamento de Risco                              OK
         Risco de Entrada por Operação                       OK
-        Descanso por Tendência de Baixa                     Verificação
-        Descanso por Identificação de Crises                Verificação
-        Lista de Parâmetros de Configuração                 Verificação
-        Ensaios Paralelos                                   Verificação
-        Dashboard                                           Verificação
+        Descanso por Tendência de Baixa                     OK
+        Descanso por Identificação de Crises                OK
+        Lista de Parâmetros de Configuração                 OK
+        Ensaios Paralelos                                   Revisar após conclusão
+        Dashboard                                           OK
     Otimizações de Gerenciamento de Carteira
         Resumo                                              Verificação
         Normalização por Frequência de Operações            Verificação, Imagens

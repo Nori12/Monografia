@@ -1028,7 +1028,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit} com a configuração indicada pela Tabela \ref{tab:8}.
 
-\begin{table}[h!]
+\begin{table}[!htb]
     \begin{center}
         \begin{tabular}{ c|c }
             Parâmetro & Valor \\
@@ -1061,13 +1061,25 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \subsection{Modelo \textit{Baseline}}
 \label{sub:baseline}
 
-\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média da performance das ações da carteira, ou seja, supondo-se que o capital inicial fosse igualmente distribuido em cada ação disponível, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
+\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média de performance das ações da carteira, ou seja, supondo-se que o capital inicial fosse igualmente distribuido em cada ação disponível, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
 
-\paragraph{} A Figura \ref{fig:170} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (ver Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se que a performance do \textit{baseline} é significativamente maior que o iBovespa, o que é razoável já que o iBovespa é uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência.
+\paragraph{} A Figura \ref{fig:170} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se a diferença de performance do \textit{baseline} para o iBovespa, o que é razoável já que o \textit{baseline} tem composição fixa e o iBovespa tem uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência. A Tabela \ref{tab:12} mostra os indicadores de performance para o modelo \textit{baseline}.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.50]{baseline_raw.png}
     \centering
-    \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021 (CORRIGIR)}
+    \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021}
     \label{fig:170}
 \end{figure}
+
+\begin{table}[!htb]
+    \begin{center}
+        \begin{tabular}{ cccc }
+            Rend. Final & Volatilidade & Sharpe & Sortino \\
+            \hline
+            73,94\% & 55,48\% & 0,68 & 0,74 \\
+        \end{tabular}
+        \caption{\textit{Baseline} - Indicadores de Performance}
+        \label{tab:12}
+    \end{center}
+\end{table}

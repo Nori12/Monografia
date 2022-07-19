@@ -244,11 +244,11 @@
 \contentsline {subsection}{\numberline {3.5.5}Modelo \textit {Baseline}}{66}{subsection.3.5.5}%
 \contentsline {paragraph}{}{66}{section*.196}%
 \contentsline {paragraph}{}{66}{section*.197}%
-\contentsline {chapter}{\numberline {4}Conclusão}{68}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Escolha de Parâmetros}{68}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Resultados}{68}{section.4.2}%
-\contentsline {paragraph}{}{68}{section*.198}%
-\contentsline {paragraph}{}{68}{section*.199}%
-\contentsline {paragraph}{}{68}{section*.200}%
-\contentsline {paragraph}{}{68}{section*.201}%
-\contentsline {chapter}{Bibliografia}{71}{section*.201}%
+\contentsline {chapter}{\numberline {4}Conclusão}{69}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Escolha de Parâmetros}{69}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Resultados}{69}{section.4.2}%
+\contentsline {paragraph}{}{69}{section*.198}%
+\contentsline {paragraph}{}{69}{section*.199}%
+\contentsline {paragraph}{}{69}{section*.200}%
+\contentsline {paragraph}{}{69}{section*.201}%
+\contentsline {chapter}{Bibliografia}{72}{section*.201}%

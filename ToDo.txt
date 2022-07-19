@@ -60,13 +60,13 @@ Metodologia
         Resumo                                              OK
         Normalização por Frequência de Operações            Excluído por ineficiência
         Compensação por Lucratividade                       OK
-        Controle Proporcional para Uso de Capital           Analisando
+        Controle Proporcional para Uso de Capital           Aguardando dados para montar última imagem e texto
     Criação de Modelos
         Resumo                                              OK
         Geração de Datasets e Feature Selection             OK
-        Índice de Lucratividade                             Fazer
-        Critérios de Escolha                                Continuar
-        Modelo Baseline                                     Verificação
+        Índice de Lucratividade                             Fazendo
+        Critérios de Escolha                                Fazer
+        Modelo Baseline                                     OK
 
 Conclusão
     Escolha de Parâmetros                                   Fazer

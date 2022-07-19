@@ -684,35 +684,35 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_1.png}
     \centering
-    \caption{Dashboard - Performance}
+    \caption{\textit{Dashboard} - Performance}
     \label{fig:171}
 \end{figure}
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_2.png}
     \centering
-    \caption{Dashboard - Parâmetros de entrada}
+    \caption{\textit{Dashboard} - Parâmetros de entrada}
     \label{fig:172}
 \end{figure}
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_3.png}
     \centering
-    \caption{Dashboard - Resultados e Estatísticas}
+    \caption{\textit{Dashboard} - Resultados e estatísticas}
     \label{fig:173}
 \end{figure}
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_4.png}
     \centering
-    \caption{Dashboard - Gráfico de uso de capital}
+    \caption{\textit{Dashboard} - Gráfico de uso de capital}
     \label{fig:174}
 \end{figure}
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.33]{dash_5.png}
     \centering
-    \caption{Dashboard - Gráficos de análise individual de ações }
+    \caption{\textit{Dashboard} - Gráficos de análise individual de ações }
     \label{fig:175}
 \end{figure}
 
@@ -870,19 +870,19 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \begin{figure}[!htb]
     \includegraphics[scale=0.50]{profit_comp.png}
     \centering
-    \caption{Ganho de performance pelo uso da Compensação por Lucratividade}
+    \caption{Performance por uso de Compensação por Lucratividade}
     \label{fig:141}
 \end{figure}
 
 \begin{table}[h!]
     \begin{center}
         \begin{tabular}{ c|cc|ccc }
-            Comp. Luc. & RCC & Uso Médio de Cap. & Rend. Final & Sharpe & Sortino \\
+            Comp. Luc. & RCC & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
             \hline
             Não & 0,35\% & 78,30\% & 42,06\% & 0,43 & 0,52 \\
             Sim & 0,22\% & 78,74\% & 44,58\% & 0,46 & 0,55 \\
         \end{tabular}
-        \caption{Comparação de Resultados}
+        \caption{Compensação por Lucratividade - Comparação de Resultados}
         \label{tab:9}
     \end{center}
 \end{table}
@@ -894,9 +894,9 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 % \paragraph{} A criação de um RCC como ferramenta de gerenciamento de risco (ver Seção \ref{sub:risk_man}) não resolve o problema de subaproveitamento do Uso de Capital da carteira ao longo do período de simulação. Entende-se por subaproveitamento a parcela de capital ocioso que, por não estar empregado em nenhum ativo, resulta em uma perda de performance geral.
 
-\paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco (ver Seção \ref{sub:risk_man}), mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode ser obtido através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser suficientemente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, um RCC fixo leva a problemas de subaproveitamento do Uso de Capital da carteira.
+\paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco (Seção \ref{sub:risk_man}), mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode ser obtido através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser suficientemente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, um RCC fixo pode levar a problemas de subaproveitamento do Uso de Capital da carteira.
 
-\paragraph{} A solução desse problema se dá pela criação de um RCC Dinâmico, configurado através de um Controle Proporcional. A vantagem dessa abordagem está na diminuição da sensibilidade do RCC em relação à performance geral, permitindo um ajuste menos preciso sem grande impacto de performance. Tudo isso aliado a um rebalanceamento dinâmico de capital em função do uso médio de capital vigente, ou seja, períodos com menores oportunidades de operações terão mais disponibilidade de capital e vice-versa.
+\paragraph{} A atenuação desse problema se dá pela criação de um RCC Dinâmico, configurado através de um Controle Proporcional. A vantagem dessa abordagem está na diminuição da sensibilidade do RCC em relação à performance geral, permitindo um ajuste menos preciso sem grande impacto de performance. O Controle atua no rebalanceamento de capital em função do uso médio de capital vigente, ou seja, períodos com menos oportunidades de operações terão mais alavancagem de capital e vice-versa.
 
 % \paragraph{} \color{red} HERALDO: Pensei em colocar um diagrama desse controle proporcional aqui, porém o bloco que representaria a planta (i.e., estratégia) é extremamente não-linear. \colorend
 
@@ -910,20 +910,57 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     RCC_{din} = RCC_{fix} (1 + K e)
 \end{equation}
 
-\paragraph{} Foi utilizado \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 5 \end{math} e \begin{math} RCC_{fix} = 0.003 \end{math}
+% \paragraph{} Foi utilizado \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 10 \end{math} e \begin{math} RCC_{fix} = 0.003 \end{math}
 
-\paragraph{} A Figura \ref{fig:150} mostra o ganho de performance obtido pela implementação do RCC Dinâmico com os valores mencionados.
+\paragraph{} A Figura \ref{fig:150} mostra o ganho de performance obtido pela implementação do RCC Dinâmico com os valores \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 7,5 \end{math} e \begin{math} RCC_{fix} = 0.0022 \end{math}. A linha em amarelo indica a simulação com uso do RCC Dinâmico enquanto a linha verde indica a simulação sem o uso. Nenhuma outra otimização foi utilizada. A Tabela \ref{tab:10} traz um comparativo dos resultados das simulações. Nota-se que o RCC foi ajustado para que o Uso Médio de Capital de ambas simulações ficassem próximos.
 
+% ID: 420 (sem), 419 (com)
 \begin{figure}[!htb]
-    \includegraphics[scale=0.70]{no_image.jpeg}
+    \includegraphics[scale=0.50]{dyn_rcc_no_flags.png}
     \centering
-    \caption{Ganho de performance pelo uso do RCC Dinâmico}
+    \caption{Performance por uso de RCC dinâmico sem \textit{flags} de descanso}
     \label{fig:150}
 \end{figure}
 
-\paragraph{} (Falar que essa medida aumenta o uso de capital bem alocado, mas também o mal alocado, por isso tem um limite)
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|cc|ccc }
+            RCC Din. & RCC fixo & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
+            \hline
+            Não & 0,50\% & 84,20\% & 44,93\% & 0,44 & 0,53 \\
+            Sim & 0,22\% & 84,11\% & 47,37\% & 0,47 & 0,57 \\
+        \end{tabular}
+        \caption{RCC Dinâmico - Comparação de Resultados sem \textit{flags} de descanso}
+        \label{tab:10}
+    \end{center}
+\end{table}
 
-\paragraph{} (Mostrar que RCC dinâmico não tem problema com otimizações anteriores)
+\paragraph{} Analogamente à Figura \ref{fig:150}, a Figura \ref{fig:151} também mostra o ganho de performance, porém na condição de ativação dos Descansos por Tendência de Baixa e por Identificação de Crises para ambas as simulações. A Tabela \ref{tab:11} compara os resultados das simulações.
+
+% ID: 425 (sem), 422 (com)
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{dyn_rcc_with_flags.png}
+    \centering
+    \caption{Performance por uso de RCC dinâmico com \textit{flags} de descanso}
+    \label{fig:151}
+\end{figure}
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|cc|ccc }
+            RCC Din. & RCC fixo & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
+            \hline
+            Não & 0,63\% & 73,89\% & 66,61\% & 0,94 & 1,27 \\
+            Sim & 0,22\% & 73,98\% & 83,38\% & 1,20 & 1,69 \\
+        \end{tabular}
+        \caption{RCC Dinâmico - Comparação de Resultados com \textit{flags} de descanso}
+        \label{tab:11}
+    \end{center}
+\end{table}
+
+\paragraph{}
+
+% \paragraph{} (Falar que essa medida aumenta o uso de capital bem alocado, mas também o mal alocado, por isso tem um limite)
 
 % \paragraph{} A dificuldade em se distinguir um capital bem alocado de um capital subaproveitado é inerente à imperfeição do modelo escolhido. Contudo, medidas podem ser tomadas para
 
@@ -935,14 +972,17 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \section{Criação de Modelos}
 
+
+
 \subsection{Resumo}
 
-\paragraph{} A partir de \textit{datasets} previamente populados, modelos do tipo \textit{Random Forest} são gerados para cada ação e para cada intervalo de 3 meses de simulação. Um critério particular de performance foi criado para auxiliar na escolha do melhor modelo, que é filtrado tanto por uma varredura de parâmetros variados quanto por uma análise estatística das sementes aleatórias utilizadas.
+\paragraph{} A partir de \textit{datasets} previamente populados, modelos do tipo \textit{Random Forest} são gerados para cada ação a cada intervalo de 3 meses de simulação. Um critério particular de performance foi criado para auxiliar na escolha do melhor modelo, que é filtrado por uma varredura de diversos parâmetros.
+
 
 
 \subsection{Geração de \textit{Datasets} e \textit{Feature Selection}}
 
-\paragraph{} Os \textit{datasets} são arquivos CSV criados para cada \textit{ticker} através de uma varredura da série histórica. Analisa-se dia após dia as \textit{features} acumuladas e o resultado de uma operação hipotética iniciada no dia corrente. A Tabela \ref{tab:7} mostra a lista de colunas presentes no arquivo, onde as linhas marcadas em negrito indicam o uso efetivo da coluna durante a criação dos modelos. A coluna Resultado da Operação não é utilizada na entrada dos dados, mas sim indica a saída observada para o treinamento supervisionado.
+\paragraph{} Os \textit{datasets} são arquivos CSV criados para cada \textit{ticker} através de uma varredura da série histórica. Analisa-se dia após dia as \textit{features} acumuladas e o resultado de uma operação hipotética iniciada no dia corrente. A Tabela \ref{tab:7} mostra a lista de \textit{features} relevantes do arquivo, onde as linhas marcadas em negrito indicam as colunas utilizadas na entrada de dados dos modelos. A coluna Resultado da Operação indica a saída observada para o treinamento supervisionado.
 
 \begin{table}[h!]
     \begin{center}
@@ -973,7 +1013,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O termo preço médio se refere ao definido pela Equação \ref{eq:22}. Da mesma forma, a derivada do preço médio é indicada pela Equação \ref{eq:23}. As colunas de cujos nomes se iniciam com \textit{Spearman} são na verdade a correlação entre o vetor de preços médios dos últimos N dias acumulados e uma função puramente monotônica crescente \begin{math} f(x) = x \end{math}. Isso permite a extração de uma medida para intensidade de subida dos preços que independe da normalização pelo preço da ação. Como o que importa na correlação de Spearman são os postos, o valor númerico do vetor utilizado para representar a função \begin{math} f(x) = x \end{math} não tem relevância, desde que seja monotônico crescente.
 
-\paragraph{} O \textit{flag} de fim de intervalo indica que, pelo fato do \textit{dataset} ter chegado ao final, não é possível dizer se a operação foi de sucesso ou de falha, portanto a mesma é desconsiderada do treinamento.
+\paragraph{} O \textit{flag} de fim de intervalo indica que, pelo fato do \textit{dataset} ter chegado ao final, não é possível dizer se a operação foi de sucesso ou foi de falha, portanto a mesma é desconsiderada do treinamento.
 
 \paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Foram utilizadas 119 opções de risco: de 0,2\% a 12\% em passos de 0,1\%.
 

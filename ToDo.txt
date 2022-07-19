@@ -60,10 +60,10 @@ Metodologia
         Resumo                                              OK
         Normalização por Frequência de Operações            Excluído por ineficiência
         Compensação por Lucratividade                       OK
-        Controle Proporcional para Uso de Capital (Risco Dinâmico)      Verificação, Imagens
+        Controle Proporcional para Uso de Capital           Analisando
     Criação de Modelos
-        Resumo                                              Verificação
-        Geração de Datasets e Feature Selection
+        Resumo                                              OK
+        Geração de Datasets e Feature Selection             OK
         Índice de Lucratividade                             Fazer
         Critérios de Escolha                                Continuar
         Modelo Baseline                                     Verificação

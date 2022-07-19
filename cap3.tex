@@ -635,7 +635,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
         \hline
         dynamic\_rcc\_reference & Valor de referência de uso de capital médio no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 1,0. Listável: Sim. \\
         \hline
-        dynamic\_rcc\_k & Valor do ganho proporcional K no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 5. Listável: Sim. \\
+        dynamic\_rcc\_k & Valor do ganho proporcional K no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 10. Listável: Sim. \\
         \hline
 
         % purchase\_margin & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
@@ -720,72 +720,92 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \section{Otimizações de Gerenciamento de Carteira}
 
+
+
 \subsection{Resumo}
 
 \paragraph{} As otimizações apresentadas nesta Seção independem de um modelo de ML específico, sendo portanto algoritmos gerais que, motivados ou não por problemas oriundos dos modelos, buscam uma abordagem geral para aumento da performance da carteira.
 
-\subsection{Normalização por Frequência de Operações}
-\label{sub:freq_norm}
 
-\paragraph{} Cada ativo de uma carteira possui um critério próprio de análise das condições de mercado que o auxilia na decisão de entrada nas operações. Muitas vezes, ativos diferentes acumulam um número bastante variado de operações concluídas ao longo da simulação. Por outro lado, esse número não posui ligação direta com a performance individual dos mesmos. Em outras palavras, facilmente ocorre a situação de um \textit{ticker} monopolizar grande parte do capital total da carteira ao longo do tempo, simplesmente por ter uma frequência de operações maior que os outros, sem qualquer fator meritocrático que embase uma justificativa.
 
-\paragraph{} A fim de se endereçar essa questão, foi criado o critério de Normalização por Frequência de Operações, onde cada ativo receberá de capital para uma determinada operação um valor inversamente proporcional a frequência de operações acumulada até o momento.
+% \subsection{Normalização por Frequência de Operações}
+% \label{sub:freq_norm}
 
-\begin{equation} \label{eq:80}
-    Capital_{norm} = Capital \times \dfrac{ \overline{f_{total}} }{ f_{stock}}
-\end{equation}
+% \paragraph{} Cada ativo de uma carteira possui um critério próprio de análise das condições de mercado que o auxilia na decisão de entrada nas operações. Muitas vezes, ativos diferentes acumulam um número bastante variado de operações concluídas ao longo da simulação. O ponto esse número não posui ligação direta com a performance individual dos mesmos. Em outras palavras, facilmente ocorre a situação de um \textit{ticker} monopolizar grande parte do capital total da carteira ao longo do tempo, simplesmente por ter uma frequência de operações maior que os outros, sem qualquer fator meritocrático que embase uma justificativa.
 
-\begin{equation} \label{eq:81}
-    \overline{f_{total}} = \dfrac{ N_{total\_operations} }{ N_{total\_stocks} }
-\end{equation}
+% \paragraph{} A fim de se endereçar essa questão, foi criado o critério de Normalização por Frequência de Operações, onde cada ativo receberá de capital para uma determinada operação um valor inversamente proporcional a frequência de operações acumulada até o momento.
 
-\paragraph{} As Equações \ref{eq:80} e \ref{eq:81} mostram a obtenção do novo Capital Normalizado \begin{math} Capital_{norm} \end{math} a partir do capital que em princípio seria alocado (ver Equação \ref{eq:61}), a frequência média de operações totais acumulada \begin{math} \overline{f_{total}} \end{math} e a frequência média de operações do ativo envolvido \begin{math} f_{stock} \end{math}, igualmente acumulada.
+% \paragraph{} As Equações \ref{eq:80} e \ref{eq:81} mostram a obtenção do novo Capital Normalizado \begin{math} Capital_{norm} \end{math} a partir: do capital que em princípio seria alocado (Equação \ref{eq:61}); da frequência média de operações totais acumuladas pela carteira \begin{math} \overline{f_{total}} \end{math}; e da frequência média de operações do ativo envolvido \begin{math} f_{stock} \end{math}, igualmente acumulada.
 
-\paragraph{} Para a Normalização começar a ser aplicada a um ativo, é necessário que haja pelo menos uma operação concluída do mesmo, assim como um mínimo de duas vezes o número total de ativos na carteira em operações concluídas. A Equação \ref{eq:82} mostra as condições citadas.
+% \begin{equation} \label{eq:80}
+%     Capital_{norm} = Capital \times \dfrac{ \overline{f_{total}} }{ f_{stock}}
+% \end{equation}
 
-\begin{equation} \label{eq:82}
-    f_{stock} > 0, \quad N_{total\_operations} \ge 2 \times N_{total\_stocks}
-\end{equation}
+% \begin{equation} \label{eq:81}
+%     \overline{f_{total}} = \dfrac{ N_{total\_operations} }{ N_{total\_stocks} }
+% \end{equation}
 
-\paragraph{} As Figuras \ref{fig:130} e \ref{fig:131} mostram eficácia do critério criado para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5}, durante o período de 01/01/2019 a 31/12/2021, onde a Figura \ref{fig:130} desabilita a Normalização e a Figura \ref{fig:131} habilita.
+% \paragraph{} Para a Normalização começar a ser aplicada a um ativo, é necessário que haja pelo menos uma operação concluída do mesmo, assim como um mínimo equivalente ao total de ativos na carteira em operações concluídas. A Equação \ref{eq:82} mostra as condições citadas.
 
-\begin{figure}[!htb]
-    \includegraphics[scale=0.70]{no_image.jpeg}
-    \centering
-    \caption{Simulação sem uso da Normalização por Frequência de Operações}
-    \label{fig:130}
-\end{figure}
+% \begin{equation} \label{eq:82}
+%     f_{stock} > 0, \quad N_{total\_operations} \ge N_{total\_stocks}
+% \end{equation}
 
-\begin{figure}[!htb]
-    \includegraphics[scale=0.70]{no_image.jpeg}
-    \centering
-    \caption{Simulação com uso da Normalização por Frequência de Operações}
-    \label{fig:131}
-\end{figure}
+% \paragraph{} A Figura \ref{fig:130} mostra a eficácia do critério criado para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5}, durante o período de 01/01/2019 a 31/12/2021, onde a linha em verde denominada de \textit{benchmark} indica a ausência da Normalização e a linha em amarelo denominada por \textit{yield} indica a presença da Normalização.
 
-\paragraph{} A Tabela \ref{tab:6} traz um comparativo dos resultados das simulações. Observa-se que o critério de Normalização criado se auto-compensa, ou seja, realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira. A vantagem de um critério auto-compensado é que ele não traz uma potencial ilusão de melhora de performance, já que a comparação de resultados entre estratégias precisa ter em vista Usos Médios de Capital razoavelmente próximos entre si para que a escolha dos RCCs individuais não influencie a análise.
+% \begin{figure}[!htb] % ID: 408, 407
+%     \includegraphics[scale=0.70]{no_image.jpeg}
+%     \centering
+%     \caption{Simulação sem uso da Normalização por Frequência de Operações}
+%     \label{fig:130}
+% \end{figure}
 
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ c|cc }
-            & hue & hue \\
-            \hline
-            hue & hue & hue \\
-            hue & hue & hue \\
-        \end{tabular}
-        \caption{Comparação de Resultados}
-        \label{tab:6}
-    \end{center}
-\end{table}
+% \begin{table}[h!]
+%     \begin{center}
+%         \begin{tabular}{ c|c|ccc }
+%             Norm. por Freq. & Uso Médio de Cap. & Rend. Final & Sharpe & Sortino \\
+%             \hline
+%             Não & 68,70\% & 36,71\% & 0,4 & 0,49 \\
+%             Sim & 69,23\% & 34,58\% & 0,37 & 0,44 \\
+%         \end{tabular}
+%         \caption{Comparação de Resultados}
+%         \label{tab:6}
+%     \end{center}
+% \end{table}
 
-\paragraph{} (Mencionar mais comentários sobre os outros parâmetros quando tiver as imagens e a tabela).
+% \paragraph{} A Figura \ref{fig:131} é análoga à Figura \ref{fig:130}, com a diferença que ambas as execuções estão com o Densanso por Tendência de Baixa e Descando por Identificação de crises ativados.
+
+% \begin{figure}[!htb] % ID: 409, 410
+%     \includegraphics[scale=0.70]{no_image.jpeg}
+%     \centering
+%     \caption{Simulação com uso da Normalização por Frequência de Operações}
+%     \label{fig:131}
+% \end{figure}
+
+% % \paragraph{} A Tabela \ref{tab:6} traz um comparativo dos resultados das simulações. Observa-se que o critério de Normalização criado se auto-compensa, ou seja, realoca capital dentro da própria estratégia sem grandes alterações no Uso Médio de Capital da carteira. A vantagem de um critério auto-compensado é que ele não traz uma potencial ilusão de melhora de performance, já que a comparação de resultados entre estratégias precisa ter em vista Usos Médios de Capital razoavelmente próximos entre si para que a escolha dos RCCs individuais não influencie a análise.
+
+% % \begin{table}[h!]
+% %     \begin{center}
+% %         \begin{tabular}{ c|cc }
+% %             & hue & hue \\
+% %             \hline
+% %             hue & hue & hue \\
+% %             hue & hue & hue \\
+% %         \end{tabular}
+% %         \caption{Comparação de Resultados}
+% %         \label{tab:6}
+% %     \end{center}
+% % \end{table}
+
+% % \paragraph{} (Mencionar mais comentários sobre os outros parâmetros quando tiver as imagens e a tabela).
 
 
 
 \subsection{Compensação por Lucratividade}
 \label{profit_comp}
 
-\paragraph{} A Compensacão por Lucratividade é um ajuste auto-compensado\footnote{Realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira} que aumenta o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira. Da mesma forma, também diminui o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
+% \paragraph{} A Compensacão por Lucratividade é um ajuste auto-compensado\footnote{Realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira} que aumenta o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira. Da mesma forma, também diminui o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
+\paragraph{} A Compensacão por Lucratividade é um ajuste cujo objetivo está no aumento de capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira, assim como na diminuição de capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
 
 \paragraph{} A Equação \ref{eq:90} mostra a primeira etapa do cálculo da Compensação, onde \begin{math} \sigma_{eq} \end{math} é o valor em unidades de desvio padrão do quanto o lucro acumulado \begin{math} p_t \end{math} do ativo está em relação à média \begin{math} \overline{P_w} \end{math} e desvio padrão \begin{math} \sigma_w \end{math} da carteira.
 
@@ -793,7 +813,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \sigma_{eq} = \dfrac{p_t - \overline{P_w}}{\sigma_w}
 \end{equation}
 
-\paragraph{} Em seguida, a Equações \ref{eq:91} e \ref{eq:92} dão sequência ao cálculo criando as constantes que serão utilizadas diretamente na Compensação. Nota-se que \begin{math} C_{max} \end{math} é a variação máxima positiva que a Compensação pode alcançar. \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math} são limiares de \begin{math} \sigma_{eq} \end{math} que definem lugares geométricos diferentes.
+\paragraph{} Em seguida, a Equações \ref{eq:91} e \ref{eq:92} dão sequência ao cálculo criando os coeficientes das retas que serão utilizadas diretamente na Compensação através da Figura \ref{fig:140}. Nota-se que \begin{math} C_{max} \end{math} é a variação máxima positiva que a Compensação pode alcançar. \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math} são limiares de \begin{math} \sigma_{eq} \end{math} que definem lugares geométricos diferentes.
 
 \begin{equation} \label{eq:91}
     m_1 = \dfrac{ C_{max} }{ \sigma_e - \sigma_s }, \quad n_1 = 1 - \sigma_s m_1
@@ -844,23 +864,28 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} Utilizou-se \begin{math} C_{max} = 0.60\end{math}, \begin{math} \sigma_s = 0.2 \end{math} e \begin{math} \sigma_e = 2.0 \end{math}.
 
-\paragraph{} A Figura \ref{fig:141} mostra o ganho de performance obtido para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5}, durante o período de 01/01/2019 a 31/12/2021. Ressalta-se que nenhuma outra Otimização de Gerenciamento de Carteira foi utilizada a fim de se isolar o efeito desta Compensação.
+\paragraph{} A Figura \ref{fig:141} mostra o ganho de performance obtido para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5} durante o período de 01/01/2019 a 31/12/2021. A linha em amarelo indica a simulação com uso da Compensação enquanto a linha verde indica a simulação sem o uso. Nenhuma outra otimização foi utilizada. A Tabela \ref{tab:9} traz um comparativo dos resultados das simulações. Nota-se que o RCC foi ajustado para que o Uso Médio de Capital de ambas simulações ficassem próximos.
 
+% ID: 415 (sem), 414 (com)
 \begin{figure}[!htb]
-    \includegraphics[scale=0.70]{no_image.jpeg}
+    \includegraphics[scale=0.50]{profit_comp.png}
     \centering
     \caption{Ganho de performance pelo uso da Compensação por Lucratividade}
     \label{fig:141}
 \end{figure}
 
-\paragraph{} A Figura \ref{fig:142} também mostra o ganho de performance nas mesmas condições da Figura \ref{fig:141}, com a exceção do uso comum da Normalização por Frequência de Operações, o que mostra que ambas as otimizações de carteira não se exluem, muito pelo contrário.
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.70]{no_image.jpeg}
-    \centering
-    \caption{Ganho de performance pelo uso da Compensação por Lucratividade (com NFO)}
-    \label{fig:142}
-\end{figure}
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|cc|ccc }
+            Comp. Luc. & RCC & Uso Médio de Cap. & Rend. Final & Sharpe & Sortino \\
+            \hline
+            Não & 0,35\% & 78,30\% & 42,06\% & 0,43 & 0,52 \\
+            Sim & 0,22\% & 78,74\% & 44,58\% & 0,46 & 0,55 \\
+        \end{tabular}
+        \caption{Comparação de Resultados}
+        \label{tab:9}
+    \end{center}
+\end{table}
 
 
 

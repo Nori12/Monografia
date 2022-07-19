@@ -57,9 +57,9 @@ Metodologia
         Ensaios Paralelos                                   Revisar após conclusão
         Dashboard                                           OK
     Otimizações de Gerenciamento de Carteira
-        Resumo                                              Verificação
-        Normalização por Frequência de Operações            Verificação, Imagens
-        Compensação por Lucratividade                       Verificação, Imagens
+        Resumo                                              OK
+        Normalização por Frequência de Operações            Excluído por ineficiência
+        Compensação por Lucratividade                       OK
         Controle Proporcional para Uso de Capital (Risco Dinâmico)      Verificação, Imagens
     Criação de Modelos
         Resumo                                              Verificação

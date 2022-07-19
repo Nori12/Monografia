@@ -468,7 +468,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os primeiros 20 \textit{tickers} da Tabela \ref{tab:5}. Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe estão crescentes. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os primeiros 20 \textit{tickers} da Tabela \ref{tab:5}. Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.80]{performance_per_rcc.png}
@@ -958,20 +958,18 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \end{center}
 \end{table}
 
-\paragraph{}
+\paragraph{} A Figura \ref{fig:560} mostra o gráfico da relação entre os indicadores de performance em função do RCC para todos os 71 \textit{tickers} da Tabela \ref{tab:5}. Os pontos marcados representam os máximos dos respectivos gráficos. \color{red} HERALDO: Me parece interessante pegar como ponto ótimo de K um valor entre o Sharpe e o Sortino. O que acha? \color{black}
 
-% \paragraph{} (Falar que essa medida aumenta o uso de capital bem alocado, mas também o mal alocado, por isso tem um limite)
-
-% \paragraph{} A dificuldade em se distinguir um capital bem alocado de um capital subaproveitado é inerente à imperfeição do modelo escolhido. Contudo, medidas podem ser tomadas para
-
-% Em outras palavras, idealmente se deseja que todo capital esteja alocado em algum ativo em tendência de alta para se maximizar a performance geral, no entanto isso raramente ocorre.
-
-% \paragraph{} O primeiro e mais simples motivo é porque nem sempre todos os ativos estão em uma tendência de alta aos olhos do que qualquer estratégia possa identificar, pois nenhum algoritmo é perfeito. Assim, independentemente da realidade, existirão momentos nos quais nenhum ativo da carteira se mostra vantajoso o suficiente para existir alguma operação.
+\begin{figure}[!htb]
+    \includegraphics[scale=0.80]{performance_per_rcc_k.png}
+    \centering
+    \caption{Indicadores de performance em função do ganho K (71 tickers: 01/01/2019 a 31/12/2021)}
+    \label{fig:560}
+\end{figure}
 
 
 
 \section{Criação de Modelos}
-
 
 
 \subsection{Resumo}
@@ -1020,7 +1018,10 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \subsection{Índice de Lucratividade}
-\paragraph{}
+
+\paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances que acompanhe a o contexto, pois não se trata de um simples problema de classificação de um \textit{dataset} balanceado onde ambas as classes possuem o mesmo peso perante o enredo no qual se inserem. Na verdade, o \textit{dataset} é bastante desbalanceado, chegando a casa dos 90\% de operações de falha em comparação às operações de sucesso em alguns casos. Além disso, o impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
+
+\paragraph{} O Índice de Lucratividade é um coeficiente entre 0 e 1 onde 0 significa o pior resultado possível, isto é, aquele no qual o modelo errou todas as operações no \textit{dataset} de forma a trazer o maior prejuízo possível. Por outro lado, 1 significa o maior lucro que o modelo pode trazer se acertar todas as operações que o \textit{dataset} permite. Nota-se que o valor do Índice que representa o lucro zero não é necessariamente o valor de 0.5, e sim algum valor intermediário que precisa ser fornecido durante o cálculo. Também é importante ressaltar que como os \textit{datasets} variam entre si, os valores de lucro zero também mudam, portanto é uma medida útil para criação de modelos que utilizem exatamente a mesma fonte de dados.
 
 
 

@@ -60,7 +60,7 @@ Metodologia
         Resumo                                              OK
         Normalização por Frequência de Operações            Excluído por ineficiência
         Compensação por Lucratividade                       OK
-        Controle Proporcional para Uso de Capital           Aguardando dados para montar última imagem e texto
+        Controle Proporcional para Uso de Capital           OK
     Criação de Modelos
         Resumo                                              OK
         Geração de Datasets e Feature Selection             OK

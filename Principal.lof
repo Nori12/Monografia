@@ -41,7 +41,8 @@
 \contentsline {figure}{\numberline {3.27}{\ignorespaces Performance por uso de Compensação por Lucratividade}}{62}{figure.3.27}%
 \contentsline {figure}{\numberline {3.28}{\ignorespaces Performance por uso de RCC dinâmico sem \textit {flags} de descanso}}{63}{figure.3.28}%
 \contentsline {figure}{\numberline {3.29}{\ignorespaces Performance por uso de RCC dinâmico com \textit {flags} de descanso}}{64}{figure.3.29}%
-\contentsline {figure}{\numberline {3.30}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021}}{68}{figure.3.30}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Indicadores de performance em função do ganho K (71 tickers: 01/01/2019 a 31/12/2021)}}{65}{figure.3.30}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021}}{69}{figure.3.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Performance da Carteira}}{70}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultados}}{71}{figure.4.2}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Performance da Carteira}}{71}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Resultados}}{72}{figure.4.2}%

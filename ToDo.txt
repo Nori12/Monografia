@@ -1,8 +1,8 @@
 To Do List
 
 Preâmbulo
-    Dedicatória                                             Após revisão do Heraldo
-    Agradecimento                                           Após revisão do Heraldo
+    Dedicatória                                             OK
+    Agradecimento                                           OK
     Resumo                                                  OK
     Abstract                                                Após revisão do Heraldo
     Siglas                                                  Diminuir espaçamento
@@ -48,7 +48,7 @@ Metodologia
     Simulação de Estratégia
         Estrutura                                           OK
         Premissas                                           OK
-        Período Máximo de Dias por Operação                 OK
+        Período Máximo de Dias por Operação                 Imagem
         Gerenciamento de Risco                              OK
         Risco de Entrada por Operação                       OK
         Descanso por Tendência de Baixa                     OK

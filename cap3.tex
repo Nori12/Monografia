@@ -1023,7 +1023,25 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O Índice de Lucratividade é um coeficiente entre 0 e 1 onde 0 significa o pior resultado possível, isto é, aquele no qual o modelo errou todas as operações no \textit{dataset} de forma a trazer o maior prejuízo possível. Por outro lado, 1 significa o maior lucro que o modelo pode trazer se acertar todas as operações que o \textit{dataset} permite. Nota-se que o valor do Índice que representa o lucro zero não é necessariamente 0.5, e sim algum valor intermediário que precisa ser fornecido durante o cálculo. Também é importante ressaltar que como os \textit{datasets} variam entre si, os valores de lucro zero também mudam, portanto a métrica é útil para criação de modelos que utilizem exatamente a mesma fonte de dados.
 
-\paragraph{} Continuar aqui!
+\paragraph{} Seja A o número de operações de sucesso no \textit{dataset} (classe 1) e B o número de operações de falha (classe 0), pode-se definir \begin{math} S_a \end{math} como a soma dos riscos de todas as operações da classe 1 e \begin{math} S_b \end{math} a soma dos riscos de todas as operações da classe 0. Assim, a Equação \ref{eq:170} representa uma função linear responsável por mapear o lucro \begin{math} L_m \end{math} de um modelo no Índice de Lucratividde.
+
+\begin{equation} \label{eq:170}
+    I_{L} = \dfrac{1}{(S_a - S_b)}L_m - \dfrac{S_b}{(S_a - S_b)}
+\end{equation}
+
+\paragraph{} O lucro \begin{math} L_m \end{math} pode ser encontrado através da Equação \ref{eq:171}, onde TP é a contagem de verdadeiros positivos do modelos e FN é a contagem de falsos negativos. Falsos positivos e verdadeiros negativos são desconsiderados do cálculo pois como não geram operações, não trazem ganho ou perda alguma.
+
+\begin{equation} \label{eq:171}
+    L_m = 3 \times TP - FN
+\end{equation}
+
+\paragraph{} Por fim, o valor do Índice que representa o lucro zero pode ser encontrado a partir da Equação \ref{eq:170}, basta impor a condição \begin{math} L_m=0 \end{math} (Equação \ref{eq:172}).
+
+\begin{equation} \label{eq:172}
+    I_{L_0} = - \dfrac{S_b}{(S_a - S_b)}
+\end{equation}
+
+
 
 \subsection{Critérios de Escolha}
 

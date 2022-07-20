@@ -64,7 +64,7 @@ Metodologia
     Criação de Modelos
         Resumo                                              OK
         Geração de Datasets e Feature Selection             OK
-        Índice de Lucratividade                             Fazendo
+        Índice de Lucratividade                             OK
         Critérios de Escolha                                Fazer
         Modelo Baseline                                     OK
 

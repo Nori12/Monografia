@@ -48,7 +48,7 @@ Metodologia
     Simulação de Estratégia
         Estrutura                                           OK
         Premissas                                           OK
-        Período Máximo de Dias por Operação                 Imagem
+        Período Máximo de Dias por Operação                 OK
         Gerenciamento de Risco                              OK
         Risco de Entrada por Operação                       OK
         Descanso por Tendência de Baixa                     OK
@@ -65,7 +65,7 @@ Metodologia
         Resumo                                              OK
         Geração de Datasets e Feature Selection             OK
         Índice de Lucratividade                             OK
-        Critérios de Escolha                                Fazer
+        Critérios de Escolha                                Fazendo
         Modelo Baseline                                     OK
 
 Conclusão

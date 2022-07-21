@@ -45,7 +45,7 @@ Metodologia
         Coleta de Dados                                     OK
         Armazenamento de Dados                              OK
         Geração de Features de Uso Geral                    OK
-    Simulação de Estratégia
+    Simulação de Estratégia                                 --
         Estrutura                                           OK
         Premissas                                           OK
         Período Máximo de Dias por Operação                 OK
@@ -56,16 +56,17 @@ Metodologia
         Lista de Parâmetros de Configuração                 OK
         Ensaios Paralelos                                   Revisar após conclusão
         Dashboard                                           OK
-    Otimizações de Gerenciamento de Carteira
+    Otimizações de Gerenciamento de Carteira                --
         Resumo                                              OK
         Normalização por Frequência de Operações            Excluído por ineficiência
         Compensação por Lucratividade                       OK
         Controle Proporcional para Uso de Capital           OK
-    Criação de Modelos
+    Modelos de Aprendizado Supervisionado                   --
         Resumo                                              OK
-        Geração de Datasets e Feature Selection             OK
+        Datasets e Feature Selection                        OK
         Índice de Lucratividade                             OK
-        Critérios de Escolha                                Fazendo
+        Balanceamento de Classes                            OK
+        Geração de Modelos                                  OK
         Modelo Baseline                                     OK
 
 Conclusão

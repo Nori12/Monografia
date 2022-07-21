@@ -1060,7 +1060,8 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \FloatBarrier
 \subsection{Índice de Lucratividade}
 
-\paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances que acompanhe a o contexto, pois não se trata de um simples problema de classificação de um \textit{dataset} balanceado onde ambas as classes possuem o mesmo peso perante o enredo no qual se inserem. Na verdade, o \textit{dataset} é bastante desbalanceado, chegando a casa dos 90\% de operações de falha em comparação às operações de sucesso em alguns casos. Além disso, o impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
+% \paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances que acompanhe o contexto, pois não se trata de um simples problema de classificação de um \textit{dataset} balanceado onde ambas as classes possuem o mesmo peso perante o enredo no qual se inserem. Na verdade, o \textit{dataset} é bastante desbalanceado, chegando a casa dos 90\% de operações de falha em comparação às operações de sucesso em alguns casos. Além disso, o impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
+\paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances que acompanhe o contexto. O impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
 
 \paragraph{} O Índice de Lucratividade é um coeficiente entre 0 e 1 onde 0 significa o pior resultado possível, isto é, aquele no qual o modelo errou todas as operações no \textit{dataset} de forma a trazer o maior prejuízo possível. Por outro lado, 1 significa o maior lucro que o modelo pode trazer se acertar todas as operações que o \textit{dataset} permite. Nota-se que o valor do Índice que representa o lucro zero não é necessariamente 0.5, e sim algum valor intermediário que precisa ser fornecido durante o cálculo. Também é importante ressaltar que como os \textit{datasets} variam entre si, os valores de lucro zero também mudam, portanto a métrica é útil para criação de modelos que utilizem exatamente a mesma fonte de dados.
 
@@ -1087,8 +1088,27 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \FloatBarrier
 \subsection{Balanceamento de Classes}
 
-\paragraph{} Conforme mencionado na Seção \ref{sub:class_prob} ...
+\paragraph{} Devido ao desbalanceamento dos \textit{datasets} utilizados, que pode chegar até cerca de 90\% de operações de falha contra 10\% de operações de sucesso, faz-se imprescindível alguma técnica de balanceamento mencionada na Seção \ref{sub:class_prob}: \textit{undersampling}, \textit{oversampling} ou CSL. A natureza do problema também deve ser levada em consideração, pois um simples balanceamento via CSL daria a mesma importância à predição dos acertos e das falhas, no entanto o impacto de um acerto por parte do modelo gera um ganho de 3X para a carteira e uma falha gera uma perda de -X para os mesmos X apostados.
 
+\paragraph{} Levando em consideração as questões levantadas, optou-se por um balanceamento em cascada de 2 níveis:
+
+\begin{itemize}
+    \item \textit{Undersampling} via \textit{Tomek Links}\footnote{Algoritmo que remove amostras da classe majoritária via identificação de \textit{links}. Um \textit{link} entre a amostra A da classe 1 e a amostra B da classe 2 é encontrado se o vizinho mais próximo de A é B e vice-versa \cite{he2013imbalanced}.}, de cujo impacto na proporção das classes é muito pequeno.
+    \item CSL levando em considerações o número de amostras e o impacto das classes para a carteira (Tabela \ref{tab:8}).
+\end{itemize}
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|c|c|c }
+            Classe & Amostras & Peso p/ Carteira & Balanceamento \\
+            \hline
+            Op. de Falha (Classe 0) & \begin{math} N_0 \end{math} & 1 & \begin{math} \dfrac{(1/4)N_1}{(N_0+(1/4)N_1)} \end{math} \\
+            Op. de Sucesso (Classe 1) & \begin{math} N_1 \end{math} & 4 & \begin{math} \dfrac{N_0}{(N_0+(1/4)N_1)} \end{math} \\
+        \end{tabular}
+        \caption{Balanceamento por CSL}
+        \label{tab:8}
+    \end{center}
+\end{table}
 
 
 \FloatBarrier

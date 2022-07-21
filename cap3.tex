@@ -3,6 +3,7 @@
 
 
 
+\FloatBarrier
 \section{Resumo}
 
 \paragraph{} As seções a seguir trazem detalhes quanto a estrutura técnica do projeto. A Figura \ref{fig:100} apresenta um diagrama geral de como essas estrutras se conectam.
@@ -26,8 +27,10 @@
 
 
 
+\FloatBarrier
 \section{Pré-Processamento}
 
+\FloatBarrier
 \subsection{Arquivo de Configuração}
 \label{sub:conf_file}
 
@@ -53,6 +56,7 @@
 
 
 
+\FloatBarrier
 \subsection{Coleta de Dados}
 \label{coleta_de_dados}
 
@@ -75,6 +79,7 @@
 
 
 
+\FloatBarrier
 \subsection{Armazenamento de Dados}
 
 \paragraph{} O Armazenamento de Dados é realizado por um banco de dados \textit{PostgreSQL}, criado com o objetivo de salvar: os resultados das simulações; as \textit{features} de uso geral; e os \textit{candlesticks} obtidos. As vantagens de um banco de dados em relação a um arquivo CSV ou a uma planilha de Excel dispensam comentários. Contudo, quanto ao escopo deste trabalho, pode-se mencionar os seguintes pontos:
@@ -100,6 +105,7 @@
 
 
 
+\FloatBarrier
 \subsection{Geração de \textit{Features} de Uso Geral}
 \label{sub:features}
 
@@ -307,8 +313,10 @@
 
 
 
+\FloatBarrier
 \section{Simulação de Estratégia}
 
+\FloatBarrier
 \subsection{Estrutura}
 \label{sub:estrutura}
 
@@ -345,6 +353,7 @@
 
 
 
+\FloatBarrier
 \subsection{Premissas}
 
 \paragraph{} As Premissas são um conjunto de afirmações que visam complementar a Estrutura das simulações ao mesmo tempo que garantir a integridade dos resultados, muitas vezes optando pelo pior cenário em situações inconclusivas. São elas:
@@ -371,6 +380,7 @@
 
 
 
+\FloatBarrier
 \subsection{Gerenciamento de Risco}
 \label{sub:risk_man}
 
@@ -450,6 +460,7 @@
 
 
 
+\FloatBarrier
 \subsection{Risco de Entrada por Operação}
 \label{sub:operation_risk}
 
@@ -474,6 +485,7 @@
 
 
 
+\FloatBarrier
 \subsection{Período Máximo de Dias por Operação}
 \label{sub:max_op_days}
 
@@ -554,6 +566,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{Descanso por Tendência de Baixa}
 \label{sub:downtrend_halt}
 
@@ -561,6 +574,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{Descanso por Identificação de Crises}
 \label{sub:crisis_halt}
 
@@ -568,6 +582,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{Lista de Parâmetros de Configuração}
 \label{sub:params_list}
 
@@ -670,6 +685,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{Ensaios Paralelos}
 
 \color{red} HERALDO: Vou fazer apenas fazer comentários para te mostrar o caminho que seguirei caso você julgue que valha a pena trabalhar essa seção. \colorend
@@ -691,6 +707,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{\textit{Dashboard}}
 
 \paragraph{} Um \textit{Dashboard} interativo é gerado por aplicação secundária a fim de auxiliar a análise dos resultados obtidos em cada simulação. O \textit{framework} \textit{Dash} \cite{dash} foi utilizado para criar uma interface web resumindo todas as informações pertinentes a uma simulação executada. As Figuras \ref{fig:171}, \ref{fig:172}, \ref{fig:173}, \ref{fig:174} e \ref{fig:175} mostram em partes as seções de uma simulação genérica.
@@ -732,10 +749,12 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \section{Otimizações de Gerenciamento de Carteira}
 
 
 
+\FloatBarrier
 \subsection{Resumo}
 
 \paragraph{} As otimizações apresentadas nesta Seção independem de um modelo de ML específico, sendo portanto algoritmos gerais que, motivados ou não por problemas oriundos dos modelos, buscam uma abordagem geral para aumento da performance da carteira.
@@ -815,6 +834,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{Compensação por Lucratividade}
 \label{profit_comp}
 
@@ -903,6 +923,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{Controle Proporcional para Uso de Capital}
 \label{sub:dynamic_rcc}
 
@@ -983,16 +1004,20 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\section{Criação de Modelos}
+\FloatBarrier
+\section{Modelos de Aprendizado Supervisionado}
 
 
+
+\FloatBarrier
 \subsection{Resumo}
 
 \paragraph{} A partir de \textit{datasets} previamente populados, modelos do tipo \textit{Random Forest} são gerados para cada ação a cada intervalo de 3 meses de simulação. Um critério particular de performance foi criado para auxiliar na escolha do melhor modelo, que é filtrado por uma varredura de diversos parâmetros.
 
 
 
-\subsection{Geração de \textit{Datasets} e \textit{Feature Selection}}
+\FloatBarrier
+\subsection{\textit{Datasets} e \textit{Feature Selection}}
 \label{sub:dataset_gen}
 
 \paragraph{} Os \textit{datasets} são arquivos CSV criados para cada \textit{ticker} através de uma varredura da série histórica. Analisa-se dia após dia as \textit{features} acumuladas e o resultado de uma operação hipotética iniciada no dia corrente. A Tabela \ref{tab:7} mostra a lista de \textit{features} relevantes do arquivo, onde as linhas marcadas em negrito indicam as colunas utilizadas na entrada de dados dos modelos. A coluna Resultado da Operação indica a saída observada para o treinamento supervisionado.
@@ -1032,6 +1057,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
 \subsection{Índice de Lucratividade}
 
 \paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances que acompanhe a o contexto, pois não se trata de um simples problema de classificação de um \textit{dataset} balanceado onde ambas as classes possuem o mesmo peso perante o enredo no qual se inserem. Na verdade, o \textit{dataset} é bastante desbalanceado, chegando a casa dos 90\% de operações de falha em comparação às operações de sucesso em alguns casos. Além disso, o impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
@@ -1058,9 +1084,31 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\subsection{Critérios de Escolha}
+\FloatBarrier
+\subsection{Balanceamento de Classes}
 
-\paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit} com a configuração indicada pela Tabela \ref{tab:8}.
+\paragraph{} Conforme mencionado na Seção \ref{sub:class_prob} ...
+
+
+
+\FloatBarrier
+\subsection{Geração de Modelos}
+
+\paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit}. Para a escolha do modelo a ser utilizado na simulação final, diversos outros modelos temporários foram criados e excluídos a fim de se selecionar apenas o melhor. Todos modelos temporários compartilham os parâmetros fixos indicados pela Tabela \ref{tab:15}, porém diferem quanto aos parâmetros variáveis da Tabela \ref{tab:16} ou quanto às sementes aleatórias utilizadas. A lógica de criação dos modelos pode ser interpretada da seguinte forma:
+
+\begin{itemize}
+    \item Para cada um dos 71 \textit{tickers} da carteira (Tabela \ref{tab:5}), o período completo de simulação vai de 01/01/2019 a 31/12/2021 e é dividido em 12 intervalos de 3 meses (WFA).
+
+    \item Cada intervalo de 3 meses de simulação é governado pelo melhor modelo de ML criado previamente.
+
+    \item Por trás de cada modelo final selecionado existem 100 modelos temporários organizados em dois níveis: parâmetros variáveis e sementes aleatórias.
+
+    \item O primeiro nível de diferenciação é dado parâmetros variáveis da Tabela \ref{tab:16}, ou seja, as combinações entre \textit{max\_depth} e \textit{max\_features}, que geram os 10 pares (3, 3), (3, 4), (4, 3), (4, 4), ..., (7, 4).
+
+    \item Para cada par criado, são criados 10 modelos com 10 sementes aleatórias diferentes.
+
+    \item O modelo final escolhido possui os mesmos parâmetros do grupo de 10 modelos de sementes aleatórias diferentes que possuir o maior \begin{math} I_L / \sigma_{I_L} \end{math}. \color{red} HERALDO: E o modelo final é o de semente aleatória = 1. \color{black}
+\end{itemize}
 
 \begin{table}[!htb]
     \begin{center}
@@ -1069,29 +1117,52 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
             \hline
             n\_estimators & 200 \\
             criterion & gini \\
-            min\_samples\_split & 12 \\
-            min\_samples\_leaf & 6 \\
+            min\_samples\_split & 24 \\
+            min\_samples\_leaf & 12 \\
             min\_weight\_fraction\_leaf & 0.0 \\
             max\_leaf\_nodes & None \\
             min\_impurity\_decrease & 0.0 \\
             bootstrap & True \\
             oob\_score & False \\
             warm\_start & False \\
-            class\_weight & balanced\_subsample \\
+            % class\_weight & balanced\_subsample \\
             ccp\_alpha & 0.0 \\
             max\_samples & None \\
         \end{tabular}
-        \caption{Comparação de Resultados}
-        \label{tab:8}
+        \caption{Parâmetros fixos}
+        \label{tab:15}
     \end{center}
 \end{table}
 
-% \paragraph{} \color{red} PEDRO: Verificar classweight. \colorend
+\begin{table}[!htb]
+    \begin{center}
+        \begin{tabular}{ c|c }
+            Parâmetro & Valor \\
+            \hline
+            max\_depth & [3, 4, 5, 6, 7] \\
+            max\_features & [3, 4] \\
+        \end{tabular}
+        \caption{Parâmetros variáveis}
+        \label{tab:16}
+    \end{center}
+\end{table}
 
+A Figura \ref{fig:580} ilustra a lógica de criação dos modelos apresentada através de um diagrama.
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{models_chart.png}
+    \centering
+    \caption{Diagrama de criação de modelos}
+    \label{fig:580}
+\end{figure}
 
 % \begin{math} R_b \end{math}
 % \color{red} HERALDO: \colorend
+% \color{red} HERALDO: \color{black}
 
+
+
+\FloatBarrier
 \subsection{Modelo \textit{Baseline}}
 \label{sub:baseline}
 

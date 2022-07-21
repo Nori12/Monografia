@@ -3,6 +3,7 @@
 
 
 
+\FloatBarrier
 \section{Tema}
 
 \paragraph{} O tema deste trabalho se resume na elaboração de uma estratégia de \textit{swing trade} na bolsa de valores brasileira através de métodos de aprendizado de máquina.
@@ -11,6 +12,7 @@
 
 
 
+\FloatBarrier
 \section{Delimitação}
 
 \paragraph{} Este trabalho se limita aos ativos negociados na Bolsa de Valores de São Paulo, a B3, de cujos dados diários de domínio público foram adquiridos através da plataforma \textit{Yahoo Finance} pela API \textit{open-source yfinance}, disponível em Python. Não são levadas em consideração informações sobre proventos (dividendos e juros sobre capital próprio) devido à inconsistência dos mesmos na API supracitada, aliada à dificuldade técnica para automatização da busca de tais dados.
@@ -21,6 +23,7 @@
 
 
 
+\FloatBarrier
 \section{Justificativa}
 
 \paragraph{} O crescimento do número de investidores na bolsa de valores brasileira \cite{aumento_investidores} demonstra um maior interesse da população na busca por um complemento da renda familiar ou até na substituição da fonte de renda principal.
@@ -33,13 +36,14 @@
 
 
 
+\FloatBarrier
 \section{Objetivos}
 
 \paragraph{} O objetivo geral deste trabalho é implementar um \textit{software} capaz de simular uma estratégia de \textit{swing trade} utilizando aprendizado de máquina. Especificamente, o software deve: (1) Criar um ambiente automatizado que permita buscar, atualizar e armazenar dados diários da bolsa brasileira de forma simples e conforme necessidade do usuário da aplicação; (2) Criar a estrutura de uma estratégia por meio de um conjunto de regras e premissas baseadas em práticas de \textit{trading}; (3) Gerar os modelos de aprendizado de máquina e acoplá-los à estrutura criada; (4) Simular a estratégia obtida; (5) Criar um mecanismo de fácil visualização dos resultados das simulações; (6) Analisar os resultados gerados.
 
 
 
-
+\FloatBarrier
 \section{Metodologia}
 
 \paragraph{} O trabalho tem início na criação de um ambiente propício à simulação de estratégias, bem como sua configuração e manutenção. Para isso, a fim de: otimizar o tráfego de dados pela internet; minimizar o processamento necessário para a geração de dados derivados (pré-processamento); e armazenar os resultados das estratégias de forma organizada, foi utilizado um banco de dados PostgreSQL. Dentre as atividades realizadas durante o pré-processamento dos dados, anteriores à simulação, é possível citar a identificação de momentos de tendência de baixa e crises do mercado, a identificação de picos na série histórica e os valores de risco mínimo e máximo a serem utilizados nas operações.
@@ -52,6 +56,7 @@
 
 
 
+\FloatBarrier
 \section{Descrição}
 
 \paragraph{} No capítulo 2 é desenvolvida a fundamentação teórica acerca de temas relevantes ao entendimento geral de mercado financeiro e de aprendizado de máquina. Também é realizada uma revisão dos trabalhos relacionados ao tema, em outras palavras, a revisão bibliográfica.

@@ -1167,7 +1167,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \end{center}
 \end{table}
 
-\paragraph{} A Figura \ref{fig:580} ilustra a lógica de criação dos modelos apresentada através de um diagrama.
+\paragraph{} A Figura \ref{fig:580} ilustra a lógica de criação dos modelos apresentada através de um diagrama. O período de treinamento e de teste de cada modelo foi separado utilizando WFA e pode ser verificado pela Tabela \ref{tab:17}. Entende-se por validade o período de tempo durante a simulação no qual o algoritmo criado pode atuar. Desta forma, cada ação na carteira possui 12 modelos com validade de 3 meses cada.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.50]{models_chart.png}
@@ -1175,6 +1175,31 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \caption{Diagrama de criação de modelos}
     \label{fig:580}
 \end{figure}
+
+\begin{table}[!htb]
+    \begin{center}
+        \begin{tabular}{ cc|cc|cc }
+            \multicolumn{2}{c|}{Treinamento} & \multicolumn{2}{c|}{Teste} & \multicolumn{2}{c}{Validade} \\
+            \hline
+            Início & Fim & Início & Fim & Início & Fim \\
+            \hline
+            01/01/2013 & 31/03/2018 & 01/04/2018 & 31/12/2018 & 01/01/2019 & 31/03/2019 \\
+            01/04/2013 & 30/06/2018 & 01/07/2018 & 31/03/2019 & 01/04/2019 & 30/06/2019 \\
+            01/07/2013 & 30/09/2018 & 01/10/2018 & 30/06/2019 & 01/07/2019 & 30/09/2019 \\
+            01/10/2013 & 31/12/2018 & 01/01/2019 & 30/09/2019 & 01/10/2019 & 31/12/2019 \\
+            01/01/2014 & 31/03/2019 & 01/04/2019 & 31/12/2019 & 01/01/2020 & 31/03/2020 \\
+            01/04/2014 & 30/06/2019 & 01/07/2019 & 31/03/2020 & 01/04/2020 & 30/06/2020 \\
+            01/07/2014 & 30/09/2019 & 01/10/2019 & 30/06/2020 & 01/07/2020 & 30/09/2020 \\
+            01/10/2014 & 31/12/2019 & 01/01/2020 & 30/09/2020 & 01/10/2020 & 31/12/2020 \\
+            01/01/2015 & 31/03/2020 & 01/04/2020 & 31/12/2020 & 01/01/2021 & 31/03/2021 \\
+            01/04/2015 & 30/06/2020 & 01/07/2020 & 31/03/2020 & 01/04/2021 & 30/06/2021 \\
+            01/07/2015 & 30/09/2020 & 01/10/2020 & 30/06/2020 & 01/07/2021 & 30/09/2021 \\
+            01/10/2015 & 31/12/2020 & 01/01/2021 & 30/09/2021 & 01/10/2021 & 31/12/2021 \\
+        \end{tabular}
+        \caption{WFA - Intervalos de treinamento, teste e validade dos modelos}
+        \label{tab:17}
+    \end{center}
+\end{table}
 
 
 

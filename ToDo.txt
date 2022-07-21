@@ -54,7 +54,7 @@ Metodologia
         Descanso por Tendência de Baixa                     OK
         Descanso por Identificação de Crises                OK
         Lista de Parâmetros de Configuração                 OK
-        Ensaios Paralelos                                   Revisar após conclusão
+        Ensaios Paralelos                                   Considerar após conclusão
         Dashboard                                           OK
     Otimizações de Gerenciamento de Carteira                --
         Resumo                                              OK

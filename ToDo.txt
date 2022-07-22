@@ -49,9 +49,7 @@ Metodologia
         Estrutura                                           OK
         Premissas                                           OK
         Período Máximo de Dias por Operação                 OK
-        Gerenciamento de Risco                              Corrigir Figura de "Indicadores de performance" (3.13) para 71 tickers e
-                                                                explicar que não foram utilizadas otimizações
-                                                            Corrigir Figuras 3.14 e 3.15 também.
+        Gerenciamento de Risco                              OK
         Risco de Entrada por Operação                       OK
         Descanso por Tendência de Baixa                     OK
         Descanso por Identificação de Crises                OK

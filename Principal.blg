@@ -7,12 +7,13 @@ A level-1 auxiliary file: cap1.aux
 A level-1 auxiliary file: cap2.aux
 A level-1 auxiliary file: cap3.aux
 A level-1 auxiliary file: cap4.aux
+A level-1 auxiliary file: cap5.aux
 The style file: coppe.bst
 Database file #1: biblio.bib
 Warning--empty journal in spearman1961proof
 You've used 74 entries,
             2465 wiz_defined-function locations,
-            938 strings with 15319 characters,
+            939 strings with 15327 characters,
 and the built_in function-call counts, 15724 in all, are:
 = -- 1726
 > -- 416

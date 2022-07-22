@@ -1,63 +1,52 @@
-\chapter{Conclusão}
+\chapter{Resultados}
 \label{cap4}
 
 
 
-\FloatBarrier
-\section{Escolha de Parâmetros}
-\label{sub:escolha_param}
+\paragraph{} A partir dos parâmetros encontrados nas Seções anteriores, utilizou-se a seguinte configuração para encontrar a simulação com os melhores índices de performance:
 
+\begin{itemize}
+    \item 71 \textit{tickers} (Tabela \ref{tab:5})
+    \item Período de simulação: 01/01/2019 a 31/12/2021
+    \item Capital: R\$ 100000,00
+    \item Período máximo de dias por operação: 45
+    \item Risco de Entrada por Operação: 0,29
+    \item Compensação por Lucratividade: Sim
+    \item Descanso por Identificação de Crises: Sim
+    \item Descanso por Tendência de Baixa: Sim
+    \item RCC: 0,57\%
+    \item Controle Proporcional para Uso de Capital (RCC Dinâmico): Sim
+    \item Valor de Referência para Uso de Capital: 100\%
+    \item Constante K de Ganho Proporcional: 14,5
+\end{itemize}
 
-
-\FloatBarrier
-\section{Resultados}
-
-\paragraph{} Foram realizadas diversas simulações para os 71 \textit{Tickers} apresentados na Tabela \ref{tab:5}, durante o período de simulação de 01/01/2019 e 31/12/2021, que inclusive engloba a Crise do Coronavírus ocorrida em março de 2020. O melhor resultado obtido levou em consideração os parâmetros indicados pela Tabela \ref{tab:100}:
+\paragraph{} Os resultados encontrados podem ser verificados pela tabela \ref{tab:13}.
 
 \begin{table}[h!]
     \begin{center}
-        \begin{tabular}{ c|c }
-            Parâmetro & Valor \\
+        \begin{tabular}{ l|c|c }
+            Parâmetro & Estratégia & \textit{Baseline} \\
             \hline
-            Capital & 100000 \\
-            RCC & 0.3\% \\
-            \textit{Gain Loss Ratio} & 3 \\
-            Menor Risco por Operação & 0.3\% \\
-            Maior Risco por Operação & 10\% \\
-            Volume Mínimo por Operação & 1 \\
-            Venda Parcial & Não \\
-            \textit{Stop Loss} & Normal \\
-            Descanso após Operação de Sucesso & Não \\
-            Descanso após Operação de Falha & Não \\
-            Normalização por Frequência de Operações & Sim \\
-            Compensação por Lucratividade & Sim \\
-            Descanso por Identificação de Crises & Sim \\
-            Descanso por Tendência de Baixa & Sim \\
-            RCC Dinâmico & Sim \\
-            RCC Dinâmico (Referência) & 100\% \\
-            RCC Dinâmico (K) & 5 \\
+            Rendimento Final & 124,59\% & 73,94\% \\
+            Volatilidade & 37,70\% & 55,48\% \\
+            Índice de Sharpe & 1,28 & 0,68 \\
+            Índice de Sortino & 1,84 & 0,74 \\
+            Correlação de Spearman (c/ \textit{Baseline}) & 0,89 & - \\
+            Correlação de Spearman (c /Ibovespa) & 0,66 & - \\
+            Uso Máximo de Capital & 100\% & 100\% \\
+            Uso Médio de Capital & 91,46\% & 100\% \\
+            Máximo de Operações Ativas & 64 & - \\
+            Média de Operações Ativas & 35,15 & - \\
+            Desvio Padrão de Operações Ativas & 16,53 & -\\
+            Operações Totais & 1916 & 71 \\
+            Operações de Sucesso & 565 (29,5\%) & - \\
+            Operações de Falha & 1238 (64,6\%) & - \\
+            Operações de \textit{Timeout} & 89(4,6\%) & - \\
+            Operações Incompletas & 24(1,3\%) & - \\
         \end{tabular}
-        \caption{Configurações de Simulação}
-        \label{tab:100}
+        \caption{Resultado final}
+        \label{tab:13}
     \end{center}
 \end{table}
 
-\paragraph{} As Figuras \ref{fig:300} e \ref{fig:301} mostram a performance da carteira em comparação ao Baseline, iBovespa e CDI acumulado no período, assim como os valores métricas resultantes dessa performance.
-
-\begin{figure}[h]
-    \includegraphics[scale=0.52]{resultado_final.png}
-    \centering
-    \caption{Performance da Carteira}
-    \label{fig:300}
-\end{figure}
-
-\begin{figure}[h]
-    \includegraphics[scale=0.60]{resultado_valores.png}
-    \centering
-    \caption{Resultados}
-    \label{fig:301}
-\end{figure}
-
-\paragraph{} Analisando a Figura \ref{fig:300}, pode-se perceber que (FAZER COMENTÁRIOS). Quanto aos resultados mostrados na Figura \ref{fig:301}, (FAZER COMENTÁRIOS).
-
-\paragraph{} (Mostrar gráficos de operações por ticker).
+% \paragraph{} Considerando os resultados obtidos

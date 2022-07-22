@@ -69,13 +69,9 @@ Metodologia
         Geração de Modelos                                  OK
         Modelo Baseline                                     OK
 
-Conclusão
-    Escolha de Parâmetros                                   Fazer
-    Resultados                                              Fazer
+Resultados                                                  OK
 
-Código:
-    (1) Resolver BUG de encurtamento de dias de simulação por paralelização.
-
+Conclusão                                                   OK
 
 Observações:
 (1) Mencionei o uso de Docker em Resumo->Metodologia;

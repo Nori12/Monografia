@@ -407,28 +407,45 @@
 
 \paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os primeiros 20 \textit{tickers} da Tabela \ref{tab:5}. Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Nenhuma otimização foi adicionada. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que a partir do RCC de 1,88\%, o uso de capital está quase saturando. \color{red} HERALDO: Não sei explicar o motivo do mínimo local nos indicaroes. \color{black}
+
+% Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
 
 \begin{figure}[!htb]
-    \includegraphics[scale=0.80]{performance_per_rcc.png}
+    \includegraphics[scale=0.80]{performance_per_rcc_2.png}
     \centering
-    \caption{Indicadores de performance em função do RCC (20 tickers: 01/01/2019 a 31/12/2021)}
+    \caption{Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/12/2021)}
     \label{fig:550}
 \end{figure}
 
-\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.8\% e RCC=2,0\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 379 para 302 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação receberam mais capital e como estas são mais expressivas, a performance geral foi maior.
+\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.29\% e RCC=1,88\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 3972 para 3390 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação receberam mais capital e como estas são mais expressivas, a performance geral foi maior.
+% Antes era: "... reduziu o número de operações totais de 379 para 302 pela ..."
 
-\begin{figure}[!htb] % ID 315
-    \includegraphics[scale=0.50]{rcc_capital_usage_08.png}
+% \begin{figure}[!htb] % ID 315
+%     \includegraphics[scale=0.50]{rcc_capital_usage_08.png}
+%     \centering
+%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}
+%     \label{fig:551}
+% \end{figure}
+
+% \begin{figure}[!htb] % ID 345
+%     \includegraphics[scale=0.50]{rcc_capital_usage_20.png}
+%     \centering
+%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 2,0\%)}
+%     \label{fig:552}
+% \end{figure}
+
+\begin{figure}[!htb] % ID
+    \includegraphics[scale=0.650]{rcc_capital_usage_00029.png}
     \centering
-    \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}
+    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 0,29\%)}
     \label{fig:551}
 \end{figure}
 
-\begin{figure}[!htb] % ID 345
-    \includegraphics[scale=0.50]{rcc_capital_usage_20.png}
+\begin{figure}[!htb] % ID
+    \includegraphics[scale=0.650]{rcc_capital_usage_00188.png}
     \centering
-    \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 2,0\%)}
+    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 1,88\%)}
     \label{fig:552}
 \end{figure}
 

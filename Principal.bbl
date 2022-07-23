@@ -287,6 +287,11 @@ BOLLERSLEV, T., \enquote{Generalized autoregressive conditional
   heteroskedasticity}, \emph{Journal of econometrics}, v.~31, n.~3,
   pp.~307--327, 1986.
 
+\bibitem{nelson1991conditional}
+NELSON, D.~B., \enquote{Conditional heteroskedasticity in asset returns: A new
+  approach}, \emph{Econometrica: Journal of the econometric society}, pp.
+  347--370, 1991.
+
 \bibitem{higgins1992class}
 HIGGINS, M.~L., BERA, A.~K., \enquote{A class of nonlinear ARCH models},
   \emph{International Economic Review}, pp. 137--158, 1992.

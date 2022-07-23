@@ -11,45 +11,45 @@ A level-1 auxiliary file: cap5.aux
 The style file: coppe.bst
 Database file #1: biblio.bib
 Warning--empty journal in spearman1961proof
-You've used 74 entries,
+You've used 75 entries,
             2465 wiz_defined-function locations,
-            939 strings with 15327 characters,
-and the built_in function-call counts, 15724 in all, are:
-= -- 1726
-> -- 416
-< -- 27
-+ -- 178
-- -- 104
-* -- 967
-:= -- 2439
-add.period$ -- 91
-call.type$ -- 74
-change.case$ -- 79
+            944 strings with 15439 characters,
+and the built_in function-call counts, 16102 in all, are:
+= -- 1775
+> -- 420
+< -- 28
++ -- 180
+- -- 105
+* -- 985
+:= -- 2492
+add.period$ -- 92
+call.type$ -- 75
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 75
-duplicate$ -- 808
-empty$ -- 1831
-format.name$ -- 104
-if$ -- 3884
+cite$ -- 76
+duplicate$ -- 830
+empty$ -- 1868
+format.name$ -- 105
+if$ -- 3983
 int.to.chr$ -- 0
-int.to.str$ -- 74
-missing$ -- 57
-newline$ -- 226
-num.names$ -- 74
-pop$ -- 348
+int.to.str$ -- 75
+missing$ -- 58
+newline$ -- 229
+num.names$ -- 75
+pop$ -- 351
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 332
+skip$ -- 348
 stack$ -- 0
-substring$ -- 597
-swap$ -- 231
-text.length$ -- 27
+substring$ -- 629
+swap$ -- 243
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 126
-width$ -- 76
-write$ -- 751
+while$ -- 130
+width$ -- 77
+write$ -- 763
 (There was 1 warning)

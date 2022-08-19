@@ -54,7 +54,7 @@ Metodologia
         Controle Proporcional para Uso de Capital           OK
         Lista de Parâmetros de Configuração                 OK
         Ensaios Paralelos                                   Considerar após conclusão
-        Dashboard                                           OK
+        Dashboard                                           Atualizar Prints
     Otimizações de Gerenciamento de Carteira                --
         Resumo                                              OK
         Compensação por Lucratividade                       Aguardando simulações para iniciar mais simulações

@@ -224,7 +224,7 @@
 \contentsline {paragraph}{}{57}{section*.189}%
 \contentsline {subsection}{\numberline {3.3.7}Lista de Parâmetros de Configuração}{60}{subsection.3.3.7}%
 \contentsline {paragraph}{}{60}{section*.190}%
-\contentsline {subsection}{\numberline {3.3.8}Ensaios Paralelos}{62}{subsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.3.8}Ensaios Paralelos}{61}{subsection.3.3.8}%
 \contentsline {paragraph}{}{62}{section*.191}%
 \contentsline {subsection}{\numberline {3.3.9}\textit {Dashboard}}{63}{subsection.3.3.9}%
 \contentsline {paragraph}{}{63}{section*.192}%

@@ -4,18 +4,15 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces Amostras das variáveis aleatórias X e Y}}{22}{table.2.1}%
 \contentsline {table}{\numberline {2.2}{\ignorespaces Postos rgX e rgY}}{22}{table.2.2}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Ações Escolhidas}}{49}{table.3.1}%
-\contentsline {table}{\numberline {3.2}{\ignorespaces Período de dias que engloba 90\% das contagens dos histogramas}}{54}{table.3.2}%
-\contentsline {table}{\numberline {3.3}{Lista de parâmetros detalhados}}{57}{table.3.3}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces Compensação por Lucratividade - Comparação de Resultados}}{64}{table.3.4}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces RCC Dinâmico - Comparação de Resultados sem \textit {flags} de descanso}}{66}{table.3.5}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces RCC Dinâmico - Comparação de Resultados com \textit {flags} de descanso}}{66}{table.3.6}%
-\contentsline {table}{\numberline {3.7}{\ignorespaces Comparação de Resultados}}{68}{table.3.7}%
-\contentsline {table}{\numberline {3.8}{\ignorespaces Balanceamento via CSL}}{71}{table.3.8}%
-\contentsline {table}{\numberline {3.9}{\ignorespaces Parâmetros fixos}}{72}{table.3.9}%
-\contentsline {table}{\numberline {3.10}{\ignorespaces Parâmetros variáveis}}{72}{table.3.10}%
-\contentsline {table}{\numberline {3.11}{\ignorespaces WFA - Intervalos de treinamento, teste e validade dos modelos}}{73}{table.3.11}%
-\contentsline {table}{\numberline {3.12}{\ignorespaces \textit {Baseline} - Indicadores de Performance}}{75}{table.3.12}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces Período de dias que engloba 90\% das contagens dos histogramas}}{49}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Ações Escolhidas}}{55}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{Lista de parâmetros detalhados}}{61}{table.3.3}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Comparação de Resultados}}{70}{table.3.4}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Balanceamento via CSL}}{72}{table.3.5}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Parâmetros fixos}}{74}{table.3.6}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Parâmetros variáveis}}{74}{table.3.7}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces WFA - Intervalos de treinamento, teste e validade dos modelos}}{75}{table.3.8}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces \textit {Baseline} - Indicadores de Performance}}{77}{table.3.9}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Resultado final}}{77}{table.4.1}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Resultado final}}{79}{table.4.1}%
 \addvspace {10\p@ }

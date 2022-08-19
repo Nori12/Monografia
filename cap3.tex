@@ -119,20 +119,57 @@
     \item \sout{Média Móvel Exponencial de 17 períodos no gráfico diário.} \\
     \color{red} HERALDO: Feature original do André Moraes. Não utilizada mais nos modelos. \colorend
 
+
     \item \sout{Média Móvel Exponencial de 72 períodos no gráfico diário.} \\
     \color{red} HERALDO: Feature original do André Moraes. Não utilizada mais nos modelos. \colorend
+
 
     \item \sout{Média Móvel Exponencial de 72 períodos no gráfico semanal.} \\
     \color{red} HERALDO: Feature original do André Moraes. Não utilizada mais nos modelos. \colorend
 
+
     \item \sout{\textit{Flag} de Tendência de Alta.} \\
     \color{red} HERALDO: Feature original do André Moraes. Não utilizada nos modelos DA FORMA QUE O ANDRÉ USA, por isso o risco no texto. Ele se baseia em picos e vales ascendentes para justificar uma tendência de alta (de acordo com a teoria de Dow). A nível de código, a estratégia mais simples é comparar os últimos 2 picos de mínimo e 2 picos de máximo, verificar se um é maior que o outro com alguma margem de tolerância, que se caracteriza tendência de alta. Porém essa informação é ruidosa, principalmente em mercados em consolidação (=muito lateralizados). O que ocorre na prática do André é que não são só os ultimos 4 picos que são analisados. Primeiro, ele já tira uma noção visual se o mercado anda em consolidação, isso requer olhar uma quantidade variável de picos que possuem algum grau de proximidade nas magnitudes, mas se comportam entre linhas de suporte e resistência. Quantos dias os picos passados devo olhar para medir a consolidação? (pergunta retórica). Se uma ação vem em tendência de baixa, por exemplo, ele não espera exatamente o par perfeito de 4 picos ascendentes para dizer se o mercado está em alta, muitas vezes porque o quarto pico ainda nem se formou consistentemente. Os testes que fiz foram baseados em uma identificação de picos, que ficou bem implementada, porém tem um atraso de 9 dias para identificar qualquer pico. Enfim, embora possível fazer um flag de tendencia de alta, não é trivial uma boa métrica fidedigna ao André, seguindo esta lógica. \colorend
+
 
     \item \sout{\textit{Stop Loss} no último pico de rompimento/reversão de tendência (Pressupõe preço de compra definido).} \\
     \color{red} HERALDO: Não utilizado mais pois era feature do André Moraes. Em particular, essa não é trivial de se calcular e foi uma das quais distanciou a simulação feita da estratégia real do André. Os picos relevantes que retratam a memória do mercado muitas vezes estão relacionados a acontecimentos notáveis, como crises financeiras, acidentes industriais, relatórios jurícos, escândalos, aquisições novas, etc. O André pode não avaliar os acontecimentos menores na escolha do stop por ser grafista e não estar inteiramente ligado nas notícias, mas leva em consideração os mais marcantes. Como análise de notícias está completamente fora do escopo, obter o grau de importância de um pico com alguma precisão requer no mínimo olhar os dados intraday (seção de coleta de dados explica porque não usei) e avaliar o volume de negociações na regiões. Contudo, idealmente deve-se olhar o livro de ofertas para tirar métricas das forças de compra e de venda, talvez aliadas ao volume de negociação e assim obter um valor razoável. Quando implementei na tentativa de simular o André, usei simplemente o pico mais próximo abaixo do preço de compra, dado uma distância mínima de 1\%. Em resumo, acho que foi mais uma métrica que contribui para uma estratégia ruim, por isso o abandono. \colorend
 
+
+    \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
+    \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:downtrend_halt}).
+
+    \textit{Flag} criado com o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
+    % Semelhante ao \textit{Flag} de Identificação de Crises, este \textit{Flag} também tem o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. No entanto, o critério é diferente. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
+
+    \begin{equation} \label{eq:23}
+        \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
+    \end{equation}
+
+    \begin{equation} \label{eq:24}
+        \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
+    \end{equation}
+
+    \begin{equation} \label{eq:25}
+        F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\
+            1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \  e \  F_{downtrend(i-1)} = 1 \  \textrm{(3 m\'ax)} \\
+            0, & \mbox{caso contr\'ario} \end{cases}
+    \end{equation}
+
+    Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de um \textit{flag} que pode impedir diretamente o fluxo de negociações, prioriza-se um baixo ruído ao tempo de resposta.
+
+    A Figura \ref{fig:109} ilustra a eficácia do \textit{Flag} de Identificação de Tendência de Baixa. Durante os maiores intervalos nos quais o \textit{Flag} esteve ativo, o preço se encontrou em queda. Por outro lado, quando verificado os intervalos menores, é mais comum a presença de falsos positivos.
+
+    \begin{figure}[!htb]
+        \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
+        \centering
+        \caption{COGN3 - \textit{Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}
+        \label{fig:109}
+    \end{figure}
+
+
     \item \textbf{\textit{Flag} de Identificação de Crises} \\ \\
-        \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença.
+        \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:crisis_halt}).
 
         Para o cálcula das anomalias de volume (Equação \ref{eq:20}), utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativação do \textit{flag}.
 
@@ -170,33 +207,15 @@
         \end{figure}
 
 
-    \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
-    Semelhante ao \textit{Flag} de Identificação de Crises, este \textit{Flag} também tem o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. No entanto, o critério é diferente. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
+        Apesar da diferença entre os critérios de implementação dos \textit{Flags} de Identificação de Tendência de Baixa e de Crises, conceitualmente ambos são próximos, portanto é necessário investigar se o \textit{Flag} de Crises é sobreposto pelo \textit{Flag} de Tendência de Baixa. A Figura \ref{fig:110} comprova que apesar das sobreposições, o \textit{Flag} de Crises consegue alertar em alguns poucos momentos que o outro não consegue, justificando seu uso. Já a análise de ganho de performance nas simulações de estratégias será realizada na Seção \ref{sub:crisis_halt}.
 
-    \begin{equation} \label{eq:23}
-        \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
-    \end{equation}
+        \begin{figure}[!htb]
+            \includegraphics[scale=0.75]{downtrend_crisis_inter_cple6.png}
+            \centering
+            \caption{COGN3 - Interseção entre os \textit{Flags} de Identificação de Crises e de Tendência de Baixa (01/01/2019 a 31/12/2019)}
+            \label{fig:110}
+        \end{figure}
 
-    \begin{equation} \label{eq:24}
-        \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
-    \end{equation}
-
-    \begin{equation} \label{eq:25}
-        F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\
-            1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \  e \  F_{downtrend(i-1)} = 1 \  \textrm{(3 m\'ax)} \\
-            0, & \mbox{caso contr\'ario} \end{cases}
-    \end{equation}
-
-    Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de \textit{flag} que pode impedir diretamente o fluxo de negociações, prioriza-se um baixo ruído ao tempo de resposta.
-
-    A Figura \ref{fig:109} ilustra a eficácia do \textit{Flag} de Identificação de Tendência de Baixa. Durante os maiores intervalos nos quais o \textit{Flag} esteve ativo, o preço se encontrou em queda. Por outro lado, quando verificado os intervalos menores, é mais comum a presença de falsos positivos.
-
-    \begin{figure}[!htb]
-        \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
-        \centering
-        \caption{COGN3 - \textit{Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}
-        \label{fig:109}
-    \end{figure}
 
     \item \textbf{Risco Mínimo} \\ \\
     O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
@@ -381,103 +400,6 @@
 
 
 \FloatBarrier
-\subsection{Gerenciamento de Risco}
-\label{sub:risk_man}
-
-\paragraph{} Segundo André Moraes \cite{moraes2007se}, um bom Gerenciamento de Risco é essencial para a performance de uma estratégia. Afinal, não adianta obter uma alta taxa de acerto em operações de cujo lucro médio não compense as perdas acumuladas pelas operações que falham. Além disso, estar com o capital muito alocado em ativos de um único segmento é perigoso devido à exposição à fatores como falta de insumos industriais, mudanças na legislação, crises internas, instabilidade política, dentre outros.
-
-\paragraph{} Para mitigar as questões levantadas, algumas medidas foram tomas inspiradas no trabalho de André Moraes \cite{moraes2007se}. São elas:
-
-\begin{itemize}
-    \item Diversificação de ativos em segmentos de mercado variados através da escolha de um alto número de \textit{tickers} na carteira, mais especificamente 71.
-    \item Criação do Coeficiente de Risco-Capital\footnote{ou \textit{Risk-Capital Coefficient} (RCC)}
-\end{itemize}
-
-\paragraph{} O Coeficiente de Risco-Capital, definido pela Equação \ref{eq:60}, é uma constante que equilibra a relação entre o capital de entrada em uma operação e o risco escolhido. Seu valor é configurado previamente no Arquivo de Configuração (ver Tabela \ref{tab:3}) e vale para todos os ativos da carteira.
-
-\begin{equation} \label{eq:60}
-    RCC = Capital \times Risk
-\end{equation}
-
-\paragraph{} Durante uma simulação, a estratégia primeiro encontra o valor do risco desejado para entrar na operação, depois escolhe o capital a ser alocado. Dessa forma, a Equação \ref{eq:61} mostra de fato a aplicação do RCC. É evidente que quanto maior o risco envolvido, menor o capital a ser alocado e vice-versa.
-
-\begin{equation} \label{eq:61}
-    Capital = \dfrac{RCC}{Risk}
-\end{equation}
-
-\paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
-
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Nenhuma otimização foi adicionada. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que a partir do RCC de 1,88\%, o uso de capital está quase saturando. \color{red} HERALDO: Não sei explicar o motivo do mínimo local nos indicaroes. \color{black}
-
-% Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.80]{performance_per_rcc_2.png}
-    \centering
-    \caption{Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/12/2021)}
-    \label{fig:550}
-\end{figure}
-
-\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.29\% e RCC=1,88\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 3972 para 3390 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação receberam mais capital e como estas são mais expressivas, a performance geral foi maior.
-% Antes era: "... reduziu o número de operações totais de 379 para 302 pela ..."
-
-% \begin{figure}[!htb] % ID 315
-%     \includegraphics[scale=0.50]{rcc_capital_usage_08.png}
-%     \centering
-%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}
-%     \label{fig:551}
-% \end{figure}
-
-% \begin{figure}[!htb] % ID 345
-%     \includegraphics[scale=0.50]{rcc_capital_usage_20.png}
-%     \centering
-%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 2,0\%)}
-%     \label{fig:552}
-% \end{figure}
-
-\begin{figure}[!htb] % ID
-    \includegraphics[scale=0.650]{rcc_capital_usage_00029.png}
-    \centering
-    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 0,29\%)}
-    \label{fig:551}
-\end{figure}
-
-\begin{figure}[!htb] % ID
-    \includegraphics[scale=0.650]{rcc_capital_usage_00188.png}
-    \centering
-    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 1,88\%)}
-    \label{fig:552}
-\end{figure}
-
-\paragraph{} Um problema geral e inerente à abordagem do RCC é a necessidade do conhecimento \textit{a priori} de um valor razoável. Ou seja, sem algumas simulações prévias, não há como se saber um valor ótimo ou pelo menos próximo dele. Uma forma de se atenuar esse problema é através da criação de um controle proporcional que aumente o RCC geral em função do baixo aproveitamento de uso de capital dos dias corridos e vice-versa. Essa alternativa também é chamada de RCC Dinâmico e abordada em mais detalhes na Seção \ref{sub:dynamic_rcc}.
-
-% \paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
-
-\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Coloquei a tabela aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. Mas se houver outro lugar mais adequado, posso trocar. \colorend
-
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ cccccccc }
-            \multicolumn{8}{c}{Ações Escolhidas (71)} \\
-            \hline
-            ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
-            BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
-            CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
-            DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
-            ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
-            ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
-            MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
-            RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
-            UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
-        \end{tabular}
-        \caption{Ações Escolhidas}
-        \label{tab:5}
-    \end{center}
-\end{table}
-
-
-
-\FloatBarrier
 \subsection{Risco de Entrada por Operação}
 \label{sub:operation_risk}
 
@@ -493,6 +415,7 @@
 
 \paragraph{} A Figura \ref{fig:553} resume as simulações cujos valores de Risco de Entrada estão no intervalo fechado [0.01, 1.0]. Foram utilizados os 71 \textit{tickers} da Tabela \ref{tab:5} no período de 01/01/2019 a 31/12/2021 sem qualquer otimização. Utilizou-se um RCC de 0,22\% para evitar saturação de capital. Nota-se que o ponto de máximo para os três indicadores de performance coincidiu para o Risco de Entrada de 0,29.
 
+% ID: [1, 100]
 \begin{figure}[!htb]
     \includegraphics[scale=0.80]{performance_per_op_risks.png}
     \centering
@@ -573,6 +496,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 % \paragraph{} Com base nos valores encontrados, escolheu-se como ponto de partida o período máximo de \textbf{45 dias} para qualquer operação. Esse valor será melhor depurado na Seção \ref{sub:escolha_param} e se necessário, substituído por outro mais adequado.
 \paragraph{} Na tentativa de encontrar o valor bem ajustado para o Período Máximo de Dias, uma simulação com o parâmetro ajustado para o intervalo de 1 a 90 dias foi executada para os 71 \textit{tickers} da Tabela \ref{tab:5} para o período de 01/01/2019 a 31/12/2021. Utilizou-se um RCC de 0,22\% para evitar saturação de capital e nenhuma otimização. A Figura \ref{fig:740} mostra os resultados obtidos. Os máximos dos indicadores de performance coincidem em 45 dias de Período Máximo de Dias uma vez que os modelos utilizados na simulação foram criados a partir de \textit{datasets} que utilizavam este valor como limite de suas operações artificiais (Seção \ref{sub:dataset_gen}). \color{red} HERALDO: Basicamente confirmei o esperado. O problema de testar outros valores é que seria necessário gerar os datasets para valores diferentes de 45 dias e recriar os modelos. A criação completa de uma leva de modelos (71 tickers-01/2019 a 12/2021) demora pouco mais de 2 dias de execução em um PC quad-core e ocupa 490MB em ZIP. \color{black}
 
+% ID: [101, 190]
 \begin{figure}[!htb]
     \includegraphics[scale=0.80]{performance_per_max_days.png}
     \centering
@@ -582,20 +506,220 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
+\FloatBarrier
+\subsection{Gerenciamento de Risco}
+\label{sub:risk_man}
+
+\paragraph{} Segundo André Moraes \cite{moraes2007se}, um bom Gerenciamento de Risco é essencial para a performance de uma estratégia. Afinal, não adianta obter uma alta taxa de acerto em operações de cujo lucro médio não compense as perdas acumuladas pelas operações que falham. Além disso, estar com o capital muito alocado em ativos de um único segmento é perigoso devido à exposição à fatores como falta de insumos industriais, mudanças na legislação, crises internas, instabilidade política, dentre outros.
+
+\paragraph{} Para mitigar as questões levantadas, algumas medidas foram tomas inspiradas no trabalho de André Moraes \cite{moraes2007se}. São elas:
+
+\begin{itemize}
+    \item Diversificação de ativos em segmentos de mercado variados através da escolha de um alto número de \textit{tickers} na carteira, mais especificamente 71.
+    \item Criação do Coeficiente de Risco-Capital\footnote{ou \textit{Risk-Capital Coefficient} (RCC)}
+\end{itemize}
+
+\paragraph{} O Coeficiente de Risco-Capital, definido pela Equação \ref{eq:60}, é uma constante que equilibra a relação entre o capital de entrada em uma operação e o risco escolhido. Seu valor é configurado previamente no Arquivo de Configuração (ver Tabela \ref{tab:3}) e vale para todos os ativos da carteira.
+
+\begin{equation} \label{eq:60}
+    RCC = Capital \times Risk
+\end{equation}
+
+\paragraph{} Durante uma simulação, a estratégia primeiro encontra o valor do risco desejado para entrar na operação, depois escolhe o capital a ser alocado. Dessa forma, a Equação \ref{eq:61} mostra de fato a aplicação do RCC. É evidente que quanto maior o risco envolvido, menor o capital a ser alocado e vice-versa.
+
+\begin{equation} \label{eq:61}
+    Capital = \dfrac{RCC}{Risk}
+\end{equation}
+
+\paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
+
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Nenhuma otimização foi adicionada. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que por volta do RCC de 1,88\%, o uso de capital está quase saturando. \color{red} HERALDO: Não sei explicar o motivo do mínimo local nos indicaroes. \color{black}
+
+% Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
+
+% ID: [191, 488] + [641, 642]
+\begin{figure}[!htb]
+    \includegraphics[scale=0.80]{performance_per_rcc_2.png}
+    \centering
+    \caption{Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/12/2021)}
+    \label{fig:550}
+\end{figure}
+
+\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.29\% e RCC=1,88\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 3972 para 3390 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação receberam mais capital e como estas são mais expressivas, a performance geral foi maior.
+% Antes era: "... reduziu o número de operações totais de 379 para 302 pela ..."
+
+% \begin{figure}[!htb] % ID 315
+%     \includegraphics[scale=0.50]{rcc_capital_usage_08.png}
+%     \centering
+%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}
+%     \label{fig:551}
+% \end{figure}
+
+% \begin{figure}[!htb] % ID 345
+%     \includegraphics[scale=0.50]{rcc_capital_usage_20.png}
+%     \centering
+%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 2,0\%)}
+%     \label{fig:552}
+% \end{figure}
+
+\begin{figure}[!htb] % ID: 217
+    \includegraphics[scale=0.650]{rcc_capital_usage_00029.png}
+    \centering
+    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 0,29\%)}
+    \label{fig:551}
+\end{figure}
+
+\begin{figure}[!htb] % ID: 376
+    \includegraphics[scale=0.650]{rcc_capital_usage_00188.png}
+    \centering
+    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 1,88\%)}
+    \label{fig:552}
+\end{figure}
+
+\paragraph{} Um problema geral e inerente à abordagem do RCC é a necessidade do conhecimento \textit{a priori} de um valor razoável. Ou seja, sem algumas simulações prévias, não há como se saber um valor ótimo ou pelo menos próximo dele. Uma forma de se atenuar esse problema é através da criação de um controle proporcional que aumente o RCC geral em função do baixo aproveitamento de uso de capital dos dias corridos e vice-versa. Essa alternativa também é chamada de RCC Dinâmico e abordada em mais detalhes na Seção \ref{sub:dynamic_rcc}.
+
+% \paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
+
+\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Coloquei a tabela aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. Mas se houver outro lugar mais adequado, posso trocar. \colorend
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ cccccccc }
+            \multicolumn{8}{c}{Ações Escolhidas (71)} \\
+            \hline
+            ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
+            BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
+            CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
+            DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
+            ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
+            ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
+            MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
+            RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
+            UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
+        \end{tabular}
+        \caption{Ações Escolhidas}
+        \label{tab:5}
+    \end{center}
+\end{table}
+
+
 
 \FloatBarrier
-\subsection{Descanso por Tendência de Baixa}
-\label{sub:downtrend_halt}
+\subsection{Controle Proporcional para Uso de Capital}
+\label{sub:dynamic_rcc}
 
-\paragraph{} O Descanso por Tendência de Baixa é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Tendência de Baixa (ver Seção \ref{sub:features}). O objetivo é esperar o mercado entrar em uma nova tendência de alta ou pelo menos se estabilizar para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \colorend
+% \paragraph{} A criação de um RCC como ferramenta de gerenciamento de risco (ver Seção \ref{sub:risk_man}) não resolve o problema de subaproveitamento do Uso de Capital da carteira ao longo do período de simulação. Entende-se por subaproveitamento a parcela de capital ocioso que, por não estar empregado em nenhum ativo, resulta em uma perda de performance geral.
 
+\paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco (Seção \ref{sub:risk_man}), mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode ser obtido através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser significativamente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, um RCC fixo pode levar a problemas de subaproveitamento do Uso de Capital da carteira.
 
+\paragraph{} Uma forma de se atenuar esse problema é através da criação de um RCC Dinâmico, configurado através de um Controle Proporcional. A vantagem dessa abordagem está na diminuição da sensibilidade do RCC em relação à performance geral, permitindo um ajuste menos preciso sem grande impacto de performance. O Controle atua no rebalanceamento de capital em função do uso médio de capital vigente, ou seja, períodos com mais disponibilidate de capital terão uma maior alavancagem.
 
-\FloatBarrier
-\subsection{Descanso por Identificação de Crises}
-\label{sub:crisis_halt}
+% \paragraph{} \color{red} HERALDO: Pensei em colocar um diagrama desse controle proporcional aqui, porém o bloco que representaria a planta (i.e., estratégia) é extremamente não-linear. \colorend
 
-\paragraph{} O Descanso por Identificação de Crises é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Identificação de Crises (ver Seção \ref{sub:features}). O objetivo é esperar o mercado se estabilizar de uma crise em potencial para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \colorend
+\paragraph{} As Equações \ref{eq:100} e \ref{eq:101} mostram o cálculo do erro e do RCC dinâmico (\begin{math} RCC_{din} \end{math}) a partir do valor de referência para o uso médio de capital (\begin{math} C_{ref} \end{math}), do uso médio de capital dos últimos 10 dias de simulação (\begin{math} \overline{C_{10d}} \end{math}), do RCC fixo (\begin{math} RCC_{fix} \end{math}, definido pela Equação \ref{eq:60}) e da constante de ganho proporcional (\begin{math} K \end{math}).
+
+\begin{equation} \label{eq:100}
+    e = C_{ref} - \overline{C_{10d}}, \quad \mbox{para } 0 \le C_{ref}, \overline{C_{10d}} \le 1
+\end{equation}
+
+\begin{equation} \label{eq:101}
+    RCC_{din} = RCC_{fix} (1 + K e)
+\end{equation}
+
+% \paragraph{} Foi utilizado \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 10 \end{math} e \begin{math} RCC_{fix} = 0.003 \end{math}
+
+% \paragraph{} A Figura \ref{fig:150} mostra o ganho de performance obtido pela implementação do RCC Dinâmico com os valores \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 7,5 \end{math} e \begin{math} RCC_{fix} = 0.0022 \end{math}. A linha em amarelo indica a simulação com uso do RCC Dinâmico enquanto a linha verde indica a simulação sem o uso. Nenhuma outra otimização foi utilizada. A Tabela \ref{tab:10} traz um comparativo dos resultados das simulações. Nota-se que o RCC foi ajustado para que o Uso Médio de Capital de ambas simulações ficassem próximos.
+
+% % ID: 420 (sem), 419 (com)
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.50]{dyn_rcc_no_flags.png}
+%     \centering
+%     \caption{Performance por uso de RCC dinâmico sem \textit{flags} de descanso}
+%     \label{fig:150}
+% \end{figure}
+
+% \begin{table}[h!]
+%     \begin{center}
+%         \begin{tabular}{ c|cc|ccc }
+%             RCC Din. & RCC fixo & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
+%             \hline
+%             Não & 0,50\% & 84,20\% & 44,93\% & 0,44 & 0,53 \\
+%             Sim & 0,22\% & 84,11\% & 47,37\% & 0,47 & 0,57 \\
+%         \end{tabular}
+%         \caption{RCC Dinâmico - Comparação de Resultados sem \textit{flags} de descanso}
+%         \label{tab:10}
+%     \end{center}
+% \end{table}
+
+% \paragraph{} Analogamente à Figura \ref{fig:150}, a Figura \ref{fig:151} também mostra o ganho de performance, porém na condição de ativação dos Descansos por Tendência de Baixa e por Identificação de Crises para ambas as simulações. A Tabela \ref{tab:11} compara os resultados das simulações.
+
+% % ID: 425 (sem), 422 (com)
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.50]{dyn_rcc_with_flags.png}
+%     \centering
+%     \caption{Performance por uso de RCC dinâmico com \textit{flags} de descanso}
+%     \label{fig:151}
+% \end{figure}
+
+% \begin{table}[h!]
+%     \begin{center}
+%         \begin{tabular}{ c|cc|ccc }
+%             RCC Din. & RCC fixo & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
+%             \hline
+%             Não & 0,63\% & 73,89\% & 66,61\% & 0,94 & 1,27 \\
+%             Sim & 0,22\% & 73,98\% & 83,38\% & 1,20 & 1,69 \\
+%         \end{tabular}
+%         \caption{RCC Dinâmico - Comparação de Resultados com \textit{flags} de descanso}
+%         \label{tab:11}
+%     \end{center}
+% \end{table}
+
+\paragraph{} As Figuras \ref{fig:152}, \ref{fig:153} e \ref{fig:154} apresentam indicadores de performance para valores de RCC e de K diferentes. Foram utilizados na simulação os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Cada curva é composta por um conjunto de simulações diferentes que compartilham entre si o mesmo produto \begin{math} RCC \times K \end{math}. Dessa forma, é possível acoplar em um único parâmetro duas variáveis que influem diretamente no rendimento e no uso de capital. Consequentemente, também facilita a avaliação do grau de importância que cada uma dessas variáveis apresenta.
+
+\paragraph{} Dando prosseguimento à análise, primeiro pode-se observar nas Figuras \ref{fig:152} e \ref{fig:153} que a curva que apresentou o maior rendimento foi a de \begin{math} RCC \times K = 0,75 \end{math}. Isso mostra que forçar a estratégia além desse valor não é vantajoso. As curvas imediatamente próximas (0,85; 0,80; 0,70; 0,65) também se distribuiram consistentemente logo no entorno da anterior, indicando que não se trata de uma anormalidade e sim uma região de máximo (aproximadamente, devido à discretização).
+
+\paragraph{} A segunda observação importante é que o aumento do valor de K, mesmo que linearmente balanceado pela diminuição do RCC, traz uma melhoria de performance enquanto o contrário piora os resultados.
+
+\paragraph{} Já observando a Figura \ref{fig:154}, nota-se que o produto \begin{math} RCC \times K \end{math} possui relação direta com o uso médio de capital. O fato da curva mais performática (\begin{math} RCC \times K = 0,75 \end{math}) não ser a de maior uso médio de capital indica que também há a necessidade de uma pequena parcela de capital ocioso para uma boa fluidez da estratégia, neste caso um valor próximo de 2,7\%.
+
+\paragraph{} O objetivo central desta análise é encontrar um conjunto de valores otimizados para RCC e K. No entanto, as Figuras \ref{fig:152} e \ref{fig:153} dão a entender que um K tendendo ao infinito, aliado a um RCC tendendo a zero seria a solução. O problema que ocorre em decorrência desta linha de raciocínio é mostrado através da Figura \ref{fig:155}, onde se pode ver uma queda acentuada do número de operações totais efetuadas pelas estratégias. Em um regime longe de saturação, as mesmas estratégias simuladas possuem todas 3972 operações totais. No entanto, a estratégia com maior índice de Sharpe da Figura \ref{fig:153}, onde \begin{math} RCC \times K = 0,75 \end{math}, possui 3145 operações. Isso significa que 20,8\% de operações foram perdidas por ausência de capital de entrada devido à saturação. Como não há nenhum critério envolvido, tanto as operações de sucesso quando as de falha são perdidas em igual proporção, não afetando muito a performance final neste caso.
+
+\paragraph{} Contudo, a escolha de um valor de K excessivamente grande pode levar o número de operações totais para um valor baixo o suficiente para gerar instabilidades indesejáveis na performance. Isso ocorreria pois um \textit{ticker} que em determinado momento comprar um papél monopolizará praticamente todo o capital disponível até que ele decida vender. Tal comportamento é válido e até poderia se mostrar bastante lucrativo e confiável em determinados contextos através de um estudo mais aprofundado. Porém, isto foge ao escopo deste projeto, que foca na utilização de aprendizado de máquina como o elemento central por trás da performance das estratégias.
+
+\paragraph{} Desta forma, escolheu-se o valor de \begin{math} RCC = 0,000025 \end{math} e \begin{math} K = 30000 \end{math}, representados pelo maior índice de Sharpe na Figura \ref{fig:153}. Conforme mencionado anteriormente, esta escolha admite uma perda de 20,8\% no número de operações.
+
+% Total de operações sem saturação: 3972
+% ID: [643, 705]
+\begin{figure}[!htb]
+    \includegraphics[scale=0.70]{yield_per_rcc_k.png}
+    \centering
+    \caption{Rendimento sob uso de RCC dinâmico}
+    \label{fig:152}
+\end{figure}
+
+% ID: [643, 705]
+\begin{figure}[!htb]
+    \includegraphics[scale=0.70]{sharpe_per_rcc_k.png}
+    \centering
+    \caption{Índice de Sharpe sob uso de RCC dinâmico}
+    \label{fig:153}
+\end{figure}
+
+% ID: [643, 705]
+\begin{figure}[!htb]
+    \includegraphics[scale=0.70]{avgcap_per_rcc_k.png}
+    \centering
+    \caption{Uso médio de capital sob uso de RCC dinâmico}
+    \label{fig:154}
+\end{figure}
+
+% ID: [643, 705]
+\begin{figure}[!htb]
+    \includegraphics[scale=0.70]{totalop_per_rcc_k.png}
+    \centering
+    \caption{Total de operações sob uso de RCC dinâmico}
+    \label{fig:155}
+\end{figure}
 
 
 
@@ -856,7 +980,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \label{profit_comp}
 
 % \paragraph{} A Compensacão por Lucratividade é um ajuste auto-compensado\footnote{Realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira} que aumenta o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira. Da mesma forma, também diminui o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
-\paragraph{} A Compensacão por Lucratividade é um ajuste cujo objetivo está no aumento de capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira, assim como na diminuição de capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
+\paragraph{} A Compensacão por Lucratividade tem por objetivo aumentar o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira, assim como diminuir o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
 
 \paragraph{} A Equação \ref{eq:90} mostra a primeira etapa do cálculo da Compensação, onde \begin{math} \sigma_{eq} \end{math} é o valor em unidades de desvio padrão do quanto o lucro acumulado \begin{math} p_t \end{math} do ativo está em relação à média \begin{math} \overline{P_w} \end{math} e desvio padrão \begin{math} \sigma_w \end{math} da carteira.
 
@@ -909,115 +1033,60 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
         \end{tikzpicture}
     \end{center}
-    \caption{Gráfico da Função de Compensação por Lucratividade}
+    \caption{Gráfico da Função de Compensação por Lucratividade para \begin{math} C_{max} = 0.60\end{math}, \begin{math} \sigma_s = 0.2 \end{math} e \begin{math} \sigma_e = 2.0 \end{math}}
     \label{fig:140}
 \end{figure}
 
-\paragraph{} Utilizou-se \begin{math} C_{max} = 0.60\end{math}, \begin{math} \sigma_s = 0.2 \end{math} e \begin{math} \sigma_e = 2.0 \end{math}.
+\paragraph{} A Figura \ref{fig:152} apresenta indicadores de performance para valores de \begin{math} C_{max} \end{math}, \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math}. Foram utilizados na simulação os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. O gráfico mostra que ...
 
-\paragraph{} A Figura \ref{fig:141} mostra o ganho de performance obtido para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5} durante o período de 01/01/2019 a 31/12/2021. A linha em amarelo indica a simulação com uso da Compensação enquanto a linha verde indica a simulação sem o uso. Nenhuma outra otimização foi utilizada. A Tabela \ref{tab:9} traz um comparativo dos resultados das simulações. Nota-se que o RCC foi ajustado para que o Uso Médio de Capital de ambas simulações ficassem próximos.
+% % ID:
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.75]{profit_comp.png}
+%     \centering
+%     \caption{Performance por uso de Compensação por Lucratividade}
+%     \label{fig:141}
+% \end{figure}
 
-% ID: 415 (sem), 414 (com)
-\begin{figure}[!htb]
-    \includegraphics[scale=0.50]{profit_comp.png}
-    \centering
-    \caption{Performance por uso de Compensação por Lucratividade}
-    \label{fig:141}
-\end{figure}
+% \paragraph{} Utilizou-se \begin{math} C_{max} = 0.60\end{math}, \begin{math} \sigma_s = 0.2 \end{math} e \begin{math} \sigma_e = 2.0 \end{math}.
 
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ c|cc|ccc }
-            Comp. Luc. & RCC & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
-            \hline
-            Não & 0,35\% & 78,30\% & 42,06\% & 0,43 & 0,52 \\
-            Sim & 0,22\% & 78,74\% & 44,58\% & 0,46 & 0,55 \\
-        \end{tabular}
-        \caption{Compensação por Lucratividade - Comparação de Resultados}
-        \label{tab:9}
-    \end{center}
-\end{table}
+% \paragraph{} A Figura \ref{fig:141} mostra o ganho de performance obtido para a simulação dos 71 \textit{tickers} listados na Tabela \ref{tab:5} durante o período de 01/01/2019 a 31/12/2021. A linha em amarelo indica a simulação com uso da Compensação enquanto a linha verde indica a simulação sem seu uso. Nenhuma outra otimização foi utilizada. A Tabela \ref{tab:9} traz um comparativo dos resultados das simulações. Nota-se que o RCC foi ajustado para que o Uso Médio de Capital de ambas simulações ficassem próximos.
+
+% % ID: 415 (sem), 414 (com)
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.50]{profit_comp.png}
+%     \centering
+%     \caption{Performance por uso de Compensação por Lucratividade}
+%     \label{fig:141}
+% \end{figure}
+
+% \begin{table}[h!]
+%     \begin{center}
+%         \begin{tabular}{ c|cc|ccc }
+%             Comp. Luc. & RCC & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
+%             \hline
+%             Não & 0,35\% & 78,30\% & 42,06\% & 0,43 & 0,52 \\
+%             Sim & 0,22\% & 78,74\% & 44,58\% & 0,46 & 0,55 \\
+%         \end{tabular}
+%         \caption{Compensação por Lucratividade - Comparação de Resultados}
+%         \label{tab:9}
+%     \end{center}
+% \end{table}
 
 
 
 \FloatBarrier
-\subsection{Controle Proporcional para Uso de Capital}
-\label{sub:dynamic_rcc}
+\subsection{Descanso por Tendência de Baixa}
+\label{sub:downtrend_halt}
 
-% \paragraph{} A criação de um RCC como ferramenta de gerenciamento de risco (ver Seção \ref{sub:risk_man}) não resolve o problema de subaproveitamento do Uso de Capital da carteira ao longo do período de simulação. Entende-se por subaproveitamento a parcela de capital ocioso que, por não estar empregado em nenhum ativo, resulta em uma perda de performance geral.
+\paragraph{} O Descanso por Tendência de Baixa é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Tendência de Baixa (ver Seção \ref{sub:features}). O objetivo é esperar o mercado entrar em uma nova tendência de alta ou pelo menos se estabilizar para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \color{black}
 
-\paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco (Seção \ref{sub:risk_man}), mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode ser obtido através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser suficientemente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, um RCC fixo pode levar a problemas de subaproveitamento do Uso de Capital da carteira.
 
-\paragraph{} A atenuação desse problema se dá pela criação de um RCC Dinâmico, configurado através de um Controle Proporcional. A vantagem dessa abordagem está na diminuição da sensibilidade do RCC em relação à performance geral, permitindo um ajuste menos preciso sem grande impacto de performance. O Controle atua no rebalanceamento de capital em função do uso médio de capital vigente, ou seja, períodos com menos oportunidades de operações terão mais alavancagem de capital e vice-versa.
 
-% \paragraph{} \color{red} HERALDO: Pensei em colocar um diagrama desse controle proporcional aqui, porém o bloco que representaria a planta (i.e., estratégia) é extremamente não-linear. \colorend
+\FloatBarrier
+\subsection{Descanso por Identificação de Crises}
+\label{sub:crisis_halt}
 
-\paragraph{} As Equações \ref{eq:100} e \ref{eq:101} mostram o cálculo do RCC dinâmico (\begin{math} RCC_{din} \end{math}) a partir do RCC fixo (\begin{math} RCC_{fix} \end{math}, definido pela Equação \ref{eq:60}), do valor de referência para o uso médio de capital (\begin{math} C_{ref} \end{math}), da constante de ganho proporcional (\begin{math} K \end{math}) e do uso médio de capital dos últimos 10 dias de simulação (\begin{math} \overline{C_{10d}} \end{math}).
-
-\begin{equation} \label{eq:100}
-    e = C_{ref} - \overline{C_{10d}}, \quad \mbox{para } 0 \le C_{ref}, \overline{C_{10d}} \le 1
-\end{equation}
-
-\begin{equation} \label{eq:101}
-    RCC_{din} = RCC_{fix} (1 + K e)
-\end{equation}
-
-% \paragraph{} Foi utilizado \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 10 \end{math} e \begin{math} RCC_{fix} = 0.003 \end{math}
-
-\paragraph{} A Figura \ref{fig:150} mostra o ganho de performance obtido pela implementação do RCC Dinâmico com os valores \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 7,5 \end{math} e \begin{math} RCC_{fix} = 0.0022 \end{math}. A linha em amarelo indica a simulação com uso do RCC Dinâmico enquanto a linha verde indica a simulação sem o uso. Nenhuma outra otimização foi utilizada. A Tabela \ref{tab:10} traz um comparativo dos resultados das simulações. Nota-se que o RCC foi ajustado para que o Uso Médio de Capital de ambas simulações ficassem próximos.
-
-% ID: 420 (sem), 419 (com)
-\begin{figure}[!htb]
-    \includegraphics[scale=0.50]{dyn_rcc_no_flags.png}
-    \centering
-    \caption{Performance por uso de RCC dinâmico sem \textit{flags} de descanso}
-    \label{fig:150}
-\end{figure}
-
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ c|cc|ccc }
-            RCC Din. & RCC fixo & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
-            \hline
-            Não & 0,50\% & 84,20\% & 44,93\% & 0,44 & 0,53 \\
-            Sim & 0,22\% & 84,11\% & 47,37\% & 0,47 & 0,57 \\
-        \end{tabular}
-        \caption{RCC Dinâmico - Comparação de Resultados sem \textit{flags} de descanso}
-        \label{tab:10}
-    \end{center}
-\end{table}
-
-\paragraph{} Analogamente à Figura \ref{fig:150}, a Figura \ref{fig:151} também mostra o ganho de performance, porém na condição de ativação dos Descansos por Tendência de Baixa e por Identificação de Crises para ambas as simulações. A Tabela \ref{tab:11} compara os resultados das simulações.
-
-% ID: 425 (sem), 422 (com)
-\begin{figure}[!htb]
-    \includegraphics[scale=0.50]{dyn_rcc_with_flags.png}
-    \centering
-    \caption{Performance por uso de RCC dinâmico com \textit{flags} de descanso}
-    \label{fig:151}
-\end{figure}
-
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ c|cc|ccc }
-            RCC Din. & RCC fixo & Uso Méd. Cap. & Rend. Final & Sharpe & Sortino \\
-            \hline
-            Não & 0,63\% & 73,89\% & 66,61\% & 0,94 & 1,27 \\
-            Sim & 0,22\% & 73,98\% & 83,38\% & 1,20 & 1,69 \\
-        \end{tabular}
-        \caption{RCC Dinâmico - Comparação de Resultados com \textit{flags} de descanso}
-        \label{tab:11}
-    \end{center}
-\end{table}
-
-\paragraph{} A Figura \ref{fig:560} mostra o gráfico da relação entre os indicadores de performance em função do RCC para todos os 71 \textit{tickers} da Tabela \ref{tab:5}. Os pontos marcados representam os máximos dos respectivos gráficos. Observa-se que o melhor K se encontra no intervalo [13, 16]. Portanto, o valor escolhido é a média dos limites do intervalo: 14,5. \color{red} HERALDO: O que acha da escolha da média? \color{black}
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.80]{performance_per_rcc_k.png}
-    \centering
-    \caption{Indicadores de performance em função do ganho K (71 tickers: 01/01/2019 a 31/12/2021)}
-    \label{fig:560}
-\end{figure}
+\paragraph{} O Descanso por Identificação de Crises é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Identificação de Crises (ver Seção \ref{sub:features}). O objetivo é esperar o mercado se estabilizar de uma crise em potencial para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \color{black}
 
 
 

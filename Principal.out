@@ -37,18 +37,18 @@
 \BOOKMARK [1][-]{section.3.3}{Simula\347\343o de Estrat\351gia}{chapter.3}% 37
 \BOOKMARK [2][-]{subsection.3.3.1}{Estrutura}{section.3.3}% 38
 \BOOKMARK [2][-]{subsection.3.3.2}{Premissas}{section.3.3}% 39
-\BOOKMARK [2][-]{subsection.3.3.3}{Gerenciamento de Risco}{section.3.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.4}{Risco de Entrada por Opera\347\343o}{section.3.3}% 41
-\BOOKMARK [2][-]{subsection.3.3.5}{Per\355odo M\341ximo de Dias por Opera\347\343o}{section.3.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.6}{Descanso por Tend\352ncia de Baixa}{section.3.3}% 43
-\BOOKMARK [2][-]{subsection.3.3.7}{Descanso por Identifica\347\343o de Crises}{section.3.3}% 44
-\BOOKMARK [2][-]{subsection.3.3.8}{Lista de Par\342metros de Configura\347\343o}{section.3.3}% 45
-\BOOKMARK [2][-]{subsection.3.3.9}{Ensaios Paralelos}{section.3.3}% 46
-\BOOKMARK [2][-]{subsection.3.3.10}{Dashboard}{section.3.3}% 47
-\BOOKMARK [1][-]{section.3.4}{Otimiza\347\365es de Gerenciamento de Carteira}{chapter.3}% 48
-\BOOKMARK [2][-]{subsection.3.4.1}{Resumo}{section.3.4}% 49
-\BOOKMARK [2][-]{subsection.3.4.2}{Compensa\347\343o por Lucratividade}{section.3.4}% 50
-\BOOKMARK [2][-]{subsection.3.4.3}{Controle Proporcional para Uso de Capital}{section.3.4}% 51
+\BOOKMARK [2][-]{subsection.3.3.3}{Risco de Entrada por Opera\347\343o}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.4}{Per\355odo M\341ximo de Dias por Opera\347\343o}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.5}{Gerenciamento de Risco}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.6}{Controle Proporcional para Uso de Capital}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.7}{Lista de Par\342metros de Configura\347\343o}{section.3.3}% 44
+\BOOKMARK [2][-]{subsection.3.3.8}{Ensaios Paralelos}{section.3.3}% 45
+\BOOKMARK [2][-]{subsection.3.3.9}{Dashboard}{section.3.3}% 46
+\BOOKMARK [1][-]{section.3.4}{Otimiza\347\365es de Gerenciamento de Carteira}{chapter.3}% 47
+\BOOKMARK [2][-]{subsection.3.4.1}{Resumo}{section.3.4}% 48
+\BOOKMARK [2][-]{subsection.3.4.2}{Compensa\347\343o por Lucratividade}{section.3.4}% 49
+\BOOKMARK [2][-]{subsection.3.4.3}{Descanso por Tend\352ncia de Baixa}{section.3.4}% 50
+\BOOKMARK [2][-]{subsection.3.4.4}{Descanso por Identifica\347\343o de Crises}{section.3.4}% 51
 \BOOKMARK [1][-]{section.3.5}{Modelos de Aprendizado Supervisionado}{chapter.3}% 52
 \BOOKMARK [2][-]{subsection.3.5.1}{Resumo}{section.3.5}% 53
 \BOOKMARK [2][-]{subsection.3.5.2}{Datasets e Feature Selection}{section.3.5}% 54
@@ -58,4 +58,4 @@
 \BOOKMARK [2][-]{subsection.3.5.6}{Modelo Baseline}{section.3.5}% 58
 \BOOKMARK [0][-]{chapter.4}{Resultados}{}% 59
 \BOOKMARK [0][-]{chapter.5}{Conclus\343o}{}% 60
-\BOOKMARK [0][-]{section*.218}{Bibliografia}{}% 61
+\BOOKMARK [0][-]{section*.221}{Bibliografia}{}% 61

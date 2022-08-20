@@ -11,13 +11,12 @@
     \item Capital: R\$ 100000,00
     \item Período máximo de dias por operação: 45
     \item Risco de Entrada por Operação: 0,29
-    \item Compensação por Lucratividade: Sim
-    \item Descanso por Identificação de Crises: Sim
-    \item Descanso por Tendência de Baixa: Sim
-    \item RCC: 0,57\%
+    % \item Descanso por Identificação de Crises: Sim
+    % \item Descanso por Tendência de Baixa: Sim
+    \item RCC: 0,000025
     \item Controle Proporcional para Uso de Capital (RCC Dinâmico): Sim
     \item Valor de Referência para Uso de Capital: 100\%
-    \item Constante K de Ganho Proporcional: 14,5
+    \item Constante K de Ganho Proporcional: 30000
 \end{itemize}
 
 \paragraph{} Os resultados encontrados podem ser verificados pela Tabela \ref{tab:13} e pela Figura \ref{fig:250}.
@@ -27,22 +26,22 @@
         \begin{tabular}{ l|c|c }
             Parâmetro & Estratégia & \textit{Baseline} \\
             \hline
-            Rendimento Final & 124,59\% & 73,94\% \\
-            Volatilidade & 37,70\% & 55,48\% \\
-            Índice de Sharpe & 1,28 & 0,68 \\
-            Índice de Sortino & 1,84 & 0,74 \\
-            Correlação de Spearman (c/ \textit{Baseline}) & 0,89 & - \\
-            Correlação de Spearman (c /Ibovespa) & 0,66 & - \\
+            Rendimento Final & 72,79\% & 73,94\% \\
+            Volatilidade & 63,20\% & 55,48\% \\
+            Índice de Sharpe & 0,64 & 0,68 \\
+            Índice de Sortino & 0,74 & 0,74 \\
+            Correlação de Spearman (c/ \textit{Baseline}) & 0,99 & - \\
+            Correlação de Spearman (c /Ibovespa) & 0,92 & - \\
             Uso Máximo de Capital & 100\% & 100\% \\
-            Uso Médio de Capital & 91,46\% & 100\% \\
-            Máximo de Operações Ativas & 64 & - \\
-            Média de Operações Ativas & 35,15 & - \\
-            Desvio Padrão de Operações Ativas & 16,53 & -\\
-            Operações Totais & 1916 & 71 \\
-            Operações de Sucesso & 565 (29,5\%) & - \\
-            Operações de Falha & 1238 (64,6\%) & - \\
-            Operações de \textit{Timeout} & 89 (4,6\%) & - \\
-            Operações Incompletas & 24 (1,3\%) & - \\
+            Uso Médio de Capital & 97,22\% & 100\% \\
+            Máximo de Operações Ativas & 71 & - \\
+            Média de Operações Ativas & 65,97 & - \\
+            Desvio Padrão de Operações Ativas & 6,13 & -\\
+            Operações Totais & 3145 & 71 \\
+            Operações de Sucesso & 891 (28,3\%) & - \\
+            Operações de Falha & 2048 (65,1\%) & - \\
+            Operações de \textit{Timeout} & 147 (4,7\%) & - \\
+            Operações Incompletas & 59 (1,9\%) & - \\
         \end{tabular}
         \caption{Resultado final}
         \label{tab:13}

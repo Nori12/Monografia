@@ -52,15 +52,15 @@ Metodologia
         Período Máximo de Dias por Operação                 OK
         Gerenciamento de Risco                              OK
         Controle Proporcional para Uso de Capital           OK
-        Lista de Parâmetros de Configuração                 OK
-        Ensaios Paralelos                                   Considerar após conclusão
-        Dashboard                                           Atualizar Prints
+        Lista de Parâmetros de Configuração                 Atualizar remoção de Comp Luc
+        Ensaios Paralelos                                   Removido
+        Dashboard                                           OK
     Otimizações de Gerenciamento de Carteira                --
         Resumo                                              OK
-        Compensação por Lucratividade                       Aguardando simulações para iniciar mais simulações
+        Compensação por Lucratividade                       OK - Excluído por ineficiência
         Normalização por Frequência de Operações            OK - Excluído por ineficiência
-        Descanso por Tendência de Baixa                     Revisar
-        Descanso por Identificação de Crises                Revisar
+        Descanso por Tendência de Baixa                     OK - Excluído por ineficiência
+        Descanso por Identificação de Crises                OK - Excluído por ineficiência
     Modelos de Aprendizado Supervisionado                   --
         Resumo                                              OK
         Datasets e Feature Selection                        OK
@@ -69,9 +69,9 @@ Metodologia
         Geração de Modelos                                  OK
         Modelo Baseline                                     OK
 
-Resultados                                                  Revisar
+Resultados                                                  OK
 
-Conclusão                                                   Revisar
+Conclusão                                                   OK
 
 Observações:
 (1) Mencionei o uso de Docker em Resumo->Metodologia;

@@ -136,85 +136,84 @@
     \color{red} HERALDO: Não utilizado mais pois era feature do André Moraes. Em particular, essa não é trivial de se calcular e foi uma das quais distanciou a simulação feita da estratégia real do André. Os picos relevantes que retratam a memória do mercado muitas vezes estão relacionados a acontecimentos notáveis, como crises financeiras, acidentes industriais, relatórios jurícos, escândalos, aquisições novas, etc. O André pode não avaliar os acontecimentos menores na escolha do stop por ser grafista e não estar inteiramente ligado nas notícias, mas leva em consideração os mais marcantes. Como análise de notícias está completamente fora do escopo, obter o grau de importância de um pico com alguma precisão requer no mínimo olhar os dados intraday (seção de coleta de dados explica porque não usei) e avaliar o volume de negociações na regiões. Contudo, idealmente deve-se olhar o livro de ofertas para tirar métricas das forças de compra e de venda, talvez aliadas ao volume de negociação e assim obter um valor razoável. Quando implementei na tentativa de simular o André, usei simplemente o pico mais próximo abaixo do preço de compra, dado uma distância mínima de 1\%. Em resumo, acho que foi mais uma métrica que contribui para uma estratégia ruim, por isso o abandono. \colorend
 
 
-    \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
-    \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:downtrend_halt}).
+    % \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
+    % \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:downtrend_halt}).
 
-    \textit{Flag} criado com o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
-    % Semelhante ao \textit{Flag} de Identificação de Crises, este \textit{Flag} também tem o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. No entanto, o critério é diferente. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
+    % \textit{Flag} criado com o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
 
-    \begin{equation} \label{eq:23}
-        \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
-    \end{equation}
+    % \begin{equation} \label{eq:23}
+    %     \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
+    % \end{equation}
 
-    \begin{equation} \label{eq:24}
-        \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
-    \end{equation}
+    % \begin{equation} \label{eq:24}
+    %     \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
+    % \end{equation}
 
-    \begin{equation} \label{eq:25}
-        F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\
-            1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \  e \  F_{downtrend(i-1)} = 1 \  \textrm{(3 m\'ax)} \\
-            0, & \mbox{caso contr\'ario} \end{cases}
-    \end{equation}
+    % \begin{equation} \label{eq:25}
+    %     F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\
+    %         1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \  e \  F_{downtrend(i-1)} = 1 \  \textrm{(3 m\'ax)} \\
+    %         0, & \mbox{caso contr\'ario} \end{cases}
+    % \end{equation}
 
-    Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de um \textit{flag} que pode impedir diretamente o fluxo de negociações, prioriza-se um baixo ruído ao tempo de resposta.
+    % Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de um \textit{flag} que pode impedir diretamente o fluxo de negociações, prioriza-se um baixo ruído ao tempo de resposta.
 
-    A Figura \ref{fig:109} ilustra a eficácia do \textit{Flag} de Identificação de Tendência de Baixa. Durante os maiores intervalos nos quais o \textit{Flag} esteve ativo, o preço se encontrou em queda. Por outro lado, quando verificado os intervalos menores, é mais comum a presença de falsos positivos.
+    % A Figura \ref{fig:109} ilustra a eficácia do \textit{Flag} de Identificação de Tendência de Baixa. Durante os maiores intervalos nos quais o \textit{Flag} esteve ativo, o preço se encontrou em queda. Por outro lado, quando verificado os intervalos menores, é mais comum a presença de falsos positivos.
 
-    \begin{figure}[!htb]
-        \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
-        \centering
-        \caption{COGN3 - \textit{Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}
-        \label{fig:109}
-    \end{figure}
-
-
-    \item \textbf{\textit{Flag} de Identificação de Crises} \\ \\
-        \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:crisis_halt}).
-
-        Para o cálcula das anomalias de volume (Equação \ref{eq:20}), utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativação do \textit{flag}.
-
-        Já o cálculo das anomalias de queda de preços (Equação \ref{eq:150}), utiliza-se a média dos preços médios \begin{math} \overline{P_{mid}} \end{math} e seu desvio padrão \begin{math} \sigma_{P_{mid}} \end{math}, ambos relativos aos últimos 20 dias úteis e combinados com o preço médio \begin{math} P_{mid} \end{math} do dia corrente.
-
-        \begin{equation} \label{eq:20}
-            V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} > \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} > \overline{V} + \sigma_V \\
-                0, & \mbox{caso contr\'ario} \end{cases}
-        \end{equation}
-
-        \begin{equation} \label{eq:22}
-            P_{mid} = \dfrac{P_{open} + P_{close}}{2}
-        \end{equation}
-
-        \begin{equation} \label{eq:150}
-            P_{anomaly(i)} = \begin{cases} 1, & \mbox{se } P_{mid(i)} < \overline{P_{mid}} + \sigma_{P_{mid}} \quad \\
-                0, & \mbox{caso contr\'ario} \end{cases}
-        \end{equation}
-
-        O \textit{Flag} de Identificação de Crises (Equação \ref{eq:21}) é ativado quando ambas as anomalias de volume e de queda de preço estão ativadas. Caso essa condição não se mantenha mais a partir de um determinado instante, há uma inércia de 8 dias úteis para persistência do \textit{flag} de Crises.
-
-        \begin{equation} \label{eq:21}
-            F_{crisis(i)} = \begin{cases} 1, & \mbox{se } V_{anomaly(i)} = 1 \quad \textrm{e} \quad P_{anomaly(i)} = 1 \\
-                1, & \mbox{se } (V_{anomaly(i)} = 0 \; \textrm{ou} \; P_{anomaly(i)} = 0) \; \textrm{e} \; F_{crisis(i-1)} = 1 \; (8 \textrm{m\'ax}) \\
-                0, & \mbox{caso contr\'ario} \end{cases}
-        \end{equation}
-
-        A Figura \ref{fig:104} ilustra a eficácia do \textit{flag}. Observa-se que os três gráficos presentes na imagem se referem respectivamente ao cálculo das anomalias de queda de preços, ao cálculo das anomalias de volumes e por fim, ao cálculo do \textit{flag} de Identificação de Crises. Pode-se perceber que o mesmo foi corretamente ativado durante o início da crise do Coronavírus, pouco antes de 01/03/2020. Também houve ativação perto de 01/09/2020, embora sem um motivo claro aparente, os preços das ações durante o intervalo e logo após enfrentam uma pequena zona de consolidação, ou de desaceleração da tendência de alta que antes se apresentava. Nesta região, não se deseja entrar em operações até que uma nova tendência se forme.
-
-        \begin{figure}[!htb]
-            \includegraphics[scale=0.47]{crisis_flag_mglu3.png}
-            \centering
-            \caption{MGLU3 - \textit{Flag} de Identificação de Crises (01/01/2020 a 31/12/2020)}
-            \label{fig:104}
-        \end{figure}
+    % \begin{figure}[!htb]
+    %     \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
+    %     \centering
+    %     \caption{COGN3 - \textit{Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}
+    %     \label{fig:109}
+    % \end{figure}
 
 
-        Apesar da diferença entre os critérios de implementação dos \textit{Flags} de Identificação de Tendência de Baixa e de Crises, conceitualmente ambos são próximos, portanto é necessário investigar se o \textit{Flag} de Crises é sobreposto pelo \textit{Flag} de Tendência de Baixa. A Figura \ref{fig:110} comprova que apesar das sobreposições, o \textit{Flag} de Crises consegue alertar em alguns poucos momentos que o outro não consegue, justificando seu uso. Já a análise de ganho de performance nas simulações de estratégias será realizada na Seção \ref{sub:crisis_halt}.
+    % \item \textbf{\textit{Flag} de Identificação de Crises} \\ \\
+    %     \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:crisis_halt}).
 
-        \begin{figure}[!htb]
-            \includegraphics[scale=0.75]{downtrend_crisis_inter_cple6.png}
-            \centering
-            \caption{COGN3 - Interseção entre os \textit{Flags} de Identificação de Crises e de Tendência de Baixa (01/01/2019 a 31/12/2019)}
-            \label{fig:110}
-        \end{figure}
+    %     Para o cálcula das anomalias de volume (Equação \ref{eq:20}), utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativação do \textit{flag}.
+
+    %     Já o cálculo das anomalias de queda de preços (Equação \ref{eq:150}), utiliza-se a média dos preços médios \begin{math} \overline{P_{mid}} \end{math} e seu desvio padrão \begin{math} \sigma_{P_{mid}} \end{math}, ambos relativos aos últimos 20 dias úteis e combinados com o preço médio \begin{math} P_{mid} \end{math} do dia corrente.
+
+    %     \begin{equation} \label{eq:20}
+    %         V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} > \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} > \overline{V} + \sigma_V \\
+    %             0, & \mbox{caso contr\'ario} \end{cases}
+    %     \end{equation}
+
+    %     \begin{equation} \label{eq:22}
+    %         P_{mid} = \dfrac{P_{open} + P_{close}}{2}
+    %     \end{equation}
+
+    %     \begin{equation} \label{eq:150}
+    %         P_{anomaly(i)} = \begin{cases} 1, & \mbox{se } P_{mid(i)} < \overline{P_{mid}} + \sigma_{P_{mid}} \quad \\
+    %             0, & \mbox{caso contr\'ario} \end{cases}
+    %     \end{equation}
+
+    %     O \textit{Flag} de Identificação de Crises (Equação \ref{eq:21}) é ativado quando ambas as anomalias de volume e de queda de preço estão ativadas. Caso essa condição não se mantenha mais a partir de um determinado instante, há uma inércia de 8 dias úteis para persistência do \textit{flag} de Crises.
+
+    %     \begin{equation} \label{eq:21}
+    %         F_{crisis(i)} = \begin{cases} 1, & \mbox{se } V_{anomaly(i)} = 1 \quad \textrm{e} \quad P_{anomaly(i)} = 1 \\
+    %             1, & \mbox{se } (V_{anomaly(i)} = 0 \; \textrm{ou} \; P_{anomaly(i)} = 0) \; \textrm{e} \; F_{crisis(i-1)} = 1 \; (8 \textrm{m\'ax}) \\
+    %             0, & \mbox{caso contr\'ario} \end{cases}
+    %     \end{equation}
+
+    %     A Figura \ref{fig:104} ilustra a eficácia do \textit{flag}. Observa-se que os três gráficos presentes na imagem se referem respectivamente ao cálculo das anomalias de queda de preços, ao cálculo das anomalias de volumes e por fim, ao cálculo do \textit{flag} de Identificação de Crises. Pode-se perceber que o mesmo foi corretamente ativado durante o início da crise do Coronavírus, pouco antes de 01/03/2020. Também houve ativação perto de 01/09/2020, embora sem um motivo claro aparente, os preços das ações durante o intervalo e logo após enfrentam uma pequena zona de consolidação, ou de desaceleração da tendência de alta que antes se apresentava. Nesta região, não se deseja entrar em operações até que uma nova tendência se forme.
+
+    %     \begin{figure}[!htb]
+    %         \includegraphics[scale=0.47]{crisis_flag_mglu3.png}
+    %         \centering
+    %         \caption{MGLU3 - \textit{Flag} de Identificação de Crises (01/01/2020 a 31/12/2020)}
+    %         \label{fig:104}
+    %     \end{figure}
+
+
+    %     Apesar da diferença entre os critérios de implementação dos \textit{Flags} de Identificação de Tendência de Baixa e de Crises, conceitualmente ambos são próximos, portanto é necessário investigar se o \textit{Flag} de Crises é sobreposto pelo \textit{Flag} de Tendência de Baixa. A Figura \ref{fig:110} comprova que apesar das sobreposições, o \textit{Flag} de Crises consegue alertar em alguns poucos momentos que o outro não consegue, justificando seu uso. Já a análise de ganho de performance nas simulações de estratégias será realizada na Seção \ref{sub:crisis_halt}.
+
+    %     \begin{figure}[!htb]
+    %         \includegraphics[scale=0.75]{downtrend_crisis_inter_cple6.png}
+    %         \centering
+    %         \caption{COGN3 - Interseção entre os \textit{Flags} de Identificação de Crises e de Tendência de Baixa (01/01/2019 a 31/12/2019)}
+    %         \label{fig:110}
+    %     \end{figure}
 
 
     \item \textbf{Risco Mínimo} \\ \\
@@ -240,7 +239,7 @@
         Risk_{min_v} = - \dot{P_{mid\_LPF(i)}}
     \end{equation}
 
-    Diferentemente do \textit{Flag} de Tendência de Baixa, foi utilizado \begin{math} \alpha = 0.30 \end{math}, uma vez que neste caso é mais interessante uma resposta rápida a um baixo ruído.
+    Foi utilizado \begin{math} \alpha = 0.30 \end{math}, uma vez que neste caso é mais interessante uma resposta rápida a um baixo ruído.
 
     Por fim, adicionou-se um segundo filtro de passa-baixas de \begin{math} \alpha = 0.10 \end{math} apenas aos movimentos de descida dos valores de \begin{math} Risk_{min} \end{math} com o objetivo de aumentar a cautela durante momentos mais turbulentos do mercado.
 
@@ -273,10 +272,6 @@
         \label{fig:106}
     \end{figure}
 
-    % O algoritmo implementado cumpre seu propósito pois se assemelha ao método grafista de identificação de picos \cite{moraes2007se}. O valor da janela de 17 \textit{candles} foi escolhido devido a teoria do Phi Cube \cite{moraes2007se}. \color{red} HERALDO: Para uma identificação de picos Embora tenha me baseado na teoria do Phi Cube por causa do André, confesso que não me sinto confortável em citá-la, pois ela me parece uma tentativa desesperada de trazer algum critério a um processo muito mais caótico e complexo. \colorend
-
-    % Depois da identificação de picos, extraem-se as \begin{math} n \end{math} subidas de preços de cada mínimo para o máximo consecutivo no período designado, normalizados pelo pico de mínimo (Figura \ref{fig:107} e Equação \ref{eq:40}). Em seguida, calcula-se a média \begin{math} \overline{C_{LPF(i)}} \end{math} e o desvio padrão \begin{math} \sigma_{C_{LPF(i)}} \end{math} com um filtro digital IIR passa-baixas (Equações \ref{eq:41}, \ref{eq:42} e \ref{eq:43}). Finalmente, o Risco Máximo \begin{math} Risk_{max} \end{math} pode ser encontrado segundo a Equação \ref{eq:44}, onde \begin{math} G \end{math} é a constante de razão entre ganho e perda, cujo valor é constante e igual a 3 em todo o escopo deste trabalho.
-
     Depois da identificação de picos, extraem-se as \begin{math} n \end{math} subidas de preços de cada mínimo para o máximo consecutivo no período designado, normalizados pelo pico de mínimo (Figura \ref{fig:107} e Equação \ref{eq:40}). Por fim, o Risco máximo é obtido pelo cálculo da média \begin{math} \overline{C_{(i)}} \end{math} com um filtro digital IIR passa-baixas (Equações \ref{eq:41} e \ref{eq:42}).
 
     \begin{figure}[!htb]
@@ -297,18 +292,6 @@
     \begin{equation} \label{eq:42}
         Risk_{max(i)} = \alpha \overline{C_{(i)}} + (1 - \alpha) Risk_{max(i-1)}
     \end{equation}
-
-    % \begin{equation} \label{eq:43}
-    %     \sigma_{C_{LPF(i)}} = \alpha \sigma_{C(i)} + (1 - \alpha) \sigma_{C_{LPF(i-1)}}
-    % \end{equation}
-
-    % \begin{equation} \label{eq:44}
-    %     Risk_{max(i)} = \dfrac{1}{G} (\overline{C_{LPF(i)}} - 0.5\sigma_{C_{LPF(i)}}), \quad \textrm{onde } G = 3
-    % \end{equation}
-
-    % \begin{equation} \label{eq:44}
-    %     Risk_{max(i)} = \dfrac{1}{G} (\overline{C_{LPF(i)}} - 0.5\sigma_{C_{LPF(i)}}), \quad \textrm{onde } G = 3
-    % \end{equation}
 
     Foi utilizado \begin{math} \alpha = 0.50 \end{math}.
 
@@ -686,7 +669,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} Contudo, a escolha de um valor de K excessivamente grande pode levar o número de operações totais para um valor baixo o suficiente para gerar instabilidades indesejáveis na performance. Isso ocorreria pois um \textit{ticker} que em determinado momento comprar um papél monopolizará praticamente todo o capital disponível até que ele decida vender. Tal comportamento é válido e até poderia se mostrar bastante lucrativo e confiável em determinados contextos através de um estudo mais aprofundado. Porém, isto foge ao escopo deste projeto, que foca na utilização de aprendizado de máquina como o elemento central por trás da performance das estratégias.
 
-\paragraph{} Desta forma, escolheu-se o valor de \begin{math} RCC = 0,000025 \end{math} e \begin{math} K = 30000 \end{math}, representados pelo maior índice de Sharpe na Figura \ref{fig:153}. Conforme mencionado anteriormente, esta escolha admite uma perda de 20,8\% no número de operações.
+\paragraph{} Desta forma, escolheu-se o valor de \begin{math} RCC = 0,000025 \end{math} e \begin{math} K = 30000 \end{math}, representados pelo maior índice de Sharpe na Figura \ref{fig:153}. Conforme mencionado anteriormente, esta escolha admite uma perda de 20,8\% no número de operações. % Estratégia escolhida: ID 668
 
 % Total de operações sem saturação: 3972
 % ID: [643, 705]
@@ -795,12 +778,12 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
         \hline
         % enable\_frequency\hspace{2em} \_normalization & Uso de normalização por frequência de operações (Seção \ref{sub:freq_norm}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         % \hline
-        enable\_profit\hspace{4em} \_compensation & Uso de compensação por lucratividade acumulada (Seção \ref{profit_comp}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        enable\_downtrend\_halt & Uso de descanso por identificação de tendência de baixa (Seção \ref{sub:downtrend_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        enable\_crisis\_halt & Uso de descanso por identificação de crises (Seção \ref{sub:crisis_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
+        % enable\_profit\hspace{4em} \_compensation & Uso de compensação por lucratividade acumulada (Seção \ref{profit_comp}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        % \hline
+        % enable\_downtrend\_halt & Uso de descanso por identificação de tendência de baixa (Seção \ref{sub:downtrend_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        % \hline
+        % enable\_crisis\_halt & Uso de descanso por identificação de crises (Seção \ref{sub:crisis_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+        % \hline
         enable\_dynamic\_rcc & Uso de Coeficiente de Risco-Capital dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         \hline
         dynamic\_rcc\_reference & Valor de referência de uso de capital médio no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 1,0. Listável: Sim. \\
@@ -826,25 +809,25 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\FloatBarrier
-\subsection{Ensaios Paralelos}
+% \FloatBarrier
+% \subsection{Ensaios Paralelos}
 
-\color{red} HERALDO: Vou fazer apenas fazer comentários para te mostrar o caminho que seguirei caso você julgue que valha a pena trabalhar essa seção. \colorend
+% \color{red} HERALDO: Vou fazer apenas fazer comentários para te mostrar o caminho que seguirei caso você julgue que valha a pena trabalhar essa seção. \colorend
 
-\paragraph{} Alguns parâmetros não se mostraram eficazes em melhorar a performance das simulações, muito embora tenham se apresentado como alternativas plausíveis na resolução de problemas ao longo deste trabalho. São eles os parâmetros:
+% \paragraph{} Alguns parâmetros não se mostraram eficazes em melhorar a performance das simulações, muito embora tenham se apresentado como alternativas plausíveis na resolução de problemas ao longo deste trabalho. São eles os parâmetros:
 
-\begin{itemize}
-    \item Venda Parcial (partial\_sale)
-    \color{red} HERALDO: A motivação da criação desse parâmetro vem de uma prática do André como uma forma de auxiliar o fator psicológico do trader para os casos frustantes em que o mercado quase chega no preço de venda, mas depois cai e bate no stop. Ele não usa isso constantemente, mas deixa como uma opção. Venda parcial em uma operação é vender 50\% do volume de compra adquirido quando o preço bater uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra. Dessa forma, ao invés da operação ter um ganho de 3X para cada X de possível perda, ela teria um ganho de 2X para os mesmos X, mais os casos de saída sem prejuízo. A grande questão é que essa conta não compensa, seja quando eu estava tentando replicar a estratégia do André, seja com os modelos de ML agora, nunca trouxe um rendimento maior. \colorend
+% \begin{itemize}
+%     \item Venda Parcial (partial\_sale)
+%     \color{red} HERALDO: A motivação da criação desse parâmetro vem de uma prática do André como uma forma de auxiliar o fator psicológico do trader para os casos frustantes em que o mercado quase chega no preço de venda, mas depois cai e bate no stop. Ele não usa isso constantemente, mas deixa como uma opção. Venda parcial em uma operação é vender 50\% do volume de compra adquirido quando o preço bater uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra. Dessa forma, ao invés da operação ter um ganho de 3X para cada X de possível perda, ela teria um ganho de 2X para os mesmos X, mais os casos de saída sem prejuízo. A grande questão é que essa conta não compensa, seja quando eu estava tentando replicar a estratégia do André, seja com os modelos de ML agora, nunca trouxe um rendimento maior. \colorend
 
-    \item Saídas Parcias (stop\_type = ``staircase")
-    \color{red} HERALDO: É uma extensão que criei derivada da Venda Parcial para tentar granularizar um pouco mais o critério anterior e verificar se o problema da ineficácia estava na escolha do limiar de venda. Igualmente não traz melhora alguma. A ideia é: cada vez que o preço de marcado toca o limiar de uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra, o stop loss sobre igualmente 1 un de risco. Exemplo: se o preço de compra é Pcom e o Stop Loss é Pcom - X, quando o preço de mercado atingir Pcom + X, o Stop Loss sobe para Pcom. Quando subir de novo para Pcom + 2X, o Stop sobe para Pcom + X. O alvo continua sendo Pcom + 3X como sempre. \colorend
+%     \item Saídas Parcias (stop\_type = ``staircase")
+%     \color{red} HERALDO: É uma extensão que criei derivada da Venda Parcial para tentar granularizar um pouco mais o critério anterior e verificar se o problema da ineficácia estava na escolha do limiar de venda. Igualmente não traz melhora alguma. A ideia é: cada vez que o preço de marcado toca o limiar de uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra, o stop loss sobre igualmente 1 un de risco. Exemplo: se o preço de compra é Pcom e o Stop Loss é Pcom - X, quando o preço de mercado atingir Pcom + X, o Stop Loss sobe para Pcom. Quando subir de novo para Pcom + 2X, o Stop sobe para Pcom + X. O alvo continua sendo Pcom + 3X como sempre. \colorend
 
-    \item Dias Mínimos de Espera após Operação de Falha (min\_days\_after\_failure\_operation)
+%     \item Dias Mínimos de Espera após Operação de Falha (min\_days\_after\_failure\_operation)
 
-    \item Dias Mínimos de Espera após Operação de Sucesso (min\_days\_after\_successful\_operation)
-    \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, eles estão sempre aqui como opções, mas são são consistentes. \colorend
-\end{itemize}
+%     \item Dias Mínimos de Espera após Operação de Sucesso (min\_days\_after\_successful\_operation)
+%     \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, eles estão sempre aqui como opções, mas são são consistentes. \colorend
+% \end{itemize}
 
 
 
@@ -890,15 +873,15 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\FloatBarrier
-\section{Otimizações de Gerenciamento de Carteira}
+% \FloatBarrier
+% \section{Otimizações de Gerenciamento de Carteira}
 
 
 
-\FloatBarrier
-\subsection{Resumo}
+% \FloatBarrier
+% \subsection{Resumo}
 
-\paragraph{} As otimizações apresentadas nesta Seção independem de um modelo de ML específico, sendo portanto algoritmos gerais que, motivados ou não por problemas oriundos dos modelos, buscam uma abordagem geral para aumento da performance da carteira.
+% \paragraph{} As otimizações apresentadas nesta Seção independem de um modelo de ML específico, sendo portanto algoritmos gerais que, motivados ou não por problemas oriundos dos modelos, buscam uma abordagem geral para aumento da performance da carteira.
 
 
 
@@ -975,69 +958,70 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\FloatBarrier
-\subsection{Compensação por Lucratividade}
-\label{profit_comp}
+% \FloatBarrier
+% \subsection{Compensação por Lucratividade}
+% \label{profit_comp}
 
-% \paragraph{} A Compensacão por Lucratividade é um ajuste auto-compensado\footnote{Realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira} que aumenta o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira. Da mesma forma, também diminui o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
-\paragraph{} A Compensacão por Lucratividade tem por objetivo aumentar o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira, assim como diminuir o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
+% % \paragraph{} A Compensacão por Lucratividade é um ajuste auto-compensado\footnote{Realoca capital dentro da própria estratégia sem alterar o Uso Médio de Capital da carteira} que aumenta o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira. Da mesma forma, também diminui o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
+% \paragraph{} A Compensacão por Lucratividade tem por objetivo aumentar o capital em operações de \textit{tickers} que possuem um lucro acumulado acima da média da carteira, assim como diminuir o capital daqueles que estão com o lucro acumulado abaixo da média da carteira.
 
-\paragraph{} A Equação \ref{eq:90} mostra a primeira etapa do cálculo da Compensação, onde \begin{math} \sigma_{eq} \end{math} é o valor em unidades de desvio padrão do quanto o lucro acumulado \begin{math} p_t \end{math} do ativo está em relação à média \begin{math} \overline{P_w} \end{math} e desvio padrão \begin{math} \sigma_w \end{math} da carteira.
+% \paragraph{} A Equação \ref{eq:90} mostra a primeira etapa do cálculo da Compensação, onde \begin{math} \sigma_{eq} \end{math} é o valor em unidades de desvio padrão do quanto o lucro acumulado \begin{math} p_t \end{math} do ativo está em relação à média \begin{math} \overline{P_w} \end{math} e desvio padrão \begin{math} \sigma_w \end{math} da carteira.
 
-\begin{equation} \label{eq:90}
-    \sigma_{eq} = \dfrac{p_t - \overline{P_w}}{\sigma_w}
-\end{equation}
+% \begin{equation} \label{eq:90}
+%     \sigma_{eq} = \dfrac{p_t - \overline{P_w}}{\sigma_w}
+% \end{equation}
 
-\paragraph{} Em seguida, a Equações \ref{eq:91} e \ref{eq:92} dão sequência ao cálculo criando os coeficientes das retas que serão utilizadas diretamente na Compensação através da Figura \ref{fig:140}. Nota-se que \begin{math} C_{max} \end{math} é a variação máxima positiva que a Compensação pode alcançar. \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math} são limiares de \begin{math} \sigma_{eq} \end{math} que definem lugares geométricos diferentes.
+% \paragraph{} Em seguida, a Equações \ref{eq:91} e \ref{eq:92} dão sequência ao cálculo criando os coeficientes das retas que serão utilizadas diretamente na Compensação através da Figura \ref{fig:140}. Nota-se que \begin{math} C_{max} \end{math} é a variação máxima positiva que a Compensação pode alcançar. \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math} são limiares de \begin{math} \sigma_{eq} \end{math} que definem lugares geométricos diferentes.
 
-\begin{equation} \label{eq:91}
-    m_1 = \dfrac{ C_{max} }{ \sigma_e - \sigma_s }, \quad n_1 = 1 - \sigma_s m_1
-\end{equation}
+% \begin{equation} \label{eq:91}
+%     m_1 = \dfrac{ C_{max} }{ \sigma_e - \sigma_s }, \quad n_1 = 1 - \sigma_s m_1
+% \end{equation}
 
-\begin{equation} \label{eq:92}
-    m_2 = \dfrac{ C_{max} }{ \sigma_e - \sigma_s }, \quad n_2 = 1 + \sigma_s m_2
-\end{equation}
+% \begin{equation} \label{eq:92}
+%     m_2 = \dfrac{ C_{max} }{ \sigma_e - \sigma_s }, \quad n_2 = 1 + \sigma_s m_2
+% \end{equation}
 
-\paragraph{} Finalmente, a Equação \ref{eq:93} mostra o cálculo final, que pode ser facilmente visualizado pela Figura \ref{fig:140}.
+% \paragraph{} Finalmente, a Equação \ref{eq:93} mostra o cálculo final, que pode ser facilmente visualizado pela Figura \ref{fig:140}.
 
-\begin{equation} \label{eq:93}
-    C = \begin{cases} m_1 \sigma_{eq} + n_1, & \mbox{se } \sigma_{eq} \ge \sigma_s \quad \textrm{e} \quad \sigma_{eq} \le \sigma_e \\ m_2 \sigma_{eq} + n_2, & \mbox{se } \sigma_{eq} \le - \sigma_s \quad \textrm{e} \quad \sigma_{eq} \ge - \sigma_e \\ 1 + C_{max}, & \mbox{se } \sigma_{eq} > \sigma_e \\ 1 - C_{max}, & \mbox{se } \sigma_{eq} < - \sigma_e \\ 0, & \mbox{se } |\sigma{eq}| < \sigma_s \end{cases}
-\end{equation}
+% \begin{equation} \label{eq:93}
+%     C = \begin{cases} m_1 \sigma_{eq} + n_1, & \mbox{se } \sigma_{eq} \ge \sigma_s \quad \textrm{e} \quad \sigma_{eq} \le \sigma_e \\ m_2 \sigma_{eq} + n_2, & \mbox{se } \sigma_{eq} \le - \sigma_s \quad \textrm{e} \quad \sigma_{eq} \ge - \sigma_e \\ 1 + C_{max}, & \mbox{se } \sigma_{eq} > \sigma_e \\ 1 - C_{max}, & \mbox{se } \sigma_{eq} < - \sigma_e \\ 0, & \mbox{se } |\sigma{eq}| < \sigma_s \end{cases}
+% \end{equation}
 
-\pgfmathsetmacro{\cmax}{0.6}
-\pgfmathsetmacro{\sigs}{0.2}
-\pgfmathsetmacro{\sige}{2.0}
+% \pgfmathsetmacro{\cmax}{0.6}
+% \pgfmathsetmacro{\sigs}{0.2}
+% \pgfmathsetmacro{\sige}{2.0}
 
-\begin{figure}[!htb]
-    \centering
-    \begin{center}
-        \begin{tikzpicture}
-            \begin{axis}
-            [
-                ylabel={Compensa\c{c}\~ao [-]},
-                xlabel={$Lucro [\sigma_{eq}]$},
-                xmin=-3, xmax=3,
-                ymin=0, ymax=2,
-                xtick={-3, -2, -1, 0, 1, 2, 3},
-                ytick={0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0},
-                ymajorgrids=true,
-                xmajorgrids=true,
-                grid style=dashed,
-            ]
-            \addplot[line width=0.50mm, domain=-\sigs:\sigs,blue]{1};
-            \addplot[line width=0.50mm, domain=\sigs:\sige,blue]{x * \cmax / (\sige - \sigs) + (1 - \cmax * \sigs / (\sige - \sigs))};
-            \addplot[line width=0.50mm, domain=-\sige:-\sigs,blue]{x * \cmax / (\sige - \sigs) + (1 + \cmax * \sigs / (\sige - \sigs))};
-            \addplot[line width=0.50mm, domain=\sige:10,blue]{1 + \cmax};
-            \addplot[line width=0.50mm, domain=-10:-\sige,blue]{1 - \cmax};
-            \end{axis}
+% \begin{figure}[!htb]
+%     \centering
+%     \begin{center}
+%         \begin{tikzpicture}
+%             \begin{axis}
+%             [
+%                 ylabel={Compensa\c{c}\~ao [-]},
+%                 xlabel={$Lucro [\sigma_{eq}]$},
+%                 xmin=-3, xmax=3,
+%                 ymin=0, ymax=2,
+%                 xtick={-3, -2, -1, 0, 1, 2, 3},
+%                 ytick={0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2.0},
+%                 ymajorgrids=true,
+%                 xmajorgrids=true,
+%                 grid style=dashed,
+%             ]
+%             \addplot[line width=0.50mm, domain=-\sigs:\sigs,blue]{1};
+%             \addplot[line width=0.50mm, domain=\sigs:\sige,blue]{x * \cmax / (\sige - \sigs) + (1 - \cmax * \sigs / (\sige - \sigs))};
+%             \addplot[line width=0.50mm, domain=-\sige:-\sigs,blue]{x * \cmax / (\sige - \sigs) + (1 + \cmax * \sigs / (\sige - \sigs))};
+%             \addplot[line width=0.50mm, domain=\sige:10,blue]{1 + \cmax};
+%             \addplot[line width=0.50mm, domain=-10:-\sige,blue]{1 - \cmax};
+%             \end{axis}
 
-        \end{tikzpicture}
-    \end{center}
-    \caption{Gráfico da Função de Compensação por Lucratividade para \begin{math} C_{max} = 0.60\end{math}, \begin{math} \sigma_s = 0.2 \end{math} e \begin{math} \sigma_e = 2.0 \end{math}}
-    \label{fig:140}
-\end{figure}
+%         \end{tikzpicture}
+%     \end{center}
+%     \caption{Gráfico da Função de Compensação por Lucratividade para \begin{math} C_{max} = 0.60\end{math}, \begin{math} \sigma_s = 0.2 \end{math} e \begin{math} \sigma_e = 2.0 \end{math}}
+%     \label{fig:140}
+% \end{figure}
 
-\paragraph{} A Figura \ref{fig:152} apresenta indicadores de performance para valores de \begin{math} C_{max} \end{math}, \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math}. Foram utilizados na simulação os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. O gráfico mostra que ...
+% \paragraph{} A Figura \ref{fig:141} apresenta indicadores de performance para valores de \begin{math} C_{max} \end{math}, \begin{math} \sigma_s \end{math} e \begin{math} \sigma_e \end{math}. Foram utilizados na simulação os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021.
+% O gráfico mostra que ...
 
 % % ID:
 % \begin{figure}[!htb]
@@ -1074,19 +1058,30 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\FloatBarrier
-\subsection{Descanso por Tendência de Baixa}
-\label{sub:downtrend_halt}
+% \FloatBarrier
+% \subsection{Descanso por Tendência de Baixa}
+% \label{sub:downtrend_halt}
 
-\paragraph{} O Descanso por Tendência de Baixa é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Tendência de Baixa (ver Seção \ref{sub:features}). O objetivo é esperar o mercado entrar em uma nova tendência de alta ou pelo menos se estabilizar para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \color{black}
+% \paragraph{} O Descanso por Tendência de Baixa é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Tendência de Baixa (ver Seção \ref{sub:features}). O objetivo é esperar o mercado entrar em uma nova tendência de alta ou pelo menos se estabilizar para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas.
+
+% \paragraph{} A Figura \ref{fig:152}, \ref{fig:153} e \ref{fig:154} apresentam indicadores de performance para valores de RCC e de K diferentes. Foram utilizados na simulação os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Cada curva
+
+% % ID: 706
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.70]{yield_per_rcc_k.png}
+%     \centering
+%     \caption{Rendimento sob uso de RCC dinâmico}
+%     \label{fig:160}
+% \end{figure}
 
 
 
-\FloatBarrier
-\subsection{Descanso por Identificação de Crises}
-\label{sub:crisis_halt}
 
-\paragraph{} O Descanso por Identificação de Crises é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Identificação de Crises (ver Seção \ref{sub:features}). O objetivo é esperar o mercado se estabilizar de uma crise em potencial para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \color{black}
+% \FloatBarrier
+% \subsection{Descanso por Identificação de Crises}
+% \label{sub:crisis_halt}
+
+% \paragraph{} O Descanso por Identificação de Crises é um intervalo que impede qualquer nova operação durante a ativação do \textit{Flag} de Identificação de Crises (ver Seção \ref{sub:features}). O objetivo é esperar o mercado se estabilizar de uma crise em potencial para que uma nova operação se justifique, mesmo que esta decisão implique em uma pequena inércia. Operações em vigor não são canceladas. \color{red} HERALDO: Optei por não colocar uma imagem mostrando a eficácia desse flag porque em princípio a Seção de Features (\ref{sub:features}) já faz isso. \color{black}
 
 
 

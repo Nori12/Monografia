@@ -65,9 +65,9 @@
 \paragraph{} A escolha desta biblioteca como fonte primária de dados se deve principalmente pela facilidade de uso associada à ausência de custos. Contudo, alguns testes e verificações com outras fontes de dados evidenciaram destantagens relevantes, porém não impeditivas para uso. São elas:
 
 \begin{itemize}
-    \item Os valores de proventos que a biblioteca disponibiliza não são consistentes com as declarações dos sites das próprias companhias, portanto não podem ser utilizados por este projeto. Testes internos confirmaram a presença de diversos proventos corretamente apresentados e ajustados pelos respectivos desdobramentos acumulados. O problema é que os mesmos estavam misturados com alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar o uso em escala (i.e., para vários ativos sem verificação individual). \color{red} HERALDO: Devo mostrar evidências do teste que corrobora esta afirmação? \colorend
+    \item Os valores de proventos que a biblioteca disponibiliza não são consistentes com as declarações dos sites das próprias companhias, portanto não podem ser utilizados por este projeto. Testes internos confirmaram a presença de diversos proventos corretamente apresentados e ajustados pelos respectivos desdobramentos acumulados. O problema é que os mesmos estavam misturados com alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar o uso em escala (i.e., para vários ativos sem verificação individual). O Apêndice \ref{ApendiceA} evidencia os problemas encontrados em mais detalhes.
 
-    \item Os volumes de negociação disponibilizados não necessariamente coincidem com a plataforma TradingView em valores absolutos, porém coincidem em valores relativos (i.e., variação de volume dia após dia para um mesmo ativo), o que é suficiente para este trabalho. \color{red} HERALDO: (1) Na verdade, encontrei algumas evidências de que os valores relativos conferem, mas nenhum evidência de que não conferem. (2) Será que posso citar a plataforma TradingView? Ou melhor, devo tomar algum cuidado? \colorend
+    \item Os volumes de negociação disponibilizados coincidem em valores relativos com os volumes da plataforma \textit{TradingView} \cite{tradingview} (i.e., variação de volume comparativa para um mesmo ativo), o que é suficiente para este trabalho. Não foram encontradas evidências do contrário.
 
     \item \textit{Candlesticks} de janelas temporais inferiores à diária (\textit{intraday}) são disponibilizados, porém as limitações envolvidas inviabilizam seu uso, como: o limite de 730 dias para a busca dos dados; a inconsistência com os dados diários quanto ao volume; e a alguns \textit{bugs} como a ausência de \textit{candlesticks} em todo dia de parcial do pregão da B3 (Quarta-feira de Cinzas).
 \end{itemize}
@@ -94,7 +94,7 @@
 % Aqui fala da criação de candles semanais
 % \paragraph{} Os \textit{candlesticks} semanais são calculados via \textit{query} SQL para garantir a consistência dos dados, já que a possibilidade de inconsistência se fez presente entre dados \textit{intraday} e diários, conforme mencionado na Seção \ref{coleta_de_dados}.
 
-\paragraph{} A figura \ref{fig:103} mostra o ERD\footnote{\textit{Entity-Relationship Diagram}. Em português: Diagrama de Entidade Relacionamento.} do banco. Os \textit{scripts} de criação e população inicial do banco de dados podem ser encontrado em \cite{github_projeto}. \color{red} HERALDO: (1) Vale a pena mostrar o ERD do banco? (2) Devo mencionar as constraints de banco que garantem consistência, como por exemplo a comparação do preço máximo de um candle com seus outros valores a fim de garantir que este de fato é máximo? Preços não negativos, valores não nulos, etc. \colorend
+\paragraph{} A figura \ref{fig:103} mostra o ERD\footnote{\textit{Entity-Relationship Diagram}. Em português: Diagrama de Entidade Relacionamento.} do banco. Os \textit{scripts} de criação e população inicial do banco de dados podem ser encontrado em \cite{github_projeto}.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.90]{no_image.jpeg}
@@ -111,35 +111,15 @@
 
 \paragraph{} As \textit{Features} de Uso Geral são características derivadas dos \textit{candlesticks} que podem auxiliar qualquer decisão interna de uma estratégia, porém seu objetivo principal está no suporte à escolha do momento de entrada apropriado nas operações, o que é fundalmentalmente a responsabilidade do modelo de \textit{Machine Learning}. Como podem ser utilizadas por diversas estratégias, são calculadas antes do início das simulações e somente quando há necessidade, ou seja, quando os \textit{candlesticks} são inseridos pela primeira vez no banco ou quando são atualizados. Ao final dos cálculos, são armazenadas nas tabelas de \textit{features} para posteriores consultas durante as simulações.
 
-\paragraph{} Ressalta-se que durante os cálculos, assim como em outras etapas, faz-se necessário atenção e cuidados quanto a erros de não-causalidade, que mesmo sendo sutis, podem influenciar drasticamente os resultados finais. \color{red} HERALDO: Devo omitir esse parágrafo? A intenção é dizer que não subestimei essa problema, portanto tomei cuidados a nível de implementação para evitá-lo. Por outro lado, talvez essa preocupação já esteja subentendida, sendo desnecessário enfatizá-la. \colorend
+\paragraph{} Devido à natureza do problema, que se trata da análise de dados do passado, é necessário garantir que as \textit{features} geradas estão sempre apontando para um intervalo de tempo anterior ao dia no qual elas serão consumidas, o que será feito pelo modelo durante a simulação. Do contrário, um erro de não-causalidade poderia surgir, corrompendo a performance dos modelos. Analogamente, durante a geração dos modelos (Seção \ref{sub:models_gen}) também é necessario se garantir que o período de treinamento é anterior ao período de apuração, diretamente via a configuração das datas limites de cada período e indiretamente via remoção de datas cuja \textit{features} possuem efeito memória, evitando assim que qualquer informação esteja presente simultaneamente dos dados de treinamento e de apuração.
 
 \paragraph{} As \textit{features} de Uso Geral utilizadas são:
 
 \begin{itemize}
-    \item \sout{Média Móvel Exponencial de 17 períodos no gráfico diário.} \\
-    \color{red} HERALDO: Feature original do André Moraes. Não utilizada mais nos modelos. \colorend
-
-
-    \item \sout{Média Móvel Exponencial de 72 períodos no gráfico diário.} \\
-    \color{red} HERALDO: Feature original do André Moraes. Não utilizada mais nos modelos. \colorend
-
-
-    \item \sout{Média Móvel Exponencial de 72 períodos no gráfico semanal.} \\
-    \color{red} HERALDO: Feature original do André Moraes. Não utilizada mais nos modelos. \colorend
-
-
-    \item \sout{\textit{Flag} de Tendência de Alta.} \\
-    \color{red} HERALDO: Feature original do André Moraes. Não utilizada nos modelos DA FORMA QUE O ANDRÉ USA, por isso o risco no texto. Ele se baseia em picos e vales ascendentes para justificar uma tendência de alta (de acordo com a teoria de Dow). A nível de código, a estratégia mais simples é comparar os últimos 2 picos de mínimo e 2 picos de máximo, verificar se um é maior que o outro com alguma margem de tolerância, que se caracteriza tendência de alta. Porém essa informação é ruidosa, principalmente em mercados em consolidação (=muito lateralizados). O que ocorre na prática do André é que não são só os ultimos 4 picos que são analisados. Primeiro, ele já tira uma noção visual se o mercado anda em consolidação, isso requer olhar uma quantidade variável de picos que possuem algum grau de proximidade nas magnitudes, mas se comportam entre linhas de suporte e resistência. Quantos dias os picos passados devo olhar para medir a consolidação? (pergunta retórica). Se uma ação vem em tendência de baixa, por exemplo, ele não espera exatamente o par perfeito de 4 picos ascendentes para dizer se o mercado está em alta, muitas vezes porque o quarto pico ainda nem se formou consistentemente. Os testes que fiz foram baseados em uma identificação de picos, que ficou bem implementada, porém tem um atraso de 9 dias para identificar qualquer pico. Enfim, embora possível fazer um flag de tendencia de alta, não é trivial uma boa métrica fidedigna ao André, seguindo esta lógica. \colorend
-
-
-    \item \sout{\textit{Stop Loss} no último pico de rompimento/reversão de tendência (Pressupõe preço de compra definido).} \\
-    \color{red} HERALDO: Não utilizado mais pois era feature do André Moraes. Em particular, essa não é trivial de se calcular e foi uma das quais distanciou a simulação feita da estratégia real do André. Os picos relevantes que retratam a memória do mercado muitas vezes estão relacionados a acontecimentos notáveis, como crises financeiras, acidentes industriais, relatórios jurícos, escândalos, aquisições novas, etc. O André pode não avaliar os acontecimentos menores na escolha do stop por ser grafista e não estar inteiramente ligado nas notícias, mas leva em consideração os mais marcantes. Como análise de notícias está completamente fora do escopo, obter o grau de importância de um pico com alguma precisão requer no mínimo olhar os dados intraday (seção de coleta de dados explica porque não usei) e avaliar o volume de negociações na regiões. Contudo, idealmente deve-se olhar o livro de ofertas para tirar métricas das forças de compra e de venda, talvez aliadas ao volume de negociação e assim obter um valor razoável. Quando implementei na tentativa de simular o André, usei simplemente o pico mais próximo abaixo do preço de compra, dado uma distância mínima de 1\%. Em resumo, acho que foi mais uma métrica que contribui para uma estratégia ruim, por isso o abandono. \colorend
-
-
     % \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
     % \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:downtrend_halt}).
 
-    % \textit{Flag} criado com o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}). \color{red} HERALDO: Devo adicionar na fundamentação um tópico breve falando sobre filtro digital IIR passa-baixas e mostrando de onde vem essa fórmula? \colorend
+    % \textit{Flag} criado com o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}).
 
     % \begin{equation} \label{eq:23}
     %     \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
@@ -233,7 +213,11 @@
         Risk_{min_f} = \dfrac{ \sigma_{P_{\Delta}} }{ P_{mid} }
     \end{equation}
 
-    A parcela variável \begin{math} Risk_{min_v} \end{math} está associada à tendência de queda de preço no curto prazo. Seu cálculo é realizado a partir da derivada de preços ajustada por um filtro digital IIR passa-baixas (Equações \ref{eq:24} e \ref{eq:33}), onde \begin{math} \alpha \end{math} é o coeficiente de amortecimento. O sinal negativo indica que quanto maior a tendência de queda, maior precisa ser o risco associado.
+    A parcela variável \begin{math} Risk_{min_v} \end{math} está associada à tendência de queda de preço no curto prazo. Seu cálculo é realizado a partir da derivada de preços médios ajustada por um filtro digital IIR passa-baixas (Equações \ref{eq:24} e \ref{eq:33}), onde \begin{math} \alpha \end{math} é o coeficiente de amortecimento. O sinal negativo indica que quanto maior a tendência de queda, maior precisa ser o risco associado.
+
+    \begin{equation} \label{eq:24}
+        \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
+    \end{equation}
 
     \begin{equation} \label{eq:33}
         Risk_{min_v} = - \dot{P_{mid\_LPF(i)}}
@@ -243,7 +227,7 @@
 
     Por fim, adicionou-se um segundo filtro de passa-baixas de \begin{math} \alpha = 0.10 \end{math} apenas aos movimentos de descida dos valores de \begin{math} Risk_{min} \end{math} com o objetivo de aumentar a cautela durante momentos mais turbulentos do mercado.
 
-    As Figuras \ref{fig:400} e \ref{fig:105} e mostram os resultados do algoritmo para dois papéis de comportamentos distintos: MGLU3 representando um companhia com foco em alto crescimento, portanto mais volátil; e ABEV3 representando uma companhia já bem consolidada no mercado, portanto menos volátil. \color{red} HERALDO: Precisa de alguma citação aqui para suportar as afirmações feitas? \colorend \\
+    As Figuras \ref{fig:400} e \ref{fig:105} e mostram os resultados do algoritmo para dois papéis de comportamentos distintos: MGLU3 representando um companhia com foco em alto crescimento, portanto mais volátil; e ABEV3 representando uma companhia já bem consolidada no mercado, portanto menos volátil.
 
     \begin{figure}[!htb]
         \includegraphics[scale=0.41]{min_risk_mglu3.png}
@@ -335,9 +319,11 @@
 
     \item Toda operação possui um \textbf{preço alvo} e um \textbf{\textit{stop loss}}. O preço alvo é um valor acima do preço de compra e o \textit{stop loss} é um valor abaixo do preço de compra. Quando o mercado atinge qualquer um dos dois valores, uma venda é disparada, encerrando a operação em vigor. No entanto, considera-se uma operação de sucesso aquela que encerrou por atingir o preço alvo e uma operação de falha aquela que encerrou por atingir o \textit{stop loss}.
 
-    \item Uma estratégia pode possuir no máximo  \textbf{uma operação em vigência} para cada \textit{ticker} em sua bolsa de ativos, portanto para que uma segunda compra ocorra no momento em que já existem papéis adquiridos, é necessários vendê-los primeiro.
+    \item Uma estratégia pode possuir no máximo \textbf{uma operação em vigência} para cada \textit{ticker} em sua bolsa de ativos, portanto para que uma segunda compra ocorra no momento em que já existem papéis adquiridos, é necessários vendê-los primeiro.
 
-    \item A \textbf{razão entre ganho e perda} predetermina a relação entre o preço alvo e o \textit{stop loss} em qualquer operação. Ela indica a razão entre a diferença do preço alvo \begin{math} P_{target} \end{math} para o preço de compra \begin{math} P_{buy} \end{math} sobre a a diferença do preço de compra para o \textit{stop loss} \begin{math} P_{stop} \end{math} (Equação \ref{eq:50}). Seu valor é constante e igual a 3 em todo o escopo deste trabalho. \color{red} HERALDO: O valor de 3 veio do André. Devo citar ele aqui? Não achei uma referência direta disso em seu livro, porém tem nos vídeos. \colorend
+    % Relação Risco/Ganho
+
+    \item A \textbf{razão entre ganho e perda}, também denominada relação risco/ganho e definida por André Moraes \cite{moraes2007se} predetermina a relação entre o preço alvo e o \textit{stop loss} em qualquer operação. Ela indica a razão entre a diferença do preço alvo \begin{math} P_{target} \end{math} para o preço de compra \begin{math} P_{buy} \end{math} sobre a a diferença do preço de compra para o \textit{stop loss} \begin{math} P_{stop} \end{math} (Equação \ref{eq:50}). O valor recomendado é 3, portanto este é o valor que será utilizado em todo o escopo deste trabalho como uma constante.
 
     \begin{equation} \label{eq:50}
         G = \dfrac{P_{target} - P_{buy}}{P_{buy} - P_{stop}} = 3
@@ -478,7 +464,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \end{table}
 
 % \paragraph{} Com base nos valores encontrados, escolheu-se como ponto de partida o período máximo de \textbf{45 dias} para qualquer operação. Esse valor será melhor depurado na Seção \ref{sub:escolha_param} e se necessário, substituído por outro mais adequado.
-\paragraph{} Na tentativa de encontrar o valor bem ajustado para o Período Máximo de Dias, uma simulação com o parâmetro ajustado para o intervalo de 1 a 90 dias foi executada para os 71 \textit{tickers} da Tabela \ref{tab:5} para o período de 01/01/2019 a 31/12/2021. Utilizou-se um RCC de 0,22\% para evitar saturação de capital e nenhuma otimização. A Figura \ref{fig:740} mostra os resultados obtidos. Os máximos dos indicadores de performance coincidem em 45 dias de Período Máximo de Dias uma vez que os modelos utilizados na simulação foram criados a partir de \textit{datasets} que utilizavam este valor como limite de suas operações artificiais (Seção \ref{sub:dataset_gen}). \color{red} HERALDO: Basicamente confirmei o esperado. O problema de testar outros valores é que seria necessário gerar os datasets para valores diferentes de 45 dias e recriar os modelos. A criação completa de uma leva de modelos (71 tickers-01/2019 a 12/2021) demora pouco mais de 2 dias de execução em um PC quad-core e ocupa 490MB em ZIP. \color{black}
+\paragraph{} Na tentativa de encontrar o valor bem ajustado para o Período Máximo de Dias, uma simulação com o parâmetro ajustado para o intervalo de 1 a 90 dias foi executada para os 71 \textit{tickers} da Tabela \ref{tab:5} para o período de 01/01/2019 a 31/12/2021. Utilizou-se um RCC de 0,22\% para evitar saturação de capital e nenhuma otimização. A Figura \ref{fig:740} mostra os resultados obtidos. Os máximos dos indicadores de performance coincidem em 45 dias de Período Máximo de Dias uma vez que os modelos utilizados na simulação foram criados a partir de \textit{datasets} que utilizavam este valor como limite de suas operações artificiais (Seção \ref{sub:dataset_gen}).
 
 % ID: [101, 190]
 \begin{figure}[!htb]
@@ -517,7 +503,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Nenhuma otimização foi adicionada. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que por volta do RCC de 1,88\%, o uso de capital está quase saturando. \color{red} HERALDO: Não sei explicar o motivo do mínimo local nos indicaroes. \color{black}
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Nenhuma otimização foi adicionada. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que por volta do RCC de 1,88\%, o uso de capital está quase saturando.
 
 % Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
 
@@ -564,7 +550,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 % \paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
 
-\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. \color{red} HERALDO: Coloquei a tabela aqui pois foi o primeiro momento no qual foi relevante mencionar as 71 ações escolhidas, portanto aproveitei o gancho. Mas se houver outro lugar mais adequado, posso trocar. \colorend
+\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
 
 \begin{table}[h!]
     \begin{center}
@@ -597,8 +583,6 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco (Seção \ref{sub:risk_man}), mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode ser obtido através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser significativamente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, um RCC fixo pode levar a problemas de subaproveitamento do Uso de Capital da carteira.
 
 \paragraph{} Uma forma de se atenuar esse problema é através da criação de um RCC Dinâmico, configurado através de um Controle Proporcional. A vantagem dessa abordagem está na diminuição da sensibilidade do RCC em relação à performance geral, permitindo um ajuste menos preciso sem grande impacto de performance. O Controle atua no rebalanceamento de capital em função do uso médio de capital vigente, ou seja, períodos com mais disponibilidate de capital terão uma maior alavancagem.
-
-% \paragraph{} \color{red} HERALDO: Pensei em colocar um diagrama desse controle proporcional aqui, porém o bloco que representaria a planta (i.e., estratégia) é extremamente não-linear. \colorend
 
 \paragraph{} As Equações \ref{eq:100} e \ref{eq:101} mostram o cálculo do erro e do RCC dinâmico (\begin{math} RCC_{din} \end{math}) a partir do valor de referência para o uso médio de capital (\begin{math} C_{ref} \end{math}), do uso médio de capital dos últimos 10 dias de simulação (\begin{math} \overline{C_{10d}} \end{math}), do RCC fixo (\begin{math} RCC_{fix} \end{math}, definido pela Equação \ref{eq:60}) e da constante de ganho proporcional (\begin{math} K \end{math}).
 
@@ -813,7 +797,6 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 % \FloatBarrier
 % \subsection{Ensaios Paralelos}
 
-% \color{red} HERALDO: Vou fazer apenas fazer comentários para te mostrar o caminho que seguirei caso você julgue que valha a pena trabalhar essa seção. \colorend
 
 % \paragraph{} Alguns parâmetros não se mostraram eficazes em melhorar a performance das simulações, muito embora tenham se apresentado como alternativas plausíveis na resolução de problemas ao longo deste trabalho. São eles os parâmetros:
 
@@ -1090,7 +1073,6 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \section{Modelos de Aprendizado Supervisionado}
 
 
-
 \FloatBarrier
 \subsection{Resumo}
 
@@ -1195,6 +1177,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \FloatBarrier
 \subsection{Geração de Modelos}
+\label{sub:models_gen}
 
 \paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit}. Para a escolha do modelo a ser utilizado na simulação final, diversos outros modelos temporários foram criados e excluídos a fim de se selecionar apenas o melhor. Todos modelos temporários compartilham os parâmetros fixos indicados pela Tabela \ref{tab:15}, porém diferem quanto aos parâmetros variáveis da Tabela \ref{tab:16} ou quanto às sementes aleatórias utilizadas. A lógica de criação dos modelos pode ser interpretada da seguinte forma:
 
@@ -1209,7 +1192,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
     \item Para cada par criado, são criados 10 modelos com 10 sementes aleatórias diferentes.
 
-    \item O modelo final escolhido possui os mesmos parâmetros do grupo de 10 modelos de sementes aleatórias diferentes que possuir o maior \begin{math} I_L / \sigma_{I_L} \end{math}. \color{red} HERALDO: E o modelo final é o de semente aleatória = 1. \color{black}
+    \item O modelo final escolhido possui os mesmos parâmetros do grupo de 10 modelos de sementes aleatórias diferentes que possuir o maior \begin{math} I_L / \sigma_{I_L} \end{math}.
 \end{itemize}
 
 \begin{table}[!htb]

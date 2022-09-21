@@ -1,5 +1,10 @@
-\chapter{Conclusão}
+\chapter{Considerações Finais}
 \label{cap5}
+
+
+
+\FloatBarrier
+\section{Conclusão}
 
 
 
@@ -9,3 +14,13 @@
 
 \paragraph{} Por fim, os resultados encontrados mostram que o uso de modelos de aprendizado de máquina pode auxiliar investidores no mercado de ações, no entanto para superar a média do mercado são necessários estudos mais aprofundados antes de uma implementação real.
 
+
+
+\FloatBarrier
+\section{Trabalhos Futuros}
+
+
+
+\paragraph{} Este trabalho se baseou em premissas e regras que moldaram uma estrutura na qual os modelos pudessem operar. No entanto, alguns valores escolhidos podem ser revisitados a fim de serem aprimorados. Dentre eles, podemos citar a escolha do valor de 45 dias para o período máximo de dias por operação. A criação dos modelos de ML necessita de um valor prévio deste parâmetro. Assim, para se otimizar o valor do período, é necessário criar vários conjuntos de modelos, um para cada dia de período máximo que se deseja considerar, seguido pela execução da simulação. O problema desta abordagem é o tempo total de criação de apenas um conjunto de modelos, pois devido ao WFA, um conjunto requer 12 modelos para cada um dos 71 \textit{tickers} da listagem geral (Figura \ref{fig:580} e Tabela \ref{tab:5}), o que demora mais de um dia de execução em um computador de uso doméstico nos padrões atuais.
+
+\paragraph{} Deve-se mencionar também o parâmetro de razão entre ganho e perda, já que foi utilizado o valor constante de 3 a partir da recomendação do André Moraes. É possível abrir uma frente de trabalho visando encontrar um valor mais otimizado, o que necessitaria, assim como o caso anterior do período máximo de dias por operação, a criação de conjuntos de modelos com valores diferentes, o que também não é trivial.

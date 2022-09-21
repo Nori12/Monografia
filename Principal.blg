@@ -9,47 +9,48 @@ A level-1 auxiliary file: cap3.aux
 A level-1 auxiliary file: cap4.aux
 A level-1 auxiliary file: cap5.aux
 The style file: coppe.bst
+A level-1 auxiliary file: ApendiceA.aux
 Database file #1: biblio.bib
 Warning--empty journal in spearman1961proof
-You've used 75 entries,
+You've used 77 entries,
             2465 wiz_defined-function locations,
-            944 strings with 15439 characters,
-and the built_in function-call counts, 16102 in all, are:
-= -- 1775
-> -- 420
+            953 strings with 15642 characters,
+and the built_in function-call counts, 16362 in all, are:
+= -- 1797
+> -- 428
 < -- 28
-+ -- 180
-- -- 105
-* -- 985
-:= -- 2492
-add.period$ -- 92
-call.type$ -- 75
-change.case$ -- 80
++ -- 184
+- -- 107
+* -- 995
+:= -- 2532
+add.period$ -- 94
+call.type$ -- 77
+change.case$ -- 82
 chr.to.int$ -- 0
-cite$ -- 76
-duplicate$ -- 830
-empty$ -- 1868
-format.name$ -- 105
-if$ -- 3983
+cite$ -- 78
+duplicate$ -- 844
+empty$ -- 1904
+format.name$ -- 107
+if$ -- 4045
 int.to.chr$ -- 0
-int.to.str$ -- 75
+int.to.str$ -- 77
 missing$ -- 58
-newline$ -- 229
-num.names$ -- 75
-pop$ -- 351
+newline$ -- 235
+num.names$ -- 77
+pop$ -- 363
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 348
+skip$ -- 354
 stack$ -- 0
 substring$ -- 629
-swap$ -- 243
+swap$ -- 245
 text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 130
-width$ -- 77
-write$ -- 763
+while$ -- 132
+width$ -- 79
+write$ -- 781
 (There was 1 warning)

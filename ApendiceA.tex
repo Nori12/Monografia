@@ -1,1 +1,92 @@
-\paragraph{}Elemento que consiste em um texto ou documento elaborado pelo autor, com o intuito de complementar sua argumentao, sem prejuízo do trabalho. São identificados por letras maiúsculas consecutivas e pelos respectivos títulos.
+\chapter{Inconsistência de Proventos no \textit{yfinance}}
+\label{ApendiceA}
+
+\paragraph{} Apesar da praticidade de obtenção de \textit{candlesticks} diários que a biblioteca \textit{yfinance} (Python) traz, seus valores de proventos (dividendos e juros sobre capital próprio) não são totalmente confiáveis. O estudo em questão mostra inconsistências tanto por duplicação quanto por inserção incorreta de proventos. Para isso, uma análise de caso foi realizada para a companhia Magazine Luiza (\textit{ticker} MGLU3), onde foram comparados os dados obtidos do \textit{yfinance} via \textit{script} com o site de relações com investidores \cite{mglu_ri} da mesma. Além disso, utilizou-se a plataforma \textit{TradingView} \cite{tradingview} para confirmação dos valores de preço de fechamento.
+
+% \paragraph{} Referencia \ref{codeA1}
+
+\paragraph{} A Tabela \ref{tab:ap1} mostra o histórico dos preços de fechamento para alguns dias específicos e datas importantes, como distribuição de proventos e desdobramentos, além de outras datas. A Tabela está ordenada do \textit{candle} mais recente para o mais antigo e as marcações: em vermelho indicam valores incorretos; em azul indicam valores corretos; e em laranja indicam valores que prograparam os erros dos valores incorretos. A data de execução do \textit{script} é de 19/09/2020, o que é relevante, uma vez que a plataforma sempre retorna os preços dos \textit{candles} já normalizado por todos os desdobramentos \footnote{Em inglês: \textit{split}} acumulados.
+
+
+\begin{table}[h!]
+    \begin{center}
+        \resizebox{\textwidth}{!}{%
+        \begin{tabular}{ c|ccc|cc|cc }
+            Data & Preço Fch            & Preço Fch & Preço Fch             & Provento/Ação     & Provento/Ação & \textit{Split}    & \textit{Split} \\
+                 & \textit{yfinance}    & Site RI   & \textit{TradingView}  & \textit{yfinance} & Site RI       & \textit{yfinance} & Site RI \\
+                 & (R\$)                & (R\$)     & (R\$)                 & (R\$)             & (R\$/ação)    &                   & \\
+            \hline
+            16/09/2022 & 4,46 & 4,46 & 4,46 & - & - & - & - \\
+            01/07/2022 & 2,20 & 2,20 & 2,20 & - & - & - & - \\
+            03/01/2022 & 6,72 & 6,72 & 6,72 & - & - & - & - \\
+
+            07/07/2021 & 22,01 & 22,01 & 22,01 & - & - & - & - \\
+            06/07/2021 & 21,07 & 21,07 & 21,07 & \color{blue} 0,015494 \color{black} & 0,0154942583 & - & - \\
+            05/07/2021 & 21,3645 & 21,37 & 21,36 & - & - & - & - \\
+
+            04/01/2021 & 25,1817 & 25,18 & 25,18 & - & - & - & - \\
+            30/12/2020 & 24,9319 & 24,93 & 24,93 & \color{blue} 0,026301 \color{black} & 0,0263019985 & - & - \\
+            29/12/2020 & 25,2354 & 25,24 & 25,24 & - & - & - & - \\
+
+            15/10/2020 & 25,4650 & 25,47 & 25,46 & - & - & - & - \\
+            14/10/2020 & 25,6347 & 25,64 & \color{red} 25,54 \color{black} & - & - & \color{blue} 1:4 \color{black} & 1:4 \\
+            13/10/2020 & 25,9541 & 25,96 & 25,95 & - & - & - & - \\
+
+            03/08/2020 & 20,6061 & 20,61 & 20,61 & \color{red} 0,094176 \color{black} & - & - & - \\
+            31/07/2020 & \color{orange} 20,0479 \color{black} & 20,15 & 20,14 & \color{blue} 0,023541 \color{black} & 0,094165968 & - & - \\
+            30/07/2020 & \color{orange} 20,6654 \color{black} & 20,77 & 20,76 & - & - & - & - \\
+            29/07/2020 & \color{orange} 19,9012 \color{black} & 20,00 & 19,99 & - & - & - & - \\
+
+            15/04/2020 & \color{orange} 10,8798 \color{black} & 10,93 & 10,93 & - & - & - & - \\
+            14/04/2020 & \color{orange} 10,6441 \color{black} & 10,70 & 10,69 & \color{red} 0,179508 \color{black} & - & - & - \\
+            13/04/2020 & \color{orange} 10,2203 \color{black} & 10,45 & 10,45 & - & - & - & - \\
+            09/04/2020 & \color{orange} 10,1569 \color{black} & 10,39 & 10,38 & - & - & - & - \\
+
+            03/01/2020 & \color{orange} 11,9224 \color{black} & 12,19 & 12,19 & - & - & - & - \\
+            02/01/2020 & \color{orange} 12,0297 \color{black} & 12,30 & 12,30 & \color{blue} 0,008947 \color{black} & 0,0357891574 & - & - \\
+            30/12/2019 & \color{orange} 11,6235 \color{black} & 11,89 & 11,88 & - & - & - & - \\
+
+            09/10/2019 & \color{orange} 9,6619 \color{black} & 9,88 & 9,88 & - & - & - & - \\
+            08/10/2019 & \color{orange} 9,2598 \color{black} & 9,47 & 9,47 & \color{blue} 0,018402 \color{black} & 0,0736066061 & - & - \\
+            07/10/2019 & \color{orange} 9,3394 \color{black} & 9,55 & 9,55 & - & - & - & - \\
+
+            06/08/2019 & \color{orange} 8,9016 \color{black} & 9,11 & 9,10 & - & - & \color{blue} 1:8 \color{black} & 1:8 \\
+
+            17/04/2019 & \color{orange} 4,8588 \color{black} & 4,97 & 4,97 & - & - & - & - \\
+            16/04/2019 & \color{orange} 4,9463 \color{black} & 5,06 & 5,06 & \color{blue} 0,011571 \color{black} & 0,370259884 & - & - \\
+            15/04/2019 & \color{orange} 4,9594 \color{black} & 5,07 & 5,07 & - & - & - & - \\
+
+            03/01/2019 & \color{orange} 5,5812 \color{black} & 5,71 & 5,71 & - & - & - & - \\
+            02/01/2019 & \color{orange} 5,6416 \color{black} & 5,77 & 5,77 & \color{blue} 0,018522 \color{black} & 0,59270489 & - & - \\
+            28/12/2018 & \color{orange} 5,4744 \color{black} & 5,60 & 5,60 & - & - & - & - \\
+
+        \end{tabular}}
+        \caption{Análise de Consistência de Proventos: MGLU3}
+        \label{tab:ap1}
+    \end{center}
+\end{table}
+
+\paragraph{} Analisando a Tabela \ref{tab:ap1} de cima para baixo, nota-se que a primeira irregularidade notável ocorre no dia 14/10/2020, onde a plataforma \textit{TradingView} apresenta um preço de fechamento discrepante em relação ao site de RI da própria companhia e do \textit{yfinance}. Como se trata de um evento singular e não é o foco deste estudo, ele foi desconsiderado.
+
+\paragraph{} Em seguida, nos dias 03/08/2020 e 31/07/2020, o \textit{yfinance} registrou a presença dos proventos de R\$0,094176/ação e R\$0,023541/ação, respectivamente. O problema aqui é que além de ser muito improvável que qualquer empresa na bolsa brasileira distribuia proventos duas vezes em dois dias úteis seguidos, pode-se notar que o valor de R\$0,023541/ação equivalete ao de R\$0,094176/ação quando multiplicado por 4. Em outras palavras, normalizando pelo desdobramento de 1:4 ocorrido em 14/10/2020, conclui-se que um dos proventos é duplicado. Como confirmação, o site de RI da Magazine Luiza dispões de um comunidado sobre a distribuição de proventos de R\$0,094165968/ação em 31/07/2020.
+
+\paragraph{} Continuando a análise, é possível verificar que a partir da duplicata encontrada, os preços de fechamento do \textit{yfinance} vão acumulando o erro. Em 14/04/2020, o \textit{yfinance} contabilizou proventos de R\$0,179508/ação, no entanto, nada foi encontrado no site de RI, o que evidencia um lançamento incorreto. Nota-se também que o valor é relativamente alto quando comparado aos outros proventos de outras datas.
+
+\paragraph{} Os restantes do valores de proventos do \textit{yfinance} em azul equivalem aos comunidados pelo site de RI da companhia, porém deve-se levar em consideração os desdobramentos acumulados.
+
+\paragraph{} Por fim, pode-se concluir que o uso da plataforma \textit{yfinance} no que diz respeito à disponibilização de proventos no contexto deste projeto não pode ser deferida, uma vez que a presença e a magnitude dos valores incorretos não é desprezível.
+
+
+% \begin{minted}{python}
+
+% import yfinance as yf
+% from pathlib import Path
+
+% ticker = 'MGLU3.SA'
+% msft = yf.Ticker(ticker)
+% hist = msft.history(start='2015-01-01', end='2022-09-19',
+%     interval='1d', prepost=False, back_adjust=True, rounding=True)
+% destination = Path(__file__).parent / (ticker.upper()+'.csv')
+% hist.to_csv(destination)
+
+% \end{minted}

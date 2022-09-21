@@ -4,7 +4,7 @@ Preâmbulo
     Dedicatória                                             OK
     Agradecimento                                           OK
     Resumo                                                  OK
-    Abstract                                                Após revisão do Heraldo
+    Abstract                                                OK
     Siglas                                                  Diminuir espaçamento
 
 Introdução                                                  --

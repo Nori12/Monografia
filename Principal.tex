@@ -10,6 +10,10 @@
 \usepackage{pgfplots} % Plot
 \pgfplotsset{holdot/.style={color=blue,fill=white,only marks,mark=*}} % Plot
 \usepackage{placeins} % To use \FloatBarrier and keep image inside section
+\usepackage[page,toc,titletoc,title]{appendix} % Appendix
+% \usepackage{pythonhighlight} % Python highlighting
+% \usepackage{minted} % Python highlighting
+
 
 \usepackage{fifo-stack}
 \FSCreate{colors}{black}
@@ -67,13 +71,12 @@
 
 % Apendices
 
-% \appendix
+\appendix
 
-% % Apendice A
+% Apendice A
 
-% \chapter{O que é um apêndice}
-% \label{ApendiceA}
-% \include{ApendiceA}
+
+\include{ApendiceA}
 
 % % Apendice B
 

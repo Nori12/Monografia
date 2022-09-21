@@ -1,0 +1,11 @@
+
+import yfinance as yf
+from pathlib import Path
+
+ticker = 'MGLU3.SA'
+msft = yf.Ticker(ticker)
+hist = msft.history(start='2015-01-01', end='2022-09-19',
+    interval='1d', prepost=False, back_adjust=True, rounding=True)
+destination = Path(__file__).parent / (ticker.upper()+'.csv')
+hist.to_csv(destination)
+

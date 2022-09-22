@@ -309,6 +309,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/placeins/placeins.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/placeins/placeins.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/appendix/appendix.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/appendix/appendix.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fifo-stack/fifo-stack.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fifo-stack/fifo-stack.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
@@ -468,9 +470,9 @@ INPUT /Users/atcha/Github/Monografia/./figuras/config_file_estrutura.png
 INPUT /Users/atcha/Github/Monografia/./figuras/config_file_mult_exec.png
 INPUT /Users/atcha/Github/Monografia/./figuras/config_file_mult_exec.png
 INPUT /Users/atcha/Github/Monografia/./figuras/config_file_mult_exec.png
-INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
-INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
-INPUT /Users/atcha/Github/Monografia/./figuras/no_image.jpeg
+INPUT /Users/atcha/Github/Monografia/./figuras/ERD.png
+INPUT /Users/atcha/Github/Monografia/./figuras/ERD.png
+INPUT /Users/atcha/Github/Monografia/./figuras/ERD.png
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm
 INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_mglu3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/min_risk_mglu3.png
@@ -490,9 +492,6 @@ INPUT /Users/atcha/Github/Monografia/./figuras/max_risk_mglu3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/max_risk_abev3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/max_risk_abev3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/max_risk_abev3.png
-INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_op_risks.png
-INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_op_risks.png
-INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_op_risks.png
 INPUT /Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_min_risk.png
 INPUT /Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_min_risk.png
 INPUT /Users/atcha/Github/Monografia/./figuras/MGLU3_stop_hist_min_risk.png
@@ -508,9 +507,9 @@ INPUT /Users/atcha/Github/Monografia/./figuras/ABEV3_stop_hist_opt_risk.png
 INPUT /Users/atcha/Github/Monografia/./figuras/riskmap_mglu3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/riskmap_mglu3.png
 INPUT /Users/atcha/Github/Monografia/./figuras/riskmap_mglu3.png
-INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_max_days.png
-INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_max_days.png
-INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_max_days.png
+INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_op_risks.png
+INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_op_risks.png
+INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_op_risks.png
 INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_rcc_2.png
 INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_rcc_2.png
 INPUT /Users/atcha/Github/Monografia/./figuras/performance_per_rcc_2.png

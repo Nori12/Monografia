@@ -25,6 +25,28 @@
 
 \paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Foi estruturado um banco de dados PostgreSQL para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
 
+\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ cccccccc }
+            \multicolumn{8}{c}{Ações Escolhidas (71)} \\
+            \hline
+            ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
+            BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
+            CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
+            DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
+            ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
+            ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
+            MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
+            RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
+            UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
+        \end{tabular}
+        \caption{Ações Escolhidas}
+        \label{tab:5}
+    \end{center}
+\end{table}
+
 
 
 \FloatBarrier
@@ -94,14 +116,25 @@
 % Aqui fala da criação de candles semanais
 % \paragraph{} Os \textit{candlesticks} semanais são calculados via \textit{query} SQL para garantir a consistência dos dados, já que a possibilidade de inconsistência se fez presente entre dados \textit{intraday} e diários, conforme mencionado na Seção \ref{coleta_de_dados}.
 
-\paragraph{} A figura \ref{fig:103} mostra o ERD\footnote{\textit{Entity-Relationship Diagram}. Em português: Diagrama de Entidade Relacionamento.} do banco. Os \textit{scripts} de criação e população inicial do banco de dados podem ser encontrado em \cite{github_projeto}.
+\paragraph{} A figura \ref{fig:103} mostra o ERD\footnote{\textit{Entity-Relationship Diagram}. Em português: Diagrama de Entidade Relacionamento.} do banco de dados. Os \textit{scripts} de criação e população inicial, bem como as \textit{constraints} envolvidas podem ser encontrados em \cite{github_db_schema}.
+
+\begin{landscape}
 
 \begin{figure}[!htb]
-    \includegraphics[scale=0.90]{no_image.jpeg}
+    \includegraphics[scale=0.40]{ERD.png}
     \centering
     \caption{ERD do Banco de Dados}
     \label{fig:103}
 \end{figure}
+
+\end{landscape}
+
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.10]{ERD.png}
+%     \centering
+%     \caption{ERD do Banco de Dados}
+%     \label{fig:103}
+% \end{figure}
 
 
 
@@ -323,7 +356,7 @@
 
     % Relação Risco/Ganho
 
-    \item A \textbf{razão entre ganho e perda}, também denominada relação risco/ganho e definida por André Moraes \cite{moraes2007se} predetermina a relação entre o preço alvo e o \textit{stop loss} em qualquer operação. Ela indica a razão entre a diferença do preço alvo \begin{math} P_{target} \end{math} para o preço de compra \begin{math} P_{buy} \end{math} sobre a a diferença do preço de compra para o \textit{stop loss} \begin{math} P_{stop} \end{math} (Equação \ref{eq:50}). O valor recomendado é 3, portanto este é o valor que será utilizado em todo o escopo deste trabalho como uma constante.
+    \item A \textbf{razão entre ganho e perda}, também denominada relação risco/ganho, é definida por André Moraes \cite{moraes2007se} e predetermina a relação entre o preço alvo e o \textit{stop loss} em qualquer operação. Ela indica a razão entre a diferença do preço alvo \begin{math} P_{target} \end{math} para o preço de compra \begin{math} P_{buy} \end{math} sobre a a diferença do preço de compra para o \textit{stop loss} \begin{math} P_{stop} \end{math} (Equação \ref{eq:50}). O valor recomendado é 3, portanto este é o valor que será utilizado em todo o escopo deste trabalho como uma constante.
 
     \begin{equation} \label{eq:50}
         G = \dfrac{P_{target} - P_{buy}}{P_{buy} - P_{stop}} = 3
@@ -366,32 +399,6 @@
     \item Caso algum \textbf{preço de venda seja pulado}, ou seja, a descontinuidade entre o preço de abertura do dia corrente e o preço de fechamento do dia anterior não englobe o valor de venda, utiliza-se o preço de abertura do dia corrente. A única exceção acontece para a venda por \textit{timeout}, já que se trata de uma venda compulsória que sempre ocorre no preço de fechamento do dia designado.
 
 \end{itemize}
-
-
-
-\FloatBarrier
-\subsection{Risco de Entrada por Operação}
-\label{sub:operation_risk}
-
-\paragraph{} O Risco de Entrada por Operação é encontrado a partir de um valor intermediário entre o Risco Mínimo e o Risco Máximo.
-
-\paragraph{} Pelo fato da metodologia de cálculo do Risco Máximo e do Risco Mínimo seguirem raciocínios diferentes (Seção \ref{sub:features}), podem ocorrer momentos nos quais a equação \begin{math} Risk_{max} < Risk_{min} \end{math} seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensem as oscilações inerentes ao ruído diário dos \textit{candlesticks}. Enquanto este evento ocorrer, não haverá entrada em operações para o ativo envolvido.
-
-\paragraph{} Para a maioria dos casos, tem-se \begin{math} Risk_{max} > Risk_{min} \end{math}. O valor do Risco de Entrada por Operação (\begin{math} Risk_{operation} \end{math}) é definido pelo parâmetro \begin{math} Risk_{coef} \end{math} de acordo com a Equação \ref{eq:70}, onde \begin{math} 0 \le Risk_{coef} \le 1 \end{math}.
-
-\begin{equation} \label{eq:70}
-    Risk_{operation} = Risk_{min} + Risk_{coef}(Risk_{max} - Risk_{min})
-\end{equation}
-
-\paragraph{} A Figura \ref{fig:553} resume as simulações cujos valores de Risco de Entrada estão no intervalo fechado [0.01, 1.0]. Foram utilizados os 71 \textit{tickers} da Tabela \ref{tab:5} no período de 01/01/2019 a 31/12/2021 sem qualquer otimização. Utilizou-se um RCC de 0,22\% para evitar saturação de capital. Nota-se que o ponto de máximo para os três indicadores de performance coincidiu para o Risco de Entrada de 0,29.
-
-% ID: [1, 100]
-\begin{figure}[!htb]
-    \includegraphics[scale=0.80]{performance_per_op_risks.png}
-    \centering
-    \caption{Indicadores de performance em função do risco de entrada (71 tickers, 01/01/2019 a 31/12/2021)}
-    \label{fig:553}
-\end{figure}
 
 
 
@@ -463,15 +470,42 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \end{center}
 \end{table}
 
-% \paragraph{} Com base nos valores encontrados, escolheu-se como ponto de partida o período máximo de \textbf{45 dias} para qualquer operação. Esse valor será melhor depurado na Seção \ref{sub:escolha_param} e se necessário, substituído por outro mais adequado.
-\paragraph{} Na tentativa de encontrar o valor bem ajustado para o Período Máximo de Dias, uma simulação com o parâmetro ajustado para o intervalo de 1 a 90 dias foi executada para os 71 \textit{tickers} da Tabela \ref{tab:5} para o período de 01/01/2019 a 31/12/2021. Utilizou-se um RCC de 0,22\% para evitar saturação de capital e nenhuma otimização. A Figura \ref{fig:740} mostra os resultados obtidos. Os máximos dos indicadores de performance coincidem em 45 dias de Período Máximo de Dias uma vez que os modelos utilizados na simulação foram criados a partir de \textit{datasets} que utilizavam este valor como limite de suas operações artificiais (Seção \ref{sub:dataset_gen}).
+\paragraph{} Com base nos valores encontrados, foi escolhido o período máximo de \textbf{45 dias} para qualquer operação.
 
-% ID: [101, 190]
+% \paragraph{} Na tentativa de encontrar o valor bem ajustado para o Período Máximo de Dias, uma simulação com o parâmetro ajustado para o intervalo de 1 a 90 dias foi executada para os 71 \textit{tickers} da Tabela \ref{tab:5} para o período de 01/01/2019 a 31/12/2021. Utilizou-se um RCC de 0,22\% para evitar saturação de capital e nenhuma otimização. A Figura \ref{fig:740} mostra os resultados obtidos. Os máximos dos indicadores de performance coincidem em 45 dias de Período Máximo de Dias uma vez que os modelos utilizados na simulação foram criados a partir de \textit{datasets} que utilizavam este valor como limite de suas operações artificiais (Seção \ref{sub:dataset_gen}).
+
+% % ID: [101, 190]
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.80]{performance_per_max_days.png}
+%     \centering
+%     \caption{Análise do Período Máximo de Dias por Operação (71 \textit{tickers} - 01/01/2019 a 31/12/2021)}
+%     \label{fig:740}
+% \end{figure}
+
+
+
+\FloatBarrier
+\subsection{Risco de Entrada por Operação}
+\label{sub:operation_risk}
+
+\paragraph{} O Risco de Entrada por Operação é encontrado a partir de um valor intermediário entre o Risco Mínimo e o Risco Máximo.
+
+\paragraph{} Pelo fato da metodologia de cálculo do Risco Máximo e do Risco Mínimo seguirem raciocínios diferentes (Seção \ref{sub:features}), podem ocorrer momentos nos quais a equação \begin{math} Risk_{max} < Risk_{min} \end{math} seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensem as oscilações inerentes ao ruído diário dos \textit{candlesticks}. Enquanto este evento ocorrer, não haverá entrada em operações para o ativo envolvido.
+
+\paragraph{} Para a maioria dos casos, tem-se \begin{math} Risk_{max} > Risk_{min} \end{math}. O valor do Risco de Entrada por Operação (\begin{math} Risk_{operation} \end{math}) é definido pelo parâmetro \begin{math} Risk_{coef} \end{math} de acordo com a Equação \ref{eq:70}, onde \begin{math} 0 \le Risk_{coef} \le 1 \end{math}.
+
+\begin{equation} \label{eq:70}
+    Risk_{operation} = Risk_{min} + Risk_{coef}(Risk_{max} - Risk_{min})
+\end{equation}
+
+\paragraph{} A Figura \ref{fig:553} resume as simulações cujos valores de Risco de Entrada estão no intervalo fechado [0.10, 0.70]. Foram utilizados os 71 \textit{tickers} da Tabela \ref{tab:5} no período de 01/01/2019 a 31/03/2020 sem qualquer otimização. Utilizou-se um RCC de 0,10\% para evitar saturação de capital. Nota-se que o ponto de máximo para os três indicadores de performance coincidiu para o Risco de Entrada de 0,43.
+
+% ID: [1, 100]
 \begin{figure}[!htb]
-    \includegraphics[scale=0.80]{performance_per_max_days.png}
+    \includegraphics[scale=0.80]{performance_per_op_risks.png}
     \centering
-    \caption{Análise do Período Máximo de Dias por Operação (71 \textit{tickers} - 01/01/2019 a 31/12/2021)}
-    \label{fig:740}
+    \caption{Indicadores de performance em função do risco de entrada (71 tickers, 01/01/2019 a 31/03/2020)}
+    \label{fig:553}
 \end{figure}
 
 
@@ -546,31 +580,31 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:552}
 \end{figure}
 
-\paragraph{} Um problema geral e inerente à abordagem do RCC é a necessidade do conhecimento \textit{a priori} de um valor razoável. Ou seja, sem algumas simulações prévias, não há como se saber um valor ótimo ou pelo menos próximo dele. Uma forma de se atenuar esse problema é através da criação de um controle proporcional que aumente o RCC geral em função do baixo aproveitamento de uso de capital dos dias corridos e vice-versa. Essa alternativa também é chamada de RCC Dinâmico e abordada em mais detalhes na Seção \ref{sub:dynamic_rcc}.
+\paragraph{} Um problema geral e inerente à abordagem do RCC é a necessidade do conhecimento \textit{a priori} de um valor razoável. Ou seja, sem algumas simulações prévias, não há como se saber um valor ótimo ou pelo menos próximo do ótimo. Uma forma de se atenuar esse problema é através da criação de um controle proporcional que aumente o RCC geral em função do baixo aproveitamento do uso de capital ao longo dos dias e vice-versa. Essa alternativa também é chamada de RCC Dinâmico e abordada em mais detalhes na Seção \ref{sub:dynamic_rcc}.
 
 % \paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
 
-\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
+% \paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
 
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ cccccccc }
-            \multicolumn{8}{c}{Ações Escolhidas (71)} \\
-            \hline
-            ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
-            BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
-            CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
-            DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
-            ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
-            ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
-            MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
-            RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
-            UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
-        \end{tabular}
-        \caption{Ações Escolhidas}
-        \label{tab:5}
-    \end{center}
-\end{table}
+% \begin{table}[h!]
+%     \begin{center}
+%         \begin{tabular}{ cccccccc }
+%             \multicolumn{8}{c}{Ações Escolhidas (71)} \\
+%             \hline
+%             ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
+%             BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
+%             CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
+%             DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
+%             ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
+%             ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
+%             MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
+%             RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
+%             UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
+%         \end{tabular}
+%         \caption{Ações Escolhidas}
+%         \label{tab:5}
+%     \end{center}
+% \end{table}
 
 
 

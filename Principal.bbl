@@ -349,9 +349,9 @@ YAHOO!, \enquote{Yahoo! Finance}, https://finance.yahoo.com, (Acessado em 1 de
 VIEW, T., \enquote{Trading View}, https://www.tradingview.com/about/, (Acessado
   em 20 de Setembro de 2022).
 
-\bibitem{github_projeto}
-NORI, P., \enquote{Project Github Page},
-  https://github.com/Nori12/Projeto-Final.
+\bibitem{github_db_schema}
+NORI, P., \enquote{Database Files in Project Github Page},
+  https://github.com/Nori12/Projeto-Final/tree/master/database.
 
 \bibitem{dash}
 PLOTLY, \enquote{Dash}, https://dash.plotly.com/, (Acessado em 28 de Junho de

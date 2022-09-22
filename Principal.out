@@ -37,8 +37,8 @@
 \BOOKMARK [1][-]{section.3.3}{Simula\347\343o de Estrat\351gia}{chapter.3}% 37
 \BOOKMARK [2][-]{subsection.3.3.1}{Estrutura}{section.3.3}% 38
 \BOOKMARK [2][-]{subsection.3.3.2}{Premissas}{section.3.3}% 39
-\BOOKMARK [2][-]{subsection.3.3.3}{Risco de Entrada por Opera\347\343o}{section.3.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.4}{Per\355odo M\341ximo de Dias por Opera\347\343o}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.3}{Per\355odo M\341ximo de Dias por Opera\347\343o}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.4}{Risco de Entrada por Opera\347\343o}{section.3.3}% 41
 \BOOKMARK [2][-]{subsection.3.3.5}{Gerenciamento de Risco}{section.3.3}% 42
 \BOOKMARK [2][-]{subsection.3.3.6}{Controle Proporcional para Uso de Capital}{section.3.3}% 43
 \BOOKMARK [2][-]{subsection.3.3.7}{Lista de Par\342metros de Configura\347\343o}{section.3.3}% 44
@@ -55,4 +55,4 @@
 \BOOKMARK [1][-]{section.5.1}{Conclus\343o}{chapter.5}% 55
 \BOOKMARK [1][-]{section.5.2}{Trabalhos Futuros}{chapter.5}% 56
 \BOOKMARK [0][-]{section*.224}{Bibliografia}{}% 57
-\BOOKMARK [0][-]{appendix.A}{Inconsist\352ncia de Proventos no yfinance}{}% 58
+\BOOKMARK [0][-]{appendix.A}{Inconsist\352ncia de Proventos na Biblioteca yfinance}{}% 58

@@ -170,112 +170,112 @@
 \contentsline {paragraph}{}{27}{section*.147}%
 \contentsline {paragraph}{}{27}{section*.148}%
 \contentsline {paragraph}{}{27}{section*.149}%
+\contentsline {paragraph}{}{27}{section*.150}%
 \contentsline {section}{\numberline {3.2}Pré-Processamento}{28}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Arquivo de Configuração}{28}{subsection.3.2.1}%
-\contentsline {paragraph}{}{28}{section*.150}%
 \contentsline {paragraph}{}{28}{section*.151}%
-\contentsline {paragraph}{}{28}{section*.152}%
-\contentsline {subsection}{\numberline {3.2.2}Coleta de Dados}{29}{subsection.3.2.2}%
+\contentsline {paragraph}{}{29}{section*.152}%
 \contentsline {paragraph}{}{29}{section*.153}%
+\contentsline {subsection}{\numberline {3.2.2}Coleta de Dados}{29}{subsection.3.2.2}%
 \contentsline {paragraph}{}{29}{section*.154}%
 \contentsline {paragraph}{}{30}{section*.155}%
-\contentsline {subsection}{\numberline {3.2.3}Armazenamento de Dados}{30}{subsection.3.2.3}%
 \contentsline {paragraph}{}{30}{section*.156}%
+\contentsline {subsection}{\numberline {3.2.3}Armazenamento de Dados}{31}{subsection.3.2.3}%
 \contentsline {paragraph}{}{31}{section*.157}%
-\contentsline {subsection}{\numberline {3.2.4}Geração de \textit {Features} de Uso Geral}{31}{subsection.3.2.4}%
 \contentsline {paragraph}{}{31}{section*.158}%
-\contentsline {paragraph}{}{32}{section*.159}%
-\contentsline {paragraph}{}{32}{section*.160}%
-\contentsline {section}{\numberline {3.3}Simulação de Estratégia}{38}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Estrutura}{38}{subsection.3.3.1}%
-\contentsline {paragraph}{}{38}{section*.161}%
-\contentsline {subsection}{\numberline {3.3.2}Premissas}{39}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.2.4}Geração de \textit {Features} de Uso Geral}{33}{subsection.3.2.4}%
+\contentsline {paragraph}{}{33}{section*.159}%
+\contentsline {paragraph}{}{33}{section*.160}%
+\contentsline {paragraph}{}{33}{section*.161}%
+\contentsline {section}{\numberline {3.3}Simulação de Estratégia}{39}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Estrutura}{39}{subsection.3.3.1}%
 \contentsline {paragraph}{}{39}{section*.162}%
-\contentsline {subsection}{\numberline {3.3.3}Risco de Entrada por Operação}{40}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.2}Premissas}{40}{subsection.3.3.2}%
 \contentsline {paragraph}{}{40}{section*.163}%
-\contentsline {paragraph}{}{40}{section*.164}%
+\contentsline {subsection}{\numberline {3.3.3}Período Máximo de Dias por Operação}{41}{subsection.3.3.3}%
+\contentsline {paragraph}{}{41}{section*.164}%
 \contentsline {paragraph}{}{41}{section*.165}%
-\contentsline {paragraph}{}{41}{section*.166}%
-\contentsline {subsection}{\numberline {3.3.4}Período Máximo de Dias por Operação}{41}{subsection.3.3.4}%
-\contentsline {paragraph}{}{41}{section*.167}%
-\contentsline {paragraph}{}{42}{section*.168}%
-\contentsline {paragraph}{}{42}{section*.169}%
-\contentsline {paragraph}{}{42}{section*.170}%
-\contentsline {paragraph}{}{44}{section*.171}%
+\contentsline {paragraph}{}{42}{section*.166}%
+\contentsline {paragraph}{}{42}{section*.167}%
+\contentsline {paragraph}{}{43}{section*.168}%
+\contentsline {subsection}{\numberline {3.3.4}Risco de Entrada por Operação}{45}{subsection.3.3.4}%
+\contentsline {paragraph}{}{45}{section*.169}%
+\contentsline {paragraph}{}{45}{section*.170}%
+\contentsline {paragraph}{}{45}{section*.171}%
+\contentsline {paragraph}{}{45}{section*.172}%
 \contentsline {subsection}{\numberline {3.3.5}Gerenciamento de Risco}{46}{subsection.3.3.5}%
-\contentsline {paragraph}{}{46}{section*.172}%
 \contentsline {paragraph}{}{46}{section*.173}%
-\contentsline {paragraph}{}{47}{section*.174}%
+\contentsline {paragraph}{}{46}{section*.174}%
 \contentsline {paragraph}{}{47}{section*.175}%
 \contentsline {paragraph}{}{47}{section*.176}%
 \contentsline {paragraph}{}{47}{section*.177}%
 \contentsline {paragraph}{}{47}{section*.178}%
-\contentsline {paragraph}{}{48}{section*.179}%
-\contentsline {paragraph}{}{49}{section*.180}%
-\contentsline {subsection}{\numberline {3.3.6}Controle Proporcional para Uso de Capital}{50}{subsection.3.3.6}%
-\contentsline {paragraph}{}{50}{section*.181}%
-\contentsline {paragraph}{}{50}{section*.182}%
+\contentsline {paragraph}{}{47}{section*.179}%
+\contentsline {paragraph}{}{48}{section*.180}%
+\contentsline {subsection}{\numberline {3.3.6}Controle Proporcional para Uso de Capital}{49}{subsection.3.3.6}%
+\contentsline {paragraph}{}{49}{section*.181}%
+\contentsline {paragraph}{}{49}{section*.182}%
 \contentsline {paragraph}{}{50}{section*.183}%
-\contentsline {paragraph}{}{51}{section*.184}%
-\contentsline {paragraph}{}{51}{section*.185}%
-\contentsline {paragraph}{}{51}{section*.186}%
-\contentsline {paragraph}{}{51}{section*.187}%
+\contentsline {paragraph}{}{50}{section*.184}%
+\contentsline {paragraph}{}{50}{section*.185}%
+\contentsline {paragraph}{}{50}{section*.186}%
+\contentsline {paragraph}{}{50}{section*.187}%
 \contentsline {paragraph}{}{51}{section*.188}%
-\contentsline {paragraph}{}{52}{section*.189}%
-\contentsline {paragraph}{}{52}{section*.190}%
-\contentsline {subsection}{\numberline {3.3.7}Lista de Parâmetros de Configuração}{55}{subsection.3.3.7}%
-\contentsline {paragraph}{}{55}{section*.191}%
-\contentsline {subsection}{\numberline {3.3.8}\textit {Dashboard}}{56}{subsection.3.3.8}%
-\contentsline {paragraph}{}{56}{section*.192}%
-\contentsline {section}{\numberline {3.4}Modelos de Aprendizado Supervisionado}{60}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}Resumo}{60}{subsection.3.4.1}%
-\contentsline {paragraph}{}{60}{section*.193}%
-\contentsline {subsection}{\numberline {3.4.2}\textit {Datasets} e \textit {Feature Selection}}{60}{subsection.3.4.2}%
-\contentsline {paragraph}{}{60}{section*.194}%
-\contentsline {paragraph}{}{60}{section*.195}%
-\contentsline {paragraph}{}{60}{section*.196}%
-\contentsline {paragraph}{}{60}{section*.197}%
-\contentsline {subsection}{\numberline {3.4.3}Índice de Lucratividade}{61}{subsection.3.4.3}%
-\contentsline {paragraph}{}{61}{section*.198}%
-\contentsline {paragraph}{}{61}{section*.199}%
-\contentsline {paragraph}{}{62}{section*.200}%
-\contentsline {paragraph}{}{62}{section*.201}%
-\contentsline {paragraph}{}{62}{section*.202}%
-\contentsline {subsection}{\numberline {3.4.4}Balanceamento de Classes}{62}{subsection.3.4.4}%
-\contentsline {paragraph}{}{62}{section*.203}%
-\contentsline {paragraph}{}{63}{section*.204}%
-\contentsline {subsection}{\numberline {3.4.5}Geração de Modelos}{63}{subsection.3.4.5}%
-\contentsline {paragraph}{}{63}{section*.205}%
-\contentsline {paragraph}{}{65}{section*.206}%
-\contentsline {subsection}{\numberline {3.4.6}Modelo \textit {Baseline}}{66}{subsection.3.4.6}%
-\contentsline {paragraph}{}{66}{section*.207}%
-\contentsline {paragraph}{}{66}{section*.208}%
-\contentsline {chapter}{\numberline {4}Resultados}{68}{chapter.4}%
-\contentsline {paragraph}{}{68}{section*.209}%
-\contentsline {paragraph}{}{68}{section*.210}%
-\contentsline {paragraph}{}{69}{section*.211}%
-\contentsline {paragraph}{}{69}{section*.212}%
-\contentsline {paragraph}{}{69}{section*.213}%
-\contentsline {paragraph}{}{69}{section*.214}%
-\contentsline {paragraph}{}{70}{section*.215}%
-\contentsline {paragraph}{}{71}{section*.216}%
-\contentsline {paragraph}{}{71}{section*.217}%
-\contentsline {paragraph}{}{71}{section*.218}%
-\contentsline {paragraph}{}{71}{section*.219}%
-\contentsline {chapter}{\numberline {5}Considerações Finais}{73}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusão}{73}{section.5.1}%
-\contentsline {paragraph}{}{73}{section*.220}%
-\contentsline {paragraph}{}{73}{section*.221}%
-\contentsline {paragraph}{}{73}{section*.222}%
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{74}{section.5.2}%
-\contentsline {paragraph}{}{74}{section*.223}%
-\contentsline {paragraph}{}{74}{section*.224}%
-\contentsline {chapter}{Bibliografia}{75}{section*.224}%
-\contentsline {chapter}{\numberline {A}Inconsistência de Proventos no \textit {yfinance}}{83}{appendix.A}%
-\contentsline {paragraph}{}{83}{section*.226}%
-\contentsline {paragraph}{}{83}{section*.227}%
-\contentsline {paragraph}{}{84}{section*.228}%
-\contentsline {paragraph}{}{85}{section*.229}%
-\contentsline {paragraph}{}{85}{section*.230}%
-\contentsline {paragraph}{}{85}{section*.231}%
-\contentsline {paragraph}{}{85}{section*.232}%
+\contentsline {paragraph}{}{51}{section*.189}%
+\contentsline {paragraph}{}{51}{section*.190}%
+\contentsline {subsection}{\numberline {3.3.7}Lista de Parâmetros de Configuração}{54}{subsection.3.3.7}%
+\contentsline {paragraph}{}{54}{section*.191}%
+\contentsline {subsection}{\numberline {3.3.8}\textit {Dashboard}}{55}{subsection.3.3.8}%
+\contentsline {paragraph}{}{55}{section*.192}%
+\contentsline {section}{\numberline {3.4}Modelos de Aprendizado Supervisionado}{59}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Resumo}{59}{subsection.3.4.1}%
+\contentsline {paragraph}{}{59}{section*.193}%
+\contentsline {subsection}{\numberline {3.4.2}\textit {Datasets} e \textit {Feature Selection}}{59}{subsection.3.4.2}%
+\contentsline {paragraph}{}{59}{section*.194}%
+\contentsline {paragraph}{}{59}{section*.195}%
+\contentsline {paragraph}{}{59}{section*.196}%
+\contentsline {paragraph}{}{59}{section*.197}%
+\contentsline {subsection}{\numberline {3.4.3}Índice de Lucratividade}{60}{subsection.3.4.3}%
+\contentsline {paragraph}{}{60}{section*.198}%
+\contentsline {paragraph}{}{60}{section*.199}%
+\contentsline {paragraph}{}{61}{section*.200}%
+\contentsline {paragraph}{}{61}{section*.201}%
+\contentsline {paragraph}{}{61}{section*.202}%
+\contentsline {subsection}{\numberline {3.4.4}Balanceamento de Classes}{61}{subsection.3.4.4}%
+\contentsline {paragraph}{}{61}{section*.203}%
+\contentsline {paragraph}{}{62}{section*.204}%
+\contentsline {subsection}{\numberline {3.4.5}Geração de Modelos}{62}{subsection.3.4.5}%
+\contentsline {paragraph}{}{62}{section*.205}%
+\contentsline {paragraph}{}{64}{section*.206}%
+\contentsline {subsection}{\numberline {3.4.6}Modelo \textit {Baseline}}{65}{subsection.3.4.6}%
+\contentsline {paragraph}{}{65}{section*.207}%
+\contentsline {paragraph}{}{65}{section*.208}%
+\contentsline {chapter}{\numberline {4}Resultados}{67}{chapter.4}%
+\contentsline {paragraph}{}{67}{section*.209}%
+\contentsline {paragraph}{}{67}{section*.210}%
+\contentsline {paragraph}{}{68}{section*.211}%
+\contentsline {paragraph}{}{68}{section*.212}%
+\contentsline {paragraph}{}{68}{section*.213}%
+\contentsline {paragraph}{}{68}{section*.214}%
+\contentsline {paragraph}{}{69}{section*.215}%
+\contentsline {paragraph}{}{70}{section*.216}%
+\contentsline {paragraph}{}{70}{section*.217}%
+\contentsline {paragraph}{}{70}{section*.218}%
+\contentsline {paragraph}{}{70}{section*.219}%
+\contentsline {chapter}{\numberline {5}Considerações Finais}{72}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusão}{72}{section.5.1}%
+\contentsline {paragraph}{}{72}{section*.220}%
+\contentsline {paragraph}{}{72}{section*.221}%
+\contentsline {paragraph}{}{72}{section*.222}%
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{73}{section.5.2}%
+\contentsline {paragraph}{}{73}{section*.223}%
+\contentsline {paragraph}{}{73}{section*.224}%
+\contentsline {chapter}{Bibliografia}{74}{section*.224}%
+\contentsline {chapter}{\numberline {A}Inconsistência de Proventos na Biblioteca \textit {yfinance}}{82}{appendix.A}%
+\contentsline {paragraph}{}{82}{section*.226}%
+\contentsline {paragraph}{}{82}{section*.227}%
+\contentsline {paragraph}{}{83}{section*.228}%
+\contentsline {paragraph}{}{84}{section*.229}%
+\contentsline {paragraph}{}{84}{section*.230}%
+\contentsline {paragraph}{}{84}{section*.231}%
+\contentsline {paragraph}{}{84}{section*.232}%

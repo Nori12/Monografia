@@ -1,0 +1,71 @@
+To Do List
+
+Preâmbulo
+    Dedicatória
+    Agradecimento
+    Resumo
+    Abstract
+    Siglas
+
+Introdução
+    Tema
+    Delimitação
+    Justificativa
+    Objetivos
+    Metodologia
+    Descrição
+
+Fundamentação Teórica
+    Mercado de Capital, Bolsa de Valores e Ações
+        Hipótese do Mercado Eficiente
+        Índice de Bolsa de Valores
+        Mercado Fracionário
+    Tipos de Análises
+        Análise Fundamentalista
+        Análise Técnica
+    Aprendizado de Máquina
+        Aprendizado Supervisionado
+        Problema de Regressão
+        Problema de Classificação
+        Algoritmos de Aprendizado de Máquina
+    Walk-Forward Analysis
+    Considerações para Análise de Resultados
+        Índice de Sharpe
+        Índice de Sortino
+        Correlação de Spearman
+    Trabalhos Relacionados
+        Modelos Baseados em Indicadores Técnicos
+        Modelos Baseados em Processos Estocásticos
+        Modelos Baseados em Aprendizado de Máquina
+
+Metodologia
+    Resumo
+    Pré-Processamento
+        Arquivo de Configuração
+        Coleta de Dados
+        Armazenamento de Dados
+        Geração de Features de Uso Geral
+    Simulação de Estratégia
+        Estrutura
+        Premissas
+        Risco de Entrada por Operação
+        Período Máximo de Dias por Operação
+        Gerenciamento de Risco
+        Controle Proporcional para Uso de Capital
+        Lista de Parâmetros de Configuração
+        Dashboard
+    Otimizações de Gerenciamento de Carteira
+        Resumo
+    Modelos de Aprendizado Supervisionado
+        Resumo
+        Datasets e Feature Selection
+        Índice de Lucratividade
+        Balanceamento de Classes
+        Geração de Modelos
+        Modelo Baseline
+
+Resultados
+
+Considerações Finais
+    Conclusão
+    Trabalhos Futuros

@@ -15,17 +15,26 @@
     \label{fig:100}
 \end{figure}
 
-\paragraph{} Antes da execução do código principal, é necessário garantir que os modelos estão devidamente criados e acessíveis. Para isso, é importante a elaboração dos \textit{datasets} de cada ação a ser simulada, pois servem de entrada de dados para a criação e seleção dos modelos. A biblioteca \textit{multiprocessing} foi utilizada para minimizar o tempo total gasto nestas etapas.
+\paragraph{} Antes da execução do código principal, é necessário garantir que os modelos estão devidamente criados e acessíveis. Para isso, é importante a elaboração dos \textit{datasets} de cada ação a ser simulada, pois servem de entrada de dados para a criação e seleção de seus respectivos modelos. A biblioteca \textit{multiprocessing} foi utilizada para minimizar o tempo total gasto durante a criação dos modelos e da simulação das estratégias.
 
 \paragraph{} Após a criação dos modelos, tem-se início a etapa de pré-processamento de dados, onde ocorre a leitura e interpretação do arquivo de configuração para se obter o número de estratégias a executar, além dos ativos envolvidos e seus respectivos intervalos de tempo. Uma vez verificado no banco os dados já existentes, faz-se um \textit{download} apenas dos dados necessários. Se houver alguma atualização, as \textit{features} de uso geral são recalculadas e armazenadas no banco a fim de servir de insumo para as estratégias que estarão por vir.
 
-\paragraph{} Completada a etapa de pré-processamento, inicia-se a simulação das estratégias. O arquivo de configuração foi projetado para ser capaz de designar diversas estratégias de parâmetros distintos a uma mesma ordem de execução de programa. Também fez-se uso da biblioteca \textit{multiprocessing} para paralelizar as simulações, cujos resultados e estatísticas são salvas no banco para posterior análise.
+\paragraph{} Completada a etapa de pré-processamento, inicia-se a simulação das estratégias. O arquivo de configuração foi projetado para ser capaz de designar diversas estratégias de parâmetros distintos a uma mesma ordem de execução de programa, que ao final salva os resultados e as estatísticas no banco para posterior análise.
 
 \paragraph{} Por fim, é possível visualizar os resultados de forma clara através de uma aplicação secundária responsável por criar um \textit{dashboard} interativo.
 
 \paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Foi estruturado um banco de dados PostgreSQL para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
 
-\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
+\paragraph{} A Figura \ref{fig:444} mostra a sequência lógica de refinamento dos parâmetros de simulação, abordada através das Seções \ref{sub:max_op_days}, \ref{sub:operation_risk} e \ref{sub:dynamic_rcc}, respectivamente. Nota-se que o valor de saída de um parâmetro é utilizado durante o refinamento parâmetro do seguinte. Com exceção do Período Máximo de Dias por Operação, que utilizou o intervalo de 2016 a 2018, os outros parâmetros foram refinados a partir de simulações no intervalo de janeiro de 2019 a março de 2020, denominado intervalo de validação, ou período de validação. Já o resultado da simulação final, disponível na Seção \ref{cap4}, utiliza o intervalo de abril de 2020 a dezembro de 2021, não havendo assim sobreposição.
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.65]{otimizacao_de_parametros.png}
+    \centering
+    \caption{Sequência de Refinamento de Parâmetros}
+    \label{fig:444}
+\end{figure}
+
+\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolveram as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
 
 \begin{table}[h!]
     \begin{center}
@@ -47,6 +56,7 @@
     \end{center}
 \end{table}
 
+\paragraph{} Os código fonte do projeto pode ser encontrado em seu repositório online no Github \cite{project_github}.
 
 
 \FloatBarrier
@@ -65,9 +75,9 @@
     \label{fig:101}
 \end{figure}
 
-\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, ou variáveis de escopo global, de cujos valores precedem quaisquer outros listados a seguir, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Ressalta-se que este trabalho compreende apenas uma estratégia. Após a seleção do nome, são configurados os parâmetros internos da estratégia. A Tabela \ref{tab:3} da Seção \ref{sub:params_list} descreve todos os parâmetros disponíveis.
+\paragraph{} Nota-se que no topo são listados os parâmetros de uso geral, ou variáveis de escopo global, cujos valores precedem quaisquer outros listados na sequência, em caso de sobreposição. Em seguida abre-se o vetor de tipos de estratégias, onde o campo \textit{name} representa o nome da classe selecionada, sendo este o elemento que conecta o usuário ao tipo de estratégia desejada. Ressalta-se que este trabalho compreende apenas um tipo de estratégia, embora o arquivo permita a leitura de qualquer nome. Na sequência, são configurados os parâmetros internos da estratégia. A Tabela \ref{tab:3} da Seção \ref{sub:params_list} descreve todos os parâmetros disponíveis.
 
-\paragraph{} Para se criar mais de um perfil de simulação, é necessário modificar o Arquivo conforme a Figura \ref{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais. No caso da Figura \ref{fig:102}, a primeira simulação utilizará os valores (100, 0.01) para o par (variável\_local\_1, variável\_local\_2), a segunda utilizará (200, 0.02) e assim sucessivamente.
+\paragraph{} Para se criar mais de um perfil de simulação, isto é, uma única execução do programa executar várias simulações via multiprocessamento, é necessário modificar o Arquivo conforme a Figura \ref{fig:102}. Automaticamente, o código interpreta que existe mais de uma simulação a executar, com todos os parâmetros em comum exceto aqueles em formato de listas. Caso haja mais de um parâmetro no formato de lista, seus comprimentos precisam ser iguais. No caso da Figura \ref{fig:102}, a primeira simulação utilizará os valores (100, 0.01) para o par (variável\_local\_1, variável\_local\_2), a segunda utilizará (200, 0.02) e assim sucessivamente.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.50]{config_file_mult_exec.png}
@@ -82,22 +92,22 @@
 \subsection{Coleta de Dados}
 \label{coleta_de_dados}
 
-\paragraph{} A Coleta de Dados ocorre através da biblioteca \textit{open-source} \textit{yfinance} \cite{yfinance}, uma ferramenta não oficial que transmite dados públicos da plataforma \textit{Yahoo! Finance} \cite{yahoo_finance}, um subsistema da rede \textit{Yahoo!}.
+\paragraph{} A Coleta de Dados ocorre através da biblioteca \textit{open-source} \textit{yfinance} \cite{yfinance}, uma ferramenta não oficial que transmite dados obtidos através de APIs públicas da plataforma \textit{Yahoo! Finance} \cite{yahoo_finance}, um subsistema da rede \textit{Yahoo!}.
 
 \paragraph{} A escolha desta biblioteca como fonte primária de dados se deve principalmente pela facilidade de uso associada à ausência de custos. Contudo, alguns testes e verificações com outras fontes de dados evidenciaram destantagens relevantes, porém não impeditivas para uso. São elas:
 
 \begin{itemize}
-    \item Os valores de proventos que a biblioteca disponibiliza não são consistentes com as declarações dos sites das próprias companhias, portanto não podem ser utilizados por este projeto. Testes internos confirmaram a presença de diversos proventos corretamente apresentados e ajustados pelos respectivos desdobramentos acumulados. O problema é que os mesmos estavam misturados com alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar o uso em escala (i.e., para vários ativos sem verificação individual). O Apêndice \ref{ApendiceA} evidencia os problemas encontrados em mais detalhes.
+    \item Os valores de proventos que a biblioteca disponibiliza não são consistentes com as declarações dos sites das próprias companhias, portanto não podem ser utilizados por este projeto. Testes internos confirmaram a presença de diversos proventos corretamente apresentados e ajustados pelos respectivos desdobramentos acumulados. O problema é que os mesmos estavam misturados com alguns \textit{outliers} inexistentes na realidade, o suficiente para questionar o uso em escala (\textit{i.e.}, para vários ativos sem verificação individual). O Apêndice \ref{ApendiceA} evidencia os problemas encontrados em mais detalhes.
 
-    \item Os volumes de negociação disponibilizados coincidem em valores relativos com os volumes da plataforma \textit{TradingView} \cite{tradingview} (i.e., variação de volume comparativa para um mesmo ativo), o que é suficiente para este trabalho. Não foram encontradas evidências do contrário.
+    \item Até onde se pode verificar, os volumes de negociação disponibilizados coincidem em valores relativos com os volumes da plataforma \textit{TradingView} \cite{tradingview}, não tendo sido encontrada evidência do contrário. Em outras palavras, a variação percentual de volume entre dois pregões de um mesmo ativo é igual em ambas as plataformas.
 
-    \item \textit{Candlesticks} de janelas temporais inferiores à diária (\textit{intraday}) são disponibilizados, porém as limitações envolvidas inviabilizam seu uso, como: o limite de 730 dias para a busca dos dados; a inconsistência com os dados diários quanto ao volume; e a alguns \textit{bugs} como a ausência de \textit{candlesticks} em todo dia de parcial do pregão da B3 (Quarta-feira de Cinzas).
+    \item \textit{Candlesticks} de janelas temporais inferiores à diária (\textit{intraday}) são disponibilizados, porém o limite de busca de 730 dias inviabiliza seu uso.
 \end{itemize}
 
 % Aqui fala da criação de candles semanais
 % \paragraph{} Os dados obtidos são \textit{candlesticks} diários (OHLCV). Com a mesma facilidade, é possível adquirir janelas de tempo semanais, no entanto para evitar potenciais problemas de consistência de dados, as mesmas são calculadas internamente a partir da janela diária via comandos SQL\footnote{\textit{Structured Query Language}: Linguagem usada para administrar bancos de dados relacionais.}.
 
-\paragraph{} Apenas os dados não existentes no banco são baixados via \textit{yfinance}. Para isso, um \textit{trigger}\footnote{Procedimento armazenado em um banco de dados que é chamado automaticamente sempre que ocorre um evento.} é acoplado às tabelas de \textit{candlesticks} e acionado sempre que operações de \textit{insert}, \textit{update}, \textit{delete} e \textit{truncate} são realizadas. Quando ativado, ele chama uma função responsável por atualizar a tabela de \textit{status}, que registra o intervalo de tempo representado nas tabelas de \textit{candlesticks} para cada \textit{ticker} envolvido. Deve-se ressaltar que os devidos cuidados foram tomados para evitar buracos entre intervalos de tempo não adjacentes. Portanto, apenas uma consulta à tabela de \textit{status} é executada para se verificar a necessidade de \textit{download} de novos dados.
+\paragraph{} Apenas os dados não existentes no banco são baixados via \textit{yfinance}. Para isso, um \textit{trigger}\footnote{Procedimento armazenado em um banco de dados que é chamado automaticamente sempre que ocorre um evento determinado.} é acoplado às tabelas de \textit{candlesticks} e acionado sempre que operações de \textit{insert}, \textit{update}, \textit{delete} e \textit{truncate} são realizadas. Quando ativado, ele chama uma função responsável por atualizar a tabela de \textit{status}, que registra o intervalo de tempo representado nas tabelas de \textit{candlesticks} para cada \textit{ticker} envolvido. Deve-se ressaltar que os devidos cuidados foram tomados para evitar buracos entre intervalos de tempo não adjacentes. Portanto, apenas uma consulta à tabela de \textit{status} é executada para se verificar a necessidade de \textit{download} de novos dados.
 
 
 
@@ -246,7 +256,7 @@
         Risk_{min_f} = \dfrac{ \sigma_{P_{\Delta}} }{ P_{mid} }
     \end{equation}
 
-    A parcela variável \begin{math} Risk_{min_v} \end{math} está associada à tendência de queda de preço no curto prazo. Seu cálculo é realizado a partir da derivada de preços médios ajustada por um filtro digital IIR passa-baixas (Equações \ref{eq:24} e \ref{eq:33}), onde \begin{math} \alpha \end{math} é o coeficiente de amortecimento. O sinal negativo indica que quanto maior a tendência de queda, maior precisa ser o risco associado.
+    A parcela variável \begin{math} Risk_{min_v} \end{math} está associada à tendência de queda de preço no curto prazo. Seu cálculo é realizado a partir da derivada de preços médios ajustada por um filtro digital IIR passa-baixas \cite{haykin2007signals} (Equações \ref{eq:24} e \ref{eq:33}), onde \begin{math} \alpha \end{math} é o coeficiente de amortecimento. O sinal negativo indica que quanto maior a tendência de queda, maior precisa ser o risco associado.
 
     \begin{equation} \label{eq:24}
         \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
@@ -348,7 +358,7 @@
 
     \item Toda estratégia deve possuir uma \textbf{carteira de ativos} (ou lista de ativos) com as respectivas datas iniciais e finais de validade, isto é, intervalos de tempo onde as operações podem ser realizadas. Embora sejam permitidos intervalos diferentes, é convencionado a mesma data de início e de fim para todos os papéis.
 
-    \item Define-se uma  \textbf{operação} como o processo de compra única de um volume de ações de um ativo seguido pela venda de todo o volume comprado, independentemente do tempo, mesmo que esta ocorra em estágios. Nota-se que apenas a venda é cabível de ocorrer em estágios (i.e., venda parcial).
+    \item Define-se uma  \textbf{operação} como o processo de compra única de um volume de ações de um ativo seguido pela venda de todo o volume comprado, independentemente do tempo, mesmo que esta ocorra em estágios. Nota-se que apenas a venda é cabível de ocorrer em estágios (\textit{i.e.}, venda parcial).
 
     \item Toda operação possui um \textbf{preço alvo} e um \textbf{\textit{stop loss}}. O preço alvo é um valor acima do preço de compra e o \textit{stop loss} é um valor abaixo do preço de compra. Quando o mercado atinge qualquer um dos dois valores, uma venda é disparada, encerrando a operação em vigor. No entanto, considera-se uma operação de sucesso aquela que encerrou por atingir o preço alvo e uma operação de falha aquela que encerrou por atingir o \textit{stop loss}.
 
@@ -537,7 +547,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Nenhuma otimização foi adicionada. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que por volta do RCC de 1,88\%, o uso de capital está quase saturando.
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Utilizou-se um Risco de Entrada por Operação de 0,29. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que por volta do RCC de 1,88\%, o uso de capital está quase saturando.
 
 % Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
 

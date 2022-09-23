@@ -13,36 +13,37 @@
 \contentsline {figure}{\numberline {2.10}{\ignorespaces \textit {Walk-Forward Analysis} (Não-Ancorado e Ancorado) \cite {wfo}.}}{19}{figure.2.10}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Estrutura do técnica do projeto}}{26}{figure.3.1}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Estrutura do Arquivo de Configuração}}{28}{figure.3.2}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Arquivo de Configuração para Execuções Múltiplas}}{29}{figure.3.3}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces ERD do Banco de Dados}}{32}{figure.3.4}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces MGLU3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{35}{figure.3.5}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces ABEV3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{36}{figure.3.6}%
-\contentsline {figure}{\numberline {3.7}{\ignorespaces CPLE6 - Algoritmo de identificação de picos (01/01/2019 a 31/12/2019)}}{37}{figure.3.7}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces CPLE6 - Subidas de preços entre picos (01/01/2019 a 31/12/2019)}}{37}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces MGLU3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{38}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces ABEV3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{38}{figure.3.10}%
-\contentsline {figure}{\numberline {3.11}{\ignorespaces MGLU3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{42}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces ABEV3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{43}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces MGLU3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{43}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces ABEV3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{44}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces MGLU3 - Histograma de todas as operações de sucesso (01/01/2016 a 31/12/2018)}}{44}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Indicadores de performance em função do risco de entrada (71 tickers, 01/01/2019 a 31/03/2020)}}{46}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/12/2021)}}{48}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 0,29\%)}}{48}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 1,88\%)}}{49}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Rendimento sob uso de RCC dinâmico}}{52}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Índice de Sharpe sob uso de RCC dinâmico}}{52}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Uso médio de capital sob uso de RCC dinâmico}}{53}{figure.3.22}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Total de operações sob uso de RCC dinâmico}}{53}{figure.3.23}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces \textit {Dashboard} - Performance}}{56}{figure.3.24}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces \textit {Dashboard} - Parâmetros de entrada}}{56}{figure.3.25}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces \textit {Dashboard} - Resultados e estatísticas}}{57}{figure.3.26}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces \textit {Dashboard} - Gráfico de uso de capital}}{57}{figure.3.27}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces \textit {Dashboard} - Gráficos de análise individual de ações }}{58}{figure.3.28}%
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Diagrama de criação de modelos}}{64}{figure.3.29}%
-\contentsline {figure}{\numberline {3.30}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021}}{66}{figure.3.30}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sequência de Refinamento de Parâmetros}}{28}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Estrutura do Arquivo de Configuração}}{29}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Arquivo de Configuração para Execuções Múltiplas}}{30}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces ERD do Banco de Dados}}{33}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces MGLU3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{36}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces ABEV3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{37}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces CPLE6 - Algoritmo de identificação de picos (01/01/2019 a 31/12/2019)}}{38}{figure.3.8}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces CPLE6 - Subidas de preços entre picos (01/01/2019 a 31/12/2019)}}{38}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces MGLU3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{39}{figure.3.10}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces ABEV3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{39}{figure.3.11}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces MGLU3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{43}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces ABEV3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{44}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces MGLU3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{44}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces ABEV3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}}{45}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces MGLU3 - Histograma de todas as operações de sucesso (01/01/2016 a 31/12/2018)}}{45}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Indicadores de performance em função do risco de entrada (71 tickers, 01/01/2019 a 31/03/2020)}}{47}{figure.3.17}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/12/2021)}}{49}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 0,29\%)}}{49}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 1,88\%)}}{50}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Rendimento sob uso de RCC dinâmico}}{53}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Índice de Sharpe sob uso de RCC dinâmico}}{53}{figure.3.22}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Uso médio de capital sob uso de RCC dinâmico}}{54}{figure.3.23}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Total de operações sob uso de RCC dinâmico}}{54}{figure.3.24}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces \textit {Dashboard} - Performance}}{57}{figure.3.25}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces \textit {Dashboard} - Parâmetros de entrada}}{57}{figure.3.26}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces \textit {Dashboard} - Resultados e estatísticas}}{58}{figure.3.27}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces \textit {Dashboard} - Gráfico de uso de capital}}{58}{figure.3.28}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces \textit {Dashboard} - Gráficos de análise individual de ações }}{59}{figure.3.29}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Diagrama de criação de modelos}}{65}{figure.3.30}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces \textit {Baseline} para o intervalo de 01/01/2019 a 31/12/2021}}{67}{figure.3.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Performance final}}{68}{figure.4.1}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Performance final}}{69}{figure.4.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

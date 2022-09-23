@@ -55,6 +55,10 @@ INFOMONEY, \enquote{No Brasil, rob\^os de investimento n\~ao conseguem bater
 FERN{\'A}NDEZ, A., \enquote{Artificial intelligence in financial services},
   \emph{Banco de Espana Article}, v.~3, pp.~19, 2019.
 
+\bibitem{docker}
+DOCKER, \enquote{Docker}, https://docs.docker.com/get-started/, (Acessado em 20
+  de Setembro de 2022).
+
 \bibitem{mercado_de_capitais}
 CVM, \enquote{Entendendo o Mercado de Valores Mobiliários},
   https://www.investidor.gov.br/menu/primeiros\_passos/entendendo\_mercado\_valores.html,
@@ -337,6 +341,10 @@ BILDIRICI, M., ERSIN, {\"O}.~{\"O}., \enquote{Improving forecasts of GARCH
   daily returns in Istanbul Stock Exchange}, \emph{Expert Systems with
   Applications}, v.~36, n.~4, pp.~7355--7362, 2009.
 
+\bibitem{project_github}
+NORI, P., \enquote{Project Github Page},
+  https://github.com/Nori12/Projeto-Final/.
+
 \bibitem{yfinance}
 YFINANCE, \enquote{yfinance}, https://pypi.org/project/yfinance/, (Acessado em
   1 de Junho de 2022).
@@ -352,6 +360,9 @@ VIEW, T., \enquote{Trading View}, https://www.tradingview.com/about/, (Acessado
 \bibitem{github_db_schema}
 NORI, P., \enquote{Database Files in Project Github Page},
   https://github.com/Nori12/Projeto-Final/tree/master/database.
+
+\bibitem{haykin2007signals}
+HAYKIN, S., VAN~VEEN, B., \emph{Signals and systems}. John Wiley \& Sons, 2007.
 
 \bibitem{dash}
 PLOTLY, \enquote{Dash}, https://dash.plotly.com/, (Acessado em 28 de Junho de

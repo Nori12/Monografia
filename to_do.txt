@@ -8,41 +8,46 @@ To do:
 03) OK - Mover "Período Máximo de Dias por Operação" para antes de "Risco de Entrada por Operação"
 04) OK - Remover último gráfico de "Período Máximo de Dias por Operação", junto de sua análise desnecessária
 05) OK - Gerar novo gráfico em "Risco de Entrada por Operação", anotar novo valor ótimo e atualizar monografia
-06) Pegar resultados do PC do João e gerar backup (RCC)
-07) Deixar rodando nova simulação do RCC/K
-08) Gerar novo gráfico em "Gerenciamento de Risco" e atualizar análise
+06) OK - Pegar resultados do PC do João e gerar backup (RCC)
+07) Gerar novo gráfico em "Gerenciamento de Risco" e atualizar análise
+08) Deixar rodando nova simulação do RCC/K
 09) Pegar resultados do PC do João e gerar backup (RCC/K)
 10) Gerar novos gráficos em "Controle Proporcional para Uso de Capital" e atualizar análise
 11) Rodar simulação com parâmetros finais
-11) Atualizar "Modelos de Aprendizado Supervisionado"
-12) Atualizar "Resultados"
-13) Atualizar "Considerações Finais"
+15) Atualizar Sharpe do capítulo de Baseline (se necessário)
+12) Atualizar "Modelos de Aprendizado Supervisionado"
+13) Atualizar "Resultados"
+14) Atualizar "Considerações Finais"
 
+
+Repetir passos anteriores com Sharpe corrigido.
 
 
 
 
 Outras modificações Pontuais
 
-01) OK - Add ERD e constraints do banco
-) (?) Add diagrama para ilustrar lógica de otimização dos parâmetros
-) Add na seção de "Trabalhos Futuros" uma nota para add uma base de dados confiável de pronventos e considerá-la nas simulações
+01) OK - Deixar i.e. e e.g. em itálico
+02) OK - Add referência de filtro IIR passa-baixas
+03) OK - Add citação quando mencionar Docker
+04) Mencionar Github do Projeto no início da "Metodologia"
+05) OK - Add ERD e constraints do banco
+06) OK - Add diagrama para ilustrar lógica de otimização dos parâmetros
 ) Justificar escolha de Random Forest devido à motivos explicados
-) Deixar i.e. e e.g. em itálico
+) Add na seção de "Trabalhos Futuros" uma nota para add uma base de dados confiável de pronventos e considerá-la nas simulações
 ) Add script do Apêndice A
-) Add referência de filtro IIR passa-baixas
-) Mencionar Github do Projeto no início da "Metodologia"
-) Add citação quando mencionar Docker
-) Diminuir espaçamento das siglas
-
-
+) Diminuir espaçamento das siglas em "Siglas"
+) Avisar Heraldo sobre correção da lógica do Índice de Sharpe
+) yfinance contabiliza dividendos nos preços das ações? Se sim, tudo bem, se não, argumentar.
+) Posso deixar a vantagem de uso do banco "Independência da plataforma Yahho! Finance para o caso de não continuidade dos dados..."
 
 
 ---> Revisar
 
-01) Capa considerações iniciais
-02) Introdução
+01) OK - Capa considerações iniciais
+02) OK - Introdução
 03) Fundamentação Teórica
 04) Metodologia
 05) Resultados
 06) Conclusão
+07) Apêndice A

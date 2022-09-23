@@ -12,45 +12,45 @@ The style file: coppe.bst
 A level-1 auxiliary file: ApendiceA.aux
 Database file #1: biblio.bib
 Warning--empty journal in spearman1961proof
-You've used 77 entries,
+You've used 80 entries,
             2465 wiz_defined-function locations,
-            953 strings with 15683 characters,
-and the built_in function-call counts, 16362 in all, are:
-= -- 1797
-> -- 428
+            962 strings with 15873 characters,
+and the built_in function-call counts, 16829 in all, are:
+= -- 1841
+> -- 444
 < -- 28
-+ -- 184
-- -- 107
-* -- 995
-:= -- 2532
-add.period$ -- 94
-call.type$ -- 77
-change.case$ -- 82
++ -- 191
+- -- 111
+* -- 1013
+:= -- 2602
+add.period$ -- 98
+call.type$ -- 80
+change.case$ -- 85
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 844
-empty$ -- 1904
-format.name$ -- 107
-if$ -- 4045
+cite$ -- 81
+duplicate$ -- 869
+empty$ -- 1967
+format.name$ -- 111
+if$ -- 4163
 int.to.chr$ -- 0
-int.to.str$ -- 77
-missing$ -- 58
-newline$ -- 235
-num.names$ -- 77
-pop$ -- 363
+int.to.str$ -- 80
+missing$ -- 60
+newline$ -- 244
+num.names$ -- 80
+pop$ -- 381
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 354
+skip$ -- 368
 stack$ -- 0
 substring$ -- 629
-swap$ -- 245
+swap$ -- 249
 text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 132
-width$ -- 79
-write$ -- 781
+while$ -- 135
+width$ -- 82
+write$ -- 807
 (There was 1 warning)

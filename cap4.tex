@@ -18,36 +18,80 @@
 
 \paragraph{} A Tabela \ref{tab:395} mostra 4 perfis de simulação diferentes, cada um motivado por uma questão diferente, são elas: (1) o máximo local na região de baixo RCC da Figura \ref{fig:550}; (2) o máximo local da região de alto RCC, também da Figura \ref{fig:550}; (3) a simulação de maior índice de Shape da Figura \ref{fig:153} pertencente à curva \begin{math} RCC \times K = 1,8 \end{math}; e (4) a simulação de menor perda de operações na Figura \ref{fig:155}, pertencente à curva \begin{math} RCC \times K = 0,1 \end{math}. Também são apresentados os respectivos resultados.
 
+
+% Estratégia 1: ID=250
+% Estratégia 2: ID=251
+% Estratégia 3: ID=252
+% Estratégia 4: ID=253
 \begin{table}[!htb]
     \begin{center}
         \resizebox{\textwidth}{!}{
         \begin{tabular}{ l|c|c|c|c|c }
             Parâmetro & Estratégia 1 & Estratégia 2 & Estratégia 3 & Estratégia 4 & \textit{Baseline} \\
             \hline
-            RCC     & 0,11\%    & 6,10\%    & 0,00288\% & 0,1\% & - \\
-            K       & -         & -         & 62500     & 100   & - \\
+            RCC                                 & 0,11\%        & 6,10\%        & 0,00288\%     & 0,1\%         & - \\
+            K                                   & -             & -             & 62500         & 100           & - \\
             \hline
-            Rendimento Final                    & \% & \% & \% & \% & 68,07\% \\
-            Volatilidade                        & \% & \% & \% & \% & 34,84\% \\
-            Índice de Sharpe                    &  &  &  &  & 1,15 \\
-            Índice de Sortino                   &  &  &  &  & 1,71 \\
-            Cor. Spearman (\textit{Baseline})   &  &  &  &  & - \\
-            Cor. Spearman (Ibovespa)            &  &  &  &  & - \\
-            Uso Máximo de Capital               & \% & \% & \% & \% & 100\% \\
-            Uso Médio de Capital                & \% & \% & \% & \% & 100\% \\
-            Máximo de Op. Ativas                &  &  &  &  & 71 \\
-            Média de Op. Ativas                 &  &  &  &  & 71 \\
+            Rendimento Final                    & 15,90\%       & -17,45\%      & -2,34\%       & 33,25\%       & 68,07\% \\
+            Volatilidade                        & 17,18\%       & 53,77\%       & 43,00\%       & 31,81\%       & 34,84\% \\
+            Índice de Sharpe                    & 0,45          & -0,14         & 0,02          & 0,67          & 1,15 \\
+            Índice de Sortino                   & 0,67          & -0,15         & 0,02          & 0,99          & 1,71 \\
+            Cor. Spearman (\textit{Baseline})   & 0,96          & 0,39          & 0,18          & 0,90          & - \\
+            Cor. Spearman (Ibovespa)            & 0,98          & 0,48          & 0,26          & 0,93          & - \\
+            Uso Máximo de Capital               & 71,75\%       & 100\%         & 100\%         & 99,98\%       & 100\% \\
+            Uso Médio de Capital                & 52,63\%       & 99,36\%       & 97,85\%       & 92,29\%       & 100\% \\
+            Média de Cap. por Op.               & R\$1112,69    & R\$2038,49    & R\$2042,67    & R\$2145,08    & - \\
+            Desvio P. de Cap. por Op.           & R\$434,26     & R\$11673,90   & R\$6601,82    & R\$2247,61    & - \\
+            % Máximo de Op. Ativas                &  &  &  &  & 71 \\
+            % Média de Op. Ativas                 &  &  &  &  & 71 \\
             % Desvio Padrão de Op. Ativas         &  &  &  &  & - \\
-            Operações Totais                    &  &  &  &  & 71 \\
-            Operações de Sucesso                &  (\%) &  (\%)&  (\%)&  (\%) & - \\
-            Operações de Falha                  &  (\%) &  (\%)&  (\%)&  (\%) & - \\
-            Operações de \textit{Timeout}       &  (\%) &  (\%)&  (\%)&  (\%) & - \\
-            Operações Incompletas               &  (\%) &  (\%)&  (\%)&  (\%) & - \\
+            Operações Totais                    & 1663          & 418           & 1171          & 1659          & 71 \\
+            Operações de Sucesso                & 371 (22,3\%)  & 92 (22,0\%)   & 262 (22,4\%)  & 370 (22,3\%)  & - \\
+            Operações de Falha                  & 1060 (63,7\%) & 250 (59,8\%)  & 753 (64,3\%)  & 1057 (63,7\%) & - \\
+            Operações de \textit{Timeout}       & 164 (9,9\%)   & 66 (15,8\%)   & 104 (8,9\%)   & 164 (9,9\%)   & - \\
+            Operações Incompletas               & 68 (4,1\%)    & 10 (2,4\%)    & 52 (4,4\%)    & 68 (4,1\%)    & - \\
         \end{tabular}}
         \caption{Resultados finais}
         \label{tab:395}
     \end{center}
 \end{table}
+
+\paragraph{} As Figuras \ref{fig:731}, \ref{fig:732}, \ref{fig:733} e \ref{fig:734} apresentam os rendimentos ao longo do tempo das 4 estratégias.
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{yield_strategy_1.png}
+    \centering
+    \caption{Rendimento da Estratégia 1}
+    \label{fig:731}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{yield_strategy_2.png}
+    \centering
+    \caption{Rendimento da Estratégia 2}
+    \label{fig:732}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{yield_strategy_3.png}
+    \centering
+    \caption{Rendimento da Estratégia 3}
+    \label{fig:733}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{yield_strategy_4.png}
+    \centering
+    \caption{Rendimento da Estratégia 4}
+    \label{fig:734}
+\end{figure}
+
+\paragraph{} Começando a análise pelos pontos em comum entre as estratégias, percebe-se que todas obtiveram o rendimento final, o índice de Sharpe e o índice de Sortino menor que o \textit{baseline}. Além disso, ficaram por baixo no gráfico de rendimento em quase todo o intervalo de simulação. A taxa de sucesso, de falha, de \textit{timeout} e de incompletude se mantiveram prativamente as mesmas independente da simulação, com apenas um ruído maior na Estratégia 2 devido à instabilidade
+
+\paragraph{} Começando análise pela Estratégia 1, pode-se perceber que
+
+
+
 
 
 \paragraph{} Cortar daqui para baixo.
@@ -74,41 +118,41 @@
 
 % \paragraph{} Os demais parâmetros revelam valores refinados através de suas respectivas seções, a mencionar: Seção \ref{sub:operation_risk} para o Risco de entrada por operação; Seção \ref{sub:max_op_days} para o Período máximo de dias por operação; e Seção \ref{sub:dynamic_rcc} para o RCC, o Valor de referência e a Constante K.
 
-\paragraph{} Os resultados encontrados podem ser verificados pela Figura \ref{fig:250} e pela Tabela \ref{tab:13}.
+% \paragraph{} Os resultados encontrados podem ser verificados pela Figura \ref{fig:250} e pela Tabela \ref{tab:13}.
 
-\begin{figure}[!htb]
-    \includegraphics[scale=0.50]{performance_final.png}
-    \centering
-    \caption{Performance final}
-    \label{fig:250}
-\end{figure}
+% \begin{figure}[!htb]
+%     \includegraphics[scale=0.50]{performance_final.png}
+%     \centering
+%     \caption{Performance final}
+%     \label{fig:250}
+% \end{figure}
 
-\begin{table}[h!] %ID 485
-    \begin{center}
-        \begin{tabular}{ l|c|c }
-            Parâmetro & Estratégia & \textit{Baseline} \\
-            \hline
-            Rendimento Final & 72,79\% & 73,94\% \\
-            Volatilidade & 63,20\% & 55,48\% \\
-            Índice de Sharpe & 0,64 & 0,68 \\
-            Índice de Sortino & 0,74 & 0,74 \\
-            Correlação de Spearman (c/ \textit{Baseline}) & 0,99 & - \\
-            Correlação de Spearman (c /Ibovespa) & 0,92 & - \\
-            Uso Máximo de Capital & 100\% & 100\% \\
-            Uso Médio de Capital & 97,22\% & 100\% \\
-            Máximo de Operações Ativas & 71 & - \\
-            Média de Operações Ativas & 65,97 & - \\
-            Desvio Padrão de Operações Ativas & 6,13 & -\\
-            Operações Totais & 3145 & 71 \\
-            Operações de Sucesso & 891 (28,3\%) & - \\
-            Operações de Falha & 2048 (65,1\%) & - \\
-            Operações de \textit{Timeout} & 147 (4,7\%) & - \\
-            Operações Incompletas & 59 (1,9\%) & - \\
-        \end{tabular}
-        \caption{Resultado final}
-        \label{tab:13}
-    \end{center}
-\end{table}
+% \begin{table}[h!] %ID 485
+%     \begin{center}
+%         \begin{tabular}{ l|c|c }
+%             Parâmetro & Estratégia & \textit{Baseline} \\
+%             \hline
+%             Rendimento Final & 72,79\% & 73,94\% \\
+%             Volatilidade & 63,20\% & 55,48\% \\
+%             Índice de Sharpe & 0,64 & 0,68 \\
+%             Índice de Sortino & 0,74 & 0,74 \\
+%             Correlação de Spearman (c/ \textit{Baseline}) & 0,99 & - \\
+%             Correlação de Spearman (c /Ibovespa) & 0,92 & - \\
+%             Uso Máximo de Capital & 100\% & 100\% \\
+%             Uso Médio de Capital & 97,22\% & 100\% \\
+%             Máximo de Operações Ativas & 71 & - \\
+%             Média de Operações Ativas & 65,97 & - \\
+%             Desvio Padrão de Operações Ativas & 6,13 & -\\
+%             Operações Totais & 3145 & 71 \\
+%             Operações de Sucesso & 891 (28,3\%) & - \\
+%             Operações de Falha & 2048 (65,1\%) & - \\
+%             Operações de \textit{Timeout} & 147 (4,7\%) & - \\
+%             Operações Incompletas & 59 (1,9\%) & - \\
+%         \end{tabular}
+%         \caption{Resultado final}
+%         \label{tab:13}
+%     \end{center}
+% \end{table}
 
 \paragraph{} Deve-se lembar que a estratégia ou o modelo \textit{baseline} é uma representação interna da média de rendimento do mercado para a mesma cesta de ações da estratégia a ser simulada (Seção \ref{sub:baseline}). Com isso em mente, observa-se pela Figura \ref{fig:250} que o rendimento da estratégia final fica em torno do \textit{baseline}, com exceção do primeiro ano de simulação, onde o desempenho é significativamente maior.
 

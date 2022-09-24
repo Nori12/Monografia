@@ -34,7 +34,7 @@ Extra
 01) OK - Capa considerações iniciais
 02) OK - Introdução
 03) OK - Fundamentação Teórica
-04) Metodologia
+04) Vista grossa - Metodologia
 05) OK - Resultados
 06) OK - Conclusão
 07) OK - Apêndice A

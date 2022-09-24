@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  24 SEP 2022 04:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.6.14)  24 SEP 2022 06:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1340,27 +1340,16 @@ File: ./figuras/yield_strategy_4.png Graphic file (type png)
 <use ./figuras/yield_strategy_4.png>
 Package pdftex.def Info: ./figuras/yield_strategy_4.png  used on input line 83.
 (pdftex.def)             Requested size: 400.99713pt x 191.71577pt.
- [72 </Users/atcha/Github/Monografia/./figuras/yield_strategy_1.png>]
-
-LaTeX Warning: Reference `fig:250' on page 73 undefined on input line 157.
-
-[73 </Users/atcha/Github/Monografia/./figuras/yield_strategy_2.png> </Users/atcha/Github/Monografia/./figuras/yield_strategy_3.png>]
-
-LaTeX Warning: Reference `tab:13' on page 74 undefined on input line 159.
-
-
-LaTeX Warning: Reference `fig:250' on page 74 undefined on input line 163.
-
-[74 </Users/atcha/Github/Monografia/./figuras/yield_strategy_4.png>]) [75] [76]
+ [72 </Users/atcha/Github/Monografia/./figuras/yield_strategy_1.png>] [73 </Users/atcha/Github/Monografia/./figuras/yield_strategy_2.png> </Users/atcha/Github/Monografia/./figuras/yield_strategy_3.png>] [74 </Users/atcha/Github/Monografia/./figuras/yield_strategy_4.png>]) [75]
 \openout2 = `cap5.aux'.
 
  (/Users/atcha/Github/Monografia/cap5.tex
 Cap\'{\i }tulo 5.
-[77
+[76
 
 
 
-]) [78] (/Users/atcha/Github/Monografia/Principal.bbl
+]) [77] (/Users/atcha/Github/Monografia/Principal.bbl
 Underfull \hbox (badness 2875) in paragraph at lines 5--8
 []\OT1/cmr/m/n/12 INVESTIDOR, B. D., ``Como In-ter-pre-tar o Gr^^Safico de Can-dles-tick'',
  []
@@ -1400,7 +1389,7 @@ Underfull \hbox (badness 1577) in paragraph at lines 37--41
 \OT1/cmr/m/n/12 em ja-neiro'', https://www.b3.com.br/pt[]br/noticias/5-milhoes-de-contas-de-
  []
 
-[79
+[78
 
 
 
@@ -1444,7 +1433,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 90--94
 \OT1/cmr/m/n/12 https://www.gov.br/cvm/pt-br/acesso-a-informacao-cvm/institucional/sobre-
  []
 
-[80]
+[79]
 Underfull \hbox (badness 4266) in paragraph at lines 96--100
 []\OT1/cmr/m/n/12 INVESTIMENTOS, X., ``Mer-cado se-cund^^Sario: en-tenda as di-fe-ren^^Xcas
  []
@@ -1499,7 +1488,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--132
 \OT1/cmr/m/n/12 dents'', https://www.investopedia.com/articles/stocks/09/insider-
  []
 
-[81]
+[80]
 Underfull \hbox (badness 10000) in paragraph at lines 152--155
 []\OT1/cmr/m/n/12 FORBES, ``In-ves-ting Ba-sics: What Is A Mar-ket In-dex?'',
  []
@@ -1524,7 +1513,7 @@ Overfull \hbox (102.99904pt too wide) in paragraph at lines 167--170
 []\OT1/cmr/m/n/12 INVESTOPEDIA, ``Frac-ti-o-nal Share'', https://www.investopedia.com/terms/f/fractionalshare.asp,
  []
 
-[82]
+[81]
 Underfull \hbox (badness 10000) in paragraph at lines 196--199
 []\OT1/cmr/m/n/12 IBM, ``Ma-chine Le-ar-ning'', https://www.ibm.com/cloud/learn/machine-
  []
@@ -1554,7 +1543,7 @@ Underfull \hbox (badness 1112) in paragraph at lines 239--242
 []\OT1/cmr/m/n/12 GODFREY, M. D., GRAN-GER, C. W., MOR-GENS-TERN, O., ``THE
  []
 
-[83] [84] [85]
+[82] [83] [84]
 Underfull \hbox (badness 10000) in paragraph at lines 361--363
 []\OT1/cmr/m/n/12 NORI, P., ``Da-ta-base Fi-les in Pro-ject Github Page'',
  []
@@ -1574,7 +1563,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 377--379
 []\OT1/cmr/m/n/12 LUIZA, M., ``Rela^^Xc~oes com In-ves-ti-do-res - Ma-ga-zine Luiza'',
  []
 
-) [86]
+) [85]
 \openout2 = `ApendiceA.aux'.
 
  (/Users/atcha/Github/Monografia/ApendiceA.tex
@@ -1582,28 +1571,24 @@ Ap\^endice A.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[87
+[86
 
 
-] [88]) [89]
+] [87]) [88]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 97.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 97.
  (/Users/atcha/Github/Monografia/Principal.aux (/Users/atcha/Github/Monografia/Capa.aux) (/Users/atcha/Github/Monografia/Preambulo.aux) (/Users/atcha/Github/Monografia/cap1.aux) (/Users/atcha/Github/Monografia/cap2.aux) (/Users/atcha/Github/Monografia/cap3.aux) (/Users/atcha/Github/Monografia/cap4.aux) (/Users/atcha/Github/Monografia/cap5.aux) (/Users/atcha/Github/Monografia/ApendiceA.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 97.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 97.
 Package rerunfilecheck Info: File `Principal.out' has not changed.
-(rerunfilecheck)             Checksum: 9B80931805B526791A0FEB2CD7BE4729;4308.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: F1F82367AE025A2480AC00D5EE70C7C6;4308.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 97.
  ) 
 Here is how much of TeX's memory you used:
- 33343 strings out of 480608
- 750734 string characters out of 5903630
+ 33337 strings out of 480608
+ 750675 string characters out of 5903630
  1190492 words of memory out of 5000000
- 47881 multiletter control sequences out of 15000+600000
+ 47877 multiletter control sequences out of 15000+600000
  545921 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,14n,98p,1223b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1670,10 +1655,10 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist,
 pdfTeX warning (dest): name{table.3.12} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on /Users/atcha/Github/Monografia/Principal.pdf (105 pages, 3093092 bytes).
+Output written on /Users/atcha/Github/Monografia/Principal.pdf (104 pages, 3091198 bytes).
 PDF statistics:
- 1902 PDF objects out of 2073 (max. 8388607)
- 1657 compressed objects within 17 object streams
- 612 named destinations out of 1000 (max. 500000)
+ 1897 PDF objects out of 2073 (max. 8388607)
+ 1653 compressed objects within 17 object streams
+ 610 named destinations out of 1000 (max. 500000)
  722 words of extra memory for PDF output out of 10000 (max. 10000000)
 

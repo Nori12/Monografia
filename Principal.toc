@@ -265,30 +265,29 @@
 \contentsline {paragraph}{}{71}{section*.220}%
 \contentsline {paragraph}{}{72}{section*.221}%
 \contentsline {paragraph}{}{73}{section*.222}%
-\contentsline {paragraph}{}{73}{section*.223}%
-\contentsline {paragraph}{}{73}{section*.224}%
+\contentsline {paragraph}{}{74}{section*.223}%
+\contentsline {paragraph}{}{74}{section*.224}%
 \contentsline {paragraph}{}{74}{section*.225}%
 \contentsline {paragraph}{}{74}{section*.226}%
-\contentsline {paragraph}{}{74}{section*.227}%
+\contentsline {paragraph}{}{75}{section*.227}%
 \contentsline {paragraph}{}{75}{section*.228}%
 \contentsline {paragraph}{}{75}{section*.229}%
-\contentsline {paragraph}{}{75}{section*.230}%
-\contentsline {paragraph}{}{75}{section*.231}%
-\contentsline {chapter}{\numberline {5}Considerações Finais}{77}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Conclusão}{77}{section.5.1}%
-\contentsline {paragraph}{}{77}{section*.232}%
-\contentsline {paragraph}{}{77}{section*.233}%
+\contentsline {chapter}{\numberline {5}Considerações Finais}{76}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Conclusão}{76}{section.5.1}%
+\contentsline {paragraph}{}{76}{section*.230}%
+\contentsline {paragraph}{}{76}{section*.231}%
+\contentsline {paragraph}{}{76}{section*.232}%
+\contentsline {paragraph}{}{76}{section*.233}%
+\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{77}{section.5.2}%
 \contentsline {paragraph}{}{77}{section*.234}%
-\contentsline {section}{\numberline {5.2}Trabalhos Futuros}{78}{section.5.2}%
-\contentsline {paragraph}{}{78}{section*.235}%
-\contentsline {paragraph}{}{78}{section*.236}%
-\contentsline {paragraph}{}{78}{section*.237}%
-\contentsline {chapter}{Bibliografia}{79}{section*.237}%
-\contentsline {chapter}{\numberline {A}Inconsistência de Proventos na Biblioteca \textit {yfinance}}{87}{appendix.A}%
-\contentsline {paragraph}{}{87}{section*.239}%
+\contentsline {paragraph}{}{77}{section*.235}%
+\contentsline {paragraph}{}{77}{section*.236}%
+\contentsline {chapter}{Bibliografia}{78}{section*.236}%
+\contentsline {chapter}{\numberline {A}Inconsistência de Proventos na Biblioteca \textit {yfinance}}{86}{appendix.A}%
+\contentsline {paragraph}{}{86}{section*.238}%
+\contentsline {paragraph}{}{86}{section*.239}%
 \contentsline {paragraph}{}{87}{section*.240}%
 \contentsline {paragraph}{}{88}{section*.241}%
-\contentsline {paragraph}{}{89}{section*.242}%
-\contentsline {paragraph}{}{89}{section*.243}%
-\contentsline {paragraph}{}{89}{section*.244}%
-\contentsline {paragraph}{}{89}{section*.245}%
+\contentsline {paragraph}{}{88}{section*.242}%
+\contentsline {paragraph}{}{88}{section*.243}%
+\contentsline {paragraph}{}{88}{section*.244}%

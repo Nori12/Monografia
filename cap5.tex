@@ -8,9 +8,11 @@
 
 
 
-\paragraph{} Neste trabalho, foi proposta a criação de uma estratégia de \textit{swing trade} com a utilização de técnicas de aprendizado de máquina. A partir dos resultados apresentados no Capítulo \ref{cap4}, foi possível observar que a estratégia proposta possui indicadores de performance muito próximos da estratégia \textit{baseline}, que representa a média de rendimento do mercado.
+\paragraph{} Neste trabalho, foi proposta a criação de uma estratégia de \textit{swing trade} com a utilização de técnicas de aprendizado de máquina. Para isso, foi projetada uma estrutura de \textit{software} que possibilitasse o manuseio desta estratégia de forma prática.
 
-\paragraph{} Como não há consideração de proventos nos dados utilizados, a tendência é que ambas as estratégias apresentem uma performance real melhor do que a simulada. No entanto, a estratégia \textit{baseline} deve revelar um aumento de performance relativamente maior, pois os papéis adquiridos ficam sempre em posse durante todo o período de simulação, não deixando intervalos de tempo descobertos. Também se deve ressaltar que o presente trabalho considerou premissas pessimistas durante as simulações, o que traz perspectivas ligeiramente mais promissoras.
+\paragraph{} A partir dos resultados apresentados no Capítulo \ref{cap4}, foi possível observar que a melhor estratégia apresentada possui indicadores de performance ainda distantes de seu \textit{baseline}. Mais especificamente, o índice de Sharpe foi de 0,67 enquanto o mesmo índice do \textit{baseline} foi de 1,15.
+
+\paragraph{} Como não há consideração de proventos nos dados utilizados, a tendência é que ambas as estratégias apresentem uma performance real melhor do que a simulada. No entanto, a estratégia \textit{baseline} deve revelar um aumento de performance relativamente maior, pois os papéis adquiridos ficam sempre em posse durante todo o período de simulação, não deixando intervalos de tempo descobertos. Também se deve ressaltar que o presente trabalho considerou algumas premissas pessimistas durante as simulações, o que traz perspectivas ligeiramente mais promissoras.
 
 \paragraph{} Por fim, os resultados encontrados mostram que o uso de modelos de aprendizado de máquina pode auxiliar investidores no mercado de ações, no entanto para superar a média do mercado são necessários estudos mais aprofundados antes de uma implementação real.
 
@@ -21,8 +23,8 @@
 
 
 
-\paragraph{} Este trabalho se baseou em premissas e regras que moldaram uma estrutura na qual os modelos pudessem operar. No entanto, alguns valores escolhidos podem ser revisitados a fim de serem aprimorados. Dentre eles, podemos citar a escolha do valor de 45 dias para o período máximo de dias por operação. A criação dos modelos de ML necessita de um valor prévio deste parâmetro. Assim, para se otimizar o valor do período, é necessário criar vários conjuntos de modelos, um para cada dia de período máximo que se deseja considerar, seguido pela execução da simulação. O problema desta abordagem é o tempo total de criação de apenas um conjunto de modelos, pois devido ao WFA, um conjunto requer 12 modelos para cada um dos 71 \textit{tickers} da listagem geral (Figura \ref{fig:580} e Tabela \ref{tab:5}), o que demora mais de um dia de execução em um computador de uso doméstico nos padrões atuais.
+\paragraph{} Este trabalho se baseou em premissas e regras que moldaram uma estrutura na qual os modelos pudessem operar. No entanto, alguns dos valores escolhidos podem ser revisitados a fim de serem aprimorados. Dentre eles, podemos citar a escolha do valor de 45 dias para o período máximo de dias por operação. Ao invés de um único valor geral, pode-se considerar uma análise estatística para cada ativo e encontrar um valor que seja mais adequado individualmente.
 
-\paragraph{} Deve-se mencionar também o parâmetro de razão entre ganho e perda, já que foi utilizado o valor constante de 3 a partir da recomendação do André Moraes. É possível abrir uma frente de trabalho visando encontrar um valor mais otimizado, o que necessitaria, assim como o caso anterior do período máximo de dias por operação, a criação de conjuntos de modelos com valores diferentes, o que também não é trivial.
+\paragraph{} Deve-se mencionar também o parâmetro de razão entre ganho e perda, já que foi utilizado como uma constante de valor 3. Aqui também é cabível uma análise estatística para cada ativo a fim de se encontrar valores mais refinados.
 
-\paragraph{} A consideração dos proventos durante a simulação das estratégias
+\paragraph{} Não houve consideração de proventos durante a simulação das estratégias pela dificuldade de se obter uma base de dados gratuita e confiável. Portanto, vale mencionar que a incorporação desta base pode enriquecer os estudos aqui realizados.

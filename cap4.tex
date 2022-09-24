@@ -16,7 +16,7 @@
 
 \paragraph{} Observa-se que o período de simulação é posterior ao utilizado para refinamento dos parâmetros de simulação (01/01/2019 a 31/12/2020).
 
-\paragraph{} A Tabela \ref{tab:395} mostra 4 perfis de simulação diferentes, cada um motivado por uma questão diferente, são elas: (1) o máximo local na região de baixo RCC da Figura \ref{fig:550}; (2) o máximo local da região de alto RCC, também da Figura \ref{fig:550}; (3) a simulação de maior índice de Shape da Figura \ref{fig:153} pertencente à curva \begin{math} RCC \times K = 1,8 \end{math}; e (4) a simulação de menor perda de operações na Figura \ref{fig:155}, pertencente à curva \begin{math} RCC \times K = 0,1 \end{math}. Também são apresentados os respectivos resultados.
+\paragraph{} A Tabela \ref{tab:395} mostra 4 perfis de simulação diferentes, cada um motivado por uma questão diferente, são elas: (1) o máximo local na região de baixo RCC da Figura \ref{fig:550}; (2) o máximo local da região de alto RCC, também da Figura \ref{fig:550}; (3) a simulação de maior índice de Sharpe da Figura \ref{fig:153} e pertencente à curva \begin{math} RCC \times K = 1,8 \end{math}; e (4) a simulação de menor perda de operações na Figura \ref{fig:155}, pertencente à curva \begin{math} RCC \times K = 0,1 \end{math}. Também são apresentados os respectivos resultados.
 
 
 % Estratégia 1: ID=250
@@ -56,7 +56,7 @@
     \end{center}
 \end{table}
 
-\paragraph{} As Figuras \ref{fig:731}, \ref{fig:732}, \ref{fig:733} e \ref{fig:734} apresentam os rendimentos ao longo do tempo das 4 estratégias.
+\paragraph{} As Figuras \ref{fig:731}, \ref{fig:732}, \ref{fig:733} e \ref{fig:734} apresentam os rendimentos ao longo do tempo das 4 estratégias supracitadas.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.50]{yield_strategy_1.png}
@@ -86,84 +86,18 @@
     \label{fig:734}
 \end{figure}
 
-\paragraph{} Começando a análise pelos pontos em comum entre as estratégias, percebe-se que todas obtiveram o rendimento final, o índice de Sharpe e o índice de Sortino menor que o \textit{baseline}. Além disso, ficaram por baixo no gráfico de rendimento em quase todo o intervalo de simulação. A taxa de sucesso, de falha, de \textit{timeout} e de incompletude se mantiveram prativamente as mesmas independente da simulação, com apenas um ruído maior na Estratégia 2 devido à instabilidade
+\paragraph{} Começando a análise pelos pontos em comum entre as estratégias, percebe-se que todas obtiveram o rendimento final, o índice de Sharpe e o índice de Sortino significativamente menor que o \textit{baseline}. Além disso, ficaram por baixo no gráfico de rendimento em quase todo o intervalo de simulação. A taxa de sucesso, de falha, de \textit{timeout} e de incompletude das operações se mantiveram praticamente constantes. Apenas a Estratégia 2 que apresentou um ruído maior, pois esta foi a que mais forçou o uso de capital ao máximo, o que conforme visto na Seção \ref{sub:risk_man}, traz mais instabilidade.
 
-\paragraph{} Começando análise pela Estratégia 1, pode-se perceber que
+\paragraph{} É possível ver que a ordem de progressão dos indicadores de performance sob um olhar geral segue o seguinte padrão ascendente: Estratégia 2, Estratégia 3, Estratégia 1 e Estratégia 4.
 
+\paragraph{} A Estratégia 2 mostra que a escolha do RCC do segundo pico da Figura \ref{fig:550} certamente não foi uma boa escolha, pois seus indicadores de performance são os piores dentre as outras três estratégias. Tal resultado não é uma surpresa porque já foi verificado que a disputa por capital em uma situação de alavancagem muito alta traz um efeito aleatório que ofusca a qualidade de atuação dos modelos, pois muitas operações deixam de existir para que outras monopolizem todo o capital da carteira.
 
+\paragraph{} A baixa performance da Estratégia 3 questiona o critério de escolha de um alto índice de Sharpe nas curvas apresentadas pela Figura \ref{fig:153}. Nota-se aqui que há também bastante alavancagem de capital, visto que o uso médio de capital se encontra em 97,85\%. Isto é significativamente menor que a Estratégia 2, pois nesta região assintótica da curva, um pequena diferença impacta bastante no desvio padrão de capital por operação, que quase cai pela metade entre ambas as estratégias.
 
+\paragraph{} Seguindo a ordem de progressão, a Estratégia 1 possui cerca de 50\% de capital ocioso e isso não a impede de ser melhor que as estratégias anteriores, já que usaram quase todo o capital disponível. Tal afirmação contribui para o entendimento de que o enfraquecimento da influência dos modelos causado pelo efeito aleatório de alavangem excessiva de capital não traz benefícios consistentes, o que não ficou evidente durante a análise da Figura \ref{fig:550}. Para reforçar, vale a menção de que as duas melhores estratégias (1 e 4) são as que estão mais longe da saturação de capital. A Estratégia 1, dentre as quatro apresentadas, é a que tem menor volatilidade e isso contribui bastante para o índice de Sharpe de 0,45. Esta também é a única estratégia que apresenta o desvio padrão de capital por operação menor que a média do mesmo. Isso revela uma melhor distribuição de capital entre todos os ativos da carteira.
 
+\paragraph{} A análise sob a ótica das correlações de Spearman requer um pouco de cautela. Uma correlação muito próxima de 1 entre uma estratégia e sua referência pode indicar uma dependência muito alta, a ponto de atrapalhar na obtenção de ganhos acima da própria referência. Por outro lado, é importante analisar também as tendências de alta e de baixa do mercado, uma vez que não é desejável uma correlação alta com uma referência que só apresenta quedas, pelo contrário. Em suma, como regra geral, não se deseja uma correlação muito alta, pois é justamente nos espaços não correlacionados que uma estratégia tem abertura para se opor a uma tendência de mercado prejudicial. Todavia, muita oposição pode indicar ineficiência.
 
-\paragraph{} Cortar daqui para baixo.
+\paragraph{} Portanto, verifica-se que a Estratégia 4, a mais performática, possui um índice de correlação um pouco menor que a Estratégia 1. É possível que essa diferença entre os índices represente ao menos parcialmente o ganho de inteligência entre as duas.
 
-
-
-
-% \paragraph{} A partir dos parâmetros descritos e refinados na Seção \ref{sub:est_simulation}, utilizou-se a seguinte configuração para encontrar a simulação com os melhores índices de performance:
-
-% \begin{itemize}
-%     \item 71 \textit{tickers} (Tabela \ref{tab:5})
-%     \item Período de simulação: 01/01/2019 a 31/12/2021
-%     \item Capital: R\$ 100000,00
-%     \item Volume mínimo de ações por negociação: 1
-%     \item Risco de entrada por operação: 0,29
-%     \item Período máximo de dias por operação: 45
-%     \item RCC: 0,000025
-%     \item Controle Proporcional para Uso de Capital (RCC Dinâmico): Sim
-%     \item Valor de Referência: 100\%
-%     \item Constante K de Ganho Proporcional: 30000
-% \end{itemize}
-
-% \paragraph{} Conforme descrito na Seção \ref{sub:risk_man}, a escolha dos 71 \textit{tickers} foi realizada levando em consideração as seguintes preferências: diversidade de segmentos de mercado; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. O período de simulação escolhido engloba um intervalo recente dos últimos 3 anos, já que a escolha de momentos anteriores a este pode estar associado a padrões de mercado muito diferentes do atual. Como os modelos criados utilizam \textit{walk-forward analysis} e portanto atualizados a cada 3 meses de simulação para cada \textit{ticker}, o comprimento do intervalo de 3 anos não é um problema. O capital e o volume mínimo por negociação foram escolhidos visando evitar potenciais problemas quanto à granularidade dos montantes de negociação.
-
-% \paragraph{} Os demais parâmetros revelam valores refinados através de suas respectivas seções, a mencionar: Seção \ref{sub:operation_risk} para o Risco de entrada por operação; Seção \ref{sub:max_op_days} para o Período máximo de dias por operação; e Seção \ref{sub:dynamic_rcc} para o RCC, o Valor de referência e a Constante K.
-
-% \paragraph{} Os resultados encontrados podem ser verificados pela Figura \ref{fig:250} e pela Tabela \ref{tab:13}.
-
-% \begin{figure}[!htb]
-%     \includegraphics[scale=0.50]{performance_final.png}
-%     \centering
-%     \caption{Performance final}
-%     \label{fig:250}
-% \end{figure}
-
-% \begin{table}[h!] %ID 485
-%     \begin{center}
-%         \begin{tabular}{ l|c|c }
-%             Parâmetro & Estratégia & \textit{Baseline} \\
-%             \hline
-%             Rendimento Final & 72,79\% & 73,94\% \\
-%             Volatilidade & 63,20\% & 55,48\% \\
-%             Índice de Sharpe & 0,64 & 0,68 \\
-%             Índice de Sortino & 0,74 & 0,74 \\
-%             Correlação de Spearman (c/ \textit{Baseline}) & 0,99 & - \\
-%             Correlação de Spearman (c /Ibovespa) & 0,92 & - \\
-%             Uso Máximo de Capital & 100\% & 100\% \\
-%             Uso Médio de Capital & 97,22\% & 100\% \\
-%             Máximo de Operações Ativas & 71 & - \\
-%             Média de Operações Ativas & 65,97 & - \\
-%             Desvio Padrão de Operações Ativas & 6,13 & -\\
-%             Operações Totais & 3145 & 71 \\
-%             Operações de Sucesso & 891 (28,3\%) & - \\
-%             Operações de Falha & 2048 (65,1\%) & - \\
-%             Operações de \textit{Timeout} & 147 (4,7\%) & - \\
-%             Operações Incompletas & 59 (1,9\%) & - \\
-%         \end{tabular}
-%         \caption{Resultado final}
-%         \label{tab:13}
-%     \end{center}
-% \end{table}
-
-\paragraph{} Deve-se lembar que a estratégia ou o modelo \textit{baseline} é uma representação interna da média de rendimento do mercado para a mesma cesta de ações da estratégia a ser simulada (Seção \ref{sub:baseline}). Com isso em mente, observa-se pela Figura \ref{fig:250} que o rendimento da estratégia final fica em torno do \textit{baseline}, com exceção do primeiro ano de simulação, onde o desempenho é significativamente maior.
-
-\paragraph{} A Tabela \ref{tab:13} também mostra que ambas as estratégias obtiveram resultados bem próximos, em particular a estratégia final teve performance ligeiramente inferior, conforme esperado. Analisando individualmente os resultados, o rendimento da estratégia final está apenas 1,15\% abaixo do \textit{baseline}, o que é relevante, mas não tanto quando se tem em mente que este é apenas o retrato de um dos diversos dias de simulação volátil.
-
-\paragraph{} Apesar dos rendimentos finais equivalentes, não de pode deixar de notar o aumento de volatilidade da estratégia final em 7,72\%, o que prejudica sua qualidade. Contudo, a volatilidade não deve ser analisada isoladamente, mas sim através do índice de Sharpe, que está 0,04 pontos abaixo da referência. Um desvio relevante, porém ainda sutil, mostrando que uma parcela da alta de volatilidade foi compensada por um rendimento médio maior. Já o índice de Sortino está igual em 0,74, mostrando que ambas as estratégias possuem o mesmo grau de confiança quando se analisa a rentabilidade em relação às oscilações de capital abaixo da média.
-
-\paragraph{} Dando sequência à análise, as altas correlações de Spearman mostram uma forte dependência da estratégia em relação ao \textit{baseline} e ao iBovespa, o que pode ser facilmente verificado pela Figura \ref{fig:250}. No entanto, aqui valem algumas ressalvas. Como a correlação de Spearman se baseia apenas nos ranques das funções e não propriamente na magnitude dos valores, é um cenário possível uma estratégia obter uma correlação com o \textit{baseline} muito próxima de 1,0 ao mesmo tempo que um rendimento superior. Isso porque o ganho de capital com cada oscilação positiva seria maior do que a perda em uma oscilação negativa. Por outro lado, também é possível um cenário onde uma estratégia com uma baixa correlação de Spearman com o \textit{baseline} apresente um rendimento superior. Este caso em particular seria um caminho mais interessante, pois mostraria uma versatilidade maior da estratégia criada para diferentes tipos de cenários de mercado.
-
-\paragraph{} O uso máximo de capital em 100\% indica apenas que em algum momento todo capital esteve alocado em ativos. Contudo, o uso médio de capital em 97,22\% traz a informação de que como quase todo capital esteve alocado o tempo todo, há pouco espaço para uma melhora de performance de maneira indiscrimidada daqui para frente. Em outras palavras, as melhoras de rendimento precisarão passar por um aprimoramento dos modelos no que diz respeito a quais operações abrir mão para que outras possam prosperar mais. Nota-se que um uso médio de capital em 100\% não seria vantajoso, uma vez que diminuiria-se a disponibilidade de capital para aporte em novas operações. Por outro lado, um uso médio muito baixo indicaria que a estratégia estaria longe de alcançar o seu máximo potencial de performance. Portanto, uma pequena folga é importante e necessária.
-
-\paragraph{} Assim como o uso médio de capital está alto, a média de operações ativas também está, o que é esperado. O mesmo raciocício vale para o máximo de operações ativas e o uso máximo de capital. \color{red} HERALDO: Não mencionei o Desvio Padrão de Operações Ativas por não achar relevante. Devo removê-lo da tabela? Ou deixo assim mesmo? \color{black}
-
-\paragraph{} Por fim, deve-se ressaltar que o número total de operações de 3145 está saturado, conforme explicado ao final da Seção \ref{sub:dynamic_rcc}. Resumidamente, os parâmetros de simulação, em especial o RCC e o K, estão configurados de forma a estressar a estratégia a ponto dela desobedecer em alguns momentos as ordens de compra vindas dos modelos de ML por falta de capital disponível. Tal abordagem trouxe um aumento de performance, mas deve ser usada com cautela. Independentemente desta questão, a taxa de acerto de 28,3\% contra os 65,1\% de falha mostra que apesar da estratégia acertar pouco, o lucro obtido é proporcionalmente maior que as perdas acumuladas.
+\paragraph{} Em resumo, apesar da Estratégia 4 possuir os melhores indicadores, ainda se encontra distante do \textit{baseline} proposto.

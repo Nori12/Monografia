@@ -1,13 +1,6 @@
 To do:
 
 
----> Correção do erro metodológico
-01) OK - Aguardar resultados da simulação do PC do João
-02) OK - Atualizar datapoints escolhidos na seção de rcc dinamico e finalizar capítulo
-) Atualizar "Resultados"
-) Atualizar "Considerações Finais"
-
-
 01) OK - Atualizar "Modelos de Aprendizado Supervisionado" / "Balanceamento de Classes"
 02) OK - Atualizar "Modelos de Aprendizado Supervisionado" / "Geração de Modelos"
 03) OK - Atualizar "Modelos de Aprendizado Supervisionado" / "Modelo Baseline"
@@ -26,9 +19,10 @@ Outras modificações Pontuais
 07) OK - Justificar escolha de Random Forest devido à motivos explicados
 08) OK - Mencionei Baseline ao longo da metodologia sem descrever quem ele é antes? Ver se dá para colocar
     "Modelos de Aprendizado Supervisionado" antes de "Simulação de Estratégia"
+09) OK - Add na seção de "Trabalhos Futuros" uma nota para add uma base de dados confiável de pronventos e considerá-la nas simulações
+
 ) Excluir todas as referências às palavras relacionadas às features não utilizadas
 ) yfinance contabiliza dividendos nos preços das ações? Se sim, tudo bem, se não, argumentar
-) Add na seção de "Trabalhos Futuros" uma nota para add uma base de dados confiável de pronventos e considerá-la nas simulações
 ) Diminuir espaçamento das siglas em "Siglas"
 
 Extra
@@ -39,20 +33,8 @@ Extra
 
 01) OK - Capa considerações iniciais
 02) OK - Introdução
-03) Fundamentação Teórica
+03) OK - Fundamentação Teórica
 04) Metodologia
-05) Resultados
-06) Conclusão
-07) Apêndice A
-
----> Segunda Revisão
-
-01) Capa considerações iniciais
-02) Introdução
-03) Fundamentação Teórica
-04) Metodologia
-05) Resultados
-06) Conclusão
-07) Apêndice A
-
-FIM!
+05) OK - Resultados
+06) OK - Conclusão
+07) OK - Apêndice A

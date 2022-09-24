@@ -3,22 +3,37 @@
 
 
 
-\paragraph{} A partir dos parâmetros descritos e refinados na Seção \ref{sub:est_simulation}, utilizou-se a seguinte configuração para encontrar a simulação com os melhores índices de performance:
+\paragraph{} A partir dos modelos criados na Seção \ref{sub:super_models} e dos parâmetros descritos e refinados na Seção \ref{sub:est_simulation}, é possível prosseguir com as simulações finais, que compartilham das seguintes configurações:
 
 \begin{itemize}
     \item 71 \textit{tickers} (Tabela \ref{tab:5})
-    \item Período de simulação: 01/01/2019 a 31/12/2021
+    \item Período de simulação: 01/04/2020 a 31/12/2021
     \item Capital: R\$ 100000,00
     \item Volume mínimo de ações por negociação: 1
     \item Risco de entrada por operação: 0,29
     \item Período máximo de dias por operação: 45
-    % \item Descanso por Identificação de Crises: Sim
-    % \item Descanso por Tendência de Baixa: Sim
-    \item RCC: 0,000025
-    \item Controle Proporcional para Uso de Capital (RCC Dinâmico): Sim
-    \item Valor de Referência: 100\%
-    \item Constante K de Ganho Proporcional: 30000
 \end{itemize}
+
+\paragraph{} Observa-se que o período de simulação é posterior ao utilizado para refinamento dos parâmetros de simulação.
+
+\paragraph{} A Tabela \ref{} mostra 3 perfis de simulação diferentes, motivados pelo: (1) máximo local na região de baixo RCC da Figura \ref{fig:550}; o máximo local da região de alto RCC também da Figura \ref{fig:550}; e o
+
+\paragraph{} Cortar daqui para baixo.
+
+% \paragraph{} A partir dos parâmetros descritos e refinados na Seção \ref{sub:est_simulation}, utilizou-se a seguinte configuração para encontrar a simulação com os melhores índices de performance:
+
+% \begin{itemize}
+%     \item 71 \textit{tickers} (Tabela \ref{tab:5})
+%     \item Período de simulação: 01/01/2019 a 31/12/2021
+%     \item Capital: R\$ 100000,00
+%     \item Volume mínimo de ações por negociação: 1
+%     \item Risco de entrada por operação: 0,29
+%     \item Período máximo de dias por operação: 45
+%     \item RCC: 0,000025
+%     \item Controle Proporcional para Uso de Capital (RCC Dinâmico): Sim
+%     \item Valor de Referência: 100\%
+%     \item Constante K de Ganho Proporcional: 30000
+% \end{itemize}
 
 \paragraph{} Conforme descrito na Seção \ref{sub:risk_man}, a escolha dos 71 \textit{tickers} foi realizada levando em consideração as seguintes preferências: diversidade de segmentos de mercado; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. O período de simulação escolhido engloba um intervalo recente dos últimos 3 anos, já que a escolha de momentos anteriores a este pode estar associado a padrões de mercado muito diferentes do atual. Como os modelos criados utilizam \textit{walk-forward analysis} e portanto atualizados a cada 3 meses de simulação para cada \textit{ticker}, o comprimento do intervalo de 3 anos não é um problema. O capital e o volume mínimo por negociação foram escolhidos visando evitar potenciais problemas quanto à granularidade dos montantes de negociação.
 

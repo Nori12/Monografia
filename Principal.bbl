@@ -364,10 +364,6 @@ NORI, P., \enquote{Database Files in Project Github Page},
 \bibitem{haykin2007signals}
 HAYKIN, S., VAN~VEEN, B., \emph{Signals and systems}. John Wiley \& Sons, 2007.
 
-\bibitem{dash}
-PLOTLY, \enquote{Dash}, https://dash.plotly.com/, (Acessado em 28 de Junho de
-  2022).
-
 \bibitem{he2013imbalanced}
 HE, H., MA, Y., \emph{Imbalanced learning: foundations, algorithms, and
   applications}. Wiley-IEEE Press, 2013.
@@ -376,6 +372,10 @@ HE, H., MA, Y., \emph{Imbalanced learning: foundations, algorithms, and
 SCIKIT-LEARN, \enquote{Random Forest},
   https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html,
   (Acessado em 5 de Julho de 2022).
+
+\bibitem{dash}
+PLOTLY, \enquote{Dash}, https://dash.plotly.com/, (Acessado em 28 de Junho de
+  2022).
 
 \bibitem{mglu_ri}
 LUIZA, M., \enquote{Relações com Investidores - Magazine Luiza},

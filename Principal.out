@@ -34,25 +34,25 @@
 \BOOKMARK [2][-]{subsection.3.2.2}{Coleta de Dados}{section.3.2}% 34
 \BOOKMARK [2][-]{subsection.3.2.3}{Armazenamento de Dados}{section.3.2}% 35
 \BOOKMARK [2][-]{subsection.3.2.4}{Gera\347\343o de Features de Uso Geral}{section.3.2}% 36
-\BOOKMARK [1][-]{section.3.3}{Simula\347\343o de Estrat\351gia}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.3.1}{Estrutura}{section.3.3}% 38
-\BOOKMARK [2][-]{subsection.3.3.2}{Premissas}{section.3.3}% 39
-\BOOKMARK [2][-]{subsection.3.3.3}{Per\355odo M\341ximo de Dias por Opera\347\343o}{section.3.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.4}{Risco de Entrada por Opera\347\343o}{section.3.3}% 41
-\BOOKMARK [2][-]{subsection.3.3.5}{Gerenciamento de Risco}{section.3.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.6}{Controle Proporcional para Uso de Capital}{section.3.3}% 43
-\BOOKMARK [2][-]{subsection.3.3.7}{Lista de Par\342metros de Configura\347\343o}{section.3.3}% 44
-\BOOKMARK [2][-]{subsection.3.3.8}{Dashboard}{section.3.3}% 45
-\BOOKMARK [1][-]{section.3.4}{Modelos de Aprendizado Supervisionado}{chapter.3}% 46
-\BOOKMARK [2][-]{subsection.3.4.1}{Resumo}{section.3.4}% 47
-\BOOKMARK [2][-]{subsection.3.4.2}{Datasets e Feature Selection}{section.3.4}% 48
-\BOOKMARK [2][-]{subsection.3.4.3}{\315ndice de Lucratividade}{section.3.4}% 49
-\BOOKMARK [2][-]{subsection.3.4.4}{Balanceamento de Classes}{section.3.4}% 50
-\BOOKMARK [2][-]{subsection.3.4.5}{Gera\347\343o de Modelos}{section.3.4}% 51
-\BOOKMARK [2][-]{subsection.3.4.6}{Modelo Baseline}{section.3.4}% 52
+\BOOKMARK [1][-]{section.3.3}{Modelos de Aprendizado Supervisionado}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.1}{Resumo}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.2}{Datasets e Feature Selection}{section.3.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.3}{\315ndice de Lucratividade}{section.3.3}% 40
+\BOOKMARK [2][-]{subsection.3.3.4}{Balanceamento de Classes}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.5}{Gera\347\343o de Modelos}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.6}{Modelo Baseline}{section.3.3}% 43
+\BOOKMARK [1][-]{section.3.4}{Simula\347\343o de Estrat\351gia}{chapter.3}% 44
+\BOOKMARK [2][-]{subsection.3.4.1}{Estrutura}{section.3.4}% 45
+\BOOKMARK [2][-]{subsection.3.4.2}{Premissas}{section.3.4}% 46
+\BOOKMARK [2][-]{subsection.3.4.3}{Per\355odo M\341ximo de Dias por Opera\347\343o}{section.3.4}% 47
+\BOOKMARK [2][-]{subsection.3.4.4}{Risco de Entrada por Opera\347\343o}{section.3.4}% 48
+\BOOKMARK [2][-]{subsection.3.4.5}{Gerenciamento de Risco}{section.3.4}% 49
+\BOOKMARK [2][-]{subsection.3.4.6}{Controle Proporcional para Uso de Capital}{section.3.4}% 50
+\BOOKMARK [2][-]{subsection.3.4.7}{Lista de Par\342metros de Configura\347\343o}{section.3.4}% 51
+\BOOKMARK [2][-]{subsection.3.4.8}{Dashboard}{section.3.4}% 52
 \BOOKMARK [0][-]{chapter.4}{Resultados}{}% 53
 \BOOKMARK [0][-]{chapter.5}{Considera\347\365es Finais}{}% 54
 \BOOKMARK [1][-]{section.5.1}{Conclus\343o}{chapter.5}% 55
 \BOOKMARK [1][-]{section.5.2}{Trabalhos Futuros}{chapter.5}% 56
-\BOOKMARK [0][-]{section*.228}{Bibliografia}{}% 57
+\BOOKMARK [0][-]{section*.235}{Bibliografia}{}% 57
 \BOOKMARK [0][-]{appendix.A}{Inconsist\352ncia de Proventos na Biblioteca yfinance}{}% 58

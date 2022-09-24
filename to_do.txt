@@ -2,27 +2,17 @@ To do:
 
 
 ---> Correção do erro metodológico
-
-01) OK - Pegar resultados do PC do João e gerar backup ("Risco de Entrada por Operação")
-02) OK - Deixar rodando nova simulação do RCC
-03) OK - Mover "Período Máximo de Dias por Operação" para antes de "Risco de Entrada por Operação"
-04) OK - Remover último gráfico de "Período Máximo de Dias por Operação", junto de sua análise desnecessária
-05) OK - Gerar novo gráfico em "Risco de Entrada por Operação", anotar novo valor ótimo e atualizar monografia
-06) OK - Pegar resultados do PC do João e gerar backup (RCC)
-07) Gerar novo gráfico em "Gerenciamento de Risco" e atualizar análise
-08) Deixar rodando nova simulação do RCC/K
-09) Pegar resultados do PC do João e gerar backup (RCC/K)
-10) Gerar novos gráficos em "Controle Proporcional para Uso de Capital" e atualizar análise
-11) Rodar simulação com parâmetros finais
-15) Atualizar Sharpe do capítulo de Baseline (se necessário)
-12) Atualizar "Modelos de Aprendizado Supervisionado"
-13) Atualizar "Resultados"
-14) Atualizar "Considerações Finais"
+) Aguardar resultados da simulação do PC do João
+) Atualizar datapoints escolhidos na seção de rcc dinamico
+) Atualizar "Resultados"
+) Atualizar "Considerações Finais"
 
 
-Repetir passos anteriores com Sharpe corrigido.
-
-
+) Atualizar "Modelos de Aprendizado Supervisionado" / "Balanceamento de Classes"
+) Atualizar "Modelos de Aprendizado Supervisionado" / "Geração de Modelos"
+) Atualizar "Modelos de Aprendizado Supervisionado" / "Modelo Baseline"
+) Atualizar "Features de Uso Geral" / "Risco Mínimo"
+) Atualizar "Features de Uso Geral" / "Risco Máximo"
 
 
 Outras modificações Pontuais
@@ -30,17 +20,20 @@ Outras modificações Pontuais
 01) OK - Deixar i.e. e e.g. em itálico
 02) OK - Add referência de filtro IIR passa-baixas
 03) OK - Add citação quando mencionar Docker
-04) Mencionar Github do Projeto no início da "Metodologia"
+04) OK - Mencionar Github do Projeto no início da "Metodologia"
 05) OK - Add ERD e constraints do banco
 06) OK - Add diagrama para ilustrar lógica de otimização dos parâmetros
-) Justificar escolha de Random Forest devido à motivos explicados
+07) OK - Justificar escolha de Random Forest devido à motivos explicados
+08) OK - Mencionei Baseline ao longo da metodologia sem descrever quem ele é antes? Ver se dá para colocar
+    "Modelos de Aprendizado Supervisionado" antes de "Simulação de Estratégia"
+) Excluir todas as referências às palavras relacionadas às features não utilizadas
+) yfinance contabiliza dividendos nos preços das ações? Se sim, tudo bem, se não, argumentar
 ) Add na seção de "Trabalhos Futuros" uma nota para add uma base de dados confiável de pronventos e considerá-la nas simulações
-) Add script do Apêndice A
 ) Diminuir espaçamento das siglas em "Siglas"
-) Avisar Heraldo sobre correção da lógica do Índice de Sharpe
-) yfinance contabiliza dividendos nos preços das ações? Se sim, tudo bem, se não, argumentar.
-) Posso deixar a vantagem de uso do banco "Independência da plataforma Yahho! Finance para o caso de não continuidade dos dados..."
 
+Extra
+) Add exemplo para o índice de lucratividade (se houver tempo)
+) Add script do Apêndice A
 
 ---> Revisar
 
@@ -51,3 +44,15 @@ Outras modificações Pontuais
 05) Resultados
 06) Conclusão
 07) Apêndice A
+
+---> Segunda Revisão
+
+01) Capa considerações iniciais
+02) Introdução
+03) Fundamentação Teórica
+04) Metodologia
+05) Resultados
+06) Conclusão
+07) Apêndice A
+
+FIM!

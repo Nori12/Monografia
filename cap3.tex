@@ -25,7 +25,7 @@
 
 \paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Foi estruturado um banco de dados PostgreSQL para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
 
-\paragraph{} A Figura \ref{fig:444} mostra a sequência lógica de refinamento dos parâmetros de simulação, abordada através das Seções \ref{sub:max_op_days}, \ref{sub:operation_risk} e \ref{sub:dynamic_rcc}, respectivamente. Nota-se que o valor de saída de um parâmetro é utilizado durante o refinamento parâmetro do seguinte. Com exceção do Período Máximo de Dias por Operação, que utilizou o intervalo de 2016 a 2018, os outros parâmetros foram refinados a partir de simulações no intervalo de janeiro de 2019 a março de 2020, denominado intervalo de validação, ou período de validação. Já o resultado da simulação final, disponível na Seção \ref{cap4}, utiliza o intervalo de abril de 2020 a dezembro de 2021, não havendo assim sobreposição.
+\paragraph{} A Figura \ref{fig:444} mostra a sequência lógica de refinamento dos parâmetros de simulação, abordada através das Seções \ref{sub:max_op_days}, \ref{sub:operation_risk} e \ref{sub:dynamic_rcc}, respectivamente. Nota-se que o valor de saída de um parâmetro é utilizado durante o refinamento parâmetro do seguinte. Com exceção do Período Máximo de Dias por Operação, que utilizou o intervalo de 2016 a 2018, os outros parâmetros foram refinados a partir de simulações no intervalo de janeiro de 2019 a março de 2020, denominado intervalo de refinamento de parâmetros de estratégia. Já o resultado da simulação final, disponível na Seção \ref{cap4}, utiliza o intervalo de abril de 2020 a dezembro de 2021, não havendo assim sobreposição.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.65]{otimizacao_de_parametros.png}
@@ -152,9 +152,11 @@
 \subsection{Geração de \textit{Features} de Uso Geral}
 \label{sub:features}
 
-\paragraph{} As \textit{Features} de Uso Geral são características derivadas dos \textit{candlesticks} que podem auxiliar qualquer decisão interna de uma estratégia, porém seu objetivo principal está no suporte à escolha do momento de entrada apropriado nas operações, o que é fundalmentalmente a responsabilidade do modelo de \textit{Machine Learning}. Como podem ser utilizadas por diversas estratégias, são calculadas antes do início das simulações e somente quando há necessidade, ou seja, quando os \textit{candlesticks} são inseridos pela primeira vez no banco ou quando são atualizados. Ao final dos cálculos, são armazenadas nas tabelas de \textit{features} para posteriores consultas durante as simulações.
+\paragraph{} As \textit{Features} de Uso Geral são características derivadas dos \textit{candlesticks} que podem auxiliar qualquer decisão interna de uma estratégia. Mais especificamente, esta Seção aborda as \textit{features} Risco Mínimo e Rísco Máximo, que possuem duas funções principais: auxiliar no processo de escolha do preços de compra, dos \textit{stop loss} e dos preços alvo através do parâmetro Risco de Entrada por Operação; e auxiliar os modelos de ML a decidirem o momento apropriado de compra dos ativos, com base nos valores dos preços encontrados.
 
-\paragraph{} Devido à natureza do problema, que se trata da análise de dados do passado, é necessário garantir que as \textit{features} geradas estão sempre apontando para um intervalo de tempo anterior ao dia no qual elas serão consumidas, o que será feito pelo modelo durante a simulação. Do contrário, um erro de não-causalidade poderia surgir, corrompendo a performance dos modelos. Analogamente, durante a geração dos modelos (Seção \ref{sub:models_gen}) também é necessario se garantir que o período de treinamento é anterior ao período de apuração, diretamente via a configuração das datas limites de cada período e indiretamente via remoção de datas cuja \textit{features} possuem efeito memória, evitando assim que qualquer informação esteja presente simultaneamente dos dados de treinamento e de apuração.
+\paragraph{} Devido à natureza genérica das \textit{features}, que podem ser utilizadas por diversas estratégias, são calculadas antes do início das simulações e somente quando há necessidade, ou seja, quando os \textit{candlesticks} são inseridos pela primeira vez no banco ou quando são atualizados. Ao final dos cálculos, são armazenadas nas tabelas de \textit{features} para posteriores consultas durante as simulações.
+
+\paragraph{} O fato dos cálculos envolverem uma análise de dados do passado, é necessário garantir que as \textit{features} geradas estejam sempre apontadas para um intervalo de tempo anterior ao dia no qual elas serão consumidas. Do contrário, um erro de não-causalidade poderia surgir, corrompendo a performance das simulações. Analogamente, durante a geração dos modelos (Seção \ref{sub:models_gen}) também é necessario se garantir que o período de treinamento é anterior ao período de teste, diretamente via a configuração das datas limites de cada período e indiretamente via remoção de datas cuja \textit{features} possuem efeito memória, evitando assim que qualquer informação esteja presente simultaneamente dos dados de treinamento e de teste.
 
 \paragraph{} As \textit{features} de Uso Geral utilizadas são:
 
@@ -240,23 +242,31 @@
 
 
     \item \textbf{Risco Mínimo} \\ \\
-    O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
+    O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML, mas sim indiretamente. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
 
     \begin{equation} \label{eq:30}
         Risk_{min} = Risk_{min_f} + Risk_{min_v}
     \end{equation}
 
-    Seja \begin{math} P_{\Delta} \end{math} a diferença entre o preço máximo e mínimo de um \textit{candle} (Equação \ref{eq:31}), pode-se definir \begin{math} Risk_{min_f} \end{math} como o valor mínimo de risco necessário para superar as oscilações diárias dos preços dos últimos 20 dias úteis (Equação \ref{eq:32}). Nota-se que \begin{math} \sigma_{P_{\Delta}} \end{math} é o desvio padrão relativo aos últimos 20 dias úteis.
+    Seja \begin{math} P_{\Delta} \end{math} a diferença entre o preço máximo e mínimo de um \textit{candle} (Equação \ref{eq:31}), pode-se definir \begin{math} Risk_{min_f} \end{math} como o valor mínimo de risco necessário para superar as oscilações diárias dos preços médios dos últimos 20 dias úteis (Equações \ref{eq:22} e \ref{eq:32}). Nota-se que \begin{math} \sigma_{P_{\Delta}} \end{math} é o desvio padrão relativo aos últimos 20 dias úteis.
 
     \begin{equation} \label{eq:31}
         P_{\Delta} = P_{high} - P_{low}
+    \end{equation}
+
+    \begin{equation} \label{eq:22}
+        P_{mid} = \dfrac{P_{open} + P_{close}}{2}
     \end{equation}
 
     \begin{equation} \label{eq:32}
         Risk_{min_f} = \dfrac{ \sigma_{P_{\Delta}} }{ P_{mid} }
     \end{equation}
 
-    A parcela variável \begin{math} Risk_{min_v} \end{math} está associada à tendência de queda de preço no curto prazo. Seu cálculo é realizado a partir da derivada de preços médios ajustada por um filtro digital IIR passa-baixas \cite{haykin2007signals} (Equações \ref{eq:24} e \ref{eq:33}), onde \begin{math} \alpha \end{math} é o coeficiente de amortecimento. O sinal negativo indica que quanto maior a tendência de queda, maior precisa ser o risco associado.
+    A parcela variável \begin{math} Risk_{min_v} \end{math} está associada à tendência de queda de preço no curto prazo. Seu cálculo é realizado a partir da derivada de preços médios ajustada por um filtro digital IIR passa-baixas \cite{haykin2007signals} (Equações \ref{eq:23}, \ref{eq:24} e \ref{eq:33}), onde \begin{math} \alpha \end{math} é o coeficiente de amortecimento. Observa-se que a derivada do preço médio foi normalizada para permitir que a tendência independa do valor absoluto do preço, tratando-se apenas de uma variação percentual. O sinal negativo na Equação \ref{eq:33} indica que quanto maior a tendência de queda, maior precisa ser o risco associado.
+
+    \begin{equation} \label{eq:23}
+        \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
+    \end{equation}
 
     \begin{equation} \label{eq:24}
         \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
@@ -339,6 +349,256 @@
     \end{figure}
 
 \end{itemize}
+
+
+
+
+\FloatBarrier
+\section{Modelos de Aprendizado Supervisionado}
+\label{sub:super_models}
+
+
+\FloatBarrier
+\subsection{Resumo}
+
+\paragraph{} Conforme mostrado na Seção \ref{sub:ml_models_study}, a literatura aponta para o uso de modelos dos tipos ANN, SVM e lógica \textit{Fuzzy}. No entanto, escolheu-se \textit{Random Forests} devido à sua baixa tendência de \textit{overfitting} e à ausência de necessidade de escalamento das \textit{features} consumidas. Apesar de ser um modelo com várias possibilidades de hiperparâmetros a serem ajustados, a prática mostra que poucos são aqueles que realmente trazem uma melhora de performance significativa, uma vez que uma RF que tenha atingido um número alto o suficiente de árvores.
+
+\paragraph{} A partir de \textit{datasets} previamente populados, modelos são gerados para cada ação a cada intervalo de 3 meses de simulação (WFA). Um critério particular de performance foi criado para ranquear os melhores modelos, que são filtrados por uma varredura de alguns hiperparâmetros.
+
+\paragraph{} O período de treinamento e de teste de cada modelo foi separado utilizando WFA e pode ser verificado pela Tabela \ref{tab:17}. Entende-se por validade o período de tempo durante a simulação no qual o algoritmo criado pode atuar. A Tabela também possui uma linha horizontal tracejada que separa os intervalos: de refinamento de parâmetros de estratégia; e de execução da simulação final.
+
+\begin{table}[!htb]
+    \begin{center}
+        \begin{tabular}{ cc|cc|cc }
+            \multicolumn{2}{c|}{Treinamento} & \multicolumn{2}{c|}{Teste} & \multicolumn{2}{c}{Validade} \\
+            \hline
+            Início & Fim & Início & Fim & Início & Fim \\
+            \hline
+            01/01/2013 & 31/03/2018 & 01/04/2018 & 31/12/2018 & 01/01/2019 & 31/03/2019 \\
+            01/04/2013 & 30/06/2018 & 01/07/2018 & 31/03/2019 & 01/04/2019 & 30/06/2019 \\
+            01/07/2013 & 30/09/2018 & 01/10/2018 & 30/06/2019 & 01/07/2019 & 30/09/2019 \\
+            01/10/2013 & 31/12/2018 & 01/01/2019 & 30/09/2019 & 01/10/2019 & 31/12/2019 \\
+            01/01/2014 & 31/03/2019 & 01/04/2019 & 31/12/2019 & 01/01/2020 & 31/03/2020 \\
+            \hdashline
+            01/04/2014 & 30/06/2019 & 01/07/2019 & 31/03/2020 & 01/04/2020 & 30/06/2020 \\
+            01/07/2014 & 30/09/2019 & 01/10/2019 & 30/06/2020 & 01/07/2020 & 30/09/2020 \\
+            01/10/2014 & 31/12/2019 & 01/01/2020 & 30/09/2020 & 01/10/2020 & 31/12/2020 \\
+            01/01/2015 & 31/03/2020 & 01/04/2020 & 31/12/2020 & 01/01/2021 & 31/03/2021 \\
+            01/04/2015 & 30/06/2020 & 01/07/2020 & 31/03/2020 & 01/04/2021 & 30/06/2021 \\
+            01/07/2015 & 30/09/2020 & 01/10/2020 & 30/06/2020 & 01/07/2021 & 30/09/2021 \\
+            01/10/2015 & 31/12/2020 & 01/01/2021 & 30/09/2021 & 01/10/2021 & 31/12/2021 \\
+        \end{tabular}
+        \caption{WFA - Intervalos de treinamento, teste e validade dos modelos}
+        \label{tab:17}
+    \end{center}
+\end{table}
+
+
+\FloatBarrier
+\subsection{\textit{Datasets} e \textit{Feature Selection}}
+\label{sub:dataset_gen}
+
+\paragraph{} Os \textit{datasets} são arquivos CSV criados para cada \textit{ticker} através de uma varredura da série histórica. Registra-se dia após dia as \textit{features} acumuladas e o resultado de uma operação hipotética iniciada no dia corrente. A Tabela \ref{tab:7} mostra a lista das \textit{features} relevantes do arquivo, onde as linhas marcadas em negrito indicam as colunas utilizadas na entrada de dados dos modelos. A coluna Resultado da Operação indica a saída observada para o treinamento supervisionado.
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ l|c|c }
+            Nome & Coluna & Tipo \\
+            \hline
+            \textit{Ticker} & ticker & \textit{string} \\
+            Início da Operação & day & \textit{datetime} \\
+            \textbf{Risco da Operação} & risk & \textit{float} \\
+            \textbf{Resultado da Operação} & success\_oper\_flag & \textit{boolean} \\
+            \textit{Flag} de Fim de Intervalo & end\_of\_interval\_flag & \textit{boolean} \\
+            \textbf{Derivada Preço Médio} & mid\_prices\_dot & \textit{float} \\
+            \textbf{\textit{Spearman} (5 dias)} & spearman\_corr\_5\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (10 dias)} & spearman\_corr\_10\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (15 dias)} & spearman\_corr\_15\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (20 dias)} & spearman\_corr\_20\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (25 dias)} & spearman\_corr\_25\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (30 dias)} & spearman\_corr\_30\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (35 dias)} & spearman\_corr\_35\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (40 dias)} & spearman\_corr\_40\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (50 dias)} & spearman\_corr\_50\_day & \textit{float}: Preço Médio, f(x)=x \\
+            \textbf{\textit{Spearman} (60 dias)} & spearman\_corr\_60\_day & \textit{float}: Preço Médio, f(x)=x \\
+        \end{tabular}
+        \caption{Comparação de Resultados}
+        \label{tab:7}
+    \end{center}
+\end{table}
+
+\paragraph{} O termo preço médio se refere ao definido pela Equação \ref{eq:22}. Da mesma forma, a derivada do preço médio é indicada pela Equação \ref{eq:23}. As colunas de cujos nomes se iniciam com \textit{Spearman} são na verdade a correlação entre o vetor de preços médios dos últimos N dias acumulados e uma função puramente monotônica crescente \begin{math} f(x) = x \end{math}. Isso permite a extração de uma medida para intensidade de subida dos preços que independe do valor absoluto do preço de um ativo. Como o que importa na correlação de Spearman são os postos, o valor númerico do vetor utilizado para representar a função \begin{math} f(x) = x \end{math} não tem relevância, desde que seja monotônico crescente.
+
+\paragraph{} O \textit{flag} de fim de intervalo indica que, pelo fato do \textit{dataset} ter chegado ao final, não é possível dizer se a operação foi de sucesso ou foi de falha, portanto a mesma é desconsiderada do treinamento.
+
+\paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Portanto, foram utilizadas ao total 119 valores de risco: de 0,2\% a 12\% em passos de 0,1\%.
+
+
+
+\FloatBarrier
+\subsection{Índice de Lucratividade}
+
+\paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances de treinamento e de teste que acompanhe o contexto do problema. O impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
+
+\paragraph{} O Índice de Lucratividade é um coeficiente entre 0 e 1 onde 0 significa o pior resultado possível, isto é, aquele no qual o modelo errou todas as operações no \textit{dataset} de forma a trazer o maior prejuízo relativo, supondo que todos os aportes financeiros sejam fixos. Por outro lado, 1 significa o maior lucro que o modelo pode trazer se acertar todas as operações que o \textit{dataset} permite e não errar nenhuma outra. Nota-se que o valor do Índice que representa o lucro zero não é necessariamente 0.5, mas sim algum valor intermediário que precisa ser calculado e varia para cada \textit{dataset}. Portanto, essa métrica é útil para comparação de modelos que utilizem exatamente a mesma fonte de dados.
+
+\paragraph{} Seja A o número de operações de sucesso no \textit{dataset} (classe 1) e B o número de operações de falha (classe 0), pode-se definir \begin{math} S_a \end{math} como a soma dos riscos de todas as operações da classe 1 e \begin{math} S_b \end{math} a soma dos riscos de todas as operações da classe 0. Como os aportes são fixos, as somas dos riscos é na verdade sinônimo do lucro ou do prejuízo acumulado. Assim, a Equação \ref{eq:170} representa uma função linear responsável por mapear o lucro \begin{math} L_m \end{math} de um modelo no Índice de Lucratividde.
+
+\begin{equation} \label{eq:170}
+    I_{L} = \dfrac{1}{(S_a - S_b)}L_m - \dfrac{S_b}{(S_a - S_b)}
+\end{equation}
+
+\paragraph{} A partir da matriz de confusão na Tabela \ref{tab:672}, pode-se definir o lucro \begin{math} L_m \end{math} através da Equação \ref{eq:171}, onde VP é a contagem de verdadeiros positivos do modelos e FP é a contagem de falsos positivos. Cada VP representa uma tentativa bem sucedida de operação que já daria certo, portanto há um ganho de +3X, onde X é um valor genérico irrelevante. Cada FP, por outro lado, representa uma tentativa de sucesso em uma operação que na verdade falhou, contribuindo para uma perda de -X. Falsos negativos (FN) e verdadeiros negativos (VN) são desconsiderados do cálculo pois como não geram operações, uma vez que a aposta está na crença de que a suposta operação falharia, nenhum aporte é feito.
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ cc|c|c }
+                Classe  & & \multicolumn{2}{c}{Esperada} \\
+                        & & Positivo (1) & Negativo (0) \\
+            \hline
+            \parbox[t]{2mm}{\multirow{2}{*}{\rotatebox[origin=c]{90}{Real}}} & Positivo (1) & VP (+3X) & FN (0X) \\
+            & Negativo (0) & FP (-X) & VN (0X) \\
+        \end{tabular}
+        \caption{Matriz de Confusão}
+        \label{tab:672}
+    \end{center}
+\end{table}
+
+
+\begin{equation} \label{eq:171}
+    L_m = 3 \times VP - FP
+\end{equation}
+
+\paragraph{} Por fim, o valor do Índice que representa o lucro zero pode ser encontrado a partir da Equação \ref{eq:170}, basta impor a condição \begin{math} L_m=0 \end{math} (Equação \ref{eq:172}).
+
+\begin{equation} \label{eq:172}
+    I_{L_0} = - \dfrac{S_b}{(S_a - S_b)}
+\end{equation}
+
+
+
+\FloatBarrier
+\subsection{Balanceamento de Classes}
+
+\paragraph{} Devido ao desbalanceamento dos \textit{datasets} utilizados, que pode chegar até cerca de 90\% de operações de falha contra 10\% de operações de sucesso, faz-se imprescindível alguma técnica de balanceamento mencionada na Seção \ref{sub:class_prob}: \textit{undersampling}, \textit{oversampling} ou CSL. A natureza do problema também deve ser levada em consideração, pois um simples balanceamento via CSL daria a mesma importância à predição dos acertos e das falhas, no entanto o impacto de um acerto por parte do modelo gera um ganho de 3X para a carteira e uma falha gera uma perda de -X para os mesmos X apostados.
+
+\paragraph{} Levando em consideração as questões levantadas, optou-se por um balanceamento em cascada de 2 níveis:
+
+\begin{itemize}
+    \item \textit{Undersampling} via \textit{Tomek Links}\footnote{Algoritmo que remove amostras da classe majoritária via identificação de \textit{links}. Um \textit{link} entre a amostra A da classe 1 e a amostra B da classe 2 é encontrado se o vizinho mais próximo de A é B e vice-versa \cite{he2013imbalanced}.}, de cujo impacto na proporção das classes é muito pequeno.
+    \item CSL levando em considerações o número de amostras e o impacto das classes para a carteira (Tabela \ref{tab:8}).
+\end{itemize}
+
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ l|c|c|c }
+            Classe & Amostras & Peso p/ Carteira & Balanceamento \\
+            \hline
+            Op. de Falha (Classe 0) & \begin{math} N_0 \end{math} & 1 & \begin{math} \dfrac{(1/4)N_1}{(N_0+(1/4)N_1)} \end{math} \\
+            Op. de Sucesso (Classe 1) & \begin{math} N_1 \end{math} & 4 & \begin{math} \dfrac{N_0}{(N_0+(1/4)N_1)} \end{math} \\
+        \end{tabular}
+        \caption{Balanceamento via CSL}
+        \label{tab:8}
+    \end{center}
+\end{table}
+
+
+\FloatBarrier
+\subsection{Geração de Modelos}
+\label{sub:models_gen}
+
+\paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit}. Para a escolha do modelo a ser utilizado na simulação final, diversos outros modelos temporários foram criados e excluídos a fim de se selecionar apenas o melhor. Todos modelos temporários compartilham os parâmetros fixos indicados pela Tabela \ref{tab:15}, porém diferem quanto aos parâmetros variáveis da Tabela \ref{tab:16} ou quanto às sementes aleatórias utilizadas. A lógica de criação dos modelos pode ser interpretada da seguinte forma:
+
+\begin{itemize}
+    \item Para cada um dos 71 \textit{tickers} da carteira (Tabela \ref{tab:5}), o período completo de simulação vai de 01/01/2019 a 31/12/2021 e é dividido em 12 intervalos de 3 meses (WFA).
+
+    \item Cada intervalo de 3 meses de simulação é governado pelo melhor modelo de ML criado previamente.
+
+    \item Por trás de cada modelo final selecionado existem 100 modelos temporários organizados em dois níveis: parâmetros variáveis e sementes aleatórias.
+
+    \item O primeiro nível de diferenciação é dado parâmetros variáveis da Tabela \ref{tab:16}, ou seja, as combinações entre \textit{max\_depth} e \textit{max\_features}, que geram os 10 pares (3, 3), (3, 4), (4, 3), (4, 4), ..., (7, 4).
+
+    \item Para cada par criado, são criados 10 modelos com 10 sementes aleatórias diferentes.
+
+    \item O modelo final escolhido possui os mesmos parâmetros do grupo de 10 modelos de sementes aleatórias diferentes que possuir o maior \begin{math} I_L / \sigma_{I_L} \end{math}.
+\end{itemize}
+
+\begin{table}[!htb]
+    \begin{center}
+        \begin{tabular}{ l|c }
+            Parâmetro & Valor \\
+            \hline
+            n\_estimators & 200 \\
+            criterion & gini \\
+            min\_samples\_split & 24 \\
+            min\_samples\_leaf & 12 \\
+            min\_weight\_fraction\_leaf & 0.0 \\
+            max\_leaf\_nodes & None \\
+            min\_impurity\_decrease & 0.0 \\
+            bootstrap & True \\
+            oob\_score & False \\
+            warm\_start & False \\
+            % class\_weight & balanced\_subsample \\
+            ccp\_alpha & 0.0 \\
+            max\_samples & None \\
+        \end{tabular}
+        \caption{Parâmetros fixos}
+        \label{tab:15}
+    \end{center}
+\end{table}
+
+\begin{table}[!htb]
+    \begin{center}
+        \begin{tabular}{ l|c }
+            Parâmetro & Valor \\
+            \hline
+            max\_depth & [3, 4, 5, 6, 7] \\
+            max\_features & [3, 4] \\
+        \end{tabular}
+        \caption{Parâmetros variáveis}
+        \label{tab:16}
+    \end{center}
+\end{table}
+
+\paragraph{} A Figura \ref{fig:580} ilustra a lógica de criação dos modelos apresentada através de um diagrama.
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{models_chart.png}
+    \centering
+    \caption{Diagrama de criação de modelos}
+    \label{fig:580}
+\end{figure}
+
+
+
+
+\FloatBarrier
+\subsection{Modelo \textit{Baseline}}
+\label{sub:baseline}
+
+\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média de performance das ações da carteira, ou seja, supondo-se que o capital inicial fosse igualmente distribuido em cada ação disponível, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
+
+\paragraph{} A Figura \ref{fig:170} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se a diferença de performance do \textit{baseline} para o iBovespa, o que é razoável já que o \textit{baseline} tem composição fixa e o iBovespa tem uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência. A Tabela \ref{tab:12} mostra os indicadores de performance para o modelo \textit{baseline}.
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{baseline_raw.png}
+    \centering
+    \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021}
+    \label{fig:170}
+\end{figure}
+
+\begin{table}[!htb]
+    \begin{center}
+        \begin{tabular}{ cccc }
+            Rend. Final & Volatilidade & Sharpe & Sortino \\
+            \hline
+            73,94\% & 55,48\% & 0,68 & 0,74 \\
+        \end{tabular}
+        \caption{\textit{Baseline} - Indicadores de Performance}
+        \label{tab:12}
+    \end{center}
+\end{table}
+
 
 
 
@@ -508,7 +768,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     Risk_{operation} = Risk_{min} + Risk_{coef}(Risk_{max} - Risk_{min})
 \end{equation}
 
-\paragraph{} A Figura \ref{fig:553} resume as simulações cujos valores de Risco de Entrada estão no intervalo fechado [0.10, 0.70]. Foram utilizados os 71 \textit{tickers} da Tabela \ref{tab:5} no período de 01/01/2019 a 31/03/2020 sem qualquer otimização. Utilizou-se um RCC de 0,10\% para evitar saturação de capital. Nota-se que o ponto de máximo para os três indicadores de performance coincidiu para o Risco de Entrada de 0,43.
+\paragraph{} A Figura \ref{fig:553} resume as simulações cujos valores de Risco de Entrada estão no intervalo fechado [0.10, 0.70]. Foram utilizados os 71 \textit{tickers} da Tabela \ref{tab:5} no período de 01/01/2019 a 31/03/2020, além do Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}). Utilizou-se um RCC de 0,10\% apenas para evitar saturação de capital. Nota-se que o ponto de máximo para o índice de Sharpe e o índice de Sortino coincidiu para o Risco de Entrada de 0,43, que será o valor escolhido para as simulações seguintes. Apesar do ponto de máximo do rendimento final indicar o parâmetro de 0,25, este valor não será considerado pois o índice de Sharpe é uma alternativa mais robusta que engloba o anterior e considera também outros efeitos.
 
 % ID: [1, 100]
 \begin{figure}[!htb]
@@ -547,74 +807,66 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para os 71 \textit{tickers} da Tabela \ref{tab:5}. Utilizou-se um Risco de Entrada por Operação de 0,29. Nota-se no início do gráfico uma região de máximos locais em cada indicador, seguido por uma pequena queda até retomar novamente a subida dos valores. Percebe-se também que por volta do RCC de 1,88\%, o uso de capital está quase saturando.
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para diversas simulações. Foi considerado o período de 01/01/2019 a 31/03/2020, os 71 \textit{tickers} da Tabela \ref{tab:5}, o Risco de Entrada por Operação de 0,43 (refinado na Seção \ref{sub:operation_risk}) e o Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}). Notam-se duas regiões de máximos locais no início e no fim do gráfico, onde os valores de RCC são 0,11\% e 6,10\%, respectivamente. Percebe-se também que a partir do RCC de 1,00\%, o uso médio de capital por estratégia começa a saturar e o número percentual de operações totais começa a cair significativamente. Este efeito ocorre devido à falta de capital disponível para novas operações em momentos de saturação. Ou seja, quanto mais a direita no gráfico, menos operações são efetuadas e maior é o desvio padrão do capital de aporte nas operações restantes.
 
-% Nota-se que abaixo do valor de RCC de aproximadamente 2,5\%, tanto o rendimento final quando índice de Sharpe e de Sortino estão crescentes, apesar das oscilações. Após esse valor, ambos possuem ainda uma subida, porém ao custo de bastante instabilidade.
-
-% ID: [191, 488] + [641, 642]
+% ID: [62, 181]
 \begin{figure}[!htb]
-    \includegraphics[scale=0.80]{performance_per_rcc_2.png}
+    \includegraphics[scale=0.80]{performance_per_rcc.png}
     \centering
-    \caption{Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/12/2021)}
+    \caption{Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/03/2020)}
     \label{fig:550}
 \end{figure}
 
-\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de uso de capital para as simulações de RCC=0.29\% e RCC=1,88\% (Figuras \ref{fig:551} e \ref{fig:552}, respectivamente). Nota-se o efeito de saturação causado pelo aumento significativo do RCC, que reduziu o número de operações totais de 3972 para 3390 pela falta de capital disponível em alguns intervalos. Por outro lado, operações longe da saturação receberam mais capital e como estas são mais expressivas, a performance geral foi maior.
-% Antes era: "... reduziu o número de operações totais de 379 para 302 pela ..."
+\paragraph{} A Tabela \ref{tab:465} mostra uma análise estatística do capital de entrada em operações para ambas as regiões de máximo local. Conforme esperado, o devio padrão cresce bastante, o que mostra que as operações estão com um aporte de capital elevadíssimo e assim que são finalizadas, o primeiro modelo da fila a indicar compra recebe quase todo o capital disponível. Por outro lado, tanto as operações que antes seriam finalizadas com sucesso quanto as que seriam finalizadas com falha são igualmente prejudicadas.
 
-% \begin{figure}[!htb] % ID 315
-%     \includegraphics[scale=0.50]{rcc_capital_usage_08.png}
-%     \centering
-%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 0,8\%)}
-%     \label{fig:551}
-% \end{figure}
+\begin{table}[h!]
+    \begin{center}
+        \begin{tabular}{ c|c|cc }
+            RCC & Uso Médio         & Média de Capital          & Desvio Padrão do Capital \\
+                & de Capital Geral  & de Entrada por Operação   & de Entrada por Operação \\
+                % &  & por Operação & por Operação \\
+            \hline
+            0,11\% & 56,85\% & R\$1188,89 & R\$449,74 \\
+            6,10\% & 99,64\% & R\$4304,55 & R\$26584,57 \\
+        \end{tabular}
+        \caption{Análise estatística do capital de entrada em operações para as regiões de máximo local}
+        \label{tab:465}
+    \end{center}
+\end{table}
 
-% \begin{figure}[!htb] % ID 345
-%     \includegraphics[scale=0.50]{rcc_capital_usage_20.png}
-%     \centering
-%     \caption{Uso de Capital (20 tickers, 01/01/2019 a 31/12/2021, RCC = 2,0\%)}
-%     \label{fig:552}
-% \end{figure}
+\paragraph{} Pode-se caracterizar o primeiro pico (RCC de 0,11\%) como uma região de predominância mais uniforme dos modelos gerados, pois toda ordem de compra é acatada com capitais de entrada razoavelmente próximos entre si. O custo disso são os baixos valores dos indicadores de performance. Já o segundo pico (RCC de 6,10\%) está situado na região de melhor performance, porém é onde a clareza operacional dos modelos pode ser questionada, pois não é fácil distinguir o quanto o efeito aparentemente aleatório da alavancagem de algumas operações em detrimento de outras entrou em simbiose com a operação dos modelos gerados.
 
-\begin{figure}[!htb] % ID: 217
-    \includegraphics[scale=0.650]{rcc_capital_usage_00029.png}
+\paragraph{} Dentre as execuções que compõem a Figura \ref{fig:550}, extraiu-se os gráficos de rendimento e de uso de capital para as simulações de RCC=0.11\% e RCC=6,01\% (Figuras \ref{fig:551}, \ref{fig:552}, \ref{fig:789} e \ref{fig:790}, respectivamente). Assim, é possível verificar visualmente as questões levantadas.
+
+\begin{figure}[!htb] % ID: 73
+    \includegraphics[scale=0.50]{performance_rcc_0_11p.png}
     \centering
-    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 0,29\%)}
+    \caption{Rendimento (71 tickers, 01/01/2019 a 31/03/2020, RCC = 0,11\%)}
     \label{fig:551}
 \end{figure}
 
-\begin{figure}[!htb] % ID: 376
-    \includegraphics[scale=0.650]{rcc_capital_usage_00188.png}
+\begin{figure}[!htb] % ID: 172
+    \includegraphics[scale=0.50]{performance_rcc_6_1p.png}
     \centering
-    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/12/2021, RCC = 1,88\%)}
+    \caption{Rendimento (71 tickers, 01/01/2019 a 31/03/2020, RCC = 6,10\%)}
     \label{fig:552}
 \end{figure}
 
-\paragraph{} Um problema geral e inerente à abordagem do RCC é a necessidade do conhecimento \textit{a priori} de um valor razoável. Ou seja, sem algumas simulações prévias, não há como se saber um valor ótimo ou pelo menos próximo do ótimo. Uma forma de se atenuar esse problema é através da criação de um controle proporcional que aumente o RCC geral em função do baixo aproveitamento do uso de capital ao longo dos dias e vice-versa. Essa alternativa também é chamada de RCC Dinâmico e abordada em mais detalhes na Seção \ref{sub:dynamic_rcc}.
+\begin{figure}[!htb] % ID: 73
+    \includegraphics[scale=0.50]{rcc_capital_usage_0_11p.png}
+    \centering
+    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/03/2020, RCC = 0,11\%)}
+    \label{fig:789}
+\end{figure}
 
-% \paragraph{} A alta sensibilidade \textit{a priori} da performance em relação ao RCC é um condição indesejável. Da mesma forma, uma melhor distribuição do uso de capital ao longo do período de simulação inspirou a criação de um RCC Dinâmico, que é tratado em detalhes na Seção \ref{sub:dynamic_rcc} por se tratar de uma otimização.
+\begin{figure}[!htb] % ID: 172
+    \includegraphics[scale=0.50]{rcc_capital_usage_6_10p.png}
+    \centering
+    \caption{Uso de Capital (71 tickers, 01/01/2019 a 31/03/2020, RCC = 6,10\%)}
+    \label{fig:790}
+\end{figure}
 
-% \paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolvem as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
-
-% \begin{table}[h!]
-%     \begin{center}
-%         \begin{tabular}{ cccccccc }
-%             \multicolumn{8}{c}{Ações Escolhidas (71)} \\
-%             \hline
-%             ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
-%             BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
-%             CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
-%             DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
-%             ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
-%             ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
-%             MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
-%             RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
-%             UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
-%         \end{tabular}
-%         \caption{Ações Escolhidas}
-%         \label{tab:5}
-%     \end{center}
-% \end{table}
+\paragraph{} Um problema geral e inerente à abordagem do RCC é a necessidade do conhecimento \textit{a priori} de um valor razoável. Ou seja, sem algumas simulações prévias, não há como se ter indícios de um valor refinado. Uma proposta para se atenuar esse problema é através da criação de um controle proporcional que aumente o RCC geral em função do baixo aproveitamento do uso de capital ao longo dos dias e vice-versa. Essa alternativa também é chamada de RCC Dinâmico e abordada em mais detalhes na Seção \ref{sub:dynamic_rcc}.
 
 
 
@@ -622,20 +874,18 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 \subsection{Controle Proporcional para Uso de Capital}
 \label{sub:dynamic_rcc}
 
-% \paragraph{} A criação de um RCC como ferramenta de gerenciamento de risco (ver Seção \ref{sub:risk_man}) não resolve o problema de subaproveitamento do Uso de Capital da carteira ao longo do período de simulação. Entende-se por subaproveitamento a parcela de capital ocioso que, por não estar empregado em nenhum ativo, resulta em uma perda de performance geral.
-
-\paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco (Seção \ref{sub:risk_man}), mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode ser obtido através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser significativamente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, um RCC fixo pode levar a problemas de subaproveitamento do Uso de Capital da carteira.
+\paragraph{} A criação de um RCC fixo pode ser interessante do ponto de vista de Gerenciamento de Risco, mas na prática deixa um pouco a desejar por requerer uma noção prévia de um valor adequado. Esse valor só pode vislumbrado através de simulações anteriores ao período desejado, onde o comportamento do mercado pode ser significativamente diferente a ponto de requerer um novo RCC, dificultando um bom ajuste. Em outras palavras, apenas um RCC fixo pode levar a problemas de subaproveitamento do Uso de Capital da carteira.
 
 \paragraph{} Uma forma de se atenuar esse problema é através da criação de um RCC Dinâmico, configurado através de um Controle Proporcional. A vantagem dessa abordagem está na diminuição da sensibilidade do RCC em relação à performance geral, permitindo um ajuste menos preciso sem grande impacto de performance. O Controle atua no rebalanceamento de capital em função do uso médio de capital vigente, ou seja, períodos com mais disponibilidate de capital terão uma maior alavancagem.
 
-\paragraph{} As Equações \ref{eq:100} e \ref{eq:101} mostram o cálculo do erro e do RCC dinâmico (\begin{math} RCC_{din} \end{math}) a partir do valor de referência para o uso médio de capital (\begin{math} C_{ref} \end{math}), do uso médio de capital dos últimos 10 dias de simulação (\begin{math} \overline{C_{10d}} \end{math}), do RCC fixo (\begin{math} RCC_{fix} \end{math}, definido pela Equação \ref{eq:60}) e da constante de ganho proporcional (\begin{math} K \end{math}).
+\paragraph{} As Equações \ref{eq:100} e \ref{eq:101} mostram o cálculo do erro e do RCC dinâmico (\begin{math} RCC_{din} \end{math}) a partir do valor de referência para o uso médio de capital (\begin{math} C_{ref} \end{math}), do uso médio de capital dos últimos 10 dias de simulação (\begin{math} \overline{C_{10d}} \end{math}), do RCC fixo (\begin{math} RCC \end{math}, definido pela Equação \ref{eq:60}) e da constante de ganho proporcional (\begin{math} K \end{math}).
 
 \begin{equation} \label{eq:100}
-    e = C_{ref} - \overline{C_{10d}}, \quad \mbox{para } 0 \le C_{ref}, \overline{C_{10d}} \le 1
+    e = C_{ref} - \overline{C_{10d}}, \quad \mbox{para } 0 \le C_{ref}\le 1, \mbox{e } 0 \le \overline{C_{10d}} \le 1
 \end{equation}
 
 \begin{equation} \label{eq:101}
-    RCC_{din} = RCC_{fix} (1 + K e)
+    RCC_{din} = RCC (1 + K e)
 \end{equation}
 
 % \paragraph{} Foi utilizado \begin{math} C_{ref} = 1.0 \end{math}, \begin{math} K = 10 \end{math} e \begin{math} RCC_{fix} = 0.003 \end{math}
@@ -686,30 +936,51 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 %     \end{center}
 % \end{table}
 
-\paragraph{} As Figuras \ref{fig:152}, \ref{fig:153} e \ref{fig:154} apresentam indicadores de performance para valores de RCC e de K diferentes. Foram utilizados na simulação os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Cada curva é composta por um conjunto de simulações diferentes que compartilham entre si o mesmo produto \begin{math} RCC \times K \end{math}. Dessa forma, é possível acoplar em um único parâmetro duas variáveis que influem diretamente no rendimento e no uso de capital. Consequentemente, também facilita a avaliação do grau de importância que cada uma dessas variáveis apresenta.
+\paragraph{} A fim de simplificar a análise, o valor de \begin{math} C_{ref} \end{math} foi configurado como 100\%, deixando o processo de refinamento para os parâmetros RCC e K. Como ambos influenciam diretamente o uso de capital e todos os indicadores de performance, foram acoplados e analisados conjuntamente através das curvas de \begin{math} RCC \times K \end{math}.
 
-\paragraph{} Dando prosseguimento à análise, primeiro pode-se observar nas Figuras \ref{fig:152} e \ref{fig:153} que a curva que apresentou o maior rendimento foi a de \begin{math} RCC \times K = 0,75 \end{math}. Isso mostra que forçar a estratégia além desse valor não é vantajoso. As curvas imediatamente próximas (0,85; 0,80; 0,70; 0,65) também se distribuiram consistentemente logo no entorno da anterior, indicando que não se trata de uma anormalidade e sim uma região de máximo (aproximadamente, devido à discretização).
+\paragraph{} As Figuras \ref{fig:152}, \ref{fig:153} e \ref{fig:154} apresentam indicadores de performance para valores de RCC e de K diferentes. Nessas simulações foram utilizados os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/03/2020, junto com o Risco de Entrada por Operação de 0,43 (refinado na Seção \ref{sub:operation_risk}) e o Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}).
 
-\paragraph{} A segunda observação importante é que o aumento do valor de K, mesmo que linearmente balanceado pela diminuição do RCC, traz uma melhoria de performance enquanto o contrário piora os resultados.
+\paragraph{} A primeira e mais notório observação que se pode fazer pelas Figuras \ref{fig:152} e \ref{fig:153} é que a região de melhor performance se encontra com baixo RCC e alto K. Também é possível verificar que o aumento graduau das curvas \begin{math} RCC \times K \end{math} encontrou um comportamento assintótico a partir de 1,40 (curva em marrom).
 
-\paragraph{} Já observando a Figura \ref{fig:154}, nota-se que o produto \begin{math} RCC \times K \end{math} possui relação direta com o uso médio de capital. O fato da curva mais performática (\begin{math} RCC \times K = 0,75 \end{math}) não ser a de maior uso médio de capital indica que também há a necessidade de uma pequena parcela de capital ocioso para uma boa fluidez da estratégia, neste caso um valor próximo de 2,7\%.
+\paragraph{} De forma semelhante ao comportamento observado na Seção \ref{sub:risk_man}, a Figura \ref{fig:154} mostra a tendência de saturação do uso médio de capital com o aumento do RCC e a suavização desse efeito que ocorre ao se diminuir a importância do RCC e aumentar a do K. Já a Figura \ref{fig:155} deixa claro que tanto aumentando o RCC quanto o K, em algum momento o número de operações totais cairá, porém é visível a presença de um ponto de máximo na região de \begin{math} K=500 \end{math} e \begin{math} RCC=[0,08\%; 0,40\%] \end{math} em cada curva.
 
-\paragraph{} O objetivo central desta análise é encontrar um conjunto de valores otimizados para RCC e K. No entanto, as Figuras \ref{fig:152} e \ref{fig:153} dão a entender que um K tendendo ao infinito, aliado a um RCC tendendo a zero seria a solução. O problema que ocorre em decorrência desta linha de raciocínio é mostrado através da Figura \ref{fig:155}, onde se pode ver uma queda acentuada do número de operações totais efetuadas pelas estratégias. Em um regime longe de saturação, as mesmas estratégias simuladas possuem todas 3972 operações totais. No entanto, a estratégia com maior índice de Sharpe da Figura \ref{fig:153}, onde \begin{math} RCC \times K = 0,75 \end{math}, possui 3145 operações. Isso significa que 20,8\% de operações foram perdidas por ausência de capital de entrada devido à saturação. Como não há nenhum critério envolvido, tanto as operações de sucesso quando as de falha são perdidas em igual proporção, não afetando muito a performance final neste caso.
+% Falar do comportamento assintotico e escolha do RCCxK = 1,8
 
-\paragraph{} Contudo, a escolha de um valor de K excessivamente grande pode levar o número de operações totais para um valor baixo o suficiente para gerar instabilidades indesejáveis na performance. Isso ocorreria pois um \textit{ticker} que em determinado momento comprar um papél monopolizará praticamente todo o capital disponível até que ele decida vender. Tal comportamento é válido e até poderia se mostrar bastante lucrativo e confiável em determinados contextos através de um estudo mais aprofundado. Porém, isto foge ao escopo deste projeto, que foca na utilização de aprendizado de máquina como o elemento central por trás da performance das estratégias.
+\paragraph{} Um segundo reflexo do efeito mencionado de suavização da saturação de capital através do aumento do K se faz presente na dimnuição do desvio padrão do capital de entrada por operação. Assim como foi tratado na Seção \ref{sub:risk_man} pela Tabela \ref{tab:465}, a Tabela \ref{tab:466} mostra os valores de média e desvio padrão do capital de entrada por operação, porém neste caso para as simulações de \begin{math} RCC \times K = 1,80 \end{math}.
 
-\paragraph{} Desta forma, escolheu-se o valor de \begin{math} RCC = 0,000025 \end{math} e \begin{math} K = 30000 \end{math}, representados pelo maior índice de Sharpe na Figura \ref{fig:153}. Conforme mencionado anteriormente, esta escolha admite uma perda de 20,8\% no número de operações. % Estratégia escolhida: ID 668
+\begin{table}[h!]
+    \begin{center}
+        \resizebox{\textwidth}{!}{
+        \begin{tabular}{ c|c|c|cc }
+            RCC & K & Uso Médio         & Média de Capital          & Desvio Padrão do Capital \\
+                & K & de Capital Geral  & de Entrada por Operação   & de Entrada por Operação \\
+            \hline
+            0,11\% & - & 56,85\% & R\$1188,89 & R\$449,74 \\
+            6,10\% & - & 99,64\% & R\$4304,55 & R\$26584,57 \\
+            \hline
+            0,000576\% & 312500 & 0.9721 & R\$2411,92 & R\$12306,90 \\
+            0,002880\% & 62500 & 0.9725 & R\$2485,83 & R\$12107,00 \\
+            0,014400\% & 12500 & 0.9767 & R\$2509,47 & R\$10650,77 \\
+            0,072000\% & 2500 & 0.9798 & R\$2396,77 & R\$9554,60 \\
+            0,360000\% & 500 & 0.9846 & R\$2332,00 & R\$7446,53 \\
+            1,800000\% & 100 & 0.9896 & R\$2533,79 & R\$8617,72 \\
+        \end{tabular}}
+        \caption{Análise estatística do capital de entrada em operações para \begin{math} RCC \times K = 1,80 \end{math}}
+        \label{tab:466}
+    \end{center}
+\end{table}
 
-% Total de operações sem saturação: 3972
-% ID: [643, 705]
+% Estratégia escolhida: ID 226
+
+% ID: [182, 235]
 \begin{figure}[!htb]
     \includegraphics[scale=0.70]{yield_per_rcc_k.png}
     \centering
-    \caption{Rendimento sob uso de RCC dinâmico}
+    \caption{Rendimento final sob uso de RCC dinâmico}
     \label{fig:152}
 \end{figure}
 
-% ID: [643, 705]
+% ID: [182, 235]
 \begin{figure}[!htb]
     \includegraphics[scale=0.70]{sharpe_per_rcc_k.png}
     \centering
@@ -717,7 +988,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:153}
 \end{figure}
 
-% ID: [643, 705]
+% ID: [182, 235]
 \begin{figure}[!htb]
     \includegraphics[scale=0.70]{avgcap_per_rcc_k.png}
     \centering
@@ -725,7 +996,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:154}
 \end{figure}
 
-% ID: [643, 705]
+% ID: [182, 235]
 \begin{figure}[!htb]
     \includegraphics[scale=0.70]{totalop_per_rcc_k.png}
     \centering
@@ -733,6 +1004,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:155}
 \end{figure}
 
+\paragraph{} Por fim, chama-se atenção para dois pares de valores de \begin{math} RCC \times K \end{math}. O primeiro par é mostrado pela curva \begin{math} RCC \times K = 1,80 \end{math} no ponto maior índice de Sharpe (\begin{math} RCC = 0,00288\%, K = 62500 \end{math}). Este curva foi escolhida, pois a partir de \begin{math} RCC \times K = 1,40 \end{math}, tanto o índice de Sharpe quanto o rendimento começam a apresentar um comportamento assintótico, não sendo necessário escolher uma curva de valor muito mais alto que este. Já o segundo par foi escolhido a partir do máximo local encontrado na curva \begin{math} RCC \times K = 0,40 \end{math} da Figura \ref{fig:155} (\begin{math} RCC = 0,08\%, K = 500 \end{math}).
 
 
 \FloatBarrier
@@ -765,7 +1037,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
         \hline
         \multicolumn{2}{|c|}{Fim da Tabela \ref{tab:3}} \\
         \hline
-        \caption{Lista de parâmetros detalhados\label{tab:3}}
+        \caption{Lista de parâmetros de simulação\label{tab:3}}
         \endlastfoot
 
         \hline
@@ -836,26 +1108,6 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \end{longtable}}
 \end{center}
 
-
-
-% \FloatBarrier
-% \subsection{Ensaios Paralelos}
-
-
-% \paragraph{} Alguns parâmetros não se mostraram eficazes em melhorar a performance das simulações, muito embora tenham se apresentado como alternativas plausíveis na resolução de problemas ao longo deste trabalho. São eles os parâmetros:
-
-% \begin{itemize}
-%     \item Venda Parcial (partial\_sale)
-%     \color{red} HERALDO: A motivação da criação desse parâmetro vem de uma prática do André como uma forma de auxiliar o fator psicológico do trader para os casos frustantes em que o mercado quase chega no preço de venda, mas depois cai e bate no stop. Ele não usa isso constantemente, mas deixa como uma opção. Venda parcial em uma operação é vender 50\% do volume de compra adquirido quando o preço bater uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra. Dessa forma, ao invés da operação ter um ganho de 3X para cada X de possível perda, ela teria um ganho de 2X para os mesmos X, mais os casos de saída sem prejuízo. A grande questão é que essa conta não compensa, seja quando eu estava tentando replicar a estratégia do André, seja com os modelos de ML agora, nunca trouxe um rendimento maior. \colorend
-
-%     \item Saídas Parcias (stop\_type = ``staircase")
-%     \color{red} HERALDO: É uma extensão que criei derivada da Venda Parcial para tentar granularizar um pouco mais o critério anterior e verificar se o problema da ineficácia estava na escolha do limiar de venda. Igualmente não traz melhora alguma. A ideia é: cada vez que o preço de marcado toca o limiar de uma unidade de risco (1un Risco = Pcompra - StopLoss) acima do preço de compra, o stop loss sobre igualmente 1 un de risco. Exemplo: se o preço de compra é Pcom e o Stop Loss é Pcom - X, quando o preço de mercado atingir Pcom + X, o Stop Loss sobe para Pcom. Quando subir de novo para Pcom + 2X, o Stop sobe para Pcom + X. O alvo continua sendo Pcom + 3X como sempre. \colorend
-
-%     \item Dias Mínimos de Espera após Operação de Falha (min\_days\_after\_failure\_operation)
-
-%     \item Dias Mínimos de Espera após Operação de Sucesso (min\_days\_after\_successful\_operation)
-%     \color{red} HERALDO: A motivação de ambos os parâmetros aqui era diminuir o ruído de entrada e saída em operações sequenciais que o modelo de ML arrisca, mas toda hora a operação é stopada. São regiões do gráfico que apresentam 2, 3, 4 operações de falha curtas e seguidas, eventualmente com uma de sucesso e já volta pra falha. Na minha interpretação, os motivos da existência dessas regiões tem a ver com a qualidade do modelo, porém mais especificamente com: (1) a semelhança forte do momento presente com um passado de treinamento onde houve muito sucesso, muito embora possa ser apenas coincidência; e (2) a escolha de um valor de risco de entrada muito baixo para a volatilidade atual do mercado, porém sufiente para o modelo arriscar a operação (pode se somar aqui o efeito indicado em (1)). Moral da história: algumas vezes funcionou (com modelos anteriores que já discartei), porém mesmo QUANDO funciona, é difícil ter clareza do número ótimo de dias para ambos os parâmetros. Digo isso pois acontece do valor de dias escolhido estar em uma região da curva instável onde a melhora do rendimento geral foi coincidência. A prova disso se dá quando você escolhe valores imediatamente próximos e verifica novos resultados discrepantes (simulando sempre com os 71 tickers em uma carteira de 100000 reais). Enfim, eles estão sempre aqui como opções, mas são são consistentes. \colorend
-% \end{itemize}
 
 
 
@@ -1113,231 +1365,8 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 
-\FloatBarrier
-\section{Modelos de Aprendizado Supervisionado}
 
 
-\FloatBarrier
-\subsection{Resumo}
-
-\paragraph{} A partir de \textit{datasets} previamente populados, modelos do tipo \textit{Random Forest} são gerados para cada ação a cada intervalo de 3 meses de simulação. Um critério particular de performance foi criado para auxiliar na escolha do melhor modelo, que é filtrado por uma varredura de diversos parâmetros.
-
-
-
-\FloatBarrier
-\subsection{\textit{Datasets} e \textit{Feature Selection}}
-\label{sub:dataset_gen}
-
-\paragraph{} Os \textit{datasets} são arquivos CSV criados para cada \textit{ticker} através de uma varredura da série histórica. Analisa-se dia após dia as \textit{features} acumuladas e o resultado de uma operação hipotética iniciada no dia corrente. A Tabela \ref{tab:7} mostra a lista de \textit{features} relevantes do arquivo, onde as linhas marcadas em negrito indicam as colunas utilizadas na entrada de dados dos modelos. A coluna Resultado da Operação indica a saída observada para o treinamento supervisionado.
-
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ l|c|c }
-            Nome & Coluna & Tipo \\
-            \hline
-            \textit{Ticker} & ticker & \textit{string} \\
-            Início da Operação & day & \textit{datetime} \\
-            \textbf{Risco da Operação} & risk & \textit{float} \\
-            \textbf{Resultado da Operação} & success\_oper\_flag & \textit{boolean} \\
-            \textit{Flag} de Fim de Intervalo & end\_of\_interval\_flag & \textit{boolean} \\
-            \textbf{Derivada Preço Médio} & mid\_prices\_dot & \textit{float} \\
-            \textbf{\textit{Spearman} (5 dias)} & spearman\_corr\_5\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (10 dias)} & spearman\_corr\_10\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (15 dias)} & spearman\_corr\_15\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (20 dias)} & spearman\_corr\_20\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (25 dias)} & spearman\_corr\_25\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (30 dias)} & spearman\_corr\_30\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (35 dias)} & spearman\_corr\_35\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (40 dias)} & spearman\_corr\_40\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (50 dias)} & spearman\_corr\_50\_day & \textit{float}: Preço Médio, f(x)=x \\
-            \textbf{\textit{Spearman} (60 dias)} & spearman\_corr\_60\_day & \textit{float}: Preço Médio, f(x)=x \\
-        \end{tabular}
-        \caption{Comparação de Resultados}
-        \label{tab:7}
-    \end{center}
-\end{table}
-
-\paragraph{} O termo preço médio se refere ao definido pela Equação \ref{eq:22}. Da mesma forma, a derivada do preço médio é indicada pela Equação \ref{eq:23}. As colunas de cujos nomes se iniciam com \textit{Spearman} são na verdade a correlação entre o vetor de preços médios dos últimos N dias acumulados e uma função puramente monotônica crescente \begin{math} f(x) = x \end{math}. Isso permite a extração de uma medida para intensidade de subida dos preços que independe da normalização pelo preço da ação. Como o que importa na correlação de Spearman são os postos, o valor númerico do vetor utilizado para representar a função \begin{math} f(x) = x \end{math} não tem relevância, desde que seja monotônico crescente.
-
-\paragraph{} O \textit{flag} de fim de intervalo indica que, pelo fato do \textit{dataset} ter chegado ao final, não é possível dizer se a operação foi de sucesso ou foi de falha, portanto a mesma é desconsiderada do treinamento.
-
-\paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Foram utilizadas 119 opções de risco: de 0,2\% a 12\% em passos de 0,1\%.
-
-
-
-\FloatBarrier
-\subsection{Índice de Lucratividade}
-
-% \paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances que acompanhe o contexto, pois não se trata de um simples problema de classificação de um \textit{dataset} balanceado onde ambas as classes possuem o mesmo peso perante o enredo no qual se inserem. Na verdade, o \textit{dataset} é bastante desbalanceado, chegando a casa dos 90\% de operações de falha em comparação às operações de sucesso em alguns casos. Além disso, o impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
-\paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances que acompanhe o contexto. O impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
-
-\paragraph{} O Índice de Lucratividade é um coeficiente entre 0 e 1 onde 0 significa o pior resultado possível, isto é, aquele no qual o modelo errou todas as operações no \textit{dataset} de forma a trazer o maior prejuízo possível. Por outro lado, 1 significa o maior lucro que o modelo pode trazer se acertar todas as operações que o \textit{dataset} permite. Nota-se que o valor do Índice que representa o lucro zero não é necessariamente 0.5, e sim algum valor intermediário que precisa ser fornecido durante o cálculo. Também é importante ressaltar que como os \textit{datasets} variam entre si, os valores de lucro zero também mudam, portanto a métrica é útil para criação de modelos que utilizem exatamente a mesma fonte de dados.
-
-\paragraph{} Seja A o número de operações de sucesso no \textit{dataset} (classe 1) e B o número de operações de falha (classe 0), pode-se definir \begin{math} S_a \end{math} como a soma dos riscos de todas as operações da classe 1 e \begin{math} S_b \end{math} a soma dos riscos de todas as operações da classe 0. Assim, a Equação \ref{eq:170} representa uma função linear responsável por mapear o lucro \begin{math} L_m \end{math} de um modelo no Índice de Lucratividde.
-
-\begin{equation} \label{eq:170}
-    I_{L} = \dfrac{1}{(S_a - S_b)}L_m - \dfrac{S_b}{(S_a - S_b)}
-\end{equation}
-
-\paragraph{} O lucro \begin{math} L_m \end{math} pode ser encontrado através da Equação \ref{eq:171}, onde TP é a contagem de verdadeiros positivos do modelos e FN é a contagem de falsos negativos. Falsos positivos e verdadeiros negativos são desconsiderados do cálculo pois como não geram operações, não trazem ganho ou perda alguma.
-
-\begin{equation} \label{eq:171}
-    L_m = 3 \times TP - FN
-\end{equation}
-
-\paragraph{} Por fim, o valor do Índice que representa o lucro zero pode ser encontrado a partir da Equação \ref{eq:170}, basta impor a condição \begin{math} L_m=0 \end{math} (Equação \ref{eq:172}).
-
-\begin{equation} \label{eq:172}
-    I_{L_0} = - \dfrac{S_b}{(S_a - S_b)}
-\end{equation}
-
-
-
-\FloatBarrier
-\subsection{Balanceamento de Classes}
-
-\paragraph{} Devido ao desbalanceamento dos \textit{datasets} utilizados, que pode chegar até cerca de 90\% de operações de falha contra 10\% de operações de sucesso, faz-se imprescindível alguma técnica de balanceamento mencionada na Seção \ref{sub:class_prob}: \textit{undersampling}, \textit{oversampling} ou CSL. A natureza do problema também deve ser levada em consideração, pois um simples balanceamento via CSL daria a mesma importância à predição dos acertos e das falhas, no entanto o impacto de um acerto por parte do modelo gera um ganho de 3X para a carteira e uma falha gera uma perda de -X para os mesmos X apostados.
-
-\paragraph{} Levando em consideração as questões levantadas, optou-se por um balanceamento em cascada de 2 níveis:
-
-\begin{itemize}
-    \item \textit{Undersampling} via \textit{Tomek Links}\footnote{Algoritmo que remove amostras da classe majoritária via identificação de \textit{links}. Um \textit{link} entre a amostra A da classe 1 e a amostra B da classe 2 é encontrado se o vizinho mais próximo de A é B e vice-versa \cite{he2013imbalanced}.}, de cujo impacto na proporção das classes é muito pequeno.
-    \item CSL levando em considerações o número de amostras e o impacto das classes para a carteira (Tabela \ref{tab:8}).
-\end{itemize}
-
-\begin{table}[h!]
-    \begin{center}
-        \begin{tabular}{ l|c|c|c }
-            Classe & Amostras & Peso p/ Carteira & Balanceamento \\
-            \hline
-            Op. de Falha (Classe 0) & \begin{math} N_0 \end{math} & 1 & \begin{math} \dfrac{(1/4)N_1}{(N_0+(1/4)N_1)} \end{math} \\
-            Op. de Sucesso (Classe 1) & \begin{math} N_1 \end{math} & 4 & \begin{math} \dfrac{N_0}{(N_0+(1/4)N_1)} \end{math} \\
-        \end{tabular}
-        \caption{Balanceamento via CSL}
-        \label{tab:8}
-    \end{center}
-\end{table}
-
-
-\FloatBarrier
-\subsection{Geração de Modelos}
-\label{sub:models_gen}
-
-\paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit}. Para a escolha do modelo a ser utilizado na simulação final, diversos outros modelos temporários foram criados e excluídos a fim de se selecionar apenas o melhor. Todos modelos temporários compartilham os parâmetros fixos indicados pela Tabela \ref{tab:15}, porém diferem quanto aos parâmetros variáveis da Tabela \ref{tab:16} ou quanto às sementes aleatórias utilizadas. A lógica de criação dos modelos pode ser interpretada da seguinte forma:
-
-\begin{itemize}
-    \item Para cada um dos 71 \textit{tickers} da carteira (Tabela \ref{tab:5}), o período completo de simulação vai de 01/01/2019 a 31/12/2021 e é dividido em 12 intervalos de 3 meses (WFA).
-
-    \item Cada intervalo de 3 meses de simulação é governado pelo melhor modelo de ML criado previamente.
-
-    \item Por trás de cada modelo final selecionado existem 100 modelos temporários organizados em dois níveis: parâmetros variáveis e sementes aleatórias.
-
-    \item O primeiro nível de diferenciação é dado parâmetros variáveis da Tabela \ref{tab:16}, ou seja, as combinações entre \textit{max\_depth} e \textit{max\_features}, que geram os 10 pares (3, 3), (3, 4), (4, 3), (4, 4), ..., (7, 4).
-
-    \item Para cada par criado, são criados 10 modelos com 10 sementes aleatórias diferentes.
-
-    \item O modelo final escolhido possui os mesmos parâmetros do grupo de 10 modelos de sementes aleatórias diferentes que possuir o maior \begin{math} I_L / \sigma_{I_L} \end{math}.
-\end{itemize}
-
-\begin{table}[!htb]
-    \begin{center}
-        \begin{tabular}{ l|c }
-            Parâmetro & Valor \\
-            \hline
-            n\_estimators & 200 \\
-            criterion & gini \\
-            min\_samples\_split & 24 \\
-            min\_samples\_leaf & 12 \\
-            min\_weight\_fraction\_leaf & 0.0 \\
-            max\_leaf\_nodes & None \\
-            min\_impurity\_decrease & 0.0 \\
-            bootstrap & True \\
-            oob\_score & False \\
-            warm\_start & False \\
-            % class\_weight & balanced\_subsample \\
-            ccp\_alpha & 0.0 \\
-            max\_samples & None \\
-        \end{tabular}
-        \caption{Parâmetros fixos}
-        \label{tab:15}
-    \end{center}
-\end{table}
-
-\begin{table}[!htb]
-    \begin{center}
-        \begin{tabular}{ l|c }
-            Parâmetro & Valor \\
-            \hline
-            max\_depth & [3, 4, 5, 6, 7] \\
-            max\_features & [3, 4] \\
-        \end{tabular}
-        \caption{Parâmetros variáveis}
-        \label{tab:16}
-    \end{center}
-\end{table}
-
-\paragraph{} A Figura \ref{fig:580} ilustra a lógica de criação dos modelos apresentada através de um diagrama. O período de treinamento e de teste de cada modelo foi separado utilizando WFA e pode ser verificado pela Tabela \ref{tab:17}. Entende-se por validade o período de tempo durante a simulação no qual o algoritmo criado pode atuar. Desta forma, cada ação na carteira possui 12 modelos com validade de 3 meses cada.
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.50]{models_chart.png}
-    \centering
-    \caption{Diagrama de criação de modelos}
-    \label{fig:580}
-\end{figure}
-
-\begin{table}[!htb]
-    \begin{center}
-        \begin{tabular}{ cc|cc|cc }
-            \multicolumn{2}{c|}{Treinamento} & \multicolumn{2}{c|}{Teste} & \multicolumn{2}{c}{Validade} \\
-            \hline
-            Início & Fim & Início & Fim & Início & Fim \\
-            \hline
-            01/01/2013 & 31/03/2018 & 01/04/2018 & 31/12/2018 & 01/01/2019 & 31/03/2019 \\
-            01/04/2013 & 30/06/2018 & 01/07/2018 & 31/03/2019 & 01/04/2019 & 30/06/2019 \\
-            01/07/2013 & 30/09/2018 & 01/10/2018 & 30/06/2019 & 01/07/2019 & 30/09/2019 \\
-            01/10/2013 & 31/12/2018 & 01/01/2019 & 30/09/2019 & 01/10/2019 & 31/12/2019 \\
-            01/01/2014 & 31/03/2019 & 01/04/2019 & 31/12/2019 & 01/01/2020 & 31/03/2020 \\
-            01/04/2014 & 30/06/2019 & 01/07/2019 & 31/03/2020 & 01/04/2020 & 30/06/2020 \\
-            01/07/2014 & 30/09/2019 & 01/10/2019 & 30/06/2020 & 01/07/2020 & 30/09/2020 \\
-            01/10/2014 & 31/12/2019 & 01/01/2020 & 30/09/2020 & 01/10/2020 & 31/12/2020 \\
-            01/01/2015 & 31/03/2020 & 01/04/2020 & 31/12/2020 & 01/01/2021 & 31/03/2021 \\
-            01/04/2015 & 30/06/2020 & 01/07/2020 & 31/03/2020 & 01/04/2021 & 30/06/2021 \\
-            01/07/2015 & 30/09/2020 & 01/10/2020 & 30/06/2020 & 01/07/2021 & 30/09/2021 \\
-            01/10/2015 & 31/12/2020 & 01/01/2021 & 30/09/2021 & 01/10/2021 & 31/12/2021 \\
-        \end{tabular}
-        \caption{WFA - Intervalos de treinamento, teste e validade dos modelos}
-        \label{tab:17}
-    \end{center}
-\end{table}
-
-
-
-\FloatBarrier
-\subsection{Modelo \textit{Baseline}}
-\label{sub:baseline}
-
-\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média de performance das ações da carteira, ou seja, supondo-se que o capital inicial fosse igualmente distribuido em cada ação disponível, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
-
-\paragraph{} A Figura \ref{fig:170} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se a diferença de performance do \textit{baseline} para o iBovespa, o que é razoável já que o \textit{baseline} tem composição fixa e o iBovespa tem uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência. A Tabela \ref{tab:12} mostra os indicadores de performance para o modelo \textit{baseline}.
-
-\begin{figure}[!htb]
-    \includegraphics[scale=0.50]{baseline_raw.png}
-    \centering
-    \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021}
-    \label{fig:170}
-\end{figure}
-
-\begin{table}[!htb]
-    \begin{center}
-        \begin{tabular}{ cccc }
-            Rend. Final & Volatilidade & Sharpe & Sortino \\
-            \hline
-            73,94\% & 55,48\% & 0,68 & 0,74 \\
-        \end{tabular}
-        \caption{\textit{Baseline} - Indicadores de Performance}
-        \label{tab:12}
-    \end{center}
-\end{table}
 
 % \begin{math} R_b \end{math}
 % \color{red} HERALDO: \colorend

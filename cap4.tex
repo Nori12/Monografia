@@ -3,7 +3,7 @@
 
 
 
-\paragraph{} A partir dos modelos criados na Seção \ref{sub:super_models} e dos parâmetros descritos e refinados na Seção \ref{sub:est_simulation}, é possível prosseguir com as simulações finais, que compartilham das seguintes configurações:
+\paragraph{} A partir dos modelos criados na Seção \ref{sub:super_models} e dos parâmetros refinados na Seção \ref{sub:est_simulation}, é possível prosseguir com as simulações finais, que compartilham das seguintes configurações:
 
 \begin{itemize}
     \item 71 \textit{tickers} (Tabela \ref{tab:5})
@@ -14,11 +14,46 @@
     \item Período máximo de dias por operação: 45
 \end{itemize}
 
-\paragraph{} Observa-se que o período de simulação é posterior ao utilizado para refinamento dos parâmetros de simulação.
+\paragraph{} Observa-se que o período de simulação é posterior ao utilizado para refinamento dos parâmetros de simulação (01/01/2019 a 31/12/2020).
 
-\paragraph{} A Tabela \ref{} mostra 3 perfis de simulação diferentes, motivados pelo: (1) máximo local na região de baixo RCC da Figura \ref{fig:550}; o máximo local da região de alto RCC também da Figura \ref{fig:550}; e o
+\paragraph{} A Tabela \ref{tab:395} mostra 4 perfis de simulação diferentes, cada um motivado por uma questão diferente, são elas: (1) o máximo local na região de baixo RCC da Figura \ref{fig:550}; (2) o máximo local da região de alto RCC, também da Figura \ref{fig:550}; (3) a simulação de maior índice de Shape da Figura \ref{fig:153} pertencente à curva \begin{math} RCC \times K = 1,8 \end{math}; e (4) a simulação de menor perda de operações na Figura \ref{fig:155}, pertencente à curva \begin{math} RCC \times K = 0,1 \end{math}. Também são apresentados os respectivos resultados.
+
+\begin{table}[!htb]
+    \begin{center}
+        \resizebox{\textwidth}{!}{
+        \begin{tabular}{ l|c|c|c|c|c }
+            Parâmetro & Estratégia 1 & Estratégia 2 & Estratégia 3 & Estratégia 4 & \textit{Baseline} \\
+            \hline
+            RCC     & 0,11\%    & 6,10\%    & 0,00288\% & 0,1\% & - \\
+            K       & -         & -         & 62500     & 100   & - \\
+            \hline
+            Rendimento Final                    & \% & \% & \% & \% & 68,07\% \\
+            Volatilidade                        & \% & \% & \% & \% & 34,84\% \\
+            Índice de Sharpe                    &  &  &  &  & 1,15 \\
+            Índice de Sortino                   &  &  &  &  & 1,71 \\
+            Cor. Spearman (\textit{Baseline})   &  &  &  &  & - \\
+            Cor. Spearman (Ibovespa)            &  &  &  &  & - \\
+            Uso Máximo de Capital               & \% & \% & \% & \% & 100\% \\
+            Uso Médio de Capital                & \% & \% & \% & \% & 100\% \\
+            Máximo de Op. Ativas                &  &  &  &  & 71 \\
+            Média de Op. Ativas                 &  &  &  &  & 71 \\
+            % Desvio Padrão de Op. Ativas         &  &  &  &  & - \\
+            Operações Totais                    &  &  &  &  & 71 \\
+            Operações de Sucesso                &  (\%) &  (\%)&  (\%)&  (\%) & - \\
+            Operações de Falha                  &  (\%) &  (\%)&  (\%)&  (\%) & - \\
+            Operações de \textit{Timeout}       &  (\%) &  (\%)&  (\%)&  (\%) & - \\
+            Operações Incompletas               &  (\%) &  (\%)&  (\%)&  (\%) & - \\
+        \end{tabular}}
+        \caption{Resultados finais}
+        \label{tab:395}
+    \end{center}
+\end{table}
+
 
 \paragraph{} Cortar daqui para baixo.
+
+
+
 
 % \paragraph{} A partir dos parâmetros descritos e refinados na Seção \ref{sub:est_simulation}, utilizou-se a seguinte configuração para encontrar a simulação com os melhores índices de performance:
 
@@ -35,9 +70,9 @@
 %     \item Constante K de Ganho Proporcional: 30000
 % \end{itemize}
 
-\paragraph{} Conforme descrito na Seção \ref{sub:risk_man}, a escolha dos 71 \textit{tickers} foi realizada levando em consideração as seguintes preferências: diversidade de segmentos de mercado; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. O período de simulação escolhido engloba um intervalo recente dos últimos 3 anos, já que a escolha de momentos anteriores a este pode estar associado a padrões de mercado muito diferentes do atual. Como os modelos criados utilizam \textit{walk-forward analysis} e portanto atualizados a cada 3 meses de simulação para cada \textit{ticker}, o comprimento do intervalo de 3 anos não é um problema. O capital e o volume mínimo por negociação foram escolhidos visando evitar potenciais problemas quanto à granularidade dos montantes de negociação.
+% \paragraph{} Conforme descrito na Seção \ref{sub:risk_man}, a escolha dos 71 \textit{tickers} foi realizada levando em consideração as seguintes preferências: diversidade de segmentos de mercado; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. O período de simulação escolhido engloba um intervalo recente dos últimos 3 anos, já que a escolha de momentos anteriores a este pode estar associado a padrões de mercado muito diferentes do atual. Como os modelos criados utilizam \textit{walk-forward analysis} e portanto atualizados a cada 3 meses de simulação para cada \textit{ticker}, o comprimento do intervalo de 3 anos não é um problema. O capital e o volume mínimo por negociação foram escolhidos visando evitar potenciais problemas quanto à granularidade dos montantes de negociação.
 
-\paragraph{} Os demais parâmetros revelam valores refinados através de suas respectivas seções, a mencionar: Seção \ref{sub:operation_risk} para o Risco de entrada por operação; Seção \ref{sub:max_op_days} para o Período máximo de dias por operação; e Seção \ref{sub:dynamic_rcc} para o RCC, o Valor de referência e a Constante K.
+% \paragraph{} Os demais parâmetros revelam valores refinados através de suas respectivas seções, a mencionar: Seção \ref{sub:operation_risk} para o Risco de entrada por operação; Seção \ref{sub:max_op_days} para o Período máximo de dias por operação; e Seção \ref{sub:dynamic_rcc} para o RCC, o Valor de referência e a Constante K.
 
 \paragraph{} Os resultados encontrados podem ser verificados pela Figura \ref{fig:250} e pela Tabela \ref{tab:13}.
 

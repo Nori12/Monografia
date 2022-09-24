@@ -2,17 +2,17 @@ To do:
 
 
 ---> Correção do erro metodológico
-) Aguardar resultados da simulação do PC do João
-) Atualizar datapoints escolhidos na seção de rcc dinamico
+01) OK - Aguardar resultados da simulação do PC do João
+02) OK - Atualizar datapoints escolhidos na seção de rcc dinamico e finalizar capítulo
 ) Atualizar "Resultados"
 ) Atualizar "Considerações Finais"
 
 
-) Atualizar "Modelos de Aprendizado Supervisionado" / "Balanceamento de Classes"
-) Atualizar "Modelos de Aprendizado Supervisionado" / "Geração de Modelos"
-) Atualizar "Modelos de Aprendizado Supervisionado" / "Modelo Baseline"
-) Atualizar "Features de Uso Geral" / "Risco Mínimo"
-) Atualizar "Features de Uso Geral" / "Risco Máximo"
+01) OK - Atualizar "Modelos de Aprendizado Supervisionado" / "Balanceamento de Classes"
+02) OK - Atualizar "Modelos de Aprendizado Supervisionado" / "Geração de Modelos"
+03) OK - Atualizar "Modelos de Aprendizado Supervisionado" / "Modelo Baseline"
+04) Atualizar "Features de Uso Geral" / "Risco Mínimo"
+05) Atualizar "Features de Uso Geral" / "Risco Máximo"
 
 
 Outras modificações Pontuais

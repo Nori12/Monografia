@@ -158,91 +158,15 @@
 
 \paragraph{} O fato dos cálculos envolverem uma análise de dados do passado, é necessário garantir que as \textit{features} geradas estejam sempre apontadas para um intervalo de tempo anterior ao dia no qual elas serão consumidas. Do contrário, um erro de não-causalidade poderia surgir, corrompendo a performance das simulações. Analogamente, durante a geração dos modelos (Seção \ref{sub:models_gen}) também é necessario se garantir que o período de treinamento é anterior ao período de teste, diretamente via a configuração das datas limites de cada período e indiretamente via remoção de datas cuja \textit{features} possuem efeito memória, evitando assim que qualquer informação esteja presente simultaneamente dos dados de treinamento e de teste.
 
+\paragraph{} Antes de prosseguir, é necessário contextualizar o termo risco de entrada em uma operação, às vezes simplesmente chamado de risco. Este é caracterizado pela diferença percentual no qual o \textit{stop loss} é colocado em relação ao do preço de compra. Por exemplo, se uma operação tem um preço de compra de R\$10,00 e o \textit{stop loss} é posicionado em R\$9,00, diz-se o risco da operação é de 10\%. A escolha do risco também determina o valor do preço alvo da operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente e acima do preço de compra (ver Seção \ref{sub:estrutura}). Assim, no exemplo anterior, o preço alvo estaria situado em R\$13,00. Este assunto será novamente abordado na Seção \ref{sub:estrutura}, no entanto fez-se necessária uma antecipação pois esta terminologia é amplamente utilizada ao longo deste trabalho.
+
 \paragraph{} As \textit{features} de Uso Geral utilizadas são:
 
 \begin{itemize}
-    % \item \textbf{\textit{Flag} de Tendência de Baixa} \\ \\
-    % \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:downtrend_halt}).
-
-    % \textit{Flag} criado com o objetivo de impedir entrada em operações pelo modelo de ML durante sua presença. Primeiro, calcula-se a derivada dos preços médios \begin{math} \dot{P_{mid}} \end{math} entre o dia corrente e o anterior normalizado pela média dos preços médios (Equações \ref{eq:22} e \ref{eq:23}). Em seguida, ajusta-se um filtro digital IIR passa-baixas de coeficiente de amortecimento \begin{math} \alpha \end{math} (Equação \ref{eq:24}). Por fim, acrescenta-se um efeito de inércia de 3 dias úteis consecutivos para persistência do \textit{flag} em caso de ocorrência (Equação \ref{eq:25}).
-
-    % \begin{equation} \label{eq:23}
-    %     \dot{P_{mid(i)}} = \dfrac{ P_{mid(i)} - P_{mid(i-1)} }{ \dfrac{1}{2}(P_{mid(i)} + P_{mid(i-1)}) }
-    % \end{equation}
-
-    % \begin{equation} \label{eq:24}
-    %     \dot{P_{mid\_LPF(i)}} = \alpha \dot{P_{mid(i)}} + (1 - \alpha) \dot{P_{mid\_LPF(i-1)}},  \quad \textrm{onde} \quad 0 \le \alpha \le 1
-    % \end{equation}
-
-    % \begin{equation} \label{eq:25}
-    %     F_{downtrend(i)} = \begin{cases} 1, & \mbox{se } \dot{P_{mid\_LPF(i)}} < 0 \\
-    %         1, & \mbox{se } \dot{P_{mid\_LPF(i)}} \ge 0 \  e \  F_{downtrend(i-1)} = 1 \  \textrm{(3 m\'ax)} \\
-    %         0, & \mbox{caso contr\'ario} \end{cases}
-    % \end{equation}
-
-    % Foi utilizado \begin{math} \alpha = 0.10 \end{math}, pois trantando-se de um \textit{flag} que pode impedir diretamente o fluxo de negociações, prioriza-se um baixo ruído ao tempo de resposta.
-
-    % A Figura \ref{fig:109} ilustra a eficácia do \textit{Flag} de Identificação de Tendência de Baixa. Durante os maiores intervalos nos quais o \textit{Flag} esteve ativo, o preço se encontrou em queda. Por outro lado, quando verificado os intervalos menores, é mais comum a presença de falsos positivos.
-
-    % \begin{figure}[!htb]
-    %     \includegraphics[scale=0.47]{downtrend_flag_cogn3.png}
-    %     \centering
-    %     \caption{COGN3 - \textit{Flag} de Identificação de Crises (01/01/2019 a 31/12/2019)}
-    %     \label{fig:109}
-    % \end{figure}
-
-
-    % \item \textbf{\textit{Flag} de Identificação de Crises} \\ \\
-    %     \textit{Flag} criado para prever crises financeiras através da identificação de anomalias nos volumes de negociação e nas quedas dos preços. Seu objetivo é impedir que o modelo de ML entre em qualquer operação durante sua presença (Seção \ref{sub:crisis_halt}).
-
-    %     Para o cálcula das anomalias de volume (Equação \ref{eq:20}), utiliza-se a média \begin{math} \overline{V} \end{math} e o desvio padrão \begin{math} \sigma_V \end{math} do volume de negociações dos últimos 60 dias úteis, junto com o volume \begin{math} V \end{math} do dia corrente. Adiciona-se um efeito de inércia de 2 dias úteis consecutivos para ativação do \textit{flag}.
-
-    %     Já o cálculo das anomalias de queda de preços (Equação \ref{eq:150}), utiliza-se a média dos preços médios \begin{math} \overline{P_{mid}} \end{math} e seu desvio padrão \begin{math} \sigma_{P_{mid}} \end{math}, ambos relativos aos últimos 20 dias úteis e combinados com o preço médio \begin{math} P_{mid} \end{math} do dia corrente.
-
-    %     \begin{equation} \label{eq:20}
-    %         V_{anomaly(i)} = \begin{cases} 1, & \mbox{se } V_{(i)} > \overline{V} + \sigma_V \quad \textrm{e} \quad V_{(i-1)} > \overline{V} + \sigma_V \\
-    %             0, & \mbox{caso contr\'ario} \end{cases}
-    %     \end{equation}
-
-    %     \begin{equation} \label{eq:22}
-    %         P_{mid} = \dfrac{P_{open} + P_{close}}{2}
-    %     \end{equation}
-
-    %     \begin{equation} \label{eq:150}
-    %         P_{anomaly(i)} = \begin{cases} 1, & \mbox{se } P_{mid(i)} < \overline{P_{mid}} + \sigma_{P_{mid}} \quad \\
-    %             0, & \mbox{caso contr\'ario} \end{cases}
-    %     \end{equation}
-
-    %     O \textit{Flag} de Identificação de Crises (Equação \ref{eq:21}) é ativado quando ambas as anomalias de volume e de queda de preço estão ativadas. Caso essa condição não se mantenha mais a partir de um determinado instante, há uma inércia de 8 dias úteis para persistência do \textit{flag} de Crises.
-
-    %     \begin{equation} \label{eq:21}
-    %         F_{crisis(i)} = \begin{cases} 1, & \mbox{se } V_{anomaly(i)} = 1 \quad \textrm{e} \quad P_{anomaly(i)} = 1 \\
-    %             1, & \mbox{se } (V_{anomaly(i)} = 0 \; \textrm{ou} \; P_{anomaly(i)} = 0) \; \textrm{e} \; F_{crisis(i-1)} = 1 \; (8 \textrm{m\'ax}) \\
-    %             0, & \mbox{caso contr\'ario} \end{cases}
-    %     \end{equation}
-
-    %     A Figura \ref{fig:104} ilustra a eficácia do \textit{flag}. Observa-se que os três gráficos presentes na imagem se referem respectivamente ao cálculo das anomalias de queda de preços, ao cálculo das anomalias de volumes e por fim, ao cálculo do \textit{flag} de Identificação de Crises. Pode-se perceber que o mesmo foi corretamente ativado durante o início da crise do Coronavírus, pouco antes de 01/03/2020. Também houve ativação perto de 01/09/2020, embora sem um motivo claro aparente, os preços das ações durante o intervalo e logo após enfrentam uma pequena zona de consolidação, ou de desaceleração da tendência de alta que antes se apresentava. Nesta região, não se deseja entrar em operações até que uma nova tendência se forme.
-
-    %     \begin{figure}[!htb]
-    %         \includegraphics[scale=0.47]{crisis_flag_mglu3.png}
-    %         \centering
-    %         \caption{MGLU3 - \textit{Flag} de Identificação de Crises (01/01/2020 a 31/12/2020)}
-    %         \label{fig:104}
-    %     \end{figure}
-
-
-    %     Apesar da diferença entre os critérios de implementação dos \textit{Flags} de Identificação de Tendência de Baixa e de Crises, conceitualmente ambos são próximos, portanto é necessário investigar se o \textit{Flag} de Crises é sobreposto pelo \textit{Flag} de Tendência de Baixa. A Figura \ref{fig:110} comprova que apesar das sobreposições, o \textit{Flag} de Crises consegue alertar em alguns poucos momentos que o outro não consegue, justificando seu uso. Já a análise de ganho de performance nas simulações de estratégias será realizada na Seção \ref{sub:crisis_halt}.
-
-    %     \begin{figure}[!htb]
-    %         \includegraphics[scale=0.75]{downtrend_crisis_inter_cple6.png}
-    %         \centering
-    %         \caption{COGN3 - Interseção entre os \textit{Flags} de Identificação de Crises e de Tendência de Baixa (01/01/2019 a 31/12/2019)}
-    %         \label{fig:110}
-    %     \end{figure}
-
 
     \item \textbf{Risco Mínimo} \\ \\
-    O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML, mas sim indiretamente. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
+    O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML, mas sim indiretamente. A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
+    % O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML, mas sim indiretamente. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
 
     \begin{equation} \label{eq:30}
         Risk_{min} = Risk_{min_f} + Risk_{min_v}
@@ -437,6 +361,7 @@
 
 \FloatBarrier
 \subsection{Índice de Lucratividade}
+\label{sub:profit_index}
 
 \paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances de treinamento e de teste que acompanhe o contexto do problema. O impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
 
@@ -480,14 +405,15 @@
 \FloatBarrier
 \subsection{Balanceamento de Classes}
 
-\paragraph{} Devido ao desbalanceamento dos \textit{datasets} utilizados, que pode chegar até cerca de 90\% de operações de falha contra 10\% de operações de sucesso, faz-se imprescindível alguma técnica de balanceamento mencionada na Seção \ref{sub:class_prob}: \textit{undersampling}, \textit{oversampling} ou CSL. A natureza do problema também deve ser levada em consideração, pois um simples balanceamento via CSL daria a mesma importância à predição dos acertos e das falhas, no entanto o impacto de um acerto por parte do modelo gera um ganho de 3X para a carteira e uma falha gera uma perda de -X para os mesmos X apostados.
+\paragraph{} Devido ao desbalanceamento dos \textit{datasets} utilizados, que pode chegar até cerca de 90\% de operações de falha contra 10\% de operações de sucesso, faz-se imprescindível alguma técnica de balanceamento mencionada na Seção \ref{sub:class_prob}: \textit{undersampling}, \textit{oversampling} ou CSL. A natureza do problema também deve ser levada em consideração, pois um simples balanceamento via CSL daria a mesma importância à predição dos acertos e das falhas, no entanto o impacto de um acerto por parte do modelo gera um ganho de +3X para a carteira e uma falha gera uma perda de -X para os mesmos X aportados em uma operação genérica, conforme discutido anteriormente na Seção \ref{sub:profit_index}.
 
-\paragraph{} Levando em consideração as questões levantadas, optou-se por um balanceamento em cascada de 2 níveis:
+\paragraph{} Levando em consideração as questões levantadas, optou-se por um balanceamento via CSL levando em considerações o número de amostras e o impacto das classes para a carteira (Tabela \ref{tab:8}).
 
-\begin{itemize}
-    \item \textit{Undersampling} via \textit{Tomek Links}\footnote{Algoritmo que remove amostras da classe majoritária via identificação de \textit{links}. Um \textit{link} entre a amostra A da classe 1 e a amostra B da classe 2 é encontrado se o vizinho mais próximo de A é B e vice-versa \cite{he2013imbalanced}.}, de cujo impacto na proporção das classes é muito pequeno.
-    \item CSL levando em considerações o número de amostras e o impacto das classes para a carteira (Tabela \ref{tab:8}).
-\end{itemize}
+% \begin{itemize}
+%     \item \textit{Undersampling} via \textit{Tomek Links}\footnote{Algoritmo que remove amostras da classe majoritária via identificação de \textit{links}. Um \textit{link} entre a amostra A da classe 1 e a amostra B da classe 2 é encontrado se o vizinho mais próximo de A é B e vice-versa \cite{he2013imbalanced}.}, de cujo impacto na proporção das classes é muito pequeno.
+
+%     \item CSL levando em considerações o número de amostras e o impacto das classes para a carteira (Tabela \ref{tab:8}).
+% \end{itemize}
 
 \begin{table}[h!]
     \begin{center}
@@ -503,24 +429,23 @@
 \end{table}
 
 
+
 \FloatBarrier
 \subsection{Geração de Modelos}
 \label{sub:models_gen}
 
-\paragraph{} Os modelos \textit{Random Forest} foram criados a partir da biblioteca \textit{Scikit-Learn} \cite{scikit}. Para a escolha do modelo a ser utilizado na simulação final, diversos outros modelos temporários foram criados e excluídos a fim de se selecionar apenas o melhor. Todos modelos temporários compartilham os parâmetros fixos indicados pela Tabela \ref{tab:15}, porém diferem quanto aos parâmetros variáveis da Tabela \ref{tab:16} ou quanto às sementes aleatórias utilizadas. A lógica de criação dos modelos pode ser interpretada da seguinte forma:
+\paragraph{} Com o auxílio da biblioteca \textit{Scikit-Learn} \cite{scikit}, a escolha do melhor modelo para um determinado, diversos outros são criados e excluídos a fim de se selecionar apenas o melhor
+
+\paragraph{} Os modelos \textit{Random Forest} foram criados com o auxílio da biblioteca \textit{Scikit-Learn} \cite{scikit}. Para a escolha do modelo final, diversos outros são criados e excluídos a fim de se selecionar apenas o melhor. Todos modelos temporários compartilham os hiperparâmetros fixos indicados pela Tabela \ref{tab:15}, porém diferem quanto aos hiperparâmetros variáveis da Tabela \ref{tab:16} ou quanto às sementes aleatórias utilizadas. A lógica de criação pode ser analisada da seguinte forma:
 
 \begin{itemize}
-    \item Para cada um dos 71 \textit{tickers} da carteira (Tabela \ref{tab:5}), o período completo de simulação vai de 01/01/2019 a 31/12/2021 e é dividido em 12 intervalos de 3 meses (WFA).
+    \item Para cada um dos 71 \textit{tickers} da carteira (Tabela \ref{tab:5}) são gerados 12 modelos de acordo com a Tabela \ref{tab:17}. Por trás de cada deles são avaliados 100 modelos temporários e organizados em dois níveis: os hiperparâmetros variáveis e sementes aleatórias.
 
-    \item Cada intervalo de 3 meses de simulação é governado pelo melhor modelo de ML criado previamente.
+    \item O nível de diferenciação dado pelos hiperparâmetros variáveis da Tabela \ref{tab:16} gera 10 pares de combinações entre \textit{max\_depth} e \textit{max\_features}: (3, 3), (3, 4), (4, 3), (4, 4), ..., (7, 4).
 
-    \item Por trás de cada modelo final selecionado existem 100 modelos temporários organizados em dois níveis: parâmetros variáveis e sementes aleatórias.
+    \item Para cada par criado, são criados 10 modelos com sementes aleatórias diferentes.
 
-    \item O primeiro nível de diferenciação é dado parâmetros variáveis da Tabela \ref{tab:16}, ou seja, as combinações entre \textit{max\_depth} e \textit{max\_features}, que geram os 10 pares (3, 3), (3, 4), (4, 3), (4, 4), ..., (7, 4).
-
-    \item Para cada par criado, são criados 10 modelos com 10 sementes aleatórias diferentes.
-
-    \item O modelo final escolhido possui os mesmos parâmetros do grupo de 10 modelos de sementes aleatórias diferentes que possuir o maior \begin{math} I_L / \sigma_{I_L} \end{math}.
+    \item O modelo final escolhido possui os mesmos hiperparâmetros do grupo que possuir a maior razão de Índice de Lucratividade pelo desvio padrão do mesmo: \begin{math} I_L / \sigma_{I_L} \end{math}.
 \end{itemize}
 
 \begin{table}[!htb]
@@ -542,7 +467,7 @@
             ccp\_alpha & 0.0 \\
             max\_samples & None \\
         \end{tabular}
-        \caption{Parâmetros fixos}
+        \caption{Hiperparâmetros fixos}
         \label{tab:15}
     \end{center}
 \end{table}
@@ -555,7 +480,7 @@
             max\_depth & [3, 4, 5, 6, 7] \\
             max\_features & [3, 4] \\
         \end{tabular}
-        \caption{Parâmetros variáveis}
+        \caption{Hiperparâmetros variáveis}
         \label{tab:16}
     \end{center}
 \end{table}
@@ -576,23 +501,31 @@
 \subsection{Modelo \textit{Baseline}}
 \label{sub:baseline}
 
-\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média de performance das ações da carteira, ou seja, supondo-se que o capital inicial fosse igualmente distribuido em cada ação disponível, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
+\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média de performance das ações da carteira, ou seja, distribuindo o capital inicial igualmente por cada ação, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
 
-\paragraph{} A Figura \ref{fig:170} mostra o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/12/2021. Adicionou-se o iBovespa (Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário. Indexador cujo valor é numericamente muito próximo à taxa básica de juros da economia, a Taxa Selic.} acumulado para fins de comparação. Nota-se a diferença de performance do \textit{baseline} para o iBovespa, o que é razoável já que o \textit{baseline} tem composição fixa e o iBovespa tem uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. Além disso, as 71 ações escolhidas são de empresas em maioria presentes no mercado desde 2013, portanto possuem algum grau de consolidação e resiliência. A Tabela \ref{tab:12} mostra os indicadores de performance para o modelo \textit{baseline}.
+\paragraph{} As Figuras \ref{fig:170} e \ref{fig:927} mostram o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de refinamento dos parâmetros de simulação (01/01/2019 a 31/03/2020) e no intervalo das simulações finais (01/04/2020 a 31/12/2021), respectivamente. Adicionou-se o iBovespa (Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário.} acumulado para fins de comparação. Nota-se a diferença de performance do \textit{baseline} para o iBovespa, o que é razoável já que o \textit{baseline} tem composição fixa e o iBovespa tem uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. A Tabela \ref{tab:12} mostra os indicadores de performance para ambos os \textit{baselines}.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.50]{baseline_raw.png}
     \centering
-    \caption{\textit{Baseline} para o intervalo de 01/01/2019 a 31/12/2021}
+    \caption{Rendimento do \textit{baseline} para o intervalo de 01/01/2019 a 31/03/2020}
     \label{fig:170}
+\end{figure}
+
+\begin{figure}[!htb]
+    \includegraphics[scale=0.50]{baseline_raw_2.png}
+    \centering
+    \caption{Rendimento do \textit{baseline} para o intervalo de 01/04/2020 a 31/12/2021}
+    \label{fig:927}
 \end{figure}
 
 \begin{table}[!htb]
     \begin{center}
-        \begin{tabular}{ cccc }
-            Rend. Final & Volatilidade & Sharpe & Sortino \\
+        \begin{tabular}{ cc|cccc }
+            Início & Fim & Rend. Final & Volatilidade & Sharpe & Sortino \\
             \hline
-            73,94\% & 55,48\% & 0,68 & 0,74 \\
+            01/01/2019 & 31/03/2020 & 6,39\%    & 43,98\% & 0,20 & 0,18 \\
+            01/04/2020 & 31/12/2021 & 68,07\%   & 34,84\% & 1,15 & 1,71 \\
         \end{tabular}
         \caption{\textit{Baseline} - Indicadores de Performance}
         \label{tab:12}
@@ -940,7 +873,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} As Figuras \ref{fig:152}, \ref{fig:153} e \ref{fig:154} apresentam indicadores de performance para valores de RCC e de K diferentes. Nessas simulações foram utilizados os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/03/2020, junto com o Risco de Entrada por Operação de 0,43 (refinado na Seção \ref{sub:operation_risk}) e o Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}).
 
-\paragraph{} A primeira e mais notório observação que se pode fazer pelas Figuras \ref{fig:152} e \ref{fig:153} é que a região de melhor performance se encontra com baixo RCC e alto K. Também é possível verificar que o aumento graduau das curvas \begin{math} RCC \times K \end{math} encontrou um comportamento assintótico a partir de 1,40 (curva em marrom).
+\paragraph{} A primeira e mais notório observação que se pode fazer pelas Figuras \ref{fig:152} e \ref{fig:153} é que a região de melhor performance se encontra com baixo RCC e alto K. Também é possível verificar que o aumento graduau das curvas \begin{math} RCC \times K \end{math} encontrou um comportamento assintótico a partir de 1,40.
 
 \paragraph{} De forma semelhante ao comportamento observado na Seção \ref{sub:risk_man}, a Figura \ref{fig:154} mostra a tendência de saturação do uso médio de capital com o aumento do RCC e a suavização desse efeito que ocorre ao se diminuir a importância do RCC e aumentar a do K. Já a Figura \ref{fig:155} deixa claro que tanto aumentando o RCC quanto o K, em algum momento o número de operações totais cairá, porém é visível a presença de um ponto de máximo na região de \begin{math} K=500 \end{math} e \begin{math} RCC=[0,08\%; 0,40\%] \end{math} em cada curva.
 
@@ -1004,7 +937,8 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
     \label{fig:155}
 \end{figure}
 
-\paragraph{} Por fim, chama-se atenção para dois pares de valores de \begin{math} RCC \times K \end{math}. O primeiro par é mostrado pela curva \begin{math} RCC \times K = 1,80 \end{math} no ponto maior índice de Sharpe (\begin{math} RCC = 0,00288\%, K = 62500 \end{math}). Este curva foi escolhida, pois a partir de \begin{math} RCC \times K = 1,40 \end{math}, tanto o índice de Sharpe quanto o rendimento começam a apresentar um comportamento assintótico, não sendo necessário escolher uma curva de valor muito mais alto que este. Já o segundo par foi escolhido a partir do máximo local encontrado na curva \begin{math} RCC \times K = 0,40 \end{math} da Figura \ref{fig:155} (\begin{math} RCC = 0,08\%, K = 500 \end{math}).
+\paragraph{} Por fim, chama-se atenção para dois pares de valores de \begin{math} RCC \times K \end{math}. O primeiro par é mostrado pela curva \begin{math} RCC \times K = 1,80 \end{math} no ponto maior índice de Sharpe (\begin{math} RCC = 0,00288\%, K = 62500 \end{math}). Este curva foi escolhida, pois a partir de \begin{math} RCC \times K = 1,40 \end{math}, tanto o índice de Sharpe quanto o rendimento começam a apresentar um comportamento assintótico, não sendo necessário escolher uma curva de valor muito mais alto que este. Já o segundo par foi escolhido a partir do máximo local encontrado na curva \begin{math} RCC \times K = 0,10 \end{math} da Figura \ref{fig:155} (\begin{math} RCC = 0,1\%, K = 100 \end{math}). Este, por sua vez, foi escolhido para representar a região de menor quantidade de operações perdidas.
+
 
 
 \FloatBarrier

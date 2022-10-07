@@ -33,6 +33,22 @@ MULTICHARTS, \enquote{Walk Forward Optimization},
   https://www.multicharts.com/trading-software/index.php/Walk\_Forward\_Optimization,
   (Acessado em 28 de Junho de 2022).
 
+\bibitem{velez2012swing}
+VELEZ, O.~L., \emph{Swing Trading}, v.~81. John Wiley \& Sons, 2012.
+
+\bibitem{python}
+PYTHON, \enquote{The Python Tutorial},
+  https://docs.python.org/3.10/tutorial/index.html, (Acessado em 06 de Outubro
+  de 2022).
+
+\bibitem{reed2013short}
+REED, A.~V., \enquote{Short selling}, \emph{Annu. Rev. Financ. Econ.}, v.~5,
+  n.~1, pp.~245--258, 2013.
+
+\bibitem{bulkowski2012fundamental}
+BULKOWSKI, T.~N., \emph{Fundamental Analysis and Position Trading: Evolution of
+  a Trader}, v. 605. John Wiley \& Sons, 2012.
+
 \bibitem{aumento_investidores}
 B3, \enquote{B3 atinge 5 milh\~oes de contas de investidores em renda
   vari\'avel em janeiro},
@@ -45,19 +61,35 @@ INFOMONEY, \enquote{Rob\^os de investimentos j\'a controlam mais de US\$ 200
   https://www.infomoney.com.br/onde-investir/robos-de-investimentos-ja-controlam-mais-de-us-200-bilhoes-ao-redor-do-mundo,
   (Acessado em 22 de Mar\c{c}o de 2022).
 
+\bibitem{investing_robot}
+SIQUEIRA, A., \enquote{Rob\^o de investimento: tudo o que voc\^e queria saber
+  sobre essa tecnologia}, https://blog.magnetis.com.br/robo-de-investimento/,
+  (Acessado em 06 de Outubro de 2022).
+
 \bibitem{robos_e_fundos}
 INFOMONEY, \enquote{No Brasil, rob\^os de investimento n\~ao conseguem bater
   melhores fundos},
   https://www.infomoney.com.br/onde-investir/no-brasil-robos-de-investimento-nao-conseguem-bater-melhores-fundos,
   (Acessado em 22 de Mar\c{c}o de 2022).
 
+\bibitem{crawford2015survey}
+CRAWFORD, M., KHOSHGOFTAAR, T.~M., PRUSA, J.~D., \emph{et~al.}, \enquote{Survey
+  of review spam detection using machine learning techniques}, \emph{Journal of
+  Big Data}, v.~2, n.~1, pp.~1--24, 2015.
+
+\bibitem{dullaghan2017integration}
+DULLAGHAN, C., ROZAKI, E., \enquote{Integration of machine learning techniques
+  to evaluate dynamic customer segmentation analysis for mobile customers},
+  \emph{arXiv preprint arXiv:1702.02215}, , 2017.
+
 \bibitem{fernandez2019artificial}
 FERN{\'A}NDEZ, A., \enquote{Artificial intelligence in financial services},
   \emph{Banco de Espana Article}, v.~3, pp.~19, 2019.
 
-\bibitem{docker}
-DOCKER, \enquote{Docker}, https://docs.docker.com/get-started/, (Acessado em 20
-  de Setembro de 2022).
+\bibitem{ladd1965obstaculos}
+LADD, J.~W., WRIGHT, R.~M., \enquote{Obst{\'a}culos ao desenvolvimento do
+  mercado brasileiro de capitais}, \emph{Revista de administra{\c{c}}{\~a}o de
+  empresas}, v.~5, pp.~71--104, 1965.
 
 \bibitem{mercado_de_capitais}
 CVM, \enquote{Entendendo o Mercado de Valores Mobiliários},
@@ -167,10 +199,6 @@ B3, \enquote{ETF de Renda Variável},
 INVESTOPEDIA, \enquote{Fractional Share},
   https://www.investopedia.com/terms/f/fractionalshare.asp, (Acessado em 28 de
   Mar\c{c}o de 2022).
-
-\bibitem{bulkowski2012fundamental}
-BULKOWSKI, T.~N., \emph{Fundamental Analysis and Position Trading: Evolution of
-  a Trader}, v. 605. John Wiley \& Sons, 2012.
 
 \bibitem{murphy1999technical}
 MURPHY, J.~J., \emph{Technical analysis of the financial markets: A
@@ -340,6 +368,10 @@ BILDIRICI, M., ERSIN, {\"O}.~{\"O}., \enquote{Improving forecasts of GARCH
   family models with the artificial neural networks: An application to the
   daily returns in Istanbul Stock Exchange}, \emph{Expert Systems with
   Applications}, v.~36, n.~4, pp.~7355--7362, 2009.
+
+\bibitem{postgresql}
+POSTGRESQL, \enquote{About}, https://www.postgresql.org/about/, (Acessado em 07
+  de Outubro de 2022).
 
 \bibitem{project_github}
 NORI, P., \enquote{Project Github Page},

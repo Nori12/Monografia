@@ -23,7 +23,7 @@
 
 \paragraph{} Por fim, é possível visualizar os resultados de forma clara através de uma aplicação secundária responsável por criar um \textit{dashboard} interativo.
 
-\paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Foi estruturado um banco de dados PostgreSQL para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
+\paragraph{} Em relação às tecnologias utilizadas, a aplicação foi desenvolvida em \textit{Python} com o apoio das bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Foi estruturado um banco de dados PostgreSQL \cite{postgresql} para armazenamento dos \textit{candlesticks} obtidos, das \textit{features} geradas e das estratégias simuladas. Também foi incorporado o uso de \textit{Docker} especificamente para a execução de estratégias sem a necessidade de configuração de ambiente.
 
 \paragraph{} A Figura \ref{fig:444} mostra a sequência lógica de refinamento dos parâmetros de simulação, abordada através das Seções \ref{sub:max_op_days}, \ref{sub:operation_risk} e \ref{sub:dynamic_rcc}, respectivamente. Nota-se que o valor de saída de um parâmetro é utilizado durante o refinamento parâmetro do seguinte. Com exceção do Período Máximo de Dias por Operação, que utilizou o intervalo de 2016 a 2018, os outros parâmetros foram refinados a partir de simulações no intervalo de janeiro de 2019 a março de 2020, denominado intervalo de refinamento de parâmetros de estratégia. Já o resultado da simulação final, disponível na Seção \ref{cap4}, utiliza o intervalo de abril de 2020 a dezembro de 2021, não havendo assim sobreposição.
 
@@ -197,7 +197,7 @@
     \end{equation}
 
     \begin{equation} \label{eq:33}
-        Risk_{min_v} = - \dot{P_{mid\_LPF(i)}}
+        Risk_{min_v} = max(-\dot{P_{mid\_LPF(i)}}, 0)
     \end{equation}
 
     Foi utilizado \begin{math} \alpha = 0.30 \end{math}, uma vez que neste caso é mais interessante uma resposta rápida a um baixo ruído.
@@ -252,6 +252,14 @@
 
     \begin{equation} \label{eq:42}
         Risk_{max(i)} = \alpha \overline{C_{(i)}} + (1 - \alpha) Risk_{max(i-1)}
+    \end{equation}
+
+    \begin{equation} \label{eq:43}
+        \overline{C_{LPF(i)}} = \alpha \overline{C_{(i)}} + (1 - \alpha) \overline{C_{(i-1)}}
+    \end{equation}
+
+    \begin{equation} \label{eq:44}
+        Risk_{max(i)} = \dfrac{\overline{C_{LPF(i)}} - 0.5 \sigma_{C}}{G}
     \end{equation}
 
     Foi utilizado \begin{math} \alpha = 0.50 \end{math}.

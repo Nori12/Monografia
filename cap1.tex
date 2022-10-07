@@ -6,20 +6,22 @@
 \FloatBarrier
 \section{Tema}
 
-\paragraph{} O tema deste trabalho se resume na elaboração de uma estratégia de \textit{swing trade} na bolsa de valores brasileira através de métodos de aprendizado de máquina.
+\paragraph{} Todos os dias, diversas negociações são realizadas nas bolsas de valores do mundo inteiro. Com os mais diversos objetivos, investidores buscam um aumento crescente de patrimônio de forma consistente. Paralelamente, inteligências artificias estão substituindo cada vez mais atividades antes desempenhadas pelo homem.
 
-\paragraph{} Nesse contexto, o problema a ser abordado é a identificação do momento apropriado para compra de um determinado ativo, como também os preços alvos determinantes para venda, tendo em vista uma variação positiva de seu preço.
+\paragraph{} Nesse contexto, este trabalho se resume na elaboração de uma estratégia de \textit{swing trade} \cite{velez2012swing} na bolsa de valores brasileira através de métodos de \textit{machine learning} (ML).
+
+\paragraph{} Desta forma, o problema a ser abordado é a identificação do momento apropriado para compra de um determinado ativo, como também os preços determinantes para venda, tendo em vista uma variação positiva de seu preço.
 
 
 
 \FloatBarrier
 \section{Delimitação}
 
-\paragraph{} Este trabalho se limita aos ativos negociados na Bolsa de Valores de São Paulo, a B3, de cujos dados diários de domínio público foram adquiridos através da API \textit{open-source yfinance}, disponível em Python. Não são levadas em consideração informações sobre proventos (dividendos e juros sobre capital próprio) devido à inconsistência dos mesmos na API supracitada, aliada à dificuldade técnica para automatização da busca de tais dados. O Apêndice \ref{ApendiceA} evidencia os problemas encontrados em mais detalhes.
+\paragraph{} Este trabalho se limita aos ativos negociados na Bolsa de Valores de São Paulo, a B3, de cujos dados diários de domínio público foram adquiridos através da API \textit{open-source yfinance}, disponível em Python \cite{python}. Não são levadas em consideração informações sobre proventos (dividendos e juros sobre capital próprio) devido à inconsistência dos mesmos na API supracitada, aliada à dificuldade técnica para automatização da busca de tais dados. O Apêndice \ref{ApendiceA} evidencia os problemas encontrados em mais detalhes.
 
-\paragraph{} A duração das operações tem em vista um horizonte mínimo de um dia, sendo portanto operações de \textit{swing trade}. Não são realizas vendas a descoberto\footnote{Venda a descoberto (\textit{short selling}): Venda de ações anterior a compra das mesmas através de um contrato de aluguél. O lucro ocorre na queda do preço de mercado.}, portanto só há lucro em variações positivas de preço dos ativos. Apenas uma operação por ativo pode existir em um determinado instante de tempo para uma estratégia. Em outras palavras, só é possível comprar mais ações de uma empresa após a venda completa das ações da mesma, caso existam.
+\paragraph{} A duração das operações tem em vista um horizonte mínimo de um dia, sendo portanto operações de \textit{swing trade}. Não são realizas vendas a descoberto\footnote{Venda a descoberto (\textit{short selling}): Processo no qual a venda de ações ocorre antes da compra, fazendo com que o lucro seja obtido na queda do preço de mercado.} \cite{reed2013short}, portanto só há lucro em movimentos crescentes de preço. Apenas uma operação por ativo pode existir em um determinado instante de tempo para uma estratégia. Em outras palavras, só é possível comprar mais ações de uma empresa após a venda completa das ações da mesma, caso existam.
 
-\paragraph{} A incidência de impostos devidos (\textit{e.g.}, imposto de renda) está fora do escopo. Assim como a utilização de critérios baseados em análise fundamentalista, por causa da dificuldade de obtenção dessas informações de maneira automatizada e estruturada.
+\paragraph{} A incidência de impostos devidos (\textit{e.g.}, imposto de renda) está fora do escopo. Assim como a utilização de critérios baseados em análise fundamentalista \cite{bulkowski2012fundamental}, por causa da dificuldade técnica de obtenção dessas informações de maneira automatizada e estruturada.
 
 
 
@@ -28,41 +30,47 @@
 
 \paragraph{} O crescimento do número de investidores na bolsa de valores brasileira \cite{aumento_investidores} demonstra um maior interesse da população na busca por um complemento da renda familiar ou até na substituição da fonte de renda principal.
 
-\paragraph{} No cenário global, o aumento do uso de robôs de \textit{trading} (ou algoritmos) tem se mostrando expressivo \cite{robos_investidores}, seja por pessoas físicas ou fundos de investimento, de forma total ou parcial em suas estratégias. Por outro lado, tal crescimento não vem sendo igualmente representado no Brasil devido às pecualiaridades do mercado de capitais nacional, como a alta volatilidade e a alta sensibilidade a notícias \cite{robos_e_fundos}.
+\paragraph{} No cenário global, o aumento do uso de robôs de investimento tem se mostrado expressivo, seja por pessoas físicas ou fundos de investimento, de forma total ou parcial em suas estratégias \cite{robos_investidores, investing_robot}. Por outro lado, tal crescimento não vem sendo igualmente representado no Brasil devido às peculiaridades do mercado de capitais nacional, como a alta volatilidade e a alta sensibilidade a notícias \cite{robos_e_fundos}.
 
-\paragraph{} Paralelamente, estudos relacionados a aprendizado de máquina vem trazendo resultados práticos no dia-a-dia das pessoas, desde o clássico exemplo de reconhecimento de mensagens de \textit{spam} em um caixa de email à identificação do perfil de consumo de clientes em uma loja. Da mesma forma, instituições financeiras e bancos centrais também estão, com cautela, incorporando aplicações de aprendizado de máquina em tarefas internas \cite{fernandez2019artificial}.
+\paragraph{} Paralelamente, estudos relacionados a aprendizado de máquina vêm trazendo resultados práticos no dia-a-dia das pessoas, desde o clássico exemplo de reconhecimento de mensagens de \textit{spam} em um caixa de email \cite{crawford2015survey} à identificação do perfil de consumo de clientes em uma loja \cite{dullaghan2017integration}. Da mesma forma, instituições financeiras e bancos centrais também estão, com cautela, incorporando aplicações de aprendizado de máquina em tarefas internas \cite{fernandez2019artificial}.
 
-\paragraph{} Apesar das dificuldades inerentes ao cenário atual do mercado de capitais brasileiro, não se pode ignorar o potencial que os algortimos podem trazer. Desta forma, o presente trabalho visa a união de técnicas de aprendizado de máquina a práticas de \textit{trading}, consolidando uma estratégia que sirva de suporte a uma maior variedade de opções de investimento à população brasileira.
+\paragraph{} Apesar das dificuldades inerentes ao cenário atual do mercado de capitais brasileiro \cite{ladd1965obstaculos}, não se pode ignorar o potencial de ganhos e de economia de tempo que os algortimos podem trazer aos investidores, uma vez que se bem configurados, operam diretamente conectados à plataforma da bolsa de valores e de forma automatizada. Desta forma, o presente trabalho visa a união de técnicas de aprendizado de máquina a práticas de \textit{trading}, consolidando uma estratégia que sirva de suporte a uma maior variedade de opções de investimento à população brasileira.
 
 
 
 \FloatBarrier
 \section{Objetivos}
 
-\paragraph{} O objetivo geral deste trabalho é implementar um \textit{software} capaz de simular uma estratégia de \textit{swing trade} utilizando aprendizado de máquina. Especificamente, o software deve: (1) criar um ambiente automatizado que permita buscar, atualizar e armazenar dados diários da bolsa brasileira de forma simples e conforme necessidade do usuário da aplicação; (2) criar a estrutura de uma estratégia por meio de um conjunto de regras e premissas baseadas em práticas de \textit{trading}; (3) gerar os modelos de aprendizado de máquina e acoplá-los à estrutura criada; (4) simular a estratégia obtida; (5) criar um mecanismo de fácil visualização dos resultados das simulações; e (6) analisar os resultados gerados.
+\paragraph{} O objetivo geral deste trabalho é implementar um \textit{software} capaz de simular uma estratégia de \textit{swing trade} utilizando aprendizado de máquina. Especificamente, o software deve: (1) criar um ambiente automatizado que permita buscar, atualizar e armazenar dados diários da bolsa brasileira de forma simples e conforme necessidade do usuário da aplicação; (2) criar a estrutura de uma estratégia por meio de um conjunto de regras e premissas baseadas em práticas de \textit{trading}; (3) treinar os modelos de aprendizado de máquina e acoplá-los à estrutura criada; (4) simular a estratégia obtida; (5) criar um mecanismo de fácil visualização dos resultados das simulações; e (6) analisar os resultados gerados.
 
 
 
 \FloatBarrier
 \section{Metodologia}
 
-\paragraph{} O trabalho tem início na criação de um ambiente propício à simulação de estratégias, bem como sua configuração e manutenção. Para isso, a fim de: otimizar o tráfego de dados pela internet; minimizar o processamento necessário para a geração de dados derivados (pré-processamento); e armazenar os resultados das estratégias de forma organizada, foi utilizado um banco de dados PostgreSQL. Dentre as atividades realizadas durante o pré-processamento dos dados, anteriores à simulação, é possível citar a identificação de picos na série histórica e os valores de risco mínimo e máximo a serem utilizados nas operações.
+\paragraph{} O trabalho tem início na criação de um ambiente propício à simulação de estratégias, bem como sua configuração e manutenção. Para isso, a fim de: otimizar o tráfego de dados pela internet; minimizar o processamento necessário para a geração de dados derivados (pré-processamento); e armazenar os resultados das estratégias de forma organizada, foi utilizado um banco de dados. Dentre as atividades realizadas durante o pré-processamento dos dados, anteriores às simulações, é possível citar a identificação de picos na série histórica e a criação de \textit{features} de suporte às decisões de entrada e saída das operações.
 
-\paragraph{} Em seguida, a etapa de simulação começa na leitura de um arquivo JSON contendo todos parâmetros necessários para a execução das estratégias. Nesta etapa, o programa itera dia após dia para cada estratégia configurada verificando os momentos e os valores de compra e de venda para cada ativo que compõe as carteiras. Ao final, registram-se no banco todas as operações executadas, independente da obtenção de lucro, junto com as informações estatísticas necessárias para a avaliação da performance.
+% \paragraph{} Em seguida, a etapa de simulação começa na leitura de um arquivo de configuração contendo todos parâmetros necessários para a execução das estratégias. Nesta etapa, o programa itera dia após dia para cada estratégia configurada verificando os momentos e os valores de compra e de venda para cada ativo que compõe as carteiras. Ao final, registram-se no banco todas as operações executadas, independente da obtenção de lucro, junto com as informações estatísticas necessárias para a avaliação da performance.
 
-\paragraph{} Por fim, com o objetivo de facilitar a análise dos resultados gerados, criou-se um \textit{dashboard} resposável por centralizar todas as informações pertinentes a uma execução de estratégia em uma única página web.
+\paragraph{} Em seguida, foi construído o \textit{software} principal, que além de se comunicar com o banco de dados, também busca os dados históricos quando há necessidade e simula as estratégias solicitadas via um arquivo de configuração.
 
-\paragraph{} Observa-se que além do uso de estruturas do banco de dados PostgreSQL, como \textit{triggers} e \textit{functions}, o código foi construído em Python devido à ampla variedade de bibliotecas e ao suporte da comunidade, apesar da desvantagem de desempenho por ser uma linguagem interpretada. O código utiliza as bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Também utilizou-se \textit{containers} Docker \cite{docker} para simplificar a execução.
+\paragraph{} Paralelamente, ocorreu o treinamento dos modelos de ML por meio de aprendizado supervisionado. Estes por sua vez, são acoplados ao programa principal para a tomada da decisão do momento de entrada nas operações.
+
+\paragraph{} Como atividades secundárias, porém importantes para os resultados finais, foram concebidos e refinados alguns parâmetros de simulações para aperfeiçoamento das estratégias. Nota-se que alguns parâmetros não tem relação alguma com os modelos gerados e sim com o gerenciamento de capital da carteira de ativos utilizada durante as simulações.
+
+\paragraph{} Por fim, com o objetivo de facilitar a análise dos resultados gerados, criou-se um \textit{dashboard} responsável por centralizar todas as informações pertinentes a uma execução de estratégia em uma única página \textit{web}.
+
+% \paragraph{} Observa-se que além do uso de estruturas do banco de dados PostgreSQL, como \textit{triggers} e \textit{functions}, o código foi construído em Python devido à ampla variedade de bibliotecas e ao suporte da comunidade, apesar da desvantagem de desempenho por ser uma linguagem interpretada. O código utiliza as bibliotecas \textit{yfinance}, \textit{pandas}, \textit{numpy}, \textit{scikit-learn}, \textit{multiprocessing}, \textit{matplotlib} e \textit{dash}. Também utilizou-se \textit{containers} Docker \cite{docker} para simplificar a execução.
 
 
 
 \FloatBarrier
 \section{Descrição}
 
-\paragraph{} No capítulo 2 é desenvolvida a fundamentação teórica acerca de temas relevantes ao entendimento geral de mercado financeiro e de aprendizado de máquina. Também é realizada uma revisão dos trabalhos relacionados ao tema, em outras palavras, a revisão bibliográfica.
+\paragraph{} No Capítulo 2 é desenvolvida a fundamentação teórica acerca de temas relevantes ao entendimento geral de mercado financeiro e de aprendizado de máquina. Também é realizada uma revisão dos trabalhos relacionados ao tema, em outras palavras, a revisão bibliográfica.
 
-\paragraph{} No capítulo 3, toda a metodologia é descrita, o que envolve as etapas de: pré-processamento de dados; simulações e otimizações de parâmetros; e a criação dos modelos de ML.
+\paragraph{} No Capítulo 3, a Metodologia é descrita junto da implementação. São desenvolvidas as etapas de: pré-processamento de dados; simulações e refinamento de seus parâmetros; assim como o treinamento dos modelos de ML.
 
-\paragraph{} No capítulo 4, é apresentado o resultado da simulação a partir dos modelos criados e dos parâmetros otimizados no capítulo 3.
+\paragraph{} No Capítulo 4, são apresentados os resultados das simulações a partir dos modelos criados e dos parâmetros otimizados no Capítulo 3.
 
-\paragraph{} Por fim, o capítulo 5 encerra com a conclusão e as recomendações de trabalhos futuros.
+\paragraph{} Por fim, o Capítulo 5 encerra com a conclusão e as recomendações de trabalhos futuros.

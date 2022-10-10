@@ -2,26 +2,29 @@
 \label{cap2}
 
 
+\paragraph{} Este capítulo busca fornecer ao leitor alguns insumos para uma melhor contextualização do trabalho. Serão abordadas as dinâmicas básicas de funcionamento do mercado, seguida por uma introdução de ML, um tipo específico de análise e alguns índices relavantes a este estudo. Por fim, uma revisão bibliográfica é realizada.
+
+
 
 \FloatBarrier
 \section{Mercado de Capitais, Bolsa de Valores e Ações}
 
-\paragraph{} O Mercado de Capitais, também conhecido como Mercado de Valores Mobiliários, é um dos segmentos do sistema financeiro responsável por fazer o intermédio entre agentes superávitarios, que detém capital de investimento, e agentes deficitários, que buscam capital para rentabilizá-lo, através da compra e venda valores mobiliários (\textit{i.e.}, ativos financeiros) \cite{mercado_de_capitais}. Consequentemente, gera-se uma maior liquidez destes ativos e também uma melhora no fluxo de capitais entre os agentes econômicos, seja os governos por meio dos bancos centrais, os bancos privados, as insituições financeiras ou até mesmo as pessoas físicas.
+\paragraph{} O Mercado de Capitais, também conhecido como Mercado de Valores Mobiliários, é um dos segmentos do sistema financeiro responsável por fazer o intermédio entre agentes superávitarios, que detém capital de investimento, e agentes deficitários, que buscam capital para rentabilizá-lo, através da compra e venda valores mobiliários (\textit{i.e.}, ativos financeiros) \cite{mercado_de_capitais}. Consequentemente, gera-se uma maior liquidez destes ativos e também uma melhora no fluxo de capitais entre os agentes econômicos, seja os governos por meio dos bancos centrais, os bancos privados, as instituições financeiras ou até mesmo as pessoas físicas.
 
-\paragraph{} No Brasil, o Mercado de Capitais é regulado e fiscalizado pela CVM, uma autarquia federal vinculada ao Ministério da Fazenda e criada em 1976 através da Lei nº 6.385 \cite{lei_6385}.
+\paragraph{} No Brasil, o Mercado de Capitais é regulado e fiscalizado pela Comissão de Valores Mobiliários (CVM), uma autarquia federal vinculada ao Ministério da Fazenda e criada em 1976 através da Lei nº 6.385 \cite{lei_6385}.
 
-\paragraph{} A Bolsa de Valores é uma plataforma onde se negociam os valores mobiliários do Mercado de Capitais, dentre eles ações (\textit{i.e.}, fatias, pedaços) de sociedades anônimas (ou companhias). No Brasil, a única Bolsa de Valores oficial existente é a B3 \cite{b3}, que administra os sistemas de negociação, compensação, liquidação, depósito e registro para todas as principais classes de ativos.
+\paragraph{} A Bolsa de Valores é uma plataforma onde se negociam os valores mobiliários do Mercado de Capitais, dentre eles ações (\textit{i.e.}, fatias, pedaços) de sociedades anônimas (ou companhias). No Brasil, a única Bolsa de Valores oficial existente é a Brasil, Bolsa, Balcão (B3) \cite{b3}, que administra os sistemas de negociação, compensação, liquidação, depósito e registro para todas as principais classes de ativos.
 
-\paragraph{} O processo de abertura de capital de uma empresa é uma iniciativa que possui vantanges estratégicas \cite{vantagens_sa} como: o aumento da confiança na perspectiva do mercado, seja para o consumidor final ou para parceiros comerciais; a solução de problemas decorrentes de processos sucessórios; e também a captação de capital de investimento, a fim de contribuir para o crescimento ou para a consolidação da companhia. Esse processo acontece através de uma oferta pública \cite{oferta_publica}, ou IPO, onde as ações que compõe o capital social \cite{capital_social} de uma companhia são vendidas pela primeira vez ao público geral. Uma vez encerrado o IPO, estas mesmas ações passam para o mercado secundário \cite{mercado_secundario}, onde investidores as negociam entre si. Em retorno ao capital adquirido pela companhia, surgem algumas responsabilidades, dentre elas a publicação de demonstrações financeiras \cite{dem_finan}, auditadas pela própria CVM \cite{audi_dem_finan}.
+\paragraph{} O processo de abertura de capital de uma empresa é uma iniciativa que possui vantanges estratégicas como: o aumento da confiança na perspectiva do mercado, seja para o consumidor final ou para parceiros comerciais; a solução de problemas decorrentes de processos sucessórios; e também a captação de capital de investimento, a fim de contribuir para o crescimento ou para a consolidação da companhia \cite{vantagens_sa}. Esse processo acontece através de uma oferta pública inicial (IPO) \cite{oferta_publica}, onde as ações que compõe o capital social \cite{capital_social} de uma companhia são vendidas pela primeira vez ao público geral. Uma vez encerrado o IPO, estas mesmas ações passam para o mercado secundário \cite{mercado_secundario}, onde investidores as negociam entre si. Em retorno ao capital adquirido pela companhia, surgem algumas responsabilidades, dentre elas a publicação de demonstrações financeiras \cite{dem_finan}, auditadas pela própria CVM \cite{audi_dem_finan}.
 
-\paragraph{} Para o acionista de uma sociedade anônima, existem duas formas de se obter lucro: através de proventos (dividendos e juros sobre capital próprio) \cite{proventos}; ou através de operações de compra e de venda de ações, mediante oscilações de seu valor de mercado. Conforme a expectavida corretamente induz, o lucro é comumente aferido durante a venda de um determinado papél posteriormente à sua aquisição a um preço de compra inferior. No entando, também é possível trabalhar com posições vendidas (short selling) \cite{short_selling}, onde um investidor aluga ações de outro investidor por meio de um contrato. Em seguida as vende para posteriormente recomprá-las a um preço inferior, devolvendo-as assim ao respectivo dono. Neste caso, o lucro é obtido quando a expectativa de queda de um ativo se prova verdadeira.
+\paragraph{} Para o acionista de uma sociedade anônima, existem duas formas de se obter lucro: através de proventos (dividendos e juros sobre capital próprio) \cite{proventos}; ou através de operações de compra e de venda de ações, mediante oscilações de seu valor de mercado.
 
 
 
 \FloatBarrier
 \subsection{Hipótese do Mercado Eficiente}
 
-\paragraph{} A Hipótese do Mercado Eficiente, definida por Eugene Fama \cite{fama1970efficient}, afirma que idealmente o preço de um ativo reflete toda a informação disponível sobre seu valor intrínseco. Em outras palavras, quanto menor o efeito de fatores que contribuam para uma inércia no fluxo de capital de investidores e na transmissão de informações, mais o mercado tende a ser eficiente. São estudados os três níveis de hipóteses:
+\paragraph{} A Hipótese do Mercado Eficiente (HME), definida por Eugene Fama \cite{fama1970efficient}, afirma que idealmente o preço de um ativo reflete toda a informação disponível sobre seu valor intrínseco. Em outras palavras, quanto menor o efeito de fatores que contribuam para uma inércia no fluxo de capital de investidores e na transmissão de informações, mais o mercado tende a ser eficiente. São estudados os três níveis de hipóteses:
 
 \begin{itemize}
     \item HME fraca: Os preços atuais refletem todo o histórico de informações disponibilizados publicamente.
@@ -35,7 +38,7 @@
 
 \paragraph{} A hipótese semi-forte também foi sustentada por alguns fatores, dentre eles a verificação de que os futuros pagamentos de proventos das companhias se refletem em média no preços das ações \cite{fama1969adjustment}.
 
-\paragraph{} Em resumo, o estudo das Hipóteses de Mercado Eficiente traz informações relevantes quanto se avalia a teoria por trás da possibilidade de aplicação de estratégias de \textit{trading} ao mercado financeiro. No entanto, é importante ressaltar que outros autores questionam ao menos parcialmente os estudos realizados por Eugene Fama, seja por resultados inconclusivos ou por anomalias detectadas no comportamento do mercado. Por exemplo, Frank Shostak \cite{shostak1997defense} critica abertamente a premissa de que todos os investidores teriam a mesma expectativa sobre os retornos da empresa. O ganhador do prêmio Nobel em ciências econômicas Paul Samuelson, que afirma que o a HME funciona muito melhor para ações individuais do que para o mercado como um todo \cite{jung2005samuelson}. Já o investidor Jack Schwager afirma que a HME está correta pelos motivos errados \cite{schwager2012market}, pois é muito difícil bater a média do mercado de forma consistente ao mesmo tempo que investidores possuem habilidades diferentes, portanto a informação não é interpretada e aplicada por todos da mesma forma.
+\paragraph{} Em resumo, o estudo da HME traz informações relevantes quanto se avalia a teoria por trás da possibilidade de aplicação de estratégias de \textit{trading} ao mercado financeiro. No entanto, é importante ressaltar que outros autores questionam ao menos parcialmente os estudos realizados por Eugene Fama, seja por resultados inconclusivos ou por anomalias detectadas no comportamento do mercado. Por exemplo, Frank Shostak critica abertamente a premissa de que todos os investidores teriam a mesma expectativa sobre os retornos da empresa \cite{shostak1997defense}. O ganhador do prêmio Nobel em ciências econômicas Paul Samuelson, que afirma que a HME funciona muito melhor para ações individuais do que para o mercado como um todo \cite{jung2005samuelson}. Já o investidor Jack Schwager afirma que a HME está correta pelos motivos errados, pois é muito difícil bater a média do mercado de forma consistente ao mesmo tempo que investidores possuem habilidades diferentes, portanto a informação não é interpretada e aplicada por todos da mesma forma \cite{schwager2012market}.
 
 
 
@@ -51,9 +54,9 @@
     \item Ibovespa (Índice Bovespa): Principal indicador de desempenho do mercado brasileiro. Possui alguns critérios específicos, mas basicamente é composto pelas ações com maior volume de negociação na B3 \cite{ibovespa}.
 \end{itemize}
 
-\paragraph{} Índices não são negociáveis pois não passam de métricas de mercado. Para isso existem fundos de investimentos chamados ETFs \cite{etf}, especializados em seguir um determinado índice.
+\paragraph{} Índices não são negociáveis pois não passam de métricas de mercado. Para isso existe um tipo de fundo de investimento chamado \textit{Exchange-Traded Fund} (ETF) \cite{etf}, que é especializado em seguir um determinado índice.
 
-\paragraph{} No Brasil, um investidor que deseja que uma parte de seu capital acompanhe um rendimento equivalente ao Ibovespa deverá investir no ETF cujo código de negociação é BOVA11.
+\paragraph{} No Brasil, um investidor que deseja que uma parte de seu capital acompanhe um rendimento equivalente ao Ibovespa deverá investir no ETF cujo código de negociação é BOVA11 \cite{etfs_listados}.
 
 
 
@@ -62,7 +65,7 @@
 
 \paragraph{} Ações são negociadas em múltiplos de um lote, que representa uma quantidade mínima de papéis. Nesse contexto, o Mercado Fracionário \cite{mercado_fracionario} surge com o objetivo de facilitar negociações de volumes menores que o lote mínimo permitido. No Brasil, o lote é de 100 ações e o Mercado Fracionário permite a compra de no mínimo 1 ação.
 
-\paragraph{} Na prática, ações fracionárias são agrupadas até formarem um lote para então serem negociadas. Elas podem ser criadas devido: a um desdobramento de ações que não gera resultado par (\textit{e.g.}, 3 para 2); ou a fusões e aquisições de empresas que combinam suas ações em uma razão predeterminada.
+\paragraph{} Ações fracionárias podem ser criadas devido: a um desdobramento de ações que não gera resultado par (\textit{e.g.}, 3 para 2); ou a fusões e aquisições de empresas que combinam suas ações em uma razão predeterminada \cite{mercado_fracionario}.
 
 \paragraph{} Normalmente o Mercado Fracionário possui menor liquidez e maior volatilidade, mas sempre acompanha o preço do ativo negociado no mercado aberto.
 

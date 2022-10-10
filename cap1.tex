@@ -19,7 +19,7 @@
 
 \paragraph{} Este trabalho se limita aos ativos negociados na Bolsa de Valores de São Paulo, a B3, de cujos dados diários de domínio público foram adquiridos através da API \textit{open-source yfinance}, disponível em Python \cite{python}. Não são levadas em consideração informações sobre proventos (dividendos e juros sobre capital próprio) devido à inconsistência dos mesmos na API supracitada, aliada à dificuldade técnica para automatização da busca de tais dados. O Apêndice \ref{ApendiceA} evidencia os problemas encontrados em mais detalhes.
 
-\paragraph{} A duração das operações tem em vista um horizonte mínimo de um dia, sendo portanto operações de \textit{swing trade}. Não são realizas vendas a descoberto\footnote{Venda a descoberto (\textit{short selling}): Processo no qual a venda de ações ocorre antes da compra, fazendo com que o lucro seja obtido na queda do preço de mercado.} \cite{reed2013short}, portanto só há lucro em movimentos crescentes de preço. Apenas uma operação por ativo pode existir em um determinado instante de tempo para uma estratégia. Em outras palavras, só é possível comprar mais ações de uma empresa após a venda completa das ações da mesma, caso existam.
+\paragraph{} Na estratégia de negociação desenvolvida neste trabalho, a duração das operações tem em vista um horizonte mínimo de um dia, sendo portanto operações de \textit{swing trade}. Também não são realizas vendas a descoberto\footnote{Venda a descoberto (\textit{short selling}): Processo no qual a venda de ações ocorre antes da compra, fazendo com que o lucro seja obtido na queda do preço de mercado.} \cite{short_selling}, portanto só há lucro em movimentos crescentes de preço. Apenas uma operação por ativo pode existir em um determinado instante de tempo para uma estratégia. Em outras palavras, só é possível comprar mais ações de uma empresa após a venda completa das ações da mesma, caso existam.
 
 \paragraph{} A incidência de impostos devidos (\textit{e.g.}, imposto de renda) está fora do escopo. Assim como a utilização de critérios baseados em análise fundamentalista \cite{bulkowski2012fundamental}, por causa da dificuldade técnica de obtenção dessas informações de maneira automatizada e estruturada.
 
@@ -28,7 +28,7 @@
 \FloatBarrier
 \section{Justificativa}
 
-\paragraph{} O crescimento do número de investidores na bolsa de valores brasileira \cite{aumento_investidores} demonstra um maior interesse da população na busca por um complemento da renda familiar ou até na substituição da fonte de renda principal.
+\paragraph{} O crescimento do número de investidores na bolsa de valores brasileira \cite{aumento_investidores} pode ser parcialmente justificado por um maior interesse da população na busca por um complemento da renda familiar ou até na substituição da fonte de renda principal.
 
 \paragraph{} No cenário global, o aumento do uso de robôs de investimento tem se mostrado expressivo, seja por pessoas físicas ou fundos de investimento, de forma total ou parcial em suas estratégias \cite{robos_investidores, investing_robot}. Por outro lado, tal crescimento não vem sendo igualmente representado no Brasil devido às peculiaridades do mercado de capitais nacional, como a alta volatilidade e a alta sensibilidade a notícias \cite{robos_e_fundos}.
 
@@ -69,7 +69,7 @@
 
 \paragraph{} No Capítulo 2 é desenvolvida a fundamentação teórica acerca de temas relevantes ao entendimento geral de mercado financeiro e de aprendizado de máquina. Também é realizada uma revisão dos trabalhos relacionados ao tema, em outras palavras, a revisão bibliográfica.
 
-\paragraph{} No Capítulo 3, a Metodologia é descrita junto da implementação. São desenvolvidas as etapas de: pré-processamento de dados; simulações e refinamento de seus parâmetros; assim como o treinamento dos modelos de ML.
+\paragraph{} No Capítulo 3, a Metodologia é descrita junto da Implementação. São desenvolvidas as etapas de: pré-processamento de dados; simulações e refinamento de seus parâmetros; assim como o treinamento dos modelos de ML.
 
 \paragraph{} No Capítulo 4, são apresentados os resultados das simulações a partir dos modelos criados e dos parâmetros otimizados no Capítulo 3.
 

@@ -14,43 +14,43 @@ Database file #1: biblio.bib
 Warning--empty journal in spearman1961proof
 You've used 86 entries,
             2465 wiz_defined-function locations,
-            997 strings with 16837 characters,
-and the built_in function-call counts, 18223 in all, are:
-= -- 2000
+            995 strings with 16922 characters,
+and the built_in function-call counts, 18056 in all, are:
+= -- 1974
 > -- 484
-< -- 31
+< -- 30
 + -- 207
 - -- 121
-* -- 1116
-:= -- 2830
+* -- 1095
+:= -- 2803
 add.period$ -- 104
 call.type$ -- 86
 change.case$ -- 91
 chr.to.int$ -- 0
 cite$ -- 87
-duplicate$ -- 937
-empty$ -- 2117
+duplicate$ -- 930
+empty$ -- 2103
 format.name$ -- 121
-if$ -- 4497
+if$ -- 4457
 int.to.chr$ -- 0
 int.to.str$ -- 86
-missing$ -- 64
+missing$ -- 63
 newline$ -- 262
 num.names$ -- 86
-pop$ -- 399
+pop$ -- 404
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
 skip$ -- 394
 stack$ -- 0
-substring$ -- 692
-swap$ -- 270
-text.length$ -- 31
+substring$ -- 667
+swap$ -- 266
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 147
+while$ -- 145
 width$ -- 88
-write$ -- 873
+write$ -- 870
 (There was 1 warning)

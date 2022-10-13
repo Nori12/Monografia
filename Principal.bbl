@@ -216,6 +216,35 @@ ARTHUR, S., OTHERS, \enquote{Some studies in machine learning using the game of
   checkers}, \emph{IBM Journal of research and development}, v.~3, n.~3,
   pp.~210--229, 1959.
 
+\bibitem{khan2020machine}
+KHAN, A.~I., AL-HABSI, S., \enquote{Machine learning in computer vision},
+  \emph{Procedia Computer Science}, v.~167, pp.~1444--1451, 2020.
+
+\bibitem{tripathi2017complex}
+TRIPATHI, B.~K., \enquote{On the complex domain deep machine learning for face
+  recognition}, \emph{Applied Intelligence}, v.~47, n.~2, pp.~382--396, 2017.
+
+\bibitem{zhou2020product}
+ZHOU, L., \enquote{Product advertising recommendation in e-commerce based on
+  deep learning and distributed expression}, \emph{Electronic Commerce
+  Research}, v.~20, n.~2, pp.~321--342, 2020.
+
+\bibitem{kumar2019credit}
+KUMAR, P., IQBAL, F., \enquote{Credit card fraud identification using machine
+  learning approaches}. In: \emph{2019 1st International conference on
+  innovations in information and communication technology (ICIICT)}, pp. 1--4,
+  IEEE, 2019.
+
+\bibitem{richens2020improving}
+RICHENS, J.~G., LEE, C.~M., JOHRI, S., \enquote{Improving the accuracy of
+  medical diagnosis with causal machine learning}, \emph{Nature
+  communications}, v.~11, n.~1, pp.~1--9, 2020.
+
+\bibitem{provost2000machine}
+PROVOST, F., \enquote{Machine learning from imbalanced data sets 101}. In:
+  \emph{Proceedings of the AAAI’2000 workshop on imbalanced data sets},
+  v.~68, pp. 1--3, AAAI Press, 2000.
+
 \bibitem{weiss2007cost}
 WEISS, G.~M., MCCARTHY, K., ZABAR, B., \enquote{Cost-sensitive learning vs.
   sampling: Which is best for handling unbalanced classes with unequal error
@@ -226,10 +255,33 @@ STRANDS, \enquote{Unbalanced Datasets \& What To Do About Them},
   https://blog.strands.com/unbalanced-datasets, (Acessado em 5 de Abril de
   2022).
 
+\bibitem{peterson2009k}
+PETERSON, L.~E., \enquote{K-nearest neighbor}, \emph{Scholarpedia}, v.~4, n.~2,
+  pp.~1883, 2009.
+
+\bibitem{wolberg1990multisurface}
+WOLBERG, W.~H., MANGASARIAN, O.~L., \enquote{Multisurface method of pattern
+  separation for medical diagnosis applied to breast cytology.},
+  \emph{Proceedings of the national academy of sciences}, v.~87, n.~23,
+  pp.~9193--9196, 1990.
+
+\bibitem{bhatia2010survey}
+BHATIA, N., OTHERS, \enquote{Survey of nearest neighbor techniques},
+  \emph{arXiv preprint arXiv:1007.0085}, , 2010.
+
+\bibitem{aha2013lazy}
+AHA, D.~W., \emph{Lazy learning}. Springer Science \& Business Media, 2013.
+
 \bibitem{knn_classification}
 DATACAMP, \enquote{KNN Classification Tutorial using Scikit-learn},
   https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn,
   (Acessado em 5 de Abril de 2022).
+
+\bibitem{lobato2006decision}
+LOBATO, E., UGEDO, A., ROUCO, L., \emph{et~al.}, \enquote{Decision trees
+  applied to spanish power systems applications}. In: \emph{2006 International
+  Conference on Probabilistic Methods Applied to Power Systems}, pp. 1--6,
+  IEEE, 2006.
 
 \bibitem{pardo2011evaluation}
 PARDO, R., \emph{The evaluation and optimization of trading strategies}. John

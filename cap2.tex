@@ -63,11 +63,9 @@
 \FloatBarrier
 \subsection{Mercado Fracionário}
 
-\paragraph{} Ações são negociadas em múltiplos de um lote, que representa uma quantidade mínima de papéis. Nesse contexto, o Mercado Fracionário \cite{mercado_fracionario} surge com o objetivo de facilitar negociações de volumes menores que o lote mínimo permitido. No Brasil, o lote é de 100 ações e o Mercado Fracionário permite a compra de no mínimo 1 ação.
+\paragraph{} Ações são negociadas em múltiplos de um lote, que representa uma quantidade mínima de papéis. Nesse contexto, o Mercado Fracionário surge com o objetivo de facilitar negociações de volumes menores que o lote mínimo permitido. No Brasil, o lote é de 100 ações e o Mercado Fracionário permite a compra de no mínimo 1 ação \cite{mercado_fracionario}. No entanto, este mercado possui menor liquidez e maior volatilidade, mas sempre acompanha o preço do ativo negociado no mercado aberto.
 
 \paragraph{} Ações fracionárias podem ser criadas devido: a um desdobramento de ações que não gera resultado par (\textit{e.g.}, 3 para 2); ou a fusões e aquisições de empresas que combinam suas ações em uma razão predeterminada \cite{mercado_fracionario}.
-
-\paragraph{} Normalmente o Mercado Fracionário possui menor liquidez e maior volatilidade, mas sempre acompanha o preço do ativo negociado no mercado aberto.
 
 \paragraph{} Grandes investidores e fundos de investimentos não possuem problemas quanto ao capital mínimo necessário para a compra de um lote de ações, visto que negociam em quantidades muito maiores. O problema surge quando um investidor com pouco aporte financeiro deseja entrar no mercado e não consegue encontrar ativos cujo lote mínimo esteja dentro de seu orçamento.
 
@@ -76,13 +74,15 @@
 \FloatBarrier
 \section{Tipos de Análises}
 
+\paragraph{} Nesta seção, será abordado as duas formas utilizadas para análise do comportamento das companhias ao longo do tempo.
+
 
 
 \FloatBarrier
 \subsection{Análise Fundamentalista}
 \label{subsection:af}
 
-\paragraph{} A Análise Fundamentalista é um bastante utilizada para identificar tendências de flutuação no preço de ações tendo em vista um horizonte de longo prazo \cite{bulkowski2012fundamental}. Ela se baseia em fatores econômicos relacionados à companhia, como: o quadro de diretores e dirigentes maiores; o fluxo de caixa; a saúde e a situação financeira; o contexto político do país; os concorrentes de mercado; as circunstâncias e os desastres climáticos, naturais ou não, dentre outros fatores.
+\paragraph{} A Análise Fundamentalista (AF) é um bastante utilizada para identificar tendências de flutuação no preço de ações tendo em vista um horizonte de longo prazo \cite{bulkowski2012fundamental}. Ela se baseia em fatores econômicos relacionados à companhia, como: o quadro de diretores e dirigentes maiores; o fluxo de caixa; a saúde e a situação financeira; o contexto político do país; os concorrentes de mercado; as circunstâncias e os desastres climáticos, naturais ou não, dentre outros fatores.
 
 \paragraph{} Devido à natureza desorganizada e desestruturada do acesso e da leitura dos dados que representam os fatores mencionados, torna-se difícil implementar uma automação eficaz.
 
@@ -92,17 +92,17 @@
 \subsection{Análise Técnica}
 \label{subsection:at}
 
-\paragraph{} A Análise Técnica busca identificar tendências de curto prazo na série temporal de preços de ações através da identificação de padrões e da criação de informações derivadas (indicadores técnicos) \cite{murphy1999technical, edwards2018technical}. Segundo a Teoria de Dow, o preço das ações é consequência de todos os acontecimentos relacionados direta ou indiretamente a uma companhia \cite{kirkpatrick2010technical}.
+\paragraph{} A Análise Técnica (AT) busca identificar tendências de curto prazo na série temporal de preços de ações através da identificação de padrões e da criação de informações derivadas (indicadores técnicos) \cite{murphy1999technical, edwards2018technical}. Segundo a Teoria de Dow, o preço das ações é consequência de todos os acontecimentos relacionados direta ou indiretamente a uma companhia \cite{kirkpatrick2010technical}.
 
-\paragraph{} Diferentemente da AF, a automação desta análise é mais fácil pois os dados normalmente são organizados e estruturados. No entanto, como são obtidos \textit{a posteriori}, a dificuldade desta análise se dá na separação entre o que é ruído e o que é de fato tendência de mercado, e também na criação de informações derivadas que se mostrem relativamente úteis.
+\paragraph{} Diferentemente da AF, a automação desta análise é mais fácil pois os dados normalmente são organizados e estruturados. No entanto, uma das dificuldades desta análise está na separação entre o que é ruído e o que é de fato tendência de mercado.
 
-\paragraph{} Dentre os indicadores mais famosos e portanto utilizados, podemos citar: o volume financeiro; a identificação de tendências de alta, de baixa e de consolidação de acordo com a Teoria de Dow; as linhas de suporte e de resistência do mercado; as médias móveis; as bandas de Bollinger \cite{bollinger2002bollinger}; e o MACD \cite{appel2007understanding}.
+\paragraph{} Para facilitar a análise, são utilizados indicadores, dentre os quais pode-se citar: o volume financeiro; a identificação de tendências de alta, de baixa e de consolidação de acordo com a Teoria de Dow; as linhas de suporte e de resistência do mercado; as médias móveis; as bandas de Bollinger \cite{bollinger2002bollinger}; e o MACD \cite{appel2007understanding}.
 
 
 \FloatBarrier
 \subsubsection*{Leitura de Gráficos de Candlesticks}
 
-\paragraph{} Gráficos de Candlesticks\footnote{Em português: Gráfico de Velas.} são bastante utilizados na AT. A leitura é padronizada de acordo com a Figura \ref{fig:1}. Neste tipo de gráfico as cores importam, pois indicam se o balanço do período foi positivo ou negativo.
+\paragraph{} Gráficos de \textit{Candlesticks}\footnote{Em português: Gráfico de Velas.} são bastante utilizados na AT. A leitura é padronizada de acordo com a Figura \ref{fig:1}. Neste tipo de gráfico as cores importam, pois indicam se o balanço do período foi positivo ou negativo.
 
 \begin{figure}[h]
     \includegraphics[scale=0.50]{candlestick.png}
@@ -115,7 +115,7 @@
 \FloatBarrier
 \subsubsection*{Teoria de Dow}
 
-\paragraph{} A Teoria de Dow, criada pelo americano Charles Henry Dow em 1884 é considerada a base da AT moderna \cite{kirkpatrick2010technical}. Embora não tivesse sido formalizada explicitamente pelo autor enquanto estava vivo, amigos e profissionais da época tiveram o trabalho de divulgar e fazer alguns ajustes. Baseada na HME, a ideia central por trás da Teoria de Dow é que a lógica econômica deve ser usada para explicar os movimentos do mercado, que em condições ideais segue o padrão de: tendência de alta\footnote{Topos e fundos ascendentes.}; topo; tendência de baixa\footnote{Topos e fundos descendentes.}; e fundo, intercalados com períodos de consolidação\footnote{Topos e fundos lateralizados.}. A Figura \ref{fig:2} ilustra esse comportamento.
+\paragraph{} A Teoria de Dow, criada pelo americano Charles Henry Dow em 1884 é considerada a base da AT moderna \cite{kirkpatrick2010technical}. Embora não tivesse sido formalizada explicitamente pelo autor enquanto estava vivo, amigos e profissionais da época tiveram o trabalho de divulgar e fazer alguns ajustes. Baseada na HME, a ideia central por trás da Teoria de Dow é que a lógica econômica deve ser usada para explicar os movimentos do mercado, que em condições ideais segue o padrão de: tendência de alta; topo; tendência de baixa; e fundo, intercalados com períodos de consolidação. A Figura \ref{fig:2} ilustra esse comportamento.
 
 \begin{figure}[h]
     \includegraphics[scale=0.50]{dow_theory.png}
@@ -124,18 +124,6 @@
     \label{fig:2}
 \end{figure}
 
-
-% \FloatBarrier
-% \subsubsection*{Média Móvel Exponencial}
-
-% \paragraph{} A Média Móvel Exponencial (MME) possui uma característica que a torna relevante para estratégias de AT. Ela dá um maior peso relativo às amostras mais recentes dentro de uma série temporal. As Equações \ref{eq:2} e \ref{eq:3} mostram o seu cálculo, onde $P_t$ representa o preço atual, $\mathit{MME_{t-1}}$ é a média acumulada até o instante anterior e $K$ é uma constante definida pela quantidade de amostras desejadas $n>0$.
-
-% \begin{equation} \label{eq:2}
-%     \mathit{MME_t} = (P_t - \mathit{MME_{t-1}}) * K + \mathit{MME_{t-1}}
-% \end{equation}
-% \begin{equation} \label{eq:3}
-%     K = \frac{2}{n+1}
-% \end{equation}
 
 
 \FloatBarrier
@@ -150,7 +138,7 @@
     \label{fig:3}
 \end{figure}
 
-\paragraph{} De maneira semelhante, as Linhas de Tendência oferecem uma inspeção gráfica do quanto o preço de um ativo está crescendo o diminuindo. Portanto, estão necessariamente atreladas a movimentos de tendência de alta ou de tendência de baixa. Em essência, não deixam de ser linhas se Supote e de Resistência. As Figuras \ref{fig:4} e \ref{fig:5} exemplificam esses indicadores.
+\paragraph{} De maneira semelhante, as Linhas de Tendência oferecem uma inspeção gráfica do quanto o preço de um ativo está crescendo o diminuindo. Portanto, estão necessariamente atreladas a movimentos de tendência de alta ou de tendência de baixa. Em essência, não deixam de ser linhas de Supote e de Resistência. As Figuras \ref{fig:4} e \ref{fig:5} exemplificam esses indicadores.
 
 \begin{figure}[h]
     \includegraphics[scale=0.50]{lta.png}
@@ -171,24 +159,24 @@
 \FloatBarrier
 \section{Aprendizado de Máquina}
 
-\paragraph{} Aprendizado de Máquina é um campo de estudo dentro de Ingeligência Artificial \cite{ibm_ai} que engloba estatística e ciência da computação. O objetivo é extrair conhecimento a partir de uma conjunto de dados \cite{muller2016introduction}. A terminologia foi criada por um pesquisador da IBM chamado Arthur Samuel em 1959 \cite{ibm_ml} para um estudo de caso do jogo de damas \cite{arthur1959some}.
+\paragraph{} Aprendizado de Máquina é um campo de estudo dentro de Inteligência Artificial \cite{ibm_ai}. O objetivo é extrair conhecimento a partir de uma conjunto de dados \cite{muller2016introduction}. A terminologia foi criada por um pesquisador da IBM chamado Arthur Samuel em 1959 \cite{ibm_ml} para um estudo de caso do jogo de damas \cite{arthur1959some}.
 
-\paragraph{} Em geral, algoritmos de ML buscam realizar tarefas extremamente complexas computacionalmente sem serem explitamente programadas caso a caso. Alguns exemplos de aplicações que deixam evidente os benefícios deste método são: visão computacional, identificação de rosto, recomendação de produtos em plataformas de \textit{e-commerce}, identificação de transações financeiras fraudulentas, suporte a diagnósticos médicos, dentre diversos outros.
+\paragraph{} Em geral, algoritmos de ML buscam realizar tarefas extremamente complexas computacionalmente sem serem explitamente programadas caso a caso. Alguns exemplos de aplicações que deixam evidente os benefícios deste método são: visão computacional \cite{khan2020machine}, reconhecimento de faces \cite{tripathi2017complex}, recomendação de produtos em plataformas de \textit{e-commerce} \cite{zhou2020product}, identificação de transações financeiras fraudulentas \cite{kumar2019credit} e suporte a diagnósticos médicos \cite{richens2020improving}.
 
-\paragraph{} Algoritmos de ML podem ser baseados em Aprendizado Supervisionado, Aprendizado Não Supervisionado ou até mesmo em um aprendizado híbrido. Este trabalho utiliza apenas AS para a criação de modelos.
+\paragraph{} Dentre as diferentes abordagens de ML que podem ser utilizadas, este trabalho utiliza apenas Aprendizado Supervisionado (AS) \cite{muller2016introduction}.
 
 
 
 \FloatBarrier
 \subsection{Aprendizado Supervisionado}
 
-\paragraph{} Uma das metodologias mais comuns de ML, seu objetivo é a predição de um resultado a partir de um conjunto de dados de entrada, com a condição de que o modelo tem acesso a vários exemplos de entrada e saída de dados para obter uma melhor performance \cite{muller2016introduction}.
+\paragraph{} Uma das metodologias mais comuns de ML, seu objetivo é a predição de um resultado a partir de um conjunto de dados de entrada, com a condição de que o modelo tem acesso a vários exemplos de entradas e de saídas de dados para assim obter uma melhor performance \cite{muller2016introduction}.
 
-\paragraph{} O conjunto de dados (\textit{dataset}) com exemplos de entrada e saída utilizado para criação do modelo é chamado de conjunto de dados de treinamento (\textit{training set}). Existe um outro conjunto de dados utilzado para testar a performance do modelo. Este segundo conjunto, chamado de dados de teste (\textit{test set}), precisa ser necessariamente diferente dos dados de treinamento para evitar que o efeito memória se sobreponha à qualidade de generalização do modelo (explicado a seguir). Como regra geral de uso, é aconselhável separar 75\% dos dados para o conjunto de treinamento e 25\% para o conjunto de teste, ou algo próximo desta proporção \cite{muller2016introduction}.
+\paragraph{} O conjunto de dados (\textit{dataset}) com exemplos de entrada e saída utilizado para criação do modelo é chamado de conjunto de dados de treinamento (\textit{training set}). Existe um outro conjunto de dados utilzado para testar a performance do modelo. Este por sua vez é chamado de conjunto de dados de teste (\textit{test set}) e precisa ser diferente dos dados de treinamento para evitar que o efeito memória se sobreponha à qualidade de generalização do modelo, explicado a seguir.
 
-\paragraph{} Todo modelo pode ser avaliado sob o ponto de vista da generalização. Essa característica indica a capacidade de realizar predições acuradas no conjuntos de dados de teste. Quanto maior a taxa de acerto no conjunto de teste, melhor tende a ser a capacidade de generalização.
+\paragraph{} Todo modelo pode ser avaliado sob o ponto de vista da generalização. Essa característica indica a capacidade de realizar predições acuradas no conjuntos de dados de teste. Um dos métodos de avaliação de performance de generalização é chamado de validação cruzada (\textit{cross-validation} \cite{muller2016introduction}. Neste método, quanto maior a taxa de acerto no conjunto de teste, melhor tende a ser a capacidade de generalização.
 
-\paragraph{} Outras características importantes são conhecidas como \textit{overfitting} e \textit{underfitting}. Quando um modelos está muito complexo a ponto de ser sensível demais aos ruídos do conjunto de treinamento, trazendo dificuldades de generalização, diz-se que ocorreu um \textit{overfitting}. De forma análoga, quando a complexidade do modelo é baixa de forma a não aproveitar devidamente as característica importantes do conjunto de treinamento, implicando também em perda de generalização, diz-se que ocorreu um \textit{underfitting}. O objetivo do projetista de um modelo por AS é encontrar um ponto de equilíbrio entre essas características, chamada de ``\textit{sweet spot}'' na Figura \ref{fig:6}, que mostra a relação entre generalização, \textit{overfitting} e \textit{underfitting}.
+\paragraph{} Outras características importantes são conhecidas como \textit{overfitting} e \textit{underfitting}. Quando um modelos está muito complexo a ponto de ser sensível demais aos ruídos do conjunto de treinamento, trazendo dificuldades de generalização, diz-se que ocorreu um \textit{overfitting}. De forma análoga, quando a complexidade do modelo é baixa de forma a não aproveitar devidamente as características importantes do conjunto de treinamento, implicando também em perda de generalização, diz-se que ocorreu um \textit{underfitting}. O objetivo do projetista de um modelo por AS é encontrar um ponto de equilíbrio entre essas características, chamada de ``\textit{sweet spot}'' na Figura \ref{fig:6}, que mostra a relação entre generalização, \textit{overfitting} e \textit{underfitting}.
 
 \begin{figure}[h]
     \includegraphics[scale=0.35]{generalisation.png}
@@ -197,7 +185,7 @@
     \label{fig:6}
 \end{figure}
 
-\paragraph{} Existem dois tipos de problemas associados ao AS, os problemas de Regressão e os problemas de Classificação.
+\paragraph{} Existem dois tipos principais de problemas de AS, os problemas de Regressão e os problemas de Classificação \cite{muller2016introduction}.
 
 
 
@@ -214,7 +202,7 @@
 
 \paragraph{} Os problemas de classificação buscam escolher um rótulo (ou classe) mais provável dentre uma lista de possibilidades finitas e pré-estabelecidas \cite{muller2016introduction}. Como aplicações, pode-se citar: a previsão de escolha eleitoral de pessoas a partir de indicadores socioeconômicos; o diagnóstico de câncer em pacientes a partir de informações médicas; ou mesmo a presença e ausência de animais catalogados em um conjunto de imagens.
 
-\paragraph{} É importante mencionar que problemas de classificação precisam de atenção ao balanceamento das classes (\textit{i.e.} mesma relevância para cada classe durante o treinamento). Em outras palavras, um conjunto de dados não balanceado pode gerar um modelo pouco complexo para uma aplicação não trivial, o que implica em um indíce ilusório de acurácia nos dados de teste. Isso acontece porque o modelo tende a quase sempre escolher a classe com maior frequencia em seu treinamento, independentemente da composição dos dados. Para corrigir este efeito, deve-se deixar todas as classes com a mesma relevância durante o treinamento do modelo, o que pode ser feito através dos seguintes métodos:
+\paragraph{} É importante mencionar que problemas de classificação precisam de atenção ao balanceamento das classes (\textit{i.e.} mesma relevância para cada classe durante o treinamento). Em outras palavras, um conjunto de dados não balanceado pode apresentar altos valores de acurácia a partir de um modelo extremamente simples para uma determinada aplicação. Isso acontece porque o modelo aprende que é mais fácil escolher a classe com maior frequencia em seu treinamento do que tentar se aperfeiçoar \cite{provost2000machine}. Para corrigir este efeito, deve-se deixar todas as classes com a mesma relevância durante o treinamento do modelo, o que pode ser feito através dos seguintes métodos:
 
 \begin{itemize}
     \item \textit{Undersampling}: Diminuição de amostras pertencentes à classe mais presente. É aconselhável quando o \textit{dataset} é grande o suficiente para suportar a perda de dados sem perda significativa de generalização. Como vantagem, diminui o tempo de treinamento de um modelo. Ver Figura \ref{fig:7}.
@@ -241,12 +229,14 @@
 \FloatBarrier
 \subsubsection*{\textit{k-Nearest Neighbors}}
 
-\paragraph{} k-NN é talvez o algoritmo mais simples de todos. Consiste na memorização dos dados de treinamento para predizer a classe ou o valor a partir da média dos K registros mais próximos encontrados. A Figura \ref{fig:8} mostra como funciona o critério de seleção da classe de uma amostra de teste a partir dos dados de treinamento e do parâmetro K de vizinhos selecionados.
+\paragraph{} k-NN é talvez o algoritmo mais simples de todos. Consiste na memorização dos dados de treinamento para predizer a classe ou o valor a partir da média dos K registros mais próximos encontrados \cite{muller2016introduction, peterson2009k}. Pode-se citar o uso deste algoritmo por Wolberg e Mangasarian para identificação de malignidade de amostras citológicas de mamas \cite{wolberg1990multisurface}.
+
+\paragraph{} A simplicidade deste algoritmo é uma grande vantagem, mas também é possível citar a facilidade de treinamento e a robustez a dados ruidosos \cite{bhatia2010survey}. Por outro lado, a limitação de memória, a execução demorada devido ao \textit{lazy learning} \cite{aha2013lazy} e a alta sensibilidade a características irrelevantes são seus pontos negativos. A Figura \ref{fig:8} mostra como funciona o critério de seleção da classe de uma amostra de teste a partir dos dados de treinamento e do parâmetro K de vizinhos selecionados.
 
 \begin{figure}[h]
     \includegraphics[scale=0.60]{knn_example.png}
     \centering
-    \caption{Funcionamento de um algoritmo k-NN para o problema de classificação \cite{knn_classification}. Para K=3 a classe é B e para K=7 a classe é A.}
+    \caption{Funcionamento de um algoritmo k-NN para o problema de classificação. Para K=3 a classe é B e para K=7 a classe é A \cite{knn_classification}.}
     \label{fig:8}
 \end{figure}
 
@@ -254,7 +244,9 @@
 \FloatBarrier
 \subsubsection*{\textit{Decision Tree}}
 
-\paragraph{} Em essência, uma Árvore de Decisão\footnote{Em inglês: \textit{Decision Tree}.} é uma sequência hierárquica de estruturas de decisão \textit{if/else}\footnote{Em português: se/senão.} acerca das características do conjunto de dados. Tecnicamente, pode-se construir uma Árvore de Decisão até que todas as suas folhas estejam totalmente puras, ou seja, as sequências de decisão que levam a um resultado só englobam amostras de um tipo de classe. Por outro lado, folhas impuras contém a presença de mais de uma classe, onde se escolhe a classe de maior número de amostras como resultado. O problema é que a presença excessiva de folhas totalmente puras normalmente é acompanhado de um \textit{overfitting} do modelo, portanto precisa ser controlado. Para isso, é possível ajustar alguns parâmetros, como por exemplo: a profundidade, que define a quantidade máxima de camadas que a árvore atingirá qualquer que seja o ramo; o número mínimo de amostras necessário para criação de uma nova ramificação; dentre outros.
+\paragraph{} Em essência, uma Árvore de Decisão é uma sequência hierárquica de estruturas de decisão \textit{if/else} acerca das características do conjunto de dados. Pode-se mencionar o uso deste algoritmo por Lobato \textit{et al} nos sistemas de energia espanhóis \cite{lobato2006decision}.
+
+\paragraph{} Tecnicamente, é possível construir uma Árvore de Decisão até que todas as suas folhas estejam totalmente puras, ou seja, as sequências de decisão que levam a um resultado só englobam amostras de um tipo de classe. Por outro lado, folhas impuras contém a presença de mais de uma classe, onde se escolhe a classe de maior número de amostras como resultado. O problema é que a presença excessiva de folhas totalmente puras normalmente é acompanhado de um \textit{overfitting} do modelo, portanto precisa ser controlado. Para isso, é possível ajustar alguns parâmetros, como por exemplo: a profundidade, que define a quantidade máxima de camadas que a árvore atingirá qualquer que seja o ramo; o número mínimo de amostras necessário para criação de uma nova ramificação; dentre outros.
 
 \paragraph{} Algumas das vantagens deste modelo estão no fácil entendimento e visualização dos critérios de decisão em árvores pequenas aos olhos do projetista. O tempo de processamento computacional envolvido na criação deste modelo é razoavelmente curto. Não é necessário um pré-processamento dos dados, uma vez que cada característica é processada separadamente. A Figura \ref{fig:9} exemplifica a estrutura por trás de uma Árvode de Decisão.
 
@@ -271,7 +263,7 @@
 \FloatBarrier
 \subsubsection*{\textit{Random Forest}}
 
-\paragraph{} Um dos modelos mais utilizado atualmente, o algoritmo \textit{Random Forest}\footnote{Em português: Floresta Aleatória.} é a combinação de diversas Árvores de Decisão ligeiramente diferentes entre si \cite{muller2016introduction}. A ideia é que apesar da tendência de \textit{overfitting} existente, a média dos resultados de cada árvore tende a diminuir esse fator. Além dos parâmetros responsáveis por configurar as árvores individualmente, este modelo também precisa do número de árvores que serão utilizadas.
+\paragraph{} Um dos modelos mais utilizados atualmente, o algoritmo \textit{Random Forest} é a combinação de diversas Árvores de Decisão ligeiramente diferentes entre si \cite{muller2016introduction}. A ideia é que apesar da tendência de \textit{overfitting} existente, a média dos resultados de cada árvore tende a diminuir esse fator. Além dos parâmetros responsáveis por configurar as árvores individualmente, este modelo também precisa do número de árvores que serão utilizadas.
 
 \paragraph{} Normalmente é preferível utilizar \textit{Random Forests} ao invés de Árvores de Decisão, salvo casos em que o entendimento e a visualização clara do modelo se torna um fator importante. É possível compensar o aumento do tempo de processamente envolvido na criação de uma \textit{Random Forest} com a paralelização dos núcleos de processamento da CPU\footnote{Do inglês: \textit{Central Process Unit}.}.
 
@@ -280,12 +272,12 @@
 \FloatBarrier
 \section{\textit{Walk-Forward Analysis}}
 
-\paragraph{} \textit{Walk-Forward Analysis} \cite{pardo2011evaluation} é um processo de otimização mais voltado para séries temporais no contexto de finanças. Para isso, o \textit{dataset} é dividido em múltiplos segmentos consecutivos, que são iterados progressivamente a fim de se obter os parâmetros ou modelos desejados. A Figura \ref{fig:10} ilustra o processo. Observa-se que são utilizados os termos \textit{in-sample data} (IS) como sinônimo de \textit{training set} e \textit{out-of-sample data} (OOS) como sinônimo de \textit{test set}. A imagem à esquerda representa um processo não-ancorado, onde o início do IS caminha com o decorrer do processo, já a imagem à direita mantém o início fixo por ser um processo ancorado.
+\paragraph{} \textit{Walk-Forward Analysis} (WFA) \cite{pardo2011evaluation} é um processo de otimização mais voltado para séries temporais no contexto de finanças. Para isso, o \textit{dataset} é dividido em múltiplos segmentos consecutivos, que são iterados progressivamente a fim de se obter os parâmetros ou modelos desejados. A Figura \ref{fig:10} ilustra o processo. Observa-se que são utilizados os termos \textit{in-sample data} (IS) como sinônimo de \textit{training set} e \textit{out-of-sample data} (OOS) como sinônimo de \textit{test set}. A imagem à esquerda representa um processo não-ancorado, onde o início do IS caminha com o decorrer do processo, já a imagem à direita mantém o início fixo por ser um processo ancorado.
 
 \begin{figure}[h]
     \includegraphics[scale=0.45]{wfa.png}
     \centering
-    \caption{\textit{Walk-Forward Analysis} (Não-Ancorado e Ancorado) \cite{wfo}.}
+    \caption{\textit{Walk-Forward Analysis} Não-Ancorado e Ancorado \cite{wfo}.}
     \label{fig:10}
 \end{figure}
 
@@ -301,7 +293,7 @@
 \FloatBarrier
 \subsection{Índice de Sharpe}
 
-\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe\footnote{Também conhecido como \textit{Sharpe Index}, \textit{Sharpe Ratio} ou até \textit{Sharpe Measure}.} tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (\textit{e.g.}, título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco e \begin{math}\sigma_a\end{math} seu respectivo desvio padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
+\paragraph{} Criado pelo americano William F. Sharpe em 1966 e revisado em 1994, o Índice de Sharpe tem como objetivo medir a performance de um investimento em relação a sua volatilidade, levando também em consideração o rendimento e a volatilidade de um investimento relativamente livre de risco (\textit{e.g.}, título público) \cite{sharpe1998sharpe}. Seja \begin{math}R_a\end{math} o retorno do investimento alvo, \begin{math}R_b\end{math} o retorno do investimento livre de risco e \begin{math}\sigma_a\end{math} seu respectivo desvio padrão, pode-se calcular o Índice de Sharpe através da Equação \ref{eq:1}.
 
 \begin{equation} \label{eq:1}
     S_a = \frac{E[R_a - R_b]}{\sigma_a}

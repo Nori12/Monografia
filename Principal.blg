@@ -11,46 +11,47 @@ A level-1 auxiliary file: cap5.aux
 The style file: coppe.bst
 A level-1 auxiliary file: ApendiceA.aux
 Database file #1: biblio.bib
+Warning--can't use both volume and number fields in provost2000machine
 Warning--empty journal in spearman1961proof
-You've used 86 entries,
+You've used 97 entries,
             2465 wiz_defined-function locations,
-            995 strings with 16922 characters,
-and the built_in function-call counts, 18056 in all, are:
-= -- 1974
-> -- 484
-< -- 30
-+ -- 207
-- -- 121
-* -- 1095
-:= -- 2803
-add.period$ -- 104
-call.type$ -- 86
-change.case$ -- 91
+            1060 strings with 18623 characters,
+and the built_in function-call counts, 21260 in all, are:
+= -- 2351
+> -- 564
+< -- 39
++ -- 238
+- -- 141
+* -- 1343
+:= -- 3295
+add.period$ -- 119
+call.type$ -- 97
+change.case$ -- 108
 chr.to.int$ -- 0
-cite$ -- 87
-duplicate$ -- 930
-empty$ -- 2103
-format.name$ -- 121
-if$ -- 4457
+cite$ -- 99
+duplicate$ -- 1094
+empty$ -- 2437
+format.name$ -- 141
+if$ -- 5243
 int.to.chr$ -- 0
-int.to.str$ -- 86
-missing$ -- 63
-newline$ -- 262
-num.names$ -- 86
-pop$ -- 404
+int.to.str$ -- 97
+missing$ -- 75
+newline$ -- 295
+num.names$ -- 97
+pop$ -- 439
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 394
+skip$ -- 456
 stack$ -- 0
-substring$ -- 667
-swap$ -- 266
-text.length$ -- 30
+substring$ -- 852
+swap$ -- 327
+text.length$ -- 39
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
-while$ -- 145
-width$ -- 88
-write$ -- 870
-(There was 1 warning)
+warning$ -- 2
+while$ -- 176
+width$ -- 99
+write$ -- 996
+(There were 2 warnings)

@@ -471,6 +471,8 @@ INPUT /Users/atcha/Github/Monografia/./figuras/resumo_projeto.png
 INPUT /Users/atcha/Github/Monografia/./figuras/otimizacao_de_parametros.png
 INPUT /Users/atcha/Github/Monografia/./figuras/otimizacao_de_parametros.png
 INPUT /Users/atcha/Github/Monografia/./figuras/otimizacao_de_parametros.png
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /Users/atcha/Github/Monografia/./figuras/config_file_estrutura.png
 INPUT /Users/atcha/Github/Monografia/./figuras/config_file_estrutura.png
 INPUT /Users/atcha/Github/Monografia/./figuras/config_file_estrutura.png
@@ -553,14 +555,12 @@ INPUT /Users/atcha/Github/Monografia/./figuras/avgcap_per_rcc_k.png
 INPUT /Users/atcha/Github/Monografia/./figuras/totalop_per_rcc_k.png
 INPUT /Users/atcha/Github/Monografia/./figuras/totalop_per_rcc_k.png
 INPUT /Users/atcha/Github/Monografia/./figuras/totalop_per_rcc_k.png
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT /Users/atcha/Github/Monografia/./figuras/dash_1.png
 INPUT /Users/atcha/Github/Monografia/./figuras/dash_1.png

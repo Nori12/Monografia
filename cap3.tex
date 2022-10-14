@@ -27,7 +27,7 @@
 
 \paragraph{} O \textbf{código fonte} do projeto pode ser encontrado em seu repositório online no Github \cite{project_github}.
 
-\paragraph{} A Figura \ref{fig:444} mostra a sequência lógica de refinamento dos parâmetros de simulação. As Seções \ref{sub:max_op_days}, \ref{sub:operation_risk}, \ref{sub:risk_man} e \ref{sub:dynamic_rcc} tratam respectivamente do Período Máximo de Dias por Operação, do Risco de Entrada por Operação, do Coeficiente de Risco-Capital (RCC) e da Constante de Ganho Proporcional (K). Nota-se que o valor de saída de um parâmetro é utilizado durante o refinamento parâmetro do seguinte. Com exceção do Período Máximo de Dias por Operação, que utilizou o intervalo de 2016 a 2018, os outros parâmetros foram refinados a partir de simulações no intervalo de janeiro de 2019 a março de 2020, denominado intervalo de refinamento de parâmetros de estratégia. Já o resultado da simulação final, disponível na Seção \ref{cap4}, utiliza o intervalo de abril de 2020 a dezembro de 2021, não havendo assim sobreposição.
+\paragraph{} A Figura \ref{fig:444} mostra a sequência lógica de refinamento dos parâmetros de simulação. As Seções \ref{sub:max_op_days}, \ref{sub:operation_risk}, \ref{sub:risk_man} e \ref{sub:dynamic_rcc} tratam respectivamente do Período Máximo de Dias por Operação, da Margem de Risco, do Coeficiente de Risco-Capital (RCC) e da Constante de Ganho Proporcional (K). Nota-se que o valor de saída de um parâmetro é utilizado durante o refinamento parâmetro do seguinte. Com exceção do Período Máximo de Dias por Operação, que utilizou o intervalo de 2016 a 2018, os outros parâmetros foram refinados a partir de simulações no intervalo de janeiro de 2019 a março de 2020, denominado intervalo de refinamento de parâmetros de estratégia. Já o resultado da simulação final, disponível na Seção \ref{cap4}, utiliza o intervalo de abril de 2020 a dezembro de 2021, não havendo assim sobreposição.
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.65]{otimizacao_de_parametros.png}
@@ -36,7 +36,7 @@
     \label{fig:444}
 \end{figure}
 
-\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolveram as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data.
+\paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolveram as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. Além disso, o alto número de ativos foi escolhido para aumentar a diversidade de padrões nos movimentos dos preções, o que pode trazer mais clareza quanto a qualidade média dos modelos durante análise dos resultados.
 
 
 % \begin{table}[h!]
@@ -271,7 +271,7 @@
 \subsection{Geração de \textit{Features} de Uso Geral}
 \label{sub:features}
 
-\paragraph{} As \textit{Features} de Uso Geral são características derivadas dos \textit{candlesticks} que podem auxiliar qualquer decisão interna de uma estratégia. Mais especificamente, esta Seção aborda as \textit{features} Risco Mínimo e Rísco Máximo, que possuem duas funções principais: auxiliar no processo de escolha do preços de compra, dos \textit{stop loss} e dos preços alvo através do parâmetro Risco de Entrada por Operação; e auxiliar os modelos de ML a decidirem o momento apropriado de compra dos ativos, com base nos valores dos preços encontrados.
+\paragraph{} As \textit{Features} de Uso Geral são características derivadas dos \textit{candlesticks} que podem auxiliar qualquer decisão interna de uma estratégia. Mais especificamente, esta Seção aborda as \textit{features} Risco Mínimo e Rísco Máximo, que possuem duas funções principais: auxiliar no processo de escolha do preços de compra, dos \textit{stop loss} e dos preços alvo através do parâmetro Margem de Risco; e auxiliar os modelos de ML a decidirem o momento apropriado de compra dos ativos, com base nos valores dos preços encontrados.
 
 \paragraph{} Devido à natureza genérica das \textit{features}, que podem ser utilizadas por diversas estratégias, são calculadas antes do início das simulações e somente quando há necessidade, ou seja, quando os \textit{candlesticks} são inseridos pela primeira vez no banco ou quando são atualizados. Ao final dos cálculos, são armazenadas nas tabelas de \textit{features} para posteriores consultas durante as simulações.
 
@@ -285,7 +285,6 @@
 
     \item \textbf{Risco Mínimo} \\ \\
     O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML, mas sim indiretamente. A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
-    % O Risco Mínimo é uma \textit{feature} de suporte à escolha do risco de entrada em uma operação, não sendo assim consumido diretamente pelo modelo de ML, mas sim indiretamente. Ressalta-se que o conceito de risco no escopo deste trabalho está relacionado à diferença de valor no qual o \textit{stop loss} é colocado abaixo do preço de compra (Equação \ref{eq:51}). A escolha do risco também implica no valor do preço alvo de uma operação, pois o mesmo é definido como 3 vezes a magnitude do risco escolhido, percentualmente acima do preço de compra (ver Seção \ref{sub:estrutura}). A fórmula é composta por uma parcela fixa somada a uma parcela variável, conforme mostrado pela Equação \ref{eq:30}.
 
     \begin{equation} \label{eq:30}
         Risk_{min} = Risk_{min_f} + Risk_{min_v}
@@ -484,7 +483,7 @@
 
 \paragraph{} O \textit{flag} de fim de intervalo indica que, pelo fato do \textit{dataset} ter chegado ao final, não é possível dizer se a operação foi de sucesso ou foi de falha, portanto a mesma é desconsiderada do treinamento.
 
-\paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Portanto, foram utilizadas ao total 119 valores de risco: de 0,2\% a 12\% em passos de 0,1\%.
+\paragraph{} Por fim, para cada dia de operação, foram cruzadas diversas opções de risco a fim de enriquecer o \textit{dataset} com mais diversidade, permitindo modelos mais robustos. Portanto, foram utilizadas ao total 119 valores de risco, variando de 0,2\% a 12\% em passos de 0,1\%.
 
 
 
@@ -492,7 +491,7 @@
 \subsection{Índice de Lucratividade}
 \label{sub:profit_index}
 
-\paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances de treinamento e de teste que acompanhe o contexto do problema. O impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de -X para a carteira.
+\paragraph{} Durante a etapa de criação dos modelos, é necessário uma métrica para ranqueamento das performances de treinamento e de teste que acompanhe o contexto do problema. O impacto de um acerto por parte do modelo implica em um ganho de 3X para a carteira, onde X é o valor de entrada da operação. Assim como uma falha implica em uma perda de X para a carteira.
 
 \paragraph{} O Índice de Lucratividade é um coeficiente entre 0 e 1 onde 0 significa o pior resultado possível, isto é, aquele no qual o modelo errou todas as operações no \textit{dataset} de forma a trazer o maior prejuízo relativo, supondo que todos os aportes financeiros sejam fixos. Por outro lado, 1 significa o maior lucro que o modelo pode trazer se acertar todas as operações que o \textit{dataset} permite e não errar nenhuma outra. Nota-se que o valor do Índice que representa o lucro zero não é necessariamente 0.5, mas sim algum valor intermediário que precisa ser calculado e varia para cada \textit{dataset}. Portanto, essa métrica é útil para comparação de modelos que utilizem exatamente a mesma fonte de dados.
 
@@ -502,7 +501,7 @@
     I_{L} = \dfrac{1}{(S_a - S_b)}L_m - \dfrac{S_b}{(S_a - S_b)}
 \end{equation}
 
-\paragraph{} A partir da matriz de confusão na Tabela \ref{tab:672}, pode-se definir o lucro \begin{math} L_m \end{math} através da Equação \ref{eq:171}, onde VP é a contagem de verdadeiros positivos do modelos e FP é a contagem de falsos positivos. Cada VP representa uma tentativa bem sucedida de operação que já daria certo, portanto há um ganho de +3X, onde X é um valor genérico irrelevante. Cada FP, por outro lado, representa uma tentativa de sucesso em uma operação que na verdade falhou, contribuindo para uma perda de -X. Falsos negativos (FN) e verdadeiros negativos (VN) são desconsiderados do cálculo pois como não geram operações, uma vez que a aposta está na crença de que a suposta operação falharia, nenhum aporte é feito.
+\paragraph{} A partir da matriz de confusão na Tabela \ref{tab:672}, pode-se definir o lucro \begin{math} L_m \end{math} através da Equação \ref{eq:171}, onde VP é verdadeiro positivo, FP é falso positivo, FN é falso negativo e VN é verdadeiro negativo. Cada VP representa uma tentativa bem sucedida de operação que supostamente seria um sucesso, portanto há um ganho de +3X, onde X é um valor genérico simbólico. Cada FP, por outro lado, representa uma tentativa de sucesso em uma operação que na verdade falharia, contribuindo para uma perda de -X. FNs e VNs são desconsiderados do cálculo pois representam a decisão do modelo em não criar operações. \begin{math} C_{VP} \end{math} e \begin{math} C_{FP} \end{math} são as contagens de VPs e de FPs, respectivamente.
 
 \begin{table}[h!]
     \begin{center}
@@ -520,7 +519,7 @@
 
 
 \begin{equation} \label{eq:171}
-    L_m = 3 \times VP - FP
+    L_m = 3 \times C_{VP} - C_{FP}
 \end{equation}
 
 \paragraph{} Por fim, o valor do Índice que representa o lucro zero pode ser encontrado a partir da Equação \ref{eq:170}, basta impor a condição \begin{math} L_m=0 \end{math} (Equação \ref{eq:172}).
@@ -630,7 +629,7 @@
 \subsection{Modelo \textit{Baseline}}
 \label{sub:baseline}
 
-\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média de performance das ações da carteira, ou seja, distribuindo o capital inicial igualmente por cada ação, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}.
+\paragraph{} No contexto de ML, entende-se como \textit{baseline} a linha base de comparação de um modelo. Em outras palavras, é uma estratégia simples e de fácil implementação que traz uma performace razoável de se obter na realidade. Neste caso, utilizou-se a média de performance das ações da carteira, ou seja, distribuindo o capital inicial igualmente por cada ação, o rendimento médio destas ações ao longo do tempo é o \textit{baseline}. Não há a consideração de um rebalanceamento dinâmico de capital, isto é, a redistribuição interna do capital das ações que obtiverem maior rendimento para as que obtiverem menor rendimento.
 
 \paragraph{} As Figuras \ref{fig:170} e \ref{fig:927} mostram o \textit{baseline} calculado para os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de refinamento dos parâmetros de simulação (01/01/2019 a 31/03/2020) e no intervalo das simulações finais (01/04/2020 a 31/12/2021), respectivamente. Adicionou-se o iBovespa (Seção \ref{sub:ibov}) e o CDI\footnote{Certificado de Depósito Interbancário.} acumulado para fins de comparação. Nota-se a diferença de performance do \textit{baseline} para o iBovespa, o que é razoável já que o \textit{baseline} tem composição fixa e o iBovespa tem uma composição variável tanto na escolha dos ativos quanto em seus respectivos pesos. A Tabela \ref{tab:12} mostra os indicadores de performance para ambos os \textit{baselines}.
 
@@ -700,8 +699,8 @@
         Risk = \dfrac{P_{buy} - P_{stop}}{P_{buy}}
     \end{equation}
 
-    \item Não há \textbf{operações a descoberto}.
-    \item Não há \textbf{operações alavancadas}.
+    \item Não há \textbf{vendas a descoberto}.
+    \item Não há \textbf{operações alavancadas}, isto é, um uso temporário de mais capital do que aquele possuído em carteira.
 
 \end{itemize}
 
@@ -751,14 +750,14 @@
 \begin{figure}[!htb]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_min_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}
+    \caption{Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Magazine Luiza (MGLU3)}
     \label{fig:120}
 \end{figure}
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_min_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018)}
+    \caption{Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Ambev (ABEV3)}
     \label{fig:121}
 \end{figure}
 
@@ -767,14 +766,14 @@
 \begin{figure}[!htb]
     \includegraphics[scale=0.40]{MGLU3_stop_hist_opt_risk.png}
     \centering
-    \caption{MGLU3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}
+    \caption{Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Magazine Luiza (MGLU3)}
     \label{fig:122}
 \end{figure}
 
 \begin{figure}[!htb]
     \includegraphics[scale=0.40]{ABEV3_stop_hist_opt_risk.png}
     \centering
-    \caption{ABEV3 - Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018)}
+    \caption{Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Ambev (ABEV3)}
     \label{fig:123}
 \end{figure}
 
@@ -817,26 +816,26 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 
 \FloatBarrier
-\subsection{Risco de Entrada por Operação}
+\subsection{Margem de Risco}
 \label{sub:operation_risk}
 
-\paragraph{} O Risco de Entrada por Operação é encontrado a partir de um valor intermediário entre o Risco Mínimo e o Risco Máximo.
+\paragraph{} A Margem de Risco é encontrada a partir de um valor intermediário entre o Risco Mínimo e o Risco Máximo.
 
 \paragraph{} Pelo fato da metodologia de cálculo do Risco Máximo e do Risco Mínimo seguirem raciocínios diferentes (Seção \ref{sub:features}), podem ocorrer momentos nos quais a equação \begin{math} Risk_{max} < Risk_{min} \end{math} seja verdadeira, em outras palavras, as ondas de subida de preço entre picos no gráfico diário não compensem as oscilações inerentes ao ruído diário dos \textit{candlesticks}. Enquanto este evento ocorrer, não haverá entrada em operações para o ativo envolvido.
 
-\paragraph{} Para a maioria dos casos, tem-se \begin{math} Risk_{max} > Risk_{min} \end{math}. O valor do Risco de Entrada por Operação (\begin{math} Risk_{operation} \end{math}) é definido pelo parâmetro \begin{math} Risk_{coef} \end{math} de acordo com a Equação \ref{eq:70}, onde \begin{math} 0 \le Risk_{coef} \le 1 \end{math}.
+\paragraph{} Para a maioria dos casos, tem-se \begin{math} Risk_{max} > Risk_{min} \end{math}. O valor da Margem de Risco (\begin{math} Risk_{operation} \end{math}) é definido pelo parâmetro \begin{math} Risk_{coef} \end{math} de acordo com a Equação \ref{eq:70}, onde \begin{math} 0 \le Risk_{coef} \le 1 \end{math}.
 
 \begin{equation} \label{eq:70}
     Risk_{operation} = Risk_{min} + Risk_{coef}(Risk_{max} - Risk_{min})
 \end{equation}
 
-\paragraph{} A Figura \ref{fig:553} resume as simulações cujos valores de Risco de Entrada estão no intervalo fechado [0.10, 0.70]. Foram utilizados os 71 \textit{tickers} da Tabela \ref{tab:5} no período de 01/01/2019 a 31/03/2020, além do Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}). Utilizou-se um RCC de 0,10\% apenas para evitar saturação de capital. Nota-se que o ponto de máximo para o índice de Sharpe e o índice de Sortino coincidiu para o Risco de Entrada de 0,43, que será o valor escolhido para as simulações seguintes. Apesar do ponto de máximo do rendimento final indicar o parâmetro de 0,25, este valor não será considerado pois o índice de Sharpe é uma alternativa mais robusta que engloba o anterior e considera também outros efeitos.
+\paragraph{} A Figura \ref{fig:553} resume as simulações cujos valores de Margem de Risco estão no intervalo fechado [0.10, 0.70]. Foram utilizados os 71 \textit{tickers} da Tabela \ref{tab:5} no período de 01/01/2019 a 31/03/2020, além do Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}). Utilizou-se um RCC de 0,10\% apenas para evitar saturação de capital. Nota-se que o ponto de máximo para o índice de Sharpe e o índice de Sortino coincidiu para a Margem de Risco de 0,43, que será o valor escolhido para as simulações seguintes. Apesar do ponto de máximo do rendimento final indicar o parâmetro de 0,25, este valor não será considerado pois o índice de Sharpe é uma alternativa mais robusta que engloba o anterior e considera também outros efeitos.
 
 % ID: [1, 100]
 \begin{figure}[!htb]
     \includegraphics[scale=0.80]{performance_per_op_risks.png}
     \centering
-    \caption{Indicadores de performance em função do risco de entrada (71 tickers, 01/01/2019 a 31/03/2020)}
+    \caption{Indicadores de performance em função da Margem de Risco (71 tickers, 01/01/2019 a 31/03/2020)}
     \label{fig:553}
 \end{figure}
 
@@ -869,7 +868,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} O RCC influencia diretamente no uso médio de capital de uma estratégia. Por um lado, um uso de capital baixo significa um mau aproveitamento do capital, o que leva a uma performance ruim. Por outro lado, muito uso de capital implica em pouco capital disponível para entrada em novas operações, o que também leva a uma performance ruim e instável, visto que a operação que iniciar imediatamente antes das demais leva quase todos o capital consigo.
 
-\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para diversas simulações. Foi considerado o período de 01/01/2019 a 31/03/2020, os 71 \textit{tickers} da Tabela \ref{tab:5}, o Risco de Entrada por Operação de 0,43 (refinado na Seção \ref{sub:operation_risk}) e o Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}). Notam-se duas regiões de máximos locais no início e no fim do gráfico, onde os valores de RCC são 0,11\% e 6,10\%, respectivamente. Percebe-se também que a partir do RCC de 1,00\%, o uso médio de capital por estratégia começa a saturar e o número percentual de operações totais começa a cair significativamente. Este efeito ocorre devido à falta de capital disponível para novas operações em momentos de saturação. Ou seja, quanto mais a direita no gráfico, menos operações são efetuadas e maior é o desvio padrão do capital de aporte nas operações restantes.
+\paragraph{} A Figura \ref{fig:550} mostra o gráfico da relação entre os indicadores de performance em função do RCC para diversas simulações. Foi considerado o período de 01/01/2019 a 31/03/2020, os 71 \textit{tickers} da Tabela \ref{tab:5}, a Margem de Risco de 0,43 (refinado na Seção \ref{sub:operation_risk}) e o Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}). Notam-se duas regiões de máximos locais no início e no fim do gráfico, onde os valores de RCC são 0,11\% e 6,10\%, respectivamente. Percebe-se também que a partir do RCC de 1,00\%, o uso médio de capital por estratégia começa a saturar e o número percentual de operações totais começa a cair significativamente. Este efeito ocorre devido à falta de capital disponível para novas operações em momentos de saturação. Ou seja, quanto mais a direita no gráfico, menos operações são efetuadas e maior é o desvio padrão do capital de aporte nas operações restantes.
 
 % ID: [62, 181]
 \begin{figure}[!htb]
@@ -1000,7 +999,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} A fim de simplificar a análise, o valor de \begin{math} C_{ref} \end{math} foi configurado como 100\%, deixando o processo de refinamento para os parâmetros RCC e K. Como ambos influenciam diretamente o uso de capital e todos os indicadores de performance, foram acoplados e analisados conjuntamente através das curvas de \begin{math} RCC \times K \end{math}.
 
-\paragraph{} As Figuras \ref{fig:152}, \ref{fig:153} e \ref{fig:154} apresentam indicadores de performance para valores de RCC e de K diferentes. Nessas simulações foram utilizados os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/03/2020, junto com o Risco de Entrada por Operação de 0,43 (refinado na Seção \ref{sub:operation_risk}) e o Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}).
+\paragraph{} As Figuras \ref{fig:152}, \ref{fig:153} e \ref{fig:154} apresentam indicadores de performance para valores de RCC e de K diferentes. Nessas simulações foram utilizados os 71 \textit{tickers} indicados na Tabela \ref{tab:5} no intervalo de 01/01/2019 a 31/03/2020, junto com a Margem de Risco de 0,43 (refinado na Seção \ref{sub:operation_risk}) e o Período Máximo de Dias por Operação de 45 dias (refinado na Seção \ref{sub:max_op_days}).
 
 \paragraph{} A primeira e mais notório observação que se pode fazer pelas Figuras \ref{fig:152} e \ref{fig:153} é que a região de melhor performance se encontra com baixo RCC e alto K. Também é possível verificar que o aumento graduau das curvas \begin{math} RCC \times K \end{math} encontrou um comportamento assintótico a partir de 1,40.
 
@@ -1138,7 +1137,7 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
         \hline
         max\_risk & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,15. Listável: Sim. \\
         \hline
-        operation\_risk & Valor percentual de escolha do risco de entrada em operação (Seção \ref{sub:operation_risk}). Tipo: \textit{Float}. \textit{Default}: 0,5. Listável: Sim. \\
+        operation\_risk & Margem de Risco (Seção \ref{sub:operation_risk}). Tipo: \textit{Float}. \textit{Default}: 0,5. Listável: Sim. \\
         \hline
         % enable\_frequency\hspace{2em} \_normalization & Uso de normalização por frequência de operações (Seção \ref{sub:freq_norm}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
         % \hline

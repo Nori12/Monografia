@@ -180,10 +180,10 @@
 \contentsline {section}{\numberline {3.2}Pré-Processamento}{31}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Arquivo de Configuração}{31}{subsection.3.2.1}%
 \contentsline {paragraph}{}{31}{section*.157}%
-\contentsline {paragraph}{}{31}{section*.158}%
+\contentsline {paragraph}{}{32}{section*.158}%
 \contentsline {paragraph}{}{32}{section*.159}%
-\contentsline {subsection}{\numberline {3.2.2}Coleta de Dados}{32}{subsection.3.2.2}%
-\contentsline {paragraph}{}{32}{section*.160}%
+\contentsline {subsection}{\numberline {3.2.2}Coleta de Dados}{33}{subsection.3.2.2}%
+\contentsline {paragraph}{}{33}{section*.160}%
 \contentsline {paragraph}{}{33}{section*.161}%
 \contentsline {paragraph}{}{33}{section*.162}%
 \contentsline {subsection}{\numberline {3.2.3}Armazenamento de Dados}{34}{subsection.3.2.3}%
@@ -232,7 +232,7 @@
 \contentsline {paragraph}{}{55}{section*.193}%
 \contentsline {paragraph}{}{55}{section*.194}%
 \contentsline {paragraph}{}{56}{section*.195}%
-\contentsline {subsection}{\numberline {3.4.4}Risco de Entrada por Operação}{58}{subsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.4.4}Margem de Risco}{58}{subsection.3.4.4}%
 \contentsline {paragraph}{}{58}{section*.196}%
 \contentsline {paragraph}{}{58}{section*.197}%
 \contentsline {paragraph}{}{58}{section*.198}%
@@ -267,11 +267,11 @@
 \contentsline {paragraph}{}{74}{section*.222}%
 \contentsline {paragraph}{}{74}{section*.223}%
 \contentsline {paragraph}{}{75}{section*.224}%
-\contentsline {paragraph}{}{76}{section*.225}%
+\contentsline {paragraph}{}{77}{section*.225}%
 \contentsline {paragraph}{}{77}{section*.226}%
 \contentsline {paragraph}{}{77}{section*.227}%
 \contentsline {paragraph}{}{77}{section*.228}%
-\contentsline {paragraph}{}{77}{section*.229}%
+\contentsline {paragraph}{}{78}{section*.229}%
 \contentsline {paragraph}{}{78}{section*.230}%
 \contentsline {paragraph}{}{78}{section*.231}%
 \contentsline {paragraph}{}{78}{section*.232}%
@@ -285,12 +285,13 @@
 \contentsline {paragraph}{}{80}{section*.237}%
 \contentsline {paragraph}{}{80}{section*.238}%
 \contentsline {paragraph}{}{80}{section*.239}%
-\contentsline {chapter}{Bibliografia}{81}{section*.239}%
+\contentsline {paragraph}{}{80}{section*.240}%
+\contentsline {chapter}{Bibliografia}{81}{section*.240}%
 \contentsline {chapter}{\numberline {A}Inconsistência de Proventos na Biblioteca \textit {yfinance}}{91}{appendix.A}%
-\contentsline {paragraph}{}{91}{section*.241}%
 \contentsline {paragraph}{}{91}{section*.242}%
-\contentsline {paragraph}{}{92}{section*.243}%
-\contentsline {paragraph}{}{93}{section*.244}%
+\contentsline {paragraph}{}{91}{section*.243}%
+\contentsline {paragraph}{}{92}{section*.244}%
 \contentsline {paragraph}{}{93}{section*.245}%
 \contentsline {paragraph}{}{93}{section*.246}%
 \contentsline {paragraph}{}{93}{section*.247}%
+\contentsline {paragraph}{}{93}{section*.248}%

@@ -1,7 +1,7 @@
 \babel@toc {brazil}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Leitura de um gráfico de \textit {candlestick} \cite {candlestick}}}{10}{figure.2.1}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Leitura de um gráfico de \textit {candlesticks} \cite {candlestick}}}{10}{figure.2.1}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Comportamento do mercado ideal segundo a Teoria de Dow \cite {kirkpatrick2010technical}}}{11}{figure.2.2}%
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Formação de linhas de Suporte e de Resistência \cite {moraes2007se}}}{11}{figure.2.3}%
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Formação de uma Linha de Tendência de Alta \cite {moraes2007se}}}{12}{figure.2.4}%
@@ -20,36 +20,36 @@
 \contentsline {figure}{\numberline {3.6}{\ignorespaces MGLU3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{39}{figure.3.6}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces ABEV3 - Risco Mínimo (01/01/2019 a 31/12/2019)}}{39}{figure.3.7}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces CPLE6 - Algoritmo de identificação de picos (01/01/2019 a 31/12/2019)}}{40}{figure.3.8}%
-\contentsline {figure}{\numberline {3.9}{\ignorespaces CPLE6 - Subidas de preços entre picos (01/01/2019 a 31/12/2019)}}{41}{figure.3.9}%
-\contentsline {figure}{\numberline {3.10}{\ignorespaces MGLU3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{42}{figure.3.10}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces CPLE6 - Subidas de preços entre picos (01/01/2019 a 31/12/2019)}}{40}{figure.3.9}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces MGLU3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{41}{figure.3.10}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces ABEV3 - Riscos Máximo e Mínimo (01/01/2019 a 31/12/2019)}}{42}{figure.3.11}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama de criação de modelos}}{50}{figure.3.12}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Rendimento do \textit {baseline} para o intervalo de 01/01/2019 a 31/03/2020}}{51}{figure.3.13}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Rendimento do \textit {baseline} para o intervalo de 01/04/2020 a 31/12/2021}}{52}{figure.3.14}%
-\contentsline {figure}{\numberline {3.15}{\ignorespaces Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Magazine Luiza (MGLU3)}}{56}{figure.3.15}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Ambev (ABEV3)}}{56}{figure.3.16}%
-\contentsline {figure}{\numberline {3.17}{\ignorespaces Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Magazine Luiza (MGLU3)}}{57}{figure.3.17}%
-\contentsline {figure}{\numberline {3.18}{\ignorespaces Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Ambev (ABEV3)}}{57}{figure.3.18}%
-\contentsline {figure}{\numberline {3.19}{\ignorespaces MGLU3 - Histograma de todas as operações de sucesso (01/01/2016 a 31/12/2018)}}{58}{figure.3.19}%
-\contentsline {figure}{\numberline {3.20}{\ignorespaces Indicadores de performance em função da Margem de Risco (71 tickers, 01/01/2019 a 31/03/2020)}}{59}{figure.3.20}%
-\contentsline {figure}{\numberline {3.21}{\ignorespaces Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/03/2020)}}{61}{figure.3.21}%
-\contentsline {figure}{\numberline {3.22}{\ignorespaces Rendimento (71 tickers, 01/01/2019 a 31/03/2020, RCC = 0,11\%)}}{63}{figure.3.22}%
-\contentsline {figure}{\numberline {3.23}{\ignorespaces Rendimento (71 tickers, 01/01/2019 a 31/03/2020, RCC = 6,10\%)}}{63}{figure.3.23}%
-\contentsline {figure}{\numberline {3.24}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/03/2020, RCC = 0,11\%)}}{64}{figure.3.24}%
-\contentsline {figure}{\numberline {3.25}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/03/2020, RCC = 6,10\%)}}{64}{figure.3.25}%
-\contentsline {figure}{\numberline {3.26}{\ignorespaces Rendimento final sob uso de RCC dinâmico}}{67}{figure.3.26}%
-\contentsline {figure}{\numberline {3.27}{\ignorespaces Índice de Sharpe sob uso de RCC dinâmico}}{67}{figure.3.27}%
-\contentsline {figure}{\numberline {3.28}{\ignorespaces Uso médio de capital sob uso de RCC dinâmico}}{68}{figure.3.28}%
-\contentsline {figure}{\numberline {3.29}{\ignorespaces Total de operações sob uso de RCC dinâmico}}{68}{figure.3.29}%
-\contentsline {figure}{\numberline {3.30}{\ignorespaces \textit {Dashboard} - Performance}}{71}{figure.3.30}%
-\contentsline {figure}{\numberline {3.31}{\ignorespaces \textit {Dashboard} - Parâmetros de entrada}}{71}{figure.3.31}%
-\contentsline {figure}{\numberline {3.32}{\ignorespaces \textit {Dashboard} - Resultados e estatísticas}}{72}{figure.3.32}%
-\contentsline {figure}{\numberline {3.33}{\ignorespaces \textit {Dashboard} - Gráfico de uso de capital}}{72}{figure.3.33}%
-\contentsline {figure}{\numberline {3.34}{\ignorespaces \textit {Dashboard} - Gráficos de análise individual de ações }}{73}{figure.3.34}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Diagrama de criação de modelos}}{49}{figure.3.12}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Rendimento do \textit {baseline} para o intervalo de 01/01/2019 a 31/03/2020}}{50}{figure.3.13}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Rendimento do \textit {baseline} para o intervalo de 01/04/2020 a 31/12/2021}}{50}{figure.3.14}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Magazine Luiza (MGLU3)}}{54}{figure.3.15}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Histograma de dias com risco mínimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Ambev (ABEV3)}}{55}{figure.3.16}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Magazine Luiza (MGLU3)}}{55}{figure.3.17}%
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Histograma de dias com risco ótimo em operações de sucesso (01/01/2016 a 31/12/2018) - Companhia: Ambev (ABEV3)}}{56}{figure.3.18}%
+\contentsline {figure}{\numberline {3.19}{\ignorespaces MGLU3 - Histograma de todas as operações de sucesso (01/01/2016 a 31/12/2018)}}{56}{figure.3.19}%
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Indicadores de performance em função da Margem de Risco (71 tickers, 01/01/2019 a 31/03/2020)}}{58}{figure.3.20}%
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Indicadores de performance em função do RCC (71 tickers: 01/01/2019 a 31/03/2020)}}{60}{figure.3.21}%
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Rendimento (71 tickers, 01/01/2019 a 31/03/2020, RCC = 0,11\%)}}{61}{figure.3.22}%
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Rendimento (71 tickers, 01/01/2019 a 31/03/2020, RCC = 6,10\%)}}{62}{figure.3.23}%
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/03/2020, RCC = 0,11\%)}}{62}{figure.3.24}%
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Uso de Capital (71 tickers, 01/01/2019 a 31/03/2020, RCC = 6,10\%)}}{62}{figure.3.25}%
+\contentsline {figure}{\numberline {3.26}{\ignorespaces Rendimento final sob uso de RCC dinâmico}}{65}{figure.3.26}%
+\contentsline {figure}{\numberline {3.27}{\ignorespaces Índice de Sharpe sob uso de RCC dinâmico}}{65}{figure.3.27}%
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Uso médio de capital sob uso de RCC dinâmico}}{66}{figure.3.28}%
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Total de operações sob uso de RCC dinâmico}}{66}{figure.3.29}%
+\contentsline {figure}{\numberline {3.30}{\ignorespaces \textit {Dashboard} - Performance}}{69}{figure.3.30}%
+\contentsline {figure}{\numberline {3.31}{\ignorespaces \textit {Dashboard} - Parâmetros de entrada}}{69}{figure.3.31}%
+\contentsline {figure}{\numberline {3.32}{\ignorespaces \textit {Dashboard} - Resultados e estatísticas}}{70}{figure.3.32}%
+\contentsline {figure}{\numberline {3.33}{\ignorespaces \textit {Dashboard} - Gráfico de uso de capital}}{70}{figure.3.33}%
+\contentsline {figure}{\numberline {3.34}{\ignorespaces \textit {Dashboard} - Gráficos de análise individual de ações }}{71}{figure.3.34}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Rendimento da Estratégia 1}}{75}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Rendimento da Estratégia 2}}{76}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Rendimento da Estratégia 3}}{76}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Rendimento da Estratégia 4}}{76}{figure.4.4}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rendimento da Estratégia 1}}{73}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Rendimento da Estratégia 2}}{74}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Rendimento da Estratégia 3}}{74}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Rendimento da Estratégia 4}}{74}{figure.4.4}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

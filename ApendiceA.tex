@@ -3,9 +3,7 @@
 
 \paragraph{} Apesar da praticidade de obtenção dos \textit{candlesticks} diários que a biblioteca \textit{yfinance} (Python) traz, seus valores de proventos (dividendos e juros sobre capital próprio) não são totalmente confiáveis. O estudo em questão mostra inconsistências tanto por duplicação quanto por inserção incorreta de proventos. Para isso, uma análise de caso foi realizada para a companhia Magazine Luiza (\textit{ticker} MGLU3), onde foram comparados os dados obtidos do \textit{yfinance} via \textit{script} com o site de relações com investidores da mesma \cite{mglu_ri}. Além disso, utilizou-se a plataforma \textit{TradingView} \cite{tradingview} para confirmação dos valores de preço de fechamento.
 
-% \paragraph{} Referencia \ref{codeA1}
-
-\paragraph{} A Tabela \ref{tab:ap1} mostra o histórico dos preços de fechamento para alguns dias específicos e datas importantes, como distribuição de proventos e desdobramentos \footnote{Em inglês: \textit{split}}, além de outros períodos. A Tabela está ordenada do \textit{candle} mais recente para o mais antigo e as marcações: em vermelho indicam valores incorretos; em azul indicam valores corretos; e em laranja indicam valores que prograparam erros a partir dos valores incorretos. A data de execução do \textit{script} é de 19/09/2020, o que é relevante, uma vez que a plataforma sempre retorna os preços dos \textit{candles} já normalizado por todos os desdobramentos acumulados.
+\paragraph{} A Tabela \ref{tab:ap1} mostra o histórico dos preços de fechamento para alguns dias específicos e datas importantes, como distribuição de proventos e desdobramentos (\textit{splits}), além de outros períodos. A Tabela está ordenada do \textit{candle} mais recente para o mais antigo e as marcações: em vermelho indicam valores incorretos; em azul indicam valores corretos; e em laranja indicam valores que prograparam erros a partir dos valores incorretos. A data de execução do \textit{script} é de 19/09/2020, o que é relevante, uma vez que a plataforma sempre retorna os preços dos \textit{candles} já normalizado por todos os desdobramentos acumulados.
 
 
 \begin{table}[h!]
@@ -74,7 +72,7 @@
 
 \paragraph{} Os restantes do valores de proventos do \textit{yfinance} em azul equivalem aos comunicados pelo site de RI da companhia, porém deve-se levar em consideração os desdobramentos acumulados.
 
-\paragraph{} Por fim, pode-se concluir que o uso da plataforma \textit{yfinance} no que diz respeito à disponibilização de proventos no contexto deste projeto não pode ser deferida, uma vez que a presença e a magnitude dos valores incorretos não é desprezível.
+\paragraph{} Por fim, pode-se concluir que o uso da plataforma \textit{yfinance} no que diz respeito à disponibilização de proventos no contexto deste projeto não pode ser aceito, uma vez que a presença e a magnitude dos valores incorretos não é desprezível.
 
 
 % \begin{minted}{python}

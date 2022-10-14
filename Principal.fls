@@ -315,6 +315,11 @@ INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/arydshln/arydshln.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/arydshln/arydshln.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/notoccite/notoccite.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/notoccite/notoccite.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/floatrow/floatrow.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/floatrow/floatrow.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /Users/atcha/Github/Monografia/rotating.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fifo-stack/fifo-stack.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/fifo-stack/fifo-stack.sty
 INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/base/ifthen.sty
@@ -360,6 +365,9 @@ OUTPUT /Users/atcha/Github/Monografia/Principal.pdf
 INPUT /Users/atcha/Github/Monografia/Principal.out
 INPUT /Users/atcha/Github/Monografia/Principal.out
 OUTPUT /Users/atcha/Github/Monografia/Principal.out
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/graphics/color.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/floatrow/fr-longtable.sty
+INPUT /usr/local/texlive/2020/texmf-dist/tex/latex/floatrow/fr-longtable.sty
 OUTPUT /Users/atcha/Github/Monografia/Capa.aux
 INPUT /Users/atcha/Github/Monografia/Capa.tex
 INPUT /Users/atcha/Github/Monografia/Capa.tex
@@ -597,6 +605,7 @@ INPUT /Users/atcha/Github/Monografia/cap5.tex
 INPUT /Users/atcha/Github/Monografia/cap5.tex
 INPUT /Users/atcha/Github/Monografia/Principal.bbl
 INPUT /Users/atcha/Github/Monografia/Principal.bbl
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
 OUTPUT /Users/atcha/Github/Monografia/ApendiceA.aux
 INPUT /Users/atcha/Github/Monografia/ApendiceA.tex
 INPUT /Users/atcha/Github/Monografia/ApendiceA.tex
@@ -640,5 +649,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb

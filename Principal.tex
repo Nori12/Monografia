@@ -16,6 +16,13 @@
 \usepackage{lscape} % Landscape page for database ERD Image
 \usepackage{arydshln} % For horizontal dashed line in tables (\hdashline)
 \usepackage{notoccite} % Ensure citation sequence
+\usepackage{floatrow} % Ensure table captions on top
+\floatsetup[table]{capposition=top} % Ensure table captions on top
+\usepackage{floatrow} % Ensure figure captions on top
+\floatsetup[figure]{capposition=top} % Ensure figure captions on top
+\usepackage{url} % Ensure bibliography urls break lines
+% \setcounter{biburllcpenalty}{7000} % Ensure bibliography urls break lines
+% \setcounter{biburlucpenalty}{8000} % Ensure bibliography urls break lines
 
 \usepackage{fifo-stack}
 \FSCreate{colors}{black}

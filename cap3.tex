@@ -38,143 +38,102 @@
 
 \paragraph{} A Tabela \ref{tab:5} lista todos os 71 ativos escolhidos para simulação no escopo deste trabalho. Os critérios de escolha envolveram as seguintes preferências: diversidade de segmentos; disponibilidade da série temporal de dados a partir de 2013; e presença na composição do iBovespa em qualquer data. Além disso, o alto número de ativos foi escolhido para aumentar a diversidade de padrões nos movimentos dos preções, o que pode trazer mais clareza quanto a qualidade média dos modelos durante análise dos resultados.
 
+{\small
+\begin{longtable}[c]{ccc}
+    \caption{Ações Escolhidas (71) \\
+    \label{tab:5}} \\
 
-% \begin{table}[h!]
-%     \begin{center}
-%         \begin{tabular}{ cccccccc }
-%             \multicolumn{8}{c}{Ações Escolhidas (71)} \\
-%             \hline
-%             ABEV3 & ALPA4 & AMER3 & B3SA3 & BBAS3 & BBDC3 & BBDC4 & BBSE3 \\
-%             BEEF3 & BPAN4 & BRAP4 & BRFS3 & BRKM5 & BRML3 & CCRO3 & CIEL3 \\
-%             CMIG4 & COGN3 & CPFE3 & CPLE6 & CSAN3 & CSNA3 & CVCB3 & CYRE3 \\
-%             DXCO3 & ECOR3 & EGIE3 & ELET3 & ELET6 & EMBR3 & ENBR3 & ENEV3 \\
-%             ENGI11 & EQTL3 & EZTC3 & FLRY3 & GGBR4 & GOAU4 & GOLL4 & HYPE3 \\
-%             ITSA4 & ITUB4 & JBSS3 & JHSF3 & LAME4 & LCAM3 & LREN3 & MGLU3 \\
-%             MRFG3 & MRVE3 & MULT3 & PETR3 & PETR4 & POSI3 & PRIO3 & QUAL3 \\
-%             RADL3 & RENT3 & SANB11 & SBSP3 & SULA11 & TAEE11 & TIMS3 & TOTS3 \\
-%             UGPA3 & USIM5 & VALE3 & VIIA3 & VIVT3 & WEGE3 & YDUQ3
-%         \end{tabular}
-%         \caption{Ações Escolhidas}
-%         \label{tab:5}
-%     \end{center}
-% \end{table}
-
-% \begin{table}[h!]
-%     \begin{center}
-%         \begin{tabular}{ c|c|c }
-    \begin{center}
-        {\small
-        \begin{longtable}[c]{ccc}
-
-            \multicolumn{3}{c}{Ações Escolhidas (71)} \\
-            \hline
-            Companhia & \textit{Ticker} & Segmento Econômico \\
-            \hline
-            \endfirsthead
+    Companhia & \textit{Ticker} & Segmento Econômico \\
+    \hline
+    \endfirsthead
 
 
-            \multicolumn{3}{c}{Continuação da Tabela \ref{tab:5}} \\
-            \hline
-            Companhia & \textit{Ticker} & Segmento Econômico \\
-            \hline
-            \endhead
+    \multicolumn{3}{c}{Continuação da Tabela \ref{tab:5}} \\
+    \hline
+    Companhia & \textit{Ticker} & Segmento Econômico \\
+    \hline
+    \endhead
 
-            % \hline
-            \endfoot
+    \endfoot
 
-            \hline
-            \multicolumn{3}{c}{Fim da Tabela \ref{tab:5}} \\
-            % \hline
-            \caption{Ações Escolhidas (71) \label{tab:5}}
-            \endlastfoot
+    \hline
+    \multicolumn{3}{c}{Fim da Tabela \ref{tab:5}} \\
+    \endlastfoot
 
-            % \hline
-
-            % \multicolumn{3}{c}{Ações Escolhidas (71)} \\
-            % \hline
-            % Companhia & \textit{Ticker} & Segmento Econômico \\
-            % \hline
-            AMBEV S/A & ABEV3 & Cervejas e Refrigerantes \\
-            ALPARGATAS & ALPA4 & Calçados \\
-            AMERICANAS SA & AMER3 & Produtos Diversos \\
-            B3 & B3SA3 & Serviços Financeiros Diversos \\
-            BRASIL & BBAS3 & Bancos \\
-            BRADESCO & BBDC3 & Bancos \\
-            BRADESCO & BBDC4 & Bancos \\
-            BB SEGURIDADE & BBSE3 & Seguradoras \\
-            MINERVA & BEEF3 & Carnes e Derivados \\
-            BANCO PAN & BPAN4 & Bancos \\
-            BRADESPAR & BRAP4 & Minerais Metálicos \\
-            BRF SA & BRFS3 & Carnes e Derivados \\
-            BRASKEM & BRKM5 & Petroquímicos \\
-            BR MALLS PAR & BRML3 & Exploração de Imóveis \\
-            CCR SA & CCRO3 & Exploração de Rodovias \\
-            CIELO & CIEL3 & Serviços Financeiros Diversos \\
-            CEMIG & CMIG4 & Energia Elétrica \\
-            COGNA ON & COGN3 & Serviços Educacionais \\
-            CPFL ENERGIA & CPFE3 & Energia Elétrica \\
-            COPEL & CPLE6 & Energia Elétrica \\
-            COSAN & CSAN3 & Exploração, Refino e Distribuição \\
-            SID NACIONAL & CSNA3 & Siderurgia \\
-            CVC BRASIL & CVCB3 & Viagens e Turismo \\
-            CYRELA REALT & CYRE3 & Incorporações \\
-            DEXCO SA & DXCO3 & Madeiras \\
-            ECORODOVIAS & ECOR3 & Exploração de Rodovias \\
-            ENGIE BRASIL & EGIE3 & Energia Elétrica \\
-            ELETROBRAS & ELET3 & Energia Elétrica \\
-            ELETROBRAS & ELET6 & Energia Elétrica \\
-            EMBRAER & EMBR3 & Material Aeronáutico e de Defesa \\
-            ENERGIAS BR & ENBR3 & Energia Elétrica \\
-            ENEVA & ENEV3 & Energia Elétrica \\
-            ENERGISA & ENGI11 & Energia Elétrica \\
-            EQUATORIAL & EQTL3 & Energia Elétrica \\
-            EZTEC & EZTC3 & Incorporações \\
-            FLEURY & FLRY3 & Serviços Médicos \\
-            GERDAU & GGBR4 & Siderurgia \\
-            GERDAU MET & GOAU4 & Siderurgia \\
-            GOL & GOLL4 & Transporte Aéreo \\
-            HYPERA & HYPE3 & Medicamentos e Outros Produtos \\
-            ITAUSA & ITSA4 & Bancos \\
-            ITAU UNIBANCO & ITUB4 & Bancos \\
-            JBS & JBSS3 & Carnes e Derivados \\
-            JHSF PART & JHSF3 & Incorporações \\
-            LOJAS AMERICANAS & LAME4 & Produtos Diversos \\
-            LOCAMERICA & LCAM3 & Aluguel de carros \\
-            LOJAS RENNER & LREN3 & Tecidos, Vestuário e Calçados \\
-            MAGAZINE LUIZA & MGLU3 & Eletrodomésticos \\
-            MARFRIG & MRFG3 & Carnes e Derivados \\
-            MRV & MRVE3 & Incorporações \\
-            MULTIPLAN & MULT3 & Exploração de Imóveis \\
-            PETROBRAS & PETR3 & Exploração, Refino e Distribuição \\
-            PETROBRAS & PETR4 & Exploração, Refino e Distribuição \\
-            POSITIVO TEC & POSI3 & Computadores e Equipamentos \\
-            PETRORIO & PRIO3 & Exploração, Refino e Distribuição \\
-            QUALICORP & QUAL3 & Serviços Médicos \\
-            RAIADROGASIL & RADL3 & Medicamentos e Outros Produtos \\
-            LOCALIZA & RENT3 & Aluguel de carros \\
-            SANTANDER BR & SANB11 & Bancos \\
-            SABESP & SBSP3 & Água e Saneamento \\
-            SUL AMERICA & SULA11 & Seguradoras \\
-            TAESA & TAEE11 & Energia Elétrica \\
-            TIM BRASIL & TIMS3 & Telecomunicações \\
-            TOTVS & TOTS3 & Programas e Serviços \\
-            ULTRAPAR & UGPA3 & Exploração, Refino e Distribuição \\
-            USIMINAS & USIM5 & Siderurgia \\
-            VALE & VALE3 & Minerais Metálicos \\
-            VIA SA & VIIA3 & Eletrodomésticos \\
-            TELEF BRASIL & VIVT3 & Telecomunicações \\
-            WEG & WEGE3 & Motores, Compressores e Outros \\
-            YDUQS PART & YDUQ3 & Serviços Educacionais \\
+    AMBEV S/A & ABEV3 & Cervejas e Refrigerantes \\
+    ALPARGATAS & ALPA4 & Calçados \\
+    AMERICANAS SA & AMER3 & Produtos Diversos \\
+    B3 & B3SA3 & Serviços Financeiros Diversos \\
+    BRASIL & BBAS3 & Bancos \\
+    BRADESCO & BBDC3 & Bancos \\
+    BRADESCO & BBDC4 & Bancos \\
+    BB SEGURIDADE & BBSE3 & Seguradoras \\
+    MINERVA & BEEF3 & Carnes e Derivados \\
+    BANCO PAN & BPAN4 & Bancos \\
+    BRADESPAR & BRAP4 & Minerais Metálicos \\
+    BRF SA & BRFS3 & Carnes e Derivados \\
+    BRASKEM & BRKM5 & Petroquímicos \\
+    BR MALLS PAR & BRML3 & Exploração de Imóveis \\
+    CCR SA & CCRO3 & Exploração de Rodovias \\
+    CIELO & CIEL3 & Serviços Financeiros Diversos \\
+    CEMIG & CMIG4 & Energia Elétrica \\
+    COGNA ON & COGN3 & Serviços Educacionais \\
+    CPFL ENERGIA & CPFE3 & Energia Elétrica \\
+    COPEL & CPLE6 & Energia Elétrica \\
+    COSAN & CSAN3 & Exploração, Refino e Distribuição \\
+    SID NACIONAL & CSNA3 & Siderurgia \\
+    CVC BRASIL & CVCB3 & Viagens e Turismo \\
+    CYRELA REALT & CYRE3 & Incorporações \\
+    DEXCO SA & DXCO3 & Madeiras \\
+    ECORODOVIAS & ECOR3 & Exploração de Rodovias \\
+    ENGIE BRASIL & EGIE3 & Energia Elétrica \\
+    ELETROBRAS & ELET3 & Energia Elétrica \\
+    ELETROBRAS & ELET6 & Energia Elétrica \\
+    EMBRAER & EMBR3 & Material Aeronáutico e de Defesa \\
+    ENERGIAS BR & ENBR3 & Energia Elétrica \\
+    ENEVA & ENEV3 & Energia Elétrica \\
+    ENERGISA & ENGI11 & Energia Elétrica \\
+    EQUATORIAL & EQTL3 & Energia Elétrica \\
+    EZTEC & EZTC3 & Incorporações \\
+    FLEURY & FLRY3 & Serviços Médicos \\
+    GERDAU & GGBR4 & Siderurgia \\
+    GERDAU MET & GOAU4 & Siderurgia \\
+    GOL & GOLL4 & Transporte Aéreo \\
+    HYPERA & HYPE3 & Medicamentos e Outros Produtos \\
+    ITAUSA & ITSA4 & Bancos \\
+    ITAU UNIBANCO & ITUB4 & Bancos \\
+    JBS & JBSS3 & Carnes e Derivados \\
+    JHSF PART & JHSF3 & Incorporações \\
+    LOJAS AMERICANAS & LAME4 & Produtos Diversos \\
+    LOCAMERICA & LCAM3 & Aluguel de carros \\
+    LOJAS RENNER & LREN3 & Tecidos, Vestuário e Calçados \\
+    MAGAZINE LUIZA & MGLU3 & Eletrodomésticos \\
+    MARFRIG & MRFG3 & Carnes e Derivados \\
+    MRV & MRVE3 & Incorporações \\
+    MULTIPLAN & MULT3 & Exploração de Imóveis \\
+    PETROBRAS & PETR3 & Exploração, Refino e Distribuição \\
+    PETROBRAS & PETR4 & Exploração, Refino e Distribuição \\
+    POSITIVO TEC & POSI3 & Computadores e Equipamentos \\
+    PETRORIO & PRIO3 & Exploração, Refino e Distribuição \\
+    QUALICORP & QUAL3 & Serviços Médicos \\
+    RAIADROGASIL & RADL3 & Medicamentos e Outros Produtos \\
+    LOCALIZA & RENT3 & Aluguel de carros \\
+    SANTANDER BR & SANB11 & Bancos \\
+    SABESP & SBSP3 & Água e Saneamento \\
+    SUL AMERICA & SULA11 & Seguradoras \\
+    TAESA & TAEE11 & Energia Elétrica \\
+    TIM BRASIL & TIMS3 & Telecomunicações \\
+    TOTVS & TOTS3 & Programas e Serviços \\
+    ULTRAPAR & UGPA3 & Exploração, Refino e Distribuição \\
+    USIMINAS & USIM5 & Siderurgia \\
+    VALE & VALE3 & Minerais Metálicos \\
+    VIA SA & VIIA3 & Eletrodomésticos \\
+    TELEF BRASIL & VIVT3 & Telecomunicações \\
+    WEG & WEGE3 & Motores, Compressores e Outros \\
+    YDUQS PART & YDUQ3 & Serviços Educacionais \\
 
 
-        \end{longtable}}
-    \end{center}
-
-%         \end{tabular}
-%         \caption{Ações Escolhidas}
-%         \label{tab:5}
-%     \end{center}
-% \end{table}
+\end{longtable}}
 
 
 
@@ -1075,101 +1034,96 @@ A Tabela \ref{tab:4} resume o período de dias que engloba 90\% das contagens do
 
 \paragraph{} A Tabela \ref{tab:3} mostra uma lista de todos os parâmetros configuráveis em uma simulação. Nota-se que as variáveis de escopo geral são aplicáveis a toda e qualquer estratégia presente no Arquivo de Configuração enquanto as variáveis de escopo local dizem respeito apenas a um grupo de estratégias em parciluar (ver Seção \ref{sub:conf_file}).
 
-\begin{center}
-    {\small
-    \begin{longtable}[m]{| m{11em} | m{21em} |}
+{\small
+\begin{longtable}[m]{| m{11em} | m{21em} |}
+    \caption{Lista de parâmetros de simulação\label{tab:3}}\\
 
-        \hline
-        \multicolumn{2}{|c|}{Lista de Parâmetros} \\
-        \hline
-        Nome do Parâmetro & Descrição \\
-        \hline
-        \endfirsthead
+    \hline
+    Nome do Parâmetro & Descrição \\
+    \hline
+    \endfirsthead
 
-        \hline
-        \multicolumn{2}{|c|}{Continuação da Tabela \ref{tab:3}} \\
-        \hline
-        Nome do Parâmetro & Descrição \\
-        \hline
-        \endhead
+    \hline
+    \multicolumn{2}{|c|}{Continuação da Tabela \ref{tab:3}} \\
+    \hline
+    Nome do Parâmetro & Descrição \\
+    \hline
+    \endhead
 
-        \hline
-        \endfoot
+    \hline
+    \endfoot
 
-        \hline
-        \multicolumn{2}{|c|}{Fim da Tabela \ref{tab:3}} \\
-        \hline
-        \caption{Lista de parâmetros de simulação\label{tab:3}}
-        \endlastfoot
+    \hline
+    \multicolumn{2}{|c|}{Fim da Tabela \ref{tab:3}} \\
+    \hline
+    \endlastfoot
 
-        \hline
-        % show\_results & Geral & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: \textit{Boolean}. \textit{Default}: \textit{True}. Listável: Não. \\
-        % \hline
-        % min\_risk\_features & Geral & Risco mínimo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,01. Listável: Não. \\
-        % \hline
-        % max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
-        % \hline
-        \textbf{name} & \textbf{(OBRIGATÓRIO)} Nome da estratégia a ser executada. Único valor válido: ``ML". Tipo: \textit{String}. Listável: Não. \\
-        \hline
-        \textbf{alias} & \textbf{(OBRIGATÓRIO)} Rótulo de Identificação. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
-        \hline
-        \textbf{stock\_targets} & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. \\
-        \hline
-        comment & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
-        \hline
-        capital & Capital total da carteira em reais (R\$). Tipo: \textit{Float}. \textit{Default}: 100000. Listável: Sim. \\
-        \hline
-        risk\_capital\_coefficient & Coeficiente de risco-capital (RCC) geral (Seção \ref{sub:risk_man}). Tipo: \textit{Float}. \textit{Default}: 0,001. Listável: Sim. \\
-        \hline
-        % tickers\_bag & Critério de escolha do grupo de ativos a escolher dentro de ``stock\_targets". Valores aceitos: ``listed\_first" (ordem de listagem); ``random" (ordem aleatória). \textit{Default}: ``listed\_first". Listável: Sim. \\
-        % \hline
-        % tickers\_number & Número de ativos a escolher dentro de ``stock\_targets", de acordo com ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
-        % \hline
-        tickers\_number & Número de ativos a escolher dentro de ``stock\_targets" em ordem de listagem. Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
-        \hline
-        min\_order\_volume & Volume mínimo por operação. Tipo: \textit{Int}. \textit{Default}: 1. Listável: Sim. \\
-        \hline
-        % gain\_loss\_ratio & Razão entre ganho e perda. Para uma unidade de risco (delta pencentual entre preço de compra e \textit{stop loss}) são utilizadas N unidades de risco acima no preço preço de compra para definir o preço alvo. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
-        % \hline
-        max\_days\_per\_operation & Número máximo de dias por operação (Seção \ref{sub:max_op_days}). Inclui o dia de compra. Caso excedido, ocorre venda compulsória pelo preço de fechamento no último dia da contagem. Tipo: \textit{Int}. \textit{Default}: 45. Listável: Não. \\
-        \hline
-        min\_risk & Risco mínimo por operação. Tipo: \textit{Float}. \textit{Default}: 0,003. Listável: Sim. \\
-        \hline
-        max\_risk & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,15. Listável: Sim. \\
-        \hline
-        operation\_risk & Margem de Risco (Seção \ref{sub:operation_risk}). Tipo: \textit{Float}. \textit{Default}: 0,5. Listável: Sim. \\
-        \hline
-        % enable\_frequency\hspace{2em} \_normalization & Uso de normalização por frequência de operações (Seção \ref{sub:freq_norm}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        % \hline
-        % enable\_profit\hspace{4em} \_compensation & Uso de compensação por lucratividade acumulada (Seção \ref{profit_comp}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        % \hline
-        % enable\_downtrend\_halt & Uso de descanso por identificação de tendência de baixa (Seção \ref{sub:downtrend_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        % \hline
-        % enable\_crisis\_halt & Uso de descanso por identificação de crises (Seção \ref{sub:crisis_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        % \hline
-        enable\_dynamic\_rcc & Uso de Coeficiente de Risco-Capital dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        \hline
-        dynamic\_rcc\_reference & Valor de referência de uso de capital médio no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 1,0. Listável: Sim. \\
-        \hline
-        dynamic\_rcc\_k & Valor do ganho proporcional K no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 10. Listável: Sim. \\
-        \hline
+    \hline
+    % show\_results & Geral & Exibe \textit{dashboard} da última simulação completada ao final. Tipo: \textit{Boolean}. \textit{Default}: \textit{True}. Listável: Não. \\
+    % \hline
+    % min\_risk\_features & Geral & Risco mínimo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,01. Listável: Não. \\
+    % \hline
+    % max\_risk\_features & Geral & Risco máximo para o cálculo de \textit{features}. Tipo: \textit{Float}. \textit{Default}: 0,10. Listável: Não. \\
+    % \hline
+    \textbf{name} & \textbf{(OBRIGATÓRIO)} Nome da estratégia a ser executada. Único valor válido: ``ML". Tipo: \textit{String}. Listável: Não. \\
+    \hline
+    \textbf{alias} & \textbf{(OBRIGATÓRIO)} Rótulo de Identificação. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
+    \hline
+    \textbf{stock\_targets} & \textbf{(OBRIGATÓRIO)} \textit{Array} de ações a incluir na carteira. Formato indicado pela Figura \ref{fig:101}. \\
+    \hline
+    comment & Comentário. Tipo: \textit{String}. \textit{Default}: \textit{String} vazia. Listável: Não. \\
+    \hline
+    capital & Capital total da carteira em reais (R\$). Tipo: \textit{Float}. \textit{Default}: 100000. Listável: Sim. \\
+    \hline
+    risk\_capital\_coefficient & Coeficiente de risco-capital (RCC) geral (Seção \ref{sub:risk_man}). Tipo: \textit{Float}. \textit{Default}: 0,001. Listável: Sim. \\
+    \hline
+    % tickers\_bag & Critério de escolha do grupo de ativos a escolher dentro de ``stock\_targets". Valores aceitos: ``listed\_first" (ordem de listagem); ``random" (ordem aleatória). \textit{Default}: ``listed\_first". Listável: Sim. \\
+    % \hline
+    % tickers\_number & Número de ativos a escolher dentro de ``stock\_targets", de acordo com ``tickers\_bag". Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
+    % \hline
+    tickers\_number & Número de ativos a escolher dentro de ``stock\_targets" em ordem de listagem. Tipo: \textit{Int}. \textit{Default}: 0 (todos). Listável: Sim. \\
+    \hline
+    min\_order\_volume & Volume mínimo por operação. Tipo: \textit{Int}. \textit{Default}: 1. Listável: Sim. \\
+    \hline
+    % gain\_loss\_ratio & Razão entre ganho e perda. Para uma unidade de risco (delta pencentual entre preço de compra e \textit{stop loss}) são utilizadas N unidades de risco acima no preço preço de compra para definir o preço alvo. Tipo: \textit{Float}. \textit{Default}: 3. Listável: Sim. \\
+    % \hline
+    max\_days\_per\_operation & Número máximo de dias por operação (Seção \ref{sub:max_op_days}). Inclui o dia de compra. Caso excedido, ocorre venda compulsória pelo preço de fechamento no último dia da contagem. Tipo: \textit{Int}. \textit{Default}: 45. Listável: Não. \\
+    \hline
+    min\_risk & Risco mínimo por operação. Tipo: \textit{Float}. \textit{Default}: 0,003. Listável: Sim. \\
+    \hline
+    max\_risk & Risco máximo por operação. Tipo: \textit{Float}. \textit{Default}: 0,15. Listável: Sim. \\
+    \hline
+    operation\_risk & Margem de Risco (Seção \ref{sub:operation_risk}). Tipo: \textit{Float}. \textit{Default}: 0,5. Listável: Sim. \\
+    \hline
+    % enable\_frequency\hspace{2em} \_normalization & Uso de normalização por frequência de operações (Seção \ref{sub:freq_norm}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+    % \hline
+    % enable\_profit\hspace{4em} \_compensation & Uso de compensação por lucratividade acumulada (Seção \ref{profit_comp}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+    % \hline
+    % enable\_downtrend\_halt & Uso de descanso por identificação de tendência de baixa (Seção \ref{sub:downtrend_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+    % \hline
+    % enable\_crisis\_halt & Uso de descanso por identificação de crises (Seção \ref{sub:crisis_halt}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+    % \hline
+    enable\_dynamic\_rcc & Uso de Coeficiente de Risco-Capital dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+    \hline
+    dynamic\_rcc\_reference & Valor de referência de uso de capital médio no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 1,0. Listável: Sim. \\
+    \hline
+    dynamic\_rcc\_k & Valor do ganho proporcional K no controle do RCC dinâmico (Seção \ref{sub:dynamic_rcc}). Tipo: \textit{Float}. \textit{Default}: 10. Listável: Sim. \\
+    \hline
 
-        % purchase\_margin & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
-        % \hline
-        % stop\_margin & Margem percentual aplicada ao valor do \textit{stop loss}. Ex: Se o \textit{stop} estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$101. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
-        % \hline
-        % partial\_sale & Uso de saídas parciais. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
-        % \hline
-        % stop\_type & Tipo de \textit{stop loss} utilizado. Valores aceitos: ``normal"; ``staircase" (para cada patamar de unidade de risco que o preço atinge acima do valor de compra, o \textit{stop} sobe igualmente, até uma unidade de risco abaixo do preço alvo). Ver ``gain\_loss\_ratio". \textit{Default}: ``normal". Listável: Sim. \\
-        % \hline
-        % min\_days\_after\_successful \_operation & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
-        % \hline
-        % min\_days\_after\_failure \_operation & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
-        % \hline
+    % purchase\_margin & Margem percentual aplicada ao valor de compra. Ex: Se o alvo de compra estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$99. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+    % \hline
+    % stop\_margin & Margem percentual aplicada ao valor do \textit{stop loss}. Ex: Se o \textit{stop} estiver configurado para R\$100, uma margem de 1\% permitirá a compra antecipada em R\$101. Tipo: \textit{Float}. \textit{Default}: 0. Listável: Sim. \\
+    % \hline
+    % partial\_sale & Uso de saídas parciais. Tipo: \textit{Boolean}. \textit{Default}: \textit{False}. Listável: Sim. \\
+    % \hline
+    % stop\_type & Tipo de \textit{stop loss} utilizado. Valores aceitos: ``normal"; ``staircase" (para cada patamar de unidade de risco que o preço atinge acima do valor de compra, o \textit{stop} sobe igualmente, até uma unidade de risco abaixo do preço alvo). Ver ``gain\_loss\_ratio". \textit{Default}: ``normal". Listável: Sim. \\
+    % \hline
+    % min\_days\_after\_successful \_operation & Mínimo de dias sem novas aquisições após operação de sucesso, para cada ação. Ex: para 1 dia mínimo, se a última venda de sucesso ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+    % \hline
+    % min\_days\_after\_failure \_operation & Mínimo de dias sem novas aquisições após operação de falha, para cada ação. Ex: para 1 dia mínimo, se a última venda de falha ocorreu durante o dia X, a próxima compra só ocorrerá a partir do dia X+2, inclusive. Tipo: \textit{Int}. \textit{Default}: 0. Listável: Sim. \\
+    % \hline
 
-    \end{longtable}}
-\end{center}
-
+\end{longtable}}
 
 
 

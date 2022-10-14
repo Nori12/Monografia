@@ -6,13 +6,13 @@ VELEZ, O.~L., \emph{Swing Trading}, v.~81. John Wiley \& Sons, 2012.
 
 \bibitem{python}
 PYTHON, \enquote{The Python Tutorial},
-  https://docs.python.org/3.10/tutorial/index.html, (Acessado em 06 de Outubro
-  de 2022).
+  \url{https://docs.python.org/3.10/tutorial/index.html}, (Acessado em 06 de
+  Outubro de 2022).
 
 \bibitem{short_selling}
 B3, \enquote{Posi\c{c}\~oes vendidas no mercado de a\c{c}\~oes},
-  https://www.b3.com.br/pt\_br/noticias/short-selling.htm, (Acessado em 24 de
-  Mar\c{c}o de 2022).
+  \url{https://www.b3.com.br/pt\_br/noticias/short-selling.htm}, (Acessado em
+  24 de Mar\c{c}o de 2022).
 
 \bibitem{bulkowski2012fundamental}
 BULKOWSKI, T.~N., \emph{Fundamental Analysis and Position Trading: Evolution of
@@ -21,24 +21,25 @@ BULKOWSKI, T.~N., \emph{Fundamental Analysis and Position Trading: Evolution of
 \bibitem{aumento_investidores}
 B3, \enquote{B3 atinge 5 milh\~oes de contas de investidores em renda
   vari\'avel em janeiro},
-  https://www.b3.com.br/pt\_br/noticias/5-milhoes-de-contas-de-investidores.htm,
+  \url{https://www.b3.com.br/pt\_br/noticias/5-milhoes-de-contas-de-investidores.htm},
   (Acessado em 21 de Mar\c{c}o de 2022).
 
 \bibitem{robos_investidores}
 INFOMONEY, \enquote{Rob\^os de investimentos j\'a controlam mais de US\$ 200
   bilh\~oes ao redor do mundo},
-  https://www.infomoney.com.br/onde-investir/robos-de-investimentos-ja-controlam-mais-de-us-200-bilhoes-ao-redor-do-mundo,
+  \url{https://www.infomoney.com.br/onde-investir/robos-de-investimentos-ja-controlam-mais-de-us-200-bilhoes-ao-redor-do-mundo},
   (Acessado em 22 de Mar\c{c}o de 2022).
 
 \bibitem{investing_robot}
 SIQUEIRA, A., \enquote{Rob\^o de investimento: tudo o que voc\^e queria saber
-  sobre essa tecnologia}, https://blog.magnetis.com.br/robo-de-investimento/,
-  (Acessado em 06 de Outubro de 2022).
+  sobre essa tecnologia},
+  \url{https://blog.magnetis.com.br/robo-de-investimento/}, (Acessado em 06 de
+  Outubro de 2022).
 
 \bibitem{robos_e_fundos}
 INFOMONEY, \enquote{No Brasil, rob\^os de investimento n\~ao conseguem bater
   melhores fundos},
-  https://www.infomoney.com.br/onde-investir/no-brasil-robos-de-investimento-nao-conseguem-bater-melhores-fundos,
+  \url{https://www.infomoney.com.br/onde-investir/no-brasil-robos-de-investimento-nao-conseguem-bater-melhores-fundos},
   (Acessado em 22 de Mar\c{c}o de 2022).
 
 \bibitem{crawford2015survey}
@@ -62,59 +63,60 @@ LADD, J.~W., WRIGHT, R.~M., \enquote{Obst{\'a}culos ao desenvolvimento do
 
 \bibitem{mercado_de_capitais}
 CVM, \enquote{Entendendo o Mercado de Valores Mobiliários},
-  https://www.investidor.gov.br/menu/primeiros\_passos/entendendo\_mercado\_valores.html,
+  \url{https://www.investidor.gov.br/menu/primeiros\_passos/entendendo\_mercado\_valores.html},
   (Acessado em 24 de Mar\c{c}o de 2022).
 
 \bibitem{lei_6385}
 BRASIL, \enquote{Lei nº 6.385, de 7 de dezembro de 1976. Disp\~oe sobre o
   mercado de valores mobili\'arios e cria a Comiss\~ao de Valores
-  Mobili\'arios.}, http://www.planalto.gov.br/ccivil\_03/leis/l6385.htm.
+  Mobili\'arios.},
+  \url{"http://www.planalto.gov.br/ccivil\_03/leis/l6385.htm"}.
 
 \bibitem{b3}
 B3, \enquote{Uma das principais empresas de infraestrutura de mercado
   financeiro do mundo},
-  https://www.b3.com.br/pt\_br/b3/institucional/quem-somos/, (Acessado em 24 de
-  Mar\c{c}o de 2022).
+  \url{https://www.b3.com.br/pt\_br/b3/institucional/quem-somos/}, (Acessado em
+  24 de Mar\c{c}o de 2022).
 
 \bibitem{vantagens_sa}
 B3, \enquote{A\c{c}\~oes},
-  https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/acoes.htm,
+  \url{https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/acoes.htm},
   (Acessado em 24 de Mar\c{c}o de 2022).
 
 \bibitem{oferta_publica}
 BRASIL, \enquote{Lei nº 6.404, de 15 de dezembro de 1976. Disp\~oe sobre as
-  Sociedades por A\c{c}\~oes.}, Cap\'itulo XC, Se\c{c}\~ao VII,
-  http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm, (Acessado em 24
-  de Mar\c{c}o de 2022).
+  Sociedades por A\c{c}\~oes. Cap\'itulo XC, Se\c{c}\~ao VII.},
+  \url{http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm}, (Acessado
+  em 24 de Mar\c{c}o de 2022).
 
 \bibitem{capital_social}
-CVM, \enquote{Lei 6.404/76: Exposi\c{c}\~ao de Motivos}, Cap\'itulo II,
-  Se\c{c}ao I,
-  https://www.gov.br/cvm/pt-br/acesso-a-informacao-cvm/institucional/sobre-a-cvm/,
+CVM, \enquote{Lei 6.404/76: Exposi\c{c}\~ao de Motivos. Cap\'itulo II,
+  Se\c{c}ao I.},
+  \url{https://www.gov.br/cvm/pt-br/acesso-a-informacao-cvm/institucional/sobre-a-cvm/},
   (Acessado em 24 de Mar\c{c}o de 2022).
 
 \bibitem{mercado_secundario}
 INVESTIMENTOS, X., \enquote{Mercado secund\'ario: entenda as diferen\c{c}as com
   o mercado prim\'ario},
-  https://conteudos.xpi.com.br/aprenda-a-investir/relatorios/mercado-secundario/,
+  \url{https://conteudos.xpi.com.br/aprenda-a-investir/relatorios/mercado-secundario/},
   (Acessado em 24 de Mar\c{c}o de 2022).
 
 \bibitem{dem_finan}
 BRASIL, \enquote{Lei nº 6.404, de 15 de dezembro de 1976. Disp\~oe sobre as
-  Sociedades por A\c{c}\~oes.}, Cap\'itulo XV, Se\c{c}\~ao II, Art. 176,
-  http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm, (Acessado em 24
-  de Mar\c{c}o de 2022).
+  Sociedades por A\c{c}\~oes. Cap\'itulo XV, Se\c{c}\~ao II, Art. 176.},
+  \url{http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm}, (Acessado
+  em 24 de Mar\c{c}o de 2022).
 
 \bibitem{audi_dem_finan}
 BRASIL, \enquote{Lei nº 6.404, de 15 de dezembro de 1976. Disp\~oe sobre as
-  Sociedades por A\c{c}\~oes.}, Cap\'itulo XXI, Se\c{c}\~ao IV, Art. 275, §
-  4º, http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm, (Acessado em
-  24 de Mar\c{c}o de 2022).
+  Sociedades por A\c{c}\~oes. Cap\'itulo XXI, Se\c{c}\~ao IV, Art. 275, §
+  4º.}, \url{http://www.planalto.gov.br/ccivil\_03/leis/l6404consol.htm},
+  (Acessado em 24 de Mar\c{c}o de 2022).
 
 \bibitem{proventos}
 INFOMONEY, \enquote{Proventos: O que são, como funcionam e como ganhar
-  dinheiro com eles?}, https://www.infomoney.com.br/guias/proventos/, (Acessado
-  em 24 de Mar\c{c}o de 2022).
+  dinheiro com eles?}, \url{https://www.infomoney.com.br/guias/proventos/},
+  (Acessado em 24 de Mar\c{c}o de 2022).
 
 \bibitem{fama1970efficient}
 FAMA, E.~F., \enquote{Efficient capital markets: A review of theory and
@@ -123,7 +125,7 @@ FAMA, E.~F., \enquote{Efficient capital markets: A review of theory and
 
 \bibitem{insider_trading}
 INVESTOPEDIA, \enquote{Four Scandalous Insider Trading Incidents},
-  https://www.investopedia.com/articles/stocks/09/insider-trading.asp\#:~:text=Four%20cases%20that%20captured%20a,Foster%20Winans%2C%20and%20Martha%20Stewart.,
+  \url{https://www.investopedia.com/articles/stocks/09/insider-trading.asp\#:~:text=Four%20cases%20that%20captured%20a,Foster%20Winans%2C%20and%20Martha%20Stewart.},
   (Acessado em 25 de Mar\c{c}o de 2022).
 
 \bibitem{fama1969adjustment}
@@ -146,28 +148,28 @@ SCHWAGER, J.~D., \emph{Market Sense and Nonsense: How the Markets Really Work
 
 \bibitem{stock_index}
 FORBES, \enquote{Investing Basics: What Is A Market Index?},
-  https://www.forbes.com/advisor/investing/stock-market-index/, (Acessado em 28
-  de Mar\c{c}o de 2022).
+  \url{https://www.forbes.com/advisor/investing/stock-market-index/}, (Acessado
+  em 28 de Mar\c{c}o de 2022).
 
 \bibitem{ibovespa}
 B3, \enquote{Ibovespa B3},
-  https://www.b3.com.br/pt\_br/market-data-e-indices/indices/indices-amplos/ibovespa.htm,
+  \url{https://www.b3.com.br/pt\_br/market-data-e-indices/indices/indices-amplos/ibovespa.htm},
   (Acessado em 28 de Mar\c{c}o de 2022).
 
 \bibitem{etf}
 B3, \enquote{ETF de Renda Variável},
-  https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/etf-de-renda-variavel.htm,
+  \url{https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/etf-de-renda-variavel.htm},
   (Acessado em 28 de Mar\c{c}o de 2022).
 
 \bibitem{etfs_listados}
 B3, \enquote{ETFs Listados},
-  https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/etf/renda-variavel/etfs-listados/,
+  \url{https://www.b3.com.br/pt\_br/produtos-e-servicos/negociacao/renda-variavel/etf/renda-variavel/etfs-listados/},
   (Acessado em 10 de Outubro de 2022).
 
 \bibitem{mercado_fracionario}
 INVESTOPEDIA, \enquote{Fractional Share},
-  https://www.investopedia.com/terms/f/fractionalshare.asp, (Acessado em 28 de
-  Mar\c{c}o de 2022).
+  \url{https://www.investopedia.com/terms/f/fractionalshare.asp}, (Acessado em
+  28 de Mar\c{c}o de 2022).
 
 \bibitem{murphy1999technical}
 MURPHY, J.~J., \emph{Technical analysis of the financial markets: A
@@ -190,8 +192,8 @@ APPEL, G., DOBSON, E., \emph{Understanding MACD}. Traders Press, 2007.
 
 \bibitem{candlestick}
 INVESTIDOR, B.~D., \enquote{Como Interpretar o Gráfico de Candlestick},
-  https://www.bussoladoinvestidor.com.br/grafico-de-candlestick/, (Acessado em
-  5 de Abril de 2022).
+  \url{https://www.bussoladoinvestidor.com.br/grafico-de-candlestick/},
+  (Acessado em 5 de Abril de 2022).
 
 \bibitem{moraes2007se}
 MORAES, A., \emph{Se Afastando da Manada: Estratégias para vencer no Mercado
@@ -199,8 +201,8 @@ MORAES, A., \emph{Se Afastando da Manada: Estratégias para vencer no Mercado
 
 \bibitem{ibm_ai}
 IBM, \enquote{Artificial Intelligence (AI)},
-  https://www.ibm.com/cloud/learn/what-is-artificial-intelligence, (Acessado em
-  4 de Abril de 2022).
+  \url{https://www.ibm.com/cloud/learn/what-is-artificial-intelligence},
+  (Acessado em 4 de Abril de 2022).
 
 \bibitem{muller2016introduction}
 M{\"U}LLER, A.~C., GUIDO, S., \emph{Introduction to machine learning with
@@ -208,7 +210,7 @@ M{\"U}LLER, A.~C., GUIDO, S., \emph{Introduction to machine learning with
 
 \bibitem{ibm_ml}
 IBM, \enquote{Machine Learning},
-  https://www.ibm.com/cloud/learn/machine-learning\#:~:text=IBM%20has%20a%20rich%20history,around%20the%20game%20of%20checkers.,
+  \url{https://www.ibm.com/cloud/learn/machine-learning\#:~:text=IBM%20has%20a%20rich%20history,around%20the%20game%20of%20checkers.},
   (Acessado em 4 de Abril de 2022).
 
 \bibitem{arthur1959some}
@@ -252,8 +254,8 @@ WEISS, G.~M., MCCARTHY, K., ZABAR, B., \enquote{Cost-sensitive learning vs.
 
 \bibitem{over_under_sampling}
 STRANDS, \enquote{Unbalanced Datasets \& What To Do About Them},
-  https://blog.strands.com/unbalanced-datasets, (Acessado em 5 de Abril de
-  2022).
+  \url{https://blog.strands.com/unbalanced-datasets}, (Acessado em 5 de Abril
+  de 2022).
 
 \bibitem{peterson2009k}
 PETERSON, L.~E., \enquote{K-nearest neighbor}, \emph{Scholarpedia}, v.~4, n.~2,
@@ -274,7 +276,7 @@ AHA, D.~W., \emph{Lazy learning}. Springer Science \& Business Media, 2013.
 
 \bibitem{knn_classification}
 DATACAMP, \enquote{KNN Classification Tutorial using Scikit-learn},
-  https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn,
+  \url{https://www.datacamp.com/community/tutorials/k-nearest-neighbor-classification-scikit-learn},
   (Acessado em 5 de Abril de 2022).
 
 \bibitem{lobato2006decision}
@@ -289,7 +291,7 @@ PARDO, R., \emph{The evaluation and optimization of trading strategies}. John
 
 \bibitem{wfo}
 MULTICHARTS, \enquote{Walk Forward Optimization},
-  https://www.multicharts.com/trading-software/index.php/Walk\_Forward\_Optimization,
+  \url{https://www.multicharts.com/trading-software/index.php/Walk\_Forward\_Optimization},
   (Acessado em 28 de Junho de 2022).
 
 \bibitem{sharpe1998sharpe}
@@ -428,43 +430,43 @@ BILDIRICI, M., ERSIN, {\"O}.~{\"O}., \enquote{Improving forecasts of GARCH
   Applications}, v.~36, n.~4, pp.~7355--7362, 2009.
 
 \bibitem{postgresql}
-POSTGRESQL, \enquote{About}, https://www.postgresql.org/about/, (Acessado em 07
-  de Outubro de 2022).
+POSTGRESQL, \enquote{About}, \url{https://www.postgresql.org/about/}, (Acessado
+  em 07 de Outubro de 2022).
 
 \bibitem{project_github}
 NORI, P., \enquote{Project Github Page},
-  https://github.com/Nori12/Projeto-Final/.
+  \url{"https://github.com/Nori12/Projeto-Final/"}.
 
 \bibitem{yfinance}
-YFINANCE, \enquote{yfinance}, https://pypi.org/project/yfinance/, (Acessado em
-  1 de Junho de 2022).
+YFINANCE, \enquote{yfinance}, \url{https://pypi.org/project/yfinance/},
+  (Acessado em 1 de Junho de 2022).
 
 \bibitem{yahoo_finance}
-YAHOO!, \enquote{Yahoo! Finance}, https://finance.yahoo.com, (Acessado em 1 de
-  Junho de 2022).
+YAHOO!, \enquote{Yahoo! Finance}, \url{https://finance.yahoo.com}, (Acessado em
+  1 de Junho de 2022).
 
 \bibitem{tradingview}
-VIEW, T., \enquote{Trading View}, https://www.tradingview.com/about/, (Acessado
-  em 20 de Setembro de 2022).
+VIEW, T., \enquote{Trading View}, \url{https://www.tradingview.com/about/},
+  (Acessado em 20 de Setembro de 2022).
 
 \bibitem{github_db_schema}
 NORI, P., \enquote{Database Files in Project Github Page},
-  https://github.com/Nori12/Projeto-Final/tree/master/database.
+  \url{"https://github.com/Nori12/Projeto-Final/tree/master/database"}.
 
 \bibitem{haykin2007signals}
 HAYKIN, S., VAN~VEEN, B., \emph{Signals and systems}. John Wiley \& Sons, 2007.
 
 \bibitem{scikit}
 SCIKIT-LEARN, \enquote{Random Forest},
-  https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html,
+  \url{https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html},
   (Acessado em 5 de Julho de 2022).
 
 \bibitem{dash}
-PLOTLY, \enquote{Dash}, https://dash.plotly.com/, (Acessado em 28 de Junho de
-  2022).
+PLOTLY, \enquote{Dash}, \url{https://dash.plotly.com/}, (Acessado em 28 de
+  Junho de 2022).
 
 \bibitem{mglu_ri}
 LUIZA, M., \enquote{Relações com Investidores - Magazine Luiza},
-  https://ri.magazineluiza.com.br/, (Acessado em 20 de Setembro de 2022).
+  \url{https://ri.magazineluiza.com.br/}, (Acessado em 20 de Setembro de 2022).
 
 \end{thebibliography}

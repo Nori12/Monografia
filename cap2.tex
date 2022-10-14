@@ -67,7 +67,7 @@
 
 \paragraph{} Ações fracionárias podem ser criadas devido: a um desdobramento de ações que não gera resultado par (\textit{e.g.}, 3 para 2); ou a fusões e aquisições de empresas que combinam suas ações em uma razão predeterminada \cite{mercado_fracionario}.
 
-\paragraph{} Grandes investidores e fundos de investimentos não possuem problemas quanto ao capital mínimo necessário para a compra de um lote de ações, visto que negociam em quantidades muito maiores. O problema surge quando um investidor com pouco aporte financeiro deseja entrar no mercado e não consegue encontrar ativos cujo lote mínimo esteja dentro de seu orçamento.
+\paragraph{} Grandes investidores e fundos de investimentos normalmente não possuem problemas quanto ao capital mínimo necessário para a compra de um lote de ações, visto que negociam em quantidades muito maiores. O problema surge quando um investidor com pouco aporte financeiro deseja entrar no mercado e não consegue encontrar ativos cujo lote mínimo esteja dentro de seu orçamento.
 
 
 
@@ -104,10 +104,10 @@
 
 \paragraph{} Gráficos de \textit{Candlesticks}\footnote{Em português: Gráfico de Velas.} são bastante utilizados na AT. A leitura é padronizada de acordo com a Figura \ref{fig:1}. Neste tipo de gráfico as cores importam, pois indicam se o balanço do período foi positivo ou negativo.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{candlestick.png}
     \centering
-    \caption{Leitura de um gráfico de \textit{candlestick} \cite{candlestick}}
+    \caption{Leitura de um gráfico de \textit{candlesticks} \cite{candlestick}}
     \label{fig:1}
 \end{figure}
 
@@ -117,7 +117,7 @@
 
 \paragraph{} A Teoria de Dow, criada pelo americano Charles Henry Dow em 1884 é considerada a base da AT moderna \cite{kirkpatrick2010technical}. Embora não tivesse sido formalizada explicitamente pelo autor enquanto estava vivo, amigos e profissionais da época tiveram o trabalho de divulgar e fazer alguns ajustes. Baseada na HME, a ideia central por trás da Teoria de Dow é que a lógica econômica deve ser usada para explicar os movimentos do mercado, que em condições ideais segue o padrão de: tendência de alta; topo; tendência de baixa; e fundo, intercalados com períodos de consolidação. A Figura \ref{fig:2} ilustra esse comportamento.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{dow_theory.png}
     \centering
     \caption{Comportamento do mercado ideal segundo a Teoria de Dow \cite{kirkpatrick2010technical}}
@@ -131,7 +131,7 @@
 
 \paragraph{} Suporte e Resistência são regiões em um gráfico de \textit{candlestick} onde existe um efeito memória associado a grandes ganhos ou perdas históricas \cite{moraes2007se}. Normalmente estão associadas a eventos econômicos relevantes. A Figura \ref{fig:3} ilustra essas regiões, comumente chamadas de Linhas de Suporte e de Resistência.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{suporte_resistencia.png}
     \centering
     \caption{Formação de linhas de Suporte e de Resistência \cite{moraes2007se}}
@@ -140,14 +140,14 @@
 
 \paragraph{} De maneira semelhante, as Linhas de Tendência oferecem uma inspeção gráfica do quanto o preço de um ativo está crescendo o diminuindo. Portanto, estão necessariamente atreladas a movimentos de tendência de alta ou de tendência de baixa. Em essência, não deixam de ser linhas de Supote e de Resistência. As Figuras \ref{fig:4} e \ref{fig:5} exemplificam esses indicadores.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{lta.png}
     \centering
     \caption{Formação de uma Linha de Tendência de Alta \cite{moraes2007se}}
     \label{fig:4}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.50]{ltb.png}
     \centering
     \caption{Formação de uma Linha de Tendência de Baixa \cite{moraes2007se}}
@@ -178,7 +178,7 @@
 
 \paragraph{} Outras características importantes são conhecidas como \textit{overfitting} e \textit{underfitting}. Quando um modelos está muito complexo a ponto de ser sensível demais aos ruídos do conjunto de treinamento, trazendo dificuldades de generalização, diz-se que ocorreu um \textit{overfitting}. De forma análoga, quando a complexidade do modelo é baixa de forma a não aproveitar devidamente as características importantes do conjunto de treinamento, implicando também em perda de generalização, diz-se que ocorreu um \textit{underfitting}. O objetivo do projetista de um modelo por AS é encontrar um ponto de equilíbrio entre essas características, chamada de ``\textit{sweet spot}'' na Figura \ref{fig:6}, que mostra a relação entre generalização, \textit{overfitting} e \textit{underfitting}.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.35]{generalisation.png}
     \centering
     \caption{Relação entre complexidade e acur\'acia de um modelo \cite{muller2016introduction}}
@@ -210,7 +210,7 @@
     \item \textit{Cost Sensitive Learning} (CSL): Ao invés de alterar o tamanho do \textit{dataset}, criam-se pesos diferentes para um erro de classificação durante o treinamento. Portanto, um erro em uma classe menos frequente deve ser mais penalizado do que o contrário. É aconselhável em \textit{datasets} grandes ($>$ 10000) \cite{weiss2007cost}.
 \end{itemize}
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.55]{over_under_sampling.png}
     \centering
     \caption{\textit{Oversampling} e \textit{Undersampling} de classes desbalanceadas \cite{over_under_sampling}}
@@ -233,7 +233,7 @@
 
 \paragraph{} A simplicidade deste algoritmo é uma grande vantagem, mas também é possível citar a facilidade de treinamento e a robustez a dados ruidosos \cite{bhatia2010survey}. Por outro lado, a limitação de memória, a execução demorada devido ao \textit{lazy learning} \cite{aha2013lazy} e a alta sensibilidade a características irrelevantes são seus pontos negativos. A Figura \ref{fig:8} mostra como funciona o critério de seleção da classe de uma amostra de teste a partir dos dados de treinamento e do parâmetro K de vizinhos selecionados.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.60]{knn_example.png}
     \centering
     \caption{Funcionamento de um algoritmo k-NN para o problema de classificação. Para K=3 a classe é B e para K=7 a classe é A \cite{knn_classification}.}
@@ -250,7 +250,7 @@
 
 \paragraph{} Algumas das vantagens deste modelo estão no fácil entendimento e visualização dos critérios de decisão em árvores pequenas aos olhos do projetista. O tempo de processamento computacional envolvido na criação deste modelo é razoavelmente curto. Não é necessário um pré-processamento dos dados, uma vez que cada característica é processada separadamente. A Figura \ref{fig:9} exemplifica a estrutura por trás de uma Árvode de Decisão.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.35]{decision_tree.png}
     \centering
     \caption{Visualização de uma Árvose de Decisão para um \textit{dataset} de câncer de mama \cite{muller2016introduction}.}
@@ -274,7 +274,7 @@
 
 \paragraph{} \textit{Walk-Forward Analysis} (WFA) \cite{pardo2011evaluation} é um processo de otimização mais voltado para séries temporais no contexto de finanças. Para isso, o \textit{dataset} é dividido em múltiplos segmentos consecutivos, que são iterados progressivamente a fim de se obter os parâmetros ou modelos desejados. A Figura \ref{fig:10} ilustra o processo. Observa-se que são utilizados os termos \textit{in-sample data} (IS) como sinônimo de \textit{training set} e \textit{out-of-sample data} (OOS) como sinônimo de \textit{test set}. A imagem à esquerda representa um processo não-ancorado, onde o início do IS caminha com o decorrer do processo, já a imagem à direita mantém o início fixo por ser um processo ancorado.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
     \includegraphics[scale=0.45]{wfa.png}
     \centering
     \caption{\textit{Walk-Forward Analysis} Não-Ancorado e Ancorado \cite{wfo}.}
